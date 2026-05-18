@@ -1,7 +1,7 @@
 
 // About, Degrees, Events sections
 
-const Ornament = () => (
+export const Ornament = () => (
   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', margin: '0 0 1.5rem' }}>
     <div style={{ flex: 1, height: 1, background: 'var(--divider)' }}/>
     <svg width="18" height="18" viewBox="0 0 18 18" fill="var(--gold)">
@@ -11,7 +11,7 @@ const Ornament = () => (
   </div>
 );
 
-const SectionHeader = ({ eyebrow, title, subtitle, light }) => (
+export const SectionHeader = ({ eyebrow, title, subtitle, light }) => (
   <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
     {eyebrow && <p style={{
       fontFamily: 'var(--font-body)', fontSize: '0.75rem', fontWeight: 700,

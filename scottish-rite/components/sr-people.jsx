@@ -2,7 +2,7 @@
 // Officers, News, Gallery sections
 
 // ── OFFICERS ───────────────────────────────────────────────────────────────
-const SROfficers = () => {
+export const SROfficers = () => {
   const officers = [
     { title: 'Thrice Potent Master', name: 'Ill. John A. Martinez, 33°', body: 'Lodge of Perfection' },
     { title: 'Wise Master', name: 'Ill. Robert T. Collins, 32°', body: 'Chapter of Rose Croix' },

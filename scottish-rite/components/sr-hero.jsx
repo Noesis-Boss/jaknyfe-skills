@@ -1,4 +1,3 @@
-
 // Scottish Rite Hero Component
 const SRHero = () => {
   const [visible, setVisible] = React.useState(false);
@@ -81,19 +80,34 @@ const SRHero = () => {
             style={{ width: '100%', maxWidth: 520, marginBottom: '2.5rem', filter: 'brightness(0) invert(1) sepia(1) saturate(0.5) brightness(1.1)' }}/>
         </div>
 
-        <div style={{
+        <p style={{ 
+          fontFamily: 'var(--font-display)', 
+          fontSize: 'clamp(1.3rem,2.6vw,1.6rem)', 
+          color: 'red', 
+          letterSpacing: '0.12em', 
+          textTransform: 'uppercase', 
+          fontStyle: 'normal', 
+          margin: '0 0 2.5rem', 
+          fontWeight: 400,
+          opacity: visible ? 1 : 0,
+          transition: 'opacity 0.8s ease 0.8s'
+        }}>
+          Tucson Scottish Rite
+        </p>
+
+        <div style={{ 
           width: 60, height: 1, background: 'var(--gold)', margin: '0 auto 2rem',
           opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.6s, width 0.6s ease 0.6s',
         }}/>
 
-        <p style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)',
-          color: 'rgba(255,255,255,0.75)',
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          fontStyle: 'italic',
-          margin: '0 0 2.5rem',
+        <p style={{ 
+          fontFamily: 'var(--font-display)', 
+          fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', 
+          color: 'rgba(255,255,255,0.75)', 
+          letterSpacing: '0.12em', 
+          textTransform: 'uppercase', 
+          fontStyle: 'italic', 
+          margin: '0 0 2.5rem', 
           fontWeight: 400,
           opacity: visible ? 1 : 0,
           transition: 'opacity 0.8s ease 0.8s',
@@ -145,3 +159,5 @@ const SRHero = () => {
 };
 
 Object.assign(window, { SRHero });
+
+export { SRHero };

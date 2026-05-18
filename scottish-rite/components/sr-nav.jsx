@@ -1,6 +1,6 @@
 
 // Scottish Rite Nav Component
-const SRNav = ({ theme }) => {
+export const SRNav = ({ theme }) => {
   const [scrolled, setScrolled] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
 
