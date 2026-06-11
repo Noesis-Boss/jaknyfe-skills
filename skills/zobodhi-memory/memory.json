@@ -1,0 +1,46 @@
+{
+  "memories": [
+    {
+      "id": 1779235290135,
+      "text": "The Zobodhi Memory System uses 4 layers: Input Awareness (what's currently sensed), Working Memory (active processing), Semantic Memory (long-term facts), and Procedural Memory (how to do things). Memories are stored with metadata including source, type, confidence, and tags.",
+      "addedAt": "2026-05-20T00:01:30.135Z",
+      "tags": []
+    },
+    {
+      "id": 1779429078157,
+      "text": "Don prefers concise answers and operational verification — screenshots, curl checks, health endpoints",
+      "addedAt": "2026-05-22T05:51:18.157Z",
+      "tags": []
+    },
+    {
+      "id": 1779429090051,
+      "text": "Scottish Rite website deployed at scottish-rite-jaknyfe.zocomputer.io and wildcatart.com — build from source, copy to scottish-rite-site, push git",
+      "addedAt": "2026-05-22T05:51:30.051Z",
+      "tags": []
+    },
+    {
+      "id": 1779429107419,
+      "text": "Clarion Intelligence System installed 2026-05-21 — dual-layer memory: Clarion (structured files + rules) + zobodhi-memory (fast JSON cache)",
+      "addedAt": "2026-05-22T05:51:47.419Z",
+      "tags": []
+    },
+    {
+      "id": 1779429107458,
+      "text": "Paperclip hosted service — verify with /api/health endpoint, Postgres connectivity is the known failure point",
+      "addedAt": "2026-05-22T05:51:47.458Z",
+      "tags": []
+    },
+    {
+      "id": 1779429107496,
+      "text": "Kilo UI deployed at kilo-jaknyfe.zocomputer.io — React/Vite frontend calling kilo backend",
+      "addedAt": "2026-05-22T05:51:47.496Z",
+      "tags": []
+    },
+    {
+      "id": 1779429107535,
+      "text": "Clarion memory rules: Rule 1 — load USER.md and MEMORY.md at every conversation start; Rule 2 — capture preferences + sync to zobodhi-memory",
+      "addedAt": "2026-05-22T05:51:47.535Z",
+      "tags": []
+    }
+  ]
+}
