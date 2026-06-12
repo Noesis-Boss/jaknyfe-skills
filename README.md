@@ -31,6 +31,7 @@ git clone https://github.com/Noesis-Boss/jaknyfe-skills.git
 | gog | Google Workspace CLI operations |
 | gumroad-product-builder | Build and launch Gumroad products |
 | hatch-pet | Tamagotchi-style hatchable pet companion |
+| hook-generator | Attention-grabbing first-line generator for X posts, articles, and other top-of-copy surfaces |
 | huggingface-hub | Browse and use models, datasets, and spaces on Hugging Face Hub |
 | ifixai | AI-powered device repair assistant |
 | last30days | Research any topic across 30+ sources from the last 30 days |
