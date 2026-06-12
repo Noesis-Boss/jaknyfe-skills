@@ -2,7 +2,7 @@
 
 My personal collection of agent skills for Zo Computer — the ones I wrote or forked and that aren't part of the upstream [zocomputer/skills](https://github.com/zocomputer/skills) registry.
 
-25 skills, ~4.6 MB.
+26 skills, ~4.6 MB.
 
 ## Install
 
