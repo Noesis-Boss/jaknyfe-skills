@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kilo CLI Web Interface</title>
+    <style>
+        body { font-family: monospace; background: #1a1a1a; color: #00ff00; margin: 0; padding: 20px; }
+        .terminal { background: #000; border: 1px solid #00ff00; padding: 15px; min-height: 400px; max-width: 800px; margin: 0 auto; }
+        .output { margin-bottom: 10px; white-space: pre-wrap; word-wrap: break-word; }
+        .input-line { display: flex; align-items: center; }
+        .prompt { color: #00ff00; margin-right: 10px; }
+        .input { background: transparent; border: none; color: #00ff00; font-family: inherit; font-size: inherit; outline: none; flex: 1; }
+        .cursor { display: inline-block; width: 10px; height: 20px; background: #00ff00; animation: blink 1s infinite; }
+        @keyframes blink { 0%, 50% { opacity: 1; } 50%, 100% { opacity: 0; } }
+        .error { color: #ff0000; }
+        .success { color: #00ff00; }
+        .info { color: #ffff00; }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div id="output"></div>
+        <div class="input-line">
+            <span class="prompt">kilo@web:~$</span>
+            <input type="text" class="input" id="commandInput" autofocus>
+            <span class="cursor"></span>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'https://kilo-jaknyfe.zocomputer.io';
+        let currentSession = null;
+
+        function output(text, className = '') {
+            const div = document.createElement('div');
+            div.className = className;
+            div.textContent = text;
+            document.getElementById('output').appendChild(div);
+            document.getElementById('output').scrollTop = document.getElementById('output').scrollHeight;
+        }
+
+        async function executeCommand(command) {
+            output(`kilo@web:~$ ${command}`, 'success');
+            
+            const parts = command.trim().split(' ');
+            const cmd = parts[0];
+            const args = parts.slice(1);
+
+            try {
+                switch(cmd) {
+                    case 'help':
+                        output(`Available commands:
+- help: Show this help
+- login: Get authentication token
+- session: List sessions
+- create: Create new session
+- run <session> <command>: Run command in session
+- exit: Terminate session
+- clear: Clear screen`);
+                        break;
+                    
+                    case 'login':
+                        const loginRes = await fetch(`${API_BASE}/auth`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                client_id: 'kilo-web',
+                                client_secret: 'kilo-web-secret'
+                            })
+                        });
+                        const loginData = await loginRes.json();
+                        output(`Token: ${loginData.token}`, 'info');
+                        break;
+                    
+                    case 'session':
+                    case 'sessions':
+                        const sessionsRes = await fetch(`${API_BASE}/session`);
+                        const sessions = await sessionsRes.json();
+                        output(`Active sessions (${sessions.length}):`);
+                        sessions.slice(0, 10).forEach(s => {
+                            output(`  ${s.id} - ${s.slug} - ${new Date(s.time.created).toLocaleString()}`);
+                        });
+                        if (sessions.length > 10) {
+                            output(`  ... and ${sessions.length - 10} more`);
+                        }
+                        break;
+                    
+                    case 'create':
+                        const createRes = await fetch(`${API_BASE}/session`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                title: 'Web CLI Session',
+                                directory: '/home/workspace'
+                            })
+                        });
+                        const newSession = await createRes.json();
+                        currentSession = newSession.id;
+                        output(`Session created: ${newSession.id} (${newSession.slug})`);
+                        break;
+                    
+                    case 'run':
+                        if (!currentSession) {
+                            output('Error: No active session. Use "create" first.', 'error');
+                            break;
+                        }
+                        if (!args[0]) {
+                            output('Error: Command required', 'error');
+                            break;
+                        }
+                        const commandToRun = args.join(' ');
+                        const runRes = await fetch(`${API_BASE}/session/${currentSession}/run`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ command: commandToRun })
+                        });
+                        const runResult = await runRes.json();
+                        output(`Result: ${runResult.output || runResult.error || 'No response'}`);
+                        break;
+                    
+                    case 'exit':
+                        if (currentSession) {
+                            await fetch(`${API_BASE}/session/${currentSession}`, {
+                                method: 'DELETE'
+                            });
+                            output(`Session ${currentSession} terminated`);
+                            currentSession = null;
+                        } else {
+                            output('No active session to exit');
+                        }
+                        break;
+                    
+                    case 'clear':
+                        document.getElementById('output').innerHTML = '';
+                        break;
+                    
+                    case '':
+                        break;
+                    
+                    default:
+                        output(`Unknown command: ${cmd}. Type "help" for available commands.`, 'error');
+                }
+            } catch (error) {
+                output(`Error: ${error.message}`, 'error');
+            }
+        }
+
+        document.getElementById('commandInput').addEventListener('keypress', async (e) => {
+            if (e.key === 'Enter') {
+                const input = e.target;
+                const command = input.value;
+                input.value = '';
+                
+                if (command.trim()) {
+                    await executeCommand(command);
+                }
+            }
+        });
+
+        // Initialize
+        output('Kilo CLI Web Interface');
+        output('Type "help" for commands', 'info');
+    </script>
+</body>
+</html>

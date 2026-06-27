@@ -1,0 +1,64 @@
+{
+  "memories": [
+    {
+      "id": 1779475022361,
+      "text": "Gumroad product plan: Option A (Freelance Client Command Center, Notion template, 7-27) is primary — starting Phase 3 architecture now. Option B (Stop the Scope Creep mini-course, 7-97) is queued for later. Option C (Client Command System bundle, 7-197) follows Option B. Audience: freelance designers & developers. Revenue target: 00-1k/month. Pain points validated: scope creep, no source of truth, client comms overhead, no repeatable workflow. Gate 1 cleared 4/5.",
+      "addedAt": "2026-05-22T18:37:02.361Z",
+      "tags": []
+    },
+    {
+      "id": 1779475063176,
+      "text": "Phase 3 architecture complete: Freelance Client Command Center — Notion template at 7/7. Architecture doc at gumroad-product/product-architecture-optionA.md. Covers 5 sections: Kickoff Pack, Scope Tracker, Client Status Hub, Revision Counter, Communication Log. Ready for Phase 4 build. Gate 3 approval pending from user.",
+      "addedAt": "2026-05-22T18:37:43.176Z",
+      "tags": []
+    },
+    {
+      "id": 1779475748789,
+      "text": "Gumroad product 'Freelance Client Command Center' is live. Stripe Standard (prod_UZ6KeQ9pEyWd9y, price_1TZy82Hc45sWueFVuNVhYhxz) at 7. Stripe Premium (prod_UZ6K2MjBMK3GL0, price_1TZy82Hc45sWueFVlyqdfLBD) at 7. Payment links created. Cover image at gumroad-product/freelance-client-command-center-cover.jpg, email scripts at gumroad-product/email-scripts.md, full Gumroad listing copy at gumroad-product/gumroad-listing.md, architecture at gumroad-product/product-architecture-optionA.md. Still needs: Notion template (actual deliverable), delivery email setup, launch posts.",
+      "addedAt": "2026-05-22T18:49:08.789Z",
+      "tags": []
+    },
+    {
+      "id": 1779476394872,
+      "text": "Launched first tweet for Freelance Client Command Center: https://x.com/zdsentry/status/2057899261728104649. Draft thread and single-post versions saved at gumroad-product/launch-x-thread.md. Page live at jaknyfe.zo.space/freelance-client-command. Stripe links: Standard 7 https://buy.stripe.com/dRm9ATcx4ahF3JT9mCdMI01, Premium 7 https://buy.stripe.com/dRm4gzfJg1L9bcl2YedMI00.",
+      "addedAt": "2026-05-22T18:59:54.872Z",
+      "tags": []
+    },
+    {
+      "id": 1779479771916,
+      "text": "Freelance Client Command Center fully live. Delivery page: jaknyfe.zo.space/delivery/freelance-client-command. Redirects to Notion template post-purchase. Stripe: Standard 7 https://buy.stripe.com/14AbJ1bt01L92FPfL0dMI02, Premium 7 https://buy.stripe.com/eVq14n0OmahFa8hfL0dMI03. Notion template: https://www.notion.so/Freelance-Client-Command-Center-3681ec3c65ad810a8b8ffc43d163d21c",
+      "addedAt": "2026-05-22T19:56:11.916Z",
+      "tags": []
+    },
+    {
+      "id": 1779987237103,
+      "text": "Created design-md skill at Skills/design-md/ with scaffold and fetch-brand scripts for Google's DESIGN.md spec. Rule created to auto-consult DESIGN.md before all frontend code generation.",
+      "addedAt": "2026-05-28T16:53:57.103Z",
+      "tags": []
+    },
+    {
+      "id": 1779993915615,
+      "text": "Character: Aric, a stoic knight, and Lira, a fiery sorceress. Story arc: they are forced to guard a magical artifact together, start as enemies, gradually fall in love, culminating in a powerful united spell.",
+      "addedAt": "2026-05-28T18:45:15.615Z",
+      "tags": []
+    },
+    {
+      "id": 1780091705784,
+      "text": "User asked for a 30-second cinematic teaser trailer generated from a storyboard image, keeping the cards as close to the original storyboard as possible, with sound effects but no music. I generated six 5-second clips with timestamp overlays and stitched them into a final MP4 at /home/workspace/Images/deus_vult_trailer/deus_vult_teaser_trailer.mp4.",
+      "addedAt": "2026-05-29T21:55:05.784Z",
+      "tags": []
+    },
+    {
+      "id": 1780508275233,
+      "text": "Created krazyladyz.com: a maximalist boho greeting card site with character lore and interactive triptych. Live at https://krazyladyz-jaknyfe.zocomputer.io",
+      "addedAt": "2026-06-03T17:37:55.233Z",
+      "tags": []
+    },
+    {
+      "id": 1781299153216,
+      "text": "Meerkat MCP evaluated 2026-06-12: auth captured as delowery@gmail.com, 5 tools listed, /api/roast works but /api/custom-chat returns HTTP 500 for every model slug. Paused pending vendor fix. Full note: memory/projects/meerkat-mcp.md",
+      "addedAt": "2026-06-12T21:19:13.216Z",
+      "tags": []
+    }
+  ]
+}

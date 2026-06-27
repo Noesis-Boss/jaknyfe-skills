@@ -1,0 +1,14 @@
+=== SYSTEM STATUS REPORT ===
+Generated: 2026-04-30 15:12:48 MST
+
+Service Status:
+  paperclip: OK (https://paperclip-jaknyfe.zocomputer.io/health)
+  opencode-web: OK (health endpoint responds, 401 auth required - https://opencode-web-jaknyfe.zocomputer.io)
+  scottish-rite: OK (https://scottish-rite-jaknyfe.zocomputer.io/)
+  pdf-ocr-app: OK (https://pdf-ocr-app-jaknyfe.zocomputer.io/health)
+  openclaw-gateway: OK (RUNNING, uptime 0:37)
+
+PostgreSQL: Recovered (was DOWN, now accepting connections on 127.0.0.1:5432)
+Actions Taken: Restarted PostgreSQL, restarted paperclip service
+Issues Found: None
+

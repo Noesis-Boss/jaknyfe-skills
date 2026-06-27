@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scottish Rite - Valley of Tucson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Source Sans 3', sans-serif; }
+    body.theme-classic {
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Source Sans 3', sans-serif;
+      --gold: #b8953a; --gold-light: #d4af5a;
+      --navy: #1a1a2e; --cream: #faf7f2;
+      --text-body: #2c2c3e; --text-muted: #6a6a82;
+      --card-bg: #ffffff; --card-border: #e8e4dc; --card-border-heavy: #c8c4ba;
+      --divider: #d8d4cc; --nav-bg: rgba(26,26,46,0.96); --nav-link: #f0ede8;
+      --gold-bg: #f5edda; --stripe-a: #ede9e0; --stripe-b: #e4e0d5;
+    }
+    @media(max-width:768px){
+      .sr-desktop-nav{display:none!important}
+      .sr-hamburger{display:block!important}
+    }
+    .sr-gallery-overlay:hover .sr-zoom-icon{opacity:1!important}
+    .sr-nav-link:hover{background:rgba(184,149,58,0.15)!important;color:var(--gold)!important}
+    @keyframes srTwinkle {
+      0%,100%{opacity:0.2;transform:scale(1)} 50%{opacity:0.8;transform:scale(1.5)}
+    }
+    @keyframes srBounce {
+      0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)}
+    }
+  </style>
+</head>
+<body class="theme-classic">
+  <div id="root"></div>
+</body>
+</html>

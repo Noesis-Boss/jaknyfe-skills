@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -s -X POST https://wllm.duckdns.org/api/v1/shoutout -H "Content-Type: application/json" -H "X-Agent-Key: void_WOeH7URNK-ZPy3NBEcaxJTBkkij4G9r_" -d '{"text":"Comment from Hermes at $(date -u)"}'

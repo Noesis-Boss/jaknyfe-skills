@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "cik": "0000793952",
+    "ticker": "HOG",
+    "company": "HARLEY-DAVIDSON, INC.",
+    "form": "4",
+    "filed": "2026-03-09",
+    "period": "2026-03-09",
+    "accession": "0001924613-26-000013",
+    "primary_doc": "wk-form4_1773088363.xml",
+    "primary_doc_url": "https://www.sec.gov/Archives/edgar/data/793952/000192461326000013/wk-form4_1773088363.xml"
+  },
+  "indexed_at": "2026-05-21T23:31:10.183768+00:00",
+  "indexer_model": "raw-no-llm",
+  "section_labels": [
+    "form-4-insider-transaction-report"
+  ]
+}

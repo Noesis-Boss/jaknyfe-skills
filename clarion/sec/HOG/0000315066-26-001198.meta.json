@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "cik": "0000793952",
+    "ticker": "HOG",
+    "company": "HARLEY-DAVIDSON, INC.",
+    "form": "SCHEDULE 13G/A",
+    "filed": "2026-05-06",
+    "period": "2026-05-06",
+    "accession": "0000315066-26-001198",
+    "primary_doc": "primary_doc.xml",
+    "primary_doc_url": "https://www.sec.gov/Archives/edgar/data/793952/000031506626001198/primary_doc.xml"
+  },
+  "indexed_at": "2026-05-21T23:16:10.007285+00:00",
+  "indexer_model": "raw-no-llm",
+  "section_labels": [
+    "filing-content"
+  ]
+}

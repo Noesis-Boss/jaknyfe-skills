@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { SRNav } from './components/sr-nav';
 import { SRHero } from './components/sr-hero';
-import { SRAbout, SRDegrees, SREvents } from './components/sr-sections';
+import { SRAbout, SRDegrees, SREvents } from './sr-sections';
 import { SROfficers, SRGallery, SRNews } from './components/sr-people';
 import { SRMembership, SRDonate, SRContact } from './components/sr-contact';
 

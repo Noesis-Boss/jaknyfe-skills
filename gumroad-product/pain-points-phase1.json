@@ -1,0 +1,108 @@
+{
+  "audience": "freelance designers and developers",
+  "revenueTarget": "$500–$1,000/month",
+  "painPoints": [
+    {
+      "id": 1,
+      "text": "Scope creep — clients keep adding work after project starts",
+      "score": 4,
+      "signals": [
+        "\"The deadline moves up but the scope doesn't shrink\" — @oks_ios",
+        "\"Everything got parked\" — @philliplanos (scope creep after every meeting)"
+      ],
+      "exactLanguage": "how do I get clients to stop adding work without losing the sale",
+      "commercialIntent": "Actively seeking solutions. Willing to pay."
+    },
+    {
+      "id": 2,
+      "text": "No single source of truth — clients don't know what's approved, what's in progress",
+      "score": 4,
+      "signals": [
+        "\"The chaotic projects always start with a chaotic kickoff\" — @HudecErik",
+        "\"Feedback comes from 7 different people with 7 different opinions\" — @oks_ios"
+      ],
+      "exactLanguage": "where do I even send client updates so they stop asking me everything twice",
+      "commercialIntent": "Overwhelmed. Actively building systems."
+    },
+    {
+      "id": 3,
+      "text": "Client communication overhead — chasing clients for feedback, assets, approvals",
+      "score": 5,
+      "signals": [
+        "\"Have to babysit every little thing\" — @nico_jeannen",
+        "\"No one can explain why the product exists\" — @oks_ios"
+      ],
+      "exactLanguage": "why can't clients just do what they're supposed to do so I can do my job",
+      "commercialIntent": "\"I'll pay whatever it takes\" tier. High urgency."
+    },
+    {
+      "id": 4,
+      "text": "Revision spirals — no clear revision limit or feedback process defined upfront",
+      "score": 3,
+      "signals": [
+        "\"Multiple stakeholders, conflicting docs, endless ideas\" — @philliplanos"
+      ],
+      "exactLanguage": "how many revisions is normal anyway",
+      "commercialIntent": "Annoying but not yet costing them significant money."
+    },
+    {
+      "id": 5,
+      "text": "No repeatable client workflow — every project is chaos, nothing systematized",
+      "score": 4,
+      "signals": [
+        "\"Write everything down, map out your timeline\" — @beyond_broke",
+        "\"One source of truth\" mentioned across 3 separate posts as the fix"
+      ],
+      "exactLanguage": "is there a system for managing client projects that doesn't require a project manager",
+      "commercialIntent": "Building systems. Willing to invest in the right tool."
+    }
+  ],
+  "gateCleared": true,
+  "topPainPoints": [
+    {
+      "id": 1,
+      "text": "Scope creep — clients keep adding work after project starts",
+      "score": 4,
+      "signals": [
+        "\"The deadline moves up but the scope doesn't shrink\" — @oks_ios",
+        "\"Everything got parked\" — @philliplanos (scope creep after every meeting)"
+      ],
+      "exactLanguage": "how do I get clients to stop adding work without losing the sale",
+      "commercialIntent": "Actively seeking solutions. Willing to pay."
+    },
+    {
+      "id": 2,
+      "text": "No single source of truth — clients don't know what's approved, what's in progress",
+      "score": 4,
+      "signals": [
+        "\"The chaotic projects always start with a chaotic kickoff\" — @HudecErik",
+        "\"Feedback comes from 7 different people with 7 different opinions\" — @oks_ios"
+      ],
+      "exactLanguage": "where do I even send client updates so they stop asking me everything twice",
+      "commercialIntent": "Overwhelmed. Actively building systems."
+    },
+    {
+      "id": 3,
+      "text": "Client communication overhead — chasing clients for feedback, assets, approvals",
+      "score": 5,
+      "signals": [
+        "\"Have to babysit every little thing\" — @nico_jeannen",
+        "\"No one can explain why the product exists\" — @oks_ios"
+      ],
+      "exactLanguage": "why can't clients just do what they're supposed to do so I can do my job",
+      "commercialIntent": "\"I'll pay whatever it takes\" tier. High urgency."
+    },
+    {
+      "id": 5,
+      "text": "No repeatable client workflow — every project is chaos, nothing systematized",
+      "score": 4,
+      "signals": [
+        "\"Write everything down, map out your timeline\" — @beyond_broke",
+        "\"One source of truth\" mentioned across 3 separate posts as the fix"
+      ],
+      "exactLanguage": "is there a system for managing client projects that doesn't require a project manager",
+      "commercialIntent": "Building systems. Willing to invest in the right tool."
+    }
+  ],
+  "timestamp": "2026-05-22T17:23:45.926Z"
+}

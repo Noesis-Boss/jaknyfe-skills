@@ -1,0 +1,9 @@
+{
+  "name": "Savings Goals API",
+  "description": "REST API for managing user savings goals",
+  "public": true,
+  "build": {
+    "command": "bun run build",
+    "output": "dist"
+  }
+}

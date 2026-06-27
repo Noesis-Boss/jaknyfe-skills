@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hermes Mission Control</title>
+<style>
+  :root {
+    --bg: #0b0d12;
+    --bg-2: #11141b;
+    --panel: #161a23;
+    --panel-2: #1c2230;
+    --border: #2a3142;
+    --fg: #e8ecf3;
+    --muted: #8a93a6;
+    --accent: #6cf0c2;
+    --accent-2: #4ea1ff;
+    --warn: #ffb454;
+    --bad: #ff6b6b;
+    --ok: #6cf0c2;
+    --pending: #4ea1ff;
+    --done: #6cf0c2;
+    --progress: #ffb454;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  a { color: var(--accent-2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 22px; border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #0e1219 0%, #0b0d12 100%);
+    position: sticky; top: 0; z-index: 10;
+  }
+  header .brand { display: flex; align-items: center; gap: 12px; }
+  header .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--ok); box-shadow: 0 0 10px var(--ok);
+  }
+  header .dot.bad { background: var(--bad); box-shadow: 0 0 10px var(--bad); }
+  header h1 { font-size: 14px; font-weight: 600; margin: 0; letter-spacing: 0.5px; }
+  header .meta { color: var(--muted); font-size: 11px; }
+  header .live {
+    font-size: 10px; padding: 2px 8px; border-radius: 10px;
+    background: rgba(108, 240, 194, 0.12); color: var(--ok);
+    border: 1px solid rgba(108, 240, 194, 0.3);
+  }
+  header .live.off {
+    background: rgba(255, 107, 107, 0.12); color: var(--bad);
+    border-color: rgba(255, 107, 107, 0.3);
+  }
+  main { padding: 18px 22px 60px; }
+  .grid {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .card h2 {
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1.2px; color: var(--muted); margin: 0 0 10px 0;
+  }
+  .col-3 { grid-column: span 3; }
+  .col-4 { grid-column: span 4; }
+  .col-5 { grid-column: span 5; }
+  .col-6 { grid-column: span 6; }
+  .col-7 { grid-column: span 7; }
+  .col-8 { grid-column: span 8; }
+  .col-9 { grid-column: span 9; }
+  .col-12 { grid-column: span 12; }
+  @media (max-width: 1100px) {
+    .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9 { grid-column: span 12; }
+  }
+  .kpi { display: flex; flex-direction: column; gap: 4px; }
+  .kpi .v { font-size: 24px; font-weight: 600; }
+  .kpi .l { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+  .kpi .v.warn { color: var(--warn); }
+  .kpi .v.bad { color: var(--bad); }
+
+  table { width: 100%; border-collapse: collapse; }
+  th, td {
+    text-align: left; padding: 6px 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 12px;
+  }
+  th { color: var(--muted); font-weight: 500; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  .pill {
+    display: inline-block; padding: 1px 8px; border-radius: 10px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .pill.ok { background: rgba(108, 240, 194, 0.12); color: var(--ok); }
+  .pill.bad { background: rgba(255, 107, 107, 0.12); color: var(--bad); }
+  .pill.warn { background: rgba(255, 180, 84, 0.12); color: var(--warn); }
+  .pill.info { background: rgba(78, 161, 255, 0.12); color: var(--accent-2); }
+  .pill.pending { background: rgba(78, 161, 255, 0.12); color: var(--pending); }
+  .pill.progress { background: rgba(255, 180, 84, 0.12); color: var(--progress); }
+  .pill.done { background: rgba(108, 240, 194, 0.12); color: var(--done); }
+  .pill.low { background: rgba(138, 147, 166, 0.12); color: var(--muted); }
+  .pill.med { background: rgba(78, 161, 255, 0.12); color: var(--accent-2); }
+  .pill.high { background: rgba(255, 107, 107, 0.12); color: var(--bad); }
+
+  .bar {
+    height: 6px; background: rgba(255,255,255,0.06);
+    border-radius: 3px; overflow: hidden; margin-top: 4px;
+  }
+  .bar > span { display: block; height: 100%; background: var(--accent-2); }
+
+  .agent-row {
+    display: grid; grid-template-columns: 110px 1fr 100px 80px 60px;
+    gap: 8px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    align-items: center; font-size: 12px;
+  }
+  .agent-row:last-child { border-bottom: none; }
+  .agent-row .name { font-weight: 600; }
+
+  .boards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  @media (max-width: 900px) { .boards { grid-template-columns: 1fr; } }
+  .col-board { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 6px; padding: 10px; min-height: 80px; }
+  .col-board h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; margin: 0 0 8px 0; color: var(--muted); }
+  .task {
+    background: var(--panel-2); border: 1px solid var(--border);
+    border-radius: 5px; padding: 8px 10px; margin-bottom: 8px;
+    font-size: 12px; cursor: pointer;
+  }
+  .task:hover { border-color: var(--accent-2); }
+  .task .title { font-weight: 500; margin-bottom: 4px; }
+  .task .meta { display: flex; gap: 6px; align-items: center; }
+  .task .notes { color: var(--muted); font-size: 11px; margin-top: 4px; }
+
+  .toolbar { display: flex; gap: 8px; margin-bottom: 12px; }
+  input, select, textarea, button {
+    font-family: inherit; font-size: 12px;
+    background: var(--panel-2); color: var(--fg);
+    border: 1px solid var(--border); border-radius: 4px; padding: 6px 10px;
+  }
+  button { cursor: pointer; background: var(--accent-2); color: #000; border: none; font-weight: 600; }
+  button:hover { opacity: 0.9; }
+  button.secondary { background: var(--panel-2); color: var(--fg); border: 1px solid var(--border); }
+  button.danger { background: var(--bad); color: #000; }
+
+  .form { display: grid; gap: 8px; }
+  .form label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+  .modal-bg {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+    display: none; align-items: center; justify-content: center; z-index: 100;
+  }
+  .modal-bg.show { display: flex; }
+  .modal {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 8px; padding: 18px; width: 480px; max-width: 90vw;
+  }
+  .modal h3 { margin: 0 0 12px 0; font-size: 14px; }
+
+  .empty { color: var(--muted); font-style: italic; font-size: 12px; padding: 12px 0; }
+  .scroll { max-height: 280px; overflow-y: auto; }
+  .scroll::-webkit-scrollbar { width: 6px; }
+  .scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  .footer { color: var(--muted); font-size: 10px; text-align: center; padding: 20px 0 0; }
+  .small { font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="dot" id="status-dot"></span>
+    <h1>HERMES · MISSION CONTROL</h1>
+    <span class="meta" id="updated">—</span>
+  </div>
+  <div>
+    <span class="live" id="live">CONNECTING</span>
+  </div>
+</header>
+
+<main>
+  <div class="grid">
+
+    <div class="card col-3">
+      <h2>Gateway</h2>
+      <div class="kpi"><div class="v" id="gw-state">—</div><div class="l">state</div></div>
+      <div class="small" style="margin-top:10px" id="gw-uptime">uptime: —</div>
+    </div>
+    <div class="card col-3">
+      <h2>Active Agents</h2>
+      <div class="kpi"><div class="v" id="gw-agents">—</div><div class="l">running now</div></div>
+    </div>
+    <div class="card col-3">
+      <h2>CPU</h2>
+      <div class="kpi"><div class="v" id="cpu">—</div><div class="l" id="cpu-meta">load</div></div>
+    </div>
+    <div class="card col-3">
+      <h2>Memory</h2>
+      <div class="kpi"><div class="v" id="mem">—</div><div class="l" id="mem-meta">used / total</div></div>
+    </div>
+    <div class="card col-3">
+      <h2>Disk</h2>
+      <div class="kpi"><div class="v" id="disk">—</div><div class="l" id="disk-meta">used / total</div></div>
+    </div>
+
+    <div class="card col-4">
+      <h2>Activity (7d)</h2>
+      <div id="daily" class="scroll"></div>
+    </div>
+    <div class="card col-4">
+      <h2>Activity by Agent</h2>
+      <div id="agents" class="scroll"></div>
+    </div>
+    <div class="card col-4">
+      <h2>Token Spend (lifetime)</h2>
+      <div class="kpi"><div class="v" id="tokens">—</div><div class="l">input + output tokens</div></div>
+      <div class="small" style="margin-top:8px" id="tokens-breakdown">—</div>
+    </div>
+
+    <div class="card col-7">
+      <h2>Recent Activity (last 50)</h2>
+      <div class="scroll" style="max-height:320px">
+        <table>
+          <thead><tr><th>When</th><th>Agent</th><th>Task</th><th>Model</th><th>Status</th></tr></thead>
+          <tbody id="activity-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card col-5">
+      <h2>Cron Jobs</h2>
+      <div class="scroll" style="max-height:320px">
+        <table>
+          <thead><tr><th>Label</th><th>Schedule</th><th>Source</th></tr></thead>
+          <tbody id="cron-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card col-7">
+      <h2>Recent Sessions</h2>
+      <div class="scroll" style="max-height:280px">
+        <table>
+          <thead><tr><th>Started</th><th>Source</th><th>Model</th><th>Msgs</th><th>In Tok</th><th>Out Tok</th></tr></thead>
+          <tbody id="sessions-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card col-5">
+      <h2>Platform Status</h2>
+      <div id="platforms" class="scroll"></div>
+    </div>
+
+    <div class="card col-12">
+      <h2>Operator Task Board</h2>
+      <div class="toolbar">
+        <button id="add-task">+ New Task</button>
+        <span class="small" id="board-count">0 tasks</span>
+      </div>
+      <div class="boards">
+        <div class="col-board"><h3>Pending</h3><div id="col-pending"></div></div>
+        <div class="col-board"><h3>In Progress</h3><div id="col-progress"></div></div>
+        <div class="col-board"><h3>Done</h3><div id="col-done"></div></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer">read-only over Hermes data sources · single-file server · python stdlib only</div>
+</main>
+
+<div class="modal-bg" id="modal-bg">
+  <div class="modal">
+    <h3 id="modal-title">New Task</h3>
+    <form class="form" id="task-form">
+      <input type="hidden" id="t-id" />
+      <div><label>Title</label><br/><input id="t-title" style="width:100%" required /></div>
+      <div><label>Status</label><br/>
+        <select id="t-status" style="width:100%">
+          <option value="pending">pending</option>
+          <option value="in_progress">in_progress</option>
+          <option value="done">done</option>
+        </select>
+      </div>
+      <div><label>Priority</label><br/>
+        <select id="t-priority" style="width:100%">
+          <option value="low">low</option>
+          <option value="medium" selected>medium</option>
+          <option value="high">high</option>
+        </select>
+      </div>
+      <div><label>Notes</label><br/><textarea id="t-notes" style="width:100%;min-height:60px"></textarea></div>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px">
+        <button type="button" class="secondary" id="t-cancel">Cancel</button>
+        <button type="button" class="danger" id="t-delete" style="display:none">Delete</button>
+        <button type="submit" id="t-save">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const fmtDate = (s) => {
+  if (!s) return "—";
+  // Handle Unix float seconds (state.db) and ISO strings
+  let d;
+  if (typeof s === "number") d = new Date(s * 1000);
+  else d = new Date(s);
+  if (isNaN(d.getTime())) return String(s);
+  return d.toLocaleString();
+};
+const ago = (s) => {
+  if (!s) return "—";
+  let d;
+  if (typeof s === "number") d = new Date(s * 1000);
+  else d = new Date(s);
+  if (isNaN(d.getTime())) return "—";
+  const ms = Date.now() - d.getTime();
+  if (ms < 0) return "now";
+  const s2 = Math.floor(ms / 1000);
+  if (s2 < 60) return s2 + "s ago";
+  const m = Math.floor(s2 / 60);
+  if (m < 60) return m + "m ago";
+  const h = Math.floor(m / 60);
+  if (h < 24) return h + "h ago";
+  const dd = Math.floor(h / 24);
+  return dd + "d ago";
+};
+const fmtNum = (n) => {
+  if (n == null) return "—";
+  if (Math.abs(n) >= 1e6) return (n / 1e6).toFixed(1) + "M";
+  if (Math.abs(n) >= 1e3) return (n / 1e3).toFixed(1) + "k";
+  return String(n);
+};
+const fmtBytes = (b) => {
+  if (b == null) return "—";
+  const u = ["B","KB","MB","GB","TB"];
+  let i = 0; let v = b;
+  while (v >= 1024 && i < u.length - 1) { v /= 1024; i++; }
+  return v.toFixed(1) + " " + u[i];
+};
+
+function pillFor(status) {
+  if (!status) return '<span class="pill low">—</span>';
+  const s = status.toLowerCase();
+  if (["completed","done","success","ok","connected","running"].includes(s)) return '<span class="pill ok">' + status + '</span>';
+  if (["failed","error","crashed","disconnected","bad"].includes(s)) return '<span class="pill bad">' + status + '</span>';
+  if (["pending","queued","waiting"].includes(s)) return '<span class="pill pending">' + status + '</span>';
+  if (["in_progress","running_partial","working","loading"].includes(s)) return '<span class="pill progress">' + status + '</span>';
+  return '<span class="pill info">' + status + '</span>';
+}
+
+function renderSnapshot(s) {
+  if (!s) return;
+  const updated = s.updated_at ? new Date(s.updated_at).toLocaleString() : "—";
+  $("updated").textContent = "updated " + updated;
+
+  // Gateway
+  const g = s.gateway || {};
+  const gs = (g.state || "—").toLowerCase();
+  $("gw-state").textContent = g.state || "—";
+  $("gw-state").className = "v" + (gs === "running" ? "" : " bad");
+  $("gw-agents").textContent = g.active_agents ?? "—";
+  if (g.uptime_seconds != null) {
+    const up = g.uptime_seconds;
+    $("gw-uptime").textContent = "uptime: " + Math.floor(up / 60) + "m · pid " + (g.pid || "?");
+  } else if (g.start_time) {
+    // start_time may be a counter (not Unix epoch) — skip uptime display
+    $("gw-uptime").textContent = "uptime: ? (unknown start_time) · pid " + (g.pid || "?");
+  } else {
+    $("gw-uptime").textContent = "";
+  }
+  const dot = $("status-dot");
+  if (gs === "running") dot.classList.remove("bad"); else dot.classList.add("bad");
+
+  // Platforms
+  const plats = g.platforms || {};
+  const ph = $("platforms");
+  ph.innerHTML = Object.keys(plats).length
+    ? Object.entries(plats).map(([k, v]) =>
+        `<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)">
+           <span>${k}</span>${pillFor(v.state || "—")}
+         </div>`).join("")
+    : '<div class="empty">no platforms</div>';
+
+  // Health
+  const h = s.vps_health || {};
+  if (h.cpu_pct != null) {
+    $("cpu").textContent = h.cpu_pct + "%";
+  } else if (h.load && h.load["1m"] != null) {
+    $("cpu").textContent = h.load["1m"].toFixed(2);
+    $("cpu-meta").textContent = "1m load avg";
+  } else {
+    $("cpu").textContent = "—";
+  }
+  if (h.ram && h.ram.used_pct != null) {
+    const usedMb = (h.ram.total_mb || 0) - (h.ram.available_mb || 0);
+    $("mem").textContent = h.ram.used_pct + "%";
+    $("mem-meta").textContent = "of " + Math.round(h.ram.total_mb) + " MB";
+  } else {
+    $("mem").textContent = "—";
+  }
+  if (h.disk && h.disk.used_pct != null) {
+    $("disk").textContent = h.disk.used_pct + "%";
+    $("disk-meta").textContent = h.disk.used_gb.toFixed(1) + " / " + Math.round(h.disk.total_gb);
+  }
+
+  // Activity totals
+  const a = s.activity || {};
+  const t = s.sessions || {};
+  const tok = t.tokens || {};
+  const totalTok = (tok.input || 0) + (tok.output || 0);
+  $("tokens").textContent = fmtNum(totalTok);
+  $("tokens-breakdown").textContent =
+    `in: ${fmtNum(tok.input)} · out: ${fmtNum(tok.output)} · cache r: ${fmtNum(tok.cache_read)} · cache w: ${fmtNum(tok.cache_write)} · ${t.session_count || 0} sessions · ${t.message_count || 0} msgs`;
+
+  // Daily chart
+  const daily = a.daily_7d || [];
+  const dailyEl = $("daily");
+  if (daily.length) {
+    const max = Math.max(...daily.map(d => d.count), 1);
+    dailyEl.innerHTML = daily.map(d => {
+      const w = Math.max(2, Math.round((d.count / max) * 200));
+      return `<div style="display:flex;align-items:center;gap:8px;padding:3px 0">
+        <div style="width:70px;color:var(--muted);font-size:11px">${d.date}</div>
+        <div style="flex:1"><div class="bar"><span style="width:${w}px"></span></div></div>
+        <div style="width:30px;text-align:right">${d.count}</div>
+      </div>`;
+    }).join("");
+  } else {
+    dailyEl.innerHTML = '<div class="empty">no activity yet</div>';
+  }
+
+  // Agent rows
+  const agents = a.agents || [];
+  const agentsEl = $("agents");
+  if (agents.length) {
+    const max = Math.max(...agents.map(g2 => g2.total), 1);
+    agentsEl.innerHTML = agents.map(g2 =>
+      `<div class="agent-row">
+         <div class="name">${g2.name}</div>
+         <div><div class="bar"><span style="width:${Math.round((g2.total / max) * 100)}%"></span></div></div>
+         <div>${g2.total} <span class="small">(${g2.completed}✓ ${g2.failed}✗)</span></div>
+         <div class="small">${g2.model ? g2.model.split("/").pop().slice(0, 12) : "—"}</div>
+         <div class="small">${ago(g2.last_seen)}</div>
+       </div>`).join("");
+  } else {
+    agentsEl.innerHTML = '<div class="empty">no agent activity yet</div>';
+  }
+
+  // Activity table
+  const rows = a.recent || [];
+  $("activity-body").innerHTML = rows.length
+    ? rows.map(r =>
+        `<tr>
+           <td class="small">${ago(r.created_at)}</td>
+           <td><span class="pill info">${r.agent_name}</span></td>
+           <td>${(r.task_description || "").slice(0, 80)}</td>
+           <td class="small">${r.model_used ? r.model_used.split("/").pop() : "—"}</td>
+           <td>${pillFor(r.status)}</td>
+         </tr>`).join("")
+    : '<tr><td colspan="5" class="empty">no activity yet</td></tr>';
+
+  // Cron
+  const cron = s.cron_jobs || [];
+  $("cron-body").innerHTML = cron.length
+    ? cron.map(c =>
+        `<tr>
+           <td>${pillFor(c.origin)} ${c.source}</td>
+           <td class="small">${c.schedule_english}</td>
+           <td class="small">${c.command}</td>
+         </tr>`).join("")
+    : '<tr><td colspan="3" class="empty">no cron jobs</td></tr>';
+
+  // Sessions
+  const sess = t.recent || [];
+  $("sessions-body").innerHTML = sess.length
+    ? sess.map(r =>
+        `<tr>
+           <td class="small">${fmtDate(r.started_at)}</td>
+           <td>${r.source || "—"}</td>
+           <td class="small">${r.model ? r.model.split("/").pop() : "—"}</td>
+           <td>${r.message_count || 0}</td>
+           <td>${fmtNum(r.input_tokens)}</td>
+           <td>${fmtNum(r.output_tokens)}</td>
+         </tr>`).join("")
+    : '<tr><td colspan="6" class="empty">no sessions</td></tr>';
+}
+
+function renderBoard(tasks) {
+  $("board-count").textContent = tasks.length + " tasks";
+  const cols = { pending: [], in_progress: [], done: [] };
+  for (const t of tasks) {
+    const k = (t.status || "pending").toLowerCase();
+    if (cols[k]) cols[k].push(t);
+    else cols.pending.push(t);
+  }
+  for (const k of Object.keys(cols)) {
+    const el = $("col-" + k);
+    if (!cols[k].length) {
+      el.innerHTML = '<div class="empty">—</div>';
+      continue;
+    }
+    el.innerHTML = cols[k].map(t =>
+      `<div class="task" data-id="${t.id}">
+         <div class="title">${t.title}</div>
+         <div class="meta">
+           <span class="pill ${t.priority}">${t.priority}</span>
+           <span class="small">${ago(t.created_at)}</span>
+         </div>
+         ${t.notes ? `<div class="notes">${t.notes.slice(0, 100)}</div>` : ""}
+       </div>`).join("");
+  }
+}
+
+async function loadSnapshot() {
+  try {
+    const r = await fetch("/api/snapshot");
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const s = await r.json();
+    renderSnapshot(s);
+  } catch (e) {
+    $("live").textContent = "ERROR";
+    $("live").classList.add("off");
+    console.error(e);
+  }
+}
+
+async function loadBoard() {
+  try {
+    const r = await fetch("/api/board");
+    const tasks = await r.json();
+    renderBoard(tasks);
+  } catch (e) { console.error(e); }
+}
+
+function openModal(task) {
+  $("modal-bg").classList.add("show");
+  if (task) {
+    $("modal-title").textContent = "Edit Task";
+    $("t-id").value = task.id;
+    $("t-title").value = task.title || "";
+    $("t-status").value = task.status || "pending";
+    $("t-priority").value = task.priority || "medium";
+    $("t-notes").value = task.notes || "";
+    $("t-delete").style.display = "inline-block";
+  } else {
+    $("modal-title").textContent = "New Task";
+    $("t-id").value = "";
+    $("t-title").value = "";
+    $("t-status").value = "pending";
+    $("t-priority").value = "medium";
+    $("t-notes").value = "";
+    $("t-delete").style.display = "none";
+  }
+}
+function closeModal() { $("modal-bg").classList.remove("show"); }
+
+document.addEventListener("click", async (e) => {
+  if (e.target.id === "add-task") openModal(null);
+  if (e.target.id === "t-cancel") closeModal();
+  if (e.target.id === "t-delete") {
+    const id = $("t-id").value;
+    if (!id) return;
+    if (!confirm("Delete this task?")) return;
+    await fetch("/api/board/delete?id=" + encodeURIComponent(id), { method: "POST" });
+    closeModal();
+    loadBoard();
+  }
+  const t = e.target.closest(".task");
+  if (t && t.dataset.id) {
+    const tasks = await (await fetch("/api/board")).json();
+    const task = tasks.find(x => x.id === t.dataset.id);
+    if (task) openModal(task);
+  }
+});
+
+document.getElementById("task-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const id = $("t-id").value;
+  const payload = {
+    title: $("t-title").value.trim(),
+    status: $("t-status").value,
+    priority: $("t-priority").value,
+    notes: $("t-notes").value,
+  };
+  if (!payload.title) return;
+  if (id) {
+    await fetch("/api/board/update?id=" + encodeURIComponent(id), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+  } else {
+    await fetch("/api/board", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+  }
+  closeModal();
+  loadBoard();
+});
+
+// SSE
+function connectSSE() {
+  const es = new EventSource("/events");
+  es.onopen = () => { $("live").textContent = "LIVE"; $("live").classList.remove("off"); };
+  es.onerror = () => { $("live").textContent = "OFFLINE"; $("live").classList.add("off"); es.close(); setTimeout(connectSSE, 3000); };
+  es.addEventListener("snapshot", (ev) => {
+    try { renderSnapshot(JSON.parse(ev.data)); } catch (e) {}
+  });
+}
+connectSSE();
+
+// Initial loads + periodic board refresh
+loadSnapshot();
+loadBoard();
+setInterval(loadBoard, 10000);
+setInterval(loadSnapshot, 60000);
+</script>
+</body>
+</html>

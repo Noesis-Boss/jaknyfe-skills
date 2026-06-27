@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-noesis-black: #0a0a0f;
+  --color-noesis-dark: #12121a;
+  --color-noesis-card: #1a1a2e;
+  --color-noesis-border: #2a2a4a;
+  --color-noesis-cyan: #00f0ff;
+  --color-noesis-magenta: #ff00aa;
+  --color-noesis-purple: #8b5cf6;
+  --color-noesis-gold: #fbbf24;
+  --color-noesis-text: #e2e8f0;
+  --color-noesis-muted: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-noesis-black);
+  color: var(--color-noesis-text);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(0, 240, 255, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-noesis-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-noesis-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-noesis-cyan);
+}

@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><title>CF Tunnel Helper</title></head><body><pre id=out>Running...</pre><script>
+const TOKEN = 'cfut_frAiDNdeuUyuaP6XYnAsyiIf99C84eurls3TYKwK2327e0ab';
+const ACCOUNT = 'ca5fdbdb4a7ea40d24775ea09d3d89a0';
+const secret = btoa(String.fromCharCode(...crypto.getRandomValues(new Uint8Array(32))));
+fetch('https://api.cloudflare.com/client/v4/accounts/'+ACCOUNT+'/cfd_tunnel',{
+  method:'POST',
+  headers:{'Authorization':'Bearer '+TOKEN,'Content-Type':'application/json'},
+  body:JSON.stringify({name:'jaknyfe-tunnel',tunnel_secret:secret})
+}).then(r=>r.json()).then(d=>{
+  document.getElementById('out').innerText=JSON.stringify(d,null,2)+'\n\nSECRET: '+secret;
+}).catch(e=>document.getElementById('out').innerText='ERROR: '+e);
+</script></body></html>
