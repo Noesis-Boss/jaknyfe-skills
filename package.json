@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@henkey/hermes-paperclip-adapter": "^0.4.3",
+    "@huggingface/transformers": "^4.2.0",
+    "@xenova/transformers": "^2.17.2",
     "ai-starter-skill-pack": "github:Jeff-Kazzee/ai-starter-skill-pack",
     "framer-motion": "^12.40.0",
     "react": "^19.2.7",

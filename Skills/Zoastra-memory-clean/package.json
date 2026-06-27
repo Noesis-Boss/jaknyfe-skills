@@ -1,0 +1,25 @@
+{
+  "name": "Zoastra-memory",
+  "version": "1.0.0",
+  "description": "Hybrid semantic + lexical memory layer on DataStax AstraDB with local Nomic embeddings.",
+  "type": "module",
+  "author": "Noesis-Boss (aka Jaknyfe)",
+  "license": "MIT",
+  "scripts": {
+    "status": "bun run scripts/sync.ts status",
+    "sync": "bun run scripts/sync.ts sync",
+    "setup": "bun run scripts/setup.ts",
+    "info": "bun run scripts/embed.ts info"
+  },
+  "engines": {
+    "bun": ">=1.2.0"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
+    "@xenova/transformers": "^2.17.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Noesis-Boss/Zoas"
+  }
+}

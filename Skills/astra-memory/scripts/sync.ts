@@ -15,6 +15,7 @@
 
 import { promises as fs } from "fs";
 import path from "path";
+import { spawnSync } from "child_process";
 
 const ASTRA_ENDPOINT = process.env.ASTRA_DB_ENDPOINT?.replace(/\/$/, "");
 const ASTRA_TOKEN = process.env.ASTRA_DB_APPLICATION_TOKEN;
@@ -165,6 +166,27 @@ interface ClarionDoc {
   tags: string[];
   project: string;
   title: string;
+  $vector?: number[];
+}
+
+// ---------- Embeddings (delegate to embed.ts subprocess) ----------
+
+function embed(kind: "query" | "doc", text: string): number[] {
+  const sub = spawnSync("bun", ["run", new URL("./embed.ts", import.meta.url).pathname, `embed-${kind}`, text], {
+    encoding: "utf8",
+    maxBuffer: 16 * 1024 * 1024,
+  });
+  if (sub.status !== 0) {
+    throw new Error(`embed failed: ${sub.stderr || sub.stdout}`);
+  }
+  const out = (sub.stdout || "").trim();
+  const lines = out.split("\n").filter((l) => l.startsWith("["));
+  if (lines.length === 0) throw new Error(`embed: no vector in output — ${out.slice(0, 200)}`);
+  return JSON.parse(lines[0]) as number[];
+}
+
+function embedDoc(text: string): number[] {
+  return embed("doc", text);
 }
 
 async function readClarion(): Promise<ClarionDoc[]> {
@@ -241,6 +263,9 @@ async function upsertAll(docs: ClarionDoc[]): Promise<{ inserted: number; skippe
       continue;
     }
     try {
+      if (!doc.$vector) {
+        doc.$vector = embedDoc(doc.text);
+      }
       await astra("POST", { insertOne: { document: doc } });
       inserted++;
     } catch (e: any) {
@@ -311,14 +336,64 @@ async function cmdQuery(args: string[]) {
     ?.split("=")[1];
   const text = args.filter((a) => !a.startsWith("--")).join(" ").trim();
   if (!text) {
-    console.log('Usage: query <text> [--source=zobodhi|clarion]');
+    console.log("Usage: query <text> [--source=zobodhi|clarion] [--limit=10]");
     return;
   }
-  const filter: Record<string, any> = {};
+  const limit = parseInt(
+    args.find((a) => a.startsWith("--limit="))?.split("=")[1] || "10",
+    10
+  );
+
+  console.log(`🔎 Hybrid search (semantic + lexical) for: "${text}"`);
+  const queryVec = embed("query", text);
+
+  // Vector ANN
+  const vectorFind = await astra("POST", {
+    find: {
+      sort: { $vector: queryVec },
+      options: { limit: limit * 3 },
+    },
+  });
+  const vectorDocs: any[] = vectorFind.data?.documents ?? [];
+
+  // Lexical (substring fallback against full corpus)
+  const all = await findAll({});
+  const q = text.toLowerCase();
+  const lexical: { id: string; doc: any; score: number }[] = [];
+  for (const d of all) {
+    const t = (d.text || "").toLowerCase();
+    const title = (d.title || "").toLowerCase();
+    let score = 0;
+    if (title.includes(q)) score += 10;
+    let idx = 0;
+    while ((idx = t.indexOf(q, idx)) !== -1) {
+      score += 1;
+      idx += q.length;
+    }
+    if (score > 0) lexical.push({ id: d._id, doc: d, score });
+  }
+  lexical.sort((a, b) => b.score - a.score);
+
+  // RRF fusion
+  const rrf = new Map<string, number>();
+  const docs = new Map<string, any>();
+  const k = 60;
+  vectorDocs.forEach((d, i) => {
+    rrf.set(d._id, (rrf.get(d._id) ?? 0) + 1 / (k + i + 1));
+    docs.set(d._id, d);
+  });
+  lexical.slice(0, limit * 3).forEach((r, i) => {
+    rrf.set(r.id, (rrf.get(r.id) ?? 0) + 1 / (k + i + 1));
+    if (!docs.has(r.id)) docs.set(r.id, r.doc);
+  });
+
+  // Source filter
+  let ranked = [...rrf.entries()]
+    .map(([id, score]) => ({ id, score, doc: docs.get(id) }))
+    .sort((a, b) => b.score - a.score);
   if (sourceArg) {
     const map: Record<string, string> = {
       zobodhi: "zobodhi",
-      clarion: "clarion_daily",
       daily: "clarion_daily",
       project: "clarion_project",
       feedback: "clarion_feedback",
@@ -326,38 +401,51 @@ async function cmdQuery(args: string[]) {
       topics: "clarion_topics",
       bootstrap: "clarion_bootstrap",
     };
-    filter.source = map[sourceArg] || sourceArg;
+    const want = map[sourceArg] || sourceArg;
+    ranked = ranked.filter((r) => r.doc?.source === want);
   }
-  const docs = await findAll(filter);
-  const q = text.toLowerCase();
-  const scored = docs
-    .map((d) => {
-      const t = (d.text || "").toLowerCase();
-      const title = (d.title || "").toLowerCase();
-      let score = 0;
-      if (title.includes(q)) score += 10;
-      // count occurrences
-      let idx = 0;
-      while ((idx = t.indexOf(q, idx)) !== -1) {
-        score += 1;
-        idx += q.length;
-      }
-      return { d, score };
-    })
-    .filter((r) => r.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 10);
 
-  if (scored.length === 0) {
-    console.log("🔎 No matching memories found.");
+  const top = ranked.slice(0, limit);
+  if (top.length === 0) {
+    console.log("🔍 No matching memories found.");
     return;
   }
-  console.log(`🔍 Top ${scored.length} matches:\n`);
-  for (const { d, score } of scored) {
-    console.log(`  [${d.source} | ${d.layer} | score=${score}] ${d.title}`);
+
+  const jsonMode = args.includes("--json");
+  if (jsonMode) {
+    const out = {
+      query: text,
+      embedding: { model: "nomic-embed-text-v1.5", dim: queryVec.length },
+      hybrid: { semantic: vectorDocs.length, lexical: lexical.length, k: 60 },
+      results: top.map(({ doc: d, score }) => {
+        const idx = (d.text || "").toLowerCase().indexOf(q);
+        const snippet =
+          idx >= 0
+            ? d.text
+                .slice(Math.max(0, idx - 60), Math.min(d.text.length, idx + 160))
+                .replace(/\n+/g, " ")
+            : (d.text || "").replace(/\n+/g, " ").slice(0, 160);
+        return {
+          source: d.source,
+          layer: d.layer,
+          project: d.project,
+          title: d.title,
+          path: d.path,
+          timestamp: d.timestamp,
+          rrf: +score.toFixed(6),
+          snippet,
+        };
+      }),
+    };
+    console.log(JSON.stringify(out, null, 2));
+    return;
+  }
+
+  console.log(`\n📌 Top ${top.length} matches (RRF fusion):\n`);
+  for (const { doc: d, score } of top) {
+    console.log(`  [${d.source} | ${d.layer} | rrf=${score.toFixed(4)}] ${d.title}`);
     console.log(`    ${d.path}`);
     console.log(`    ${d.timestamp}`);
-    // show a snippet
     const idx = (d.text || "").toLowerCase().indexOf(q);
     if (idx >= 0) {
       const start = Math.max(0, idx - 60);
@@ -397,6 +485,7 @@ async function cmdAdd(args: string[]) {
     tags: [],
     project: "general",
     title: fact.text.replace(/\s+/g, " ").slice(0, 80),
+    $vector: embed("doc", fact.text),
   };
   await astra("POST", { insertOne: { document: doc } });
   console.log("☁️  Inserted into Astra memories");

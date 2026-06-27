@@ -77,6 +77,12 @@
       "text": "Task worker startup verification: Syndicate was asleep at first, localhost checks failed, Syndicate service was restarted/woken, and task-worker authenticated successfully without code changes.",
       "addedAt": "2026-06-26T03:35:43.028Z",
       "tags": []
+    },
+    {
+      "id": 1782529752749,
+      "text": "Astra memory uses local nomic-embed-text-v1.5 (768-dim, cosine) with hybrid RRF retrieval. Always query via 'sync.ts query <text>' when the user asks about past context, prior decisions, recurring projects, or ambiguous references — returns semantic + lexical matches.",
+      "addedAt": "2026-06-27T03:09:12.749Z",
+      "tags": []
     }
   ]
 }
