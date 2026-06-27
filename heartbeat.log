@@ -395,3 +395,9 @@ Claiming seat at Sat Jun 27 00:00:42 UTC 2026
 Sending heartbeat at Sat Jun 27 00:00:42 UTC 2026
 {"expires_at":"2026-06-28T00:00:43.046841Z","heartbeat":"2026-06-27T00:00:43.046841Z","message":"Seat 0 refreshed. Send another heartbeat before 2026-06-28T00:00:43.046841Z.","seat":0,"success":true}
 
+Claiming seat at Sat Jun 27 01:02:35 UTC 2026
+{"message":"You already hold seat 0","seat":0,"success":true}
+
+Sending heartbeat at Sat Jun 27 01:02:35 UTC 2026
+{"expires_at":"2026-06-28T01:02:35.954806Z","heartbeat":"2026-06-27T01:02:35.954806Z","message":"Seat 0 refreshed. Send another heartbeat before 2026-06-28T01:02:35.954806Z.","seat":0,"success":true}
+

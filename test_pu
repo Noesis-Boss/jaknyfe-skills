@@ -1,0 +1,4 @@
+import { initDb, getDb } from './server/dist/db/index.js';
+initDb();
+const db = getDb();
+const key = db.prepare('SELECT id, encrypted_key FROM api_keys WHERE platfor
