@@ -1,0 +1,21 @@
+{
+  "name": "savings-goals-api",
+  "version": "1.0.0",
+  "description": "REST API for managing user savings goals",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun src/index.ts"
+  },
+  "dependencies": {
+    "hono": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "@types/node": "^26.0.0",
+    "bun-types": "latest",
+    "typescript": "latest"
+  }
+}

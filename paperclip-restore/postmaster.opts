@@ -1,0 +1,1 @@
+/usr/lib/postgresql/15/bin/postgres "-D" "/home/workspace/paperclip-restore" "-p" "5433" "-k" "/tmp"

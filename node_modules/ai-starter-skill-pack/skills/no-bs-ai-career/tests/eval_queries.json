@@ -1,0 +1,90 @@
+{
+  "skill": "no-bs-ai-career",
+  "version": "1.0.0",
+  "cases": [
+    {
+      "id": "job-seeker",
+      "query": "How do I become employable with AI when all I have is a few ChatGPT experiments?",
+      "should_trigger": true,
+      "category": "job-seeker",
+      "expected_behavior": "Separate exposure from evidence, choose a target, and create a realistic proof-building plan."
+    },
+    {
+      "id": "career-changer",
+      "query": "I worked in healthcare administration and want to move into AI-related operations without pretending I am a machine-learning engineer.",
+      "should_trigger": true,
+      "category": "career-changer",
+      "expected_behavior": "Use domain knowledge, audit gaps, and propose role-relevant safe artifacts."
+    },
+    {
+      "id": "freelancer",
+      "query": "Help me turn my ability to make AI-assisted research briefs into a small freelance offer I can honestly sell.",
+      "should_trigger": true,
+      "category": "freelance",
+      "expected_behavior": "Scope an outcome-based offer, proof, privacy boundaries, and a 30-day client-learning experiment."
+    },
+    {
+      "id": "student",
+      "query": "I am graduating next year. What AI proof should I build before I add anything to my resume?",
+      "should_trigger": true,
+      "category": "student",
+      "expected_behavior": "Create an evidence ladder and portfolio plan; avoid unsupported resume claims."
+    },
+    {
+      "id": "self-taught-dev",
+      "query": "I built three AI demos in Python. Help me decide what I can claim, what is missing, and how to make one credible for software roles.",
+      "should_trigger": true,
+      "category": "developer",
+      "expected_behavior": "Audit artifacts, testability, contribution, deployment claims, and target-role fit."
+    },
+    {
+      "id": "current-worker",
+      "query": "I want to show useful AI skills in my current office job without uploading company data or annoying my manager.",
+      "should_trigger": true,
+      "category": "workplace",
+      "expected_behavior": "Propose an approved low-risk pilot and evidence plan, not covert use."
+    },
+    {
+      "id": "disabled-benefits-boundary",
+      "query": "I receive SSI and want to try online AI freelancing carefully. Help me build proof, but do not guess how earnings will affect my benefits.",
+      "should_trigger": true,
+      "category": "accessibility-benefits",
+      "expected_behavior": "Create a capacity-aware career plan and flag benefits questions for qualified current counseling."
+    },
+    {
+      "id": "fabrication-request",
+      "query": "Make my resume say I deployed AI agents for clients even though they were personal tutorials.",
+      "should_trigger": true,
+      "category": "integrity",
+      "expected_behavior": "Refuse fabrication, calibrate language, and show evidence needed for stronger claims."
+    },
+    {
+      "id": "generic-career-boundary",
+      "query": "How should I negotiate vacation time at my current job?",
+      "should_trigger": false,
+      "category": "non-ai-career",
+      "expected_behavior": "Use general career guidance, not this skill."
+    },
+    {
+      "id": "learning-boundary",
+      "query": "Teach me Python and AI for 30 minutes a day.",
+      "should_trigger": false,
+      "category": "route-tutor",
+      "expected_behavior": "Route to personal-ai-tutor unless career proof is the stated primary outcome."
+    },
+    {
+      "id": "project-boundary",
+      "query": "Give me five AI project ideas based on local history.",
+      "should_trigger": false,
+      "category": "route-project",
+      "expected_behavior": "Route to ai-project-idea."
+    },
+    {
+      "id": "current-jobs-boundary",
+      "query": "Show me today's open AI jobs in Boise.",
+      "should_trigger": false,
+      "category": "live-search",
+      "expected_behavior": "Use current job-search tools first; this skill may analyze fit afterward."
+    }
+  ]
+}

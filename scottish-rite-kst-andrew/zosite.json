@@ -1,0 +1,14 @@
+{
+  "name": "scottish-rite-kst-andrew",
+  "local_port": 51000,
+  "entrypoint": "bun run dev",
+  "publish": {
+    "label": "scottish-rite-kst-andrew",
+    "type": "http",
+    "entrypoint": "bash -c 'bun run build && cd dist && python3 -m http.server 51001 --bind 0.0.0.0'",
+    "published_port": 51001,
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
+}

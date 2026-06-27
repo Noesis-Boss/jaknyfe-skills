@@ -1,0 +1,24 @@
+{
+  "name": "scottish-rite-kst-andrew",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@henkey/hermes-paperclip-adapter": "^0.4.3",
+    "ai-starter-skill-pack": "github:Jeff-Kazzee/ai-starter-skill-pack",
+    "framer-motion": "^12.40.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "@vitejs/plugin-react": "^6.0.2",
+    "tailwindcss": "^4.3.0",
+    "vite": "^8.0.16"
+  }
+}

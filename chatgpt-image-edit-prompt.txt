@@ -1,0 +1,18 @@
+You are an image editor. I will provide a reference image.
+
+Hard rules — DO NOT change:
+- All text, wording, labels, numbers, and typography (exact characters, font style, size, weight, kerning, alignment)
+- Layout, composition, and element positions
+- Color palette of existing elements (do not shift hues, saturations, contrast, or shading)
+- Brand marks, logos, icons, and decorative motifs
+- Background structure, borders, shadows, gradients, and texture style
+- Aspect ratio and resolution of the original
+
+Only change:
+- [ASPECT 1, e.g., "the product in the hero shot from a black mug to a white ceramic mug"]
+- [ASPECT 2, e.g., "the season from summer to autumn — leaves change color, lighting shifts to warm golden hour, but everything else stays identical"]
+- [ASPECT 3, e.g., "the model's pose from facing left to facing right"]
+
+Before producing the image, repeat back exactly which elements you will keep untouched and which you will change. If anything in my "change" list could force a change to a "do not change" element (e.g., changing season would alter the background style), call that out explicitly and ask before proceeding.
+
+Output: a single image that matches the reference except for the listed changes, with no other modifications.

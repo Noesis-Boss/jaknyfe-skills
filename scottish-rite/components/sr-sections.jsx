@@ -1,4 +1,3 @@
-
 // About, Degrees, Events sections
 
 export const Ornament = () => (
@@ -35,7 +34,7 @@ export const SectionHeader = ({ eyebrow, title, subtitle, light }) => (
 );
 
 // ── ABOUT ──────────────────────────────────────────────────────────────────
-const SRAbout = () => {
+export const SRAbout = () => {
   const pillars = [
     { icon: '⬟', title: 'Charity', text: 'Supporting children\'s language disorders, scholarships, and community service throughout Southern Arizona.' },
     { icon: '⬟', title: 'Justice', text: 'Committed to equity, brotherhood, and the fair treatment of all members of our society.' },
@@ -100,12 +99,14 @@ const SRAbout = () => {
 };
 
 // ── DEGREES ────────────────────────────────────────────────────────────────
-const SRDegrees = () => {
+export const SRDegrees = () => {
   const [active, setActive] = React.useState(null);
   const degrees = [
     { num: '4°–14°', body: 'Lodge of Perfection', title: 'Ancient Craft Degrees', text: 'The first series explores the building of Solomon\'s Temple and teaches lessons of loyalty, duty, and the search for what was lost.' },
     { num: '15°–18°', body: 'Chapter of Rose Croix', title: 'Rose Croix Degrees', text: 'This series focuses on spiritual regeneration and the search for truth, culminating in the Knight of the Rose Croix.' },
-    { num: '19°–30°', body: 'Council of Kadosh', title: 'Kadosh Degrees', text: 'An examination of chivalry, civic duty, and the philosophic and social aspects of Masonry through a medieval lens.' },
+    { num: '19°–28°', body: 'Council of Kadosh', title: 'Kadosh Degrees (19°-28°)', text: 'An examination of chivalry, civic duty, and the philosophic and social aspects of Masonry through a medieval lens, preparing for the chivalric virtues of the Knight of St. Andrew.' },
+    { num: '29°', body: 'Knight of St. Andrew', title: 'Knight of St. Andrew', text: 'The 29th degree, Knight of St. Andrew, exemplifies the virtues of chivalry, loyalty to God and country, and faithfulness to one\'s obligations. This degree emphasizes the ideals of the Christian knight and the defense of the faith.' },
+    { num: '30°', body: 'Council of Kadosh', title: 'Kadosh Degree (30°)', text: 'The Grand Kadosh degree, continuing the exploration of chivalric and philosophical truths.' },
     { num: '31°–32°', body: 'Consistory', title: 'Consistory Degrees', text: 'The culminating degrees of the Scottish Rite, conferring the title of Master of the Royal Secret and the 32° of Sublime Prince.' },
     { num: '33°', body: 'Supreme Council', title: 'Inspector General Honorary', text: 'The highest honor the Scottish Rite can bestow, conferred by the Supreme Council upon Brethren in recognition of outstanding service.' },
   ];
@@ -141,7 +142,7 @@ const SRDegrees = () => {
 };
 
 // ── EVENTS ─────────────────────────────────────────────────────────────────
-const SREvents = () => {
+export const SREvents = () => {
   const events = [
     { date: { month: 'May', day: '6' }, title: 'Stated Meeting', type: 'Meeting', desc: 'Regular stated meeting of the Valley. All members welcome. Dinner at 6:00 PM, meeting at 7:00 PM.' },
     { date: { month: 'May', day: '17' }, title: 'Reunion — Spring Degree Conferral', type: 'Reunion', desc: 'Spring degrees conferred. Candidates and sponsors are asked to arrive by 8:00 AM sharp.' },

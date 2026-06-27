@@ -1,0 +1,90 @@
+{
+  "skill": "ai-beginner-onboarding",
+  "version": "1.0.0",
+  "cases": [
+    {
+      "id": "explicit-overwhelmed",
+      "query": "I want to get into AI, but ChatGPT, Claude, Gemini, agents, and all the courses are overwhelming. Make me a sane beginner plan.",
+      "should_trigger": true,
+      "category": "explicit",
+      "expected_behavior": "Reduce choices, gather or infer constraints, and produce the full onboarding output."
+    },
+    {
+      "id": "vague-start",
+      "query": "Where do I even start with AI?",
+      "should_trigger": true,
+      "category": "vague",
+      "expected_behavior": "Ask a small bundled intake or proceed with labeled assumptions; do not dump a tool list."
+    },
+    {
+      "id": "casual-life-use",
+      "query": "I have never used an AI assistant seriously. Can you help me find one useful thing to do with it around the house?",
+      "should_trigger": true,
+      "category": "casual",
+      "expected_behavior": "Choose a low-risk household workflow and a tiny practice plan."
+    },
+    {
+      "id": "anxious-access-needs",
+      "query": "I am disabled, get tired quickly, and feel behind. I only have a phone and maybe ten minutes most days. Is learning AI realistic?",
+      "should_trigger": true,
+      "category": "anxious-accessibility",
+      "expected_behavior": "Respect energy and device limits, avoid pity or hype, and provide a ten-minute-compatible route."
+    },
+    {
+      "id": "small-business-start",
+      "query": "How should I start using AI in my one-person cleaning business without buying a bunch of software?",
+      "should_trigger": true,
+      "category": "work",
+      "expected_behavior": "Identify a safe business task, recommend a tiny stack, and include data-policy cautions."
+    },
+    {
+      "id": "student-start",
+      "query": "I am a college freshman and want a seven-day plan for learning to use AI without having it do my assignments for me.",
+      "should_trigger": true,
+      "category": "student",
+      "expected_behavior": "Create a learning-by-doing plan with academic-integrity and verification steps."
+    },
+    {
+      "id": "prompt-boundary",
+      "query": "Here is my prompt. It asks for a meal plan but keeps ignoring my requested table. Fix it.",
+      "should_trigger": false,
+      "category": "route-prompt-debugger",
+      "expected_behavior": "Route to prompt-debugger."
+    },
+    {
+      "id": "career-boundary",
+      "query": "Rewrite my resume so I can apply for AI product manager jobs.",
+      "should_trigger": false,
+      "category": "route-career",
+      "expected_behavior": "Route to no-bs-ai-career or a resume specialist."
+    },
+    {
+      "id": "project-boundary",
+      "query": "Give me five weird AI web app ideas I can build this weekend with Python.",
+      "should_trigger": false,
+      "category": "route-project",
+      "expected_behavior": "Route to ai-project-idea."
+    },
+    {
+      "id": "advanced-boundary",
+      "query": "Design a distributed evaluation harness for measuring tool-use calibration across frontier models.",
+      "should_trigger": false,
+      "category": "advanced",
+      "expected_behavior": "Do not use beginner onboarding."
+    },
+    {
+      "id": "one-off-question",
+      "query": "What does LLM stand for?",
+      "should_trigger": false,
+      "category": "one-off",
+      "expected_behavior": "Answer directly without invoking a full onboarding plan."
+    },
+    {
+      "id": "implicit-tool-shopping",
+      "query": "Do I need ChatGPT Plus, Claude Pro, Cursor, Zapier, Make, n8n, and a local model before I can do anything useful?",
+      "should_trigger": true,
+      "category": "implicit-overload",
+      "expected_behavior": "Reject unnecessary tool accumulation and select a minimal starting point."
+    }
+  ]
+}

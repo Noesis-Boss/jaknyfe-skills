@@ -1,0 +1,29 @@
+{
+  "name": "ai-starter-skill-pack",
+  "version": "0.1.0",
+  "description": "Beginner-friendly Agent Skills for AI onboarding, learning, prompt debugging, project ideas, and career proof.",
+  "license": "MIT",
+  "homepage": "https://jeff-kazzee.github.io/ai-starter-skill-pack/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeff-Kazzee/ai-starter-skill-pack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jeff-Kazzee/ai-starter-skill-pack/issues"
+  },
+  "keywords": [
+    "agent-skills",
+    "ai",
+    "ai-beginners",
+    "codex",
+    "claude-code",
+    "prompt-debugging"
+  ],
+  "files": [
+    "skills/",
+    "shared/"
+  ],
+  "scripts": {
+    "pack:check": "npm pack --dry-run"
+  }
+}

@@ -1,0 +1,30 @@
+wing: scottish_rite
+rooms:
+- name: src
+  description: Files from src/
+  keywords:
+  - src
+  - src
+- name: frontend
+  description: Files from components/
+  keywords:
+  - frontend
+  - components
+- name: mempalace_memory
+  description: Files from mempalace-memory/
+  keywords:
+  - mempalace_memory
+  - mempalace-memory
+- name: scraps
+  description: Files from scraps/
+  keywords:
+  - scraps
+  - scraps
+- name: uploads
+  description: Files from uploads/
+  keywords:
+  - uploads
+  - uploads
+- name: general
+  description: Files that don't fit other rooms
+  keywords: []

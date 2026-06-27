@@ -1,0 +1,39 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "The Void",
+          "summary": "Stream The Void",
+          "description": "Plays audio from the void stream.",
+          "examplePhrases": [
+            "Alexa, open the void",
+            "Alexa, play the void",
+            "Alexa, start the void"
+          ]
+        }
+      },
+      "isAvailableInCountries": true,
+      "isAvailableForAllUsers": true,
+      "category": "MUSIC_AND_AUDIO",
+      "testingInstructions": "Open the skill and it plays music."
+    },
+    "apis": {
+      "custom": {
+        "interfaces": [
+          {
+            "type": "AUDIO_PLAYER"
+          }
+        ]
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false
+    }
+  }
+}

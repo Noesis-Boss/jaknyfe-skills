@@ -1,0 +1,7 @@
+{
+  "indexing_model": "zo:openai/gpt-5.4-mini",
+  "indexing_fallback_model": "zo:minimax/minimax-m2.5",
+  "reasoning_model": "zo:openai/gpt-5.4-mini",
+  "sec_user_agent": "Don delowery@gmail.com",
+  "data_root": "/home/workspace/clarion"
+}

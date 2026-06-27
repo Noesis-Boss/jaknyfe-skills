@@ -1,0 +1,11 @@
+import crypto from 'crypto';
+import { initDb, getUnifiedApiKey } from './dist/db/index.js';
+initDb();
+const key = getUnifiedApiKey();
+const provided = 'freellmapi-6a37c97329fd76ba38c8b48836fdd8e9a763e8ba3d8676ee';
+const hmacKey = Buffer.alloc(32);
+const a = crypto.createHmac('sha256', hmacKey).update(provided).digest();
+const b = crypto.createHmac('sha256', hmacKey).update(key).digest();
+console.log('timingSafeEqual:', crypto.timingSafeEqual(a, b));
+console.log('direct ===:', provided === key);
+console.log('key length:', key.length, 'provided length:', provided.length);

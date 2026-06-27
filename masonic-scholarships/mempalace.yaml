@@ -1,0 +1,15 @@
+wing: masonic_scholarships
+rooms:
+- name: source
+  description: Files from source/
+  keywords:
+  - source
+  - source
+- name: ingest
+  description: Files from ingest/
+  keywords:
+  - ingest
+  - ingest
+- name: general
+  description: Files that don't fit other rooms
+  keywords: []

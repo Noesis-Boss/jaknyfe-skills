@@ -202,4 +202,4 @@ const SREvents = () => {
   );
 };
 
-Object.assign(window, { SRAbout, SRDegrees, SREvents, SectionHeader, Ornament });
+export { SRAbout, SRDegrees, SREvents, SectionHeader, Ornament };
