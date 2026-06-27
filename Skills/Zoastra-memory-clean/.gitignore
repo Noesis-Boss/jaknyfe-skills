@@ -1,0 +1,18 @@
+node_modules/
+.cache/
+.env
+.env.local
+.envrc
+
+# Runtime state
+scripts/last-sync.json
+
+# User data — populate these yourself
+memory/
+memory.json
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/

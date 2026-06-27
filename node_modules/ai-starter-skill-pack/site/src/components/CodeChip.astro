@@ -1,0 +1,13 @@
+---
+import CopyButton from './CopyButton.astro';
+
+interface Props {
+  command: string;
+}
+const { command } = Astro.props;
+---
+<div class="chip">
+  <span class="chip__prompt" aria-hidden="true">$</span>
+  <code>{command}</code>
+  <CopyButton text={command} />
+</div>

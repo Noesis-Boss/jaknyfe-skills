@@ -401,3 +401,27 @@ Claiming seat at Sat Jun 27 01:02:35 UTC 2026
 Sending heartbeat at Sat Jun 27 01:02:35 UTC 2026
 {"expires_at":"2026-06-28T01:02:35.954806Z","heartbeat":"2026-06-27T01:02:35.954806Z","message":"Seat 0 refreshed. Send another heartbeat before 2026-06-28T01:02:35.954806Z.","seat":0,"success":true}
 
+Claiming seat at Sat Jun 27 02:00:36 UTC 2026
+{"message":"You already hold seat 0","seat":0,"success":true}
+
+Sending heartbeat at Sat Jun 27 02:00:36 UTC 2026
+{"expires_at":"2026-06-28T02:00:36.610017Z","heartbeat":"2026-06-27T02:00:36.610017Z","message":"Seat 0 refreshed. Send another heartbeat before 2026-06-28T02:00:36.610017Z.","seat":0,"success":true}
+
+Claiming seat at Sat Jun 27 03:00:51 UTC 2026
+{"message":"You already hold seat 0","seat":0,"success":true}
+
+Sending heartbeat at Sat Jun 27 03:00:51 UTC 2026
+{"expires_at":"2026-06-28T03:00:51.369253Z","heartbeat":"2026-06-27T03:00:51.369253Z","message":"Seat 0 refreshed. Send another heartbeat before 2026-06-28T03:00:51.369253Z.","seat":0,"success":true}
+
+Claiming seat at Sat Jun 27 04:15:35 UTC 2026
+{"message":"You already hold seat 0","seat":0,"success":true}
+
+Sending heartbeat at Sat Jun 27 04:15:36 UTC 2026
+{"expires_at":"2026-06-28T04:15:37.112394Z","heartbeat":"2026-06-27T04:15:37.112394Z","message":"Seat 0 refreshed. Send another heartbeat before 2026-06-28T04:15:37.112394Z.","seat":0,"success":true}
+
+Claiming seat at Sat Jun 27 05:01:10 UTC 2026
+{"message":"You already hold seat 0","seat":0,"success":true}
+
+Sending heartbeat at Sat Jun 27 05:01:10 UTC 2026
+{"expires_at":"2026-06-28T05:01:11.003636Z","heartbeat":"2026-06-27T05:01:11.003636Z","message":"Seat 0 refreshed. Send another heartbeat before 2026-06-28T05:01:11.003636Z.","seat":0,"success":true}
+
