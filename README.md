@@ -40,6 +40,7 @@ git clone https://github.com/Noesis-Boss/jaknyfe-skills.git
 | pr-summarizer | Summarize PRs and their impact |
 | psych-tricks | Persuasion and psychology playbooks for marketing copy |
 | romantasy-autonovel | Romantasy fiction generation and writing assistant |
+| Zo-autonovel | Autonomous novel generation framework for Zo Computer |
 | vibe-coding-assistant | Act as a Technical Co-Founder — Discovery → Planning → Building → Polish → Launch |
 | x-twitter-by-altf1be | Post tweets to X (Twitter) API |
 | zo-google-direct-oauth | Direct OAuth flow for Google APIs |
