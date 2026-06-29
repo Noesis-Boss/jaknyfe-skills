@@ -20,34 +20,33 @@ git clone https://github.com/Noesis-Boss/jaknyfe-skills.git
 
 | Skill | What it does |
 | --- | --- |
-| caveman-code | Run the caveman-code CLI — token-saving coding agent with multi-provider auth |
-| clarion-portfolio-monitor | Fetch live TastyTrade portfolio positions, balances, and daily transactions |
-| content360 | Integrate with Content360 (app.content360.io) to create, schedule, and publish social media content |
-| coverage-checker | Analyze test coverage and identify untested code |
-| dead-code | Find dead/unused code with vulture, knip, and pyright |
-| design-md | Create, validate, and manage DESIGN.md design system files for AI agents |
-| error-analyzer | Analyze error logs and identify root causes |
-| free-models-for-openclaw | Track free LLM models compatible with OpenClaw |
-| gog | Google Workspace CLI operations |
-| gumroad-product-builder | Build and launch Gumroad products |
-| hatch-pet | Tamagotchi-style hatchable pet companion |
-| hook-generator | Attention-grabbing first-line generator for X posts, articles, and other top-of-copy surfaces |
-| huggingface-hub | Browse and use models, datasets, and spaces on Hugging Face Hub |
-| ifixai | AI-powered device repair assistant |
-| last30days | Research any topic across 30+ sources from the last 30 days |
-| memory | Durable memory management using the four-layer memory model |
-| migration-gen | Generate migration scripts between frameworks/formats |
-| pr-summarizer | Summarize PRs and their impact |
-| psych-tricks | Persuasion and psychology playbooks for marketing copy |
-| romantasy-autonovel | Romantasy fiction generation and writing assistant |
-| Zo-autonovel | Autonomous novel generation framework for Zo Computer |
-| vibe-coding-assistant | Act as a Technical Co-Founder — Discovery → Planning → Building → Polish → Launch |
-| x-twitter-by-altf1be | Post tweets to X (Twitter) API |
-| zo-google-direct-oauth | Direct OAuth flow for Google APIs |
-| zo-persona-creator | Create and manage Zo AI personas |
-| zo-twitter | Twitter/X utilities for Zo automations |
-| zobodhi-memory | Persistent memory store for the zobodhi system |
-| zo-goal-loop | Recreates Claude Code's /goal and /loop commands — autonomous task execution |
+| [caveman-code](skills/caveman-code/) | Run the caveman-code CLI — token-saving coding agent with multi-provider auth |
+| [clarion-portfolio-monitor](skills/clarion-portfolio-monitor/) | Fetch live TastyTrade portfolio positions, balances, and daily transactions |
+| [content360](skills/content360/) | Integrate with Content360 (app.content360.io) to create, schedule, and publish social media content |
+| [coverage-checker](skills/coverage-checker/) | Analyze test coverage and identify untested code |
+| [dead-code](skills/dead-code/) | Find dead/unused code with vulture, knip, and pyright |
+| [design-md](skills/design-md/) | Create, validate, and manage DESIGN.md design system files for AI agents |
+| [error-analyzer](skills/error-analyzer/) | Analyze error logs and identify root causes |
+| [free-models-for-openclaw](skills/free-models-for-openclaw/) | Track free LLM models compatible with OpenClaw |
+| [gog](skills/gog/) | Google Workspace CLI operations |
+| [gumroad-product-builder](skills/gumroad-product-builder/) | Build and launch Gumroad products |
+| [hatch-pet](skills/hatch-pet/) | Tamagotchi-style hatchable pet companion |
+| [hook-generator](skills/hook-generator/) | Attention-grabbing first-line generator for X posts, articles, and other top-of-copy surfaces |
+| [huggingface-hub](skills/huggingface-hub/) | Browse and use models, datasets, and spaces on Hugging Face Hub |
+| [ifixai](skills/ifixai/) | AI-powered device repair assistant |
+| [last30days](skills/last30days/) | Research any topic across 30+ sources from the last 30 days |
+| [memory](skills/memory/) | Durable memory management using the four-layer memory model |
+| [migration-gen](skills/migration-gen/) | Generate migration scripts between frameworks/formats |
+| [pr-summarizer](skills/pr-summarizer/) | Summarize PRs and their impact |
+| [psych-tricks](skills/psych-tricks/) | Persuasion and psychology playbooks for marketing copy |
+| [Zo-autonovel](skills/Zo-autonovel/) | Autonomous novel generation framework for Zo Computer |
+| [vibe-coding-assistant](skills/vibe-coding-assistant/) | Act as a Technical Co-Founder — Discovery → Planning → Building → Polish → Launch |
+| [x-twitter-by-altf1be](skills/x-twitter-by-altf1be/) | Post tweets to X (Twitter) API |
+| [zo-google-direct-oauth](skills/zo-google-direct-oauth/) | Direct OAuth flow for Google APIs |
+| [zo-persona-creator](skills/zo-persona-creator/) | Create and manage Zo AI personas |
+| [zo-twitter](skills/zo-twitter/) | Twitter/X utilities for Zo automations |
+| [zobodhi-memory](skills/zobodhi-memory/) | Persistent memory store for the zobodhi system |
+| [zo-goal-loop](skills/zo-goal-loop/) | Recreates Claude Code's /goal and /loop commands — autonomous task execution |
 
 ## Provenance
 
