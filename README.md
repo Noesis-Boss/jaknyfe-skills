@@ -2,7 +2,7 @@
 
 My personal collection of agent skills for Zo Computer — the ones I wrote or forked and that aren't part of the upstream [zocomputer/skills](https://github.com/zocomputer/skills) registry.
 
-26 skills, ~4.6 MB.
+27 skills, ~4.6 MB.
 
 ## Install
 
@@ -46,6 +46,7 @@ git clone https://github.com/Noesis-Boss/jaknyfe-skills.git
 | zo-persona-creator | Create and manage Zo AI personas |
 | zo-twitter | Twitter/X utilities for Zo automations |
 | zobodhi-memory | Persistent memory store for the zobodhi system |
+| zo-goal-loop | Recreates Claude Code's /goal and /loop commands — autonomous task execution |
 
 ## Provenance
 
