@@ -18,5 +18,5 @@
 | memory/projects/hook-generator.md | project | hook-generator skill + cross-session rule for auto-posted X / article / LinkedIn first lines |
 | memory/projects/astra-memory.md | project | DataStax AstraDB mirror of zobodhi + Clarion memory, unified query |
 | memory/projects/meerkat-mcp.md | project | Meerkat (getmeerkat.dev) MCP evaluation — auth captured, /api/custom-chat broken, paused |
-| memory/projects/bound-by-ash-and-thorn.md | project | Bound by Ash and Thorn — 87,796-word fantasy romance novel, Act III expanded (26 ch) |
+| memory/projects/bound-by-ash-and-thorn.md | project | Bound by Ash and Thorn — 99,346-word romantasy novel (Book 1 of The Withered Court trilogy), v7 prose pass complete (eval 9.76/10), manuscript + PDF up to date, query letter drafted |
 | memory/daily/2026-06-27.md | daily | Astra memory upgraded — local Nomic embeddings + hybrid semantic/lexical RRF |
