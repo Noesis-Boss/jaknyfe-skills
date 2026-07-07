@@ -40,6 +40,7 @@ The system is **exercise (walking) + protein targeting + calorie deficit**. No s
 ## 3. Delivery Format & Platform
 
 **Chosen: Course + lightweight web tracker (free standalone front door).**
+Course format (**B**): in-app lessons on the Zo Site **+ downloadable PDF guides** per tier (selected).
 
 The free **tracker** (Zo Site) is the front door. Because it must **hold each user's data over time**, it requires an **email-based account** — **passwordless magic-link OR Google OAuth** (both yield a verified email; low friction, no password to forget). Account creation captures the email natively (= lead for nurture/retargeting). Always-visible "Unlock the 12-week plan" upsell retained. The signup is a *value exchange* (your data persists across sessions), not a separate lead-magnet gate.
 
