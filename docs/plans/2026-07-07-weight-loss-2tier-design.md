@@ -41,9 +41,9 @@ The system is **exercise (walking) + protein targeting + calorie deficit**. No s
 
 **Chosen: Course + lightweight web tracker (free standalone front door).**
 
-The free **tracker** (Zo Site) is the front door. Because it must **hold each user's data over time**, it requires an **email-based account** (passwordless magic-link login — low friction, no password to forget). Account creation captures the email natively (= lead for nurture/retargeting). Always-visible "Unlock the 12-week plan" upsell retained. The signup is a *value exchange* (your data persists across sessions), not a separate lead-magnet gate.
+The free **tracker** (Zo Site) is the front door. Because it must **hold each user's data over time**, it requires an **email-based account** — **passwordless magic-link OR Google OAuth** (both yield a verified email; low friction, no password to forget). Account creation captures the email natively (= lead for nurture/retargeting). Always-visible "Unlock the 12-week plan" upsell retained. The signup is a *value exchange* (your data persists across sessions), not a separate lead-magnet gate.
 
-**Auth & storage:** Email-based passwordless (magic-link) auth. Per-user data (weight, steps, calories eaten, exercise burn, protein) persisted in SQLite (Zo Site backend / managed user service). No passwords stored. Privacy policy + explicit consent at signup — email is PII (FTC/GDPR-aligned).
+**Auth & storage:** Email-based — **passwordless magic-link OR Google OAuth** — both produce a verified email tied to the account. Magic-link emails sent via Resend (already connected). Google OAuth requires a Google Cloud OAuth client (client ID/secret stored as secrets) + a registered redirect URI. Per-user data (weight, steps, calories eaten, exercise burn, protein) persisted in SQLite (Zo Site backend / managed user service). No passwords stored. Privacy policy + explicit consent at signup — email is PII (FTC/GDPR-aligned).
 
 Built on existing Vite/React stack; source owned by user. Stripe Connect (already connected) for checkout.
 
@@ -63,7 +63,7 @@ Built on existing Vite/React stack; source owned by user. Stripe Connect (alread
 - Rebound-proofing + maintenance exit
 
 **Build order:**
-1. Free tracker Zo Site (front door / MVP) — email magic-link auth + persistent per-user storage
+1. Free tracker Zo Site (front door / MVP) — email magic-link + Google OAuth + persistent per-user storage
 2. Tier 1 course (12 modules)
 3. Tier 2 course + coaching/community layer (after Tier 1 converts)
 
