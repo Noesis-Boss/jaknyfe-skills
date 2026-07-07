@@ -41,7 +41,9 @@ The system is **exercise (walking) + protein targeting + calorie deficit**. No s
 
 **Chosen: Course + lightweight web tracker (free standalone front door).**
 
-The free **tracker** (Zo Site) is the front door — anyone can compute their protein target, deficit status, and step goal, and see the 50/50 progress curve. Always-visible "Unlock the 12-week plan" upsell (no hard email gate). It captures leads via value, not friction.
+The free **tracker** (Zo Site) is the front door. Because it must **hold each user's data over time**, it requires an **email-based account** (passwordless magic-link login — low friction, no password to forget). Account creation captures the email natively (= lead for nurture/retargeting). Always-visible "Unlock the 12-week plan" upsell retained. The signup is a *value exchange* (your data persists across sessions), not a separate lead-magnet gate.
+
+**Auth & storage:** Email-based passwordless (magic-link) auth. Per-user data (weight, steps, calories eaten, exercise burn, protein) persisted in SQLite (Zo Site backend / managed user service). No passwords stored. Privacy policy + explicit consent at signup — email is PII (FTC/GDPR-aligned).
 
 Built on existing Vite/React stack; source owned by user. Stripe Connect (already connected) for checkout.
 
@@ -61,7 +63,7 @@ Built on existing Vite/React stack; source owned by user. Stripe Connect (alread
 - Rebound-proofing + maintenance exit
 
 **Build order:**
-1. Free tracker Zo Site (front door / MVP)
+1. Free tracker Zo Site (front door / MVP) — email magic-link auth + persistent per-user storage
 2. Tier 1 course (12 modules)
 3. Tier 2 course + coaching/community layer (after Tier 1 converts)
 
@@ -75,6 +77,7 @@ Built on existing Vite/React stack; source owned by user. Stripe Connect (alread
 - **FTC testimonial rule:** brother's story must be honest + disclose typical results; can't imply everyone gets 100 lbs.
 - **No disease/cure language** — behavioral, not medical.
 - **In-product disclaimer** on every tier page + tracker: "Consult your physician; individual results vary."
+- **Email capture = PII.** Account signup requires a privacy policy + explicit consent; lead data used only per the stated purpose. Complies with platform lead-form rules (Meta/LinkedIn require consented Custom Audiences + linked privacy policy).
 
 **Brother's story = hero case study with full disclaimer** (trust anchor), not the headline claim. Marketing leads with the *method*, not a scale number. The tracker shows *your* inputs vs *targets* — never promises an outcome.
 
