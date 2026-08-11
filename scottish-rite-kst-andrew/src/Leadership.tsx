@@ -78,13 +78,14 @@ export const Leadership = () => {
           ))}
         </div>
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
+          display: 'flex',
+          justifyContent: 'center',
           gap: '1.25rem',
           marginTop: '1.25rem',
         }}>
           {officers.slice(3).map((o, i) => (
             <div key={i} style={{
+              flex: '0 1 calc((100% - 2.5rem) / 3)',
               background: 'rgba(255,255,255,0.03)',
               border: '1px solid rgba(184,149,58,0.2)',
               borderTop: '3px solid var(--gold)',
