@@ -3,7 +3,7 @@ import React from 'react'
 const officers = [
   { rank: 'Venerable Master', name: 'Sir Knight Joseph Felix, 32° KSA' },
   { rank: 'Senior Warden', name: 'Sir Michael Grzegorski, 32° KSA' },
-  { rank: 'Junior Warden', name: 'Hon. Jon M. Schmidt, 32° KCCH KSA' },
+  { rank: 'Junior Warden', name: 'Sir Michael Kofta, 32° KSA' },
   { rank: 'Treasurer', name: 'Ill. Gerald Lankin, 33°' },
   { rank: 'Secretary', name: 'Bro. Joseph Felix, 32° KSA' },
   { rank: 'Chaplain', name: 'Bro. Michael Candela, 32° KSA' },
