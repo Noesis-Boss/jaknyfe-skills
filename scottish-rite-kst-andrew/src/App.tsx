@@ -12,8 +12,15 @@ import { CTA } from './CTA'
 import { Footer } from './Footer'
 
 export default function App(): React.ReactElement {
+  const tartan = `${import.meta.env.BASE_URL}tartan.jpg`
+
   return (
-    <div className="app hero-bg">
+    <div
+      className="app hero-bg"
+      style={{
+        backgroundImage: `linear-gradient(rgba(10, 22, 40, 0.65), rgba(10, 22, 40, 0.65)), url("${tartan}")`,
+      }}
+    >
       <Nav />
       <main>
         <Hero />
