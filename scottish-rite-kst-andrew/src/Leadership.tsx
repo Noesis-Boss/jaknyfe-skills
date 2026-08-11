@@ -1,7 +1,7 @@
 import React from 'react'
 
 const officers = [
-  { rank: 'Knight Commander', name: 'Hon. Kenneth Barrett, 32° KCCH KSA' },
+  { rank: 'Venerable Master', name: 'Sir Knight Joseph Felix, 32° KSA' },
   { rank: 'Senior Warden', name: 'Hon. Gregory Johnson, 32° KCCH KSA' },
   { rank: 'Junior Warden', name: 'Hon. Jon M. Schmidt, 32° KCCH KSA' },
   { rank: 'Treasurer', name: 'Ill. Gerald Lankin, 33°' },
