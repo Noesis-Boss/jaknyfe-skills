@@ -81,6 +81,11 @@ None currently configured — the site uses the default `*.zocomputer.io` subdom
 
 ## Issue Log
 
+### 2026-08-11 — Published nested site at noesisgroup.com/ksatucson
+- **Deployment:** Built with `DEPLOY_SUBPATH=ksatucson` and uploaded to the Plesk `httpdocs/ksatucson` directory.
+- **Subpath fix:** Image references use `import.meta.env.BASE_URL`, so logos load correctly below `/ksatucson/`.
+- **Result:** HTTPS page and assets return successfully; live screenshot verified the rendered homepage.
+
 ### 2026-08-11 — Zo preview was blank/unreachable
 - **Problem:** Zo configured the development preview for port 51000, but Vite ignored the injected `PORT` and listened on 5173.
 - **Fix:** Configured Vite to bind `0.0.0.0` and use `Number(process.env.PORT) || 5173`.
