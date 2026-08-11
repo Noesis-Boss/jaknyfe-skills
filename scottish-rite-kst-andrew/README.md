@@ -18,3 +18,4 @@ bun run index.ts
 
 - `vite.config.ts` uses `PORT` when available and binds to `0.0.0.0`; this is required for Zo Site preview routing.
 - Production builds remain under `dist/` and use `/` as the asset base.
+- Set `DEPLOY_SUBPATH=ksatucson` for nested deployment builds so assets resolve under `/ksatucson/`.
