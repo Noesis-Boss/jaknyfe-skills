@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const Nav = () => {
+  const logo = `${import.meta.env.BASE_URL}ksa-logo.png`
   const [scrolled, setScrolled] = React.useState(false)
   const [menuOpen, setMenuOpen] = React.useState(false)
 
@@ -41,7 +42,7 @@ export const Nav = () => {
         <a href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{
           textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.6rem',
         }}>
-          <img src="/ksa-logo.png" alt="KSA" style={{ width: 28, height: 28, objectFit: 'contain' }} />
+          <img src={logo} alt="KSA" style={{ width: 28, height: 28, objectFit: 'contain' }} />
           <span style={{
             fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700,
             color: '#fff', letterSpacing: '0.04em',

@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const Footer = () => {
+  const logo = `${import.meta.env.BASE_URL}ksa-logo.png`
   return (
     <footer style={{
       background: 'var(--navy)', padding: '3rem 1.5rem 2rem',
@@ -9,7 +10,7 @@ export const Footer = () => {
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         {/* Logo divider */}
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <img src="/ksa-logo.png" alt="Knights of St. Andrew" style={{ width: 60, height: 'auto', opacity: 0.5 }} />
+          <img src={logo} alt="Knights of St. Andrew" style={{ width: 60, height: 'auto', opacity: 0.5 }} />
         </div>
 
         <div style={{

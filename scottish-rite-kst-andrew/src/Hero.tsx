@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const Hero = () => {
+  const logo = `${import.meta.env.BASE_URL}ksa-logo.png`
   const [visible, setVisible] = React.useState(false)
   React.useEffect(() => { setTimeout(() => setVisible(true), 100) }, [])
 
@@ -113,7 +114,7 @@ export const Hero = () => {
           filter: 'drop-shadow(0 0 8px rgba(184,149,58,0.3))',
         }}>
           <img
-            src="/ksa-logo.png"
+            src={logo}
             alt="Knights of St. Andrew Logo"
             style={{ width: '100%', maxWidth: 180, height: 'auto', display: 'block', margin: '0 auto' }}
           />

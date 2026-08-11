@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const deploySubpath = process.env.DEPLOY_SUBPATH?.replaceAll('/', '')
+
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: deploySubpath ? `/${deploySubpath}/` : '/',
   server: {
     host: '0.0.0.0',
     port: Number(process.env.PORT) || 5173,
