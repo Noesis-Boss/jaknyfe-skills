@@ -1,4 +1,6 @@
-# scottish-rite-kst-andrew
+# Knights of St. Andrew — Tucson Scottish Rite
+
+Standalone Vite + React site for the Knights of St. Andrew chapter. The development server binds to Zo's injected `PORT` so the preview iframe and local runtime use the configured site port.
 
 To install dependencies:
 
@@ -12,4 +14,7 @@ To run:
 bun run index.ts
 ```
 
-This project was created using `bun init` in bun v1.2.21. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+## Project Notes
+
+- `vite.config.ts` uses `PORT` when available and binds to `0.0.0.0`; this is required for Zo Site preview routing.
+- Production builds remain under `dist/` and use `/` as the asset base.
