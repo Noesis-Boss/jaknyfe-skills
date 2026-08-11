@@ -4,7 +4,7 @@ const officers = [
   { rank: 'Venerable Master', name: 'Sir Knight Joseph Felix, 32° KSA' },
   { rank: 'Senior Warden', name: 'Sir Knight Michael Grzegorski, 32° KSA' },
   { rank: 'Junior Warden', name: 'Sir Knight Michael Kofta, 32° KSA' },
-  { rank: 'Treasurer/Secretary', name: 'Ill. Brian Pilz, 33° KSA' },
+  { rank: 'Treasurer/Secretary', name: 'Ill. Sir Knight Brian Pilz, 33° KSA' },
   { rank: 'Chaplain', name: 'Sir Knight Logan Gaither, 32° KSA' },
 ]
 
