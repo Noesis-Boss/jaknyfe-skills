@@ -80,6 +80,12 @@ update_user_service --service-id svc_hdrtSM4VFtc
 None currently configured — the site uses the default `*.zocomputer.io` subdomain.
 
 ## Issue Log
+
+### 2026-08-11 — Zo preview was blank/unreachable
+- **Problem:** Zo configured the development preview for port 51000, but Vite ignored the injected `PORT` and listened on 5173.
+- **Fix:** Configured Vite to bind `0.0.0.0` and use `Number(process.env.PORT) || 5173`.
+- **Result:** Browser snapshot at port 51000 shows the rendered KSA homepage; production build passes.
+
 ### 2026-06-20 — Homepage rendered blank due to undefined nav logo variable
 - **Problem:** The production homepage loaded a blank navy screen even though the HTML, JS, and CSS were served correctly.
 - **Tried:** Verified the deployed assets, checked browser screenshots, inspected service logs, and confirmed React root was empty.
