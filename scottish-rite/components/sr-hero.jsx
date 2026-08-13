@@ -1,7 +1,20 @@
 // Scottish Rite Hero Component
+import React from 'react';
 const SRHero = () => {
   const [visible, setVisible] = React.useState(false);
   React.useEffect(() => { setTimeout(() => setVisible(true), 100); }, []);
+
+  // Seeded star positions to prevent layout shift on re-render
+  const stars = React.useMemo(() =>
+    Array.from({ length: 60 }).map((_, i) => ({
+      left: ((i * 137.508) % 100),
+      top: ((i * 73.131) % 100),
+      size: i % 7 === 0 ? 3 : 2,
+      opacity: 0.2 + (i % 10) * 0.05,
+      delay: ((i * 1.3) % 4),
+      duration: 2 + (i % 8) * 0.5,
+    })),
+  []);
 
   const scrollTo = (href) => {
     const el = document.querySelector(href);
@@ -28,22 +41,29 @@ const SRHero = () => {
         </svg>
       </div>
 
-      {/* Stars */}
+      {/* Stars — seeded positions to prevent layout shift */}
       <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }} className="sr-stars">
-        {Array.from({length: 60}).map((_, i) => (
+        {stars.map((s, i) => (
           <div key={i} style={{
             position: 'absolute',
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            width: Math.random() > 0.85 ? 3 : 2,
-            height: Math.random() > 0.85 ? 3 : 2,
+            left: `${s.left}%`,
+            top: `${s.top}%`,
+            width: s.size,
+            height: s.size,
             borderRadius: '50%',
             background: 'var(--gold)',
-            opacity: 0.2 + Math.random() * 0.5,
-            animation: `srTwinkle ${2 + Math.random() * 4}s ease-in-out infinite`,
-            animationDelay: `${Math.random() * 4}s`,
+            opacity: s.opacity,
+            animation: `srTwinkle ${s.duration}s ease-in-out infinite`,
+            animationDelay: `${s.delay}s`,
           }}/>
         ))}
+      </div>
+
+      <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none', zIndex: 1 }}>
+        <div style={{ position: 'relative', width: 'min(480px, 60vw)' }}>
+          <img src="images/sr_tucson.png" alt="" style={{ width: '100%', display: 'block', opacity: 0.8 }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 15%, var(--navy) 72%)' }} />
+        </div>
       </div>
 
       {/* Ornamental ring */}
@@ -74,40 +94,24 @@ const SRHero = () => {
       }}>
         <div style={{
           opacity: visible ? 1 : 0,
+          position: 'relative',
+          top: '-8rem',
           transition: 'opacity 0.8s ease 0.2s',
         }}>
-          <img src="uploads/logo-1776712250947.png" alt="Scottish Rite of Freemasonry, Valley of Tucson"
-            style={{ width: '100%', maxWidth: 520, marginBottom: '2.5rem', filter: 'brightness(0) invert(1) sepia(1) saturate(0.5) brightness(1.1)' }}/>
+          <img src="images/logo.png" alt="Scottish Rite of Freemasonry, Valley of Tucson"
+            style={{ width: '100%', maxWidth: 520, marginBottom: '5rem', filter: 'brightness(0) invert(1) sepia(1) saturate(0.5) brightness(1.1)' }}/>
         </div>
 
-        <p style={{ 
-          fontFamily: 'var(--font-display)', 
-          fontSize: 'clamp(1.3rem,2.6vw,1.6rem)', 
-          color: 'red', 
-          letterSpacing: '0.12em', 
-          textTransform: 'uppercase', 
-          fontStyle: 'normal', 
-          margin: '0 0 2.5rem', 
-          fontWeight: 400,
-          opacity: visible ? 1 : 0,
-          transition: 'opacity 0.8s ease 0.8s'
-        }}>
-          Tucson Scottish Rite
-        </p>
-
-        <div style={{ 
-          width: 60, height: 1, background: 'var(--gold)', margin: '0 auto 2rem',
-          opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.6s, width 0.6s ease 0.6s',
-        }}/>
-
-        <p style={{ 
-          fontFamily: 'var(--font-display)', 
-          fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', 
-          color: 'rgba(255,255,255,0.75)', 
-          letterSpacing: '0.12em', 
-          textTransform: 'uppercase', 
-          fontStyle: 'italic', 
-          margin: '0 0 2.5rem', 
+        <p style={{
+          fontFamily: 'var(--font-display)',
+          fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)',
+          color: 'rgba(255,255,255,0.75)',
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase',
+          fontStyle: 'italic',
+          margin: '0 0 2.5rem',
+          position: 'relative',
+          top: '9rem',
           fontWeight: 400,
           opacity: visible ? 1 : 0,
           transition: 'opacity 0.8s ease 0.8s',
@@ -117,27 +121,25 @@ const SRHero = () => {
 
         <div style={{
           display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap',
+          position: 'relative', top: '9rem',
           opacity: visible ? 1 : 0, transition: 'opacity 0.8s ease 1.1s',
         }}>
-          <button onClick={() => scrollTo('#about')} style={{
+          <button onClick={() => scrollTo('#about')} className="sr-btn-hover" style={{
             background: 'var(--gold)', color: 'var(--navy)',
             border: 'none', cursor: 'pointer',
             fontFamily: 'var(--font-body)', fontWeight: 700,
             fontSize: '0.82rem', letterSpacing: '0.1em', textTransform: 'uppercase',
             padding: '0.85rem 2.2rem', borderRadius: 4,
-            transition: 'opacity 0.2s, transform 0.2s',
-          }} onMouseOver={e => e.target.style.opacity='0.85'} onMouseOut={e => e.target.style.opacity='1'}>
+          }}>
             Discover Our Valley
           </button>
-          <button onClick={() => scrollTo('#membership')} style={{
+          <button onClick={() => scrollTo('#membership')} className="sr-btn-hover sr-btn-hover-outline" style={{
             background: 'transparent', color: '#fff',
             border: '1px solid rgba(255,255,255,0.4)', cursor: 'pointer',
             fontFamily: 'var(--font-body)', fontWeight: 600,
             fontSize: '0.82rem', letterSpacing: '0.1em', textTransform: 'uppercase',
             padding: '0.85rem 2.2rem', borderRadius: 4,
-            transition: 'border-color 0.2s, background 0.2s',
-          }} onMouseOver={e => { e.target.style.borderColor='var(--gold)'; e.target.style.background='rgba(184,149,58,0.1)'; }}
-             onMouseOut={e => { e.target.style.borderColor='rgba(255,255,255,0.4)'; e.target.style.background='transparent'; }}>
+          }}>
             Become a Member
           </button>
         </div>
