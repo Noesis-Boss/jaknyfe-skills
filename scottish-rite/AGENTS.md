@@ -52,6 +52,11 @@ When extracting a zip INTO the Scottish Rite project:
 
 ## Issue Log
 
+### 2026-08-13 — Restore dynamic event cards and full-size calendar modal
+- Problem: the CalendarWiz feed was not producing visible event cards, and the modal did not encompass the full calendar.
+- Solution: intercepted CalendarWiz's live `document.write` feed, extracted the current event names and dates into responsive cards, and changed the modal to `96vw` by `94vh` with a full-size iframe.
+- Verification: deployed commit `03f7133`; live screenshots confirm six current event cards and the expanded calendar modal: `Media/screenshots/tsr-events-cards-fixed.png` and `Media/screenshots/tsr-calendar-modal-full.png`.
+
 ### 2026-08-13 — Raise hero white graphic again
 - Problem: the white hero graphic still sat too low on the cameo.
 - Solution: changed its vertical offset from `top: '-5rem'` to `top: '-8rem'` in `components/sr-hero.jsx`.
