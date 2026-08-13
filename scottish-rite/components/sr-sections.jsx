@@ -1,5 +1,6 @@
 // About, Degrees, Events sections
 
+import React from 'react';
 export const Ornament = () => (
   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', margin: '0 0 1.5rem' }}>
     <div style={{ flex: 1, height: 1, background: 'var(--divider)' }}/>
@@ -36,7 +37,7 @@ export const SectionHeader = ({ eyebrow, title, subtitle, light }) => (
 // ── ABOUT ──────────────────────────────────────────────────────────────────
 export const SRAbout = () => {
   const pillars = [
-    { icon: '⬟', title: 'Charity', text: 'Supporting children\'s language disorders, scholarships, and community service throughout Southern Arizona.' },
+    { icon: '⬟', title: 'Charity', text: "Supporting children's language disorders, scholarships, and community service throughout Southern Arizona." },
     { icon: '⬟', title: 'Justice', text: 'Committed to equity, brotherhood, and the fair treatment of all members of our society.' },
     { icon: '⬟', title: 'Tolerance', text: 'Welcoming men of every background, faith, and walk of life into our Valley.' },
     { icon: '⬟', title: 'Truth', text: 'Dedicating ourselves to the pursuit of knowledge, wisdom, and moral uprightness.' },
@@ -49,16 +50,12 @@ export const SRAbout = () => {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
           {pillars.map(p => (
-            <div key={p.title} style={{
+            <div key={p.title} className="sr-card-hover sr-card-hover-gold" style={{
               background: 'var(--card-bg)', borderRadius: 8,
               padding: '2rem 1.5rem', textAlign: 'center',
               border: '1px solid var(--card-border)',
-              transition: 'transform 0.25s, box-shadow 0.25s',
-              cursor: 'default',
-            }}
-              onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,0,0,0.1)'; }}
-              onMouseOut={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(184,149,58,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
+            }}>
+              <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(212,168,83,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="var(--gold)">
                   <polygon points="10,2 12.4,7.6 18.5,8.2 14,12.3 15.4,18.3 10,15.1 4.6,18.3 6,12.3 1.5,8.2 7.6,7.6"/>
                 </svg>
@@ -116,16 +113,10 @@ export const SRDegrees = () => {
         <SectionHeader light eyebrow="The 29 Degrees" title="Degrees of the Scottish Rite" subtitle="Each degree is a chapter in a journey of self-discovery, moral growth, and brotherhood." />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
           {degrees.map((d, i) => (
-            <div key={i}
-              onClick={() => setActive(active === i ? null : i)}
-              style={{
-                background: active === i ? 'rgba(184,149,58,0.15)' : 'rgba(255,255,255,0.04)',
-                border: `1px solid ${active === i ? 'var(--gold)' : 'rgba(255,255,255,0.1)'}`,
-                borderRadius: 8, padding: '1.75rem 1.5rem', cursor: 'pointer',
-                transition: 'all 0.25s',
-              }}
-              onMouseOver={e => { if (active !== i) e.currentTarget.style.background = 'rgba(255,255,255,0.07)'; }}
-              onMouseOut={e => { if (active !== i) e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}>
+            <div key={i} onClick={() => setActive(active === i ? null : i)} className={`sr-degree-card ${active === i ? 'sr-degree-card-active' : ''}`} style={{
+              border: `1px solid ${active === i ? 'var(--gold)' : 'rgba(255,255,255,0.1)'}`,
+              borderRadius: 8, padding: '1.75rem 1.5rem', cursor: 'pointer',
+            }}>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--gold)', fontWeight: 700, marginBottom: '0.5rem' }}>{d.num}</div>
               <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', marginBottom: '0.75rem' }}>{d.body}</div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 600, color: '#fff', margin: '0 0 0.75rem', lineHeight: 1.25 }}>{d.title}</h3>
@@ -143,64 +134,68 @@ export const SRDegrees = () => {
 
 // ── EVENTS ─────────────────────────────────────────────────────────────────
 export const SREvents = () => {
-  const events = [
-    { date: { month: 'May', day: '6' }, title: 'Stated Meeting', type: 'Meeting', desc: 'Regular stated meeting of the Valley. All members welcome. Dinner at 6:00 PM, meeting at 7:00 PM.' },
-    { date: { month: 'May', day: '17' }, title: 'Reunion — Spring Degree Conferral', type: 'Reunion', desc: 'Spring degrees conferred. Candidates and sponsors are asked to arrive by 8:00 AM sharp.' },
-    { date: { month: 'Jun', day: '3' }, title: 'Stated Meeting', type: 'Meeting', desc: 'Regular stated meeting of the Valley with election of officers.' },
-    { date: { month: 'Jun', day: '21' }, title: 'Installation of Officers', type: 'Special', desc: 'Annual installation ceremony. Open to all Master Masons and their families.' },
-    { date: { month: 'Jul', day: '4' }, title: 'Independence Day — Dark', type: 'Holiday', desc: 'The Valley will be dark in observance of the Independence Day holiday.' },
-    { date: { month: 'Aug', day: '5' }, title: 'Stated Meeting', type: 'Meeting', desc: 'Regular stated meeting. Officers report and committee updates.' },
-  ];
-  const typeColor = { Meeting: 'var(--gold)', Reunion: '#7b8cde', Special: '#6dbe9a', Holiday: '#b0b0b0' };
+  const [calModal, setCalModal] = React.useState(false);
+  const [events, setEvents] = React.useState([]);
+  React.useEffect(() => {
+    const container = document.getElementById('calendarwiz-container');
+    if (!container || container.dataset.loaded) return;
+    container.dataset.loaded = '1';
+    const originalWrite = document.write;
+    document.write = markup => {
+      const parsed = new DOMParser().parseFromString(markup, 'text/html');
+      const items = [...parsed.querySelectorAll('a[onclick*="popevent_"]')]
+        .map(link => ({ title: link.textContent.trim(), date: link.nextElementSibling?.textContent.trim() }))
+        .filter(item => item.title && item.date)
+        .slice(0, 6);
+      if (items.length) setEvents(items);
+    };
+    const script = document.createElement('script');
+    script.src = '//www.calendarwiz.com/calendars/ucfeeder.php?crd=tucsonscottishrite&theme=Master%20Theme';
+    script.onload = script.onerror = () => { document.write = originalWrite; };
+    container.appendChild(script);
+  }, []);
 
-  return (
+  return (<>
     <section id="events" data-screen-label="Events" style={{ background: 'var(--cream)', padding: '6rem 1.5rem' }}>
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <SectionHeader eyebrow="Calendar" title="Upcoming Events" subtitle="The Valley meets regularly throughout the year. All Master Masons in good standing are welcome." />
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          {events.map((ev, i) => (
-            <div key={i} style={{
-              display: 'grid', gridTemplateColumns: '72px 1fr auto',
-              gap: '1.25rem', alignItems: 'center',
-              background: 'var(--card-bg)', borderRadius: 8,
-              padding: '1.25rem 1.5rem', border: '1px solid var(--card-border)',
-              transition: 'transform 0.2s, box-shadow 0.2s',
-            }}
-              onMouseOver={e => { e.currentTarget.style.transform = 'translateX(4px)'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.07)'; }}
-              onMouseOut={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <div style={{ textAlign: 'center', background: 'var(--navy)', borderRadius: 6, padding: '0.6rem 0.4rem' }}>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--gold)' }}>{ev.date.month}</div>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 700, color: '#fff', lineHeight: 1 }}>{ev.date.day}</div>
-              </div>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.3rem' }}>
-                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: typeColor[ev.type] || 'var(--gold)' }}>{ev.type}</span>
-                </div>
-                <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 600, color: 'var(--navy)', margin: '0 0 0.3rem' }}>{ev.title}</h4>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.88rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.5 }}>{ev.desc}</p>
-              </div>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="var(--card-border-heavy)" strokeWidth="1.5" style={{ flexShrink: 0 }}>
-                <polyline points="7,4 13,10 7,16"/>
-              </svg>
-            </div>
+        <div id="calendarwiz-container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', minHeight: 120 }}>
+          {events.map((event, index) => (
+            <article key={`${event.title}-${event.date}-${index}`} style={{ background: '#fff', border: '1px solid var(--card-border)', borderTop: '3px solid var(--gold)', borderRadius: 6, padding: '1.25rem', boxShadow: '0 4px 14px rgba(15,31,61,0.06)' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', color: 'var(--navy)', margin: '0 0 0.65rem' }}>{event.title}</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.5, margin: 0 }}>{event.date}</p>
+            </article>
           ))}
         </div>
         <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-          <button style={{
+          <button onClick={() => setCalModal(true)} className="sr-btn-hover sr-btn-hover-outline" style={{
             background: 'none', border: '1px solid var(--navy)', color: 'var(--navy)',
             fontFamily: 'var(--font-body)', fontSize: '0.82rem', fontWeight: 700,
             letterSpacing: '0.1em', textTransform: 'uppercase',
             padding: '0.85rem 2rem', borderRadius: 4, cursor: 'pointer',
-            transition: 'background 0.2s, color 0.2s',
-          }}
-            onMouseOver={e => { e.target.style.background = 'var(--navy)'; e.target.style.color = '#fff'; }}
-            onMouseOut={e => { e.target.style.background = 'none'; e.target.style.color = 'var(--navy)'; }}>
+          }}>
             View Full Calendar
           </button>
         </div>
       </div>
     </section>
-  );
+    {calModal && (
+      <div onClick={() => setCalModal(false)} style={{ position: 'fixed', inset: 0, zIndex: 2000, background: 'rgba(0,0,0,0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+        <div onClick={e => e.stopPropagation()} style={{ background: 'var(--cream)', borderRadius: 10, width: '96vw', height: '94vh', maxWidth: 1400, display: 'flex', flexDirection: 'column', overflow: 'hidden', boxShadow: '0 24px 80px rgba(0,0,0,0.4)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.25rem 1.75rem', borderBottom: '1px solid var(--divider)' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 600, color: 'var(--navy)', margin: 0 }}>Full Calendar</h3>
+            <button onClick={() => setCalModal(false)} aria-label="Close calendar" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', fontSize: '1.5rem', lineHeight: 1, padding: '0.25rem' }}>×</button>
+          </div>
+          <iframe
+            id="calendarwiz-modal-body"
+            title="Full Valley of Tucson calendar"
+            src="https://www.calendarwiz.com/calendars/calendar.php?crd=tucsonscottishrite&nolog=1&skiptitle=1&cid[]=285330&cid[]=285329&cid[]=285327&cid[]=285328&cid[]=285324&cid[]=285334"
+            style={{ flex: 1, width: '100%', minHeight: 0, border: 0 }}
+          />
+        </div>
+      </div>
+    )}
+  </>);
 };
 
 Object.assign(window, { SRAbout, SRDegrees, SREvents, SectionHeader, Ornament });
