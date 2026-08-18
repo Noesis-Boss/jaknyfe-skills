@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import './App.css';
 import { SRHero } from '../components/sr-hero.jsx';
 import { SRAbout } from '../components/sr-sections.jsx';
@@ -27,5 +26,4 @@ const App = () => {
   );
 };
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 export default App;
