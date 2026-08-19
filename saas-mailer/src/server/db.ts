@@ -5,7 +5,9 @@ export type SqlValue = string | number | bigint | boolean | null | Uint8Array;
 export type SqlParams = Record<string, SqlValue> | SqlValue[];
 
 export function openDatabase(filename = process.env.DATABASE_PATH || ":memory:"): Database {
-  return new Database(filename, { create: true, readwrite: true });
+  const database = new Database(filename, { create: true, readwrite: true });
+  database.exec("PRAGMA foreign_keys = ON");
+  return database;
 }
 
 export function migrate(database: Database): void {

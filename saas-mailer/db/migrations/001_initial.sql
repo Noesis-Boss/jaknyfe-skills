@@ -26,7 +26,8 @@ CREATE TABLE IF NOT EXISTS sending_accounts (
   provider TEXT NOT NULL,
   email TEXT NOT NULL,
   status TEXT NOT NULL DEFAULT 'active',
-  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (organization_id, id)
 );
 
 CREATE TABLE IF NOT EXISTS contacts (
@@ -36,7 +37,8 @@ CREATE TABLE IF NOT EXISTS contacts (
   first_name TEXT,
   last_name TEXT,
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE (organization_id, email)
+  UNIQUE (organization_id, email),
+  UNIQUE (organization_id, id)
 );
 
 CREATE TABLE IF NOT EXISTS campaigns (
@@ -44,50 +46,60 @@ CREATE TABLE IF NOT EXISTS campaigns (
   organization_id TEXT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
   name TEXT NOT NULL,
   status TEXT NOT NULL DEFAULT 'draft',
-  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (organization_id, id)
 );
 
 CREATE TABLE IF NOT EXISTS campaign_steps (
   id TEXT PRIMARY KEY,
   organization_id TEXT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
-  campaign_id TEXT NOT NULL REFERENCES campaigns(id) ON DELETE CASCADE,
+  campaign_id TEXT NOT NULL,
   step_order INTEGER NOT NULL,
   subject TEXT NOT NULL,
   body TEXT NOT NULL,
   delay_minutes INTEGER NOT NULL DEFAULT 0,
-  UNIQUE (campaign_id, step_order)
+  UNIQUE (campaign_id, step_order),
+  FOREIGN KEY (organization_id, campaign_id) REFERENCES campaigns(organization_id, id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS campaign_contacts (
-  campaign_id TEXT NOT NULL REFERENCES campaigns(id) ON DELETE CASCADE,
-  contact_id TEXT NOT NULL REFERENCES contacts(id) ON DELETE CASCADE,
+  campaign_id TEXT NOT NULL,
+  contact_id TEXT NOT NULL,
   organization_id TEXT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
   status TEXT NOT NULL DEFAULT 'pending',
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (campaign_id, contact_id)
+  PRIMARY KEY (campaign_id, contact_id),
+  FOREIGN KEY (organization_id, campaign_id) REFERENCES campaigns(organization_id, id) ON DELETE CASCADE,
+  FOREIGN KEY (organization_id, contact_id) REFERENCES contacts(organization_id, id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS messages (
   id TEXT PRIMARY KEY,
   organization_id TEXT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
-  campaign_id TEXT REFERENCES campaigns(id) ON DELETE SET NULL,
-  contact_id TEXT REFERENCES contacts(id) ON DELETE SET NULL,
-  sending_account_id TEXT REFERENCES sending_accounts(id) ON DELETE SET NULL,
+  campaign_id TEXT,
+  contact_id TEXT,
+  sending_account_id TEXT,
   provider_message_id TEXT,
   status TEXT NOT NULL,
   idempotency_key TEXT NOT NULL UNIQUE,
   sent_at TEXT,
-  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (organization_id, id),
+  FOREIGN KEY (organization_id, campaign_id) REFERENCES campaigns(organization_id, id) ON DELETE RESTRICT,
+  FOREIGN KEY (organization_id, contact_id) REFERENCES contacts(organization_id, id) ON DELETE RESTRICT,
+  FOREIGN KEY (organization_id, sending_account_id) REFERENCES sending_accounts(organization_id, id) ON DELETE RESTRICT
 );
 
 CREATE TABLE IF NOT EXISTS events (
   id TEXT PRIMARY KEY,
   organization_id TEXT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
-  message_id TEXT REFERENCES messages(id) ON DELETE SET NULL,
-  contact_id TEXT REFERENCES contacts(id) ON DELETE SET NULL,
+  message_id TEXT,
+  contact_id TEXT,
   type TEXT NOT NULL,
   payload TEXT NOT NULL DEFAULT '{}',
-  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (organization_id, message_id) REFERENCES messages(organization_id, id) ON DELETE RESTRICT,
+  FOREIGN KEY (organization_id, contact_id) REFERENCES contacts(organization_id, id) ON DELETE RESTRICT
 );
 
 CREATE TABLE IF NOT EXISTS suppression_list (
