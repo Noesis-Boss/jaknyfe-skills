@@ -15,6 +15,8 @@ export function migrate(database: Database): void {
   const migration = readFileSync(new URL("../../db/migrations/002_contacts_custom_fields.sql", import.meta.url), "utf8");
   const hasCustomFields = database.query("SELECT 1 FROM pragma_table_info('contacts') WHERE name = 'custom_fields'").get();
   if (!hasCustomFields) database.exec(migration);
+  const hasCredentialCiphertext = database.query("SELECT 1 FROM pragma_table_info('sending_accounts') WHERE name = 'credential_ciphertext'").get();
+  if (!hasCredentialCiphertext) database.exec(readFileSync(new URL("../../db/migrations/003_sending_account_credentials.sql", import.meta.url), "utf8"));
 }
 
 export function query<T extends Record<string, unknown>>(
