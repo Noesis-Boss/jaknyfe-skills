@@ -1,19 +1,19 @@
 import type { Database } from "bun:sqlite";
 import { randomUUID } from "node:crypto";
 
-export type AuthUser = { id: string; email: string };
+export type AuthUser = { id: string; email: string; organizationId?: string };
 
-export async function registerUser(database: Database, email: string, password: string, organizationId: string, role = "owner"): Promise<AuthUser> {
+export async function registerUser(database: Database, email: string, password: string, organizationName: string, role = "owner"): Promise<AuthUser> {
   const normalizedEmail = email.trim().toLowerCase();
-  if (!/^\S+@\S+\.\S+$/.test(normalizedEmail) || password.length < 12) throw new Error("Invalid registration");
-  const organization = database.query<{ id: string }>("SELECT id FROM organizations WHERE id = ?").get(organizationId);
-  if (!organization) throw new Error("Organization not found");
-  if (database.query("SELECT 1 FROM organization_members WHERE organization_id = ? LIMIT 1").get(organizationId)) throw new Error("Organization registration is closed");
+  const normalizedOrganizationName = organizationName?.trim();
+  if (!/^\S+@\S+\.\S+$/.test(normalizedEmail) || password.length < 12 || !normalizedOrganizationName) throw new Error("Invalid registration");
   if (database.query("SELECT id FROM users WHERE email = ?").get(normalizedEmail)) throw new Error("Email already registered");
   const userId = randomUUID();
+  const organizationId = randomUUID();
   const hash = await Bun.password.hash(password, { algorithm: "argon2id" });
-  database.exec("BEGIN");
+  database.exec("BEGIN IMMEDIATE");
   try {
+    database.query("INSERT INTO organizations (id, name) VALUES (?, ?)").run(organizationId, normalizedOrganizationName);
     database.query("INSERT INTO users (id, email) VALUES (?, ?)").run(userId, normalizedEmail);
     database.query("INSERT INTO auth_passwords (user_id, password_hash) VALUES (?, ?)").run(userId, hash);
     database.query("INSERT INTO organization_members (organization_id, user_id, role) VALUES (?, ?, ?)").run(organizationId, userId, role);
@@ -22,7 +22,7 @@ export async function registerUser(database: Database, email: string, password: 
     database.exec("ROLLBACK");
     throw error;
   }
-  return { id: userId, email: normalizedEmail };
+  return { id: userId, email: normalizedEmail, organizationId };
 }
 
 export async function verifyPassword(database: Database, email: string, password: string): Promise<AuthUser | null> {
