@@ -63,4 +63,23 @@ describe("loadConfig", () => {
 
     expect(config.worker).toEqual({ pollIntervalMs: 2500, batchSize: 25, maxSendsPerHour: 100 });
   });
+
+  test("rejects production startup before database initialization", () => {
+    const result = Bun.spawnSync(["bun", "run", "src/server.ts"], {
+      cwd: new URL("..", import.meta.url).pathname,
+      env: {
+        ...process.env,
+        APP_ENV: "production",
+        DATABASE_URL: "",
+        SESSION_SECRET: "",
+        CREDENTIAL_ENCRYPTION_KEY: "",
+        OAUTH_CALLBACK_ORIGIN: "",
+      },
+      stdout: "pipe",
+      stderr: "pipe",
+    });
+
+    expect(result.exitCode).not.toBe(0);
+    expect(new TextDecoder().decode(result.stderr)).toContain("Missing required configuration");
+  });
 });

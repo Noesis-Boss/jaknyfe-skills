@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { loadConfig } from "./server/config";
 import { migrate, openDatabase } from "./server/db";
 import { createContactsRoutes } from "./server/routes/contacts";
 import { createSendingAccountRoutes } from "./server/routes/sending-accounts";
@@ -6,6 +7,7 @@ import { createCampaignRoutes } from "./server/routes/campaigns";
 import { createEventRoutes } from "./server/routes/events";
 
 const app = new Hono();
+export const config = loadConfig();
 export const database = openDatabase();
 migrate(database);
 database.query("INSERT OR IGNORE INTO organizations (id, name) VALUES (?, ?)").run("demo-org", "Demo workspace");
