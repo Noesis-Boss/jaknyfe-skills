@@ -1,0 +1,9 @@
+import { describe, expect, test } from "bun:test";
+import { execute, migrate, openDatabase } from "../src/server/db";
+import { approveCampaign, createCampaign, enrollContacts } from "../src/server/campaigns/service";
+import { isEligibleToSend } from "../src/server/campaigns/eligibility";
+
+function fixture() { const db = openDatabase(); migrate(db); execute(db, "INSERT INTO organizations (id, name) VALUES (?, ?)", ["org-a", "A"]); execute(db, "INSERT INTO contacts (id, organization_id, email) VALUES (?, ?, ?)", ["c1", "org-a", "a@example.com"]); return db; }
+test("draft campaigns are rejected by eligibility", () => { const campaign = { status: "draft", approved_at: null }; expect(isEligibleToSend({ email: "a@example.com" }, campaign)).toEqual({ eligible: false, reason: "campaign_not_approved" }); });
+test("approval records audit data and enrollment persists", () => { const db = fixture(); const campaign = createCampaign(db, "org-a", { name: "Intro", steps: [{ subject: "Hi", body: "Hello" }] }); expect(campaign.status).toBe("draft"); const approved = approveCampaign(db, campaign.id, "org-a", "user-1"); expect(approved.status).toBe("approved"); expect(approved.approved_by).toBe("user-1"); expect(enrollContacts(db, campaign.id, "org-a", ["c1"])).toBe(1); expect(db.query("SELECT COUNT(*) AS count FROM audit_log").get()).toEqual({ count: 1 }); });
+test("suppression and account limits reject sends", () => { const approved = { status: "approved", approved_at: "2026-08-19T00:00:00Z", daily_send_limit: 1, sends_today: 1 }; expect(isEligibleToSend({ email: "a@example.com", suppressed: true }, approved)).toEqual({ eligible: false, reason: "suppressed" }); expect(isEligibleToSend({ email: "a@example.com" }, approved)).toEqual({ eligible: false, reason: "account_limit_reached" }); });
