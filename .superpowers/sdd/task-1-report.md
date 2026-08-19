@@ -1,41 +1,55 @@
 # SaaS-Mailer Task 1 Report
 
+## Status
+
+DONE
+
+## Commit
+
+- SHA: `e9930edf4e143a60481c80b72d9aad9956404cde`
+- Subject: `chore: define saas-mailer production configuration`
+
 ## Implementation
 
-- Created a standalone `saas-mailer` Bun site scaffold.
-- Added Hono server handler with `GET /api/health` returning `{ "ok": true }`.
-- Added `/` dashboard shell with a minimal React client entrypoint and responsive baseline styles.
-- Added `zosite.json` site metadata and installed declared dependencies with Bun.
+- Added `src/server/config.ts` with typed `loadConfig(): AppConfig`.
+- Added development/test defaults and mock-adapter selection.
+- Added production validation for `DATABASE_URL`, `SESSION_SECRET`, `CREDENTIAL_ENCRYPTION_KEY`, and `OAUTH_CALLBACK_ORIGIN`.
+- Added 32-byte hex/base64 encryption-key validation.
+- Added explicit positive-integer parsing for worker polling, batch size, and hourly send limits.
+- Added provider OAuth fields for Google and Microsoft.
+- Added secret-free `.env.example`.
+- Updated README and AGENTS.md with configuration boundaries.
 
-## Tests
+## Tests and output
 
-- Required command: `bun test tests/health.test.ts`
-- Result: 1 pass, 0 fail, 2 expectations.
-- Additional smoke check: `/api/health` returned HTTP 200 and `{ ok: true }`; `/` returned HTTP 200 and contained the SaaS-Mailer dashboard shell.
+- `bun test tests/config.test.ts` — PASS: 6 tests, 0 failures.
+- `bun test` — PASS: 37 tests, 0 failures.
+- `git diff --check` — changed Task 1 files clean. It reported pre-existing trailing whitespace in unrelated workspace files; none were modified.
 
-## TDD Evidence
+## Files changed
 
-The health test was written before the server implementation was validated. The first test run failed only because the newly scaffolded project had not installed its declared `hono` dependency. After `bun install`, the same required test passed without test changes.
+- `.env.example`
+- `src/server/config.ts`
+- `tests/config.test.ts`
+- `README.md`
+- `AGENTS.md`
 
-## Files Changed
+## Self-review
 
-- `saas-mailer/package.json`
-- `saas-mailer/bun.lock`
-- `saas-mailer/zosite.json`
-- `saas-mailer/src/server.ts`
-- `saas-mailer/src/client/main.tsx`
-- `saas-mailer/src/client/styles.css`
-- `saas-mailer/tests/health.test.ts`
-
-## Self-Review
-
-- Scope is limited to the new SaaS-Mailer project and its required report.
-- Health behavior is exported through the Hono app for direct handler testing.
-- The server starts only when executed directly, so importing it in tests has no side effects.
-- `git diff --check` passed before commit.
-- Commit created: `af528a8b feat: scaffold saas-mailer site`.
+- Scope is limited to Task 1 configuration contracts, tests, documentation, and the focused commit.
+- No Tasks 2–8 behavior was implemented.
+- Error messages expose variable names and validation reasons only; secret values are never logged or included.
+- Existing sending-service behavior and provisional tenant boundary were not changed.
+- TDD evidence: the focused test initially failed because `src/server/config.ts` did not exist; after implementation, all focused and full tests passed.
 
 ## Concerns
 
-- The dashboard is intentionally a shell only; contact management, campaigns, sending, persistence, and authentication are outside Task 1.
-- The site is marked private in `zosite.json`; no deployment was requested.
+- `src/server.ts` does not yet call `loadConfig()`; wiring startup to the production contract belongs to the next integration step and was not added because the task requested exactly the Task 1 contract files.
+- Existing MVP sending code still uses its legacy `SENDING_CREDENTIAL_ENCRYPTION_KEY` name; migrating that consumer is outside the Task 1 file list.
+
+## Fix
+
+- Changed files: `saas-mailer/src/server.ts`, `saas-mailer/tests/config.test.ts`, `.superpowers/sdd/task-1-report.md`
+- Commit: `ce43f45e7848360d4b7f104879643ada04bb908f`
+- Commands: `bun test tests/config.test.ts`; `bun test`; `git diff --check`
+- Results: focused config/startup tests PASS (7 tests, 0 failures); full SaaS-Mailer suite PASS (38 tests, 0 failures); `git diff --check` passed for the changed SaaS-Mailer files. The command also reported pre-existing trailing whitespace in unrelated workspace files.
