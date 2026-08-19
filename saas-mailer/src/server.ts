@@ -1,6 +1,10 @@
 import { Hono } from "hono";
+import { migrate, openDatabase } from "./server/db";
+import { createContactsRoutes } from "./server/routes/contacts";
 
 const app = new Hono();
+export const database = openDatabase();
+migrate(database);
 
 const clientScript = `
 const root = document.getElementById("root");
@@ -12,6 +16,7 @@ root.innerHTML =
 `;
 
 app.get("/api/health", (c) => c.json({ ok: true }));
+app.route("/", createContactsRoutes(database));
 
 app.get("/src/client/main.js", (c) => c.text(clientScript, 200, { "Content-Type": "application/javascript; charset=UTF-8" }));
 
