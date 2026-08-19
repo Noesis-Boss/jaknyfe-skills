@@ -2,30 +2,30 @@
 
 ## Status
 
-Complete. Implemented tenant-scoped contact CSV import in `saas-mailer`.
+Complete for the minimum PostgreSQL persistence layer.
 
-## Requirements covered
+## Implemented
 
-- Added dependency-free CSV parsing with quoted-field support.
-- Normalized email addresses by trimming and lowercasing.
-- Rejected missing or malformed email rows and returned invalid counts.
-- Preserved `first_name`, `last_name`, and arbitrary custom columns in JSON storage.
-- Deduplicated against existing contacts and repeated rows within the active organization.
-- Kept identical emails importable by separate organizations.
-- Added `POST /api/contacts/import` using `x-organization-id` tenancy context.
-- Supported raw CSV request bodies and multipart uploads using `file` or `csv` fields.
+- Added PostgreSQL schema migration with PostgreSQL-native types, version tracking, composite organization foreign keys, tenant indexes, queue fields, idempotency uniqueness, and row-lock-compatible schema.
+- Added Bun PostgreSQL pool creation, parameter binding, transactions, idempotent startup migration, and hosted-mode selection through `openConfiguredDatabase()`.
+- Added organization-scoped repository interfaces for contacts, accounts, campaigns, messages, events, suppressions, and audit records, including updates, duplicate-safe inserts, transactions, and `FOR UPDATE` reads.
+- Added PostgreSQL repository contract coverage that runs when `TEST_POSTGRES_URL` is configured, plus migration invariant coverage that runs in the normal suite.
+- Preserved the existing SQLite adapter and all existing service/test behavior.
+- Documented hosted configuration, backup, restore, pool, and migration operations in `README.md`.
 
 ## Tests
 
-- `bun test tests/contacts.test.ts`: 4 passed, 0 failed.
-- `bun test`: 12 passed, 0 failed.
-- `git diff --check`: existing unrelated workspace changes report trailing whitespace; Task 3 files contain no reported whitespace errors.
+- `bun test`: 45 passed, 0 failed, 1 skipped.
+- PostgreSQL contract test is skipped when `TEST_POSTGRES_URL` is absent; it exercises tenant isolation, duplicate idempotency, updates, and suppression isolation when PostgreSQL is available.
+- `git diff --check` for SaaS-Mailer files: passed. Unrelated workspace files have pre-existing whitespace findings.
 
-## Self-review
+## Commit
 
-Reviewed the parser, service, route wiring, schema change, and focused tests. No unrelated files were staged.
+- `feat: add postgres persistence layer`
+- Commit: `cf9070756db977b5e3155ca805b42b996b074a64`.
 
 ## Concerns
 
-- The existing migration system is a single initial migration. The new `custom_fields` column is included in that migration, so already-provisioned database files would need a future versioned migration before production rollout.
-- CSV parsing intentionally supports standard comma-separated quoted fields but does not attempt delimiter auto-detection or formula-injection rewriting.
+- The live HTTP route graph still imports the synchronous SQLite service signatures. `openConfiguredDatabase()` and the repository context provide the production integration seam, but converting every route/service call to async repository-backed execution is not included in this minimum layer and must be completed before enabling hosted production traffic.
+- PostgreSQL parity tests require a disposable database supplied through `TEST_POSTGRES_URL`; they were not executed in this environment because no test PostgreSQL URL was configured.
+- No Tasks 4–8 work was added.
