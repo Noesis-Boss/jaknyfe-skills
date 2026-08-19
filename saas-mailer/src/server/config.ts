@@ -2,6 +2,7 @@ export type AppEnv = "development" | "test" | "production";
 
 export type AppConfig = {
   appEnv: AppEnv;
+  database: "sqlite" | "postgres";
   databaseUrl?: string;
   sessionSecret?: string;
   credentialEncryptionKey?: string;
@@ -81,6 +82,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
 
   return {
     appEnv,
+    database: production ? "postgres" : "sqlite",
     databaseUrl,
     sessionSecret,
     credentialEncryptionKey,
