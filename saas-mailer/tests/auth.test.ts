@@ -51,7 +51,7 @@ describe("authenticated organization sessions", () => {
     process.env.APP_ENV = "production";
     try {
       const db = setup();
-      const response = await (await import("../src/server/routes/auth")).createAuthRoutes(db).fetch(new Request("http://localhost/api/auth/register", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email: "secure@example.com", password: "correct horse battery staple", organization_name: "Secure Workspace" }) }));
+      const response = await (await import("../src/server/routes/auth")).createAuthRoutes(db, "production").fetch(new Request("http://localhost/api/auth/register", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email: "secure@example.com", password: "correct horse battery staple", organization_name: "Secure Workspace" }) }));
       expect(response.headers.get("set-cookie")).toContain("Secure");
     } finally {
       if (previous === undefined) delete process.env.APP_ENV;
