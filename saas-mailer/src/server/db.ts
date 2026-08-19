@@ -12,6 +12,9 @@ export function openDatabase(filename = process.env.DATABASE_PATH || ":memory:")
 
 export function migrate(database: Database): void {
   database.exec(readFileSync(new URL("../../db/migrations/001_initial.sql", import.meta.url), "utf8"));
+  const migration = readFileSync(new URL("../../db/migrations/002_contacts_custom_fields.sql", import.meta.url), "utf8");
+  const hasCustomFields = database.query("SELECT 1 FROM pragma_table_info('contacts') WHERE name = 'custom_fields'").get();
+  if (!hasCustomFields) database.exec(migration);
 }
 
 export function query<T extends Record<string, unknown>>(

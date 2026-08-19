@@ -1,4 +1,5 @@
 export function getOrganizationId(request: Request): string {
+  // Provisional tenant context until authentication and membership checks exist.
   const organizationId = request.headers.get("x-organization-id")?.trim();
   if (!organizationId) throw new Error("Missing organization context");
   return organizationId;
