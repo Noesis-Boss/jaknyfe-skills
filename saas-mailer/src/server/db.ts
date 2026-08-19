@@ -1,0 +1,28 @@
+import { Database } from "bun:sqlite";
+import { readFileSync } from "node:fs";
+
+export type SqlValue = string | number | bigint | boolean | null | Uint8Array;
+export type SqlParams = Record<string, SqlValue> | SqlValue[];
+
+export function openDatabase(filename = process.env.DATABASE_PATH || ":memory:"): Database {
+  return new Database(filename, { create: true, readwrite: true });
+}
+
+export function migrate(database: Database): void {
+  database.exec(readFileSync(new URL("../../db/migrations/001_initial.sql", import.meta.url), "utf8"));
+}
+
+export function query<T extends Record<string, unknown>>(
+  database: Database,
+  sql: string,
+  params: SqlParams = [],
+): T[] {
+  const statement = database.query<T, SqlParams>(sql);
+  return Array.isArray(params) ? statement.all(...params) : statement.all(params);
+}
+
+export function execute(database: Database, sql: string, params: SqlParams = []): void {
+  const statement = database.query(sql);
+  if (Array.isArray(params)) statement.run(...params);
+  else statement.run(params);
+}
