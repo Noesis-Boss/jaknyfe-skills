@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS contacts (
   email TEXT NOT NULL,
   first_name TEXT,
   last_name TEXT,
+  custom_fields TEXT NOT NULL DEFAULT '{}',
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   UNIQUE (organization_id, email),
   UNIQUE (organization_id, id)
