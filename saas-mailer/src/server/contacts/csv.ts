@@ -5,6 +5,8 @@ export type ParsedContact = {
   custom_fields: Record<string, string>;
 };
 
+export class InvalidContactsCsvError extends Error {}
+
 function normalizeHeader(value: string): string {
   return value.trim().toLowerCase().replace(/[ -]+/g, "_");
 }
@@ -21,10 +23,12 @@ function parseRows(text: string): string[][] {
       else if (char === '"') quoted = false;
       else field += char;
     } else if (char === '"' && field.length === 0) quoted = true;
+    else if (char === '"') throw new InvalidContactsCsvError("Malformed CSV: stray quote");
     else if (char === ",") { row.push(field); field = ""; }
     else if (char === "\n") { row.push(field); rows.push(row); row = []; field = ""; }
     else if (char !== "\r") field += char;
   }
+  if (quoted) throw new InvalidContactsCsvError("Malformed CSV: unterminated quote");
   if (field.length || row.length) { row.push(field); rows.push(row); }
   return rows.filter((candidate) => candidate.some((value) => value.trim() !== ""));
 }
@@ -36,9 +40,9 @@ function validEmail(email: string): boolean {
 export function parseContactsCsv(csvText: string): ParsedContact[] {
   const rows = parseRows(csvText);
   if (!rows.length) return [];
-  const headers = rows[0].map(normalizeHeader);
+  const headers = rows[0].map((header, index) => normalizeHeader(index === 0 ? header.replace(/^\uFEFF/, "") : header));
   const emailIndex = headers.indexOf("email");
-  if (emailIndex < 0) return [];
+  if (emailIndex < 0) throw new InvalidContactsCsvError("Invalid CSV: missing required email header");
   return rows.slice(1).flatMap((values) => {
     const email = (values[emailIndex] || "").trim().toLowerCase();
     if (!validEmail(email)) return [];
@@ -53,6 +57,8 @@ export function parseContactsCsv(csvText: string): ParsedContact[] {
 export function countInvalidContacts(csvText: string): number {
   const rows = parseRows(csvText);
   if (!rows.length) return 0;
-  const emailIndex = rows[0].map(normalizeHeader).indexOf("email");
-  return emailIndex < 0 ? Math.max(0, rows.length - 1) : rows.slice(1).filter((row) => !validEmail((row[emailIndex] || "").trim())).length;
+  const headers = rows[0].map((header, index) => normalizeHeader(index === 0 ? header.replace(/^\uFEFF/, "") : header));
+  const emailIndex = headers.indexOf("email");
+  if (emailIndex < 0) throw new InvalidContactsCsvError("Invalid CSV: missing required email header");
+  return rows.slice(1).filter((row) => !validEmail((row[emailIndex] || "").trim())).length;
 }

@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import { execute, migrate, openDatabase, query } from "../src/server/db";
-import { parseContactsCsv } from "../src/server/contacts/csv";
+import { InvalidContactsCsvError, parseContactsCsv } from "../src/server/contacts/csv";
 import { importContacts } from "../src/server/contacts/service";
 import app, { database as appDatabase } from "../src/server";
 
@@ -27,5 +27,31 @@ describe("contact CSV import", () => {
     const response = await app.fetch(new Request("http://localhost/api/contacts/import", { method: "POST", headers: { "x-organization-id": "org-api", "content-type": "text/csv" }, body: "email\na@example.com\nmissing\na@example.com" }));
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual({ inserted: 1, skipped: 1, invalid: 1 });
+  });
+
+  test("rejects malformed CSV and missing email header", () => {
+    expect(() => parseContactsCsv('email,name\n"unterminated,Ada')).toThrow(InvalidContactsCsvError);
+    expect(() => parseContactsCsv('name\nAda')).toThrow("missing required email header");
+    expect(() => parseContactsCsv('email,name\nada"broken,Ada')).toThrow("stray quote");
+  });
+
+  test("strips a UTF-8 BOM from the first header", () => {
+    expect(parseContactsCsv("\uFEFFemail,name\na@example.com,Ada")).toHaveLength(1);
+  });
+
+  test("migrates an existing contacts table with custom_fields", () => {
+    const db = openDatabase();
+    db.exec("CREATE TABLE contacts (id TEXT PRIMARY KEY, organization_id TEXT NOT NULL, email TEXT NOT NULL, first_name TEXT, last_name TEXT, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)");
+    migrate(db);
+    expect(query(db, "SELECT custom_fields FROM contacts")).toEqual([]);
+    db.exec("INSERT INTO contacts (id, organization_id, email) VALUES ('c1', 'org-a', 'old@example.com')");
+    expect(query(db, "SELECT custom_fields FROM contacts")[0]?.custom_fields).toBe("{}");
+  });
+
+  test("uses deterministic conflict-safe duplicate imports", () => {
+    const db = openDatabase(); migrate(db); execute(db, "INSERT INTO organizations (id, name) VALUES (?, ?)", ["org-d", "D"]);
+    const contacts = parseContactsCsv("email,first_name\na@example.com,First\nA@EXAMPLE.COM,Second");
+    expect(importContacts(db, "org-d", contacts)).toEqual({ inserted: 1, skipped: 1, invalid: 0 });
+    expect(query(db, "SELECT first_name FROM contacts WHERE organization_id = ?", ["org-d"])[0]?.first_name).toBe("First");
   });
 });
