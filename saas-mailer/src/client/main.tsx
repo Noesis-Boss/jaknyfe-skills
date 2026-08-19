@@ -1,29 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
+const api = async (path: string, options: RequestInit = {}) => (await fetch(path, { ...options, headers: { "Content-Type": "application/json", "x-organization-id": "demo-org", ...(options.headers || {}) } })).json();
+const dashboardLabel = "Outbound workspace";
+document.title = dashboardLabel;
+
 function Dashboard() {
-  return (
-    <main className="dashboard-shell">
-      <header className="topbar">
-        <div>
-          <p className="eyebrow">SaaS-Mailer</p>
-          <h1>Outbound workspace</h1>
-        </div>
-        <span className="status-pill">Ready</span>
-      </header>
-      <section className="welcome-card">
-        <p className="eyebrow">Dashboard</p>
-        <h2>Build your first campaign.</h2>
-        <p>Import contacts, create a sequence, and review every send from one workspace.</p>
-        <button type="button">Import contacts</button>
-      </section>
-    </main>
-  );
+  const [notice, setNotice] = useState("Workspace ready");
+  const [contactCount, setContactCount] = useState(0);
+  const [events, setEvents] = useState<any[]>([]);
+  const importContacts = async () => { const result = await api("/api/contacts/import", { method: "POST", headers: { "Content-Type": "text/csv" }, body: "email,first_name,company\nprospect@example.com,Prospect,Northstar" }); setContactCount(result.inserted || 0); setNotice(result.inserted ? `${result.inserted} contact imported` : result.error || "No new contacts imported"); };
+  const refreshEvents = async () => { const result = await api("/api/events"); setEvents(result.events || []); setNotice(`${(result.events || []).length} events in the log`); };
+  return <main className="dashboard-shell"><aside className="rail"><div className="mark">SM<span>+</span></div><nav><a className="active">Overview</a><a>Contacts</a><a>Campaigns</a><a>Sending accounts</a><a>Events</a></nav><div className="rail-foot">v0.1 · private beta</div></aside><section className="workspace"><header className="topbar"><div><p className="eyebrow">SaaS-Mailer / command center</p><h1>Outbound, under control.</h1></div><div className="top-actions"><span className="status-pill"><i /> All systems nominal</span><button className="avatar">DL</button></div></header><div className="notice">{notice}<span>Organization · demo-org</span></div><section className="hero-grid"><article className="hero-card"><div className="hero-copy"><p className="eyebrow orange">Your next move</p><h2>Turn a list into a conversation.</h2><p>Import prospects, shape the sequence, and approve every send before it leaves your workspace.</p><button onClick={importContacts}>Import contacts <b>↗</b></button></div><div className="orbit"><div className="orbit-ring ring-one" /><div className="orbit-ring ring-two" /><div className="signal">01</div></div></article><div className="stats"><article><span>Contacts</span><strong>{contactCount || "—"}</strong><small>{contactCount ? "just imported" : "awaiting first import"}</small></article><article><span>Campaigns</span><strong>—</strong><small>nothing in motion</small></article><article><span>Events</span><strong>{events.length || "—"}</strong><small>{events.length ? "latest activity" : "no activity yet"}</small></article></div></section><section className="lower-grid"><article className="panel checklist"><div className="panel-head"><div><p className="eyebrow">Launch sequence</p><h3>First campaign checklist</h3></div><span className="progress">{contactCount ? "1 / 4" : "0 / 4"}</span></div><div className={contactCount ? "check done" : "check"}><span>01</span><div><b>Import your contacts</b><small>CSV fields stay inside this workspace.</small></div><em>{contactCount ? "Done" : "Start"}</em></div><div className="check"><span>02</span><div><b>Connect a sending account</b><small>Gmail, Outlook, or SMTP.</small></div><em>Next</em></div><div className="check"><span>03</span><div><b>Draft your sequence</b><small>Write the message and timing.</small></div><em>Locked</em></div><div className="check"><span>04</span><div><b>Approve and send</b><small>Nothing moves without your signal.</small></div><em>Locked</em></div></article><article className="panel activity"><div className="panel-head"><div><p className="eyebrow">Live log</p><h3>Recent events</h3></div><button className="text-button" onClick={refreshEvents}>Refresh ↻</button></div>{events.length ? events.slice(0, 4).map((event) => <div className="event" key={event.id}><span className="event-dot" /><div><b>{event.type}</b><small>{event.contact_id || "System event"}</small></div><time>{event.created_at}</time></div>) : <div className="empty"><span>∿</span><b>No events yet</b><p>Your send history will appear here.</p></div>}</article></section></section></main>;
 }
 
-createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <Dashboard />
-  </React.StrictMode>,
-);
+createRoot(document.getElementById("root")!).render(<React.StrictMode><Dashboard /></React.StrictMode>);

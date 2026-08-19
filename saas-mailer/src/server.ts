@@ -8,15 +8,9 @@ import { createEventRoutes } from "./server/routes/events";
 const app = new Hono();
 export const database = openDatabase();
 migrate(database);
+database.query("INSERT OR IGNORE INTO organizations (id, name) VALUES (?, ?)").run("demo-org", "Demo workspace");
 
-const clientScript = `
-const root = document.getElementById("root");
-root.innerHTML =
-  '<main class="dashboard-shell">' +
-    '<header class="topbar"><div><p class="eyebrow">SaaS-Mailer</p><h1>Outbound workspace</h1></div><span class="status-pill">Ready</span></header>' +
-    '<section class="welcome-card"><p class="eyebrow">Dashboard</p><h2>Build your first campaign.</h2><p>Import contacts, create a sequence, and review every send from one workspace.</p><button type="button">Import contacts</button></section>' +
-  '</main>';
-`;
+const clientScript = await Bun.build({ entrypoints: [new URL("./client/main.tsx", import.meta.url).pathname], target: "browser", minify: false }).then((result) => result.outputs[0].text());
 
 app.get("/api/health", (c) => c.json({ ok: true }));
 app.route("/", createContactsRoutes(database));
