@@ -19,8 +19,8 @@ Operational commands:
 
 ```bash
 APP_ENV=production DATABASE_URL="$DATABASE_URL" bun run src/server.ts
-DATABASE_URL="$DATABASE_URL" psql "$DATABASE_URL" -c 'pg_dump --format=custom --file=saas-mailer.dump'
-DATABASE_URL="$DATABASE_URL" pg_restore --clean --if-exists --dbname="$DATABASE_URL" saas-mailer.dump
+pg_dump --format=custom --file=saas-mailer.dump "$DATABASE_URL"
+pg_restore --clean --if-exists --dbname="$DATABASE_URL" saas-mailer.dump
 ```
 
 Use a pool-sized PostgreSQL connection string supplied by the hosting provider. Take a backup before migrations; startup migration failure rolls back the transaction and prevents a partially applied schema.
