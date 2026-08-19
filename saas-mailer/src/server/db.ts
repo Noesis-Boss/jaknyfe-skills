@@ -1,5 +1,6 @@
 import { Database } from "bun:sqlite";
 import { readFileSync } from "node:fs";
+import { openProductionDatabase, type PostgresDatabase } from "./postgres";
 
 export type SqlValue = string | number | bigint | boolean | null | Uint8Array;
 export type SqlParams = Record<string, SqlValue> | SqlValue[];
@@ -8,6 +9,15 @@ export function openDatabase(filename = process.env.DATABASE_PATH || ":memory:")
   const database = new Database(filename, { create: true, readwrite: true });
   database.exec("PRAGMA foreign_keys = ON");
   return database;
+}
+
+export function hostedMode(env: NodeJS.ProcessEnv = process.env): boolean {
+  return env.APP_ENV === "production";
+}
+
+export async function openConfiguredDatabase(env: NodeJS.ProcessEnv = process.env): Promise<Database | PostgresDatabase> {
+  if (hostedMode(env)) return openProductionDatabase(env.DATABASE_URL);
+  return openDatabase(env.DATABASE_PATH || ":memory:");
 }
 
 export function migrate(database: Database): void {

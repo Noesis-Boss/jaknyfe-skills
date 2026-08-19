@@ -16,6 +16,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 ## Feature Log
 
+- 2026-08-19: Task 3 added the PostgreSQL initial migration, Bun pooled adapter, tenant-scoped repository contracts, production backup/restore documentation, and a PostgreSQL parity test. Existing SQLite services and tests remain unchanged pending the async service/repository cutover; `TEST_POSTGRES_URL` is required to execute the disposable PostgreSQL contract test.
+
 - 2026-08-19: Completed the MVP vertical slice through end-to-end delivery, event history, tenant isolation tests, and dashboard screenshot verification. Commit `e491a9db` contains the dashboard; Task 8 verification is the next commit.
 
 - 2026-08-19: Task 1 added typed environment parsing and production startup boundaries in `src/server/config.ts`, with focused configuration tests and a secret-free `.env.example`.
