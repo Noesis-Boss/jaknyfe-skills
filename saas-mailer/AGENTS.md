@@ -19,3 +19,4 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 - 2026-08-19: Completed the MVP vertical slice through end-to-end delivery, event history, tenant isolation tests, and dashboard screenshot verification. Commit `e491a9db` contains the dashboard; Task 8 verification is the next commit.
 
 - 2026-08-19: Task 1 added typed environment parsing and production startup boundaries in `src/server/config.ts`, with focused configuration tests and a secret-free `.env.example`.
+- 2026-08-19: Task 2 replaced provisional `x-organization-id` tenant context with password authentication, membership-aware sessions, HttpOnly cookies, logout/revocation, and authenticated route tenancy. Browser login and authenticated dashboard states were screenshot-verified.

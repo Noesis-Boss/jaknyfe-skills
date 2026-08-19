@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import type { Database } from "bun:sqlite";
-import { getOrganizationId } from "../tenancy";
+import { requireTenant } from "../auth/middleware";
 import { countInvalidContacts, parseContactsCsv } from "../contacts/csv";
 import { importContacts } from "../contacts/service";
 
@@ -8,7 +8,7 @@ export function createContactsRoutes(database: Database): Hono {
   const routes = new Hono();
   routes.post("/api/contacts/import", async (c) => {
     try {
-      const organizationId = getOrganizationId(c.req.raw);
+      const organizationId = requireTenant(database, c.req.raw).organizationId;
       const contentType = c.req.header("content-type") || "";
       let csvText = "";
       if (contentType.includes("multipart/form-data")) {

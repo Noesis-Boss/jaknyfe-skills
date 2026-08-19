@@ -3,6 +3,7 @@ import { execute, migrate, openDatabase, query } from "../src/server/db";
 import { InvalidContactsCsvError, parseContactsCsv } from "../src/server/contacts/csv";
 import { importContacts } from "../src/server/contacts/service";
 import app, { database as appDatabase } from "../src/server";
+import { authFor } from "./auth-helper";
 
 describe("contact CSV import", () => {
   test("parses valid rows, normalizes email, and preserves custom fields", () => {
@@ -24,7 +25,7 @@ describe("contact CSV import", () => {
 
   test("imports CSV through the tenant-scoped API", async () => {
     execute(appDatabase, "INSERT OR IGNORE INTO organizations (id, name) VALUES (?, ?)", ["org-api", "API"]);
-    const response = await app.fetch(new Request("http://localhost/api/contacts/import", { method: "POST", headers: { "x-organization-id": "org-api", "content-type": "text/csv" }, body: "email\na@example.com\nmissing\na@example.com" }));
+    const response = await app.fetch(new Request("http://localhost/api/contacts/import", { method: "POST", headers: { cookie: await authFor("org-api"), "content-type": "text/csv" }, body: "email\na@example.com\nmissing\na@example.com" }));
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual({ inserted: 1, skipped: 1, invalid: 1 });
   });

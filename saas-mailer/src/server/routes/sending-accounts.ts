@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import type { Database } from "bun:sqlite";
-import { getOrganizationId } from "../tenancy";
+import { requireTenant } from "../auth/middleware";
 import { connectSendingAccount, listSendingAccounts, sendWithAccount } from "../sending/service";
 
 function logRouteError(operation: string, error: unknown): void {
@@ -11,7 +11,7 @@ export function createSendingAccountRoutes(database: Database): Hono {
   const routes = new Hono();
   routes.post("/api/sending-accounts", async (c) => {
     try {
-      const organizationId = getOrganizationId(c.req.raw);
+      const organizationId = requireTenant(database, c.req.raw).organizationId;
       const body = await c.req.json();
       return c.json(connectSendingAccount(database, organizationId, body), 201);
     } catch (error) {
@@ -20,7 +20,7 @@ export function createSendingAccountRoutes(database: Database): Hono {
     }
   });
   routes.get("/api/sending-accounts", (c) => {
-    try { return c.json(listSendingAccounts(database, getOrganizationId(c.req.raw))); }
+    try { return c.json(listSendingAccounts(database, requireTenant(database, c.req.raw).organizationId)); }
     catch (error) {
       logRouteError("listing", error);
       return c.json({ error: "Unable to list sending accounts" }, 400);
@@ -28,7 +28,7 @@ export function createSendingAccountRoutes(database: Database): Hono {
   });
   routes.post("/api/sending-accounts/:id/send", async (c) => {
     try {
-      const result = await sendWithAccount(database, getOrganizationId(c.req.raw), c.req.param("id"), await c.req.json());
+      const result = await sendWithAccount(database, requireTenant(database, c.req.raw).organizationId, c.req.param("id"), await c.req.json());
       return c.json(result, 200);
     } catch (error) {
       logRouteError("send", error);
