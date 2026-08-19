@@ -17,4 +17,4 @@ Local development defaults to `APP_ENV=development` and the deterministic mock a
 
 ## MVP boundaries
 
-Authentication and organization membership are still provisional at the HTTP boundary. Requests currently provide `x-organization-id`; production authentication must replace that header before public launch. No real outbound email is sent by the mock adapter.
+Authentication now uses password-backed users, membership-aware organization sessions, and an HttpOnly session cookie. The `x-organization-id` header is ignored for tenant selection. No real outbound email is sent by the mock adapter.

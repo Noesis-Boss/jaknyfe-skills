@@ -23,6 +23,7 @@ export function migrate(database: Database): void {
   if (!hasAccountSafety) database.exec(readFileSync(new URL("../../db/migrations/005_campaign_account_safety.sql", import.meta.url), "utf8"));
   const hasWorkerFields = database.query("SELECT 1 FROM pragma_table_info('messages') WHERE name = 'error_code'").get();
   if (!hasWorkerFields) database.exec(readFileSync(new URL("../../db/migrations/006_worker_events.sql", import.meta.url), "utf8"));
+  database.exec(readFileSync(new URL("../../db/migrations/007_auth_sessions.sql", import.meta.url), "utf8"));
 }
 
 export function query<T extends Record<string, unknown>>(

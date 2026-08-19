@@ -2,6 +2,7 @@ import { describe, expect, test } from "bun:test";
 import { execute, migrate, openDatabase } from "../src/server/db";
 import { getMockSendingAdapter, connectSendingAccount, listSendingAccounts, sendWithAccount } from "../src/server/sending/service";
 import app, { database as appDatabase } from "../src/server";
+import { authFor } from "./auth-helper";
 
 process.env.SENDING_CREDENTIAL_ENCRYPTION_KEY = "11".repeat(32);
 
@@ -54,26 +55,28 @@ describe("sending accounts", () => {
 
   test("exposes tenant-safe account and send routes without credentials", async () => {
     execute(appDatabase, "INSERT OR IGNORE INTO organizations (id, name) VALUES (?, ?)", ["org-route", "Route"]);
-    const response = await app.fetch(new Request("http://localhost/api/sending-accounts", { method: "POST", headers: { "x-organization-id": "org-route", "content-type": "application/json" }, body: JSON.stringify({ provider: "mock", email: "route@example.com", credentials: { token: "secret" } }) }));
+    const cookie = await authFor("org-route");
+    const response = await app.fetch(new Request("http://localhost/api/sending-accounts", { method: "POST", headers: { cookie, "content-type": "application/json" }, body: JSON.stringify({ provider: "mock", email: "route@example.com", credentials: { token: "secret" } }) }));
     expect(response.status).toBe(201);
     const account = await response.json();
     expect(account.credential_ciphertext).toBeUndefined();
     expect(account.provider).toBe("mock");
-    const send = await app.fetch(new Request(`http://localhost/api/sending-accounts/${account.id}/send`, { method: "POST", headers: { "x-organization-id": "org-route", "content-type": "application/json" }, body: JSON.stringify({ to: "to@example.com", subject: "Hi", body: "Body" }) }));
+    const send = await app.fetch(new Request(`http://localhost/api/sending-accounts/${account.id}/send`, { method: "POST", headers: { cookie, "content-type": "application/json" }, body: JSON.stringify({ to: "to@example.com", subject: "Hi", body: "Body" }) }));
     expect(send.status).toBe(200);
     expect(await send.json()).toMatchObject({ providerMessageId: expect.stringMatching(/^mock-/) });
   });
 
   test("uses browser-safe errors and rejects cross-tenant route access", async () => {
     execute(appDatabase, "INSERT OR IGNORE INTO organizations (id, name) VALUES (?, ?), (?, ?)", ["org-safe-a", "A", "org-safe-b", "B"]);
-    const created = await app.fetch(new Request("http://localhost/api/sending-accounts", { method: "POST", headers: { "x-organization-id": "org-safe-a", "content-type": "application/json" }, body: JSON.stringify({ provider: "mock", email: "safe@example.com", credentials: {} }) }));
+    const cookieA = await authFor("org-safe-a"); const cookieB = await authFor("org-safe-b");
+    const created = await app.fetch(new Request("http://localhost/api/sending-accounts", { method: "POST", headers: { cookie: cookieA, "content-type": "application/json" }, body: JSON.stringify({ provider: "mock", email: "safe@example.com", credentials: {} }) }));
     const account = await created.json();
-    const listed = await app.fetch(new Request("http://localhost/api/sending-accounts", { headers: { "x-organization-id": "org-safe-b" } }));
+    const listed = await app.fetch(new Request("http://localhost/api/sending-accounts", { headers: { cookie: cookieB } }));
     expect(await listed.json()).toEqual([]);
-    const crossTenantSend = await app.fetch(new Request(`http://localhost/api/sending-accounts/${account.id}/send`, { method: "POST", headers: { "x-organization-id": "org-safe-b", "content-type": "application/json" }, body: JSON.stringify({ to: "to@example.com", subject: "Hi", body: "Body" }) }));
+    const crossTenantSend = await app.fetch(new Request(`http://localhost/api/sending-accounts/${account.id}/send`, { method: "POST", headers: { cookie: cookieB, "content-type": "application/json" }, body: JSON.stringify({ to: "to@example.com", subject: "Hi", body: "Body" }) }));
     expect(crossTenantSend.status).toBe(400);
     expect(await crossTenantSend.json()).toEqual({ error: "Unable to send message" });
-    const unsupported = await app.fetch(new Request("http://localhost/api/sending-accounts", { method: "POST", headers: { "x-organization-id": "org-safe-a", "content-type": "application/json" }, body: JSON.stringify({ provider: "unknown", email: "safe@example.com", credentials: {} }) }));
+    const unsupported = await app.fetch(new Request("http://localhost/api/sending-accounts", { method: "POST", headers: { cookie: cookieA, "content-type": "application/json" }, body: JSON.stringify({ provider: "unknown", email: "safe@example.com", credentials: {} }) }));
     expect(await unsupported.json()).toEqual({ error: "Unable to connect sending account" });
   });
 });

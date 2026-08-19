@@ -1,22 +1,8 @@
 import { describe, expect, test } from "bun:test";
-import { assertOrganizationRecord, getOrganizationId } from "../src/server/tenancy";
+import { assertOrganizationRecord } from "../src/server/tenancy";
 import { execute, migrate, openDatabase, query } from "../src/server/db";
 
 describe("tenant helpers", () => {
-  test("reads the organization ID from the request", () => {
-    const request = new Request("http://localhost/", {
-      headers: { "x-organization-id": "org-123" },
-    });
-
-    expect(getOrganizationId(request)).toBe("org-123");
-  });
-
-  test("rejects a request without organization context", () => {
-    expect(() => getOrganizationId(new Request("http://localhost/"))).toThrow(
-      "Missing organization context",
-    );
-  });
-
   test("allows records belonging to the active organization", () => {
     expect(() => assertOrganizationRecord({ organization_id: "org-123" }, "org-123")).not.toThrow();
   });
@@ -38,6 +24,8 @@ describe("tenant-safe database schema", () => {
     ).map((row) => row.name);
     expect(tables).toEqual([
       "audit_log",
+      "auth_passwords",
+      "auth_sessions",
       "campaign_contacts",
       "campaign_steps",
       "campaigns",
