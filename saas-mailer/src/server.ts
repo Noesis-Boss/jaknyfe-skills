@@ -3,6 +3,7 @@ import { migrate, openDatabase } from "./server/db";
 import { createContactsRoutes } from "./server/routes/contacts";
 import { createSendingAccountRoutes } from "./server/routes/sending-accounts";
 import { createCampaignRoutes } from "./server/routes/campaigns";
+import { createEventRoutes } from "./server/routes/events";
 
 const app = new Hono();
 export const database = openDatabase();
@@ -21,6 +22,7 @@ app.get("/api/health", (c) => c.json({ ok: true }));
 app.route("/", createContactsRoutes(database));
 app.route("/", createSendingAccountRoutes(database));
 app.route("/", createCampaignRoutes(database));
+app.route("/", createEventRoutes(database));
 
 app.get("/src/client/main.js", (c) => c.text(clientScript, 200, { "Content-Type": "application/javascript; charset=UTF-8" }));
 
