@@ -11,6 +11,20 @@ bun run src/server.ts
 
 The default development dashboard is available at `/`. The current MVP uses a deterministic mock sending adapter. Provider credentials are encrypted server-side; real Gmail, Outlook, and SMTP adapters are later work.
 
+## Hosted PostgreSQL
+
+Hosted mode is selected with `APP_ENV=production` and requires `DATABASE_URL`. `openConfiguredDatabase()` creates a Bun PostgreSQL pool and runs the idempotent startup migration in `db/migrations/postgres/001_initial.sql` inside a transaction. Development and tests continue to use the explicit SQLite adapter from `openDatabase()`.
+
+Operational commands:
+
+```bash
+APP_ENV=production DATABASE_URL="$DATABASE_URL" bun run src/server.ts
+DATABASE_URL="$DATABASE_URL" psql "$DATABASE_URL" -c 'pg_dump --format=custom --file=saas-mailer.dump'
+DATABASE_URL="$DATABASE_URL" pg_restore --clean --if-exists --dbname="$DATABASE_URL" saas-mailer.dump
+```
+
+Use a pool-sized PostgreSQL connection string supplied by the hosting provider. Take a backup before migrations; startup migration failure rolls back the transaction and prevents a partially applied schema.
+
 ## PostgreSQL production persistence
 
 Production uses `DATABASE_URL` and the PostgreSQL migration at `db/migrations/postgres/001_initial.sql`. The migration is idempotent and records its version in `schema_migrations`; startup runs it inside a transaction before the application accepts traffic. Local development and tests intentionally continue to use the explicit SQLite adapter until repository parity is complete.
