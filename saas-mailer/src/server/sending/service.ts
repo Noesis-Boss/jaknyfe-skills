@@ -1,4 +1,4 @@
-import { createCipheriv, randomBytes, randomUUID } from "node:crypto";
+import { createCipheriv, createDecipheriv, randomBytes, randomUUID } from "node:crypto";
 import type { Database } from "bun:sqlite";
 import type { PostgresDatabase } from "../postgres";
 import { repositories } from "../repositories";
@@ -8,7 +8,7 @@ import { MockSendingAdapter } from "./mock-adapter";
 const adapters = new Map<string, SendingAdapter>([["mock", new MockSendingAdapter()]]);
 
 function encryptionKey(): Buffer {
-  const configuredKey = process.env.SENDING_CREDENTIAL_ENCRYPTION_KEY;
+  const configuredKey = process.env.CREDENTIAL_ENCRYPTION_KEY || process.env.SENDING_CREDENTIAL_ENCRYPTION_KEY;
   if (!configuredKey) throw new Error("Credential encryption is not configured");
   const key = /^[0-9a-fA-F]{64}$/.test(configuredKey)
     ? Buffer.from(configuredKey, "hex")
@@ -22,6 +22,17 @@ export function encryptCredentials(credentials: Record<string, unknown>): string
   const cipher = createCipheriv("aes-256-gcm", encryptionKey(), iv);
   const ciphertext = Buffer.concat([cipher.update(JSON.stringify(credentials), "utf8"), cipher.final()]);
   return `encrypted:v1:${iv.toString("base64url")}:${cipher.getAuthTag().toString("base64url")}:${ciphertext.toString("base64url")}`;
+}
+
+export function decryptCredentials(value: string): Record<string, unknown> {
+  const [prefix, version, ivText, tagText, ciphertextText] = value.split(":");
+  if (prefix !== "encrypted" || version !== "v1" || !ivText || !tagText || !ciphertextText) throw new Error("Invalid encrypted credentials");
+  const decipher = createDecipheriv("aes-256-gcm", encryptionKey(), Buffer.from(ivText, "base64url"));
+  decipher.setAuthTag(Buffer.from(tagText, "base64url"));
+  const plaintext = Buffer.concat([decipher.update(Buffer.from(ciphertextText, "base64url")), decipher.final()]).toString("utf8");
+  const parsed = JSON.parse(plaintext);
+  if (!parsed || typeof parsed !== "object") throw new Error("Invalid encrypted credentials");
+  return parsed as Record<string, unknown>;
 }
 
 export async function connectSendingAccountPostgres(database: PostgresDatabase, organizationId: string, input: ConnectSendingAccountInput): Promise<SendingAccount> {
@@ -44,7 +55,14 @@ export async function listSendingAccountsPostgres(database: PostgresDatabase, or
 export async function sendWithAccountPostgres(database: PostgresDatabase, organizationId: string, accountId: string, input: SendInput): Promise<SendResult> {
   const account = await repositories({ database, organizationId }).accounts.findActive(accountId);
   if (!account) throw new Error("Sending account not found");
-  return getSendingAdapter(String(account.provider)).send({ ...input, from: input.from || String(account.email) });
+  const credentials = decryptCredentials(String(account.credential_ciphertext));
+  const accessToken = typeof credentials.accessToken === "string" ? credentials.accessToken : "";
+  const adapter = String(account.provider) === "gmail"
+    ? (await import("./gmail-adapter")).gmailAdapter(accessToken)
+    : String(account.provider) === "microsoft"
+      ? (await import("./microsoft-adapter")).microsoftAdapter(accessToken)
+      : getSendingAdapter(String(account.provider));
+  return adapter.send({ ...input, from: input.from || String(account.email) });
 }
 
 export function registerSendingAdapter(provider: string, adapter: SendingAdapter): void {

@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import type { Database } from "bun:sqlite";
 import type { PostgresDatabase } from "../postgres";
 import { requireTenant, requireTenantPostgres } from "../auth/middleware";
-import { connectSendingAccount, connectSendingAccountPostgres, listSendingAccounts, listSendingAccountsPostgres, sendWithAccount } from "../sending/service";
+import { connectSendingAccount, connectSendingAccountPostgres, listSendingAccounts, listSendingAccountsPostgres, sendWithAccount, sendWithAccountPostgres } from "../sending/service";
 
 function logRouteError(operation: string, error: unknown): void {
   console.error(`Sending account ${operation} failed`, error);
@@ -31,7 +31,10 @@ export function createSendingAccountRoutes(database: Database | PostgresDatabase
   });
   routes.post("/api/sending-accounts/:id/send", async (c) => {
     try {
-      const result = await sendWithAccount(database, requireTenant(database, c.req.raw).organizationId, c.req.param("id"), await c.req.json());
+      const tenant = isPostgres(database) ? await requireTenantPostgres(database, c.req.raw) : requireTenant(database, c.req.raw);
+      const result = isPostgres(database)
+        ? await sendWithAccountPostgres(database, tenant.organizationId, c.req.param("id"), await c.req.json())
+        : await sendWithAccount(database, tenant.organizationId, c.req.param("id"), await c.req.json());
       return c.json(result, 200);
     } catch (error) {
       logRouteError("send", error);

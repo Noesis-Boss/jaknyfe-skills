@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { loadConfig } from "./server/config";
 import { migrate, openDatabase } from "./server/db";
+import { openProductionDatabase } from "./server/postgres";
 import { createContactsRoutes } from "./server/routes/contacts";
 import { createSendingAccountRoutes } from "./server/routes/sending-accounts";
 import { createCampaignRoutes } from "./server/routes/campaigns";
@@ -10,12 +11,11 @@ import { createProviderCallbackRoutes } from "./server/routes/provider-callbacks
 
 const app = new Hono();
 export const config = loadConfig();
-if (config.appEnv === "production") {
-  throw new Error("Production startup is blocked until PostgreSQL-backed routes are enabled");
+export const database = config.database === "postgres" ? await openProductionDatabase(config.databaseUrl) : openDatabase();
+if (config.database === "sqlite") {
+  migrate(database);
+  database.query("INSERT OR IGNORE INTO organizations (id, name) VALUES (?, ?)").run("demo-org", "Demo workspace");
 }
-export const database = openDatabase();
-migrate(database);
-database.query("INSERT OR IGNORE INTO organizations (id, name) VALUES (?, ?)").run("demo-org", "Demo workspace");
 
 const clientScript = await Bun.build({ entrypoints: [new URL("./client/main.tsx", import.meta.url).pathname], target: "browser", minify: false }).then((result) => result.outputs[0].text());
 
