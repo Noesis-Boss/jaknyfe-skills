@@ -1,5 +1,7 @@
 import { randomUUID } from "node:crypto";
 import type { Database } from "bun:sqlite";
+import type { PostgresDatabase } from "../postgres";
+import { repositories } from "../repositories";
 import type { ParsedContact } from "./csv";
 
 export type ImportResult = { inserted: number; skipped: number; invalid: number };
@@ -20,5 +22,24 @@ export function importContacts(database: Database, organizationId: string, conta
     database.exec("ROLLBACK");
     throw error;
   }
+  return { inserted, skipped, invalid: 0 };
+}
+
+export async function importContactsPostgres(database: PostgresDatabase, organizationId: string, contacts: ParsedContact[]): Promise<ImportResult> {
+  let inserted = 0;
+  let skipped = 0;
+  const store = repositories({ database, organizationId });
+  await store.transaction(async tx => {
+    for (const contact of contacts) {
+      const row = await tx.contacts.insert({
+        email: contact.email,
+        firstName: contact.first_name,
+        lastName: contact.last_name,
+        customFields: contact.custom_fields,
+      });
+      if (row) inserted += 1;
+      else skipped += 1;
+    }
+  });
   return { inserted, skipped, invalid: 0 };
 }
