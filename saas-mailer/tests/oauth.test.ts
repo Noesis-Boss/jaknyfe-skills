@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { consumeOAuthState, createOAuthState, oauthAuthorizationUrl } from "../src/server/sending/oauth";
+import { consumeOAuthState, createOAuthState, exchangeOAuthCode, oauthAuthorizationUrl } from "../src/server/sending/oauth";
 
 process.env.SESSION_SECRET = "test-session-secret";
 
@@ -16,4 +16,12 @@ test("OAuth state expires and URLs contain no credentials", () => {
   const url = oauthAuthorizationUrl("gmail", "state", { callbackOrigin: "https://mailer.example", googleClientId: "client-id" });
   expect(url).toContain("gmail.send");
   expect(url).not.toContain("client-secret");
+});
+
+test("OAuth code exchange normalizes tokens without exposing client secrets", async () => {
+  let request: Request | undefined;
+  const tokens = await exchangeOAuthCode("gmail", "auth-code", { callbackOrigin: "https://mailer.example", googleClientId: "client-id", googleClientSecret: "client-secret" }, async (url, init) => { request = new Request(url, init); return new Response(JSON.stringify({ access_token: "access", refresh_token: "refresh", expires_in: 3600, token_type: "Bearer" }), { status: 200 }); });
+  expect(tokens).toEqual({ accessToken: "access", refreshToken: "refresh", expiresIn: 3600, tokenType: "Bearer" });
+  expect(await request?.text()).toContain("code=auth-code");
+  expect(request?.url).toContain("oauth2.googleapis.com");
 });
