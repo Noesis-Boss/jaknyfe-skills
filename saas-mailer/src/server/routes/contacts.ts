@@ -1,14 +1,21 @@
 import { Hono } from "hono";
 import type { Database } from "bun:sqlite";
-import { requireTenant } from "../auth/middleware";
+import type { PostgresDatabase } from "../postgres";
+import { requireTenant, requireTenantPostgres } from "../auth/middleware";
 import { countInvalidContacts, parseContactsCsv } from "../contacts/csv";
-import { importContacts } from "../contacts/service";
+import { importContacts, importContactsPostgres } from "../contacts/service";
 
-export function createContactsRoutes(database: Database): Hono {
+function isPostgres(database: Database | PostgresDatabase): database is PostgresDatabase {
+  return "sql" in database;
+}
+
+export function createContactsRoutes(database: Database | PostgresDatabase): Hono {
   const routes = new Hono();
   routes.post("/api/contacts/import", async (c) => {
     try {
-      const organizationId = requireTenant(database, c.req.raw).organizationId;
+      const tenant = isPostgres(database)
+        ? await requireTenantPostgres(database, c.req.raw)
+        : requireTenant(database, c.req.raw);
       const contentType = c.req.header("content-type") || "";
       let csvText = "";
       if (contentType.includes("multipart/form-data")) {
@@ -17,7 +24,9 @@ export function createContactsRoutes(database: Database): Hono {
         csvText = file instanceof File ? await file.text() : String(form.get("csv") || "");
       } else csvText = await c.req.text();
       const parsed = parseContactsCsv(csvText);
-      const result = importContacts(database, organizationId, parsed);
+      const result = isPostgres(database)
+        ? await importContactsPostgres(database, tenant.organizationId, parsed)
+        : importContacts(database, tenant.organizationId, parsed);
       result.invalid = countInvalidContacts(csvText);
       return c.json(result, 200);
     } catch (error) {

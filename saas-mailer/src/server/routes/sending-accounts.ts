@@ -1,26 +1,29 @@
 import { Hono } from "hono";
 import type { Database } from "bun:sqlite";
-import { requireTenant } from "../auth/middleware";
-import { connectSendingAccount, listSendingAccounts, sendWithAccount } from "../sending/service";
+import type { PostgresDatabase } from "../postgres";
+import { requireTenant, requireTenantPostgres } from "../auth/middleware";
+import { connectSendingAccount, connectSendingAccountPostgres, listSendingAccounts, listSendingAccountsPostgres, sendWithAccount } from "../sending/service";
 
 function logRouteError(operation: string, error: unknown): void {
   console.error(`Sending account ${operation} failed`, error);
 }
 
-export function createSendingAccountRoutes(database: Database): Hono {
+function isPostgres(database: Database | PostgresDatabase): database is PostgresDatabase { return "sql" in database; }
+
+export function createSendingAccountRoutes(database: Database | PostgresDatabase): Hono {
   const routes = new Hono();
   routes.post("/api/sending-accounts", async (c) => {
     try {
-      const organizationId = requireTenant(database, c.req.raw).organizationId;
+      const organizationId = (isPostgres(database) ? await requireTenantPostgres(database, c.req.raw) : requireTenant(database, c.req.raw)).organizationId;
       const body = await c.req.json();
-      return c.json(connectSendingAccount(database, organizationId, body), 201);
+      return c.json(isPostgres(database) ? await connectSendingAccountPostgres(database, organizationId, body) : connectSendingAccount(database, organizationId, body), 201);
     } catch (error) {
       logRouteError("connection", error);
       return c.json({ error: "Unable to connect sending account" }, 400);
     }
   });
-  routes.get("/api/sending-accounts", (c) => {
-    try { return c.json(listSendingAccounts(database, requireTenant(database, c.req.raw).organizationId)); }
+  routes.get("/api/sending-accounts", async (c) => {
+    try { const organizationId = (isPostgres(database) ? await requireTenantPostgres(database, c.req.raw) : requireTenant(database, c.req.raw)).organizationId; return c.json(isPostgres(database) ? await listSendingAccountsPostgres(database, organizationId) : listSendingAccounts(database, organizationId)); }
     catch (error) {
       logRouteError("listing", error);
       return c.json({ error: "Unable to list sending accounts" }, 400);
