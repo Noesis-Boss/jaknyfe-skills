@@ -39,6 +39,7 @@ export function repositories(context: RepositoryContext) {
     events: {
       insert: (input: { type: string; messageId?: string; contactId?: string; payload?: object }) => scoped(db => one(db, "INSERT INTO events (id, organization_id, message_id, contact_id, type, payload) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *", [randomUUID(), organizationId, input.messageId || null, input.contactId || null, input.type, JSON.stringify(input.payload || {})])),
       list: () => scoped(db => rows(db, "SELECT * FROM events WHERE organization_id = $1 ORDER BY created_at DESC, id DESC", [organizationId])),
+      updateContactStatus: (contactId: string, status: string) => scoped(db => db.execute("UPDATE campaign_contacts SET status = $1 WHERE organization_id = $2 AND contact_id = $3 AND status NOT IN ('replied', 'bounced', 'unsubscribed')", [status, organizationId, contactId])),
     },
     suppressions: {
       findEmail: (email: string) => scoped(db => one(db, "SELECT * FROM suppression_list WHERE organization_id = $1 AND email = $2", [organizationId, email.trim().toLowerCase()])),
