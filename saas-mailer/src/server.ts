@@ -9,6 +9,9 @@ import { createAuthRoutes } from "./server/routes/auth";
 
 const app = new Hono();
 export const config = loadConfig();
+if (config.appEnv === "production") {
+  throw new Error("Production startup is blocked until PostgreSQL-backed routes are enabled");
+}
 export const database = openDatabase();
 migrate(database);
 database.query("INSERT OR IGNORE INTO organizations (id, name) VALUES (?, ?)").run("demo-org", "Demo workspace");
