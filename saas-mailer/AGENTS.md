@@ -16,6 +16,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 ## Feature Log
 
+- 2026-08-20: Added network-mocked Gmail and Microsoft Graph sending adapters with normalized provider IDs and typed authentication, quota, transient, and permanent error classification. No external network calls occur in tests. Full suite: 52 passed, 1 skipped.
+
 - 2026-08-20: Event listing and event recording now support PostgreSQL with tenant-scoped async repositories and transactional contact-state pauses; SQLite behavior remains unchanged. Full suite: 48 passed, 1 skipped.
 - 2026-08-20: Added PostgreSQL account lookup, contact lookup, message status updates, and sending-adapter boundary primitives for the worker cutover. Full suite: 48 passed, 1 skipped; Bun server build passed.
 - 2026-08-20: Added PostgreSQL worker send processing with transactional idempotency claims, retry re-queuing, tenant-scoped contact/account access, provider failure handling, account pausing, message status persistence, and delivery/failure events. Focused worker tests pass; full suite remains 48 passed, 1 skipped.
