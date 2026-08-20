@@ -17,6 +17,7 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 ## Feature Log
 
 - 2026-08-20: OAuth start/callback routes and sending-account send routes now support PostgreSQL. Production startup opens the configured PostgreSQL database, and Gmail/Microsoft sends decrypt stored OAuth credentials before invoking provider adapters. Bun server build and focused provider/account/callback tests pass.
+- 2026-08-20: Added Gmail/Microsoft OAuth refresh-token exchange, expiry-aware refresh before sending, and encrypted persistence of refreshed credentials in PostgreSQL. Provider, callback, OAuth, and account tests pass; Bun server build passes.
 
 - 2026-08-20: Added network-mocked Gmail and Microsoft Graph sending adapters with normalized provider IDs and typed authentication, quota, transient, and permanent error classification. No external network calls occur in tests. Full suite: 52 passed, 1 skipped.
 
