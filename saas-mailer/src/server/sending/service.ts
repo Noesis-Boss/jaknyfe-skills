@@ -57,9 +57,13 @@ export function getSendingAdapter(provider: string): SendingAdapter {
   return adapter;
 }
 
+export function isConfiguredProvider(provider: string): boolean {
+  return provider === "mock" || provider === "gmail" || provider === "microsoft" || provider === "smtp";
+}
+
 export function connectSendingAccount(database: Database, organizationId: string, input: ConnectSendingAccountInput): SendingAccount {
   if (!input.provider || !input.email || !input.credentials) throw new Error("Provider, email, and credentials are required");
-  getSendingAdapter(input.provider);
+  if (!isConfiguredProvider(input.provider)) throw new Error(`Unsupported sending provider: ${input.provider}`);
   const id = randomUUID();
   database.query("INSERT INTO sending_accounts (id, organization_id, provider, email, credential_ciphertext) VALUES (?, ?, ?, ?, ?)").run(id, organizationId, input.provider, input.email.trim().toLowerCase(), encryptCredentials(input.credentials));
   return database.query<SendingAccount, [string]>("SELECT id, organization_id, provider, email, status, created_at FROM sending_accounts WHERE id = ?").get(id) as SendingAccount;
