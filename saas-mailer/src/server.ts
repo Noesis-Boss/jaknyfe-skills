@@ -6,6 +6,7 @@ import { createSendingAccountRoutes } from "./server/routes/sending-accounts";
 import { createCampaignRoutes } from "./server/routes/campaigns";
 import { createEventRoutes } from "./server/routes/events";
 import { createAuthRoutes } from "./server/routes/auth";
+import { createProviderCallbackRoutes } from "./server/routes/provider-callbacks";
 
 const app = new Hono();
 export const config = loadConfig();
@@ -20,6 +21,7 @@ const clientScript = await Bun.build({ entrypoints: [new URL("./client/main.tsx"
 
 app.get("/api/health", (c) => c.json({ ok: true }));
 app.route("/", createAuthRoutes(database, config.appEnv));
+app.route("/", createProviderCallbackRoutes(database, config));
 app.route("/", createContactsRoutes(database));
 app.route("/", createSendingAccountRoutes(database));
 app.route("/", createCampaignRoutes(database));

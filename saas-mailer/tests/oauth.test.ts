@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { consumeOAuthState, createOAuthState, exchangeOAuthCode, oauthAuthorizationUrl } from "../src/server/sending/oauth";
+import { consumeOAuthState, createOAuthState, exchangeOAuthCode, fetchProviderIdentity, oauthAuthorizationUrl } from "../src/server/sending/oauth";
 
 process.env.SESSION_SECRET = "test-session-secret";
 
@@ -24,4 +24,8 @@ test("OAuth code exchange normalizes tokens without exposing client secrets", as
   expect(tokens).toEqual({ accessToken: "access", refreshToken: "refresh", expiresIn: 3600, tokenType: "Bearer" });
   expect(await request?.text()).toContain("code=auth-code");
   expect(request?.url).toContain("oauth2.googleapis.com");
+});
+
+test("provider identity comes from the provider API", async () => {
+  await expect(fetchProviderIdentity("microsoft", "access", async () => new Response(JSON.stringify({ mail: "Owner@Example.com" }), { status: 200 }))).resolves.toBe("owner@example.com");
 });
