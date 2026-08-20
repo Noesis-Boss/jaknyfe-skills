@@ -9,11 +9,11 @@ bun test
 bun run src/server.ts
 ```
 
-The default development dashboard is available at `/`. The current MVP uses a deterministic mock sending adapter. Provider credentials are encrypted server-side; real Gmail, Outlook, and SMTP adapters are later work.
+The default development dashboard is available at `/`. Development and tests use a deterministic mock adapter. Production uses Gmail or Microsoft OAuth adapters with encrypted credentials and refresh-before-expiry.
 
 ## Hosted PostgreSQL
 
-Hosted mode is selected with `APP_ENV=production` and requires `DATABASE_URL`. `openConfiguredDatabase()` creates a Bun PostgreSQL pool and runs the idempotent startup migration in `db/migrations/postgres/001_initial.sql` inside a transaction. Development and tests continue to use the explicit SQLite adapter from `openDatabase()`. The HTTP server intentionally refuses production startup until every route and worker path uses the PostgreSQL adapter; this prevents a deployment from accepting traffic while silently persisting to SQLite.
+Hosted mode is selected with `APP_ENV=production` and requires `DATABASE_URL`. `openProductionDatabase()` creates a Bun PostgreSQL pool and runs the idempotent startup migration in `db/migrations/postgres/001_initial.sql` inside a transaction. Development and tests continue to use the explicit SQLite adapter from `openDatabase()`. The HTTP server opens PostgreSQL before accepting production traffic, and the durable worker uses the same PostgreSQL queue and send processor.
 
 Operational commands:
 
@@ -27,7 +27,7 @@ Use a pool-sized PostgreSQL connection string supplied by the hosting provider. 
 
 ## PostgreSQL production persistence
 
-Production uses `DATABASE_URL` and the PostgreSQL migration at `db/migrations/postgres/001_initial.sql`. The migration is idempotent and records its version in `schema_migrations`; startup runs it inside a transaction before the application accepts traffic. Local development and tests intentionally continue to use the explicit SQLite adapter until repository parity is complete.
+Production uses `DATABASE_URL` and the PostgreSQL migration at `db/migrations/postgres/001_initial.sql`. The migration is idempotent and records its version in `schema_migrations`; startup runs it inside a transaction before the application accepts traffic. Local development and tests intentionally continue to use the explicit SQLite adapter.
 
 Operational examples:
 
@@ -45,4 +45,4 @@ Local development defaults to `APP_ENV=development` and the deterministic mock a
 
 ## MVP boundaries
 
-Authentication now uses password-backed users, membership-aware organization sessions, and an HttpOnly session cookie. The `x-organization-id` header is ignored for tenant selection. No real outbound email is sent by the mock adapter.
+Authentication now uses password-backed users, membership-aware organization sessions, and an HttpOnly session cookie. The `x-organization-id` header is ignored for tenant selection. Gmail and Microsoft OAuth accounts send through their provider APIs; the mock adapter is used only in development and tests.
