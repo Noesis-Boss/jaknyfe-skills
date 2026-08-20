@@ -41,6 +41,12 @@ export async function listSendingAccountsPostgres(database: PostgresDatabase, or
   return (await repositories({ database, organizationId }).accounts.list()) as SendingAccount[];
 }
 
+export async function sendWithAccountPostgres(database: PostgresDatabase, organizationId: string, accountId: string, input: SendInput): Promise<SendResult> {
+  const account = await repositories({ database, organizationId }).accounts.findActive(accountId);
+  if (!account) throw new Error("Sending account not found");
+  return getSendingAdapter(String(account.provider)).send({ ...input, from: input.from || String(account.email) });
+}
+
 export function registerSendingAdapter(provider: string, adapter: SendingAdapter): void {
   adapters.set(provider, adapter);
 }

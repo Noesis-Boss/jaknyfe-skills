@@ -15,6 +15,7 @@ export function repositories(context: RepositoryContext) {
   return {
     contacts: {
       list: () => scoped(db => rows(db, "SELECT * FROM contacts WHERE organization_id = $1 ORDER BY created_at, id", [organizationId])),
+      find: (id: string) => scoped(db => one(db, "SELECT * FROM contacts WHERE organization_id = $1 AND id = $2", [organizationId, id])),
       insert: (input: { email: string; firstName?: string; lastName?: string; customFields?: object }) => scoped(db => one(db, "INSERT INTO contacts (id, organization_id, email, first_name, last_name, custom_fields) VALUES ($1,$2,$3,$4,$5,$6) ON CONFLICT (organization_id,email) DO NOTHING RETURNING *", [randomUUID(), organizationId, input.email.trim().toLowerCase(), input.firstName || null, input.lastName || null, JSON.stringify(input.customFields || {})])),
       update: (id: string, input: { firstName?: string; lastName?: string; customFields?: object }) => scoped(db => one(db, "UPDATE contacts SET first_name = $1, last_name = $2, custom_fields = $3 WHERE organization_id = $4 AND id = $5 RETURNING *", [input.firstName || null, input.lastName || null, JSON.stringify(input.customFields || {}), organizationId, id])),
     },
@@ -22,6 +23,7 @@ export function repositories(context: RepositoryContext) {
       list: () => scoped(db => rows(db, "SELECT id, organization_id, provider, email, status, daily_send_limit, timezone, created_at FROM sending_accounts WHERE organization_id = $1 ORDER BY created_at, id", [organizationId])),
       insert: (input: { provider: string; email: string; credentialCiphertext: string }) => scoped(db => one(db, "INSERT INTO sending_accounts (id, organization_id, provider, email, credential_ciphertext) VALUES ($1,$2,$3,$4,$5) RETURNING id, organization_id, provider, email, status, created_at", [randomUUID(), organizationId, input.provider, input.email.trim().toLowerCase(), input.credentialCiphertext])),
       findActive: (id: string) => scoped(db => one(db, "SELECT * FROM sending_accounts WHERE organization_id = $1 AND id = $2 AND status = 'active'", [organizationId, id])),
+      pause: (id: string) => scoped(db => db.execute("UPDATE sending_accounts SET status = 'paused' WHERE organization_id = $1 AND id = $2", [organizationId, id])),
     },
     campaigns: {
       find: (id: string, lock = false) => scoped(db => one(db, `SELECT * FROM campaigns WHERE organization_id = $1 AND id = $2${lock ? " FOR UPDATE" : ""}`, [organizationId, id])),
@@ -35,6 +37,7 @@ export function repositories(context: RepositoryContext) {
     messages: {
       findByIdempotencyKey: (key: string, lock = false) => scoped(db => one(db, `SELECT * FROM messages WHERE organization_id = $1 AND idempotency_key = $2${lock ? " FOR UPDATE" : ""}`, [organizationId, key])),
       insert: (input: Record<string, unknown>) => scoped(db => one(db, "INSERT INTO messages (id, organization_id, campaign_id, contact_id, sending_account_id, status, idempotency_key, subject, body, error_code) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) ON CONFLICT (idempotency_key) DO NOTHING RETURNING *", [input.id || randomUUID(), organizationId, input.campaignId || null, input.contactId || null, input.sendingAccountId || null, input.status, input.idempotencyKey, input.subject || "", input.body || "", input.errorCode || null])),
+      markSent: (id: string, providerMessageId: string, sentAt: string) => scoped(db => one(db, "UPDATE messages SET status = 'sent', provider_message_id = $1, sent_at = $2 WHERE organization_id = $3 AND id = $4 RETURNING *", [providerMessageId, sentAt, organizationId, id])),
     },
     events: {
       insert: (input: { type: string; messageId?: string; contactId?: string; payload?: object }) => scoped(db => one(db, "INSERT INTO events (id, organization_id, message_id, contact_id, type, payload) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *", [randomUUID(), organizationId, input.messageId || null, input.contactId || null, input.type, JSON.stringify(input.payload || {})])),
