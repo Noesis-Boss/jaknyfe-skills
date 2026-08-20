@@ -26,6 +26,10 @@ export function repositories(context: RepositoryContext) {
     campaigns: {
       find: (id: string, lock = false) => scoped(db => one(db, `SELECT * FROM campaigns WHERE organization_id = $1 AND id = $2${lock ? " FOR UPDATE" : ""}`, [organizationId, id])),
       insert: (name: string) => scoped(db => one(db, "INSERT INTO campaigns (id, organization_id, name) VALUES ($1,$2,$3) RETURNING *", [randomUUID(), organizationId, name])),
+      updateSettings: (id: string, accountId: string | null, windowStart: string | null, windowEnd: string | null, dailyLimit: number) => scoped(db => one(db, "UPDATE campaigns SET sending_account_id = $1, sending_window_start = $2, sending_window_end = $3, daily_send_limit = $4 WHERE organization_id = $5 AND id = $6 RETURNING *", [accountId, windowStart, windowEnd, dailyLimit, organizationId, id])),
+      insertStep: (campaignId: string, order: number, subject: string, body: string, delayMinutes: number) => scoped(db => one(db, "INSERT INTO campaign_steps (id, organization_id, campaign_id, step_order, subject, body, delay_minutes) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *", [randomUUID(), organizationId, campaignId, order, subject, body, delayMinutes])),
+      approve: (id: string, approvedAt: string, approvedBy: string) => scoped(db => one(db, "UPDATE campaigns SET status = 'approved', approved_at = $1, approved_by = $2 WHERE organization_id = $3 AND id = $4 RETURNING *", [approvedAt, approvedBy, organizationId, id])),
+      enroll: (campaignId: string, contactId: string) => scoped(async db => (await db.execute("INSERT INTO campaign_contacts (campaign_id, contact_id, organization_id) VALUES ($1,$2,$3) ON CONFLICT (campaign_id, contact_id) DO NOTHING", [campaignId, contactId, organizationId])) > 0),
       updateStatus: (id: string, status: string) => scoped(db => one(db, "UPDATE campaigns SET status = $1 WHERE organization_id = $2 AND id = $3 RETURNING *", [status, organizationId, id])),
     },
     messages: {
