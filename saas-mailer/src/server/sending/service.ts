@@ -4,6 +4,7 @@ import type { PostgresDatabase } from "../postgres";
 import { repositories } from "../repositories";
 import type { ConnectSendingAccountInput, SendInput, SendResult, SendingAccount, SendingAdapter } from "./types";
 import { MockSendingAdapter } from "./mock-adapter";
+import { refreshOAuthToken } from "./oauth";
 
 const adapters = new Map<string, SendingAdapter>([["mock", new MockSendingAdapter()]]);
 
@@ -55,7 +56,17 @@ export async function listSendingAccountsPostgres(database: PostgresDatabase, or
 export async function sendWithAccountPostgres(database: PostgresDatabase, organizationId: string, accountId: string, input: SendInput): Promise<SendResult> {
   const account = await repositories({ database, organizationId }).accounts.findActive(accountId);
   if (!account) throw new Error("Sending account not found");
-  const credentials = decryptCredentials(String(account.credential_ciphertext));
+  let credentials = decryptCredentials(String(account.credential_ciphertext));
+  if (typeof credentials.expiresAt === "number" && credentials.expiresAt <= Date.now() + 60_000 && typeof credentials.refreshToken === "string") {
+    const refreshed = await refreshOAuthToken(String(account.provider) as "gmail" | "microsoft", credentials.refreshToken, {
+      googleClientId: process.env.GOOGLE_CLIENT_ID,
+      googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      microsoftClientId: process.env.MICROSOFT_CLIENT_ID,
+      microsoftClientSecret: process.env.MICROSOFT_CLIENT_SECRET,
+    });
+    credentials = { ...credentials, ...refreshed, expiresAt: refreshed.expiresIn ? Date.now() + refreshed.expiresIn * 1000 : undefined };
+    await repositories({ database, organizationId }).accounts.updateCredentials(String(account.id), encryptCredentials(credentials));
+  }
   const accessToken = typeof credentials.accessToken === "string" ? credentials.accessToken : "";
   const adapter = String(account.provider) === "gmail"
     ? (await import("./gmail-adapter")).gmailAdapter(accessToken)

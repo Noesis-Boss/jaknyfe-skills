@@ -22,6 +22,7 @@ export function repositories(context: RepositoryContext) {
     accounts: {
       list: () => scoped(db => rows(db, "SELECT id, organization_id, provider, email, status, daily_send_limit, timezone, created_at FROM sending_accounts WHERE organization_id = $1 ORDER BY created_at, id", [organizationId])),
       insert: (input: { provider: string; email: string; credentialCiphertext: string }) => scoped(db => one(db, "INSERT INTO sending_accounts (id, organization_id, provider, email, credential_ciphertext) VALUES ($1,$2,$3,$4,$5) RETURNING id, organization_id, provider, email, status, created_at", [randomUUID(), organizationId, input.provider, input.email.trim().toLowerCase(), input.credentialCiphertext])),
+      updateCredentials: (id: string, credentialCiphertext: string) => scoped(db => one(db, "UPDATE sending_accounts SET credential_ciphertext = $1 WHERE organization_id = $2 AND id = $3 RETURNING *", [credentialCiphertext, organizationId, id])),
       findActive: (id: string) => scoped(db => one(db, "SELECT * FROM sending_accounts WHERE organization_id = $1 AND id = $2 AND status = 'active'", [organizationId, id])),
       pause: (id: string) => scoped(db => db.execute("UPDATE sending_accounts SET status = 'paused' WHERE organization_id = $1 AND id = $2", [organizationId, id])),
     },

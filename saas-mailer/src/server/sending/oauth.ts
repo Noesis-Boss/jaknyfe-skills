@@ -59,6 +59,20 @@ export async function exchangeOAuthCode(provider: OAuthProvider, code: string, c
   return { accessToken: raw.access_token, refreshToken: raw.refresh_token, expiresIn: raw.expires_in, tokenType: raw.token_type };
 }
 
+export async function refreshOAuthToken(provider: OAuthProvider, refreshToken: string, config: { googleClientId?: string; googleClientSecret?: string; microsoftClientId?: string; microsoftClientSecret?: string }, fetcher: typeof fetch = fetch): Promise<OAuthTokens> {
+  const google = provider === "gmail";
+  const clientId = google ? config.googleClientId : config.microsoftClientId;
+  const clientSecret = google ? config.googleClientSecret : config.microsoftClientSecret;
+  if (!clientId || !clientSecret) throw new Error(`${google ? "Google" : "Microsoft"} OAuth is not configured`);
+  const endpoint = google ? "https://oauth2.googleapis.com/token" : "https://login.microsoftonline.com/common/oauth2/v2.0/token";
+  const body = new URLSearchParams({ client_id: clientId, client_secret: clientSecret, refresh_token: refreshToken, grant_type: "refresh_token" });
+  const response = await fetcher(endpoint, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
+  if (!response.ok) throw new Error("OAuth token refresh failed");
+  const raw = await response.json() as { access_token?: string; refresh_token?: string; expires_in?: number; token_type?: string };
+  if (!raw.access_token) throw new Error("OAuth provider returned no refreshed access token");
+  return { accessToken: raw.access_token, refreshToken: raw.refresh_token || refreshToken, expiresIn: raw.expires_in, tokenType: raw.token_type };
+}
+
 export async function fetchProviderIdentity(provider: OAuthProvider, accessToken: string, fetcher: typeof fetch = fetch): Promise<string> {
   const endpoint = provider === "gmail" ? "https://gmail.googleapis.com/gmail/v1/users/me/profile" : "https://graph.microsoft.com/v1.0/me?$select=mail,userPrincipalName";
   const response = await fetcher(endpoint, { headers: { Authorization: `Bearer ${accessToken}` } });
