@@ -20,6 +20,7 @@ export function repositories(context: RepositoryContext) {
     },
     accounts: {
       list: () => scoped(db => rows(db, "SELECT id, organization_id, provider, email, status, daily_send_limit, timezone, created_at FROM sending_accounts WHERE organization_id = $1 ORDER BY created_at, id", [organizationId])),
+      insert: (input: { provider: string; email: string; credentialCiphertext: string }) => scoped(db => one(db, "INSERT INTO sending_accounts (id, organization_id, provider, email, credential_ciphertext) VALUES ($1,$2,$3,$4,$5) RETURNING id, organization_id, provider, email, status, created_at", [randomUUID(), organizationId, input.provider, input.email.trim().toLowerCase(), input.credentialCiphertext])),
       findActive: (id: string) => scoped(db => one(db, "SELECT * FROM sending_accounts WHERE organization_id = $1 AND id = $2 AND status = 'active'", [organizationId, id])),
     },
     campaigns: {
