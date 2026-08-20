@@ -18,6 +18,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 - 2026-08-20: Added PostgreSQL-backed password registration, password verification, membership selection, session creation/revocation, and tenant lookup in `src/server/auth/postgres.ts` and `src/server/auth/middleware.ts`. Existing SQLite auth routes remain unchanged until the route factory is switched during the broader PostgreSQL cutover.
 
+- 2026-08-20: Auth route factory now supports both SQLite and PostgreSQL databases. Registration, login, logout, `/api/auth/me`, and tenant lookup select the correct async/sync implementation from the database adapter.
+
 - 2026-08-20: Live Neon connection verified with the supplied `DATABASE_URL`; PostgreSQL migration and repository contract tests passed (2 tests, 13 assertions). The credential was used ephemerally and not written to the repository. Production route/service cutover remains required before app traffic can use Neon.
 - 2026-08-20: Production startup now fails closed instead of silently opening SQLite. The remaining Task 3 work is the async PostgreSQL route/service cutover.
 
