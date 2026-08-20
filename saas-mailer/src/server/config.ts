@@ -93,7 +93,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
       microsoftClientId: optional(env, "MICROSOFT_CLIENT_ID"),
       microsoftClientSecret: optional(env, "MICROSOFT_CLIENT_SECRET"),
     },
-    sending: { adapters: production ? ["gmail", "microsoft", "smtp"] : ["mock"] },
+    sending: { adapters: production ? ["gmail", "microsoft"] : ["mock"] },
     worker: {
       pollIntervalMs: positiveInteger(env, "WORKER_POLL_INTERVAL_MS", DEFAULTS.pollIntervalMs),
       batchSize: positiveInteger(env, "WORKER_BATCH_SIZE", DEFAULTS.batchSize),
