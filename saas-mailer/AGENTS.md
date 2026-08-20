@@ -19,6 +19,7 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 - 2026-08-20: Event listing and event recording now support PostgreSQL with tenant-scoped async repositories and transactional contact-state pauses; SQLite behavior remains unchanged. Full suite: 48 passed, 1 skipped.
 - 2026-08-20: Added PostgreSQL account lookup, contact lookup, message status updates, and sending-adapter boundary primitives for the worker cutover. Full suite: 48 passed, 1 skipped; Bun server build passed.
 - 2026-08-20: Added PostgreSQL worker send processing with transactional idempotency claims, retry re-queuing, tenant-scoped contact/account access, provider failure handling, account pausing, message status persistence, and delivery/failure events. Focused worker tests pass; full suite remains 48 passed, 1 skipped.
+- 2026-08-20: Added durable PostgreSQL queue leases, expired-lease recovery, bounded exponential retry backoff, graceful worker shutdown, and a Bun worker entrypoint at `src/worker/main.ts`. Full suite: 50 passed, 1 skipped; worker bundle builds with Bun.
 
 - 2026-08-20: Campaign create, approve, enroll, and eligibility routes now select PostgreSQL async services when using the PostgreSQL adapter; SQLite behavior remains unchanged. Bun server build and full suite pass: 48 passed, 1 skipped.
 

@@ -45,6 +45,7 @@ export async function processQueuedSendPostgres(database: PostgresDatabase, job:
       await tx.execute("UPDATE messages SET status = 'queued', attempt_count = attempt_count + 1 WHERE organization_id = $1 AND id = $2", [job.organizationId, existing.id]);
       return { id: existing.id, claimed: true };
     }
+    if (existing?.status === "processing") return { id: existing.id, claimed: true };
     if (existing) return { id: existing.id, claimed: false };
     const id = randomUUID();
     await tx.execute("INSERT INTO messages (id, organization_id, campaign_id, contact_id, sending_account_id, status, idempotency_key, subject, body) VALUES ($1,$2,$3,$4,$5,'queued',$6,$7,$8)", [id, job.organizationId, job.campaignId, job.contactId, job.sendingAccountId, job.idempotencyKey, job.subject, job.body]);
