@@ -13,7 +13,7 @@ The default development dashboard is available at `/`. The current MVP uses a de
 
 ## Hosted PostgreSQL
 
-Hosted mode is selected with `APP_ENV=production` and requires `DATABASE_URL`. `openConfiguredDatabase()` creates a Bun PostgreSQL pool and runs the idempotent startup migration in `db/migrations/postgres/001_initial.sql` inside a transaction. Development and tests continue to use the explicit SQLite adapter from `openDatabase()`.
+Hosted mode is selected with `APP_ENV=production` and requires `DATABASE_URL`. `openConfiguredDatabase()` creates a Bun PostgreSQL pool and runs the idempotent startup migration in `db/migrations/postgres/001_initial.sql` inside a transaction. Development and tests continue to use the explicit SQLite adapter from `openDatabase()`. The HTTP server intentionally refuses production startup until every route and worker path uses the PostgreSQL adapter; this prevents a deployment from accepting traffic while silently persisting to SQLite.
 
 Operational commands:
 
