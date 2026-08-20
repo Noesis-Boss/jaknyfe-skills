@@ -1,5 +1,7 @@
 import { randomUUID } from "node:crypto";
 import type { Database } from "bun:sqlite";
+import type { PostgresDatabase } from "../postgres";
+import { repositories } from "../repositories";
 
 export type Campaign = { id: string; organization_id: string; name: string; status: string; approved_at: string | null; approved_by: string | null; sending_account_id: string | null; sending_window_start: string | null; sending_window_end: string | null; daily_send_limit: number; created_at: string };
 export type CampaignStep = { id: string; organization_id: string; campaign_id: string; step_order: number; subject: string; body: string; delay_minutes: number };
@@ -36,4 +38,41 @@ export function enrollContacts(database: Database, campaignId: string, organizat
   const insert = database.query("INSERT OR IGNORE INTO campaign_contacts (campaign_id, contact_id, organization_id) VALUES (?, ?, ?)"); let count = 0;
   for (const contactId of contactIds) if (insert.run(campaignId, contactId, organizationId).changes) count++;
   return count;
+}
+
+export async function createCampaignPostgres(database: PostgresDatabase, organizationId: string, input: CampaignInput): Promise<Campaign> {
+  if (!input.name?.trim()) throw new Error("Campaign name is required");
+  validateWindow(input.sending_window_start); validateWindow(input.sending_window_end);
+  if ((input.sending_window_start == null) !== (input.sending_window_end == null)) throw new Error("Sending window requires start and end");
+  if (input.daily_send_limit != null && input.daily_send_limit < 0) throw new Error("Invalid daily send limit");
+  const repo = repositories({ database, organizationId });
+  return repo.transaction(async tx => {
+    if (input.sending_account_id && !(await tx.accounts.findActive(input.sending_account_id))) throw new Error("Sending account not found or inactive");
+    const campaign = await tx.campaigns.insert(input.name.trim());
+    if (!campaign) throw new Error("Unable to create campaign");
+    const updated = await tx.campaigns.updateSettings(campaign.id, input.sending_account_id || null, input.sending_window_start || null, input.sending_window_end || null, input.daily_send_limit ?? 100);
+    for (const [index, step] of (input.steps || []).entries()) await tx.campaigns.insertStep(campaign.id, index, step.subject, step.body, step.delay_minutes || 0);
+    return updated as Campaign;
+  });
+}
+
+export async function approveCampaignPostgres(database: PostgresDatabase, campaignId: string, organizationId: string): Promise<Campaign> {
+  const repo = repositories({ database, organizationId });
+  return repo.transaction(async tx => {
+    const campaign = await tx.campaigns.find(campaignId);
+    if (!campaign) throw new Error("Campaign not found");
+    const approvedAt = new Date().toISOString();
+    const approved = await tx.campaigns.approve(campaignId, approvedAt, "system:provisional");
+    await tx.audit.insert({ action: "campaign.approved", entityType: "campaign", entityId: campaignId, metadata: { approved_at: approvedAt, approved_by: "system:provisional" } });
+    return approved as Campaign;
+  });
+}
+
+export async function enrollContactsPostgres(database: PostgresDatabase, campaignId: string, organizationId: string, contactIds: string[]): Promise<number> {
+  const repo = repositories({ database, organizationId });
+  return repo.transaction(async tx => {
+    let count = 0;
+    for (const contactId of contactIds) if (await tx.campaigns.enroll(campaignId, contactId)) count++;
+    return count;
+  });
 }

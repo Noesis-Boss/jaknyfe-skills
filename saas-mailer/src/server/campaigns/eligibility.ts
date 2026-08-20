@@ -1,4 +1,5 @@
 export type EligibilityResult = { eligible: true } | { eligible: false; reason: "campaign_not_approved" | "suppressed" | "replied" | "bounced" | "outside_sending_window" | "account_limit_reached" };
+import type { PostgresDatabase } from "../postgres";
 export type EligibilityContact = { email: string; suppressed?: boolean; replied?: boolean; bounced?: boolean };
 export type EligibilityCampaign = { status?: string; approved_at?: string | null; sending_window_start?: string | null; sending_window_end?: string | null; daily_send_limit?: number; sends_today?: number };
 
@@ -34,4 +35,20 @@ export function loadQueueEligibility(database: any, organizationId: string, camp
   if (!state || !state.account_status) return { eligible: false, reason: "campaign_not_approved" };
   if (state.account_status !== "active") return { eligible: false, reason: "account_limit_reached" };
   return isEligibleToSend({ email: state.email, suppressed: Boolean(state.suppressed), replied: Boolean(state.replied), bounced: Boolean(state.bounced) }, { ...state, daily_send_limit: state.account_daily_send_limit, sends_today: state.sends_today });
+}
+
+export async function loadQueueEligibilityPostgres(database: PostgresDatabase, organizationId: string, campaignId: string, contactId: string, now = new Date()): Promise<EligibilityResult> {
+  const rows = await database.query<any>(`SELECT c.status, c.approved_at, c.sending_window_start, c.sending_window_end,
+    ct.email, sa.status AS account_status, sa.daily_send_limit AS account_daily_send_limit,
+    EXISTS (SELECT 1 FROM suppression_list sl WHERE sl.organization_id = c.organization_id AND lower(sl.email) = lower(ct.email)) AS suppressed,
+    EXISTS (SELECT 1 FROM events e WHERE e.organization_id = c.organization_id AND e.contact_id = ct.id AND e.type = 'reply') AS replied,
+    EXISTS (SELECT 1 FROM events e WHERE e.organization_id = c.organization_id AND e.contact_id = ct.id AND e.type = 'bounce') AS bounced,
+    (SELECT COUNT(*) FROM messages m WHERE m.organization_id = c.organization_id AND m.sending_account_id = c.sending_account_id AND m.status = 'sent' AND (m.sent_at AT TIME ZONE 'UTC')::date = ($1::timestamptz AT TIME ZONE 'UTC')::date) AS sends_today
+    FROM campaigns c JOIN contacts ct ON ct.organization_id = c.organization_id AND ct.id = $2
+    LEFT JOIN sending_accounts sa ON sa.organization_id = c.organization_id AND sa.id = c.sending_account_id
+    WHERE c.organization_id = $3 AND c.id = $4`, [now.toISOString(), contactId, organizationId, campaignId]);
+  const state = rows[0];
+  if (!state || !state.account_status) return { eligible: false, reason: "campaign_not_approved" };
+  if (state.account_status !== "active") return { eligible: false, reason: "account_limit_reached" };
+  return isEligibleToSend({ email: state.email, suppressed: Boolean(state.suppressed), replied: Boolean(state.replied), bounced: Boolean(state.bounced) }, { ...state, daily_send_limit: state.account_daily_send_limit, sends_today: Number(state.sends_today) });
 }
