@@ -16,6 +16,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 ## Feature Log
 
+- 2026-08-20: Contacts import and sending-account create/list routes now accept the PostgreSQL adapter, use async tenant authentication, and persist through tenant-scoped repositories. SQLite behavior remains unchanged. Full suite: 48 passed, 1 skipped. Commit `cb57fa99`.
+
 - 2026-08-20: Added PostgreSQL-backed password registration, password verification, membership selection, session creation/revocation, and tenant lookup in `src/server/auth/postgres.ts` and `src/server/auth/middleware.ts`. Existing SQLite auth routes remain unchanged until the route factory is switched during the broader PostgreSQL cutover.
 
 - 2026-08-20: Auth route factory now supports both SQLite and PostgreSQL databases. Registration, login, logout, `/api/auth/me`, and tenant lookup select the correct async/sync implementation from the database adapter.
