@@ -33,10 +33,10 @@ describe("loadConfig", () => {
     expect(config.worker.pollIntervalMs).toBeGreaterThan(0);
   });
 
-  test("rejects production without database URL and session secret", () => {
+  test("rejects production without required persistence and encryption settings", () => {
     process.env = { ...originalEnv, APP_ENV: "production" };
 
-    expect(() => loadConfig()).toThrow(/DATABASE_URL.*SESSION_SECRET/);
+    expect(() => loadConfig()).toThrow(/DATABASE_URL.*CREDENTIAL_ENCRYPTION_KEY/);
   });
 
   test("rejects malformed encryption keys", () => {
