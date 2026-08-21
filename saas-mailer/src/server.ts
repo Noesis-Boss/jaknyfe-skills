@@ -49,7 +49,8 @@ app.get("/", (c) =>
 </html>`),
 );
 
-export default app;
+const exportedApp = import.meta.main ? {} : app;
+export default exportedApp;
 
 if (import.meta.main) {
   Bun.serve({
