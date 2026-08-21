@@ -40,11 +40,11 @@ app.get("/", (c) =>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SaaS-Mailer</title>
-    <link rel="stylesheet" href="/src/client/styles.css?v=20260821-2" />
+    <link rel="stylesheet" href="/src/client/styles.css?v=20260821-3" />
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/client/main.js?v=20260821-2"></script>
+    <script type="module" src="/src/client/main.js?v=20260821-3"></script>
   </body>
 </html>`),
 );

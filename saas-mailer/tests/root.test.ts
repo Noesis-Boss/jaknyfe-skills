@@ -8,8 +8,8 @@ describe("SaaS-Mailer dashboard entrypoint", () => {
 
     expect(root.status).toBe(200);
     expect(html).toContain('<div id="root"></div>');
-    expect(html).toContain('href="/src/client/styles.css"');
-    expect(html).toContain('src="/src/client/main.js"');
+    expect(html).toMatch(/href="\/src\/client\/styles\.css\?v=/);
+    expect(html).toMatch(/src="\/src\/client\/main\.js\?v=/);
 
     const script = await app.fetch(new Request("http://localhost/src/client/main.js"));
     const styles = await app.fetch(new Request("http://localhost/src/client/styles.css"));
