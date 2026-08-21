@@ -49,12 +49,4 @@ app.get("/", (c) =>
 </html>`),
 );
 
-const exportedApp = import.meta.main ? {} : app;
-export default exportedApp;
-
-if (import.meta.main) {
-  Bun.serve({
-    port: Number(process.env.PORT || 3000),
-    fetch: app.fetch,
-  });
-}
+export default app;
