@@ -22,6 +22,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 ## Issue Log
 
+- 2026-08-21: Published dashboard controls appeared clickable but several had no handlers. Replaced inert navigation links with interactive buttons, made checklist rows actionable, added visible section feedback, and made the avatar sign out. Live public page screenshot verified after republishing.
+
 - 2026-08-21: Applied Zo Support's managed-service workaround to `saas-mailer-worker`: entrypoint sources `~/.zo_secrets`, service env vars no longer contain literal secret references, and PostgreSQL startup migration now repairs missing durable-queue columns on existing databases. Worker verified RUNNING against Neon.
 
 - 2026-08-21: Zo support bug report saved in `ZO_SUPPORT_BUG_REPORT.md`. Managed process `saas-mailer-worker` receives literal `$CREDENTIAL_ENCRYPTION_KEY`/`$DATABASE_URL` references instead of resolved secret values; shell secrets are valid, but restart and service recreation do not fix propagation.
