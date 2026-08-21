@@ -29,6 +29,10 @@ export function createPostgresDatabase(databaseUrl: string): PostgresDatabase {
         await tx.unsafe("CREATE TABLE IF NOT EXISTS schema_migrations (version TEXT PRIMARY KEY, applied_at TIMESTAMPTZ NOT NULL DEFAULT now())");
         const applied = await tx.unsafe("SELECT 1 FROM schema_migrations WHERE version = $1", ["001_initial"]);
         if (!Array.isArray(applied) || applied.length === 0) await tx.unsafe(migration);
+        await tx.unsafe("ALTER TABLE messages ADD COLUMN IF NOT EXISTS next_attempt_at TIMESTAMPTZ NOT NULL DEFAULT now()");
+        await tx.unsafe("ALTER TABLE messages ADD COLUMN IF NOT EXISTS lease_owner TEXT");
+        await tx.unsafe("ALTER TABLE messages ADD COLUMN IF NOT EXISTS lease_until TIMESTAMPTZ");
+        await tx.unsafe("CREATE INDEX IF NOT EXISTS idx_messages_queue ON messages(status, next_attempt_at, lease_until, created_at)");
       });
     },
     async transaction<T>(fn) {

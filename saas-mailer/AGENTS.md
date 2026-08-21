@@ -18,6 +18,12 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 ## Feature Log
 
+## Issue Log
+
+- 2026-08-21: Applied Zo Support's managed-service workaround to `saas-mailer-worker`: entrypoint sources `~/.zo_secrets`, service env vars no longer contain literal secret references, and PostgreSQL startup migration now repairs missing durable-queue columns on existing databases. Worker verified RUNNING against Neon.
+
+- 2026-08-21: Zo support bug report saved in `ZO_SUPPORT_BUG_REPORT.md`. Managed process `saas-mailer-worker` receives literal `$CREDENTIAL_ENCRYPTION_KEY`/`$DATABASE_URL` references instead of resolved secret values; shell secrets are valid, but restart and service recreation do not fix propagation.
+
 - 2026-08-20: OAuth start/callback routes and sending-account send routes now support PostgreSQL. Production startup opens the configured PostgreSQL database, and Gmail/Microsoft sends decrypt stored OAuth credentials before invoking provider adapters. Bun server build and focused provider/account/callback tests pass.
 - 2026-08-20: Added Gmail/Microsoft OAuth refresh-token exchange, expiry-aware refresh before sending, and encrypted persistence of refreshed credentials in PostgreSQL. Provider, callback, OAuth, and account tests pass; Bun server build passes.
 
