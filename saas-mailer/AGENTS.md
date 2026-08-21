@@ -22,6 +22,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 ## Issue Log
 
+- 2026-08-21: Contact import appeared inert because the dashboard repeatedly submitted an already-imported demo contact. Replaced it with a real CSV file picker, import error handling, and cache-busted client assets. Live dashboard reload verified the CSV instruction; root and contact tests pass.
+
 - 2026-08-21: Live menu and import failures traced to a duplicate Bun listener in `src/server.ts`. The managed `bun run start` wrapper already serves the exported Hono app; removing the second listener and exporting `app` directly restored the current client bundle and API actions.
 
 - 2026-08-21: Published dashboard controls appeared clickable but several had no handlers. Replaced inert navigation links with interactive buttons, made checklist rows actionable, added visible section feedback, and made the avatar sign out. Live public page screenshot verified after republishing.
