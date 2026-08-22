@@ -24,6 +24,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 ## Issue Log
 
+- 2026-08-22: CSV imports could still report a missing email header when files began with blank lines or used quoted delimiter characters. Delimiter detection now scans the first nonblank line and ignores separators inside quoted headers; 13 contact tests pass and the public dashboard was republished.
+
 - 2026-08-22: CSV imports rejected semicolon-, tab-, and pipe-delimited exports as missing the email header because the parser assumed commas. Added automatic delimiter detection; contact tests pass.
 
 - 2026-08-21: Contact import appeared inert because the dashboard repeatedly submitted an already-imported demo contact. Replaced it with a real CSV file picker, import error handling, and cache-busted client assets. Live dashboard reload verified the CSV instruction; root and contact tests pass.
