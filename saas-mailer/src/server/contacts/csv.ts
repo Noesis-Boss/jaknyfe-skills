@@ -8,7 +8,18 @@ export type ParsedContact = {
 export class InvalidContactsCsvError extends Error {}
 
 function normalizeHeader(value: string): string {
-  return value.trim().toLowerCase().replace(/[ -]+/g, "_");
+  return value.trim().toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+}
+
+const headerAliases = {
+  email: ["email", "email_address", "e_mail", "mail", "work_email", "primary_email"],
+  first_name: ["first_name", "firstname", "first", "given_name", "givenname", "fname"],
+  last_name: ["last_name", "lastname", "last", "surname", "family_name", "familyname", "lname"],
+  full_name: ["full_name", "fullname", "name", "contact_name", "display_name"],
+} as const;
+
+function findHeader(headers: string[], field: keyof typeof headerAliases): number {
+  return headers.findIndex((header) => (headerAliases[field] as readonly string[]).includes(header));
 }
 
 function parseRows(text: string): string[][] {
@@ -41,16 +52,23 @@ export function parseContactsCsv(csvText: string): ParsedContact[] {
   const rows = parseRows(csvText);
   if (!rows.length) return [];
   const headers = rows[0].map((header, index) => normalizeHeader(index === 0 ? header.replace(/^\uFEFF/, "") : header));
-  const emailIndex = headers.indexOf("email");
+  const emailIndex = findHeader(headers, "email");
   if (emailIndex < 0) throw new InvalidContactsCsvError("Invalid CSV: missing required email header");
+  const firstNameIndex = findHeader(headers, "first_name");
+  const lastNameIndex = findHeader(headers, "last_name");
+  const fullNameIndex = findHeader(headers, "full_name");
   return rows.slice(1).flatMap((values) => {
     const email = (values[emailIndex] || "").trim().toLowerCase();
     if (!validEmail(email)) return [];
+    const fullName = fullNameIndex >= 0 ? (values[fullNameIndex] || "").trim() : "";
+    const nameParts = fullName.split(/\s+/).filter(Boolean);
+    const first_name = (firstNameIndex >= 0 ? values[firstNameIndex] : nameParts[0])?.trim() || undefined;
+    const last_name = (lastNameIndex >= 0 ? values[lastNameIndex] : nameParts.slice(1).join(" "))?.trim() || undefined;
     const custom_fields: Record<string, string> = {};
     headers.forEach((header, index) => {
-      if (header && !["email", "first_name", "last_name"].includes(header)) custom_fields[header] = (values[index] || "").trim();
+      if (header && ![emailIndex, firstNameIndex, lastNameIndex, fullNameIndex].includes(index)) custom_fields[header] = (values[index] || "").trim();
     });
-    return [{ email, first_name: values[headers.indexOf("first_name")]?.trim() || undefined, last_name: values[headers.indexOf("last_name")]?.trim() || undefined, custom_fields }];
+    return [{ email, first_name, last_name, custom_fields }];
   });
 }
 
@@ -58,7 +76,7 @@ export function countInvalidContacts(csvText: string): number {
   const rows = parseRows(csvText);
   if (!rows.length) return 0;
   const headers = rows[0].map((header, index) => normalizeHeader(index === 0 ? header.replace(/^\uFEFF/, "") : header));
-  const emailIndex = headers.indexOf("email");
+  const emailIndex = findHeader(headers, "email");
   if (emailIndex < 0) throw new InvalidContactsCsvError("Invalid CSV: missing required email header");
   return rows.slice(1).filter((row) => !validEmail((row[emailIndex] || "").trim())).length;
 }
