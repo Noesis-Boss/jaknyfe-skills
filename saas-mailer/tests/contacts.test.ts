@@ -21,6 +21,12 @@ describe("contact CSV import", () => {
     expect(contacts[0]).toEqual({ email: "ada@example.com", first_name: "Ada", last_name: "Lovelace", custom_fields: { job_title: "Engineer" } });
   });
 
+  test("detects semicolon, tab, and pipe-delimited exports", () => {
+    expect(parseContactsCsv("email;name\nada@example.com;Ada")).toHaveLength(1);
+    expect(parseContactsCsv("email\tname\nada@example.com\tAda")).toHaveLength(1);
+    expect(parseContactsCsv("email|name\nada@example.com|Ada")).toHaveLength(1);
+  });
+
   test("skips missing and malformed email rows", () => {
     expect(parseContactsCsv("email,name\n,nope\nnot-an-email,Nope\nok@example.com,Yes")).toHaveLength(1);
   });
