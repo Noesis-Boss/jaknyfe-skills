@@ -18,6 +18,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 ## Feature Log
 
+- 2026-08-22: Contact CSV import now detects common CRM/export aliases for email and names, splits full-name columns, and preserves all other columns as custom fields. Dedicated parser tests pass.
+
 - 2026-08-21: Published the dashboard as a private production Zo Site at `https://saas-mailer-jaknyfe.zo.computer`. The Site entrypoint sources `~/.zo_secrets`; the public browser verification correctly reached Zo's sign-in gate.
 
 ## Issue Log

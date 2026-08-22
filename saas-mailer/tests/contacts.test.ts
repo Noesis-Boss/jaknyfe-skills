@@ -11,6 +11,16 @@ describe("contact CSV import", () => {
     expect(contacts).toEqual([{ email: "alice@example.com", first_name: "Ada", last_name: undefined, custom_fields: { company: "Acme" } }]);
   });
 
+  test("maps common CRM headers and splits a full name", () => {
+    const contacts = parseContactsCsv("E-mail,Full Name,Company Name\nJANE@EXAMPLE.COM,Jane Q Public,Acme");
+    expect(contacts).toEqual([{ email: "jane@example.com", first_name: "Jane", last_name: "Q Public", custom_fields: { company_name: "Acme" } }]);
+  });
+
+  test("maps first and last name aliases without treating them as custom fields", () => {
+    const contacts = parseContactsCsv("mail,given name,surname,job title\nada@example.com,Ada,Lovelace,Engineer");
+    expect(contacts[0]).toEqual({ email: "ada@example.com", first_name: "Ada", last_name: "Lovelace", custom_fields: { job_title: "Engineer" } });
+  });
+
   test("skips missing and malformed email rows", () => {
     expect(parseContactsCsv("email,name\n,nope\nnot-an-email,Nope\nok@example.com,Yes")).toHaveLength(1);
   });
