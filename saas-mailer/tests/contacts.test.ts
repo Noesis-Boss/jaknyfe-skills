@@ -31,6 +31,11 @@ describe("contact CSV import", () => {
     expect(parseContactsCsv('\n\n"email;address";name\na@example.com;Ada')).toHaveLength(1);
   });
 
+  test("parses Google Contacts export email columns", () => {
+    const csv = "First Name,Last Name,E-mail 1 - Label,E-mail 1 - Value\nAda,Lovelace,Work,ada@example.com";
+    expect(parseContactsCsv(csv)).toEqual([{ email: "ada@example.com", first_name: "Ada", last_name: "Lovelace", custom_fields: { e_mail_1_label: "Work" } }]);
+  });
+
   test("skips missing and malformed email rows", () => {
     expect(parseContactsCsv("email,name\n,nope\nnot-an-email,Nope\nok@example.com,Yes")).toHaveLength(1);
   });

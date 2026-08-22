@@ -12,7 +12,7 @@ function normalizeHeader(value: string): string {
 }
 
 const headerAliases = {
-  email: ["email", "email_address", "e_mail", "mail", "work_email", "primary_email"],
+  email: ["email", "email_address", "e_mail", "mail", "work_email", "primary_email", "email_1_value", "email_2_value", "email_3_value", "email_4_value", "email_5_value", "email_value", "e_mail_1_value", "e_mail_2_value", "e_mail_3_value", "e_mail_4_value", "e_mail_5_value", "e_mail_value"],
   first_name: ["first_name", "firstname", "first", "given_name", "givenname", "fname"],
   last_name: ["last_name", "lastname", "last", "surname", "family_name", "familyname", "lname"],
   full_name: ["full_name", "fullname", "name", "contact_name", "display_name"],
