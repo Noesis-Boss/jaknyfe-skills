@@ -46,10 +46,15 @@ function parseRows(text: string): string[][] {
 }
 
 function detectDelimiter(text: string): string {
-  const firstLine = text.split(/\r?\n/, 1)[0] || "";
+  const firstLine = text.split(/\r?\n/).find((line) => line.trim() !== "") || "";
   const candidates = [",", ";", "\t", "|"];
   return candidates.reduce((best, candidate) => {
-    const count = firstLine.split(candidate).length - 1;
+    let count = 0;
+    let quoted = false;
+    for (const char of firstLine) {
+      if (char === '"') quoted = !quoted;
+      else if (!quoted && char === candidate) count += 1;
+    }
     return count > best.count ? { candidate, count } : best;
   }, { candidate: ",", count: 0 }).candidate;
 }

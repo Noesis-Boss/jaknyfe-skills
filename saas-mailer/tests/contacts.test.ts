@@ -27,6 +27,10 @@ describe("contact CSV import", () => {
     expect(parseContactsCsv("email|name\nada@example.com|Ada")).toHaveLength(1);
   });
 
+  test("detects the delimiter after leading blank lines and ignores quoted separators", () => {
+    expect(parseContactsCsv('\n\n"email;address";name\na@example.com;Ada')).toHaveLength(1);
+  });
+
   test("skips missing and malformed email rows", () => {
     expect(parseContactsCsv("email,name\n,nope\nnot-an-email,Nope\nok@example.com,Yes")).toHaveLength(1);
   });
