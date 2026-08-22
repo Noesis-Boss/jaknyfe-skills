@@ -23,6 +23,7 @@ function findHeader(headers: string[], field: keyof typeof headerAliases): numbe
 }
 
 function parseRows(text: string): string[][] {
+  const delimiter = detectDelimiter(text);
   const rows: string[][] = [];
   let row: string[] = [];
   let field = "";
@@ -35,13 +36,22 @@ function parseRows(text: string): string[][] {
       else field += char;
     } else if (char === '"' && field.length === 0) quoted = true;
     else if (char === '"') throw new InvalidContactsCsvError("Malformed CSV: stray quote");
-    else if (char === ",") { row.push(field); field = ""; }
+    else if (char === delimiter) { row.push(field); field = ""; }
     else if (char === "\n") { row.push(field); rows.push(row); row = []; field = ""; }
     else if (char !== "\r") field += char;
   }
   if (quoted) throw new InvalidContactsCsvError("Malformed CSV: unterminated quote");
   if (field.length || row.length) { row.push(field); rows.push(row); }
   return rows.filter((candidate) => candidate.some((value) => value.trim() !== ""));
+}
+
+function detectDelimiter(text: string): string {
+  const firstLine = text.split(/\r?\n/, 1)[0] || "";
+  const candidates = [",", ";", "\t", "|"];
+  return candidates.reduce((best, candidate) => {
+    const count = firstLine.split(candidate).length - 1;
+    return count > best.count ? { candidate, count } : best;
+  }, { candidate: ",", count: 0 }).candidate;
 }
 
 function validEmail(email: string): boolean {
