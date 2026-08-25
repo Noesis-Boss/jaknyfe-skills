@@ -32,6 +32,7 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 
 ## Issue Log
 
+- 2026-08-25: Idea Desk's “Ask assistant about this idea” button was wired to a dedicated `/api/idea-desk/ask` Zo AI route. The private dashboard now opens an accessible modal with idea-specific analysis, retry handling, and contextual follow-up questions; live generation, follow-up, Escape close, and the rendered response were browser-verified in `Media/screenshots/idea-desk-assistant-response.png`.
 - 2026-08-20: Idea Desk boot loop traced to a malformed `/api/idea-desk` X adapter function. Replaced the parser with syntax-safe code; API returned HTTP 200 with 22 live ideas and the dashboard screenshot rendered successfully.
 
 ## Feature Log
