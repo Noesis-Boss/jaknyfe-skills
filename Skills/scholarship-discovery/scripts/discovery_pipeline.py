@@ -47,10 +47,13 @@ def run_discovery(source_batch: list[dict], limit: int, fetcher, searcher) -> di
         if result["status"] in {"temporarily_unavailable", "needs_review", "not_found"}:
             recovered = recover_application_url(candidate, fetcher, searcher)
             if recovered["recovered_url"]:
-                report["recovered"] += 1
-                report["verified"] += 1
-                counts["recovered"] += 1
-                continue
+                recovered_candidate = dict(candidate, application_url=recovered["recovered_url"])
+                recovered_result = verify_candidate(recovered_candidate, fetcher)
+                if recovered_result["score"] in {"A", "B"}:
+                    report["recovered"] += 1
+                    report["verified"] += 1
+                    counts["recovered"] += 1
+                    continue
             if recovered["status"] == "timeout" or result["status"] == "temporarily_unavailable":
                 report["review"] += 1
                 counts["review"] += 1
