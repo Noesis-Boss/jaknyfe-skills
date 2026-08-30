@@ -40,6 +40,12 @@ bun run build
 ```
 
 ## Issue Log
+### 2026-08-30 - 5,000-record deep research rollout
+- **Objective**: Raise the production inventory to at least 5,000 globally unique active scholarships with direct official application endpoints.
+- **Plan**: Added `docs/superpowers/plans/2026-08-30-5000-scholarship-deep-research-plan.md` covering source expansion, search mesh, official-link recovery, strict verification, deduplication, bounded batches, and release gates.
+- **Implementation**: Restored the missing `Skills/scholarship-discovery/SKILL.md` and added `Skills/scholarship-discovery/scripts/deep_research.py`, which crawls search seeds, extracts individual opportunities, rejects aggregators/installers/social/generic paths, verifies application language, deduplicates, and inserts atomically into both databases.
+- **Checkpoint**: A controlled official-source pilot added 6 verified records to both databases. The larger search batch added 0 because DuckDuckGo is unavailable and Google/Bing result markup currently yields no usable links; the 5,000 gate is not met.
+- **Current counts**: Site mirror has 1,073 active verified records; primary database has 676 active verified records. No unverified record was promoted.
 ### 2026-08-30 - Phoenix Rite Care scholarship-link cleanup
 - **Problem**: Two active records used the Phoenix Rite Care page as if it were a direct student scholarship application: Arizona Masonic Charities / Grand Lodge Scholarship and Arizona Eastern Star Scholarship.
 - **Review**: The source page provides no student submission endpoint. Arizona Grand Lodge exposes no current verifiable application page, and Masonic Charities of Arizona's downloadable application is for 501(c)(3) organizational grants, not student scholarships.
