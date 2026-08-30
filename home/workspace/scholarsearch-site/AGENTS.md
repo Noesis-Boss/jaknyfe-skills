@@ -40,6 +40,12 @@ bun run build
 ```
 
 ## Issue Log
+### 2026-08-30 - Phoenix Rite Care scholarship-link cleanup
+- **Problem**: Two active records used the Phoenix Rite Care page as if it were a direct student scholarship application: Arizona Masonic Charities / Grand Lodge Scholarship and Arizona Eastern Star Scholarship.
+- **Review**: The source page provides no student submission endpoint. Arizona Grand Lodge exposes no current verifiable application page, and Masonic Charities of Arizona's downloadable application is for 501(c)(3) organizational grants, not student scholarships.
+- **Fix**: Deactivated both records, cleared their application/form/website URLs, marked them rejected, and retained the official-source review in `link_notes`.
+- **Verification**: 0 active records retain `phoenixritecare.org` in application, form, or website fields. Backup: `data/processed/scholarships.db.backup-phoenix-rite-20260830-181115`.
+
 ### 2026-08-30 - Installer and App Store URL cleanup
 - **Problem**: 219 active records used `apps.apple.com` or another app-store destination as the supposed scholarship application URL.
 - **Fix**: Removed installer destinations from active application, form, and website fields; marked those records rejected/inactive. Added hard rejection for Apple App Store, Google Play, and installer-file URLs to discovery verification, import validation, and recurring link audits.
