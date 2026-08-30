@@ -97,6 +97,17 @@ def main():
             except Exception: continue
             c=candidate(final,html)
             if c: found.append(c)
+            soup=BeautifulSoup(html,'html.parser')
+            for anchor in soup.select('a[href]'):
+                label=' '.join(anchor.get_text(' ',strip=True).split())
+                link=urljoin(final,anchor.get('href','')).split('#')[0]
+                if len(label)>=10 and TERM.search(label) and link.startswith('http') and link not in seen and urlparse(link).netloc==urlparse(final).netloc:
+                    seen.add(link)
+                    try: detail,body,_=get(link)
+                    except Exception: continue
+                    item=candidate(detail,body,label)
+                    if item: found.append(item)
+                    if len(found)>=a.limit*3: break
             if len(found)>=a.limit*3: break
         if len(found)>=a.limit*3: break
     stamp=datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S'); added=0
