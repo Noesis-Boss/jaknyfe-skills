@@ -40,10 +40,15 @@ bun run build
 ```
 
 ## Issue Log
+### 2026-08-30 - Installer and App Store URL cleanup
+- **Problem**: 219 active records used `apps.apple.com` or another app-store destination as the supposed scholarship application URL.
+- **Fix**: Removed installer destinations from active application, form, and website fields; marked those records rejected/inactive. Added hard rejection for Apple App Store, Google Play, and installer-file URLs to discovery verification, import validation, and recurring link audits.
+- **Verification**: Both database copies report 0 active installer/app-store URLs; 7 Python verification tests pass.
+
 ### 2026-08-30 - Bold.org application-link cleanup
 - **Problem**: 422 active records used Bold.org aggregate or middleman destinations.
 - **Fix**: Crawled each Bold.org source page, tested candidate external links, retained only matched official sponsor/admin application endpoints, and deactivated unresolved records.
-- **Verification**: 339 records recovered; 83 deactivated; 0 active records retain Bold.org in application, form, or website fields. Backup: `data/processed/scholarships.db.backup-bold-20260830-153551`.
+- **Verification**: 339 records recovered; 96 deactivated, including 13 Bold.org help-portal destinations; 0 active records retain Bold.org in application, form, or website fields. Backup: `data/processed/scholarships.db.backup-bold-20260830-153551`.
 
 ### 2026-08-30 - Scholarships360 application-link cleanup
 - **Problem**: 156 active records used Scholarships360 listing/detail URLs as application destinations.
