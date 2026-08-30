@@ -47,7 +47,8 @@ def candidate(page_url, html, anchor_text=''):
     links=[]
     for a in soup.select('a[href]'):
         href=urljoin(page_url,a.get('href','')).split('#')[0]; label=a.get_text(' ',strip=True)
-        if href.startswith('http') and APPLY.search(label+' '+href) and not BLOCKED.search(href): links.append(href)
+        external=urlparse(href).netloc != urlparse(page_url).netloc
+        if href.startswith('http') and not BLOCKED.search(href) and (APPLY.search(label+' '+href) or (external and TERM.search(text) and len(label) > 1)): links.append(href)
     app=links[0] if links else page_url
     if BLOCKED.search(app) or BAD_PATH.search(urlparse(app).path): return None
     org=urlparse(page_url).netloc.lower().removeprefix('www.').split('.')[0].replace('-',' ').title()
