@@ -1,0 +1,43 @@
+name: Skills Integrity Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Run daily at 6 AM UTC to catch any drift
+    - cron: '0 6 * * *'
+
+jobs:
+  verify-skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Check all Skills directories have SKILL.md
+        run: |
+          MISSING=0
+          for dir in Skills/*/; do
+            skill=$(basename "$dir")
+            if [ ! -f "$dir/SKILL.md" ]; then
+              echo "MISSING: $skill/SKILL.md"
+              MISSING=1
+            elif [ ! -s "$dir/SKILL.md" ]; then
+              echo "EMPTY: $skill/SKILL.md"
+              MISSING=1
+            fi
+          done
+          
+          if [ $MISSING -eq 1 ]; then
+            echo ""
+            echo "FAIL: Some Skills directories are missing SKILL.md files or have empty ones."
+            exit 1
+          fi
+          
+          TOTAL=$(ls -d Skills/*/ 2>/dev/null | wc -l)
+          echo "PASS: All $TOTAL Skills directories have valid SKILL.md files."
+
+      - name: Report status
+        if: success()
+        run: echo "Skills integrity verified."
