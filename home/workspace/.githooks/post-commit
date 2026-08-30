@@ -1,0 +1,9 @@
+#!/bin/bash
+# Post-commit hook: auto-push Skills changes to origin
+# This ensures remote backup happens automatically
+
+# Only push if the commit touched Skills/
+if git diff-tree --no-commit-id --name-only -r HEAD -- 'Skills/' 2>/dev/null | grep -q .; then
+    echo "Skills/ changed — pushing to origin..."
+    git push origin HEAD 2>&1 | tail -3
+fi
