@@ -1,0 +1,17 @@
+{
+  "skill_name": "youtube-channel-framework",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build the seven-stage YouTube framework for a faceless channel about practical AI tools for small businesses. Assume two uploads per week.",
+      "expected_output": "A complete Markdown report with niche evaluation, original titles, hook, script, thumbnail brief, and 30-day calendar.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Analyze this YouTube channel and turn its patterns into an original content system: https://www.youtube.com/@example. Focus on history documentaries.",
+      "expected_output": "Competitor observations are clearly separated from original recommendations and unsupported analytics are not invented.",
+      "files": []
+    }
+  ]
+}

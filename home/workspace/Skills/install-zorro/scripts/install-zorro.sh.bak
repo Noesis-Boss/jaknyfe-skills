@@ -1,0 +1,248 @@
+#!/usr/bin/env bash
+# =============================================================================
+# install-zorro.sh — Zorro self-improving agent stack for a fresh Zo Computer
+#
+# Installs: memory tree + rules, Zorro orchestrator skill, AstraDB memory sync
+# (local nomic embeddings), zobodhi fast-facts, Ollama + qwen3 (primary) / gemma3 (fallback) models,
+# OpenAI-compatible proxy (port 11435), token-saver (96.8% CLI output
+# compression), and superpowers skills (from obra/superpowers).
+#
+# Non-destructive: skips anything already present unless FORCE=1.
+# Re-runnable: safe to run again to pick up missing pieces.
+#
+# Usage:
+#   bash install-zorro.sh                 # full install (interactive defaults)
+#   SKIP_OLLAMA=1 bash install-zorro.sh   # skip model downloads
+#   ZORRO_HOME=/tmp/ztest bash install-zorro.sh   # install to a test root
+#   FORCE=1 bash install-zorro.sh         # overwrite existing files
+#
+# After it finishes, complete the 4 UI steps in references/MANUAL-STEPS.md
+# (persona, provider, secrets, service registration).
+# =============================================================================
+set -euo pipefail
+
+ZORRO_HOME="${ZORRO_HOME:-/home/workspace}"
+SKILLS_DIR="${ZORRO_HOME}/Skills"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BUNDLE_DIR="$(cd "${SCRIPT_DIR}/../assets" && pwd)"
+MARKER="${ZORRO_HOME}/.zorro-installed"
+LOGFILE="${ZORRO_HOME}/zorro-install.log"
+
+log()  { printf '\033[1;32m[install]\033[0m %s\n' "$*"; }
+warn() { printf '\033[1;33m[warn]\033[0m %s\n' "$*"; }
+die()  { printf '\033[1;31m[error]\033[0m %s\n' "$*" >&2; exit 1; }
+
+# ---------------------------------------------------------------------------
+# 0. Preflight
+# ---------------------------------------------------------------------------
+preflight() {
+  command -v bun >/dev/null || die "bun not found — install Bun first (curl -fsSL https://bun.sh/install | bash)"
+  command -v curl >/dev/null || die "curl not found"
+  command -v python3 >/dev/null || die "python3 not found"
+  command -v git >/dev/null || die "git not found"
+
+  mkdir -p "${ZORRO_HOME}" "${SKILLS_DIR}"
+  exec >> >(tee -a "${LOGFILE}") 2>&1
+  log "Installing Zorro stack into ${ZORRO_HOME}"
+  log "Log: ${LOGFILE}"
+}
+
+# ---------------------------------------------------------------------------
+# 1. Workspace scaffolding (memory tree + rules)
+# ---------------------------------------------------------------------------
+install_memory_tree() {
+  log "Scaffolding memory tree (memory/, USER.md, MEMORY.md, AGENTS.md rules)"
+  mkdir -p "${ZORRO_HOME}/memory"/{daily,projects,feedback,reference}
+
+  [[ -f "${ZORRO_HOME}/memory/README.md" ]] && [[ -z "${FORCE:-}" ]] && return 0
+  cat > "${ZORRO_HOME}/memory/README.md" <<'EOF'
+# Memory tree — how Zorro persists across sessions
+
+- `daily/YYYY-MM-DD.md` — session notes. Append, never overwrite.
+- `projects/<name>.md` — durable project state, decisions, blockers.
+- `feedback/<name>.md` — corrections + preferences. Include `Why:` and
+  `How to apply:` lines.
+- `reference/<name>.md` — reference material (architecture, runbooks).
+- Index: keep one-line pointers in /home/workspace/MEMORY.md. Never duplicate
+  a topic across files.
+
+File frontmatter: `---\nname: <slug>\ndescription: <one line>\ntype: daily|project|feedback|reference\n---`
+EOF
+
+  [[ -f "${ZORRO_HOME}/USER.md" ]] && [[ -z "${FORCE:-}" ]] && return 0
+  cat > "${ZORRO_HOME}/USER.md" <<'EOF'
+# USER.md — who I work for
+
+Replace this with the operator's actual profile. Keep it one screen:
+- Name / handle
+- Timezone
+- Working style (how they like answers: terse, proof-first, etc.)
+- Hard constraints (never do X)
+- Active projects (one line each)
+EOF
+
+  [[ -f "${ZORRO_HOME}/MEMORY.md" ]] && [[ -z "${FORCE:-}" ]] && return 0
+  cat > "${ZORRO_HOME}/MEMORY.md" <<'EOF'
+# MEMORY.md — memory index (one line per file)
+
+| File | Type | What it holds |
+|---|---|---|
+| memory/daily/2026-01-01.md | daily | first session note (example) |
+EOF
+
+  if [[ ! -f "${ZORRO_HOME}/AGENTS.md" ]] || [[ -n "${FORCE:-}" ]]; then
+    if [[ -f "${ZORRO_HOME}/AGENTS.md" ]]; then
+      cp "${ZORRO_HOME}/AGENTS.md" "${ZORRO_HOME}/AGENTS.md.zorro-backup"
+      warn "AGENTS.md backed up to AGENTS.md.zorro-backup"
+    fi
+    cat > "${ZORRO_HOME}/AGENTS.md" <<'EOF'
+# Memory rules (Zorro stack)
+
+- At the start of every conversation (or when context runs out, or on
+  "continue"), run:
+  `cd /home/workspace/Skills/astra-memory/scripts && bun run sync.ts query "<topic>" --limit=10 --json`
+- For project context, read the project AGENTS.md first.
+- Durable facts go to memory/<type>/ with frontmatter; add a one-line pointer
+  in MEMORY.md. Never duplicate.
+- Fast-retrieval facts: `bun run /home/workspace/Skills/zobodhi-memory/scripts/memory.ts --add "<fact>"`
+- Session notes: memory/daily/YYYY-MM-DD.md, append-only. Offer to save one
+  after significant work.
+EOF
+  fi
+}
+
+# ---------------------------------------------------------------------------
+# 2. Skills from the bundled assets
+# ---------------------------------------------------------------------------
+install_skill() {
+  local src="$1" name="$2"
+  local dest="${SKILLS_DIR}/${name}"
+  if [[ -d "${dest}" ]] && [[ ! -f "${dest}/SKILL.md" ]]; then
+    warn "${name} exists without SKILL.md — leaving it alone (FORCE=1 to overwrite)"
+    return 0
+  fi
+  if [[ -d "${dest}" ]] && [[ -n "${FORCE:-}" ]]; then
+    log "FORCE: replacing existing ${name}"
+    rm -rf "${dest}"
+  fi
+  [[ -d "${dest}" ]] && { log "${name} already installed — skipping"; return 0; }
+  mkdir -p "${dest}"
+  cp -r "${src}/." "${dest}/"
+  log "Installed skill ${name}"
+}
+
+install_skills() {
+  log "Installing bundled skills"
+  install_skill "${BUNDLE_DIR}/zorro"            zorro
+  install_skill "${BUNDLE_DIR}/astra-memory"     astra-memory
+  install_skill "${BUNDLE_DIR}/zobodhi-memory"   zobodhi-memory
+  install_skill "${BUNDLE_DIR}/ollama-proxy"     ollama-proxy
+  install_skill "${BUNDLE_DIR}/token-saver"      token-saver
+
+  # Empty fast-facts store for zobodhi (bundled copy is a template)
+  local facts="${SKILLS_DIR}/zobodhi-memory/scripts/memory.json"
+  if [[ ! -f "${facts}" ]]; then
+    printf '{"memories":[]}\n' > "${facts}"
+    log "Initialized empty zobodhi memory.json"
+  fi
+}
+
+# ---------------------------------------------------------------------------
+# 3. Bun dependency for local embeddings (@xenova/transformers)
+# ---------------------------------------------------------------------------
+install_bun_deps() {
+  log "Installing @xenova/transformers for local nomic embeddings"
+  (cd "${ZORRO_HOME}" && bun add @xenova/transformers >/dev/null 2>&1)
+  log "bun deps OK — first sync downloads nomic-embed-text-v1.5 (~270 MB) to /home/.z/hf-cache"
+}
+
+# ---------------------------------------------------------------------------
+# 4. Superpowers skills (community)
+# ---------------------------------------------------------------------------
+install_superpowers() {
+  local tmp
+  if [[ -d "${SKILLS_DIR}/superpowers" ]]; then
+    log "superpowers already installed — skipping"
+    return 0
+  fi
+  log "Cloning obra/superpowers for skill discovery + methodology"
+  tmp="$(mktemp -d)"
+  git clone --depth 1 https://github.com/obra/superpowers "${tmp}/superpowers" >/dev/null 2>&1 \
+    || { warn "superpowers clone failed (network?) — skipping, re-run later"; rm -rf "${tmp}"; return 0; }
+  cp -r "${tmp}/superpowers/skills/." "${SKILLS_DIR}/"
+  rm -rf "${tmp}"
+  log "Installed superpowers skills"
+}
+
+# ---------------------------------------------------------------------------
+# 5. Ollama + qwen3 (primary) / gemma3 (fallback) models
+# ---------------------------------------------------------------------------
+install_ollama() {
+  [[ "${SKIP_OLLAMA:-0}" == "1" ]] && { log "SKIP_OLLAMA=1 — skipping Ollama"; return 0; }
+
+  if ! command -v ollama >/dev/null; then
+    log "Installing Ollama"
+    if curl -fsSL https://ollama.com/install.sh | sh >/dev/null 2>&1; then
+      :
+    else
+      warn "install.sh failed (no systemd on containers) — falling back to tarball"
+      local tmp; tmp="$(mktemp -d)"
+      curl -fsSL -o "${tmp}/ollama.tgz" https://ollama.com/download/ollama-linux-amd64.tgz
+      tar -xzf "${tmp}/ollama.tgz" -C /usr/local
+      rm -rf "${tmp}"
+    fi
+  fi
+  command -v ollama >/dev/null || die "ollama binary not found after install"
+
+  log "Pulling qwen3:14b (primary local LLM; ~9 GB download; may take a while)"
+  timeout 7200 ollama pull qwen3:14b || warn "qwen3:14b pull failed — re-run later with: ollama pull qwen3:14b"
+  log "Pulling gemma3:1b (fast fallback; ~1 GB)"
+  timeout 7200 ollama pull gemma3:1b || warn "gemma3:1b pull failed — re-run later with: ollama pull gemma3:1b"
+
+  if ! pgrep -x ollama >/dev/null; then
+    warn "Ollama is not running. Register it as a managed service (step 4 in MANUAL-STEPS.md)."
+  fi
+}
+
+# ---------------------------------------------------------------------------
+# 6. token-saver CLI + ts alias
+# ---------------------------------------------------------------------------
+install_token_saver() {
+  [[ "${SKIP_TOKENSAVER:-0}" == "1" ]] && { log "SKIP_TOKENSAVER=1 — skipping token-saver"; return 0; }
+
+  if [[ -f "${HOME}/.token-saver/scripts/wrap.py" ]]; then
+    log "token-saver already installed — skipping"
+  else
+    log "Cloning token-saver and installing CLI (~/.local/bin/token-saver)"
+    local tmp; tmp="$(mktemp -d)"
+    git clone --depth 1 https://github.com/ppgranger/token-saver "${tmp}/token-saver" >/dev/null 2>&1 \
+      || { warn "token-saver clone failed — skipping, re-run later"; rm -rf "${tmp}"; return 0; }
+    (cd "${tmp}/token-saver" && python3 install.py >/dev/null 2>&1) || warn "token-saver install.py had warnings — check ~/.token-saver"
+    rm -rf "${tmp}"
+  fi
+
+  if [[ -f "${HOME}/.token-saver/scripts/wrap.py" ]] && ! grep -q "token-saver" "${HOME}/.bashrc" 2>/dev/null; then
+    printf '\n# Zorro: token-saver CLI shortcut\nalias ts='"'"'python3 %s/scripts/wrap.py'"'"'\n' "${HOME}/.token-saver" >> "${HOME}/.bashrc"
+    log "Added 'ts' alias to ~/.bashrc (open a new terminal or: source ~/.bashrc)"
+  fi
+}
+
+# ---------------------------------------------------------------------------
+# 7. Finalize
+# ---------------------------------------------------------------------------
+finalize() {
+  date -u +"%Y-%m-%d %H:%M:%SZ" > "${MARKER}"
+  log "Install complete."
+  log "Manual steps: read ${SCRIPT_DIR}/../references/MANUAL-STEPS.md"
+  log "Next: create the Zorro persona, add the Ollama provider, add AstraDB secrets, register the 2 services."
+  log "Full log: ${LOGFILE}"
+}
+
+preflight
+install_memory_tree
+install_skills
+install_bun_deps
+install_superpowers
+install_ollama
+install_token_saver
+finalize

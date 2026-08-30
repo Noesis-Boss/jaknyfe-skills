@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-08-26T04:49:07.292100",
+  "chapters_evaluated": 1,
+  "total_findings": 1,
+  "novel_score": 9.8,
+  "global_tics": {},
+  "motif_totals": {},
+  "reports": [
+    {
+      "chapter": "ch_24.md",
+      "word_count": 1039,
+      "findings": [
+        {
+          "pattern": "metaphor_saturation",
+          "severity": "warn",
+          "location": "ch_24.md:\u00b655 (3 metaphors)",
+          "excerpt": "The officer bound his wrists loosely. The cord was not yet punishment. It was an administrative mark, like the seal, lik...",
+          "note": "Paragraph has 3 metaphor markers (max 2 recommended)."
+        }
+      ],
+      "score": 9.8,
+      "motif_counts": {},
+      "metaphor_heavy_paras": 1,
+      "four_beat_paras": 0,
+      "recursive_paras": 0,
+      "sentence_lengths": {
+        "dialogue": {
+          "n": 26,
+          "avg": 7.1,
+          "sd": 3.74
+        },
+        "action": {
+          "n": 14,
+          "avg": 7.6,
+          "sd": 4.4
+        },
+        "introspection": {
+          "n": 0,
+          "avg": 0,
+          "sd": 0
+        },
+        "mixed": {
+          "n": 77,
+          "avg": 9.7,
+          "sd": 5.34
+        }
+      }
+    }
+  ]
+}

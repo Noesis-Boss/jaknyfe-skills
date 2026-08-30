@@ -1,0 +1,933 @@
+{
+  "memories": [
+    {
+      "id": 1779235290135,
+      "text": "The Zobodhi Memory System uses 4 layers: Input Awareness (what's currently sensed), Working Memory (active processing), Semantic Memory (long-term facts), and Procedural Memory (how to do things). Memories are stored with metadata including source, type, confidence, and tags.",
+      "addedAt": "2026-05-20T00:01:30.135Z",
+      "tags": []
+    },
+    {
+      "id": 1779429078157,
+      "text": "Don prefers concise answers and operational verification — screenshots, curl checks, health endpoints",
+      "addedAt": "2026-05-22T05:51:18.157Z",
+      "tags": []
+    },
+    {
+      "id": 1779429090051,
+      "text": "Scottish Rite website deployed at scottish-rite-jaknyfe.zocomputer.io and wildcatart.com — build from source, copy to scottish-rite-site, push git",
+      "addedAt": "2026-05-22T05:51:30.051Z",
+      "tags": []
+    },
+    {
+      "id": 1779429107419,
+      "text": "Clarion Intelligence System installed 2026-05-21 — dual-layer memory: Clarion (structured files + rules) + zobodhi-memory (fast JSON cache)",
+      "addedAt": "2026-05-22T05:51:47.419Z",
+      "tags": []
+    },
+    {
+      "id": 1779429107458,
+      "text": "Paperclip hosted service — verify with /api/health endpoint, Postgres connectivity is the known failure point",
+      "addedAt": "2026-05-22T05:51:47.458Z",
+      "tags": []
+    },
+    {
+      "id": 1779429107496,
+      "text": "Kilo UI deployed at kilo-jaknyfe.zocomputer.io — React/Vite frontend calling kilo backend",
+      "addedAt": "2026-05-22T05:51:47.496Z",
+      "tags": []
+    },
+    {
+      "id": 1779429107535,
+      "text": "Clarion memory rules: Rule 1 — load USER.md and MEMORY.md at every conversation start; Rule 2 — capture preferences + sync to zobodhi-memory",
+      "addedAt": "2026-05-22T05:51:47.535Z",
+      "tags": []
+    },
+    {
+      "id": 1781299165969,
+      "text": "Meerkat MCP evaluated 2026-06-12: authenticated as delowery@gmail.com, 5 tools listed (list_projects, search_shelf, add_to_shelf, refactor_prompt, chat_with_meerkat), /api/roast works but /api/custom-chat returns HTTP 500 on every model slug. Paused pending vendor fix. Full note: memory/projects/meerkat-mcp.md",
+      "addedAt": "2026-06-12T21:19:25.969Z",
+      "tags": []
+    },
+    {
+      "id": 1781500942477,
+      "text": "Astra-memory skill PR #94 submitted to zocomputer/skills registry on 2026-06-14",
+      "addedAt": "2026-06-15T05:22:22.477Z",
+      "tags": []
+    },
+    {
+      "id": 1782336124373,
+      "text": "Task Worker now defaults to the live Syndicate URL https://syndicate-jaknyfe.zocomputer.io, and the svc_30dqJ3qDpNQ service was updated to run from /home/workspace/Skills/task-worker with SYNDICATE_API_URL set.",
+      "addedAt": "2026-06-24T21:22:04.373Z",
+      "tags": []
+    },
+    {
+      "id": 1782399841328,
+      "text": "Run bun run /home/workspace/Skills/task-worker/scripts/task-worker.ts. Polls Syndicate for running tasks and executes via /zo/ask.",
+      "addedAt": "2026-06-25T15:04:01.328Z",
+      "tags": []
+    },
+    {
+      "id": 1782423211381,
+      "text": "Run bun run /home/workspace/Skills/task-worker/scripts/task-worker.ts. Polls Syndicate for running tasks and executes via /zo/ask.",
+      "addedAt": "2026-06-25T21:33:31.381Z",
+      "tags": []
+    },
+    {
+      "id": 1782444943028,
+      "text": "Task worker startup verification: Syndicate was asleep at first, localhost checks failed, Syndicate service was restarted/woken, and task-worker authenticated successfully without code changes.",
+      "addedAt": "2026-06-26T03:35:43.028Z",
+      "tags": []
+    },
+    {
+      "id": 1782529752749,
+      "text": "Astra memory uses local nomic-embed-text-v1.5 (768-dim, cosine) with hybrid RRF retrieval. Always query via 'sync.ts query <text>' when the user asks about past context, prior decisions, recurring projects, or ambiguous references — returns semantic + lexical matches.",
+      "addedAt": "2026-06-27T03:09:12.749Z",
+      "tags": []
+    },
+    {
+      "id": 1782540856934,
+      "text": "Bound by Ash and Thorn polish pass complete 2026-06-27: ch_13 appended scene rewritten (killed duplicate sentence, rule-of-three anaphora, The-one-who repetition; restored sparse Thessa voice; added scene break); ch_08 'weight of being seen' cliché replaced with cartographic precision; 14 files trailing-newline hygiene; EVALUATION_SUMMARY updated to v3 reflecting 99,772 words across 26 chapters + ch_20b (target 100-105k met); pushed to Noesis-Boss/Bound-by-Ash-and-Thorn.",
+      "addedAt": "2026-06-27T06:14:16.934Z",
+      "tags": []
+    },
+    {
+      "id": 1782898024949,
+      "text": "2026-07-01 Evening: Posted 3-tweet thread to @jak_nyfe about US lifting export controls on Anthropic Fable 5 Mythos 5. Thread: https://x.com/jak_nyfe/status/2072250224777597197",
+      "addedAt": "2026-07-01T09:27:04.949Z",
+      "lastSeenAt": "2026-07-01T09:27:04.949Z",
+      "type": "fact",
+      "status": "pending",
+      "confidence": 1,
+      "source": "manual",
+      "tags": []
+    },
+    {
+      "id": 1783184821608,
+      "text": "Posted FISA 702 surveillance tweet to @zdsentry: Congress reauthorized NSA warrantless program targeting patriots not terrorists",
+      "addedAt": "2026-07-04T17:07:01.608Z",
+      "tags": []
+    },
+    {
+      "id": 1783213391614,
+      "text": "[IMPROVEMENT] Task succeeded: Task \"learn Zorro agent created with AstraDB memory integration - 50 memories synced from zobodhi and Clarion\" executed with 15 memory references.. Strategy: Reinforce the approach used; promote successful patterns to semantic memory.",
+      "addedAt": "2026-07-05T01:03:11.614Z",
+      "tags": []
+    },
+    {
+      "id": 1783213415924,
+      "text": "[IMPROVEMENT] Task succeeded: Task \"status \" executed with 15 memory references.. Strategy: Reinforce the approach used; promote successful patterns to semantic memory.",
+      "addedAt": "2026-07-05T01:03:35.924Z",
+      "tags": []
+    },
+    {
+      "id": 1783216240655,
+      "text": "[IMPROVEMENT] Task succeeded: I'm ready to help. What do you need assistance with?\n\nI can help with:\n- **Coding & projects** — building, debugging, deploying sites/services\n- **Automation** — scheduled tasks, cron jobs, agents\n- **Web & API** — browsing, search, X/Twitter, integrations (Gmail, Calendar, Notion, etc.)\n- **Memory & knowledge** — search_memory, skills, rules, personas\n- **Infrastructure** — user services, Zo Space routes, Sites, deployments\n- **Creative** — writing, design, diagrams, media generation\n\nWhat's the specific task?. Strategy: Reinforce the approach used; promote successful patterns to semantic memory.",
+      "addedAt": "2026-07-05T01:50:40.655Z",
+      "tags": []
+    },
+    {
+      "id": 1783271162832,
+      "text": "SCOTUS Mullin v. Al Otro Lado 6-3 ruling (June 25 2026) - DHS can turn back asylum seekers before entering U.S. territory, Alito majority: 'in' means physically inside per 8 USC 1158",
+      "addedAt": "2026-07-05T17:06:02.832Z",
+      "tags": []
+    },
+    {
+      "id": 1783288174898,
+      "text": "[IMPROVEMENT] Task succeeded: Clarify amount. $1k? $10k? $100k?\n\nDepends on: skills, capital, risk tolerance, legal constraints.\n\nOptions:\n- **Sell services** (freelance, consulting) — fastest cash\n- **Flip items** (local, eBay, FB Marketplace) — needs inventory\n- **Gig work** (delivery, task apps) — immediate, low ceiling\n- **Affiliate/referral** — needs audience\n- **Day trade/options** — high risk, likely loss\n- **Borrow** — not \"making\"\n\nWhat do you have? Skills? Cash? Network? Time?. Strategy: Reinforce the approach used; promote successful patterns to semantic memory.",
+      "addedAt": "2026-07-05T21:49:34.898Z",
+      "tags": []
+    },
+    {
+      "id": 1783288317145,
+      "text": "[IMPROVEMENT] Task succeeded: Givenyour actual stack (Zo Computer, Clarion, Syndicate, ScholarSearch, 22 automations, multi-account X, Vite deployments, memory pipeline), the highest-leverage product you could ship fast:\n\n**Automation-as-a-Service for Zo Computer users**\n\nPackage your proven patterns as installable skills:\n- Moltbook karma/engagement bot (rate-limit handled, cron-ready)\n- X posting pipeline (hook-generator → humanizer → multi-account router → email digest)\n- Vite subpath deploy fixer (base path + Router basename + asset verification)\n- ScholarSearch scholarship discovery (76 new/day, 5,275 total, deduped, emailed)\n- Clarion investment research (regime-check → sec-research → thesis-write → monitor)\n\nSell as: **$29/mo subscription** or **$299 one-time** for skill pack + setup script.\n\nWhy this wins: you already run all of it. Zero new code. Just package, document, add Stripe, publish to Skills catalog.\n\nWant me to scaffold the first skill package?. Strategy: Reinforce the approach used; promote successful patterns to semantic memory.",
+      "addedAt": "2026-07-05T21:51:57.145Z",
+      "tags": []
+    },
+    {
+      "id": 1783568800912,
+      "text": "[IMPROVEMENT] Task failed: Zo API error: 502. Error category: unknown. Strategy: Review failure pattern; consider adding pre-flight checks for this task type.",
+      "addedAt": "2026-07-09T03:46:40.912Z",
+      "tags": []
+    },
+    {
+      "id": 1783569139698,
+      "text": "[IMPROVEMENT] Task succeeded: Plan done. Artifact: `ScholarSearch-Marketing-Plan.md`.\n\n**Core: maximize reach → 3 levers**\n1. Programmatic SEO (category/state/demo pages from your 8,255 scholarships) — free, compounding, feeds AdSense.\n2. X automation (existing 3-agent cadence) — already running.\n3. TikTok/Reels \"scholarship of the day\" — unlocks student demo.\n\nPlus: Reddit seeding, Masonic lodge partnerships (your data edge), newsletter capture on Zo Space, paid scale after day 60.\n\n**90-day:** foundation/SEO → community/short-form → paid/optimize.\n\n**4 open questions** (assumed, refine if wrong):\n- Budget $0–$500/mo organic-first?\n- Keep subpath or get branded domain?\n- Audience priority: students/parents/Masonic?\n- Post from dedicated handle or `@zdsentry`?\n\nWant me to execute top quick wins? (a) SEO landing pages, (b) newsletter capture, (c) daily X automation.. Strategy: Reinforce the approach used; promote successful patterns to semantic memory.",
+      "addedAt": "2026-07-09T03:52:19.698Z",
+      "tags": []
+    },
+    {
+      "id": 1784555842498,
+      "text": "[IMPROVEMENT] Task succeeded: Help requested. No specific skill target given.\n\nAvailable help topics from loaded skills:\n- `brainstorming` — turn ideas into designs\n- `writing-plans` — implementation plans\n- `systematic-debugging` — root-cause bug fixes\n- `test-driven-development` — red-green-refactor\n- `verification-before-completion` — prove claims with evidence\n- `subagent-driven-development` — dispatch per-task implementers\n- `dispatching-parallel-agents` — parallel investigations\n- `vibe-coding-assistant` — technical co-founder build flow\n- `paid-ads` / `pricing-strategy` — marketing skills\n- `help` (digital-marketing-pro) — full command/connector list\n\nWhat do you need help with? Name a skill, a command, or the task you're stuck on.. Strategy: Reinforce the approach used; promote successful patterns to semantic memory.",
+      "addedAt": "2026-07-20T13:57:22.498Z",
+      "tags": []
+    },
+    {
+      "id": 1785125739012,
+      "text": "Story arc candidate: Diary of a Corpse Who Forgot They Were Dead — 6 ideas under air traffic controller frame, saved to memory/daily/2026-07-26.md",
+      "addedAt": "2026-07-27T04:15:39.012Z",
+      "tags": []
+    },
+    {
+      "id": 1785254935298,
+      "text": "story arc ideation: 6 concepts completed for new novel, air traffic controller frame, saved to memory/daily/2026-07-28.md",
+      "addedAt": "2026-07-28T16:08:55.298Z",
+      "tags": []
+    },
+    {
+      "id": 1785540320104,
+      "text": "REGIMENT Games4Vets partner game list (2026-07-31, 39 titles) saved to memory/regiment-games4vets-list.md",
+      "addedAt": "2026-07-31T23:25:20.104Z",
+      "tags": []
+    },
+    {
+      "id": 1785559543818,
+      "text": "Zorro-for-Zo landing page at jaknyfe.zo.space/zorro: hero image zorro-hero.jpg uploaded as space asset, dark red/black theme from image, sections hero+4 benefits+3-step install+5-layer stack+CTA+footer, references Zo Computer throughout, nav brand 'Zorro for Zo' in fg cream matching hero headline.",
+      "addedAt": "2026-08-01T04:45:43.818Z",
+      "tags": []
+    },
+    {
+      "id": 1785636918626,
+      "text": "Bookmaker stage2 blueprint for 'Outsource Your Own Brain': 14 chapters, ~31,200 words, 3 movements, Ch1 'The Brain Was Never the Bottleneck' already drafted, Ch14 'The Edge You Keep' closes book.",
+      "addedAt": "2026-08-02T02:15:18.626Z",
+      "tags": []
+    },
+    {
+      "id": 1785729166745,
+      "text": "Chapter 10 research on portability vs vendor lock-in was compiled and saved to Outsource-Your-Own-Brain/research/ch10-portability-research.md. The brief covers peer-reviewed lock-in studies (Opara-Martins 2016, Murray and Haeubl 2003, Zou Sun Wang 2025 AER Selling Subscriptions), vendor lock-in statistics, Markdown as portable substrate, the Dropbox migration case as a real-world case study, Tim Bray on open text formats, and the weekend migration test concept.",
+      "addedAt": "2026-08-03T03:52:46.745Z",
+      "tags": []
+    },
+    {
+      "id": 1785743116243,
+      "text": "Outsource Your Own Brain book complete: 15 chapters, ~80k words, manuscript.md in /home/workspace/Outsource-Your-Own-Brain/ built via bookmaker skill pipeline (draft+narratives+evidence per chapter)",
+      "addedAt": "2026-08-03T07:45:16.243Z",
+      "tags": []
+    },
+    {
+      "id": 1785872462803,
+      "text": "Bound by Ash and Thorn: added About the Author back-matter page for Jonathan Thorne (2026-08-04), wired into build_pdf.sh and EPUB.",
+      "addedAt": "2026-08-04T19:41:02.803Z",
+      "tags": []
+    },
+    {
+      "id": 1785874537747,
+      "text": "Outsource-Your-Own-Brain directory relocated to /home/workspace/publishing/books/DELowery/Outsource-Your-Own-Brain on 2026-08-04.",
+      "addedAt": "2026-08-04T20:15:37.747Z",
+      "tags": []
+    },
+    {
+      "id": 1785875983647,
+      "text": "Bound by Ash and Thorn relocated to /home/workspace/publishing/books/JThorne/Bound-by-Ash-and-Thorn; links fixed; zo.pub re-synced 2026-08-04.",
+      "addedAt": "2026-08-04T20:39:43.647Z",
+      "tags": []
+    },
+    {
+      "id": 1785954631046,
+      "text": "Trello Project Progress Sync automation created (5pm+1am MST daily) plus interactive rule: significant project work -> timestamped progress comment on matching @NextActions card, dedupe via /home/workspace/memory/trello-progress-state.json",
+      "addedAt": "2026-08-05T18:30:31.046Z",
+      "tags": []
+    },
+    {
+      "id": 1786005406634,
+      "text": "Skills audit: 373 skills scanned via SkillSpector v2.5.3 on 2026-08-06. Verdict ladder: LOW=SAFE(0-20), MEDIUM=CAUTION(21-50), HIGH=DO_NOT_INSTALL(51-80), CRITICAL=DO_NOT_INSTALL(81-100). Results: 16 CRITICAL, 15 HIGH, 52 MEDIUM, 290 LOW. Report at Skills/skillspector/audit-report.md",
+      "addedAt": "2026-08-06T08:36:46.634Z",
+      "tags": []
+    },
+    {
+      "id": 1786007105690,
+      "text": "CoinBackers.com marketing plan delivered at /home/workspace/coinbackers/MARKETING_PLAN.md — 90-day P1-P3 rollout, creator program, gamified referrals, P0-P2 feature backlog. coinbackers.com points to IONOS (74.208.236.239), needs DNS update. Live site: https://coinbackers-jaknyfe.zocomputer.io",
+      "addedAt": "2026-08-06T09:05:05.690Z",
+      "tags": []
+    },
+    {
+      "id": 1786146320919,
+      "text": "ScholarSearch 2026-08-07: aggregate scholarship amounts pared to annual individual values across both DBs (main 11265->10983, site 11503->11183); junk listicle/FAQ/duplicate rows deleted; future inserts should store per-year amounts in amount_max",
+      "addedAt": "2026-08-07T23:45:20.919Z",
+      "tags": []
+    },
+    {
+      "id": 1786250973866,
+      "text": "Bonsai tuning on 2026-08-09: tested 2/3/4 threads and mmap versus no-mmap; 4 threads fastest, mmap equivalent to no-mmap. Managed bonsai-server now uses -t 4 -c 2048 --flash-attn off --no-warmup with mmap enabled. Direct health and public proxy completion verified.",
+      "addedAt": "2026-08-09T04:49:33.866Z",
+      "tags": []
+    },
+    {
+      "id": 1786330267734,
+      "text": "2026-08-10: Pulled and benchmarked Ollama phi3.5:3.8b and llama3.2:3b on 4-vCPU Zo. Phi TTFT 0.42-0.66s and ~8.2 tok/s on 80-token reasoning; Llama TTFT 0.50-0.57s and ~9.0 tok/s. Both installed and usable.",
+      "addedAt": "2026-08-10T02:51:07.734Z",
+      "tags": []
+    },
+    {
+      "id": 1786330628631,
+      "text": "2026-08-10: Ollama proxy changed to llama3.2:3b primary with gemma3:4b fallback. Default public request verified returning model llama3.2:3b; forced missing-model request verified falling back to gemma3:4b. Docs updated.",
+      "addedAt": "2026-08-10T02:57:08.631Z",
+      "tags": []
+    },
+    {
+      "id": 1786369346469,
+      "text": "2026-08-10 Robinhood Trading Bot: added selectable SneakyPivotStrategy module with 15-minute swing/prior-day levels, three-candle confirmation, tests, CLI --strategy sneaky; 10 tests pass; SPY/QQQ Alpaca smoke: 68 trades, -.31, 60.3% win rate, 0.93 PF; research-only.",
+      "addedAt": "2026-08-10T13:42:26.469Z",
+      "tags": []
+    },
+    {
+      "id": 1786474516189,
+      "text": "2026-08-11: Ollama upgraded from 0.32.4 to 0.32.9 using the official installer. Managed Ollama restarted successfully; API version and proxy chat both returned OK. Models remain installed.",
+      "addedAt": "2026-08-11T18:55:16.189Z",
+      "tags": []
+    },
+    {
+      "id": 1786482277423,
+      "text": "2026-08-11 Scottish Rite Tucson image-link fix deployed; logo path corrected, assets bundled, live page verified with all images loaded.",
+      "addedAt": "2026-08-11T21:04:37.423Z",
+      "tags": []
+    },
+    {
+      "id": 1786482382783,
+      "text": "2026-08-11 deployed standalone Scottish Rite.html to https://noesisgroup.com/tsr/ as index.html; HTTP 200 and browser-rendered page verified.",
+      "addedAt": "2026-08-11T21:06:22.783Z",
+      "tags": []
+    },
+    {
+      "id": 1786482693085,
+      "text": "2026-08-11 synced noesisgroup.com/tsr to the same Vite/React build as scottish-rite-jaknyfe.zocomputer.io; relative asset paths fixed; both live pages browser-verified with all gallery images loaded.",
+      "addedAt": "2026-08-11T21:11:33.085Z",
+      "tags": []
+    },
+    {
+      "id": 1786483592822,
+      "text": "2026-08-11 restored Scottish Rite CalendarWiz integration: direct iframe URLs replaced broken dynamic document.write loader; Zo and noesisgroup.com/tsr verified with calendar iframe and full-calendar modal. Commits 7c8c54c 06271fb c66e6d5.",
+      "addedAt": "2026-08-11T21:26:32.822Z",
+      "tags": []
+    },
+    {
+      "id": 1786516401068,
+      "text": "2026-08-12 Strategy Lab Parameters now has hover and keyboard-focus explanation popups for Breakout Strength and Max Bars; browser screenshot verified.",
+      "addedAt": "2026-08-12T06:33:21.068Z",
+      "tags": []
+    },
+    {
+      "id": 1786517100180,
+      "text": "2026-08-12 Strategy Lab now supports max entries per ticker per day: 1, 2, 3, 5, Unlimited. Enforced across London, Ross, Sneaky Pivot, and Heikin-Ashi backtests; default 1. Commit 5bf7c76. 21 tests pass, web build and live screenshot verified.",
+      "addedAt": "2026-08-12T06:45:00.180Z",
+      "tags": []
+    },
+    {
+      "id": 1786517661495,
+      "text": "Robinhood trading bot: added theta_only research strategy with scanner-first/fixed-universe fallback and conservative/balanced/aggressive presets; commit aae5275; 26 tests pass and Strategy Lab build/screenshot verified.",
+      "addedAt": "2026-08-12T06:54:21.495Z",
+      "tags": []
+    },
+    {
+      "id": 1786647881262,
+      "text": "2026-08-13 Scottish Rite noesisgroup.com/tsr fix: restored original building cameo in hero, restored white upper-left nav logo filter, changed Vite base to relative paths for /tsr deployment; live screenshot verified rendered page.",
+      "addedAt": "2026-08-13T19:04:41.262Z",
+      "tags": []
+    },
+    {
+      "id": 1786648072739,
+      "text": "2026-08-13 Scottish Rite hero refinement deployed: removed red Tucson Scottish Rite lettering and moved white hero graphic upward 3rem over the cameo; live screenshot verified at noesisgroup.com/tsr.",
+      "addedAt": "2026-08-13T19:07:52.739Z",
+      "tags": []
+    },
+    {
+      "id": 1786648173466,
+      "text": "2026-08-13 Scottish Rite hero separator removed and deployed in commit b73c4aa; live screenshot verified.",
+      "addedAt": "2026-08-13T19:09:33.466Z",
+      "tags": []
+    },
+    {
+      "id": 1786648256998,
+      "text": "2026-08-13 Scottish Rite hero spacing doubled: white graphic margin below increased from 2.5rem to 5rem before Building Better Men text; deployed commit 9a6186c and screenshot verified.",
+      "addedAt": "2026-08-13T19:10:56.998Z",
+      "tags": []
+    },
+    {
+      "id": 1786648449090,
+      "text": "2026-08-13 Scottish Rite hero aligned: white graphic moved to cameo top, Building Better Men tagline moved to cameo bottom, deployed commit 7711741 and screenshot verified.",
+      "addedAt": "2026-08-13T19:14:09.090Z",
+      "tags": []
+    },
+    {
+      "id": 1786648728894,
+      "text": "2026-08-13 Scottish Rite events restored: dynamic CalendarWiz event cards display inline, full calendar hidden until View Full Calendar opens a populated modal iframe; deployed 7d7c83d and 7330579, browser verified.",
+      "addedAt": "2026-08-13T19:18:48.894Z",
+      "tags": []
+    },
+    {
+      "id": 1786651772487,
+      "text": "2026-08-13 Scottish Rite hero white graphic raised from top -5rem to -8rem in components/sr-hero.jsx; rebuilt, deployed to Zo and noesisgroup /tsr, verified by screenshot Media/screenshots/tsr-hero-graphic-higher.png; build commit ba09141.",
+      "addedAt": "2026-08-13T20:09:32.487Z",
+      "tags": []
+    },
+    {
+      "id": 1786652053455,
+      "text": "2026-08-13 Scottish Rite CalendarWiz fixed: live document.write feed intercepted and rendered as six responsive event cards; calendar modal expanded to 96vw x 94vh. Deployed commit 03f7133 and verified screenshots tsr-events-cards-fixed.png and tsr-calendar-modal-full.png.",
+      "addedAt": "2026-08-13T20:14:13.455Z",
+      "tags": []
+    },
+    {
+      "id": 1786814166402,
+      "text": "Syndicate is no longer a default focus; work on it only when explicitly requested.",
+      "addedAt": "2026-08-15T17:16:06.402Z",
+      "tags": []
+    },
+    {
+      "id": 1786823578436,
+      "text": "Evaluated YouTube video Improved AI Memory? Full Hermes Tutorial (Mnemosyne & Hindsight) on 2026-08-15. Useful ideas for Zo: explicit working/episodic/semantic memory tiers, consolidation, subject-predicate-object knowledge graph links, and automatic query-time context assembly. Recommendation: improve existing Astra/Clarion stack incrementally; do not replace it with Nemesis or Hindsight yet.",
+      "addedAt": "2026-08-15T19:52:58.437Z",
+      "tags": []
+    },
+    {
+      "id": 1786940117175,
+      "text": "Installed browser-use/video-use as /home/workspace/Skills/video-use on 2026-08-17; dependencies and helper smoke tests pass; no transcription run.",
+      "addedAt": "2026-08-17T04:15:17.175Z",
+      "tags": []
+    },
+    {
+      "id": 1787010904816,
+      "text": "Joke Workshop was added as a public Zo Space subroute at https://jaknyfe.zo.space/joke-workshop on 2026-08-17; existing homepage preserved; route sync and browser rendering passed with zero Zo Space errors.",
+      "addedAt": "2026-08-17T23:55:04.816Z",
+      "tags": []
+    },
+    {
+      "id": 1787011268072,
+      "text": "Fixed Joke Workshop Rework it button on 2026-08-17. It now visibly creates a new revision/pass and updates title/share copy; browser interaction confirmed the heading changes after clicking; Zo Space errors remain zero.",
+      "addedAt": "2026-08-18T00:01:08.072Z",
+      "tags": []
+    },
+    {
+      "id": 1787011565422,
+      "text": "On 2026-08-18, Joke Workshop was fixed so Try links generate immediately and Rework it cycles distinct joke variants instead of repeating. Browser-tested coffee, rework, and space; Zo Space errors zero.",
+      "addedAt": "2026-08-18T00:06:05.422Z",
+      "tags": []
+    },
+    {
+      "id": 1787012165364,
+      "text": "Fixed Joke Workshop rework spinner crash on 2026-08-18: the button now passes subject and rework flag correctly, and synchronous generation guarantees loading clears. Browser verified A Brew-tiful Set to Second Pour — Pass 1; Zo Space errors zero.",
+      "addedAt": "2026-08-18T00:16:05.364Z",
+      "tags": []
+    },
+    {
+      "id": 1787012679203,
+      "text": "Fixed Joke Workshop custom topics on 2026-08-18: arbitrary subjects now generate subject-aware dad joke, pun, hybrid, title, caption, and rework variant. Browser verified with gardening; Zo Space errors zero.",
+      "addedAt": "2026-08-18T00:24:39.203Z",
+      "tags": []
+    },
+    {
+      "id": 1787013461685,
+      "text": "2026-08-18 YouTube OAuth test still returns D.E. Lowery @donlowery, channel UCpf6_CRAfbqkEs7LLxVAGEA, 5 subscribers, 0 videos; Noesis @noesisgroup is not active.",
+      "addedAt": "2026-08-18T00:37:41.685Z",
+      "tags": []
+    },
+    {
+      "id": 1787013627500,
+      "text": "2026-08-18 YouTube OAuth switch succeeded: active channel is Noēsis @noesisgroup, channel ID UC5iKiRUfwCZlps6iPJ8WkgA, 1,012 views, 0 subscribers, 3 videos.",
+      "addedAt": "2026-08-18T00:40:27.500Z",
+      "tags": []
+    },
+    {
+      "id": 1787017298989,
+      "text": "2026-08-18 Noesis @noesisgroup episode 01 upload metadata created at noesis_content/youtube/privacy-footprint/episode-01-upload-metadata.md",
+      "addedAt": "2026-08-18T01:41:38.989Z",
+      "tags": []
+    },
+    {
+      "id": 1787030196943,
+      "text": "2026-08-18: Approved integrating Prompt Master concepts into existing Skills/prompt-improver rather than installing prompt-master separately. Added tool routing, agent scope/stop controls, prompt decompiler mode, compact memory blocks, prompt-injection boundaries, and credential sanitization.",
+      "addedAt": "2026-08-18T05:16:36.943Z",
+      "tags": []
+    },
+    {
+      "id": 1787037325233,
+      "text": "2026-08-18: Kokoro Web installed from source at /home/workspace/kokoro-web; supervised local-only service kokoro-web runs on port 3010 because hosted HTTP service limit was reached; kokoro-voice Skill added; privacy-footprint episode audio_request.json now defaults to Kokoro model_q8f16 voice af_heart with ElevenLabs fallback.",
+      "addedAt": "2026-08-18T07:15:25.233Z",
+      "tags": []
+    },
+    {
+      "id": 1787038090472,
+      "text": "Created Skills/low-ticket-offer-architect on 2026-08-18 from the uploaded digital product strategist prompt. It designs and ranks three ethical low-ticket digital products priced at  or less, with offer stacks, funnels, scoring, and a 7-day creation plan; it complements gumroad-product-builder.",
+      "addedAt": "2026-08-18T07:28:10.472Z",
+      "tags": []
+    },
+    {
+      "id": 1787039420022,
+      "text": "2026-08-18: Financial Dashboard now integrates a read-only Robinhood adapter and dashboard account status panel; missing credentials show not configured; no order controls; 8 tests pass and screenshot verified.",
+      "addedAt": "2026-08-18T07:50:20.022Z",
+      "tags": []
+    },
+    {
+      "id": 1787041079840,
+      "text": "2026-08-18: Created separate public read-only Robinhood investment dashboard at https://jaknyfe.zo.space/robinhood-investments, distinct from Strategy Lab; adapter runs as private localhost process service and currently reports credentials not configured.",
+      "addedAt": "2026-08-18T08:17:59.840Z",
+      "tags": []
+    },
+    {
+      "id": 1787042271773,
+      "text": "2026-08-18: Robinhood live investment dashboard fixed. Existing Zo secrets were already present but not injected into the managed adapter; service now injects them, uses robin-stocks in the project venv, normalizes numeric fields, and screenshot shows live portfolio .85, cash /usr/bin/zsh.02, buying power /usr/bin/zsh.02, two holdings, and 23 orders.",
+      "addedAt": "2026-08-18T08:37:51.773Z",
+      "tags": []
+    },
+    {
+      "id": 1787042604350,
+      "text": "2026-08-18: Expanded live Robinhood holdings to stocks, crypto, and open options. Dashboard now labels asset type and shows crypto market values; live screenshot verified ELMT/SPCX stocks plus BTC/DOGE crypto.",
+      "addedAt": "2026-08-18T08:43:24.350Z",
+      "tags": []
+    },
+    {
+      "id": 1787045102022,
+      "text": "Created /home/workspace/Skills/find-moneymaking-biz from two uploaded prompt images. It covers business ideation, 30-day launch, offer building, first 100 customers, and revenue scaling with ethical validation and unit economics.",
+      "addedAt": "2026-08-18T09:25:02.022Z",
+      "tags": []
+    },
+    {
+      "id": 1787216961566,
+      "text": "2026-08-20 Syndicate v2 Zo-local runtime stack: Hermes Agent v0.20.4, OpenClaw 2026.8.1, and @deepseek-ai/dsh 0.1.0-rc.7 are installed and managed as services. DSH returns HTTP 200 on localhost:3080; Hermes provider auth and OpenClaw persisted gateway config/auth remain pending.",
+      "addedAt": "2026-08-20T09:09:21.566Z",
+      "tags": []
+    },
+    {
+      "id": 1787217071201,
+      "text": "SaaS-Mailer 2026-08-20: contacts import and sending-account create/list routes now support PostgreSQL with async tenant auth; full suite 48 passed, 1 skipped; commits cb57fa99 and 60c05c9f.",
+      "addedAt": "2026-08-20T09:11:11.201Z",
+      "tags": []
+    },
+    {
+      "id": 1787217215842,
+      "text": "2026-08-20 Syndicate runtime continuation: OpenClaw gateway.mode=local and gateway.auth.mode=token are persisted with a generated token; config validates, service restarted, and gateway logs report ready. Hermes gateway remains running with configured provider route but optional Nous/Codex login is invalid or absent.",
+      "addedAt": "2026-08-20T09:13:35.842Z",
+      "tags": []
+    },
+    {
+      "id": 1787220487048,
+      "text": "--help",
+      "addedAt": "2026-08-20T10:08:07.048Z",
+      "tags": []
+    },
+    {
+      "id": 1787222753059,
+      "text": "Don requested an ethical, legal, sustainable retirement wealth plan on 2026-08-20. Profile: age 58, income ,000/month, expenses ,000, assets ,000, debt ,000, emergency savings ,000, conservative risk, retirement target ,000,000 by 2030.",
+      "addedAt": "2026-08-20T10:45:53.059Z",
+      "tags": []
+    },
+    {
+      "id": 1787238297217,
+      "text": "2026-08-20 ScholarSearch global batch: canonical discover.py --limit 200 inserted 30 main and 28 mirror rows, all url_status unchecked; 0 verified new records, 200 shortfall. Main total 11401, mirror 12028. Runner reported 372 duplicates and 4 skipped links. Issue logged in scholarship-discovery AGENTS.md; report emailed.",
+      "addedAt": "2026-08-20T15:04:57.217Z",
+      "tags": []
+    },
+    {
+      "id": 1787261718715,
+      "text": "SaaS-Mailer production setup continued on 2026-08-20: Microsoft OAuth secrets are not available yet; configuration accepts them as optional, Gmail-only validation passed with PostgreSQL mode, and the worker bundle built successfully. Microsoft connection remains blocked until MICROSOFT_CLIENT_ID and MICROSOFT_CLIENT_SECRET are added.",
+      "addedAt": "2026-08-20T21:35:18.715Z",
+      "tags": []
+    },
+    {
+      "id": 1787266225332,
+      "text": "2026-08-20 Syndicate v2 approval audit and notifications completed: review requests, escalations, and human approval decisions emit audit events; durable notifications API exposes unread review work and human approval marks notifications read. --project syndicate",
+      "addedAt": "2026-08-20T22:50:25.332Z",
+      "tags": []
+    },
+    {
+      "id": 1787280437810,
+      "text": "Syndicate approval notification UI completed 2026-08-21; live screenshot verified.",
+      "addedAt": "2026-08-21T02:47:17.810Z",
+      "tags": []
+    },
+    {
+      "id": 1787281601147,
+      "text": "Syndicate approval notifications became actionable; managed service restarted and live API verified.",
+      "addedAt": "2026-08-21T03:06:41.147Z",
+      "tags": []
+    },
+    {
+      "id": 1787282012013,
+      "text": "Syndicate v2 company metrics API added on 2026-08-21: GET /syndicate-api/companies/:id/metrics returns scoped task counts, completion rate, blocked count, review decisions, and spend; 18 tests, type-check, build, and diff check pass; live verification pending because port 57548 is asleep.",
+      "addedAt": "2026-08-21T03:13:32.013Z",
+      "tags": []
+    },
+    {
+      "id": 1787285012656,
+      "text": "On 2026-08-21, Don requested a concise decision-ready wealth/business plan: pursue, revise, test first, or stop; prioritize ethical AI services and debt/cash-flow validation; no invented market evidence or guaranteed outcomes.",
+      "addedAt": "2026-08-21T04:03:32.656Z",
+      "tags": []
+    },
+    {
+      "id": 1787291150337,
+      "text": "For Outsource Your Own Brain, Don confirmed on 2026-08-21 that the cover art is AI-generated. KDP must receive AI-generated image disclosure; manuscript text was not AI-generated.",
+      "addedAt": "2026-08-21T05:45:50.337Z",
+      "tags": []
+    },
+    {
+      "id": 1787298336965,
+      "text": "For Outsource Your Own Brain, Don selected worldwide territories for KDP distribution on 2026-08-21; primary marketplace remains Amazon.com. --force",
+      "addedAt": "2026-08-21T07:45:36.965Z",
+      "tags": []
+    },
+    {
+      "id": 1787298496902,
+      "text": "For Outsource Your Own Brain, Don chose KDP Select enrollment on 2026-08-21; the Kindle eBook will be Amazon-exclusive for each 90-day period and included in Kindle Unlimited. --force",
+      "addedAt": "2026-08-21T07:48:16.902Z",
+      "tags": []
+    },
+    {
+      "id": 1787310942724,
+      "text": "Created Skills/brand-builder on 2026-08-21 from four uploaded lean-brand prompts. It supports full eight-stage brand launch workflow and independent stage runs, with eval prompts and boundaries against existing brandkit and brand-positioning skills.",
+      "addedAt": "2026-08-21T11:15:42.724Z",
+      "tags": []
+    },
+    {
+      "id": 1787311558601,
+      "text": "2026-08-21: Enhanced Skills/humanizer with a transparent 0-100 AI-pattern risk evaluator using six weighted dimensions, minimum word-count confidence rules, interpretation bands, and advisory-only reporting.",
+      "addedAt": "2026-08-21T11:25:58.601Z",
+      "tags": []
+    },
+    {
+      "id": 1787312179464,
+      "text": "Don preference: When asked to run a skill or analysis, assume scan/evaluation only first; do not modify source unless separately authorized.",
+      "addedAt": "2026-08-21T11:36:19.464Z",
+      "tags": []
+    },
+    {
+      "id": 1787321119662,
+      "text": "2026-08-21 daily X networking loop: searched recent tech/AI/startup and constitutional-libertarian posts; no replies attempted because no target was clearly reply-allowed and prior X API policy restricts replies to mentions/authored posts; logs updated for @jak_nyfe and @zdsentry.",
+      "addedAt": "2026-08-21T14:05:19.662Z",
+      "tags": []
+    },
+    {
+      "id": 1787338050745,
+      "text": "New isolated TypeScript BTCUSDT paper-trading bot will use Alpaca historical data, 5-minute 9/21 MA crossover, and long-only execution.",
+      "addedAt": "2026-08-21T18:47:30.745Z",
+      "tags": []
+    },
+    {
+      "id": 1787362534306,
+      "text": "2026-08-22 Orion repository status: private Noesis-Boss/Orion has only master, no open issues or PRs, latest commit 2b5365a on 2026-08-21 23:02 UTC expanded the manuscript to 23 chapters and approximately 70,700 words. Evaluation rerun: complete draft but not publication-ready; needs continuity, character-depth, technical-plausibility, and expansion/polish work.",
+      "addedAt": "2026-08-22T01:35:34.306Z",
+      "tags": []
+    },
+    {
+      "id": 1787401177046,
+      "text": "ema_cci_macd strategy added to robinhood-trading-bot 2026-08-22, rejected in 6-month backtest (PF 0.44), disabled by default",
+      "addedAt": "2026-08-22T12:19:37.046Z",
+      "tags": []
+    },
+    {
+      "id": 1787402047494,
+      "text": "Syndicate v2: on 2026-08-22 replaced fake ephemeral bearer tokens with durable SHA-256 API tokens, protected API routes, and live verified unauthorized 401, login 200, authorized company access 200. Token records persist account/tenant/company scope metadata; enforcement of fine-grained scope is next.",
+      "addedAt": "2026-08-22T12:34:07.494Z",
+      "tags": []
+    },
+    {
+      "id": 1787402815723,
+      "text": "Syndicate v2 on 2026-08-22: enforced API token tenant/company scopes. Live scoped token issued 201, listed only ScholarHub, cross-company BankBox read rejected 403; 26 tests, type-check, build, diff check pass.",
+      "addedAt": "2026-08-22T12:46:55.723Z",
+      "tags": []
+    },
+    {
+      "id": 1787402966121,
+      "text": "Syndicate v2 on 2026-08-22: extended API token scopes to missions, operations, events, metrics, and boardroom aggregation. Live ScholarHub-scoped boardroom returned only ScholarHub; BankBox metrics returned 403. 26 tests, type-check, build, diff check pass.",
+      "addedAt": "2026-08-22T12:49:26.121Z",
+      "tags": []
+    },
+    {
+      "id": 1787404169390,
+      "text": "Trading methodology plan created 2026-08-22 from JeaFx LTV video reyleIzgE3o: daily-timeframe supply/demand swing system, 1% fixed risk, min 1:2 RR, set-and-forget, -2% weekly loss limit, +8% monthly profit stop; plan at trading-methodology/PLAN.md maps Learn/Test/Validate/Earn onto robinhood-trading-bot infra",
+      "addedAt": "2026-08-22T13:09:29.390Z",
+      "tags": []
+    },
+    {
+      "id": 1787404667489,
+      "text": "SaaS-Mailer contact CSV import now automatically maps common CRM aliases for email and names, splits full-name columns, preserves other columns as custom fields, and was deployed in commit 4061797f; parser tests pass.",
+      "addedAt": "2026-08-22T13:17:47.489Z",
+      "tags": []
+    },
+    {
+      "id": 1787408099016,
+      "text": "SaaS-Mailer CSV importer fixed on 2026-08-22: automatically detects comma, semicolon, tab, and pipe delimiters, preventing false missing-email-header errors; commit 391850d7; republished live.",
+      "addedAt": "2026-08-22T14:14:59.016Z",
+      "tags": []
+    },
+    {
+      "id": 1787408735735,
+      "text": "2026-08-22 Millionaire Maker report page fix: public relay timeout increased from 45 to 90 seconds; popup now shows progress immediately; client timeout is 95 seconds; deterministic profile-based fallback report opens on Failed to fetch so report never remains blank; live API returned HTTP 200 and Zo route errors are zero.",
+      "addedAt": "2026-08-22T14:25:35.735Z",
+      "tags": []
+    },
+    {
+      "id": 1787408884147,
+      "text": "Evaluated YouTube video 3YkaEmdZZsg on 2026-08-22: it presents the same T3 plus Donovan Wall Range Filter long-only Asia-open gold/forex strategy already represented by robinhood bot t3_range_filter. Video headline backtest 1669% net, 28% drawdown, 31% win rate, 456 trades, PF 1.89; not validated for U.S. equities. Keep research-only.",
+      "addedAt": "2026-08-22T14:28:04.147Z",
+      "tags": []
+    },
+    {
+      "id": 1787410212254,
+      "text": "--help",
+      "addedAt": "2026-08-22T14:50:12.254Z",
+      "tags": []
+    },
+    {
+      "id": 1787411099388,
+      "text": "2026-08-22 ScholarSearch global batch: canonical discover.py --limit 200 rotated 54 sources, added 2 verified new scholarships per database (queue_src-609 USA Specialized), skipped 53 duplicates, rejected 145, failed links 0, shortfall 198; totals main 11409 and mirror 12036; email report sent.",
+      "addedAt": "2026-08-22T15:04:59.388Z",
+      "tags": []
+    },
+    {
+      "id": 1787457291448,
+      "text": "Orion Chapter 21 tightened per approved scope: four explainer lines removed, duplicate pre-pull Ryker block deleted, four Rio pronoun regressions fixed; commit 7055035 pushed 2026-08-22",
+      "addedAt": "2026-08-23T03:54:51.448Z",
+      "tags": []
+    },
+    {
+      "id": 1787583896318,
+      "text": "2026-08-24 ScholarSearch global batch: canonical discover.py --limit 200 rotated global and regional sources but produced 0 candidates; added 0 verified records; shortfall 200. Main DB 11410, site mirror 12037. Fetch blockers included DNS, TLS, connection refusal, and skipped search fallbacks. Report emailed; issue logged in scholarship-discovery AGENTS.md.",
+      "addedAt": "2026-08-24T15:04:56.318Z",
+      "tags": []
+    },
+    {
+      "id": 1787590376937,
+      "text": "2026-08-24 hook-generator enhanced from supplied strategy prompt: defaults to 20 varied hooks, per-hook trigger/rationale/format/retention metadata, ranked top five, rebuilt empty SKILL.md, synced mirror, verified with Python compile and seeded output.",
+      "addedAt": "2026-08-24T16:52:56.937Z",
+      "tags": []
+    },
+    {
+      "id": 1787591817273,
+      "text": "Created finance-youtube-breakdown skill and Monday 8 AM MST research-only automation; revenue claims are hypotheses; no auto-publishing or spending.",
+      "addedAt": "2026-08-24T17:16:57.273Z",
+      "tags": []
+    },
+    {
+      "id": 1787606923956,
+      "text": "2026-08-24 Robinhood trading bot: resumed four-layer monitoring architecture; removed duplicate CSS, fixed Infinity JSON breaking frontend fetch, populated behavior total_trades, production build and browser screenshot verified; three monitor tests remain blocked by flawed market-hour fixture generating 7 instead of expected 10 rows.",
+      "addedAt": "2026-08-24T21:28:43.956Z",
+      "tags": []
+    },
+    {
+      "id": 1787610853146,
+      "text": "2026-08-24 Jacques de Molay project: resolved Book One research debts; Beaune 1265 retained as probable historical hinge, fictional pilgrimage route Burgundy-Rhône-Provence-Marseille-Acre, Primitive Rule used as reception guidance, drafted chapters/ch_01.md, commit 738c87f",
+      "addedAt": "2026-08-24T22:34:13.146Z",
+      "tags": []
+    },
+    {
+      "id": 1787611459094,
+      "text": "2026-08-24 Jacques de Molay Book One: drafted Chapter Two, fictional Aelis disappearance with conflicting witnesses and unresolved clues; next Chapter Three is Beaune Templar reception; commit 0db2183",
+      "addedAt": "2026-08-24T22:44:19.094Z",
+      "tags": []
+    },
+    {
+      "id": 1787612692060,
+      "text": "2026-08-24 @zdsentry evening post: Supreme Court paused lower-court block on Trump's mail-voting order in 23 states and D.C.; specific constitutional question CTA tested; tweet 2092025251093741576; source reply 2092025273197707747; metrics pending.",
+      "addedAt": "2026-08-24T23:04:52.060Z",
+      "tags": []
+    },
+    {
+      "id": 1787634059813,
+      "text": "Orion Chapter 10 timing contradiction fixed on 2026-08-25: changed six hours to fifteen minutes to match 03:17–03:32; pushed commit 60a9d53.",
+      "addedAt": "2026-08-25T05:00:59.813Z",
+      "lastSeenAt": "2026-08-25T05:00:59.813Z",
+      "type": "fact",
+      "status": "verified",
+      "confidence": 1,
+      "project": "orion",
+      "source": "git",
+      "tags": [],
+      "supersedes": [],
+      "relations": [],
+      "accessCount": 1
+    },
+    {
+      "id": 1787634763642,
+      "text": "Orion publication copyedit began on 2026-08-25. Chapter 1 received four minimal corrections covering latency wording, payment terminology, a missing article, and em-dash spacing; voice and present-tense narration preserved; pushed ae60c9d.",
+      "addedAt": "2026-08-25T05:12:43.642Z",
+      "lastSeenAt": "2026-08-25T05:12:43.642Z",
+      "type": "project",
+      "status": "verified",
+      "confidence": 1,
+      "project": "orion",
+      "source": "git",
+      "tags": [],
+      "supersedes": [],
+      "relations": [],
+      "accessCount": 1
+    },
+    {
+      "id": 1787639654463,
+      "text": "2026-08-25: Refreshed zdsentry X cookies authenticate in Playwright; fixed follow_and_reply.py to derive target username from tweet URL and pass tweet_url explicitly. A test run found no matching follow-back tweet links.",
+      "addedAt": "2026-08-25T06:34:14.463Z",
+      "tags": []
+    },
+    {
+      "id": 1787644576158,
+      "text": "Zo Build Challenge brainstorming choices preserved: family audience, spouse category, mom target; shortlist Family Thread, Mom's Memory Keeper, The Simple Day; Mom's Memory Keeper recommended; user restarted questioning for a different idea.",
+      "addedAt": "2026-08-25T07:56:16.158Z",
+      "tags": []
+    },
+    {
+      "id": 1787644945383,
+      "text": "Zo Build Challenge second brainstorm preserved: community group local seniors, technology help; shortlist Tech Help Button, Scam Shield, Neighbor Tech Desk; Neighbor Tech Desk recommended; user restarted questioning again.",
+      "addedAt": "2026-08-25T08:02:25.383Z",
+      "tags": []
+    },
+    {
+      "id": 1787645348517,
+      "text": "Orion Chapter 9 publication copyedit completed and pushed in commit 8ce249d on 2026-08-25.",
+      "addedAt": "2026-08-25T08:09:08.517Z",
+      "tags": []
+    },
+    {
+      "id": 1787645349410,
+      "text": "Orion Chapter 10 publication copyedit completed and pushed in commit 0da34ae on 2026-08-25.",
+      "addedAt": "2026-08-25T08:09:09.410Z",
+      "tags": []
+    },
+    {
+      "id": 1787645700463,
+      "text": "Zo Build Challenge concept selected: Find Your Tribe; teens seeking peer connection for mental wellness; moderated interest-based activity matching; no open anonymous chat or direct stranger messaging; user approved development.",
+      "addedAt": "2026-08-25T08:15:00.463Z",
+      "tags": []
+    },
+    {
+      "id": 1787646182950,
+      "text": "Orion Chapter 11 publication copyedit completed and pushed in commit 7612ce1 on 2026-08-25. Removed a duplicate recruitment-profile reveal while preserving the adversarial archive analysis, partial-disclosure warning, counter-intelligence clue, assembly requirement, and Nevada coordinates; evaluator 9.70, forensic 10.0, OCR and duplicate checks clean.",
+      "addedAt": "2026-08-25T08:23:02.950Z",
+      "tags": []
+    },
+    {
+      "id": 1787663184775,
+      "text": "Daily @zdsentry post published August 25 2026 about Sen. Lisa Murkowski, James O’Keefe, and Alaska voter-ID testing; media attached and source self-reply posted.",
+      "addedAt": "2026-08-25T13:06:24.775Z",
+      "tags": []
+    },
+    {
+      "id": 1787670418801,
+      "text": "2026-08-25 ScholarSearch global batch rotated 35 queued global/international sources; canonical runner added one page-level Scholarship FAQs false positive per database, zero qualifying verified individual scholarships, shortfall 200; main 11411, site 12038; email report sent; issue logged.",
+      "addedAt": "2026-08-25T15:06:58.801Z",
+      "tags": []
+    },
+    {
+      "id": 1787670513133,
+      "text": "2026-08-25 Jacques de Molay Book One: Chapter 11 The Empty Crown drafted and committed as 1c14700. It covers Thibaud Gaudin's death on 16 April 1292 and Jacques's emergence as a serious candidate while preserving the uncertain 1292–1293 election range; evaluator and forensic scans scored 10.0 with zero findings.",
+      "addedAt": "2026-08-25T15:08:33.133Z",
+      "tags": []
+    },
+    {
+      "id": 1787671211733,
+      "text": "2026-08-25 Jacques de Molay Book One: Chapter 12 The Master drafted and committed as 6ef1b84. It uses Molay's documented office by 1293, the Montpellier chapter, and James II's 24 August 1293 safe-conduct as historical anchors; evaluator and forensic scans scored 10.0 with zero findings.",
+      "addedAt": "2026-08-25T15:20:11.733Z",
+      "tags": []
+    },
+    {
+      "id": 1787675057338,
+      "text": "ScholarSearch discovery verification resumed on 2026-08-25: added bounded official-link recovery, discovery pipeline scaffold, and 500-record due-queue audits scheduled within 15 days; Python tests and audit bundle pass; commits 8b022160, 96b072d5, 223d65f9.",
+      "addedAt": "2026-08-25T16:24:17.338Z",
+      "tags": []
+    },
+    {
+      "id": 1787675595776,
+      "text": "ScholarSearch Task 6 completed on 2026-08-25: added verification-report.ts with JSON coverage metrics and strict release gate; report initialized missing audit schema columns and measured 2,666 active records, 3 checks today, 0 overdue, 76.86% verified coverage, target not yet met.",
+      "addedAt": "2026-08-25T16:33:15.776Z",
+      "tags": []
+    },
+    {
+      "id": 1787675653961,
+      "text": "ScholarSearch calibration completed 2026-08-25: MALDEF source HTTP 200 with 66 scholarship/application links, Wyoming official source HTTP 200 with 2 links, Virginia CSCS DNS failure retryable; no production rows changed. Build succeeded with one chunk-size warning. Commit c3320f21.",
+      "addedAt": "2026-08-25T16:34:13.961Z",
+      "tags": []
+    },
+    {
+      "id": 1787696841244,
+      "text": "Jacques de Molay Book Two Chapter 17 The Wolf from the East drafted on 2026-08-25. It uses Ghazan's 1299 victory near Homs, brief control of Damascus, Christian and Armenian contact, and logistics limits; DeMolay remains in reconstructed Cyprus councils; no durable alliance, certain Jerusalem capture, or Mulay/Molay confusion. --project Jacques de Molay",
+      "addedAt": "2026-08-25T22:27:21.244Z",
+      "tags": []
+    },
+    {
+      "id": 1787697020812,
+      "text": "Jacques de Molay Book Two Chapter 18 Two Masters drafted on 2026-08-25. It uses the documented papal proposal to unite the Temple and Hospital and DeMolay's surviving opposition to merger; private Cyprus councils, factions, envoy, and dialogue are reconstructed; cooperation remains possible and merger opposition is not presented as the sole cause of Philip IV's later action. --project Jacques de Molay",
+      "addedAt": "2026-08-25T22:30:20.812Z",
+      "tags": []
+    },
+    {
+      "id": 1787697165164,
+      "text": "Jacques de Molay Book Two Chapter 19 A King Counts drafted on 2026-08-25. It uses Ausculta fili (1301), the 1303 royal reform ordinance, Nogaret's rise, and Philip IV's fiscal, legal, ecclesiastical, and administrative court context; private council and dialogue are reconstructed without reducing the later Templar action to debt or making Philip omniscient. --project Jacques de Molay",
+      "addedAt": "2026-08-25T22:32:45.164Z",
+      "tags": []
+    },
+    {
+      "id": 1787697375678,
+      "text": "Jacques de Molay Book Two Chapter 20 The Pope's Conscience drafted on 2026-08-25. It uses Clement V's 23 December 1305 bull concerning Philip's altered coinage, subventions, seizures, exactions, and crusade obligations; Clement is reconstructed between correction and accommodation, not as Philip's puppet or an all-powerful counterforce. --project Jacques de Molay",
+      "addedAt": "2026-08-25T22:36:15.678Z",
+      "tags": []
+    },
+    {
+      "id": 1787718100877,
+      "text": "Jacques de Molay Book Two Chapter 22 The Seal drafted and committed. It uses Nogaret's appointment as keeper of the royal seals on 22 September 1307 and secret September arrest/property instructions as anchors for administrative preparation. The Maubuisson seal-room scene and dialogue are reconstructed; Nogaret is not presented as sole architect. --project Jacques de Molay",
+      "addedAt": "2026-08-26T04:21:40.877Z",
+      "tags": []
+    },
+    {
+      "id": 1787724669419,
+      "text": "Jacques de Molay Book Three Chapter 26 Recantation and Faction drafted on 2026-08-26; it uses the conflict between the early confession, later recantation, Chinon absolution process, and Templar factional responses to captivity. Chapter passes evaluator and forensic scans at 10.0 with zero findings. --project Jacques de Molay",
+      "addedAt": "2026-08-26T06:11:09.419Z",
+      "tags": []
+    },
+    {
+      "id": 1787734716189,
+      "text": "2026-08-26 Jacques de Molay Book Three Chapter 32 The Fire drafted and committed as d86f2c9. It uses the confirmed 18 March 1314 execution of DeMolay and Geoffroi de Charney after they were declared relapsed, preserves conflicting witness accounts, treats the curse as later legend rather than delivered dialogue, and keeps venue, escort, final exchange, and interiority reconstructed. Evaluator 10.0, forensic 10.0. --json",
+      "addedAt": "2026-08-26T08:58:36.189Z",
+      "tags": []
+    },
+    {
+      "id": 1787853881479,
+      "text": "Project context: /home/workspace/jwild_funeral/ is James Wild's Funeral 2026 project folder; audio files are stored under /home/workspace/jwild_funeral/audio/. --project jwild_funeral",
+      "addedAt": "2026-08-27T18:04:41.479Z",
+      "tags": []
+    },
+    {
+      "id": 1788075607257,
+      "text": "2026-08-30: Enhanced YouTube generation skills from uploaded prompt image: standardized HOOK → OPEN LOOP → CONTEXT → VALUE → ESCALATION → PAYOFF → CTA, required micro-payoffs, examples/comparisons/stories, meaningful pattern interrupts, callback endings, and 3-moment retention audits in faceless-yt-retention-script and video-script.",
+      "addedAt": "2026-08-30T07:40:07.257Z",
+      "tags": []
+    },
+    {
+      "id": 1788100003252,
+      "text": "MindCraft blank-after-login fixed 2026-08-30: server.ts now mounts /api/texts, /api/groups, and /api/stats; rebuilt, restarted service svc_sSRBipRVTp4, committed c2ce9ca, and live browser verification shows library and tutorial with no console/page errors.",
+      "addedAt": "2026-08-30T14:26:43.252Z",
+      "tags": []
+    },
+    {
+      "id": 1788103442018,
+      "text": "SpeedyAssist commit 3ad90af added Windows-only WASAPI polling reads of the default microphone into validated 48 kHz stereo PCM frames; Linux 8/8 tests and Windows GNU target check pass, but physical Windows runtime and WebRTC publication remain pending.",
+      "addedAt": "2026-08-30T15:24:02.018Z",
+      "tags": []
+    },
+    {
+      "id": 1788113499215,
+      "text": "2026-08-30 ScholarSearch Phoenix Rite Care cleanup: reviewed official source, found no current student application endpoint; Masonic Charities AZ link is a 501(c)(3) grant application, so deactivated records 2432 and 2461 and cleared bad URLs. Commit 6b94214.",
+      "addedAt": "2026-08-30T18:11:39.215Z",
+      "tags": []
+    },
+    {
+      "id": 1788113600068,
+      "text": "2026-08-30 ScholarSearch: added The Anita Hill Scholarship from official StitchCrew page. Direct application endpoint is https://airtable.com/appblcfVClwuPL3ue/pagBuZFDvybFmBwAc/form; deadline 2026-09-22; five ,000 awards. Added verified active record to both scholarship databases, commits be96b37.",
+      "addedAt": "2026-08-30T18:13:20.068Z",
+      "tags": []
+    },
+    {
+      "id": 1788115860747,
+      "text": "2026-08-30 Bound by Ash and Thorn production pipeline fixed: compiler derives 27 chapters and 95,633 source words, PDF build runs chapter page breaks, compile check ignores generated newpage markers; rebuilt PDF is 181 pages; forensic scan 0 findings.",
+      "addedAt": "2026-08-30T18:51:00.747Z",
+      "tags": []
+    },
+    {
+      "id": 1788127822298,
+      "text": "MyPCHousecall commit 829b617 added validated BGRA-to-I420 conversion with timestamp preservation and even-dimension rejection; native-webrtc Linux tests 17/17 and Windows GNU cross-check passed; VP8 encoding and Windows frame acquisition remain pending.",
+      "addedAt": "2026-08-30T22:10:22.298Z",
+      "tags": []
+    },
+    {
+      "id": 1788128811431,
+      "text": "MyPCHousecall commit cc39a26 documented that vpx-encode was removed because env-libvpx-sys requires target-specific libvpx/pkg-config; BGRA-to-I420 remains verified, and a bundled or Windows-native VP8 encoder is the next blocker. --project MyPCHousecall",
+      "addedAt": "2026-08-30T22:26:51.431Z",
+      "tags": []
+    }
+  ]
+}

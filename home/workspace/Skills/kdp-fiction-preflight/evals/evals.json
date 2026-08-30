@@ -1,0 +1,23 @@
+{
+  "skill_name": "kdp-fiction-preflight",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review the supplied fiction manuscript for KDP preflight. Identify its genre lens, return the required five-section report, classify every finding, quote exact excerpts, propose minimally invasive revisions, and do not claim Amazon approval.",
+      "expected_output": "A genre-aware but genre-neutral report covering blockers, story readiness, line edits, reader-market fit, KDP deliverables, limitations, and author confirmations.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Preflight this science-fiction or fantasy manuscript for KDP. Check continuity, world rules, technology or magic consistency, terminology, POV, pacing, setup/payoff, duplicate or unfinished material, links, rights, and AI disclosure. Do not apply romance-only criteria unless the manuscript is also romance.",
+      "expected_output": "A report using a clearly stated speculative-fiction lens, with exact evidence, severity, impact, targeted revisions, and explicit uncertainty where facts were not externally verified.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Audit this western, mystery, thriller, or historical-fiction manuscript for KDP readiness. Track timeline, clues, reveals, setting details, genre promise, ending satisfaction, factual-verification needs, front and back matter, links, metadata, and disclosure status.",
+      "expected_output": "A conservative genre-specific report that preserves the universal KDP checks without forcing inappropriate romance or technical-book criteria.",
+      "files": []
+    }
+  ]
+}

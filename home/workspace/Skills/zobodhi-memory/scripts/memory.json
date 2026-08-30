@@ -1,0 +1,137 @@
+{
+  "memories": [
+    {
+      "id": 1785537062209,
+      "text": "Zorro-Presentation deliverables created 2026-07-31 in /home/workspace/Zorro-Presentation/: 15-slide Zorro persona presentation outline, 6-module Zero-Cost Zo course outline, and architecture .d2 diagram. Baked-in verified facts: AstraDB 67 memories (38 fact / 15 session / 14 semantic), local nomic-embed-text-v1.5 768-dim embeddings, token-saver 96.8% reduction on git log --stat, Ollama qwen3:14b (primary) + gemma3:1b live through OpenAI-compatible proxy on port 11435 (verified 200 OK), Zorro on custom BYOK endpoint byok:ee9b6e08-3859-4d08-91ec-bfc683010ef4. Container IP 172.20.10.117 as of 2026-07-31. zorro",
+      "addedAt": "2026-07-31T22:31:02.209Z",
+      "lastSeenAt": "2026-07-31T22:31:02.209Z",
+      "type": "fact",
+      "status": "pending",
+      "confidence": 1,
+      "source": "manual",
+      "tags": []
+    },
+    {
+      "id": 1785743122067,
+      "text": "Outsource Your Own Brain manuscript complete (15 chapters, ~80k words) at /home/workspace/Outsource-Your-Own-Brain/manuscript.md",
+      "addedAt": "2026-08-03T07:45:22.067Z",
+      "lastSeenAt": "2026-08-03T07:45:22.067Z",
+      "type": "fact",
+      "status": "pending",
+      "confidence": 1,
+      "source": "manual",
+      "tags": []
+    },
+    {
+      "id": 1786003289987,
+      "text": "Daily Action Items Report live: scans delowery@gmail.com + state.officer.director@azdemolay.org, pulls Google Calendar events, page https://jaknyfe.zo.space/action-items with check-off auto-remove. 6:30 AM MST SMS automation f2d68eef. Store memory/action-items-report.json. delowery calendar token expired (401) as of 2026-08-06.",
+      "addedAt": "2026-08-06T08:01:29.987Z",
+      "lastSeenAt": "2026-08-06T08:01:29.987Z",
+      "type": "project",
+      "status": "durable",
+      "confidence": 1,
+      "project": "daily action items report",
+      "source": "manual",
+      "tags": []
+    },
+    {
+      "id": 1786141599731,
+      "text": "book-to-skill installed at /home/workspace/Skills/book-to-skill (v1.3.0, MIT, virgiliojr94). Smoke-tested 2026-08-07 on Syndicate ops docs -> generated skill /home/workspace/Skills/syndicate-ops (6 chapters, reference depth). Pipeline: extract.py --mode text -> agent distills -> validate_skill.py + scan_generated_skill.py pass.",
+      "addedAt": "2026-08-07T22:26:39.731Z",
+      "lastSeenAt": "2026-08-07T22:26:39.731Z",
+      "type": "fact",
+      "status": "pending",
+      "confidence": 1,
+      "source": "manual",
+      "tags": []
+    },
+    {
+      "id": 1786141742906,
+      "text": "ScholarSearch site (https://scholarsearch-jaknyfe.zocomputer.io) now has full login/profile system: JWT auth in localStorage, /api/auth/register|login|me|logout, profile page uses GET/PUT /api/profiles/me. Deploy gotcha: stale dist cache meant vite build only transformed 4 modules; clear node_modules/.vite and rebuild. Cloudflare caches asset URLs 4h as text/html when SPA fallback served them — bust with fresh hashes and verify Content-Type after deploy.",
+      "addedAt": "2026-08-07T22:29:02.906Z",
+      "lastSeenAt": "2026-08-07T22:29:02.906Z",
+      "type": "fact",
+      "status": "pending",
+      "confidence": 1,
+      "source": "manual",
+      "tags": []
+    },
+    {
+      "id": 1786194284545,
+      "text": "Installed 9 skills from addyosmani/agent-skills into /home/workspace/Skills/ and wired into Zorro (AGENT_SKILLS boost + using-agent-skills & doubt-driven-development in EXEC_METHOD_SKILLS). skills",
+      "addedAt": "2026-08-08T13:04:44.545Z",
+      "lastSeenAt": "2026-08-08T13:04:44.545Z",
+      "type": "fact",
+      "status": "pending",
+      "confidence": 1,
+      "source": "manual",
+      "tags": []
+    },
+    {
+      "id": 1786196770237,
+      "text": "book-to-skill generated a real skill from Don's own book Outsource Your Own Brain (D.E. Lowery): /home/workspace/Skills/outsource-your-own-brain/ — 12 grouped chapter files + glossary + patterns + cheatsheet, all SKILL.md routing targets exist, passes scan_generated_skill.py and validate_skill.py (2026-08-08).",
+      "addedAt": "2026-08-08T13:46:10.237Z",
+      "lastSeenAt": "2026-08-08T13:46:10.237Z",
+      "type": "fact",
+      "status": "pending",
+      "confidence": 1,
+      "source": "manual",
+      "tags": []
+    },
+    {
+      "id": 1787403480848,
+      "text": "2026-08-22: /broheim on jaknyfe.zo.space now has a low-opacity scrapbook collage background (desert-mystic + psychedelic imagery, polaroids, suns, cosmic eye) behind the vintage-wanderer hero; verified by desktop and mobile screenshots.",
+      "addedAt": "2026-08-22T12:58:00.848Z",
+      "lastSeenAt": "2026-08-22T12:58:00.848Z",
+      "type": "fact",
+      "status": "verified",
+      "confidence": 1,
+      "project": "broheim-site",
+      "source": "manual",
+      "tags": [
+        "broheim",
+        "zospace",
+        "design"
+      ],
+      "supersedes": [],
+      "relations": [],
+      "accessCount": 1
+    },
+    {
+      "id": 1787674982787,
+      "text": "Orion Chapter 15 publication copyedit completed and pushed in commit a78bb61 on 2026-08-25. Corrected the amplifier lunar-transfer phrasing; structural plot and character choices unchanged.",
+      "addedAt": "2026-08-25T16:23:02.787Z",
+      "lastSeenAt": "2026-08-25T16:23:02.787Z",
+      "type": "fact",
+      "status": "verified",
+      "confidence": 0.95,
+      "project": "orion",
+      "source": "manual",
+      "tags": [
+        "copyedit",
+        "chapter-15"
+      ],
+      "supersedes": [],
+      "relations": [],
+      "accessCount": 1
+    },
+    {
+      "id": 1787675626905,
+      "text": "Orion Chapter 16 publication copyedit completed and pushed in commit b2e92be on 2026-08-25. Removed the merged duplicate landing ending, corrected the Crater Sector Four reference, and clarified the life-support/navigation two-person veto; Chapter 17 continuity verified.",
+      "addedAt": "2026-08-25T16:33:46.905Z",
+      "lastSeenAt": "2026-08-25T16:33:46.905Z",
+      "type": "fact",
+      "status": "verified",
+      "confidence": 0.95,
+      "project": "orion",
+      "source": "manual",
+      "tags": [
+        "copyedit",
+        "chapter-16"
+      ],
+      "supersedes": [],
+      "relations": [],
+      "accessCount": 1
+    }
+  ]
+}

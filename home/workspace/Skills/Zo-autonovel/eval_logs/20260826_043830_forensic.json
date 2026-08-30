@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-08-26T04:38:30.662950",
+  "chapters_evaluated": 1,
+  "total_findings": 0,
+  "novel_score": 10.0,
+  "global_tics": {},
+  "motif_totals": {
+    "\\bthe truth\\b": 2
+  },
+  "reports": [
+    {
+      "chapter": "ch_23.md",
+      "word_count": 1020,
+      "findings": [],
+      "score": 10.0,
+      "motif_counts": {
+        "\\bthe truth\\b": 2
+      },
+      "metaphor_heavy_paras": 0,
+      "four_beat_paras": 0,
+      "recursive_paras": 0,
+      "sentence_lengths": {
+        "dialogue": {
+          "n": 26,
+          "avg": 8.6,
+          "sd": 4.63
+        },
+        "action": {
+          "n": 13,
+          "avg": 10,
+          "sd": 9.38
+        },
+        "introspection": {
+          "n": 0,
+          "avg": 0,
+          "sd": 0
+        },
+        "mixed": {
+          "n": 66,
+          "avg": 10.1,
+          "sd": 6.34
+        }
+      }
+    }
+  ]
+}

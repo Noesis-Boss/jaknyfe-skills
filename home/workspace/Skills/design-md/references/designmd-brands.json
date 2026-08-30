@@ -1,0 +1,152 @@
+{
+  "source": "https://designmd.app/brands",
+  "brand_count": 29,
+  "last_updated": "2026-08-01",
+  "brands": [
+    {
+      "slug": "99",
+      "title": "99 (Ride-hailing Brasil)",
+      "source_url": "https://designmd.app/brands/99/design.md"
+    },
+    {
+      "slug": "atlassian",
+      "title": "Atlassian Design System",
+      "source_url": "https://designmd.app/brands/atlassian/design.md"
+    },
+    {
+      "slug": "clerk",
+      "title": "Clerk",
+      "source_url": "https://designmd.app/brands/clerk/design.md"
+    },
+    {
+      "slug": "conta-azul",
+      "title": "Conta Azul (LCAD)",
+      "source_url": "https://designmd.app/brands/conta-azul/design.md"
+    },
+    {
+      "slug": "embraer",
+      "title": "Embraer",
+      "source_url": "https://designmd.app/brands/embraer/design.md"
+    },
+    {
+      "slug": "globo",
+      "title": "Globo Codex (Design System)",
+      "source_url": "https://designmd.app/brands/globo/design.md"
+    },
+    {
+      "slug": "gol",
+      "title": "GOL Linhas Aéreas — Tangerina Design System",
+      "source_url": "https://designmd.app/brands/gol/design.md"
+    },
+    {
+      "slug": "grupo-boticario",
+      "title": "Flora.ds — Grupo Boticário Design System",
+      "source_url": "https://designmd.app/brands/grupo-boticario/design.md"
+    },
+    {
+      "slug": "hotmart",
+      "title": "Hotmart Cosmos",
+      "source_url": "https://designmd.app/brands/hotmart/design.md"
+    },
+    {
+      "slug": "ifood",
+      "title": "iFood — Pomodoro Design System",
+      "source_url": "https://designmd.app/brands/ifood/design.md"
+    },
+    {
+      "slug": "inter",
+      "title": "Inter (Inter&Co)",
+      "source_url": "https://designmd.app/brands/inter/design.md"
+    },
+    {
+      "slug": "itau",
+      "title": "Itaú Unibanco — Voxel Design System",
+      "source_url": "https://designmd.app/brands/itau/design.md"
+    },
+    {
+      "slug": "loggi",
+      "title": "Loggi ELKE (Design System)",
+      "source_url": "https://designmd.app/brands/loggi/design.md"
+    },
+    {
+      "slug": "magazine-luiza",
+      "title": "Magazine Luiza (Magalu)",
+      "source_url": "https://designmd.app/brands/magazine-luiza/design.md"
+    },
+    {
+      "slug": "mercado-livre",
+      "title": "Mercado Livre",
+      "source_url": "https://designmd.app/brands/mercado-livre/design.md"
+    },
+    {
+      "slug": "mintlify",
+      "title": "Mintlify",
+      "source_url": "https://designmd.app/brands/mintlify/design.md"
+    },
+    {
+      "slug": "natura-gaya",
+      "title": "Natura GaYa Design System",
+      "source_url": "https://designmd.app/brands/natura-gaya/design.md"
+    },
+    {
+      "slug": "nubank-nuds",
+      "title": "Nubank NuDS (Nu Design System)",
+      "source_url": "https://designmd.app/brands/nubank-nuds/design.md"
+    },
+    {
+      "slug": "nuvemshop-nimbus",
+      "title": "Nuvemshop-Nimbus-design-system",
+      "source_url": "https://designmd.app/brands/nuvemshop-nimbus/design.md"
+    },
+    {
+      "slug": "nuxt",
+      "title": "Nuxt",
+      "source_url": "https://designmd.app/brands/nuxt/design.md"
+    },
+    {
+      "slug": "picpay",
+      "title": "PicPay",
+      "source_url": "https://designmd.app/brands/picpay/design.md"
+    },
+    {
+      "slug": "rdstation-tangram",
+      "title": "RD Station Tangram",
+      "source_url": "https://designmd.app/brands/rdstation-tangram/design.md"
+    },
+    {
+      "slug": "resend",
+      "title": "Resend",
+      "source_url": "https://designmd.app/brands/resend/design.md"
+    },
+    {
+      "slug": "stone",
+      "title": "Stone Pagamentos",
+      "source_url": "https://designmd.app/brands/stone/design.md"
+    },
+    {
+      "slug": "totvs-po-ui",
+      "title": "TOTVS PO UI",
+      "source_url": "https://designmd.app/brands/totvs-po-ui/design.md"
+    },
+    {
+      "slug": "vercel",
+      "title": "Vercel — Geist Design System",
+      "source_url": "https://designmd.app/brands/vercel/design.md"
+    },
+    {
+      "slug": "voltagent",
+      "title": "VoltAgent",
+      "source_url": "https://designmd.app/brands/voltagent/design.md"
+    },
+    {
+      "slug": "vtex",
+      "title": "VTEX",
+      "source_url": "https://designmd.app/brands/vtex/design.md"
+    },
+    {
+      "slug": "wellhub-yoga",
+      "title": "Wellhub Yoga",
+      "source_url": "https://designmd.app/brands/wellhub-yoga/design.md"
+    }
+  ]
+}

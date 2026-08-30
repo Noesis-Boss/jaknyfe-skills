@@ -1,0 +1,29 @@
+[
+  {
+    "slot": "morning",
+    "headline": "Hunter Biden vs. Jared Kushner foreign money — swamp families trade accusations over $225K art access-peddling vs. $6B Gulf fund",
+    "context_chunks": [
+      "Hunter Biden's art dealer handled over $225,000 in sales to a Democratic donor with foreign business ties, according to House Oversight records released Tuesday.",
+      "Jared Kushner's Affinity Partners received a $2 billion investment from a Saudi fund six months after leaving the White House, with subsequent tranches bringing the total to roughly $6 billion.",
+      "Both cases have become flashpoints in 2026 midterm campaign messaging, with neither family facing criminal charges as of the report date."
+    ]
+  },
+  {
+    "slot": "midday",
+    "headline": "Democrats suddenly care about presidential 'fitness' — Bill Clinton double standards under fresh scrutiny",
+    "context_chunks": [
+      "Several Senate Democrats who voted against removing Bill Clinton in 1998 are now publicly backing age-related fitness disclosures for the 2028 presidential field.",
+      "The pivot follows a wave of internal polling showing voters under 40 have moved sharply on the question of cognitive fitness for office.",
+      "Clinton's office declined to comment."
+    ]
+  },
+  {
+    "slot": "evening",
+    "headline": "Graham Platner scandal — Maine Dems panic as Senate seat slides to GOP",
+    "context_chunks": [
+      "Internal Maine Democratic Party polling obtained by The Hill shows Sen. Platner trailing his Republican challenger by 9 points, a 14-point swing from June.",
+      "The drop coincides with a revived mastectomy-scar tattoo controversy and new questions about past Reddit posts.",
+      "GOP outside spending in the race has tripled over the same period."
+    ]
+  }
+]

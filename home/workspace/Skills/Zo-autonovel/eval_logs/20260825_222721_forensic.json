@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-08-25T22:27:21.110970",
+  "chapters_evaluated": 1,
+  "total_findings": 0,
+  "novel_score": 10.0,
+  "global_tics": {},
+  "motif_totals": {
+    "\\bthe map\\b": 3,
+    "\\bthe truth\\b": 2
+  },
+  "reports": [
+    {
+      "chapter": "ch_17.md",
+      "word_count": 1196,
+      "findings": [],
+      "score": 10.0,
+      "motif_counts": {
+        "\\bthe map\\b": 3,
+        "\\bthe truth\\b": 2
+      },
+      "metaphor_heavy_paras": 0,
+      "four_beat_paras": 0,
+      "recursive_paras": 0,
+      "sentence_lengths": {
+        "dialogue": {
+          "n": 37,
+          "avg": 7.5,
+          "sd": 4.65
+        },
+        "action": {
+          "n": 15,
+          "avg": 13.2,
+          "sd": 5.28
+        },
+        "introspection": {
+          "n": 0,
+          "avg": 0,
+          "sd": 0
+        },
+        "mixed": {
+          "n": 71,
+          "avg": 10.1,
+          "sd": 5.47
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,443 @@
+[
+  {
+    "number": 1,
+    "title": "The Anchoring Effect",
+    "concept": "Human minds rely too heavily on the first piece of information encountered when making decisions . This initial information serves as an \" anchor \" that skews all future judgments , even if the number is arbitrary .",
+    "study": "Participants spun a wheel rigged to land on 10 or 65, then estimated the percentage of African countries in the UN . Those who spun 10 guessed 25% on average ; those who spun 65 guessed 45%.",
+    "technique": "",
+    "examples": "",
+    "application": "In salary negotiations , whoever names a number first sets the anchor . When selling , start high ; when buying , start low ."
+  },
+  {
+    "number": 2,
+    "title": "Reciprocity",
+    "concept": "A universal cultural rule where humans feel immense psychological pressure to return favors , pay back debts , and treat others how they ' ve been treated .",
+    "study": "Researchers sent holiday cards to complete strangers ; a massive number of recipients automatically sent cards back to someone they didn ' t know .",
+    "technique": "",
+    "examples": "",
+    "application": "Look for opportunities to give genuinely and unconditionally first ( compliments , help , information ). If people sense strings attached , the effect drops ."
+  },
+  {
+    "number": 3,
+    "title": "Social Proof",
+    "concept": "In moments of uncertainty , people look to the behavior of others to guide their own actions , assuming the crowd possesses collective wisdom .",
+    "study": "",
+    "technique": "",
+    "examples": "Laugh tracks on sitcoms , bartenders seeding their own tip jars , and filtering online shopping by \" best sellers .\"",
+    "application": "Influence is amplified by peers . When making requests , mention that others ( especially people similar to your target audience ) have already agreed or found success with the idea ."
+  },
+  {
+    "number": 4,
+    "title": "The Scarcity Principle",
+    "concept": "Things become vastly more desirable when they are scarce , exclusive , or when there ' s a perceived threat of losing the opportunity to have them . Driven by loss aversion ( the fear of losing is twice as motivating as the prospect of gaining ).",
+    "study": "",
+    "technique": "",
+    "examples": "\" Only 3 left in stock \" notices , limited - edition runs , and ticking countdown timers on websites .",
+    "application": "Highlight what makes an opportunity genuinely unique or limited , and focus on what they stand to lose if they do not act ."
+  },
+  {
+    "number": 5,
+    "title": "Authority and Expertise",
+    "concept": "Deep - seated evolutionary inclination to defer to authority figures , experts , and uniforms to bypass the need to acquire specialized knowledge ourselves .",
+    "study": "The Milgram experiments demonstrated ordinary people administering what they believed were dangerous electrical shocks simply because a man in a lab coat told them to do so .",
+    "technique": "",
+    "examples": "",
+    "application": "Establish genuine credentials and track records early . If you lack direct expertise , cite credible , official sources to back your claims ."
+  },
+  {
+    "number": 6,
+    "title": "Liking",
+    "concept": "People say \" yes \" far more often to individuals they like . Liking is heavily driven by physical attractiveness ( the halo effect of assuming attractive people are smarter / kinder ), similarity , and familiarity .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Uncover genuine common ground , mirror shared values , and offer authentic praise . Leverage the mere exposure effect by increasing the frequency of positive , casual interactions ."
+  },
+  {
+    "number": 7,
+    "title": "Commitment and Consistency",
+    "concept": "Once someone makes a choice or takes a stand , they face intense internal and external pressure to act consistently with that commitment to protect their self - image .",
+    "study": "",
+    "technique": "The \" Foot - in - the - Door \" technique involves getting a tiny , minor \" yes \" first , making them significantly more likely to agree to a larger , related request later . Written and public commitments are the most powerful .",
+    "examples": "",
+    "application": ""
+  },
+  {
+    "number": 8,
+    "title": "The Art of Strategic Silence",
+    "concept": "Most people are inherently uncomfortable with conversational voids and will rush to fill silence , often over - explaining , conceding , or revealing truths they intended to hide .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "After asking a question or receiving an evasive answer , resist the urge to speak . Maintain eye contact and wait . In negotiations , pausing after receiving an offer creates uncertainty in the other party , frequently prompting them to sweeten the deal ."
+  },
+  {
+    "number": 9,
+    "title": "Mirroring and Matching",
+    "concept": "Subtly mimicking the body language , physical gestures , vocal pacing , and energy levels of the person you are speaking with to unconsciously build deep rapport .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "If they lean in , wait a moment and lean in . If they speak slowly , match their tempo . Match their emotional baseline ( excitement vs . calm ) to meet them where they are before trying to shift the direction of the conversation ."
+  },
+  {
+    "number": 10,
+    "title": "The Ben Franklin Effect",
+    "concept": "Counterintuitive truth that asking someone for a small favor makes them like you more . The Logic : It triggers cognitive dissonance . Their brain unconsciously reasons : \" Why am I helping this person ? I must actually like them .\"",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Ask a neutral or slightly hostile peer for a small piece of advice , a recommendation , or to borrow an item . It shifts their perception of you far better than doing favors for them ."
+  },
+  {
+    "number": 11,
+    "title": "Framing",
+    "concept": "Context completely shapes perception . The exact same facts presented in different ways yield entirely different choices .",
+    "study": "",
+    "technique": "",
+    "examples": "Buying ground beef labeled \"90% lean \" over \"10% fat ,\" or focusing on \" survival rates \" vs . \" mortality rates .\"",
+    "application": "Frame outcomes around what people stand to lose rather than gain , as loss aversion is a much stronger driver for action ."
+  },
+  {
+    "number": 12,
+    "title": "The Contrast Principle",
+    "concept": "Human perception is heavily altered by what we experienced immediately beforehand .",
+    "study": "",
+    "technique": "",
+    "examples": "A lukewarm room feels blazing hot after standing in the cold . Real estate agents show intentionally terrible , overpriced houses first so their target property looks spectacular by comparison . Clothing salespeople pitch expensive suits first so that a $100 tie feels cheap by comparison .",
+    "application": "Carefully plan the sequence of your presentations . Show extreme or less desirable options first to make your preferred option look completely reasonable ."
+  },
+  {
+    "number": 13,
+    "title": "The Illusion of Choice",
+    "concept": "Guiding people toward a specific outcome while preserving their need for personal autonomy by limiting the parameters of the choice .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Instead of asking if someone wants to do something , present choices that assume agreement : \" Would you prefer to meet on Tuesday or Thursday ?\" or \" Should we start working on this now or right after lunch ?\" Both options lead to your target result ."
+  },
+  {
+    "number": 14,
+    "title": "Emotional Contagion",
+    "concept": "Emotions are non - verbally contagious and spread in seconds via facial expressions and body language . Your emotional state serves as the baseline for the entire room .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Before an important meeting or interaction , deliberately manage your own internal state . If you want a group to feel calm , confident , or excited , you must physically radiate those exact emotions first ."
+  },
+  {
+    "number": 15,
+    "title": "The Halo Effect",
+    "concept": "The tendency for a single positive trait ( like physical attractiveness , a prestigious title , or high skill in one specific area ) to color our entire judgment of a person ' s intelligence , ethics , and trustworthiness .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Put your strongest positive traits , achievements , or credentials on display early in an interaction to allow that positive \" halo \" to elevate everything else you say ."
+  },
+  {
+    "number": 16,
+    "title": "Strategic Self - Deprecating",
+    "concept": "Tactfully admitting a minor flaw or limitation early on dramatically increases your credibility , trustworthiness , and likability .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Admitting a small weakness up front breaks expectations . People think : \" If they are being this honest about the downsides , they must be telling the truth about the upsides .\" Choose minor , relatable flaws that don ' t undermine your core competence ."
+  },
+  {
+    "number": 17,
+    "title": "Strategic Vagueness",
+    "concept": "While clarity is good , intentional ambiguity creates a mystery that prompts people to project their own personal hopes , ideals , and desires onto the blank spaces .",
+    "study": "",
+    "technique": "",
+    "examples": "High - level political slogans like \" Change we can believe in ,\" or cryptic movie trailers that generate massive curiosity by withholding the plot .",
+    "application": "Leave room for imagination to build intrigue and maintain flexibility in negotiations before locking down hard specifics ."
+  },
+  {
+    "number": 18,
+    "title": "Cognitive Load and Decision Fatigue",
+    "concept": "The brain has a limited reservoir of mental energy . As people make decisions throughout the day , their willpower depletes , causing them to take mental shortcuts , agree to things blindly , or default to the easiest choice .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Pitch important , complex ideas early in the day when minds are fresh . If you want someone to take a shortcut or simply defer to your recommendation , approach them when they are mentally fatigued at the end of a long day ."
+  },
+  {
+    "number": 19,
+    "title": "The Lowball Technique",
+    "concept": "Securing a firm commitment to a seemingly great deal before revealing the true , hidden operational costs or hurdles later on .",
+    "study": "",
+    "technique": "",
+    "examples": "Car dealerships securing agreement on a base price before layering on mandatory fees during the paperwork phase .",
+    "application": "Once people verbally lock in , they mentally adapt to the new reality and build their own internal justifications to stay committed , making them highly likely to accept the extra costs rather than back out ."
+  },
+  {
+    "number": 20,
+    "title": "Creating Urgency and Deadlines",
+    "concept": "Time constraints prevent procrastination and force decision - making by triggering a fear of missing out .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Establish legitimate , firm deadlines and clearly explain the real consequences of missing them . Urgency works best on people who are already interested but are dragging their feet on taking action ."
+  },
+  {
+    "number": 21,
+    "title": "Socratic Questioning",
+    "concept": "Using a structured sequence of open - ended questions to guide someone to discover a conclusion on their own , rather than explicitly telling them they are wrong .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Ask questions like : \" What do you think would happen if we applied that across the board ?\" or \" How does that square with our goal ?\" People protect insights they think they discovered themselves , lowering their natural defensiveness ."
+  },
+  {
+    "number": 22,
+    "title": "Storytelling and Narrative Persuasion",
+    "concept": "When absorbing a narrative , a listener ' s critical filters and logical defenses relax completely . They identify with the characters and experience the moral of the story vicariously .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Replace dry statistics and logical arguments with a vivid personal anecdote or case study featuring relatable challenges and clear resolutions ."
+  },
+  {
+    "number": 23,
+    "title": "Pattern Interrupts",
+    "concept": "Social interactions run on predictable mental scripts . Doing or saying something entirely unexpected breaks their autopilot mode , instantly capturing their full focus and altering the trajectory of the conversation .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Break normal scripts . When asked standard greetings like \" How are you ?\", respond with something unique like \" Today is absolutely the best day of my life .\" Use well - timed humor or unexpected transparency to shatter tension ."
+  },
+  {
+    "number": 24,
+    "title": "Reading Body Language Clusters",
+    "concept": "Non - verbal cues ( posture , micro - expressions , foot direction ) reveal hidden emotional states like discomfort , interest , or deception . Key Rule : Never interpret a single gesture in isolation ( e . g ., crossed arms might just mean someone is cold ). Look for clusters of matching behaviors and note sudden deviations from their natural baseline behavior .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": ""
+  },
+  {
+    "number": 25,
+    "title": "The Psychology of Names",
+    "concept": "A person s name is the most important , identity - affirming sound they can hear . Using it instantly breaks down anonymity and builds a personal bridge .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Intentionally use someone ' s name at the start of a conversation to capture focus , and at the very end to leave a warm , lasting , personal impression ."
+  },
+  {
+    "number": 26,
+    "title": "Reflective Listening",
+    "concept": "Real influence doesn ' t come from talking ; it comes from active , deep listening that makes the speaker feel truly validated and understood .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Use reflective phrasing like : \" So , if I ' m tracking correctly , what you ' re saying is ...\" to paraphrase their thoughts and emotions back to them . It forces them to expand on their points and builds massive conversational trust ."
+  },
+  {
+    "number": 27,
+    "title": "Priming",
+    "concept": "Subconscious environmental cues ( words , sights , temperatures ) heavily alter our subsequent behavior without any conscious realization .",
+    "study": "",
+    "technique": "",
+    "examples": "Holding a warm beverage causes people to rate a stranger ' s personality as warmer ; exposure to words associated with the elderly causes subjects to physically walk slower down a hallway .",
+    "application": "Clean , organize , or design your workspace and vocabulary to match the mindset you want to evoke ( e . g ., using collaborative language to prime teamwork )."
+  },
+  {
+    "number": 28,
+    "title": "Identity Labeling",
+    "concept": "Applying a positive identity label to someone creates a powerful psychological incentive for them to act in accordance with that label to avoid looking hypocritical .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Preface requests with character affirmations : \" Because I know you re someone who values absolute fairness ...\" or \" Since you have a great reputation for always following through ...\""
+  },
+  {
+    "number": 29,
+    "title": "Validating Resistance",
+    "concept": "Pushing back against someone ' s objections naturally increases their defensiveness . Openly naming and validating their hesitation completely disarms them .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "State : \" I completely understand why you d hesitate here , and frankly , that makes perfect sense given the timeline .\" Once their right to say no is affirmed , they relax and become much more cooperative ."
+  },
+  {
+    "number": 30,
+    "title": "The Negotiation Mindset ( Focus on Interests )",
+    "concept": "Moving past rigid \" positions \" ( what people say they want ) to uncover their underlying \" interests \" ( why they want it ). Example : Two people fighting over a window being open or closed have conflicting positions , but if one wants fresh air and the other wants to avoid a cold draft , opening a window in an adjacent room satisfies both interests .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": ""
+  },
+  {
+    "number": 31,
+    "title": "Time Constraints as Leverage",
+    "concept": "In any deal , the party operating under less time pressure inherently holds the psychological advantage .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Protect your own timelines . Never reveal your hard deadlines to the opposing party if you can avoid it , as they can simply wait you out to force steep concessions right before the clock expires ."
+  },
+  {
+    "number": 32,
+    "title": "The Decreasing Concession Pattern",
+    "concept": "The sequence and sizing of your compromises tell a story . Concessions should start out larger and get progressively smaller .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Making your concessions smaller and more reluctant as time passes signals to the other side that you are approaching your absolute limit , satisfying them that they have squeezed out the best possible deal . Always demand a counter - concession in return ."
+  },
+  {
+    "number": 33,
+    "title": "Confirmation Bias & Availability Heuristic",
+    "concept": "Confirmation bias makes people discount evidence that challenges their worldview , while the Availability Heuristic causes them to judge risks based entirely on how easily a vivid story comes to mind ( e . g ., fearing plane crashes over car accidents ).",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Avoid direct , aggressive arguments . Instead , frame your ideas using highly memorable , vivid imagery and stories that float easily to mind ."
+  },
+  {
+    "number": 34,
+    "title": "The Tribal Need to Belong",
+    "concept": "Humans are biologically hardwired to seek acceptance and community within groups . Belonging drives loyalty , conformity , and a willingness to protect group norms .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Build strong organizational cultures through shared vocabulary , unified goals , and inclusive traditions that make members feel deeply essential to the collective identity ."
+  },
+  {
+    "number": 35,
+    "title": "Groupthink & Speaker Order",
+    "concept": "Groups often make terrible decisions because members suppress dissenting views to preserve social harmony . Furthermore , opinions stated earliest by high - status individuals completely anchor the collective discussion .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "To extract honest feedback , have members write down their thoughts independently before talking , and intentionally call on lower - status or quiet members first ."
+  },
+  {
+    "number": 36,
+    "title": "Choice Architecture ( The Power of Defaults )",
+    "concept": "Designing physical or digital environments to subtly nudge people toward a specific path of least resistance without explicitly telling them what to do .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Make your preferred option the automatic \" default \" setting ( like automatic 401 k enrollment ). People rarely change default settings because doing so requires active mental effort ."
+  },
+  {
+    "number": 37,
+    "title": "Intrinsic Motivation ( Autonomy , Competence , Relatedness )",
+    "concept": "External rewards ( carrots and sticks ) work only in the short term . True , sustainable drive relies on three core pillars : Autonomy ( control over actions ), Competence ( feeling capable ), and Relatedness ( connection to others ).",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Boost long - term motivation by giving people ownership over how they complete tasks , providing clear skill milestones , and anchoring their work in a shared purpose ."
+  },
+  {
+    "number": 38,
+    "title": "Calibrating Emotional Appeals",
+    "concept": "Decisions are fundamentally driven by emotions and only rationalized with logic later on . Different emotions trigger distinct behavioral survival mechanisms . The Triggers : Fear triggers avoidance and intense caution ; anger drives direct confrontation and immediate action ; joy promotes approach and open engagement . Match your message to the emotional driver required for the action .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": ""
+  },
+  {
+    "number": 39,
+    "title": "Perceived Effort vs . Value",
+    "concept": "People judge the value of an outcome based heavily on the visible effort they perceive went into creating it , rather than just the objective quality of the final product .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "If you make your highly skilled work look too easy or instantaneous , people will undervalue it . Pull back the curtain occasionally share your creative process , the hurdles you cleared , and the depth of preparation involved ."
+  },
+  {
+    "number": 40,
+    "title": "Identity - Driven Persuasion",
+    "concept": "People will fiercely guard their actions to stay entirely aligned with their own internal self - concept and core values .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Frame actions as reflections of character rather than mere tasks . Don ' t just ask someone to do a thorough job ; ask them : \" Do you want to be known as the type of person who leaves loose ends , or someone who delivers a clean finish ?\""
+  },
+  {
+    "number": 41,
+    "title": "The Certainty Effect & Loss Aversion",
+    "concept": "Human beings are completely risk - averse when looking at potential gains ( preferring a guaranteed small win over a high - odds gamble ), but they become highly risk - seeking when trying to dodge a guaranteed loss .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "People value the complete elimination of doubt . Offering ironclad guarantees provides profound psychological comfort that far outweighs minor differences in cost ."
+  },
+  {
+    "number": 42,
+    "title": "Non - Verbal Richness in Digital Communication",
+    "concept": "Digital spaces ( text , email ) instantly strip away essential vocal tones and facial expressions , causing neutral messages to be routinely misread as hostile or demanding .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "When dealing with delicate issues , high - stakes negotiations , or rapport - building , prioritize video calls over phone calls , and phone calls over text . Be radically explicit about your positive intent in writing ."
+  },
+  {
+    "number": 43,
+    "title": "Transparency & The Ethical Spectrum",
+    "concept": "The ultimate dividing line between ethical influence and underhanded manipulation is defined by intent , transparency , and the final outcome . The Litmus Test : Ask yourself : \" Would I feel completely comfortable using this strategy if my exact methods and true motivations were made fully transparent to the other person right now ?\" True ethical influence aligns interests so both sides win .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": ""
+  },
+  {
+    "number": 44,
+    "title": "The Placebo Effect of Expectation",
+    "concept": "Anticipation completely alters physical and psychological reality . What people explicitly expect to experience modifies how their brain processes the actual event .",
+    "study": "",
+    "technique": "",
+    "examples": "Labeling an identical bottle of wine with an expensive price tag instantly causes people to taste it as higher quality .",
+    "application": "Frame an upcoming experience positively beforehand to prime their focus toward its best attributes ."
+  },
+  {
+    "number": 45,
+    "title": "Calibrated \" How \" and \" What \" Questions",
+    "concept": "In high - stakes situations , directly refusing a demand sparks conflict . Asking open - ended , calibrated questions subtly forces the other party to solve your problem for you .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Use defensive - free phrases like : \" How am I supposed to execute that given our current budget ?\" This shifts the cognitive burden of finding a compromise entirely over to their side of the table ."
+  },
+  {
+    "number": 46,
+    "title": "Physical States Dictate Mental Judgments",
+    "concept": "The brain is a biological organ deeply bound to physical comfort . Hunger , exhaustion , and physical temperature radically skew logical reasoning .",
+    "study": "Legal researchers discovered that judges consistently hand down significantly harsher sentences right before lunch when they are hungry , and return to leniency right after eating .",
+    "technique": "",
+    "examples": "",
+    "application": "Never initiate a crucial conversation , review , or major decision when you or the other party are physically depleted or running on empty ."
+  },
+  {
+    "number": 47,
+    "title": "Public vs . Private Recognition",
+    "concept": "The deepest , most enduring human craving is the desire to feel genuinely important , noticed , and respected .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "Elevate people by pointing out their highly specific , unique contributions . Praise them publicly in front of peers to satisfy their need for social validation , but deliver constructive criticism strictly in private to protect their dignity ."
+  },
+  {
+    "number": 48,
+    "title": "Navigating Status Dynamics",
+    "concept": "Every human interaction features an implicit social hierarchy . Relative status completely controls who speaks , who listens , and how messages are filtered .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "When communicating upward , preserve your professional dignity while showing respect for their position . When communicating downward , actively dismantle the fear barrier by inviting open input so subordinates don ' t just blindly nod along ."
+  },
+  {
+    "number": 49,
+    "title": "The Habit Loop ( Cue , Routine , Reward )",
+    "concept": "The vast majority of daily human actions run on pure , unthinking habit loops triggered by environmental cues and reinforced by immediate dopamine rewards .",
+    "study": "",
+    "technique": "",
+    "examples": "",
+    "application": "To successfully install a new habit , anchor it directly to a pre - existing daily cue and ensure a tiny , immediate reward follows . To break an old , destructive habit , you must keep the exact same environmental cue and reward , but consciously swap out the middle routine . Normal; heading 1; heading 2; heading 3; heading 4; heading 5; heading 6; heading 7; heading 8; heading 9; caption; Title; Subtitle; Strong; Emphasis; Placeholder Text; No Spacing; Light Shading; Light List; Light Grid; Medium Shading 1; Medium Shading 2; Medium List 1; Medium List 2; Medium Grid 1; Medium Grid 2; Medium Grid 3; Dark List; Colorful Shading; Colorful List; Colorful Grid; Light Shading Accent 1; Light List Accent 1; Light Grid Accent 1; Medium Shading 1 Accent 1; Medium Shading 2 Accent 1; Medium List 1 Accent 1; Revision; List Paragraph; Quote; Intense Quote; Medium List 2 Accent 1; Medium Grid 1 Accent 1; Medium Grid 2 Accent 1; Medium Grid 3 Accent 1; Dark List Accent 1; Colorful Shading Accent 1; Colorful List Accent 1; Colorful Grid Accent 1; Light Shading Accent 2; Light List Accent 2; Light Grid Accent 2; Medium Shading 1 Accent 2; Medium Shading 2 Accent 2; Medium List 1 Accent 2; Medium List 2 Accent 2; Medium Grid 1 Accent 2; Medium Grid 2 Accent 2; Medium Grid 3 Accent 2; Dark List Accent 2; Colorful Shading Accent 2; Colorful List Accent 2; Colorful Grid Accent 2; Light Shading Accent 3; Light List Accent 3; Light Grid Accent 3; Medium Shading 1 Accent 3; Medium Shading 2 Accent 3; Medium List 1 Accent 3; Medium List 2 Accent 3; Medium Grid 1 Accent 3; Medium Grid 2 Accent 3; Medium Grid 3 Accent 3; Dark List Accent 3; Colorful Shading Accent 3; Colorful List Accent 3; Colorful Grid Accent 3; Light Shading Accent 4; Light List Accent 4; Light Grid Accent 4; Medium Shading 1 Accent 4; Medium Shading 2 Accent 4; Medium List 1 Accent 4; Medium List 2 Accent 4; Medium Grid 1 Accent 4; Medium Grid 2 Accent 4; Medium Grid 3 Accent 4; Dark List Accent 4; Colorful Shading Accent 4; Colorful List Accent 4; Colorful Grid Accent 4; Light Shading Accent 5; Light List Accent 5; Light Grid Accent 5; Medium Shading 1 Accent 5; Medium Shading 2 Accent 5; Medium List 1 Accent 5; Medium List 2 Accent 5; Medium Grid 1 Accent 5; Medium Grid 2 Accent 5; Medium Grid 3 Accent 5; Dark List Accent 5; Colorful Shading Accent 5; Colorful List Accent 5; Colorful Grid Accent 5; Light Shading Accent 6; Light List Accent 6; Light Grid Accent 6; Medium Shading 1 Accent 6; Medium Shading 2 Accent 6; Medium List 1 Accent 6; Medium List 2 Accent 6; Medium Grid 1 Accent 6; Medium Grid 2 Accent 6; Medium Grid 3 Accent 6; Dark List Accent 6; Colorful Shading Accent 6; Colorful List Accent 6; Colorful Grid Accent 6; Subtle Emphasis; Intense Emphasis; Subtle Reference; Intense Reference; Book Title; Bibliography; TOC Heading;"
+  }
+]

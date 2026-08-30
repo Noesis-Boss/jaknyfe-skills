@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-08-25T23:36:59.055701",
+  "chapters_evaluated": 1,
+  "total_findings": 0,
+  "novel_score": 10.0,
+  "global_tics": {},
+  "motif_totals": {
+    "\\bthe truth\\b": 1
+  },
+  "reports": [
+    {
+      "chapter": "ch_21.md",
+      "word_count": 931,
+      "findings": [],
+      "score": 10.0,
+      "motif_counts": {
+        "\\bthe truth\\b": 1
+      },
+      "metaphor_heavy_paras": 0,
+      "four_beat_paras": 0,
+      "recursive_paras": 0,
+      "sentence_lengths": {
+        "dialogue": {
+          "n": 18,
+          "avg": 8.8,
+          "sd": 4.13
+        },
+        "action": {
+          "n": 9,
+          "avg": 8.7,
+          "sd": 6.5
+        },
+        "introspection": {
+          "n": 0,
+          "avg": 0,
+          "sd": 0
+        },
+        "mixed": {
+          "n": 63,
+          "avg": 11.0,
+          "sd": 7.49
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "find-moneymaking-biz",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have no budget, can work 10 hours a week, and have operations and IT experience. Give me 10 online business ideas that could plausibly reach $100/day within 90 days, rank them, and choose one.",
+      "expected_output": "Ten ranked ideas with explicit monetization math, assumptions, validation tests, and a selected winner.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I picked a missed-call follow-up service for HVAC contractors. Build a 30-day launch plan with free tools, pricing, daily tasks, and milestones.",
+      "expected_output": "A day-by-day execution plan that validates demand before building, includes pricing and fulfillment, and defines stop/go milestones.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I sell a $500/month bookkeeping service to small contractors and currently have 8 clients. Give me five specific ways to double revenue in 60 days using upsells, automation, retention, and new traffic.",
+      "expected_output": "Revenue-equation analysis, five ranked growth levers, concrete tests, arithmetic, and kill criteria without guaranteed results.",
+      "files": []
+    }
+  ]
+}

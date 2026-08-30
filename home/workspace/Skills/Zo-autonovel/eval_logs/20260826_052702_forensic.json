@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-08-26T05:27:02.972582",
+  "chapters_evaluated": 1,
+  "total_findings": 0,
+  "novel_score": 10.0,
+  "global_tics": {},
+  "motif_totals": {
+    "\\bthe silence\\b": 3
+  },
+  "reports": [
+    {
+      "chapter": "ch_25.md",
+      "word_count": 1069,
+      "findings": [],
+      "score": 10.0,
+      "motif_counts": {
+        "\\bthe silence\\b": 3
+      },
+      "metaphor_heavy_paras": 0,
+      "four_beat_paras": 0,
+      "recursive_paras": 0,
+      "sentence_lengths": {
+        "dialogue": {
+          "n": 20,
+          "avg": 7.5,
+          "sd": 3.54
+        },
+        "action": {
+          "n": 21,
+          "avg": 9.7,
+          "sd": 4.99
+        },
+        "introspection": {
+          "n": 0,
+          "avg": 0,
+          "sd": 0
+        },
+        "mixed": {
+          "n": 74,
+          "avg": 9.6,
+          "sd": 7.18
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Hatch Pet"
+  short_description: "Hatch Zo-compatible animated pet spritesheets"
+  default_prompt: "Hatch a Zo-compatible animated pet from a concept, reference images, or both. Infer missing names/descriptions, use Zo image tools for the base and grounded row strips, generate running-right before deciding whether running-left can be safely mirrored, then use this skill's deterministic scripts to ingest outputs, validate frames, assemble the spritesheet, and package the pet under ${ZO_PETS_HOME:-/home/workspace/Images/hatch-pet/pets}/<pet-name>/."
