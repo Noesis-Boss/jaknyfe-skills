@@ -1,0 +1,31 @@
+#!/bin/bash
+# Pre-commit hook: prevent accidental deletion of SKILL.md files in Skills/
+
+# Check if any SKILL.md files are being deleted in this commit
+DELETED_SKILLS=$(git diff --cached --diff-filter=D --name-only -- 'Skills/*/SKILL.md' 2>/dev/null)
+
+if [ -n "$DELETED_SKILLS" ]; then
+    echo "BLOCKED: Attempting to delete SKILL.md files from Skills/ directories:"
+    echo "$DELETED_SKILLS"
+    echo ""
+    echo "This is not allowed. Skill directories must retain their SKILL.md files."
+    echo "If you need to remove a skill, delete the entire directory, not just SKILL.md."
+    exit 1
+fi
+
+# Also check for any zero-byte SKILL.md files being committed
+ZERO_BYTE=$(git diff --cached --diff-filter=A --name-only -- 'Skills/*/SKILL.md' 2>/dev/null | while read f; do
+    if [ -f "$f" ] && [ ! -s "$f" ]; then
+        echo "$f"
+    fi
+done)
+
+if [ -n "$ZERO_BYTE" ]; then
+    echo "BLOCKED: Zero-byte SKILL.md files detected:"
+    echo "$ZERO_BYTE"
+    echo ""
+    echo "SKILL.md files must not be empty."
+    exit 1
+fi
+
+exit 0
