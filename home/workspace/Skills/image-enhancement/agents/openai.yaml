@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Enhancement"
+  short_description: "Enhance photos with AI retouching and deterministic finishing"
+  default_prompt: "Enhance this image while preserving identity, text, logos, and important details."

@@ -1,0 +1,23 @@
+{
+  "skill_name": "kdp-technical-business-preflight",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review the supplied technical or business manuscript for KDP preflight. Return the required five-section report, classify every finding, quote exact excerpts, propose minimally invasive revisions, and do not claim Amazon approval.",
+      "expected_output": "A structured conservative report covering blockers, content integrity, line editing, audience fit, KDP deliverables, evidence, revisions, limitations, and author confirmations.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Preflight this technical book for KDP. Check outdated instructions, code or formula inconsistencies, missing prerequisites, unsafe commands, unsupported claims, citations, links, edition/version data, and AI disclosure. Treat unexecuted code and unverified external facts as needing review.",
+      "expected_output": "A report that separates inspected evidence from unverified technical claims and includes exact excerpts, severity, impact, and targeted revisions.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Audit this business book for KDP readiness. Check arithmetic, projections, assumptions, financial/legal/tax claims, risk language, credentials, reader promise, actionability, references, disclaimers, and missing deliverables. Do not present the book as professional advice or guarantee market success.",
+      "expected_output": "A conservative evidence-based report with business-specific risks, author confirmations, line-edit patterns, audience-fit findings, and a complete checklist.",
+      "files": []
+    }
+  ]
+}

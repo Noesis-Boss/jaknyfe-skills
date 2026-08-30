@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-08-26T08:57:40.741110",
+  "chapters_evaluated": 1,
+  "total_findings": 0,
+  "novel_score": 10.0,
+  "reports": [
+    {
+      "chapter": "ch_32.md",
+      "word_count": 1081,
+      "em_dash_count": 0,
+      "em_dash_per_kw": 0.0,
+      "findings": [],
+      "score": 10.0
+    }
+  ]
+}

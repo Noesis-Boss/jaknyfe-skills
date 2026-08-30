@@ -1,0 +1,23 @@
+{
+  "skill_name": "pinterest-affiliate-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build a Pinterest affiliate campaign for a beginner balcony herb-gardening niche around the topic small balcony herb garden. Include the keyword brief, a useful article outline and draft, five pin variants, visual briefs, disclosures, and three monetization options. Do not publish anything.",
+      "expected_output": "A complete eight-stage campaign with clearly labeled estimates, five distinct pins under 100 characters, full URLs only when supplied, and no invented trend data.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I want to use Pinterest affiliate links for home organization, but I have no trend data, article URL, or affiliate product yet. Tell me what you need and give me a safe first-step plan without pretending you validated a trend.",
+      "expected_output": "Requests only necessary missing inputs, labels trend validation as pending, and avoids claiming Pinterest or FTC rules without checking current sources.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Turn this article topic into five Pinterest pins: budget meal prep for two. Use https://example.com/budget-meal-prep and a placeholder affiliate product called Meal Prep Containers. Include titles, descriptions, full URL, board, alt text, visual brief, and disclosure.",
+      "expected_output": "Five materially different pins, titles under 100 characters, full destination URL repeated without shortening, natural keyword-first descriptions, and clear commercial disclosure.",
+      "files": []
+    }
+  ]
+}

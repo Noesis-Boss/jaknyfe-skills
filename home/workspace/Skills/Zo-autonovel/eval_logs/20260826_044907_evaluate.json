@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-08-26T04:49:07.214067",
+  "chapters_evaluated": 1,
+  "total_findings": 0,
+  "novel_score": 10.0,
+  "reports": [
+    {
+      "chapter": "ch_24.md",
+      "word_count": 1039,
+      "em_dash_count": 1,
+      "em_dash_per_kw": 0.962,
+      "findings": [],
+      "score": 10.0
+    }
+  ]
+}

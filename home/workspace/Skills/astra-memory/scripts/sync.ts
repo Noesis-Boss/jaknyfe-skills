@@ -1,0 +1,637 @@
+#!/usr/bin/env node
+/**
+ * AstraDB Memory Sync & Query
+ *
+ * Mirrors zobodhi-memory (JSON) and Clarion (markdown tree) into the
+ * AstraDB `memories` collection. Idempotent upserts.
+ *
+ * Usage:
+ *   bun run sync.ts sync [--source=zobodhi|clarion]
+ *   bun run sync.ts status
+ *   bun run sync.ts query <text> [--source=...]
+ *   bun run sync.ts add <fact>
+ *   bun run sync.ts tail [n]
+ */
+
+import { promises as fs } from "fs";
+import path from "path";
+import { spawnSync } from "child_process";
+
+const ASTRA_ENDPOINT = process.env.ASTRA_DB_ENDPOINT?.replace(/\/$/, "");
+const ASTRA_TOKEN = process.env.ASTRA_DB_APPLICATION_TOKEN;
+const ASTRA_KEYSPACE = process.env.ASTRA_DB_KEYSPACE || "default_keyspace";
+const COLLECTION = "memories";
+
+const ZOBODHI_JSON = "/home/workspace/Skills/zobodhi-memory/memory.json";
+const CLARION_ROOT = "/home/workspace/memory";
+
+// ---------- Astra client ----------
+
+interface AstraResponse {
+  data?: { documents?: any[]; nextPageState?: string | null };
+  status?: { count?: number; ok?: number };
+  errors?: { title: string; message: string }[];
+}
+
+async function astra(
+  method: "POST" | "GET" | "DELETE",
+  body?: any
+): Promise<any> {
+  if (!ASTRA_ENDPOINT || !ASTRA_TOKEN) {
+    throw new Error(
+      "Missing ASTRA_DB_ENDPOINT or ASTRA_DB_APPLICATION_TOKEN env vars. Set them in Settings > Advanced."
+    );
+  }
+  const url = `${ASTRA_ENDPOINT}/api/json/v1/${ASTRA_KEYSPACE}/${COLLECTION}`;
+  const res = await fetch(url, {
+    method,
+    signal: AbortSignal.timeout(30_000),
+    headers: {
+      Token: ASTRA_TOKEN,
+      "Content-Type": "application/json",
+    },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  const json = (await res.json()) as AstraResponse;
+  if (json.errors && json.errors.length > 0) {
+    const msg = json.errors.map((e) => `${e.title}: ${e.message}`).join("; ");
+    throw new Error(`Astra error — ${msg}`);
+  }
+  return json;
+}
+
+async function findAll(filter: Record<string, any> = {}): Promise<any[]> {
+  const all: any[] = [];
+  let pageState: string | null = null;
+  for (let i = 0; i < 200; i++) {
+    const body: any = {
+      find: { filter, options: { limit: 1000, pageState: pageState ?? undefined } },
+    };
+    const r = await astra("POST", body);
+    const docs = r.data?.documents ?? [];
+    all.push(...docs);
+    pageState = r.data?.nextPageState ?? null;
+    if (!pageState || docs.length === 0) break;
+  }
+  return all;
+}
+
+// ---------- Source readers ----------
+
+interface ZobodhiFact {
+  id: number;
+  text: string;
+  addedAt: string;
+  tags: string[];
+  type?: string;
+  status?: string;
+  confidence?: number;
+  project?: string;
+  source?: string;
+  supersedes?: number[];
+  relations?: { subject: string; predicate: string; object: string }[];
+  accessCount?: number;
+  expiresAt?: string;
+}
+
+async function readZobodhi(): Promise<ZobodhiFact[]> {
+  try {
+    const raw = await fs.readFile(ZOBODHI_JSON, "utf8");
+    const db = JSON.parse(raw);
+    return Array.isArray(db.memories) ? db.memories : [];
+  } catch (e) {
+    console.warn(`⚠️  Could not read zobodhi memory.json: ${e}`);
+    return [];
+  }
+}
+
+function frontmatter(text: string): Record<string, string> {
+  const m = text.match(/^---\n([\s\S]+?)\n---\n/);
+  if (!m) return {};
+  const fm: Record<string, string> = {};
+  for (const line of m[1].split("\n")) {
+    const kv = line.match(/^(\w[\w_-]*):\s*(.+?)\s*$/);
+    if (kv) fm[kv[1]] = kv[2].replace(/^['"]|['"]$/g, "");
+  }
+  return fm;
+}
+
+function firstHeading(text: string): string {
+  const m = text.match(/^#\s+(.+)$/m);
+  if (m) return m[1].trim();
+  return text.replace(/\s+/g, " ").slice(0, 80).trim();
+}
+
+function inferProject(filePath: string, fm: Record<string, string>): string {
+  if (fm.project) return fm.project.toLowerCase();
+  if (filePath.includes("/projects/")) {
+    const m = filePath.match(/\/projects\/([^/]+)\.md/);
+    if (m) return m[1].toLowerCase();
+  }
+  if (filePath.includes("/daily/")) return "daily";
+  if (filePath.includes("/feedback/")) return "feedback";
+  return "system";
+}
+
+function inferLayer(filePath: string, fm: Record<string, string>): string {
+  if (fm.type?.toLowerCase() === "working") return "working";
+  if (fm.type) {
+    const t = fm.type.toLowerCase();
+    if (t.includes("project")) return "semantic";
+    if (t.includes("feedback")) return "fact";
+    if (t.includes("reference")) return "semantic";
+  }
+  if (filePath.includes("/daily/")) return "session";
+  if (filePath.includes("/projects/") || filePath.includes("/reference/"))
+    return "semantic";
+  if (filePath.includes("/feedback/")) return "fact";
+  return "fact";
+}
+
+async function walkMarkdown(root: string): Promise<string[]> {
+  const out: string[] = [];
+  async function walk(dir: string) {
+    let entries: any[];
+    try {
+      entries = await fs.readdir(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const e of entries) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) await walk(p);
+      else if (e.isFile() && e.name.endsWith(".md") && !e.name.startsWith("_"))
+        out.push(p);
+    }
+  }
+  await walk(root);
+  return out;
+}
+
+interface ClarionDoc {
+  source: string;
+  layer: string;
+  text: string;
+  path: string;
+  timestamp: string;
+  tags: string[];
+  project: string;
+  title: string;
+  $vector?: number[];
+  type?: string;
+  status?: string;
+  confidence?: number;
+  supersedes?: number[];
+  relations?: { subject: string; predicate: string; object: string }[];
+  expiresAt?: string;
+}
+
+function extractRelations(text: string): { subject: string; predicate: string; object: string }[] {
+  const out: { subject: string; predicate: string; object: string }[] = [];
+  for (const m of text.matchAll(/(?:relation|triple):\s*([^|\n]+)\|\s*([^|\n]+)\|\s*([^\n]+)/gi)) {
+    out.push({ subject: m[1].trim(), predicate: m[2].trim(), object: m[3].trim() });
+  }
+  return out;
+}
+
+// ---------- Embeddings (delegate to embed.ts subprocess) ----------
+
+function embed(kind: "query" | "doc", text: string): number[] {
+  const sub = spawnSync("bun", ["run", new URL("./embed.ts", import.meta.url).pathname, `embed-${kind}`, text], {
+    encoding: "utf8",
+    maxBuffer: 16 * 1024 * 1024,
+  });
+  if (sub.status !== 0) {
+    throw new Error(`embed failed: ${sub.stderr || sub.stdout}`);
+  }
+  const out = (sub.stdout || "").trim();
+  const lines = out.split("\n").filter((l) => l.startsWith("["));
+  if (lines.length === 0) throw new Error(`embed: no vector in output — ${out.slice(0, 200)}`);
+  return JSON.parse(lines[0]) as number[];
+}
+
+function embedDoc(text: string): number[] {
+  return embed("doc", text);
+}
+
+function embedDocs(texts: string[]): number[][] {
+  if (texts.length === 0) return [];
+  const sub = spawnSync("bun", ["run", new URL("./embed.ts", import.meta.url).pathname, "embed-docs-json"], {
+    encoding: "utf8",
+    input: JSON.stringify(texts),
+    maxBuffer: 128 * 1024 * 1024,
+  });
+  if (sub.status !== 0) {
+    throw new Error(`batch embed failed: ${sub.stderr || sub.stdout}`);
+  }
+  const out = (sub.stdout || "").trim();
+  const lines = out.split("\n").filter((line) => line.startsWith("[["));
+  if (lines.length === 0) throw new Error(`batch embed: no vectors in output — ${out.slice(0, 200)}`);
+  return JSON.parse(lines[0]) as number[][];
+}
+
+async function readClarion(): Promise<ClarionDoc[]> {
+  const files = await walkMarkdown(CLARION_ROOT);
+  const out: ClarionDoc[] = [];
+  for (const f of files) {
+    const rel = f.replace("/home/workspace/memory/", "");
+    const source = rel.startsWith("daily/")
+      ? "clarion_daily"
+      : rel.startsWith("projects/")
+        ? "clarion_project"
+        : rel.startsWith("feedback/")
+          ? "clarion_feedback"
+          : rel.startsWith("reference/")
+            ? "clarion_reference"
+            : rel.startsWith("projects/") || rel.endsWith("-topics.md")
+              ? "clarion_topics"
+              : "clarion_bootstrap";
+    try {
+      const text = await fs.readFile(f, "utf8");
+      const fm = frontmatter(text);
+      const stat = await fs.stat(f);
+      out.push({
+        source,
+        layer: inferLayer(f, fm),
+        text: text.trim(),
+        path: f,
+        timestamp:
+          fm.date || stat.mtime.toISOString().slice(0, 19) + "Z",
+        tags: fm.tags
+          ? fm.tags
+              .replace(/^\[|\]$/g, "")
+              .split(",")
+              .map((t) => t.trim())
+          : [],
+        project: inferProject(f, fm),
+        title: fm.name || firstHeading(text),
+        type: fm.type,
+        status: fm.status,
+        confidence: fm.confidence ? Number(fm.confidence) : undefined,
+        supersedes: fm.supersedes ? fm.supersedes.split(',').map(Number).filter(Boolean) : [],
+        relations: extractRelations(text),
+        expiresAt: fm.expiresAt,
+      });
+    } catch (e) {
+      console.warn(`⚠️  Could not read ${f}: ${e}`);
+    }
+  }
+  return out;
+}
+
+// ---------- Sync logic ----------
+
+function buildZobodhiDocs(facts: ZobodhiFact[]): ClarionDoc[] {
+  return facts.map((f) => ({
+    source: "zobodhi",
+    layer: "fact",
+    text: f.text,
+    path: ZOBODHI_JSON,
+    timestamp: f.addedAt,
+    tags: f.tags || [],
+    project: f.project || "general",
+    title: f.text.replace(/\s+/g, " ").slice(0, 80),
+    type: f.type,
+    status: f.status,
+    confidence: f.confidence,
+    supersedes: f.supersedes || [],
+    relations: f.relations || extractRelations(f.text),
+    expiresAt: f.expiresAt,
+  }));
+}
+
+async function upsertAll(docs: ClarionDoc[]): Promise<{ inserted: number; skipped: number }> {
+  const existing = await findAll({});
+  const existingKey = new Map<string, string>();
+  const existingById = new Map<string, any>();
+  for (const d of existing) {
+    const key = `${d.source}::${(d.text || "").slice(0, 200)}`;
+    existingKey.set(key, d._id);
+    existingById.set(d._id, d);
+  }
+  let inserted = 0;
+  let skipped = 0;
+  const operations: Array<() => Promise<void>> = [];
+  const uniqueDocs = [...new Map(docs.map((doc) => [
+    `${doc.source}::${(doc.text || "").slice(0, 200)}`,
+    doc,
+  ])).values()];
+  const newDocs = uniqueDocs.filter((doc) => !existingKey.has(
+    `${doc.source}::${(doc.text || "").slice(0, 200)}`
+  ));
+  const vectors = embedDocs(newDocs.map((doc) => doc.text));
+  const vectorsByKey = new Map(newDocs.map((doc, index) => [
+    `${doc.source}::${(doc.text || "").slice(0, 200)}`,
+    vectors[index],
+  ]));
+  for (const doc of uniqueDocs) {
+    const key = `${doc.source}::${(doc.text || "").slice(0, 200)}`;
+    if (existingKey.has(key)) {
+      const id = existingKey.get(key)!;
+      const current = existingById.get(id);
+      const metadata = {
+        layer: doc.layer,
+        project: doc.project,
+        type: doc.type,
+        status: doc.status,
+        confidence: doc.confidence,
+        supersedes: doc.supersedes || [],
+        relations: doc.relations || [],
+        expiresAt: doc.expiresAt,
+      };
+      const changed = Object.keys(metadata).some((k) => JSON.stringify(current?.[k]) !== JSON.stringify((metadata as any)[k]));
+      if (changed) operations.push(async () => {
+        await astra("POST", { updateOne: { filter: { _id: id }, update: { $set: metadata } } });
+      });
+      skipped++;
+      continue;
+    }
+    if (!doc.$vector) {
+      doc.$vector = vectorsByKey.get(key);
+    }
+    existingKey.set(key, "pending");
+    operations.push(async () => {
+      try {
+        await astra("POST", { insertOne: { document: doc } });
+        inserted++;
+      } catch (e: any) {
+        console.error(`  ✗ insert failed for ${doc.source} ${doc.title}: ${e.message}`);
+      }
+    });
+  }
+  for (let i = 0; i < operations.length; i += 8) {
+    await Promise.all(operations.slice(i, i + 8).map((operation) => operation()));
+    if (operations.length > 8) {
+      console.log(`  progress: ${Math.min(i + 8, operations.length)}/${operations.length} writes`);
+    }
+  }
+  return { inserted, skipped };
+}
+
+async function cmdSync(args: string[]) {
+  const sourceArg = args
+    .find((a) => a.startsWith("--source="))
+    ?.split("=")[1];
+
+  console.log("📥 Reading sources...");
+  const docs: ClarionDoc[] = [];
+  if (!sourceArg || sourceArg === "zobodhi") {
+    const facts = await readZobodhi();
+    console.log(`  zobodhi:  ${facts.length} facts`);
+    docs.push(...buildZobodhiDocs(facts));
+  }
+  if (!sourceArg || sourceArg === "clarion") {
+    const clarion = await readClarion();
+    console.log(`  clarion:  ${clarion.length} markdown docs`);
+    docs.push(...clarion);
+  }
+
+  console.log(`☁️  Upserting ${docs.length} docs into Astra...`);
+  const { inserted, skipped } = await upsertAll(docs);
+  console.log(`✅ Done. inserted=${inserted}, skipped(existing)=${skipped}`);
+  // write timestamp
+  const tsFile = path.join(path.dirname(new URL(import.meta.url).pathname), "last-sync.json");
+  await fs.writeFile(
+    tsFile,
+    JSON.stringify({ lastSync: new Date().toISOString(), inserted, skipped })
+  );
+}
+
+async function cmdStatus() {
+  const all = await findAll({});
+  const bySource: Record<string, number> = {};
+  const byLayer: Record<string, number> = {};
+  for (const d of all) {
+    bySource[d.source] = (bySource[d.source] || 0) + 1;
+    byLayer[d.layer] = (byLayer[d.layer] || 0) + 1;
+  }
+  console.log(`📊 Total memories in Astra: ${all.length}`);
+  console.log("\nBy source:");
+  for (const [k, v] of Object.entries(bySource).sort((a, b) => b[1] - a[1]))
+    console.log(`  ${k.padEnd(25)} ${v}`);
+  console.log("\nBy layer:");
+  for (const [k, v] of Object.entries(byLayer).sort((a, b) => b[1] - a[1]))
+    console.log(`  ${k.padEnd(25)} ${v}`);
+  try {
+    const tsFile = path.join(
+      path.dirname(new URL(import.meta.url).pathname),
+      "last-sync.json"
+    );
+    const ts = JSON.parse(await fs.readFile(tsFile, "utf8"));
+    console.log(`\nLast sync: ${ts.lastSync}`);
+    console.log(`  inserted=${ts.inserted}, skipped=${ts.skipped}`);
+  } catch {}
+}
+
+async function cmdQuery(args: string[]) {
+  const sourceArg = args
+    .find((a) => a.startsWith("--source="))
+    ?.split("=")[1];
+  const text = args.filter((a) => !a.startsWith("--")).join(" ").trim();
+  if (!text) {
+    console.log("Usage: query <text> [--source=zobodhi|clarion] [--limit=10]");
+    return;
+  }
+  const limit = parseInt(
+    args.find((a) => a.startsWith("--limit="))?.split("=")[1] || "10",
+    10
+  );
+
+  const jsonMode = args.includes("--json");
+  if (!jsonMode) {
+    console.log(`🔎 Hybrid search (semantic + lexical) for: "${text}"`);
+  }
+  const queryVec = embed("query", text);
+
+  // Vector ANN
+  const vectorFind = await astra("POST", {
+    find: {
+      sort: { $vector: queryVec },
+      options: { limit: limit * 3 },
+    },
+  });
+  const vectorDocs: any[] = vectorFind.data?.documents ?? [];
+
+  // Lexical (substring fallback against full corpus)
+  const all = await findAll({});
+  const q = text.toLowerCase();
+  const lexical: { id: string; doc: any; score: number }[] = [];
+  for (const d of all) {
+    const t = (d.text || "").toLowerCase();
+    const title = (d.title || "").toLowerCase();
+    let score = 0;
+    if (title.includes(q)) score += 10;
+    let idx = 0;
+    while ((idx = t.indexOf(q, idx)) !== -1) {
+      score += 1;
+      idx += q.length;
+    }
+    if (score > 0) lexical.push({ id: d._id, doc: d, score });
+  }
+  lexical.sort((a, b) => b.score - a.score);
+
+  // RRF fusion
+  const rrf = new Map<string, number>();
+  const docs = new Map<string, any>();
+  const k = 60;
+  vectorDocs.forEach((d, i) => {
+    rrf.set(d._id, (rrf.get(d._id) ?? 0) + 1 / (k + i + 1));
+    docs.set(d._id, d);
+  });
+  lexical.slice(0, limit * 3).forEach((r, i) => {
+    rrf.set(r.id, (rrf.get(r.id) ?? 0) + 1 / (k + i + 1));
+    if (!docs.has(r.id)) docs.set(r.id, r.doc);
+  });
+
+  // Source filter
+  let ranked = [...rrf.entries()]
+    .map(([id, score]) => ({ id, score, doc: docs.get(id) }))
+    .sort((a, b) => {
+      const weight = (d: any) => (d?.confidence ?? 1) * 0.15 + (d?.layer === 'working' ? 0.08 : d?.layer === 'semantic' ? 0.04 : 0) + (d?.status === 'superseded' ? -1 : 0);
+      return (b.score + weight(b.doc)) - (a.score + weight(a.doc));
+    });
+  if (sourceArg) {
+    const map: Record<string, string> = {
+      zobodhi: "zobodhi",
+      daily: "clarion_daily",
+      project: "clarion_project",
+      feedback: "clarion_feedback",
+      reference: "clarion_reference",
+      topics: "clarion_topics",
+      bootstrap: "clarion_bootstrap",
+    };
+    const want = map[sourceArg] || sourceArg;
+    ranked = ranked.filter((r) => r.doc?.source === want);
+  }
+
+  const top = ranked.slice(0, limit);
+  if (top.length === 0) {
+    console.log("🔍 No matching memories found.");
+    return;
+  }
+
+  if (jsonMode) {
+    const out = {
+      query: text,
+      embedding: { model: "nomic-embed-text-v1.5", dim: queryVec.length },
+      hybrid: { semantic: vectorDocs.length, lexical: lexical.length, k: 60 },
+      results: top.map(({ doc: d, score }) => {
+        const idx = (d.text || "").toLowerCase().indexOf(q);
+        const snippet =
+          idx >= 0
+            ? d.text
+                .slice(Math.max(0, idx - 60), Math.min(d.text.length, idx + 160))
+                .replace(/\n+/g, " ")
+            : (d.text || "").replace(/\n+/g, " ").slice(0, 160);
+        return {
+          source: d.source,
+          layer: d.layer,
+          project: d.project,
+          title: d.title,
+          path: d.path,
+          timestamp: d.timestamp,
+          rrf: +score.toFixed(6),
+          snippet,
+        };
+      }),
+    };
+    console.log(JSON.stringify(out, null, 2));
+    return;
+  }
+
+  console.log(`\n📌 Top ${top.length} matches (RRF fusion):\n`);
+  for (const { doc: d, score } of top) {
+    console.log(`  [${d.source} | ${d.layer} | rrf=${score.toFixed(4)}] ${d.title}`);
+    console.log(`    ${d.path}`);
+    console.log(`    ${d.timestamp}`);
+    const idx = (d.text || "").toLowerCase().indexOf(q);
+    if (idx >= 0) {
+      const start = Math.max(0, idx - 60);
+      const end = Math.min(d.text.length, idx + 160);
+      console.log(`    …${d.text.slice(start, end).replace(/\n+/g, " ")}…`);
+    }
+    console.log();
+  }
+}
+
+async function cmdAdd(args: string[]) {
+  const text = args.join(" ").trim();
+  if (!text) {
+    console.log("Usage: add <fact text>");
+    return;
+  }
+  const fact: ZobodhiFact = {
+    id: Date.now(),
+    text,
+    addedAt: new Date().toISOString(),
+    tags: [],
+  };
+  let db: { memories: ZobodhiFact[] } = { memories: [] };
+  try {
+    db = JSON.parse(await fs.readFile(ZOBODHI_JSON, "utf8"));
+  } catch {}
+  db.memories.push(fact);
+  await fs.writeFile(ZOBODHI_JSON, JSON.stringify(db, null, 2));
+  console.log("✅ Wrote to zobodhi memory.json");
+
+  const doc: ClarionDoc = {
+    source: "zobodhi",
+    layer: "fact",
+    text: fact.text,
+    path: ZOBODHI_JSON,
+    timestamp: fact.addedAt,
+    tags: [],
+    project: "general",
+    title: fact.text.replace(/\s+/g, " ").slice(0, 80),
+    $vector: embed("doc", fact.text),
+  };
+  await astra("POST", { insertOne: { document: doc } });
+  console.log("☁️  Inserted into Astra memories");
+}
+
+async function cmdTail(args: string[]) {
+  const n = Math.max(1, parseInt(args[0] || "10", 10));
+  const all = await findAll({});
+  const sorted = all
+    .sort((a, b) => (b.timestamp || "").localeCompare(a.timestamp || ""))
+    .slice(0, n);
+  console.log(`🕓 Most recent ${sorted.length}:\n`);
+  for (const d of sorted) {
+    console.log(`  [${d.timestamp?.slice(0, 19) || "?"}] ${d.source} / ${d.title}`);
+    console.log(`    ${(d.text || "").replace(/\n+/g, " ").slice(0, 140)}…`);
+    console.log();
+  }
+}
+
+// ---------- Main ----------
+
+const [, , cmd, ...rest] = process.argv;
+
+(async () => {
+  try {
+    switch (cmd) {
+      case "sync":
+        await cmdSync(rest);
+        break;
+      case "status":
+        await cmdStatus();
+        break;
+      case "query":
+        await cmdQuery(rest);
+        break;
+      case "add":
+        await cmdAdd(rest);
+        break;
+      case "tail":
+        await cmdTail(rest);
+        break;
+      default:
+        console.log(
+          "Usage: sync | status | query <text> | add <fact> | tail [n]"
+        );
+    }
+  } catch (e: any) {
+    console.error(`❌ ${e.message}`);
+    process.exit(1);
+  }
+})();

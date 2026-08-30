@@ -1,0 +1,3019 @@
+[
+  {
+    "id": "src-504",
+    "group": "usa_platform",
+    "url": "https://accessscholarships.com",
+    "pri": 10,
+    "age_score": 2005426.705486,
+    "last_scraped": "2026-08-07T15:08:35.559546+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-500",
+    "group": "usa_platform",
+    "url": "https://appily.com",
+    "pri": 10,
+    "age_score": 2005539.707333,
+    "last_scraped": "2026-08-07T15:06:42.557706+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-510",
+    "group": "usa_org",
+    "url": "https://www.maldef.org/resources/scholarship-resource-guide-2025-2026",
+    "pri": 10,
+    "age_score": 18492.497841,
+    "last_scraped": "2026-08-30T20:13:56.146677+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-003",
+    "group": "usa_platform",
+    "url": "https://bigfuture.collegeboard.org/scholarship-search",
+    "pri": 10,
+    "last_scraped": "2026-08-06T15:04:08.260745+00:00",
+    "last_batch_count": 0,
+    "age_score": 2092094.004296
+  },
+  {
+    "id": "src-603",
+    "group": "usa_platform",
+    "url": "https://bold.org/scholarships/",
+    "pri": 10,
+    "age_score": 2092058.14529,
+    "last_scraped": "2026-08-06T15:04:44.119752+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-505",
+    "group": "usa_platform",
+    "url": "https://collegescholarships.org",
+    "pri": 10,
+    "age_score": 2178480.130453,
+    "last_scraped": "2026-08-05T15:04:22.134590+00:00",
+    "last_batch_count": 1
+  },
+  {
+    "id": "src-608",
+    "group": "usa_state",
+    "url": "https://cscs.virginia.gov/scholarships/",
+    "pri": 10,
+    "age_score": 104958.138551,
+    "last_scraped": "2026-08-29T15:03:04.126493+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-501",
+    "group": "usa_platform",
+    "url": "https://jlvcollegecounseling.com",
+    "pri": 10,
+    "age_score": 2178511.79382,
+    "last_scraped": "2026-08-05T15:03:50.471227+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-509",
+    "group": "usa_state",
+    "url": "https://oregonstudentaid.gov/scholarships",
+    "pri": 10,
+    "age_score": 536872.895828,
+    "last_scraped": "2026-08-30T20:14:01.497407+00:00",
+    "last_batch_count": 13
+  },
+  {
+    "id": "src-600",
+    "group": "usa_state",
+    "url": "https://oregonstudentaid.gov/scholarships",
+    "pri": 10,
+    "age_score": 277764.281228,
+    "last_scraped": "2026-08-27T15:02:57.983822+00:00",
+    "last_batch_count": 13
+  },
+  {
+    "id": "src-507",
+    "group": "global_platform",
+    "url": "https://profellow.com",
+    "pri": 10,
+    "age_score": 105007.580634,
+    "last_scraped": "2026-08-30T20:13:37.197183+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-095",
+    "group": "usa_gov",
+    "url": "https://studentaid.gov/",
+    "pri": 10,
+    "last_scraped": "2026-08-30T20:13:51.724587+00:00",
+    "last_batch_count": 0,
+    "age_score": 18497.393096
+  },
+  {
+    "id": "src-138",
+    "group": "usa_gov",
+    "url": "https://studentaid.gov/",
+    "pri": 10,
+    "last_scraped": "2026-08-30T20:13:17.026409+00:00",
+    "last_batch_count": 0,
+    "age_score": 18535.795573
+  },
+  {
+    "id": "src-503",
+    "group": "usa_platform",
+    "url": "https://studentscholarships.org/scholarships",
+    "pri": 10,
+    "age_score": 2350873.813998,
+    "last_scraped": "2026-08-03T15:11:08.451054+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-502",
+    "group": "usa_platform",
+    "url": "https://unigo.com",
+    "pri": 10,
+    "age_score": 2260512.248404,
+    "last_scraped": "2026-08-04T16:17:10.016649+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-511",
+    "group": "usa_platform",
+    "url": "https://www.campusexplorer.com/colleges/scholarships",
+    "pri": 10,
+    "age_score": 2350907.870726,
+    "last_scraped": "2026-08-03T15:10:34.394328+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-609",
+    "group": "usa_specialized",
+    "url": "https://www.accesslex.org/databank",
+    "pri": 10,
+    "age_score": 18526.173526,
+    "last_scraped": "2026-08-30T20:13:59.498123+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-602",
+    "group": "usa_platform",
+    "url": "https://www.appily.com/scholarships",
+    "pri": 10,
+    "age_score": 2610353.612145,
+    "last_scraped": "2026-07-31T15:06:28.652910+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-514",
+    "group": "usa_state",
+    "url": "https://www.tdcj.texas.gov/divisions/victim-services/scholarships.html",
+    "pri": 8,
+    "age_score": 999999
+  },
+  {
+    "id": "src-519",
+    "group": "usa_platform",
+    "url": "https://www.collegescholarships.org/",
+    "pri": 10,
+    "age_score": 2696839.677736,
+    "last_scraped": "2026-07-30T15:05:02.587320+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-605",
+    "group": "usa_platform",
+    "url": "https://www.collegescholarships.org/scholarships/",
+    "pri": 10,
+    "age_score": 1055377.491705,
+    "last_scraped": "2026-08-18T15:02:44.773352+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-018",
+    "group": "germany",
+    "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/",
+    "pri": 10,
+    "last_scraped": "2026-08-30T20:12:39.041438+00:00",
+    "last_batch_count": 2,
+    "age_score": 18586.555934
+  },
+  {
+    "id": "src-002",
+    "group": "usa_platform",
+    "url": "https://www.fastweb.com/college-scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-30T15:04:02.660528+00:00",
+    "last_batch_count": 20,
+    "age_score": 2696899.60453
+  },
+  {
+    "id": "src-516",
+    "group": "usa_org",
+    "url": "https://www.hispanicfund.org/scholarships",
+    "pri": 10,
+    "age_score": 18532.37458,
+    "last_scraped": "2026-08-30T20:13:20.643825+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-512",
+    "group": "usa_platform",
+    "url": "https://www.studentaid.gov/understand-aid/types/scholarships",
+    "pri": 10,
+    "age_score": 2783199.763356,
+    "last_scraped": "2026-07-29T15:05:42.501703+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-607",
+    "group": "usa_state",
+    "url": "https://www.floridastudentfinancialaidsg.org/",
+    "pri": 10,
+    "age_score": 191344.296961,
+    "last_scraped": "2026-08-28T15:03:17.968099+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-506",
+    "group": "global_platform",
+    "url": "https://www.globalscholarships.com",
+    "pri": 10,
+    "age_score": 191320.8083,
+    "last_scraped": "2026-08-30T20:12:41.126132+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-601",
+    "group": "usa_specialized",
+    "url": "https://www.maldef.org/resources/scholarship-resource-guide-2025-2026",
+    "pri": 10,
+    "age_score": 104959.258107,
+    "last_scraped": "2026-08-30T20:13:26.554551+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-513",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org/new-york-scholarships",
+    "age_score": 999999
+  },
+  {
+    "id": "src-520",
+    "group": "usa_state",
+    "url": "https://www.ny.gov/paying-college/scholarships",
+    "pri": 10,
+    "age_score": 450363.435212,
+    "last_scraped": "2026-08-30T20:14:17.019097+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-604",
+    "group": "usa_platform",
+    "url": "https://www.road2college.com/scholarships/",
+    "pri": 10,
+    "age_score": 1484580.539078,
+    "last_scraped": "2026-08-13T15:49:21.725985+00:00",
+    "last_batch_count": 16
+  },
+  {
+    "id": "src-606",
+    "group": "usa_platform",
+    "url": "https://www.scholarshipportal.com/scholarships",
+    "pri": 10,
+    "age_score": 1055345.12309,
+    "last_scraped": "2026-08-18T15:03:17.141973+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-515",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org/texas-scholarships",
+    "age_score": 999999
+  },
+  {
+    "id": "src-001",
+    "group": "usa_platform",
+    "url": "https://www.scholarships.com/financial-aid/college-scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-25T15:04:53.710888+00:00",
+    "last_batch_count": 0,
+    "age_score": 450448.554176
+  },
+  {
+    "id": "src-518",
+    "group": "global",
+    "url": "https://www.scholarshipsearch.org/",
+    "pri": 10,
+    "age_score": 18585.550429,
+    "last_scraped": "2026-08-30T20:13:36.033038+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-508",
+    "group": "global_platform",
+    "url": "https://www.studyabroad.com",
+    "pri": 10,
+    "age_score": 104949.300947,
+    "last_scraped": "2026-08-30T20:14:06.026782+00:00",
+    "last_batch_count": 6
+  },
+  {
+    "id": "src-027",
+    "group": "india",
+    "url": "https://scholarships.gov.in/",
+    "pri": 9,
+    "last_scraped": "2026-08-30T20:12:45.274896+00:00",
+    "last_batch_count": 3,
+    "age_score": 18576.876339
+  },
+  {
+    "id": "src-014",
+    "group": "canada",
+    "url": "https://www.canada.ca/en/employment-social-development/services/student-aid.html",
+    "pri": 9,
+    "last_scraped": "2026-08-30T20:13:33.027458+00:00",
+    "last_batch_count": 0,
+    "age_score": 18518.276245
+  },
+  {
+    "id": "src-021",
+    "group": "singapore",
+    "url": "https://www.moe.gov.sg/financial-matters/scholarships",
+    "pri": 9,
+    "last_scraped": "2026-08-30T20:13:02.919364+00:00",
+    "last_batch_count": 0,
+    "age_score": 18554.170935
+  },
+  {
+    "id": "src-013",
+    "group": "canada",
+    "url": "https://www.scholarships.ca/",
+    "pri": 9,
+    "last_scraped": "2026-08-30T20:12:29.857519+00:00",
+    "last_batch_count": 0,
+    "age_score": 18597.866999
+  },
+  {
+    "id": "src-017",
+    "group": "germany",
+    "url": "https://www.study-in-germany.com/en/plan-your-studies/financing/scholarships/",
+    "pri": 9,
+    "last_scraped": "2026-08-30T20:13:35.145686+00:00",
+    "last_batch_count": 0,
+    "age_score": 18516.065376
+  },
+  {
+    "id": "src-015",
+    "group": "australia",
+    "url": "https://www.studyassist.gov.au/scholarships",
+    "pri": 9,
+    "last_scraped": "2026-08-30T20:12:24.642302+00:00",
+    "last_batch_count": 2,
+    "age_score": 18604.795268
+  },
+  {
+    "id": "src-011",
+    "group": "uk",
+    "url": "https://www.ucas.com/student-support/finance/scholarships-bursaries",
+    "pri": 9,
+    "last_scraped": "2026-08-30T20:13:14.896628+00:00",
+    "last_batch_count": 5,
+    "age_score": 18539.336481
+  },
+  {
+    "id": "src-773",
+    "group": "specialized",
+    "url": "https://collegegrant.net",
+    "pri": 8,
+    "last_scraped": "2026-08-30T15:03:12.611133+00:00",
+    "last_batch_count": 20,
+    "age_score": 18549.653937
+  },
+  {
+    "id": "src-772",
+    "group": "specialized",
+    "url": "https://empty-beds.com",
+    "pri": 8,
+    "last_scraped": "2026-08-30T15:04:01.217050+00:00",
+    "last_batch_count": 0,
+    "age_score": 18501.048021
+  },
+  {
+    "id": "src-776",
+    "group": "specialized",
+    "url": "https://grants.nih.gov",
+    "pri": 8,
+    "last_scraped": "2026-08-30T20:13:05.526834+00:00",
+    "last_batch_count": 20,
+    "age_score": 191381.393464
+  },
+  {
+    "id": "src-777",
+    "group": "specialized",
+    "url": "https://nsf.gov",
+    "pri": 8,
+    "last_scraped": "2026-08-30T20:13:47.179488+00:00",
+    "last_batch_count": 13,
+    "age_score": 191295.841164
+  },
+  {
+    "id": "src-774",
+    "group": "specialized",
+    "url": "https://nurse.com",
+    "pri": 8,
+    "last_scraped": "2026-08-30T20:14:08.297261+00:00",
+    "last_batch_count": 0,
+    "age_score": 104983.96219
+  },
+  {
+    "id": "src-775",
+    "group": "specialized",
+    "url": "https://studentawards.com",
+    "pri": 8,
+    "last_scraped": "2026-08-29T15:03:22.813701+00:00",
+    "last_batch_count": 19,
+    "age_score": 104939.451372
+  },
+  {
+    "id": "src-019",
+    "group": "france",
+    "url": "https://www.campusfrance.org/en/financing-studies",
+    "pri": 8,
+    "last_scraped": "2026-08-30T20:12:37.303835+00:00",
+    "last_batch_count": 10,
+    "age_score": 18588.194045
+  },
+  {
+    "id": "src-004",
+    "group": "usa_platform",
+    "url": "https://www.cappex.com/college-scholarships",
+    "pri": 8,
+    "last_scraped": "2026-07-12T18:03:44.036231+00:00",
+    "last_batch_count": 20,
+    "age_score": 4241318.228844
+  },
+  {
+    "id": "src-005",
+    "group": "usa_platform",
+    "url": "https://www.chegg.com/scholarships",
+    "pri": 8,
+    "last_scraped": "2026-07-12T18:03:43.146809+00:00",
+    "last_batch_count": 0,
+    "age_score": 4241319.118266
+  },
+  {
+    "id": "src-024",
+    "group": "japan",
+    "url": "https://www.jasso.go.jp/en/eji/index.html",
+    "pri": 8,
+    "last_scraped": "2026-08-30T20:12:51.886649+00:00",
+    "last_batch_count": 0,
+    "age_score": 18568.837255
+  },
+  {
+    "id": "src-006",
+    "group": "usa_platform",
+    "url": "https://www.niche.com/colleges/scholarships",
+    "pri": 8,
+    "last_scraped": "2026-07-12T18:03:41.816838+00:00",
+    "last_batch_count": 0,
+    "age_score": 4241320.448238
+  },
+  {
+    "id": "src-022",
+    "group": "singapore",
+    "url": "https://www.nus.edu.sg/admissions/undergraduate/scholarships",
+    "pri": 8,
+    "last_scraped": "2026-08-30T20:13:45.547686+00:00",
+    "last_batch_count": 0,
+    "age_score": 18501.920691
+  },
+  {
+    "id": "src-007",
+    "group": "usa_platform",
+    "url": "https://www.scholarshipamerica.org/",
+    "pri": 8,
+    "last_scraped": "2026-07-12T18:03:40.510221+00:00",
+    "last_batch_count": 19,
+    "age_score": 4241321.754857
+  },
+  {
+    "id": "src-517",
+    "group": "usa_org",
+    "url": "https://www.spanic.org/scholarships",
+    "pri": 8,
+    "age_score": 999999,
+    "last_scraped": "2026-08-30T20:14:12.630146+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-020",
+    "group": "netherlands",
+    "url": "https://www.studyinholland.nl/finance/scholarships",
+    "pri": 8,
+    "last_scraped": "2026-08-30T20:12:56.614344+00:00",
+    "last_batch_count": 0,
+    "age_score": 18562.473415
+  },
+  {
+    "id": "src-068",
+    "group": "sweden",
+    "url": "https://studyinsweden.se/scholarships/",
+    "pri": 7,
+    "last_scraped": "2026-08-30T20:13:08.272901+00:00",
+    "last_batch_count": 10,
+    "age_score": 18546.451845
+  },
+  {
+    "id": "src-082",
+    "group": "latam",
+    "url": "https://www.becas.gob.mx/",
+    "pri": 7,
+    "last_scraped": "2026-08-30T20:12:53.843151+00:00",
+    "last_batch_count": 0,
+    "age_score": 18566.451773
+  },
+  {
+    "id": "src-026",
+    "group": "china",
+    "url": "https://www.campuschina.org/",
+    "pri": 7,
+    "last_scraped": "2026-08-30T20:12:30.954884+00:00",
+    "last_batch_count": 0,
+    "age_score": 18594.988096
+  },
+  {
+    "id": "src-067",
+    "group": "ireland",
+    "url": "https://www.education.ie/en/scholarships/",
+    "pri": 7,
+    "last_scraped": "2026-08-30T20:12:46.054930+00:00",
+    "last_batch_count": 0,
+    "age_score": 18576.061105
+  },
+  {
+    "id": "src-010",
+    "group": "global_platform",
+    "url": "https://www.internationalscholarships.com/",
+    "pri": 7,
+    "last_scraped": "2026-07-12T17:44:51.015010+00:00",
+    "last_batch_count": 20,
+    "age_score": 4242451.250071
+  },
+  {
+    "id": "src-023",
+    "group": "japan",
+    "url": "https://www.mext.go.jp/en/policies/education/highered/title02/detail02/1375197.htm",
+    "pri": 7,
+    "last_scraped": "2026-08-30T20:13:39.089000+00:00",
+    "last_batch_count": 0,
+    "age_score": 18510.941874
+  },
+  {
+    "id": "src-072",
+    "group": "netherlands",
+    "url": "https://www.nuffic.nl/study-in-holland/scholarships",
+    "pri": 7,
+    "last_scraped": "2026-08-30T20:13:44.983568+00:00",
+    "last_batch_count": 0,
+    "age_score": 18503.802704
+  },
+  {
+    "id": "src-009",
+    "group": "global_platform",
+    "url": "https://www.scholars4dev.com/",
+    "pri": 7,
+    "last_scraped": "2026-07-12T17:44:49.535603+00:00",
+    "last_batch_count": 20,
+    "age_score": 4242452.72948
+  },
+  {
+    "id": "src-109",
+    "group": "global",
+    "url": "https://www.scholarship-positions.com/",
+    "pri": 7,
+    "last_scraped": "2026-07-12T17:45:06.103337+00:00",
+    "last_batch_count": 1,
+    "age_score": 4242436.161747
+  },
+  {
+    "id": "src-062",
+    "group": "global_platform",
+    "url": "https://www.scholarshipportal.com/",
+    "pri": 7,
+    "last_scraped": "2026-07-12T17:44:56.380194+00:00",
+    "last_batch_count": 0,
+    "age_score": 4242445.88489
+  },
+  {
+    "id": "src-025",
+    "group": "korea",
+    "url": "https://www.studyinkorea.go.kz/en/sub/marm/scholarship.do",
+    "pri": 7,
+    "last_scraped": "2026-08-30T20:12:52.917619+00:00",
+    "last_batch_count": 0,
+    "age_score": 18567.813173
+  },
+  {
+    "id": "src-066",
+    "group": "newzealand",
+    "url": "https://www.studynz.govt.nz/scholarships",
+    "pri": 7,
+    "last_scraped": "2026-08-30T20:12:57.153384+00:00",
+    "last_batch_count": 0,
+    "age_score": 18561.528396
+  },
+  {
+    "id": "src-030",
+    "group": "usa_univ",
+    "url": "https://finaid.berkeley.edu/scholarships",
+    "pri": 6,
+    "last_scraped": "2026-08-30T20:14:18.280083+00:00",
+    "last_batch_count": 0,
+    "age_score": 18524.255367
+  },
+  {
+    "id": "src-028",
+    "group": "usa_univ",
+    "url": "https://financialaid.mit.edu/scholarships",
+    "pri": 6,
+    "last_scraped": "2026-08-30T20:14:01.926799+00:00",
+    "last_batch_count": 0,
+    "age_score": 104956.748033
+  },
+  {
+    "id": "src-029",
+    "group": "usa_univ",
+    "url": "https://financialaid.stanford.edu/scholarships",
+    "pri": 6,
+    "last_scraped": "2026-08-30T20:13:29.158021+00:00",
+    "last_batch_count": 3,
+    "age_score": 191328.034891
+  },
+  {
+    "id": "src-070",
+    "group": "denmark",
+    "url": "https://studyindenmark.dk/scholarships",
+    "pri": 6,
+    "last_scraped": "2026-08-30T20:12:34.407124+00:00",
+    "last_batch_count": 0,
+    "age_score": 18590.627349
+  },
+  {
+    "id": "src-085",
+    "group": "africa",
+    "url": "https://www.afdb.org/en/projects-and-operations/scholarships",
+    "pri": 6,
+    "last_scraped": "2026-08-30T20:12:22.317626+00:00",
+    "last_batch_count": 0,
+    "age_score": 18607.155451
+  },
+  {
+    "id": "src-063",
+    "group": "global_platform",
+    "url": "https://www.afterschoolafrica.com/",
+    "pri": 6,
+    "last_scraped": "2026-07-12T17:45:09.968364+00:00",
+    "last_batch_count": 8,
+    "age_score": 4242432.296725
+  },
+  {
+    "id": "src-083",
+    "group": "latam",
+    "url": "https://www.cnpq.br/",
+    "pri": 6,
+    "last_scraped": "2026-08-30T20:13:41.983717+00:00",
+    "last_batch_count": 3,
+    "age_score": 18507.01951
+  },
+  {
+    "id": "src-104",
+    "group": "usa_platform",
+    "url": "https://www.finaid.org/",
+    "pri": 6,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-117",
+    "group": "global",
+    "url": "https://www.findapscholarship.com/",
+    "pri": 6,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-008",
+    "group": "usa_platform",
+    "url": "https://www.findascholarship.com/",
+    "pri": 6,
+    "last_scraped": "2026-07-12T17:45:26.547383+00:00",
+    "last_batch_count": 0,
+    "age_score": 4242415.717708
+  },
+  {
+    "id": "src-061",
+    "group": "global_platform",
+    "url": "https://www.findasholarship.com/",
+    "pri": 6,
+    "last_scraped": "2026-07-12T17:45:08.972310+00:00",
+    "last_batch_count": 0,
+    "age_score": 4242433.292782
+  },
+  {
+    "id": "src-052",
+    "group": "usa_private",
+    "url": "https://www.gilmanscholarship.org/",
+    "pri": 6,
+    "last_scraped": "2026-08-30T20:13:23.940871+00:00",
+    "last_batch_count": 8,
+    "age_score": 18528.239491
+  },
+  {
+    "id": "src-064",
+    "group": "global_platform",
+    "url": "https://www.opportunitydesk.org/",
+    "pri": 6,
+    "last_scraped": "2026-07-12T17:45:12.342197+00:00",
+    "last_batch_count": 13,
+    "age_score": 4242429.922896
+  },
+  {
+    "id": "src-012",
+    "group": "uk",
+    "url": "https://www.scholarship-search.org.uk/",
+    "pri": 6,
+    "last_scraped": "2026-08-30T20:13:48.784207+00:00",
+    "last_batch_count": 0,
+    "age_score": 18499.903373
+  },
+  {
+    "id": "src-100",
+    "group": "global",
+    "url": "https://www.scholarships360.org/",
+    "pri": 6,
+    "last_scraped": "2026-07-12T17:45:29.746199+00:00",
+    "last_batch_count": 15,
+    "age_score": 4242412.518895
+  },
+  {
+    "id": "src-101",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org/",
+    "pri": 6,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-111",
+    "group": "global",
+    "url": "https://www.scholarshipscanada.info/",
+    "pri": 6,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-071",
+    "group": "finland",
+    "url": "https://www.studyinfo.fi/en/csec/scholarships",
+    "pri": 6,
+    "last_scraped": "2026-08-30T20:12:35.844943+00:00",
+    "last_batch_count": 0,
+    "age_score": 18589.480612
+  },
+  {
+    "id": "src-069",
+    "group": "norway",
+    "url": "https://www.studyinnorway.no/scholarships",
+    "pri": 6,
+    "last_scraped": "2026-08-30T20:12:58.727114+00:00",
+    "last_batch_count": 0,
+    "age_score": 18558.250244
+  },
+  {
+    "id": "src-096",
+    "group": "global",
+    "url": "https://www.topuniversities.com/student-info/scholarships",
+    "pri": 6,
+    "last_scraped": "2026-07-12T17:45:27.959908+00:00",
+    "last_batch_count": 0,
+    "age_score": 4242414.305188
+  },
+  {
+    "id": "src-133",
+    "group": "global",
+    "url": "https://www.usnews.com/education/paying-for-college",
+    "pri": 6,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-038",
+    "group": "usa_univ",
+    "url": "https://financialaid.duke.edu/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-034",
+    "group": "usa_univ",
+    "url": "https://financialaid.illinois.edu/scholarships",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-035",
+    "group": "usa_univ",
+    "url": "https://financialaid.tamu.edu/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-036",
+    "group": "usa_univ",
+    "url": "https://financialaid.ucla.edu/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-031",
+    "group": "usa_univ",
+    "url": "https://financialaid.umich.edu/scholarships",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-037",
+    "group": "usa_univ",
+    "url": "https://financialaid.usc.edu/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-033",
+    "group": "usa_univ",
+    "url": "https://financialaid.wisc.edu/scholarships/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-032",
+    "group": "usa_univ",
+    "url": "https://onestop.umn.edu/financial-aid/scholarships",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-089",
+    "group": "saudi",
+    "url": "https://studyinsa.kaust.edu.sa/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:13:01.857869+00:00",
+    "last_batch_count": 0,
+    "age_score": 18555.260913
+  },
+  {
+    "id": "src-084",
+    "group": "latam",
+    "url": "https://www.arahm.gov.my/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:14:06.630085+00:00",
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-040",
+    "group": "usa_state",
+    "url": "https://www.calgrants.org/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-090",
+    "group": "israel",
+    "url": "https://www.che.org.il/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:12:48.662632+00:00",
+    "last_batch_count": 0,
+    "age_score": 18573.245508
+  },
+  {
+    "id": "src-049",
+    "group": "usa_private",
+    "url": "https://www.dellscholars.org/",
+    "pri": 5,
+    "last_scraped": "2026-08-21T11:22:00.556898+00:00",
+    "last_batch_count": 0,
+    "age_score": 809421.708201
+  },
+  {
+    "id": "src-065",
+    "group": "global_platform",
+    "url": "https://www.developing-talent.com/scholarships/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-076",
+    "group": "spain",
+    "url": "https://www.educacionyfp.gob.es/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:13:04.696043+00:00",
+    "last_batch_count": 0,
+    "age_score": 18551.502582
+  },
+  {
+    "id": "src-113",
+    "group": "global",
+    "url": "https://www.fundingusstudy.org/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-048",
+    "group": "usa_private",
+    "url": "https://www.gatesscholarship.org/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:13:58.525852+00:00",
+    "last_batch_count": 0,
+    "age_score": 1055328.995609
+  },
+  {
+    "id": "src-098",
+    "group": "global",
+    "url": "https://www.gradschools.com/scholarships",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-105",
+    "group": "usa_platform",
+    "url": "https://www.hesc.com/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-114",
+    "group": "global",
+    "url": "https://www.iefa.org/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-115",
+    "group": "global",
+    "url": "https://www.internationalstudent.com/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-057",
+    "group": "usa_masonic",
+    "url": "https://www.masoniccharitiesaz.com/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:13:18.030287+00:00",
+    "last_batch_count": 4,
+    "age_score": 18534.686587
+  },
+  {
+    "id": "src-087",
+    "group": "africa",
+    "url": "https://www.mastercardfoundation.org/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:13:30.670384+00:00",
+    "last_batch_count": 0,
+    "age_score": 18522.368268
+  },
+  {
+    "id": "src-088",
+    "group": "uae",
+    "url": "https://www.mohesr.gov.ae/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:13:13.970002+00:00",
+    "last_batch_count": 0,
+    "age_score": 18540.807935
+  },
+  {
+    "id": "src-075",
+    "group": "austria",
+    "url": "https://www.oead.at/en/scholarships",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:12:26.544731+00:00",
+    "last_batch_count": 12,
+    "age_score": 18601.620995
+  },
+  {
+    "id": "src-099",
+    "group": "global",
+    "url": "https://www.petersons.com/scholarships",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-074",
+    "group": "switzerland",
+    "url": "https://www.sbfi.admin.ch/sbfi/en/home/education/scholarships.html",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:13:09.810749+00:00",
+    "last_batch_count": 0,
+    "age_score": 18544.998614
+  },
+  {
+    "id": "src-110",
+    "group": "global",
+    "url": "https://www.scholarshipcare.com/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-016",
+    "group": "australia",
+    "url": "https://www.scholarshipsforstudents.com/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:13:31.581614+00:00",
+    "last_batch_count": 0,
+    "age_score": 18519.624035
+  },
+  {
+    "id": "src-097",
+    "group": "global",
+    "url": "https://www.scholfin.com/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-080",
+    "group": "czech",
+    "url": "https://www.studyin.cz/scholarships",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:12:33.255334+00:00",
+    "last_batch_count": 16,
+    "age_score": 18592.451255
+  },
+  {
+    "id": "src-073",
+    "group": "belgium",
+    "url": "https://www.studyinbelgium.be/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:12:28.350691+00:00",
+    "last_batch_count": 5,
+    "age_score": 18599.596726
+  },
+  {
+    "id": "src-081",
+    "group": "hungary",
+    "url": "https://www.studyinhungary.hu/scholarships",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:12:42.527913+00:00",
+    "last_batch_count": 0,
+    "age_score": 18581.808246
+  },
+  {
+    "id": "src-077",
+    "group": "italy",
+    "url": "https://www.studyinitaly.it/scholarships",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:12:49.424274+00:00",
+    "last_batch_count": 0,
+    "age_score": 18571.797185
+  },
+  {
+    "id": "src-079",
+    "group": "poland",
+    "url": "https://www.studyinpoland.gov.pl/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:12:59.735670+00:00",
+    "last_batch_count": 0,
+    "age_score": 18557.522434
+  },
+  {
+    "id": "src-078",
+    "group": "portugal",
+    "url": "https://www.studyinportugal.gov.pt/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:13:00.551737+00:00",
+    "last_batch_count": 0,
+    "age_score": 18556.283119
+  },
+  {
+    "id": "src-051",
+    "group": "usa_private",
+    "url": "https://www.truman.gov/",
+    "pri": 5,
+    "last_scraped": "2026-08-30T20:14:15.735542+00:00",
+    "last_batch_count": 6,
+    "age_score": 968887.166951
+  },
+  {
+    "id": "src-041",
+    "group": "usa_state",
+    "url": "https://www.txhighered.gov/",
+    "pri": 5,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-092",
+    "group": "masonic_usa",
+    "url": "https://grandlodgeofflorida.com/scholarships/",
+    "pri": 4,
+    "last_scraped": "2026-08-30T20:14:07.454800+00:00",
+    "last_batch_count": 0,
+    "age_score": 18565.458449
+  },
+  {
+    "id": "src-091",
+    "group": "masonic_usa",
+    "url": "https://grandlodgeofpa.org/scholarships/",
+    "pri": 4,
+    "last_scraped": "2026-08-30T15:03:55.889306+00:00",
+    "last_batch_count": 0,
+    "age_score": 18506.375804
+  },
+  {
+    "id": "src-093",
+    "group": "masonic_usa",
+    "url": "https://grandlodgeoftexas.org/",
+    "pri": 4,
+    "last_scraped": "2026-08-30T20:12:54.377580+00:00",
+    "last_batch_count": 0,
+    "age_score": 104994.446406
+  },
+  {
+    "id": "src-058",
+    "group": "usa_masonic",
+    "url": "https://grandlodgeoftexas.org/scholarships",
+    "pri": 4,
+    "last_scraped": "2026-08-30T15:04:06.102870+00:00",
+    "last_batch_count": 0,
+    "age_score": 18496.162242
+  },
+  {
+    "id": "src-043",
+    "group": "usa_state",
+    "url": "https://highered.colorado.gov/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-094",
+    "group": "masonic_usa",
+    "url": "https://masoniccharitiesofillinois.org/",
+    "pri": 4,
+    "last_scraped": "2026-08-30T20:13:42.863414+00:00",
+    "last_batch_count": 0,
+    "age_score": 104943.241282
+  },
+  {
+    "id": "src-119",
+    "group": "global",
+    "url": "https://www.affordablecollegesonline.org/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-106",
+    "group": "global",
+    "url": "https://www.africanleadershipacademy.org/scholarships",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-053",
+    "group": "usa_private",
+    "url": "https://www.buickachievers.com/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-055",
+    "group": "usa_private",
+    "url": "https://www.coca-colascholarsfoundation.org/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-102",
+    "group": "usa_platform",
+    "url": "https://www.collegesavings.com/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-044",
+    "group": "usa_state",
+    "url": "https://www.getfinaid.wa.gov/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-126",
+    "group": "global",
+    "url": "https://www.goabroad.com/scholarships",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-042",
+    "group": "usa_state",
+    "url": "https://www.hepg.org/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-045",
+    "group": "usa_state",
+    "url": "https://www.illinoisstudentaid.com/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-050",
+    "group": "usa_private",
+    "url": "https://www.jackkentcookefoundation.org/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-054",
+    "group": "usa_private",
+    "url": "https://www.kfccharities.org/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-059",
+    "group": "usa_masonic",
+    "url": "https://www.masonicfoundation.org/",
+    "pri": 4,
+    "last_scraped": "2026-08-30T20:13:53.153746+00:00",
+    "last_batch_count": 2,
+    "age_score": 796160.723161
+  },
+  {
+    "id": "src-046",
+    "group": "usa_state",
+    "url": "https://www.mass.edu/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-128",
+    "group": "global",
+    "url": "https://www.prepscholar.com/sat/scholarships",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-129",
+    "group": "global",
+    "url": "https://www.princetonreview.com/college/financial-aid/scholarships",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-103",
+    "group": "usa_platform",
+    "url": "https://www.savingforcollege.com/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-112",
+    "group": "global",
+    "url": "https://www.scholarships.net/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-116",
+    "group": "global",
+    "url": "https://www.scholarships4students.com/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-118",
+    "group": "global",
+    "url": "https://www.scholarshipsearchengine.com/",
+    "pri": 4,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-060",
+    "group": "usa_masonic",
+    "url": "https://www.shrinersinternational.org/",
+    "pri": 4,
+    "last_scraped": "2026-08-30T20:14:11.557669+00:00",
+    "last_batch_count": 0,
+    "age_score": 104934.409493
+  },
+  {
+    "id": "src-086",
+    "group": "africa",
+    "url": "https://www.yale.edu/africa-scholarships",
+    "pri": 4,
+    "last_scraped": "2026-08-30T20:14:03.015723+00:00",
+    "last_batch_count": 1,
+    "age_score": 999999
+  },
+  {
+    "id": "src-124",
+    "group": "global",
+    "url": "https://www.bankrate.com/loans/student-loans/scholarships/",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-137",
+    "group": "global",
+    "url": "https://www.chronicle.com/future-of-college/",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-120",
+    "group": "global",
+    "url": "https://www.collegesofdistinction.com/",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-107",
+    "group": "global",
+    "url": "https://www.commonapp.org/",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-123",
+    "group": "global",
+    "url": "https://www.credible.com/scholarships",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-132",
+    "group": "global",
+    "url": "https://www.kiplinger.com/",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-131",
+    "group": "global",
+    "url": "https://www.magoosh.com/scholarships/",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-122",
+    "group": "global",
+    "url": "https://www.nerdwallet.com/best/student-loans/scholarships",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-047",
+    "group": "usa_state",
+    "url": "https://www.psc.k12.nj.us/",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-056",
+    "group": "usa_private",
+    "url": "https://www.taco Bellfoundation.com/",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-108",
+    "group": "global",
+    "url": "https://www.university-worldwide.com/scholarships",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-134",
+    "group": "global",
+    "url": "https://www.wsj.com/personal-finance/college",
+    "pri": 3,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-127",
+    "group": "global",
+    "url": "https://www.anytimegraduation.com/",
+    "pri": 2,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-039",
+    "group": "usa_state",
+    "url": "https://www.az.gov/",
+    "pri": 2,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-121",
+    "group": "global",
+    "url": "https://www.earnest.com/learn/average-student-loan-interest-rate/",
+    "pri": 2,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-130",
+    "group": "global",
+    "url": "https://www.kaptest.com/",
+    "pri": 2,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-125",
+    "group": "global",
+    "url": "https://www.kinetic.org/",
+    "pri": 2,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-135",
+    "group": "global",
+    "url": "https://www.nytimes.com/section/education",
+    "pri": 2,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-136",
+    "group": "global",
+    "url": "https://www.washingtonpost.com/education/",
+    "pri": 2,
+    "last_scraped": null,
+    "last_batch_count": 0,
+    "age_score": 999999
+  },
+  {
+    "id": "src-800",
+    "group": "usa_platform",
+    "url": "https://www.careeronestop.org/Toolkit/Training/find-scholarships.aspx",
+    "pri": 10,
+    "last_scraped": "2026-08-19T15:03:43.214039+00:00",
+    "last_batch_count": 15,
+    "age_score": 968919.051078
+  },
+  {
+    "id": "src-801",
+    "group": "usa_platform",
+    "url": "https://www.mycollegeoptions.org/",
+    "pri": 10,
+    "last_scraped": "2026-08-19T15:04:13.860447+00:00",
+    "last_batch_count": 0,
+    "age_score": 968888.404671
+  },
+  {
+    "id": "src-802",
+    "group": "usa_platform",
+    "url": "https://www.petersons.com/college-search/scholarships/",
+    "pri": 10,
+    "last_scraped": "2026-08-20T15:03:10.138577+00:00",
+    "last_batch_count": 0,
+    "age_score": 882552.126541
+  },
+  {
+    "id": "src-803",
+    "group": "usa_platform",
+    "url": "https://www.scholarshipmonkey.com/",
+    "pri": 10,
+    "last_scraped": "2026-08-21T11:21:20.875304+00:00",
+    "last_batch_count": 0,
+    "age_score": 809461.389815
+  },
+  {
+    "id": "src-804",
+    "group": "usa_platform",
+    "url": "https://www.studentadviceguide.com/scholarships/",
+    "pri": 10,
+    "last_scraped": "2026-08-21T11:21:59.229568+00:00",
+    "last_batch_count": 0,
+    "age_score": 809423.035552
+  },
+  {
+    "id": "src-805",
+    "group": "usa_state",
+    "url": "https://www.tn.gov/student-aid/scholarships.html",
+    "pri": 10,
+    "last_scraped": "2026-08-30T15:03:37.271000+00:00",
+    "last_batch_count": 0,
+    "age_score": 18524.99412
+  },
+  {
+    "id": "src-806",
+    "group": "usa_state",
+    "url": "https://wsac.wa.gov/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-30T20:13:28.142425+00:00",
+    "last_batch_count": 20,
+    "age_score": 536959.418675
+  },
+  {
+    "id": "src-807",
+    "group": "transnational",
+    "url": "https://www.scholars4dev.com/scholarships/",
+    "pri": 10,
+    "last_scraped": "2026-08-30T20:13:11.330611+00:00",
+    "last_batch_count": 20,
+    "age_score": 18543.36832
+  },
+  {
+    "id": "src-808",
+    "group": "global",
+    "url": "https://www.scholarship-search.eu/",
+    "pri": 10,
+    "last_scraped": "2026-08-30T20:14:04.272702+00:00",
+    "last_batch_count": 0,
+    "age_score": 18514.936009
+  },
+  {
+    "id": "src-809",
+    "group": "global",
+    "url": "https://www.scholarshipportal.com/scholarships/",
+    "pri": 10,
+    "last_scraped": "2026-08-30T20:12:39.917987+00:00",
+    "last_batch_count": 0,
+    "age_score": 104950.434072
+  },
+  {
+    "id": "src-199",
+    "group": "usa_platform",
+    "url": "https://www.collegeconfidential.com/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-29T15:05:11.637806+00:00",
+    "last_batch_count": 1,
+    "age_score": 2783230.627317
+  },
+  {
+    "id": "src-200",
+    "group": "usa_platform",
+    "url": "https://www.createscholarships.org",
+    "pri": 10,
+    "last_scraped": "2026-07-28T15:20:05.593123+00:00",
+    "last_batch_count": 0,
+    "age_score": 2868736.672001
+  },
+  {
+    "id": "src-201",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org/scholarships/search/",
+    "pri": 10,
+    "last_scraped": "2026-07-28T16:43:33.121258+00:00",
+    "last_batch_count": 20,
+    "age_score": 2863729.143866
+  },
+  {
+    "id": "src-202",
+    "group": "global_platform",
+    "url": "https://scholaro.com/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-30T15:03:48.833255+00:00",
+    "last_batch_count": 0,
+    "age_score": 18513.43187
+  },
+  {
+    "id": "src-900",
+    "group": "usa_platform",
+    "url": "https://www.careeronestop.org/Toolkit/Training/find-scholarships.aspx",
+    "pri": 10,
+    "age_score": 2956071.568404,
+    "last_scraped": "2026-08-30T20:13:57.788069+00:00",
+    "last_batch_count": 15
+  },
+  {
+    "id": "src-901",
+    "group": "usa_platform",
+    "url": "https://bold.org/scholarships/",
+    "pri": 10,
+    "age_score": 2869556.924831,
+    "last_scraped": "2026-08-30T20:14:14.764246+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-911",
+    "group": "usa_platform",
+    "url": "https://www.salliemae.com/scholarships",
+    "pri": 10,
+    "age_score": 2956104.49896,
+    "last_scraped": "2026-08-30T20:13:22.450038+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-912",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org/no-essay-scholarships",
+    "pri": 10,
+    "age_score": 18529.801928,
+    "last_scraped": "2026-08-30T15:03:32.463199+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-913",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org/easy-scholarships",
+    "pri": 10,
+    "age_score": 191363.487873,
+    "last_scraped": "2026-08-28T15:02:58.777255+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-914",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org/scholarships-for-college-students",
+    "pri": 10,
+    "age_score": 104963.280021,
+    "last_scraped": "2026-08-29T15:02:58.985107+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-915",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org/graduate-students",
+    "pri": 10,
+    "age_score": 450368.478852,
+    "last_scraped": "2026-08-25T15:06:13.786277+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-916",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org/high-school-seniors",
+    "pri": 10,
+    "age_score": 277770.885845,
+    "last_scraped": "2026-08-27T15:02:51.379285+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d212",
+    "group": "usa_platform",
+    "url": "https://www.campusdynamix.com/scholarships/",
+    "pri": 10,
+    "age_score": 796193.890353,
+    "last_scraped": "2026-08-21T15:02:28.374777+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-d215",
+    "group": "usa_platform",
+    "url": "https://www.onlineschools.org/scholarships/",
+    "pri": 10,
+    "age_score": 709771.884391,
+    "last_scraped": "2026-08-22T15:02:50.380740+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-d218",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org",
+    "pri": 10,
+    "age_score": 1919001.243989,
+    "last_scraped": "2026-08-08T15:09:01.021142+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d221",
+    "group": "usa_platform",
+    "url": "https://www.collegescholarships.org",
+    "pri": 10,
+    "age_score": 1832849.858718,
+    "last_scraped": "2026-08-09T15:04:52.406414+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d222",
+    "group": "usa_platform",
+    "url": "https://www.finaid.org/scholarships",
+    "pri": 10,
+    "age_score": 1832740.29069,
+    "last_scraped": "2026-08-09T15:06:41.974443+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d223",
+    "group": "usa_edu",
+    "url": "https://www.suno.edu/news/suno-limited-scholarship-opportunity-july-2026",
+    "pri": 10,
+    "age_score": 3042322.517225,
+    "last_scraped": "2026-07-26T15:06:59.747908+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-d224",
+    "group": "usa_edu",
+    "url": "https://www.uh.edu/financial/undergraduate/types-aid/scholarships/",
+    "pri": 10,
+    "age_score": 3042289.349159,
+    "last_scraped": "2026-07-26T15:07:32.915975+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d225",
+    "group": "usa_edu",
+    "url": "https://financialaid.ucla.edu/",
+    "pri": 10,
+    "age_score": 3042173.535815,
+    "last_scraped": "2026-07-26T15:09:28.729319+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d226",
+    "group": "usa_edu",
+    "url": "https://www.otterbein.edu/otterbein-announces-enhanced-merit-scholarship-awards-for-fall-2027/",
+    "pri": 10,
+    "age_score": 3042136.86761,
+    "last_scraped": "2026-07-26T15:10:05.397525+00:00",
+    "last_batch_count": 12
+  },
+  {
+    "id": "src-d227",
+    "group": "usa_edu",
+    "url": "https://www.westcliff.edu/financial-aid/scholarships-and-grants/",
+    "pri": 10,
+    "age_score": 3042017.264304,
+    "last_scraped": "2026-07-26T15:12:05.000832+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d228",
+    "group": "usa_edu",
+    "url": "https://www.spcollege.edu/financial-aid/types-of-financial-aid/scholarships/institutional-scholarships/spc-promise-scholarship",
+    "pri": 10,
+    "age_score": 3041981.325283,
+    "last_scraped": "2026-07-26T15:12:40.939853+00:00",
+    "last_batch_count": 9
+  },
+  {
+    "id": "src-d229",
+    "group": "usa_edu",
+    "url": "https://www.collin.edu/foundation/students/index.html",
+    "pri": 10,
+    "age_score": 3041837.333932,
+    "last_scraped": "2026-07-26T15:15:04.931205+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d230",
+    "group": "usa_edu",
+    "url": "https://www.coloradocollege.edu/offices/sfs/scholarships.html",
+    "pri": 10,
+    "age_score": 3032678.981191,
+    "last_scraped": "2026-07-26T17:47:43.283946+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-z02",
+    "group": "usa_edu",
+    "url": "https://onestop.umn.edu/finances/scholarships",
+    "pri": 10,
+    "age_score": 3041801.950519,
+    "last_scraped": "2026-07-26T15:15:40.314619+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-z03",
+    "group": "usa_edu",
+    "url": "https://financialaid.ucsb.edu/undergraduate/scholarships",
+    "pri": 10,
+    "age_score": 3041686.835552,
+    "last_scraped": "2026-07-26T15:17:35.429587+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-z04",
+    "group": "usa_edu",
+    "url": "https://financialaid.berkeley.edu/types-of-aid/scholarships/",
+    "pri": 10,
+    "age_score": 3041646.971638,
+    "last_scraped": "2026-07-26T15:18:15.293501+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-z05",
+    "group": "usa_edu",
+    "url": "https://sfs.umich.edu/scholarships",
+    "pri": 10,
+    "age_score": 3041521.345757,
+    "last_scraped": "2026-07-26T15:20:20.919383+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-d236",
+    "group": "usa_platform",
+    "url": "https://www.scholarships4school.com/scholarships",
+    "pri": 10,
+    "age_score": 623390.743548,
+    "last_scraped": "2026-08-23T15:02:31.521592+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d237",
+    "group": "usa_platform",
+    "url": "https://www.collegexpress.com/scholarships",
+    "pri": 10,
+    "age_score": 623313.899356,
+    "last_scraped": "2026-08-23T15:03:48.365785+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d238",
+    "group": "usa_platform",
+    "url": "https://www.fastweb.com/scholarships",
+    "pri": 10,
+    "age_score": 623241.164264,
+    "last_scraped": "2026-08-23T15:05:01.100878+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d239",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org",
+    "pri": 10,
+    "age_score": 1564069.404644,
+    "last_scraped": "2026-08-12T17:44:32.860498+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-d240",
+    "group": "global_platform",
+    "url": "https://www.scholarships-bourses.gc.ca",
+    "pri": 10,
+    "age_score": 18583.460512,
+    "last_scraped": "2026-08-30T15:02:38.804631+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-d241",
+    "group": "usa_platform",
+    "url": "https://www.chegg.com/scholarships",
+    "pri": 10,
+    "age_score": 1564017.51472,
+    "last_scraped": "2026-08-12T17:45:24.750423+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-d242",
+    "group": "usa_platform",
+    "url": "https://www.niche.com/scholarships",
+    "pri": 10,
+    "age_score": 1563920.09258,
+    "last_scraped": "2026-08-12T17:47:02.172564+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-d243",
+    "group": "usa_platform",
+    "url": "https://www.cappex.com/scholarships",
+    "pri": 10,
+    "age_score": 1563884.566719,
+    "last_scraped": "2026-08-12T17:47:37.698426+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-z11",
+    "group": "usa_edu",
+    "url": "https://financialaid.tamu.edu/scholarships/",
+    "pri": 10,
+    "last_scraped": "2026-07-26T15:21:08.778141+00:00",
+    "last_batch_count": 7,
+    "age_score": 3041473.487004
+  },
+  {
+    "id": "src-z12",
+    "group": "usa_edu",
+    "url": "https://financialaid.uky.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-26T15:40:21.284327+00:00",
+    "last_batch_count": 3,
+    "age_score": 3040320.980819
+  },
+  {
+    "id": "src-z17",
+    "group": "usa_edu",
+    "url": "https://financialaid.rutgers.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-26T15:40:54.168425+00:00",
+    "last_batch_count": 20,
+    "age_score": 3040288.096721
+  },
+  {
+    "id": "src-z20",
+    "group": "usa_edu",
+    "url": "https://financialaid.ucsc.edu/undergraduate/types-of-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-26T15:46:05.233496+00:00",
+    "last_batch_count": 14,
+    "age_score": 3039977.031651
+  },
+  {
+    "id": "src-z21",
+    "group": "usa_edu",
+    "url": "https://financialaid.ucf.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-26T15:46:52.806056+00:00",
+    "last_batch_count": 0,
+    "age_score": 3039929.459091
+  },
+  {
+    "id": "src-z22",
+    "group": "usa_edu",
+    "url": "https://financialaid.ucr.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-26T15:54:09.325704+00:00",
+    "last_batch_count": 20,
+    "age_score": 3039492.939444
+  },
+  {
+    "id": "src-z23",
+    "group": "usa_edu",
+    "url": "https://financialaid.uci.edu/undergraduate/types-of-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-26T15:56:14.450301+00:00",
+    "last_batch_count": 0,
+    "age_score": 3039367.814848
+  },
+  {
+    "id": "src-z29",
+    "group": "usa_edu",
+    "url": "https://financialaid.ku.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-26T15:56:51.011329+00:00",
+    "last_batch_count": 20,
+    "age_score": 3039331.25382
+  },
+  {
+    "id": "src-z30",
+    "group": "usa_edu",
+    "url": "https://financialaid.missouri.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-26T18:42:21.346489+00:00",
+    "last_batch_count": 11,
+    "age_score": 3029400.918661
+  },
+  {
+    "id": "src-z31",
+    "group": "usa_edu",
+    "url": "https://onestart.ohio.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-26T18:43:13.867336+00:00",
+    "last_batch_count": 0,
+    "age_score": 3029348.397814
+  },
+  {
+    "id": "src-z32",
+    "group": "usa_edu",
+    "url": "https://studentaid.iu.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-27T15:03:51.187579+00:00",
+    "last_batch_count": 0,
+    "age_score": 2956111.077572
+  },
+  {
+    "id": "src-z33",
+    "group": "usa_edu",
+    "url": "https://financialaid.berkeley.edu/scholarships/",
+    "pri": 10,
+    "age_score": 2956079.062721,
+    "last_scraped": "2026-07-27T15:04:23.202431+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-z34",
+    "group": "usa_edu",
+    "url": "https://financialaid.stanford.edu/scholarships",
+    "pri": 10,
+    "age_score": 2869565.914653,
+    "last_scraped": "2026-07-28T15:06:16.350499+00:00",
+    "last_batch_count": 3
+  },
+  {
+    "id": "src-z35",
+    "group": "usa_edu",
+    "url": "https://financialaid.yale.edu/scholarships",
+    "pri": 10,
+    "age_score": 2869505.617457,
+    "last_scraped": "2026-07-28T15:07:16.647696+00:00",
+    "last_batch_count": 1
+  },
+  {
+    "id": "src-z36",
+    "group": "usa_edu",
+    "url": "https://financialaid.harvard.edu/scholarships",
+    "pri": 10,
+    "age_score": 2868742.855179,
+    "last_scraped": "2026-07-28T15:19:59.409974+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-z37",
+    "group": "usa_edu",
+    "url": "https://financialaid.mit.edu/scholarships",
+    "pri": 10,
+    "age_score": 2863745.290018,
+    "last_scraped": "2026-07-28T16:43:16.975136+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-z40",
+    "group": "usa_edu",
+    "url": "https://scholarships.uoregon.edu/",
+    "pri": 10,
+    "age_score": 2783238.954029,
+    "last_scraped": "2026-07-29T15:05:03.311125+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-z41",
+    "group": "usa_edu",
+    "url": "https://financialaid.byu.edu/",
+    "pri": 10,
+    "age_score": 2783206.999617,
+    "last_scraped": "2026-07-29T15:05:35.265538+00:00",
+    "last_batch_count": 10
+  },
+  {
+    "id": "src-z42",
+    "group": "usa_edu",
+    "url": "https://onestart.ohio.edu/financial-aid/scholarships",
+    "pri": 10,
+    "age_score": 2696905.603848,
+    "last_scraped": "2026-07-30T15:03:56.661308+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-z43",
+    "group": "usa_edu",
+    "url": "https://financialaid.psu.edu/scholarships",
+    "pri": 10,
+    "age_score": 2696846.204258,
+    "last_scraped": "2026-07-30T15:04:56.060898+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-z44",
+    "group": "usa_edu",
+    "url": "https://onestop.umich.edu/scholarships",
+    "pri": 10,
+    "age_score": 2610359.3992,
+    "last_scraped": "2026-07-31T15:06:22.865957+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-z45",
+    "group": "usa_edu",
+    "url": "https://studentaid.iu.edu/scholarships",
+    "pri": 10,
+    "age_score": 2350913.517579,
+    "last_scraped": "2026-08-03T15:10:28.747578+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-z46",
+    "group": "usa_edu",
+    "url": "https://undergraduate.utk.edu/scholarships",
+    "pri": 10,
+    "age_score": 2350880.363256,
+    "last_scraped": "2026-08-03T15:11:01.901902+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-z47",
+    "group": "usa_edu",
+    "url": "https://financialaid.missouri.edu/scholarships",
+    "pri": 10,
+    "age_score": 2260520.642499,
+    "last_scraped": "2026-08-04T16:17:01.622660+00:00",
+    "last_batch_count": 11
+  },
+  {
+    "id": "src-z48",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.com/",
+    "pri": 10,
+    "age_score": 536963.436168,
+    "last_scraped": "2026-08-24T15:02:58.828991+00:00",
+    "last_batch_count": 0
+  },
+  {
+    "id": "src-z49",
+    "group": "usa_platform",
+    "url": "https://www.scholarships360.org/",
+    "pri": 10,
+    "age_score": 536878.759182,
+    "last_scraped": "2026-08-24T15:04:23.505978+00:00",
+    "last_batch_count": 20
+  },
+  {
+    "id": "src-uni-0001",
+    "group": "usa_edu",
+    "url": "https://scholarships.harvard.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-05T15:03:45.065811+00:00",
+    "last_batch_count": 1,
+    "age_score": 2178517.199349
+  },
+  {
+    "id": "src-uni-0002",
+    "group": "usa_edu",
+    "url": "https://financialaid.brown.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-05T15:04:14.713812+00:00",
+    "last_batch_count": 8,
+    "age_score": 2178487.551349
+  },
+  {
+    "id": "src-uni-0003",
+    "group": "usa_edu",
+    "url": "https://scholarships.stanford.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-06T15:04:02.221056+00:00",
+    "last_batch_count": 0,
+    "age_score": 2092100.044106
+  },
+  {
+    "id": "src-uni-0004",
+    "group": "usa_edu",
+    "url": "https://www.yale.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-06T15:04:36.257546+00:00",
+    "last_batch_count": 7,
+    "age_score": 2092066.007616
+  },
+  {
+    "id": "src-uni-0005",
+    "group": "usa_edu",
+    "url": "https://financialaid.usc.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-07T15:06:35.504165+00:00",
+    "last_batch_count": 20,
+    "age_score": 2005546.760998
+  },
+  {
+    "id": "src-uni-0006",
+    "group": "usa_edu",
+    "url": "https://financialaid.berkeley.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288649
+  },
+  {
+    "id": "src-uni-0007",
+    "group": "usa_edu",
+    "url": "https://onestop.ucsd.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 0,
+    "age_score": 3471584.28865
+  },
+  {
+    "id": "src-uni-0008",
+    "group": "usa_edu",
+    "url": "https://scholarships.berkeley.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 12,
+    "age_score": 3471584.288651
+  },
+  {
+    "id": "src-uni-0009",
+    "group": "usa_edu",
+    "url": "https://scholarships.ucsc.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288651
+  },
+  {
+    "id": "src-uni-0010",
+    "group": "usa_edu",
+    "url": "https://scholarships.uw.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288652
+  },
+  {
+    "id": "src-uni-0011",
+    "group": "usa_edu",
+    "url": "https://scholarships.indiana.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288652
+  },
+  {
+    "id": "src-uni-0012",
+    "group": "usa_edu",
+    "url": "https://www.msu.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 0,
+    "age_score": 3471584.288653
+  },
+  {
+    "id": "src-uni-0013",
+    "group": "usa_edu",
+    "url": "https://studentaid.psu.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 4,
+    "age_score": 3471584.288653
+  },
+  {
+    "id": "src-uni-0014",
+    "group": "usa_edu",
+    "url": "https://www.purdue.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 0,
+    "age_score": 3471584.288654
+  },
+  {
+    "id": "src-uni-0015",
+    "group": "usa_edu",
+    "url": "https://www.indiana.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288655
+  },
+  {
+    "id": "src-uni-0016",
+    "group": "usa_edu",
+    "url": "https://scholarships.msu.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 10,
+    "age_score": 3471584.288655
+  },
+  {
+    "id": "src-uni-0017",
+    "group": "usa_edu",
+    "url": "https://scholarships.wisc.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288656
+  },
+  {
+    "id": "src-uni-0018",
+    "group": "usa_edu",
+    "url": "https://scholarships.umn.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 0,
+    "age_score": 3471584.288656
+  },
+  {
+    "id": "src-uni-0019",
+    "group": "usa_edu",
+    "url": "https://scholarships.asu.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 0,
+    "age_score": 3471584.288657
+  },
+  {
+    "id": "src-uni-0020",
+    "group": "usa_edu",
+    "url": "https://sfs.tamu.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 0,
+    "age_score": 3471584.288658
+  },
+  {
+    "id": "src-uni-0021",
+    "group": "usa_edu",
+    "url": "https://www.humboldt.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288658
+  },
+  {
+    "id": "src-uni-0022",
+    "group": "usa_edu",
+    "url": "https://www.leiden.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 0,
+    "age_score": 3471584.288659
+  },
+  {
+    "id": "src-uni-0023",
+    "group": "usa_edu",
+    "url": "https://www.manchester.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288659
+  },
+  {
+    "id": "src-uni-0024",
+    "group": "usa_edu",
+    "url": "https://www.epfl.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 0,
+    "age_score": 3471584.28866
+  },
+  {
+    "id": "src-uni-0025",
+    "group": "usa_edu",
+    "url": "https://www.sydney.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 0,
+    "age_score": 3471584.28866
+  },
+  {
+    "id": "src-uni-0026",
+    "group": "usa_edu",
+    "url": "https://scholarships.binghamton.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 4,
+    "age_score": 3471584.288661
+  },
+  {
+    "id": "src-uni-0027",
+    "group": "usa_edu",
+    "url": "https://financialaid.buffalo.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 7,
+    "age_score": 3471584.288662
+  },
+  {
+    "id": "src-uni-0028",
+    "group": "usa_edu",
+    "url": "https://www.hofstra.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 1,
+    "age_score": 3471584.288662
+  },
+  {
+    "id": "src-uni-0029",
+    "group": "usa_edu",
+    "url": "https://www.fandm.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 0,
+    "age_score": 3471584.288663
+  },
+  {
+    "id": "src-uni-0030",
+    "group": "usa_edu",
+    "url": "https://www.wright.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 2,
+    "age_score": 3471584.288663
+  },
+  {
+    "id": "src-uni-0031",
+    "group": "usa_edu",
+    "url": "https://financialaid.wsu.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288664
+  },
+  {
+    "id": "src-uni-0032",
+    "group": "usa_edu",
+    "url": "https://scholarships.ku.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288665
+  },
+  {
+    "id": "src-uni-0033",
+    "group": "usa_edu",
+    "url": "https://sfs.wsu.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288665
+  },
+  {
+    "id": "src-uni-0034",
+    "group": "usa_edu",
+    "url": "https://financialaid.unl.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288666
+  },
+  {
+    "id": "src-uni-0035",
+    "group": "usa_edu",
+    "url": "https://scholarships.unl.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-21T15:52:37.976514+00:00",
+    "last_batch_count": 14,
+    "age_score": 3471584.288666
+  },
+  {
+    "id": "src-uni-0036",
+    "group": "usa_edu",
+    "url": "https://financialaid.ou.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-30T20:13:50.901352+00:00",
+    "last_batch_count": 2,
+    "age_score": 3471584.288667
+  },
+  {
+    "id": "src-uni-0037",
+    "group": "usa_edu",
+    "url": "https://scholarships.wsu.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-30T20:14:10.109746+00:00",
+    "last_batch_count": 20,
+    "age_score": 3471584.288667
+  },
+  {
+    "id": "src-uni-0038",
+    "group": "usa_edu",
+    "url": "https://scholarships.ou.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-30T20:13:16.186793+00:00",
+    "last_batch_count": 2,
+    "age_score": 3471584.288668
+  },
+  {
+    "id": "src-uni-0039",
+    "group": "usa_edu",
+    "url": "https://scholarships.unm.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-30T15:04:03.869799+00:00",
+    "last_batch_count": 20,
+    "age_score": 18498.395384
+  },
+  {
+    "id": "src-uni-0040",
+    "group": "usa_edu",
+    "url": "https://scholarships.utah.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-29T15:03:25.901594+00:00",
+    "last_batch_count": 13,
+    "age_score": 104936.363589
+  },
+  {
+    "id": "src-uni-0041",
+    "group": "usa_edu",
+    "url": "https://scholarships.usu.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-30T15:03:24.710790+00:00",
+    "last_batch_count": 13,
+    "age_score": 18537.554394
+  },
+  {
+    "id": "src-uni-0042",
+    "group": "usa_edu",
+    "url": "https://financialaid.usu.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-29T15:02:52.019375+00:00",
+    "last_batch_count": 17,
+    "age_score": 104970.245809
+  },
+  {
+    "id": "src-uni-0043",
+    "group": "usa_edu",
+    "url": "https://scholarships.oregonstate.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-27T15:03:18.860055+00:00",
+    "last_batch_count": 2,
+    "age_score": 277743.40513
+  },
+  {
+    "id": "src-uni-0044",
+    "group": "usa_edu",
+    "url": "https://financialaid.uoregon.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-28T15:02:50.647751+00:00",
+    "last_batch_count": 20,
+    "age_score": 191371.617435
+  },
+  {
+    "id": "src-uni-0045",
+    "group": "usa_edu",
+    "url": "https://financialaid.oregonstate.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-25T15:06:49.138888+00:00",
+    "last_batch_count": 6,
+    "age_score": 450333.126298
+  },
+  {
+    "id": "src-uni-0046",
+    "group": "usa_edu",
+    "url": "https://financialaid.boisestate.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-27T15:02:44.701813+00:00",
+    "last_batch_count": 19,
+    "age_score": 277777.563374
+  },
+  {
+    "id": "src-uni-0047",
+    "group": "usa_edu",
+    "url": "https://onestop.uoregon.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-25T15:06:01.732607+00:00",
+    "last_batch_count": 11,
+    "age_score": 450380.53258
+  },
+  {
+    "id": "src-uni-0048",
+    "group": "usa_edu",
+    "url": "https://financialaid.wwu.edu/scholarships",
+    "kind": "directory",
+    "pri": 10,
+    "last_scraped": "2026-08-25T15:04:48.793694+00:00",
+    "last_batch_count": 2,
+    "age_score": 450453.471494
+  },
+  {
+    "id": "src-uni-0049",
+    "group": "usa_edu",
+    "url": "https://scholarships.boisestate.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-24T15:04:17.406924+00:00",
+    "last_batch_count": 20,
+    "age_score": 536884.858264
+  },
+  {
+    "id": "src-uni-0050",
+    "group": "usa_edu",
+    "url": "https://www.uga.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-24T15:03:23.849415+00:00",
+    "last_batch_count": 0,
+    "age_score": 536938.415774
+  },
+  {
+    "id": "src-uni-0051",
+    "group": "usa_edu",
+    "url": "https://scholarships.uga.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-24T15:02:54.810136+00:00",
+    "last_batch_count": 1,
+    "age_score": 536967.455054
+  },
+  {
+    "id": "src-uni-0052",
+    "group": "usa_edu",
+    "url": "https://financialaid.auburn.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-23T15:03:42.998769+00:00",
+    "last_batch_count": 20,
+    "age_score": 623319.266421
+  },
+  {
+    "id": "src-uni-0053",
+    "group": "usa_edu",
+    "url": "https://www.vcu.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-23T15:04:55.040633+00:00",
+    "last_batch_count": 2,
+    "age_score": 623247.224558
+  },
+  {
+    "id": "src-uni-0054",
+    "group": "usa_edu",
+    "url": "https://sfs.vcu.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-23T15:02:26.050340+00:00",
+    "last_batch_count": 7,
+    "age_score": 623396.214851
+  },
+  {
+    "id": "src-uni-0055",
+    "group": "usa_edu",
+    "url": "https://www.virginiatech.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-21T15:02:59.296180+00:00",
+    "last_batch_count": 4,
+    "age_score": 796162.969012
+  },
+  {
+    "id": "src-uni-0056",
+    "group": "usa_edu",
+    "url": "https://financialaid.wfu.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-22T15:02:42.705766+00:00",
+    "last_batch_count": 20,
+    "age_score": 709779.559427
+  },
+  {
+    "id": "src-uni-0057",
+    "group": "usa_edu",
+    "url": "https://financialaid.richmond.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-21T15:02:18.756172+00:00",
+    "last_batch_count": 20,
+    "age_score": 796203.509021
+  },
+  {
+    "id": "src-uni-0058",
+    "group": "usa_edu",
+    "url": "https://www.richmond.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-21T11:21:52.269765+00:00",
+    "last_batch_count": 4,
+    "age_score": 809429.995429
+  },
+  {
+    "id": "src-uni-0059",
+    "group": "usa_edu",
+    "url": "https://scholarships.appstate.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-21T11:21:15.233953+00:00",
+    "last_batch_count": 20,
+    "age_score": 809467.031241
+  },
+  {
+    "id": "src-uni-0060",
+    "group": "usa_edu",
+    "url": "https://www.uncw.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-19T15:04:09.023996+00:00",
+    "last_batch_count": 2,
+    "age_score": 968893.241199
+  },
+  {
+    "id": "src-uni-0061",
+    "group": "usa_edu",
+    "url": "https://financialaid.fsu.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-20T15:03:03.963432+00:00",
+    "last_batch_count": 17,
+    "age_score": 882558.301764
+  },
+  {
+    "id": "src-uni-0062",
+    "group": "usa_edu",
+    "url": "https://scholarships.fiu.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-19T15:03:35.576911+00:00",
+    "last_batch_count": 11,
+    "age_score": 968926.688285
+  },
+  {
+    "id": "src-uni-0063",
+    "group": "usa_edu",
+    "url": "https://www.ucf.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-18T15:03:10.803100+00:00",
+    "last_batch_count": 20,
+    "age_score": 1055351.462097
+  },
+  {
+    "id": "src-uni-0064",
+    "group": "usa_edu",
+    "url": "https://www.umiami.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-18T15:02:38.232984+00:00",
+    "last_batch_count": 1,
+    "age_score": 1055384.032213
+  },
+  {
+    "id": "src-uni-0065",
+    "group": "usa_edu",
+    "url": "https://www.usf.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-13T15:49:55.281967+00:00",
+    "last_batch_count": 6,
+    "age_score": 1484546.983231
+  },
+  {
+    "id": "src-uni-0066",
+    "group": "usa_edu",
+    "url": "https://scholarships.msstate.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-13T15:49:15.460097+00:00",
+    "last_batch_count": 8,
+    "age_score": 1484586.805102
+  },
+  {
+    "id": "src-uni-0067",
+    "group": "usa_edu",
+    "url": "https://scholarships.fau.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-12T17:47:29.834145+00:00",
+    "last_batch_count": 0,
+    "age_score": 1563892.431054
+  },
+  {
+    "id": "src-uni-0068",
+    "group": "usa_edu",
+    "url": "https://www.ncu.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-12T17:45:16.200424+00:00",
+    "last_batch_count": 11,
+    "age_score": 1564026.064776
+  },
+  {
+    "id": "src-uni-0069",
+    "group": "usa_edu",
+    "url": "https://onestop.fau.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-12T17:46:57.794761+00:00",
+    "last_batch_count": 1,
+    "age_score": 1563924.470439
+  },
+  {
+    "id": "src-uni-0070",
+    "group": "usa_edu",
+    "url": "https://sfs.fau.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-09T15:07:06.737926+00:00",
+    "last_batch_count": 6,
+    "age_score": 1832715.527275
+  },
+  {
+    "id": "src-uni-0071",
+    "group": "usa_edu",
+    "url": "https://www.utsa.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-12T17:44:25.798356+00:00",
+    "last_batch_count": 0,
+    "age_score": 1564076.466845
+  },
+  {
+    "id": "src-uni-0072",
+    "group": "usa_edu",
+    "url": "https://financialaid.unt.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-09T15:06:37.313062+00:00",
+    "last_batch_count": 20,
+    "age_score": 1832744.95214
+  },
+  {
+    "id": "src-uni-0073",
+    "group": "usa_edu",
+    "url": "https://www.pacific.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-08T15:08:54.444760+00:00",
+    "last_batch_count": 20,
+    "age_score": 1919007.820443
+  },
+  {
+    "id": "src-uni-0074",
+    "group": "usa_edu",
+    "url": "https://scholarships.unt.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-09T15:04:46.413854+00:00",
+    "last_batch_count": 20,
+    "age_score": 1832855.851349
+  },
+  {
+    "id": "src-uni-0075",
+    "group": "usa_edu",
+    "url": "https://financialaid.wvu.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-08-07T15:08:29.199261+00:00",
+    "last_batch_count": 20,
+    "age_score": 2005433.065943
+  },
+  {
+    "id": "src-uni-0076",
+    "group": "usa_edu",
+    "url": "https://scholarships.wvu.edu/",
+    "pri": 10,
+    "last_scraped": "2026-08-07T15:09:13.083434+00:00",
+    "last_batch_count": 19,
+    "age_score": 2005389.18177
+  },
+  {
+    "id": "src-uni-0077",
+    "group": "usa_edu",
+    "url": "https://financialaid.howard.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-24T15:03:17.334572+00:00",
+    "last_batch_count": 18,
+    "age_score": 3215344.930633
+  },
+  {
+    "id": "src-uni-0078",
+    "group": "usa_edu",
+    "url": "https://financialaid.pacific.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-24T15:03:48.855802+00:00",
+    "last_batch_count": 0,
+    "age_score": 3215313.409403
+  },
+  {
+    "id": "src-uni-0079",
+    "group": "usa_edu",
+    "url": "https://scholarships.tuskegee.edu/",
+    "pri": 10,
+    "last_scraped": "2026-07-24T15:05:42.489070+00:00",
+    "last_batch_count": 1,
+    "age_score": 3215199.776136
+  },
+  {
+    "id": "src-uni-0080",
+    "group": "usa_edu",
+    "url": "https://www.clark.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-24T15:06:29.295235+00:00",
+    "last_batch_count": 1,
+    "age_score": 3215152.969972
+  },
+  {
+    "id": "src-uni-0081",
+    "group": "usa_edu",
+    "url": "https://www.wssu.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-25T15:04:13.879446+00:00",
+    "last_batch_count": 2,
+    "age_score": 3128888.385761
+  },
+  {
+    "id": "src-uni-0082",
+    "group": "usa_edu",
+    "url": "https://www.fisk.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-25T15:04:47.416728+00:00",
+    "last_batch_count": 14,
+    "age_score": 3128854.84848
+  },
+  {
+    "id": "src-uni-0083",
+    "group": "usa_edu",
+    "url": "https://www.morgan.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-25T15:06:49.984150+00:00",
+    "last_batch_count": 20,
+    "age_score": 3128732.281058
+  },
+  {
+    "id": "src-uni-0084",
+    "group": "usa_edu",
+    "url": "https://www.cpp.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-25T15:07:31.087474+00:00",
+    "last_batch_count": 18,
+    "age_score": 3128691.177735
+  },
+  {
+    "id": "src-uni-0085",
+    "group": "usa_edu",
+    "url": "https://sfs.fullerton.edu/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-25T15:14:11.090681+00:00",
+    "last_batch_count": 0,
+    "age_score": 3128291.174529
+  },
+  {
+    "id": "src-uni-0086",
+    "group": "usa_edu",
+    "url": "https://www.uapb.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-25T15:14:47.338014+00:00",
+    "last_batch_count": 6,
+    "age_score": 3128254.927196
+  },
+  {
+    "id": "src-uni-0087",
+    "group": "usa_edu",
+    "url": "https://www.chapman.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-26T15:04:35.608501+00:00",
+    "last_batch_count": 16,
+    "age_score": 3042466.65671
+  },
+  {
+    "id": "src-uni-0088",
+    "group": "usa_edu",
+    "url": "https://www.grossmont.edu/financial-aid/scholarships",
+    "pri": 10,
+    "last_scraped": "2026-07-26T15:05:08.607827+00:00",
+    "last_batch_count": 7,
+    "age_score": 3042433.657384
+  }
+]

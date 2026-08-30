@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-08-25T22:30:13.364176",
+  "chapters_evaluated": 1,
+  "total_findings": 0,
+  "novel_score": 10.0,
+  "global_tics": {},
+  "motif_totals": {
+    "\\bthe truth\\b": 1
+  },
+  "reports": [
+    {
+      "chapter": "ch_18.md",
+      "word_count": 1288,
+      "findings": [],
+      "score": 10.0,
+      "motif_counts": {
+        "\\bthe truth\\b": 1
+      },
+      "metaphor_heavy_paras": 0,
+      "four_beat_paras": 0,
+      "recursive_paras": 0,
+      "sentence_lengths": {
+        "dialogue": {
+          "n": 50,
+          "avg": 9.1,
+          "sd": 4.26
+        },
+        "action": {
+          "n": 2,
+          "avg": 9,
+          "sd": 0.0
+        },
+        "introspection": {
+          "n": 0,
+          "avg": 0,
+          "sd": 0
+        },
+        "mixed": {
+          "n": 74,
+          "avg": 11.0,
+          "sd": 7.05
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-08-26T08:56:23.058230",
+  "chapters_evaluated": 1,
+  "total_findings": 0,
+  "novel_score": 10.0,
+  "global_tics": {},
+  "motif_totals": {},
+  "reports": [
+    {
+      "chapter": "ch_32.md",
+      "word_count": 1075,
+      "findings": [],
+      "score": 10.0,
+      "motif_counts": {},
+      "metaphor_heavy_paras": 0,
+      "four_beat_paras": 0,
+      "recursive_paras": 0,
+      "sentence_lengths": {
+        "dialogue": {
+          "n": 10,
+          "avg": 5.9,
+          "sd": 4.89
+        },
+        "action": {
+          "n": 0,
+          "avg": 0,
+          "sd": 0
+        },
+        "introspection": {
+          "n": 0,
+          "avg": 0,
+          "sd": 0
+        },
+        "mixed": {
+          "n": 82,
+          "avg": 12.4,
+          "sd": 10.85
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "url": "https://x.com/codewithimanshu",
+  "domain": "x.com",
+  "exportedAt": "2026-08-24T02:17:13.806Z",
+  "note": "Only non-HttpOnly cookies accessible to page JavaScript are included.",
+  "cookies": [
+    {
+      "name": "__cuid",
+      "value": "a6fa7b8a8a204164afe2b8b386b80f2a",
+      "domain": "x.com",
+      "path": "/"
+    },
+    {
+      "name": "lang",
+      "value": "en",
+      "domain": "x.com",
+      "path": "/"
+    },
+    {
+      "name": "d_prefs",
+      "value": "MjoxLGNvbnNlbnRfdmVyc2lvbjoyLHRleHRfdmVyc2lvbjoxMDAw",
+      "domain": "x.com",
+      "path": "/"
+    },
+    {
+      "name": "__cuid",
+      "value": "a6fa7b8a8a204164afe2b8b386b80f2a",
+      "domain": "x.com",
+      "path": "/"
+    },
+    {
+      "name": "g_state",
+      "value": "{\"i_l\":0,\"i_ll\":1782011537449,\"i_b\":\"g692kKtmoDoHSjFr6yGC2hxUlsk5NdQxfCzXymGrLx0\",\"i_e\":{\"enable_itp_optimization\":24},\"i_et\":1782011537449}",
+      "domain": "x.com",
+      "path": "/"
+    },
+    {
+      "name": "personalization_id",
+      "value": "\"v1_oXrz6OrmowU/45XWG/Kz6w==\"",
+      "domain": "x.com",
+      "path": "/"
+    },
+    {
+      "name": "ads_prefs",
+      "value": "\"HBERAAA=\"",
+      "domain": "x.com",
+      "path": "/"
+    },
+    {
+      "name": "guest_id_ads",
+      "value": "v1%3A178753519886627947",
+      "domain": "x.com",
+      "path": "/"
+    },
+    {
+      "name": "guest_id_marketing",
+      "value": "v1%3A178753519886627947",
+      "domain": "x.com",
+      "path": "/"
+    },
+    {
+      "name": "guest_id",
+      "value": "v1%3A178753519886627947",
+      "domain": "x.com",
+      "path": "/"
+    },
+    {
+      "name": "twid",
+      "value": "u%3D3045433886",
+      "domain": "x.com",
+      "path": "/"
+    },
+    {
+      "name": "ct0",
+      "value": "262efd932230eec0c23b5adbad2c6443baeed2e6983bb8105850329c007dfdda6f4008cdd9225b1f3ffc0db7970271d0259f021dbd6a13da387b843e14be9b95bc245eab3d30e6d4c37764e005b2f3a8",
+      "domain": "x.com",
+      "path": "/"
+    }
+  ]
+}

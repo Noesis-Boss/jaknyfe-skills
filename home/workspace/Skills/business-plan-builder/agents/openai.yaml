@@ -1,0 +1,4 @@
+interface:
+  display_name: "Business Plan Builder"
+  short_description: "Build and stress-test a complete business plan"
+  default_prompt: "Build a rigorous business plan for my idea using market, model, strategy, go-to-market, financial, and risk analysis."

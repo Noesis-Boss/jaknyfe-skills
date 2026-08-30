@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-08-25T23:36:58.980907",
+  "chapters_evaluated": 1,
+  "total_findings": 0,
+  "novel_score": 10.0,
+  "reports": [
+    {
+      "chapter": "ch_21.md",
+      "word_count": 931,
+      "em_dash_count": 0,
+      "em_dash_per_kw": 0.0,
+      "findings": [],
+      "score": 10.0
+    }
+  ]
+}

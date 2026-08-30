@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-08-26T08:56:22.987002",
+  "chapters_evaluated": 1,
+  "total_findings": 1,
+  "novel_score": 9.85,
+  "reports": [
+    {
+      "chapter": "ch_32.md",
+      "word_count": 1075,
+      "em_dash_count": 3,
+      "em_dash_per_kw": 2.791,
+      "findings": [
+        {
+          "pattern": "em_dash_density",
+          "severity": "warn",
+          "location": "ch_32.md",
+          "excerpt": "3 em dashes / 1075 words = 2.79 per kw",
+          "note": "Em-dash density exceeds 2.0/kw threshold."
+        }
+      ],
+      "score": 9.85
+    }
+  ]
+}

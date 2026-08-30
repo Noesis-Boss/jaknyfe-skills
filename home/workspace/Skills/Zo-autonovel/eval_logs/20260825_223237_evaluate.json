@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-08-25T22:32:37.974847",
+  "chapters_evaluated": 1,
+  "total_findings": 1,
+  "novel_score": 9.85,
+  "reports": [
+    {
+      "chapter": "ch_19.md",
+      "word_count": 1286,
+      "em_dash_count": 0,
+      "em_dash_per_kw": 0.0,
+      "findings": [
+        {
+          "pattern": "rule_of_three",
+          "severity": "warn",
+          "location": "ch_19.md:sent[31:34]",
+          "excerpt": "Its houses carried money across roads. | Its officers held lands under privileges older than some roy | Its brothers answered to a master whose authority did not pa",
+          "note": "Anaphora triple starting 'Its'."
+        }
+      ],
+      "score": 9.85
+    }
+  ]
+}

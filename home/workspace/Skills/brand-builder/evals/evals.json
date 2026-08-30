@@ -1,0 +1,23 @@
+{
+  "skill_name": "brand-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build a lean brand for a Tucson-based AI automation service helping small professional firms eliminate repetitive admin work. I have no testimonials yet, but I can demonstrate a working workflow.",
+      "expected_output": "A complete eight-stage lean brand launch brief with truthful process-based proof and deferred polish.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Run only the minimum visual kit stage for my mobile dog-grooming service for busy Tucson professionals. The brand should feel dependable, warm, and easy to recognize.",
+      "expected_output": "Only a practical visual kit: colors, Google Fonts pairing, simple logo direction, and a few consistency rules.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Create the post-launch two-week iteration plan for a one-page consulting site. Visitors are reaching the page but asking what happens after they submit the form.",
+      "expected_output": "A focused signal-to-improvement plan centered on the observed CTA confusion, without recommending a broad redesign.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "title": "The Knights Templar and Jacques de Molay: A Historical Timeline",
+  "topic": "The Knights Templar (c. 1119–1312) and Jacques de Molay, 23rd and last Grand Master (c. 1244–1314)",
+  "period": "c. 1119 – 1919 (focus 1119–1314)",
+  "generated": "2026-08-10",
+  "phases": [
+    {
+      "id": "phase-1",
+      "title": "Templar Foundation (1119–1189)",
+      "events": [
+        {
+          "date": "c. 1119",
+          "title": "Founding of the Poor Fellow-Soldiers of Christ and of the Temple of Solomon",
+          "description": "Hugues de Payens and eight companion knights take vows of poverty, chastity, and obedience before Warmund, Patriarch of Jerusalem. King Baldwin II grants them quarters on the Temple Mount (the al-Aqsa compound), giving the order its name.",
+          "significance": "Birth of the first military-religious order; the small guard becomes the template for all later orders.",
+          "sources": [
+            "Barber, M. The New Knighthood: A History of the Order of the Temple (1994)",
+            "Nicholson, H. The Knights Templar: A New History (2001)",
+            "Encyclopaedia Britannica, 'Knights Templar'"
+          ]
+        },
+        {
+          "date": "1120-01",
+          "title": "Council of Nablus",
+          "description": "The first church council to formally acknowledge the new order; its canons define expectations for men who combine the monastic and military life.",
+          "significance": "First official church recognition, a step toward full papal endorsement.",
+          "sources": [
+            "Barber, M. The New Knighthood (1994)",
+            "Nicholson, H. The Knights Templar: A New History (2001)"
+          ]
+        },
+        {
+          "date": "1129-01-13",
+          "title": "Council of Troyes: the Rule is codified",
+          "description": "A council of French bishops and Cistercians, guided by Bernard of Clairvaux, writes the Rule of the Temple. Hugues de Payens tours France, England, and Iberia recruiting knights and raising funds.",
+          "significance": "Transforms a small Jerusalem guard into an international, disciplined order with papal-level legitimacy.",
+          "sources": [
+            "Rule of the Temple, in Fordham Medieval Sourcebook",
+            "Barber, M. The New Knighthood (1994)"
+          ]
+        },
+        {
+          "date": "c. 1128–1136",
+          "title": "De Laude Novae Militiae (In Praise of the New Knighthood)",
+          "description": "Bernard of Clairvaux writes the order's founding apology, arguing that killing in defense of Christendom is not murder but 'malecide' (killing evil), and that the warrior-monk is a new kind of saint.",
+          "significance": "The theological justification that made holy violence respectable and the order's prestige soar.",
+          "sources": [
+            "Bernard of Clairvaux, De Laude Novae Militiae",
+            "Barber, M. The New Knighthood (1994)"
+          ]
+        },
+        {
+          "date": "1139-03-29",
+          "title": "Omne Datum Optimum (Pope Innocent II)",
+          "description": "The papal bull that exempts the Templars from local episcopal authority, allows them to keep spoils of war, and lets them elect their own leaders.",
+          "significance": "The cornerstone of Templar independence — answerable only to the pope, immune to kings and bishops.",
+          "sources": [
+            "Papal bull Omne Datum Optimum (text in Fordham Medieval Sourcebook)",
+            "Barber, M. The New Knighthood (1994)"
+          ]
+        },
+        {
+          "date": "1147",
+          "title": "The red cross on the white mantle",
+          "description": "During the Second Crusade, Pope Eugenius III grants Templars the right to wear the red cross on their white mantles. Templars fight at Lisbon (1147) and in Iberia and the Holy Land.",
+          "significance": "The iconic Templar uniform is born; the order becomes the standing army of the Crusader states.",
+          "sources": [
+            "Barber, M. The New Knighthood (1994)",
+            "Nicholson, H. The Knights Templar: A New History (2001)"
+          ]
+        },
+        {
+          "date": "1177-11-25",
+          "title": "Battle of Montgisard",
+          "description": "Templars under Grand Master Odo de Saint-Amand fight alongside the leper king Baldwin IV and defeat Saladin's invading army in a surprise dawn charge.",
+          "significance": "Peak of Templar military prestige; a decisive check on Saladin.",
+          "sources": [
+            "Barber, M. The New Knighthood (1994)",
+            "Read, P.P. The Templars (1999)"
+          ]
+        },
+        {
+          "date": "1187-07-04",
+          "title": "Battle of Hattin and the fall of Jerusalem",
+          "description": "Saladin destroys the Crusader field army at Hattin. Grand Master Gerard de Ridefort is captured and later executed; roughly 230 Templar knights are beheaded after the battle. Jerusalem surrenders in October 1187.",
+          "significance": "Near-annihilation of the order in the Holy Land; only a handful of Templars escape.",
+          "sources": [
+            "Barber, M. The New Knighthood (1994)",
+            "Read, P.P. The Templars (1999)"
+          ]
+        },
+        {
+          "date": "1189–1191",
+          "title": "Third Crusade: Acre and Arsuf",
+          "description": "Templars rebuild under Richard the Lionheart, fighting at the siege of Acre (captured July 1191) and the Battle of Arsuf (September 1191). Robert de Sablé is elected Grand Master in 1191.",
+          "significance": "Restores Templar military standing; the order shifts its base to Acre.",
+          "sources": [
+            "Nicholson, H. The Knights Templar: A New History (2001)",
+            "Read, P.P. The Templars (1999)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "title": "Rise, Wealth, and Conflict (1191–1307)",
+      "events": [
+        {
+          "date": "1191",
+          "title": "Headquarters established at Acre",
+          "description": "After the loss of Jerusalem, Acre becomes the Templar headquarters and the order's main fortress in the Levant. The Temple in Paris and other European commanderies grow into a financial network — deposits, loans, letters of credit.",
+          "significance": "The Templars become the Crusader states' standing army and de facto bankers of Europe's kings.",
+          "sources": [
+            "Barber, M. The New Knighthood (1994)",
+            "Nicholson, H. The Knights Templar: A New History (2001)"
+          ]
+        },
+        {
+          "date": "1291-05-18",
+          "title": "Fall of Acre",
+          "description": "The last major Crusader stronghold falls to the Mamluks after a brutal siege. Grand Master Guillaume de Beaujeu is killed in the final defense; survivors escape by sea to Cyprus.",
+          "significance": "End of the Templar presence in the Holy Land; the order re-bases on Cyprus, its military raison d'être now gone.",
+          "sources": [
+            "Demurger, A. The Last Templar: The Tragedy of Jacques de Molay (2009)",
+            "Barber, M. The New Knighthood (1994)"
+          ]
+        },
+        {
+          "date": "1292",
+          "title": "Jacques de Molay elected Grand Master",
+          "description": "Born c. 1244 at Molay, Franche-Comté, de Molay joined the order around 1265 and served in Outremer. In Cyprus he is elected the 23rd Grand Master after the fall of Acre.",
+          "significance": "The man who will preside over the order's final decade — and its destruction.",
+          "sources": [
+            "Demurger, A. The Last Templar (2009)",
+            "Barber, M. The New Knighthood (1994)"
+          ]
+        },
+        {
+          "date": "1296–1298",
+          "title": "De Molay's European diplomacy",
+          "description": "De Molay visits England and meets Edward I (1296), returns to France, and in 1298 is received by Pope Boniface VIII in Rome. He presses for a new crusade and opposes any merger of the Temple with the Hospitallers.",
+          "significance": "The last serious attempt to relaunch the crusade; de Molay's opposition to union with the Hospitallers keeps the Temple independent — and exposed.",
+          "sources": [
+            "Demurger, A. The Last Templar (2009)",
+            "Nicholson, H. The Knights Templar: A New History (2001)"
+          ]
+        },
+        {
+          "date": "1306–1307",
+          "title": "De Molay in Paris; Philip IV moves against the order",
+          "description": "De Molay is in Paris and meets the new pope, Clement V, who proposes uniting the Temple and Hospitallers. Both orders' masters oppose it. Warnings circulate of accusations being fabricated; de Molay writes to the kings of Aragon and England denying the rumors.",
+          "significance": "The political stage is set: a cash-strapped Philip IV eyes Templar wealth and influence; Clement V is weak and dependent on Philip.",
+          "sources": [
+            "Demurger, A. The Last Templar (2009)",
+            "Barber, M. The Trial of the Templars (1978/2006)"
+          ]
+        },
+        {
+          "date": "1307-09-14",
+          "title": "Sealed orders for the mass arrest",
+          "description": "Philip IV's ministers, led by Guillaume de Nogaret, dispatch sealed instructions to baillis across France: all Templars are to be arrested simultaneously on the same day, their property seized.",
+          "significance": "The operation is planned in absolute secrecy — no royal official knows the target until the envelopes are opened.",
+          "sources": [
+            "Barber, M. The Trial of the Templars (1978/2006)",
+            "Demurger, A. The Last Templar (2009)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-3",
+      "title": "Arrest, Trial, and Suppression (1307–1312)",
+      "events": [
+        {
+          "date": "1307-10-13",
+          "title": "Friday the 13th: the mass arrest",
+          "description": "At dawn, Philip IV's officers arrest de Molay and several hundred Templars across France; de Molay is taken at the Temple in Paris. All are charged with heresy, blasphemy, and sodomy.",
+          "significance": "The origin of the Friday-the-13th superstition (popular attribution); the order never recovers.",
+          "sources": [
+            "Barber, M. The Trial of the Templars (1978/2006)",
+            "Demurger, A. The Last Templar (2009)"
+          ]
+        },
+        {
+          "date": "1307-10-24/25",
+          "title": "First interrogations and confessions under torture",
+          "description": "De Molay and other leaders confess during the first interrogations: denial of Christ, spitting on the cross, obscene kisses, worship of an idol. Torture is systematic.",
+          "significance": "These coerced confessions become the foundation of the crown's case.",
+          "sources": [
+            "Barber, M. The Trial of the Templars (1978/2006)",
+            "Trial depositions, Archives Nationales, Paris"
+          ]
+        },
+        {
+          "date": "1307-11-22",
+          "title": "Pastoralis Praeeminentiae",
+          "description": "Pope Clement V, asserting papal authority over the case, orders all Christian monarchs to arrest Templars and seize their property in the pope's name.",
+          "significance": "Turns a French royal action into a Europe-wide papal proceeding.",
+          "sources": [
+            "Papal bull Pastoralis Praeeminentiae (text in Fordham Medieval Sourcebook)",
+            "Barber, M. The Trial of the Templars (1978/2006)"
+          ]
+        },
+        {
+          "date": "1308-06",
+          "title": "De Molay retracts his confession",
+          "description": "Before the papal commission at Poitiers, de Molay retracts everything, declaring the order innocent and himself guilty only of having lied to save his life.",
+          "significance": "Frames the entire trial as coercion; from this point the case is a war between papal inquiry and royal pressure.",
+          "sources": [
+            "Barber, M. The Trial of the Templars (1978/2006)",
+            "Demurger, A. The Last Templar (2009)"
+          ]
+        },
+        {
+          "date": "1310-05-12",
+          "title": "54 Templars burned as relapsed heretics",
+          "description": "After retracting their confessions, 54 Templars are burned at the stake outside Paris for relapsing. The executions break the back of the remaining defendants' resistance.",
+          "significance": "The crown's answer to anyone who dares recant; most surviving Templars thereafter plead guilty to avoid the fire.",
+          "sources": [
+            "Barber, M. The Trial of the Templars (1978/2006)",
+            "Demurger, A. The Last Templar (2009)"
+          ]
+        },
+        {
+          "date": "1311-10-16",
+          "title": "Council of Vienne convenes",
+          "description": "Clement V convenes the Council of Vienne to decide the order's fate. Templar defense testimony is suppressed; the order is never permitted a formal defense.",
+          "significance": "The verdict is a foregone conclusion; the council is the stage for the abolition.",
+          "sources": [
+            "Barber, M. The Trial of the Templars (1978/2006)",
+            "Encyclopaedia Britannica, 'Knights Templar'"
+          ]
+        },
+        {
+          "date": "1312-03-22",
+          "title": "Vox in Excelso: the order is dissolved",
+          "description": "Clement V issues the bull Vox in Excelso abolishing the Order of the Temple. It is not a judicial condemnation but a 'provision' — suppression 'with a heavy heart' for the common good.",
+          "significance": "The official end of the Knights Templar after nearly two centuries.",
+          "sources": [
+            "Papal bull Vox in Excelso (text in Fordham Medieval Sourcebook)",
+            "Barber, M. The Trial of the Templars (1978/2006)"
+          ]
+        },
+        {
+          "date": "1312-05-02",
+          "title": "Ad Providam: property transferred",
+          "description": "By the bull Ad Providam, Clement V orders Templar assets transferred to the Hospitallers. In France, Philip IV extracts much of the wealth before it moves — compensation for his 'costs'.",
+          "significance": "The financial spoils are divided; the crown's real motive is visible in the settlement.",
+          "sources": [
+            "Papal bull Ad Providam (text in Fordham Medieval Sourcebook)",
+            "Barber, M. The Trial of the Templars (1978/2006)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-4",
+      "title": "Execution and Legacy (1314 and after)",
+      "events": [
+        {
+          "date": "1314-03-18",
+          "title": "Jacques de Molay and Geoffroi de Charney burned at the stake",
+          "description": "A papal commission of cardinals sentences de Molay and the Preceptor of Normandy, Geoffroi de Charney, to perpetual imprisonment as relapsed heretics. Both publicly retract their confessions on the pyre — de Molay proclaims the order's innocence — and are burned that evening on the Île aux Juifs in the Seine, near Notre-Dame. Legend has it de Molay summoned Clement V and Philip IV to God's tribunal within a year.",
+          "significance": "The last Grand Master dies refusing the confession; his supposed curse becomes the seed of the Templar myth.",
+          "sources": [
+            "Demurger, A. The Last Templar (2009)",
+            "Barber, M. The Trial of the Templars (1978/2006)",
+            "Contemporary chronicles (e.g., Continuation of the Chronicle of Guillaume de Nangis)"
+          ]
+        },
+        {
+          "date": "1314-04-20",
+          "title": "Death of Pope Clement V",
+          "description": "Clement V dies at Roquemaure, Avignon, roughly a month after de Molay's execution.",
+          "significance": "First death in the legendary curse; contemporaries note the timing.",
+          "sources": [
+            "Barber, M. The Trial of the Templars (1978/2006)",
+            "Demurger, A. The Last Templar (2009)"
+          ]
+        },
+        {
+          "date": "1314-11-29",
+          "title": "Death of Philip IV",
+          "description": "Philip the Fair dies at Fontainebleau, eight months after de Molay's execution.",
+          "significance": "Both persecutors dead within a year — the curse legend is sealed in popular memory.",
+          "sources": [
+            "Barber, M. The Trial of the Templars (1978/2006)",
+            "Demurger, A. The Last Templar (2009)"
+          ]
+        },
+        {
+          "date": "1314 – 1919",
+          "title": "Legacy: myth, Freemasonry, and the Order of DeMolay",
+          "description": "After 1314, surviving Templars scatter; legends of hidden treasure, the Holy Grail, and secret survival grow through the centuries. In the 18th century, Templar symbolism enters Freemasonry. In 1919, Frank S. Land founds the Order of DeMolay for young men in Kansas City, naming it for Jacques de Molay as a model of loyalty and courage.",
+          "significance": "The historical order ends in 1312–1314; its name and myth endure — including a youth order directly tied to Don's Masonic/DeMolay work.",
+          "sources": [
+            "Partner, P. The Murdered Magicians: The Templars and Their Myth (1982)",
+            "DeMolay International — history of the Order of DeMolay",
+            "Wikipedia: 'Knights Templar', 'Jacques de Molay' (cross-reference)"
+          ]
+        }
+      ]
+    }
+  ]
+}
