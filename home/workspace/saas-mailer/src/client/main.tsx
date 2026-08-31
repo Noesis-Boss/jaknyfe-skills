@@ -9,7 +9,7 @@ const api = async (path: string, options: RequestInit = {}) => {
 document.title = "Outbound workspace";
 
 type Contact = { id: string; email: string; first_name: string | null; last_name: string | null; created_at: string };
-type Campaign = { id: string; name: string; status: string; created_at: string };
+type Campaign = { id: string; name: string; status: string; created_at: string; step_count?: number };
 type Account = { id: string; provider: string; email: string; status: string };
 type EventRow = { id: string; type: string; contact_id: string | null; created_at: string };
 
@@ -21,7 +21,7 @@ function Dashboard() {
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [events, setEvents] = useState<EventRow[]>([]);
   const [mockEmail, setMockEmail] = useState("");
-  const [form, setForm] = useState({ name: "", subject: "", body: "" });
+  const [form, setForm] = useState<{ name: string; steps: Array<{ subject: string; body: string; delay: number }> }>({ name: "", steps: [{ subject: "", body: "", delay: 0 }] });
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const loadAll = async () => {
@@ -49,10 +49,13 @@ function Dashboard() {
   };
   const createCampaign = async (e: React.FormEvent) => {
     e.preventDefault();
-    const result = await api("/api/campaigns", { method: "POST", body: JSON.stringify({ name: form.name, steps: [{ subject: form.subject, body: form.body }] }) });
-    if (result.id) { setNotice(`Campaign "${result.name}" created as draft`); setForm({ name: "", subject: "", body: "" }); loadAll(); }
+    const result = await api("/api/campaigns", { method: "POST", body: JSON.stringify({ name: form.name, steps: form.steps.map(st => ({ subject: st.subject, body: st.body, delay_minutes: st.delay })) }) });
+    if (result.id) { setNotice(`Campaign "${result.name}" created as draft`); setForm({ name: "", steps: [{ subject: "", body: "", delay: 0 }] }); loadAll(); }
     else setNotice(result.error || "Unable to create campaign");
   };
+  const updateStep = (index: number, patch: Partial<{ subject: string; body: string; delay: number }>) => setForm(f => ({ ...f, steps: f.steps.map((st, i) => i === index ? { ...st, ...patch } : st) }));
+  const addStep = () => setForm(f => ({ ...f, steps: [...f.steps, { subject: "", body: "", delay: 0 }] }));
+  const removeStep = (index: number) => setForm(f => f.steps.length > 1 ? { ...f, steps: f.steps.filter((_, i) => i !== index) } : f);
   const approve = async (id: string) => {
     const result = await api(`/api/campaigns/${id}/approve`, { method: "POST" });
     if (result.id) { setNotice(`Campaign "${result.name}" approved`); loadAll(); }
@@ -138,11 +141,19 @@ function Dashboard() {
           <div className="panel-head"><div><p className="eyebrow">Sequences</p><h3>Campaigns ({campaigns.length})</h3></div></div>
           <form className="create-campaign" onSubmit={createCampaign}>
             <input aria-label="Campaign name" placeholder="Campaign name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required />
-            <input aria-label="Subject" placeholder="First email subject" value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })} required />
-            <textarea aria-label="Body" placeholder="First email body" value={form.body} onChange={e => setForm({ ...form, body: e.target.value })} required />
+            {form.steps.map((st, i) => <fieldset className="step-row" key={i}>
+              <legend>Step {i + 1}</legend>
+              <input aria-label={`Step ${i + 1} subject`} placeholder={i === 0 ? "First email subject" : `Email ${i + 1} subject`} value={st.subject} onChange={e => updateStep(i, { subject: e.target.value })} required />
+              <textarea aria-label={`Step ${i + 1} body`} placeholder={`Email ${i + 1} body`} value={st.body} onChange={e => setForm(f => ({ ...f, steps: f.steps.map((x, j) => j === i ? { ...x, body: e.target.value } : x) }))} required />
+              <div className="step-meta">
+                <label>Delay after previous step (minutes)<input type="number" min={0} aria-label={`Step ${i + 1} delay`} value={st.delay} onChange={e => updateStep(i, { delay: Math.max(0, Number(e.target.value) || 0) })} /></label>
+                {form.steps.length > 1 && <button type="button" className="text-button" onClick={() => removeStep(i)}>Remove ✕</button>}
+              </div>
+            </fieldset>)}
+            <button type="button" className="text-button" onClick={addStep}>+ Add step</button>
             <button type="submit">Create draft campaign</button>
           </form>
-          {campaigns.length ? campaigns.map(camp => <div className="record" key={camp.id}><div><b>{camp.name}</b><small>{camp.status} · created {camp.created_at?.slice(0, 10)}</small></div>{camp.status === "draft" && <button className="text-button" onClick={() => approve(camp.id)}>Approve ✓</button>}{camp.status !== "draft" && <button className="text-button" onClick={() => enrollAll(camp)}>Enroll contacts</button>}</div>) : <div className="empty"><span>∿</span><b>No campaigns yet</b><p>Create your first sequence above.</p></div>}
+          {campaigns.length ? campaigns.map(camp => <div className="record" key={camp.id}><div><b>{camp.name}</b><small>{camp.status} · {camp.step_count ?? 1} step{(camp.step_count ?? 1) === 1 ? "" : "s"} · created {camp.created_at?.slice(0, 10)}</small></div>{camp.status === "draft" && <button className="text-button" onClick={() => approve(camp.id)}>Approve ✓</button>}{camp.status !== "draft" && <button className="text-button" onClick={() => enrollAll(camp)}>Enroll contacts</button>}</div>) : <div className="empty"><span>∿</span><b>No campaigns yet</b><p>Create your first sequence above.</p></div>}
         </section>}
 
         {section === "Sending accounts" && <section className="panel">
