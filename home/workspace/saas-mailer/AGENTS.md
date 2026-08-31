@@ -19,6 +19,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 ## Feature Log
 - 2026-08-31: Dashboard rebuilt from single-screen MVP into five working sections (Overview, Contacts, Campaigns, Sending accounts, Events) with live counts, real nav, CSV import in-section, campaign create (name + first step) and draft approval, and provider list. Added tenant-scoped `GET /api/contacts` and `GET /api/campaigns`; sending-accounts and campaigns list responses wrapped as `{accounts}`/`{campaigns}`; cache-bust bumped to `v=20260831-1`. Verified in-browser: CSV import (3 contacts), campaign create/refresh/approve, empty states for accounts/events. `bun test` 32/32; screenshot-verified per section.
 
+- 2026-08-31: Added enroll-into-campaign UI: each approved campaign gets an "Enroll contacts" action that enrolls all imported contacts via `POST /api/campaigns/:id/enroll`, shows the count in a notice, hides the button after success, and is idempotent on repeat (INSERT OR IGNORE). Verified in-browser (2 contacts enrolled; second call returns 0) and on the live production site after restart; commit `83aa463`.
+
 - 2026-08-22: Fixed Google Contacts CSV imports by recognizing `E-mail 1 - Value` and equivalent numbered email columns after header normalization. The supplied export parses to 649 valid contacts; 13 contact tests pass.
 
 - 2026-08-22: Contact CSV import now detects common CRM/export aliases for email and names, splits full-name columns, and preserves all other columns as custom fields. Dedicated parser tests pass.
