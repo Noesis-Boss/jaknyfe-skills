@@ -15,6 +15,7 @@ import hashlib
 from datetime import datetime, date
 from urllib.parse import urlparse
 from db_safety import guarded_connection, make_backup
+from verification import is_search_aggregator, is_installer_url
 
 CONV_DIR = "/home/.z/workspaces/con_ElTSTCT8Hr8tlAvw"
 DBS = [
@@ -216,12 +217,12 @@ def verify_application_url(url):
     """Verify that the application URL is reachable."""
     try:
         result = subprocess.run(
-            ["curl", "-sL", "-o", "/dev/null", "-w", "%{http_code}", 
+            ["curl", "-sL", "-o", "/dev/null", "-w", "%{http_code} %{url_effective}", 
              "--max-time", "10", "-A", "Mozilla/5.0", url],
             capture_output=True, text=True, timeout=15
         )
-        code = result.stdout.strip()
-        return code in ("200", "301", "302", "307", "308")
+        code, final_url = result.stdout.strip().split(" ", 1)
+        return code in ("200", "301", "302", "307", "308") and not is_search_aggregator(final_url) and not is_installer_url(final_url)
     except:
         return False
 
@@ -242,12 +243,15 @@ def is_duplicate(name, organization, db_path):
 
 def insert_scholarship(data, db_path, source="bold_org"):
     """Insert one record under a validated lock and transaction."""
+    application_url = str(data.get("application_url", "")).strip()
+    if not application_url or is_search_aggregator(application_url) or is_installer_url(application_url):
+        raise ValueError("refusing non-direct application URL")
     with guarded_connection(db_path) as conn:
         name = data.get("scholarship_name", "")
         source_id = f"bold_{TODAY}_{name[:30].replace(' ', '_')}"
         name_hash = hashlib.md5(normalize_name(name).encode()).hexdigest()
         cols = ["source", "source_id", "scholarship_name", "organization", "organization_type", "description", "eligibility", "amount_min", "amount_max", "amount_display", "deadline", "application_url", "category", "education_level", "field_of_study", "state_restriction", "gpa_min", "citizenship", "ethnicity", "gender", "url_status", "last_checked", "name_hash", "active", "created_at", "updated_at"]
-        vals = [source, source_id, name, data.get("organization", ""), None, data.get("description", ""), data.get("eligibility", ""), data.get("amount_min"), data.get("amount_max"), data.get("amount_display", ""), data.get("deadline", ""), data.get("application_url", ""), data.get("category", ""), data.get("education_level", ""), None, data.get("state_restriction", "US"), data.get("gpa_min"), "None", data.get("ethnicity", ""), data.get("gender", ""), "active" if data.get("application_url") else "inactive", TODAY, name_hash, 1, TODAY, TODAY]
+        vals = [source, source_id, name, data.get("organization", ""), None, data.get("description", ""), data.get("eligibility", ""), data.get("amount_min"), data.get("amount_max"), data.get("amount_display", ""), data.get("deadline", ""), application_url, data.get("category", ""), data.get("education_level", ""), None, data.get("state_restriction", "US"), data.get("gpa_min"), "None", data.get("ethnicity", ""), data.get("gender", ""), "active", TODAY, name_hash, 1, TODAY, TODAY]
         placeholders = ",".join(["?"] * len(cols))
         conn.execute(f"INSERT INTO scholarships ({','.join(cols)}) VALUES ({placeholders})", vals)
     return True
@@ -311,12 +315,9 @@ def main():
             
             # Verify application URL
             app_url = data.get("application_url", "")
-            if app_url:
-                verified = verify_application_url(app_url)
-                if not verified:
-                    failed_urls.append(url)
-                    # Still insert but mark inactive
-                    data["application_url"] = app_url
+            if not app_url or not verify_application_url(app_url):
+                failed_urls.append(url)
+                continue
             
             # Update stats
             cat = data.get("category", "Other")
