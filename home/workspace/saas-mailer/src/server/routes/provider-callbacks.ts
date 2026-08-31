@@ -37,7 +37,11 @@ export function createProviderCallbackRoutes(database: Database | PostgresDataba
       if (isPostgres(database)) await connectSendingAccountPostgres(database, tenant.organizationId, { provider, email, credentials });
       else connectSendingAccount(database, tenant.organizationId, { provider, email, credentials });
       return c.redirect("/?connected=" + provider);
-    } catch { return c.json({ error: "Unable to complete provider connection" }, 400); }
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      console.error(JSON.stringify({ event: "provider_connection_failed", provider: c.req.param("provider"), reason: message }));
+      return c.json({ error: "Unable to complete provider connection" }, 400);
+    }
   });
   return routes;
 }
