@@ -36,7 +36,7 @@ QUEUE_PATH = "/home/workspace/Skills/scholarship-discovery/scripts/batch_queue.j
 DBS = [DB_PATH, SITE_DB_PATH]
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; ScholarSearch/2.0)"}
-REQUEST_TIMEOUT = 15
+REQUEST_TIMEOUT = 6
 PARSE_BUDGET_SEC = 8
 SEARCH_FALLBACK_PER_SOURCE = 5
 BATCH_LIMIT_DEFAULT = 200
@@ -531,7 +531,7 @@ def main():
     print(f"Before: {before}")
     
     # Pick sources
-    sources = pick_sources(queue, max(30, min(80, limit // 3)))
+    sources = pick_sources(queue, max(12, min(20, limit // 5)))
     print(f"Picked {len(sources)} sources")
     
     all_candidates = []
@@ -539,7 +539,7 @@ def main():
     
     # Process sources in parallel with thread pool
     remaining = limit
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor(max_workers=10) as executor:
         futures = {}
         for source in sources:
             if remaining <= 0:
