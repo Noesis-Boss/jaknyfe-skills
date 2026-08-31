@@ -1,0 +1,16 @@
+{
+  "sources": {
+    "universities": 8,
+    "sponsors": 6,
+    "associations": 6,
+    "government_nonprofit": 6
+  },
+  "raw_candidates": 334,
+  "verified_candidates": 20,
+  "rejected": 18,
+  "committed": true,
+  "added_each_db": [
+    12,
+    12
+  ]
+}
