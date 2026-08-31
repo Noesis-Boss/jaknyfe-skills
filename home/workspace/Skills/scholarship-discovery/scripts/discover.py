@@ -45,6 +45,7 @@ except ImportError:
     BeautifulSoup = None  # optional HTML parse fallback
 
 from crawl_directory_sources import fetch as fetch_directory, individual_links, parse_detail
+from db_safety import guarded_connection, make_backup
 
 DATA_DIR = "/home/workspace/scholarsearch/data"
 MAIN_DB_PATH = "/home/workspace/scholarsearch/data/processed/scholarships.db"
@@ -149,7 +150,6 @@ def add_scholarship(conn: sqlite3.Connection, scholarship: Dict) -> int:
             scholarship.get("link_notes"),
         ),
     )
-    conn.commit()
     return cur.lastrowid
 
 
@@ -525,8 +525,7 @@ def batch_insert(scholarships: List[Dict]) -> Dict:
         verified += 1
         try:
             for db_path in DBS:
-                conn = get_db_connection(db_path)
-                try:
+                with guarded_connection(db_path) as conn:
                     if is_dup(conn, s):
                         raise ValueError(f"duplicate detected during insert: {db_path}")
                     add_scholarship(conn, s)
@@ -534,10 +533,7 @@ def batch_insert(scholarships: List[Dict]) -> Dict:
                         "UPDATE scholarships SET url_status = ?, last_checked = ?, link_notes = ?, active = 1 WHERE id = last_insert_rowid()",
                         (s["url_status"], s["last_checked"], s["link_notes"]),
                     )
-                    conn.commit()
                     added_total += 1
-                finally:
-                    conn.close()
         except Exception as e:
             errors.append(str(e))
 
@@ -574,6 +570,9 @@ def main():
     parser.add_argument("--input", help="Optional JSON file of scholarships to insert")
     parser.add_argument("--json-input", action="store_true", help="Expect JSON from stdin")
     args = parser.parse_args()
+
+    backups = {db_path: make_backup(db_path) for db_path in DBS}
+    print("Validated backups created:", backups)
 
     before = stats()
     print("Before:", before)

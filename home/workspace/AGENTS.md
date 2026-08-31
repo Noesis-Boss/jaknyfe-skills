@@ -36,6 +36,8 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 
 - 2026-08-31: Hardened `Skills/scholarship-discovery/scripts/run_discovery_batch.py` so its guarded mutation path rejects missing, aggregator, installer, redirected-aggregator, or failed application URLs before insertion. A bounded run created validated backups and made no database changes; discovery remains paused pending a runner that produces qualifying candidates.
 
+- 2026-08-31: Wired the canonical global runner `Skills/scholarship-discovery/scripts/discover.py` to `db_safety.py`: validated backups before batches and exclusive rollback-safe transactions for inserts. Syntax and 10 safety/discovery tests pass.
+
 - 2026-08-30: Added `Skills/scholarship-discovery/scripts/db_safety.py` guards: validated non-zero/integrity-checked databases, WAL checkpointed backups, per-database lock files, and rollback-safe transactions. Wired into `run_discovery_batch.py`; 3 safety tests pass. Discovery mutations must remain paused until all mutating runners use these primitives.
 
 - 2026-08-30: A stalled discovery runner truncated both ScholarSearch SQLite files to zero bytes before insertion. Restored both from `backup-university-20260830-205240`; SQLite integrity checks pass. Restored counts: primary 11,459 total / 711 verified active; site mirror 12,083 total / 1,105 verified active. Do not run the affected runner until it uses atomic database writes and a lock/backup guard.
