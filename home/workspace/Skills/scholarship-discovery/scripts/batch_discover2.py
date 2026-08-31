@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from typing import List, Dict, Optional, Tuple
 import requests
 from bs4 import BeautifulSoup
+from db_safety import guarded_connection, make_backup
 
 CONV_WORKSPACE = "/home/.z/workspaces/con_3iAHN4wWm8rptujP"
 SEARCH_DIR = os.path.join(CONV_WORKSPACE, "read_webpage")
@@ -198,7 +199,6 @@ def add_scholarship(conn: sqlite3.Connection, scholarship: Dict) -> int:
             scholarship.get("link_notes"),
         ),
     )
-    conn.commit()
     return cur.lastrowid
 
 def stats():
@@ -496,6 +496,8 @@ def main():
     parser.add_argument("--skip-dupes", action="store_true")
     args = parser.parse_args()
     limit = args.limit
+    for path in DB_PATHS:
+        make_backup(path)
     
     # Load all search result files
     search_files = []
@@ -608,9 +610,8 @@ def main():
             s["form_url"] = vr["final_url"]
         
         for path in DB_PATHS:
-            conn = sqlite3.connect(path)
-            add_scholarship(conn, s)
-            conn.close()
+            with guarded_connection(path) as conn:
+                add_scholarship(conn, s)
         added += 1
         verified.append(s)
     

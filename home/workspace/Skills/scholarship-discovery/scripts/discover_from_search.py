@@ -5,6 +5,7 @@ Processes all web_search*.json files in conversation workspace,
 extracts scholarship data from structured snippets, verifies links, and inserts.
 """
 import os, sys, json, re, sqlite3, hashlib, time, random, requests
+from db_safety import guarded_connection, make_backup
 from datetime import datetime, timezone
 from typing import List, Dict, Optional
 
@@ -334,7 +335,6 @@ def add_scholarship(conn: sqlite3.Connection, scholarship: Dict) -> int:
             scholarship.get("link_notes"),
         ),
     )
-    conn.commit()
     return cur.lastrowid
 
 def stats():
@@ -355,6 +355,9 @@ def main():
     for arg in sys.argv[1:]:
         if arg.isdigit():
             limit = int(arg)
+
+    for path in DB_PATHS:
+        make_backup(path)
     
     # Load all search result files
     candidates = []
@@ -436,9 +439,8 @@ def main():
         
         # Insert into DBs
         for path in DB_PATHS:
-            conn = get_conn(path)
-            add_scholarship(conn, c)
-            conn.close()
+            with guarded_connection(path) as conn:
+                add_scholarship(conn, c)
         added += 1
         verified.append(c)
     
