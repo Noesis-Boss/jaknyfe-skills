@@ -16,6 +16,7 @@ import subprocess
 from datetime import datetime, timezone
 from typing import List, Dict, Optional, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from db_safety import guarded_connection, make_backup
 
 try:
     import requests
@@ -140,7 +141,6 @@ def add_scholarship(conn: sqlite3.Connection, scholarship: Dict) -> int:
             scholarship.get("link_notes"),
         ),
     )
-    conn.commit()
     return cur.lastrowid
 
 def verify_link(url: Optional[str], timeout: int = REQUEST_TIMEOUT) -> Dict:
@@ -437,11 +437,14 @@ def stats():
 def batch_insert(scholarships: List[Dict]) -> Dict:
     added = 0
     errors = 0
+    for db in DBS:
+        make_backup(db)
     for s in scholarships:
         for db in DBS:
             try:
-                conn = sqlite3.connect(db)
-                if not is_dup(conn, s):
+                with guarded_connection(db) as conn:
+                    if is_dup(conn, s):
+                        continue
                     # Verify link if URL exists
                     if s.get("application_url"):
                         v = verify_link(s["application_url"])
@@ -459,7 +462,6 @@ def batch_insert(scholarships: List[Dict]) -> Dict:
                     
                     add_scholarship(conn, s)
                     added += 1
-                conn.close()
             except Exception as e:
                 errors += 1
                 print(f"  DB error: {e}")

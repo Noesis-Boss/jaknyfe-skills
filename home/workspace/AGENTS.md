@@ -34,6 +34,12 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 
 ## Issue Log
 
+- 2026-08-31: Continued ScholarSearch discovery safety audit. Found `Skills/scholarship-discovery/scripts/discover2.py` still used direct SQLite commits; replaced its insert path with validated backups and lock-protected rollback-safe transactions. Full Python discovery safety/recovery/verification suite passes 10/10. A guarded discovery batch produced 0 additions and left both databases intact.
+
+- 2026-08-31: Continued ScholarSearch discovery pipeline work. Added structured rejection evidence and per-source yield counters to `Skills/scholarship-discovery/scripts/discovery_pipeline.py`; full Python safety/recovery/verification suite passes 10/10. Commit `e2c3116`.
+
+- 2026-08-31: Continued ScholarSearch discovery rollout after safety wiring. Added canonical application-URL normalization to `Skills/scholarship-discovery/scripts/discovery_pipeline.py`, removing tracking parameters and rejecting duplicate endpoints across differing titles/sponsors; 10 Python discovery safety/recovery/verification tests pass. Commit `a6146e7`.
+
 - 2026-08-31: Wired legacy search discovery writers `discover_search.py` and `global_batch_discover.py` to validated backups, lock-protected transactions, and rollback-safe insertion. Removed direct commits from insertion helpers; Python safety/recovery/verification suite passes 10/10. Commit `fdd7ccb`.
 
 - 2026-08-31: Hardened `Skills/scholarship-discovery/scripts/run_discovery_batch.py` so its guarded mutation path rejects missing, aggregator, installer, redirected-aggregator, or failed application URLs before insertion. A bounded run created validated backups and made no database changes; discovery remains paused pending a runner that produces qualifying candidates.
