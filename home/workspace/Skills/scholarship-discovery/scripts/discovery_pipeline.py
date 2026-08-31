@@ -7,6 +7,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
+from urllib.parse import parse_qsl, urlencode, urlunparse
 
 from link_recovery import recover_application_url
 from verification import verify_candidate
@@ -23,22 +24,35 @@ def normalize_candidate(candidate: dict) -> dict:
     result["scholarship_name"] = " ".join(str(result.get("scholarship_name", "")).split())
     result["organization"] = " ".join(str(result.get("organization", "")).split())
     result["source_provenance"] = result.get("source_provenance") or result.get("source_url") or result.get("website")
+    result["canonical_application_url"] = canonical_url(result.get("application_url", ""))
     return result
+
+
+def canonical_url(value: str) -> str:
+    parsed = urlparse(str(value).strip())
+    if not parsed.scheme or not parsed.netloc:
+        return ""
+    query = [(key, value) for key, value in parse_qsl(parsed.query) if not key.lower().startswith(("utm_", "fbclid"))]
+    return urlunparse((parsed.scheme.lower(), parsed.netloc.lower().removeprefix("www."), parsed.path.rstrip("/") or "/", "", urlencode(sorted(query)), ""))
 
 
 def run_discovery(source_batch: list[dict], limit: int, fetcher, searcher) -> dict:
     report = {"discovered": len(source_batch), "normalized": 0, "verified": 0, "recovered": 0, "rejected": 0, "review": 0, "by_source": {}}
     seen = set()
+    seen_urls = set()
     for raw in source_batch[:limit]:
         candidate = normalize_candidate(raw)
         report["normalized"] += 1
         source = str(candidate.get("source") or candidate.get("source_url") or "unknown")
         counts = report["by_source"].setdefault(source, Counter())
-        if not candidate.get("scholarship_name") or not candidate.get("organization") or _key(candidate) in seen:
+        candidate_url = candidate.get("canonical_application_url", "")
+        if not candidate.get("scholarship_name") or not candidate.get("organization") or _key(candidate) in seen or (candidate_url and candidate_url in seen_urls):
             report["rejected"] += 1
             counts["rejected"] += 1
             continue
         seen.add(_key(candidate))
+        if candidate_url:
+            seen_urls.add(candidate_url)
         result = verify_candidate(candidate, fetcher)
         if result["score"] in {"A", "B"}:
             report["verified"] += 1
