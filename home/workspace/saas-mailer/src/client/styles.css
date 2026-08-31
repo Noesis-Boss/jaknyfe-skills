@@ -13,3 +13,4 @@ nav button{background:none;border:0;color:var(--muted);font:inherit;font-size:.7
 .record>div{display:grid;gap:.25rem}
 .record .text-button{margin-left:auto}
 .record:first-of-type{border-top:0}
+.connect-row{display:grid;gap:.6rem;margin:.75rem 0 1rem}
