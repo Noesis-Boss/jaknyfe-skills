@@ -57,6 +57,13 @@ function Dashboard() {
     if (result.id) { setNotice(`Campaign "${result.name}" approved`); loadAll(); }
     else setNotice(result.error || "Unable to approve campaign");
   };
+  const enrollAll = async (camp: Campaign) => {
+    const ids = contacts.map(c => c.id);
+    if (!ids.length) { setNotice("Import contacts before enrolling them"); return; }
+    const result = await api(`/api/campaigns/${camp.id}/enroll`, { method: "POST", body: JSON.stringify({ contact_ids: ids }) });
+    setNotice(result.enrolled != null ? `${result.enrolled} contact${result.enrolled === 1 ? "" : "s"} enrolled in "${camp.name}"` : result.error || "Unable to enroll contacts");
+    loadAll();
+  };
   const logout = async () => { await api("/api/auth/logout", { method: "POST" }); location.reload(); };
 
   const navItems = ["Overview", "Contacts", "Campaigns", "Sending accounts", "Events"];
@@ -123,7 +130,7 @@ function Dashboard() {
             <textarea aria-label="Body" placeholder="First email body" value={form.body} onChange={e => setForm({ ...form, body: e.target.value })} required />
             <button type="submit">Create draft campaign</button>
           </form>
-          {campaigns.length ? campaigns.map(camp => <div className="record" key={camp.id}><div><b>{camp.name}</b><small>{camp.status} · created {camp.created_at?.slice(0, 10)}</small></div>{camp.status === "draft" && <button className="text-button" onClick={() => approve(camp.id)}>Approve ✓</button>}</div>) : <div className="empty"><span>∿</span><b>No campaigns yet</b><p>Create your first sequence above.</p></div>}
+          {campaigns.length ? campaigns.map(camp => <div className="record" key={camp.id}><div><b>{camp.name}</b><small>{camp.status} · created {camp.created_at?.slice(0, 10)}</small></div>{camp.status === "draft" && <button className="text-button" onClick={() => approve(camp.id)}>Approve ✓</button>}{camp.status !== "draft" && <button className="text-button" onClick={() => enrollAll(camp)}>Enroll contacts</button>}</div>) : <div className="empty"><span>∿</span><b>No campaigns yet</b><p>Create your first sequence above.</p></div>}
         </section>}
 
         {section === "Sending accounts" && <section className="panel">
