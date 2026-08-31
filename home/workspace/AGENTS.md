@@ -34,6 +34,8 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 
 ## Issue Log
 
+- 2026-08-31: Continued ScholarSearch discovery. Hardened `Skills/scholarship-discovery/scripts/discover2.py` so candidates are fetched and must pass A/B direct-application verification before insertion; aggregator and installer URLs are rejected. The safety/verification suite passes 10/10. Two bounded runs timed out before producing a result; both databases remain intact at 711 and 1,105 verified active records.
+
 - 2026-08-31: Continued ScholarSearch discovery safety audit. Found `Skills/scholarship-discovery/scripts/discover2.py` still used direct SQLite commits; replaced its insert path with validated backups and lock-protected rollback-safe transactions. Full Python discovery safety/recovery/verification suite passes 10/10. A guarded discovery batch produced 0 additions and left both databases intact.
 
 - 2026-08-31: Continued ScholarSearch discovery pipeline work. Added structured rejection evidence and per-source yield counters to `Skills/scholarship-discovery/scripts/discovery_pipeline.py`; full Python safety/recovery/verification suite passes 10/10. Commit `e2c3116`.

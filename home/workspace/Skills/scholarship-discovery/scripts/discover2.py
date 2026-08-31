@@ -17,6 +17,7 @@ from datetime import datetime, timezone
 from typing import List, Dict, Optional, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from db_safety import guarded_connection, make_backup
+from verification import is_search_aggregator, is_installer_url, verify_candidate
 
 try:
     import requests
@@ -440,20 +441,24 @@ def batch_insert(scholarships: List[Dict]) -> Dict:
     for db in DBS:
         make_backup(db)
     for s in scholarships:
+        def fetch_candidate(url):
+            response = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT, allow_redirects=True)
+            return type("Response", (), {"url": response.url, "status": response.status_code, "content_type": response.headers.get("content-type", ""), "body": response.text, "title": "", "links": []})()
+
+        candidate_result = verify_candidate(s, fetch_candidate)
+        if candidate_result.get("score") not in {"A", "B"}:
+            continue
+        if is_search_aggregator(s.get("application_url", "")) or is_installer_url(s.get("application_url", "")):
+            continue
         for db in DBS:
             try:
                 with guarded_connection(db) as conn:
                     if is_dup(conn, s):
                         continue
-                    # Verify link if URL exists
                     if s.get("application_url"):
                         v = verify_link(s["application_url"])
-                        if not v.get("ok"):
-                            if "http_404" in v.get("reason", "") or "http_503" in v.get("reason", ""):
-                                s["link_notes"] = f"Link failed: {v['reason']}"
-                                s["application_url"] = v.get("final_url", s["application_url"])
-                            else:
-                                s["link_notes"] = f"Link check: {v.get('reason', 'unknown')}"
+                        if not v.get("ok") or is_search_aggregator(v.get("final_url", s["application_url"])) or is_installer_url(v.get("final_url", s["application_url"])):
+                            continue
                     
                     # Tag metadata
                     raw_text = f"{s.get('scholarship_name','')} {s.get('description','')} {s.get('source_url','')}"
