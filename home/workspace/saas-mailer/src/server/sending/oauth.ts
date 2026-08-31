@@ -37,7 +37,7 @@ export function consumeOAuthState(value: string, expected: { provider: OAuthProv
 export function oauthAuthorizationUrl(provider: OAuthProvider, state: string, config: { callbackOrigin: string; googleClientId?: string; microsoftClientId?: string }): string {
   if (provider === "gmail") {
     if (!config.googleClientId) throw new Error("Google OAuth is not configured");
-    const params = new URLSearchParams({ client_id: config.googleClientId, redirect_uri: `${config.callbackOrigin}/api/oauth/gmail/callback`, response_type: "code", access_type: "offline", prompt: "consent", scope: "https://www.googleapis.com/auth/gmail.send", state });
+    const params = new URLSearchParams({ client_id: config.googleClientId, redirect_uri: `${config.callbackOrigin}/api/oauth/gmail/callback`, response_type: "code", access_type: "offline", prompt: "consent", scope: "https://www.googleapis.com/auth/gmail.send https://www.googleapis.com/auth/userinfo.email", state });
     return `https://accounts.google.com/o/oauth2/v2/auth?${params}`;
   }
   if (!config.microsoftClientId) throw new Error("Microsoft OAuth is not configured");
@@ -74,11 +74,11 @@ export async function refreshOAuthToken(provider: OAuthProvider, refreshToken: s
 }
 
 export async function fetchProviderIdentity(provider: OAuthProvider, accessToken: string, fetcher: typeof fetch = fetch): Promise<string> {
-  const endpoint = provider === "gmail" ? "https://gmail.googleapis.com/gmail/v1/users/me/profile" : "https://graph.microsoft.com/v1.0/me?$select=mail,userPrincipalName";
+  const endpoint = provider === "gmail" ? "https://www.googleapis.com/oauth2/v3/userinfo" : "https://graph.microsoft.com/v1.0/me?$select=mail,userPrincipalName";
   const response = await fetcher(endpoint, { headers: { Authorization: `Bearer ${accessToken}` } });
   if (!response.ok) throw new Error("Provider identity lookup failed");
-  const raw = await response.json() as { emailAddress?: string; mail?: string; userPrincipalName?: string };
-  const email = raw.emailAddress || raw.mail || raw.userPrincipalName;
+  const raw = await response.json() as { emailAddress?: string; mail?: string; userPrincipalName?: string; email?: string };
+  const email = raw.email || raw.emailAddress || raw.mail || raw.userPrincipalName;
   if (!email || !email.includes("@")) throw new Error("Provider returned no usable email");
   return email.trim().toLowerCase();
 }
