@@ -37,7 +37,7 @@ def canonical_url(value: str) -> str:
 
 
 def run_discovery(source_batch: list[dict], limit: int, fetcher, searcher) -> dict:
-    report = {"discovered": len(source_batch), "normalized": 0, "verified": 0, "recovered": 0, "rejected": 0, "review": 0, "by_source": {}}
+    report = {"discovered": len(source_batch), "normalized": 0, "verified": 0, "recovered": 0, "rejected": 0, "review": 0, "by_source": {}, "rejections": []}
     seen = set()
     seen_urls = set()
     for raw in source_batch[:limit]:
@@ -46,9 +46,17 @@ def run_discovery(source_batch: list[dict], limit: int, fetcher, searcher) -> di
         source = str(candidate.get("source") or candidate.get("source_url") or "unknown")
         counts = report["by_source"].setdefault(source, Counter())
         candidate_url = candidate.get("canonical_application_url", "")
-        if not candidate.get("scholarship_name") or not candidate.get("organization") or _key(candidate) in seen or (candidate_url and candidate_url in seen_urls):
+        rejection_reason = ""
+        if not candidate.get("scholarship_name") or not candidate.get("organization"):
+            rejection_reason = "missing scholarship name or organization"
+        elif _key(candidate) in seen:
+            rejection_reason = "duplicate scholarship and organization"
+        elif candidate_url and candidate_url in seen_urls:
+            rejection_reason = "duplicate canonical application URL"
+        if rejection_reason:
             report["rejected"] += 1
             counts["rejected"] += 1
+            report["rejections"].append({"source": source, "candidate": candidate, "reason": rejection_reason})
             continue
         seen.add(_key(candidate))
         if candidate_url:

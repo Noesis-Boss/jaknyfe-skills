@@ -32,6 +32,7 @@ def test_canonical_url_removes_tracking_and_duplicate_application_urls():
     report = run_discovery([first, second], 10, lambda url: Stable(url, "One scholarship apply deadline"), lambda _: [])
     assert report["verified"] == 1
     assert report["rejected"] == 1
+    assert report["rejections"][0]["reason"] == "duplicate canonical application URL"
 
 
 if __name__ == "__main__":
