@@ -5,12 +5,12 @@
     "associations": 6,
     "government_nonprofit": 6
   },
-  "raw_candidates": 334,
-  "verified_candidates": 20,
-  "rejected": 18,
+  "raw_candidates": 280,
+  "verified_candidates": 100,
+  "rejected": 102,
   "committed": true,
   "added_each_db": [
-    12,
-    12
+    49,
+    49
   ]
 }
