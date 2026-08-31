@@ -117,10 +117,18 @@ def main():
     with ThreadPoolExecutor(max_workers=12) as pool:
         for f in as_completed([pool.submit(candidates, *j) for j in jobs]): raw.extend(f.result())
     unique = {}; rejected = 0
-    for c in raw[:a.limit * 3]:
-        key = (c["scholarship_name"].lower(), c["organization"].lower(), c["application_url"])
-        if key in unique or not verified(c): rejected += 1
-        else: unique[key] = c
+    pool_candidates = raw[:a.limit * 3]
+    with ThreadPoolExecutor(max_workers=16) as pool:
+        checks = {pool.submit(verified, c): c for c in pool_candidates}
+        for f in as_completed(checks):
+            c = checks[f]
+            key = (c["scholarship_name"].lower(), c["organization"].lower(), c["application_url"])
+            try:
+                accepted = f.result()
+            except Exception:
+                accepted = False
+            if key in unique or not accepted: rejected += 1
+            else: unique[key] = c
     records = list(unique.values())[:a.limit]
     report = {"sources": {k: len(v) for k, v in SOURCES.items()}, "raw_candidates": len(raw), "verified_candidates": len(records), "rejected": rejected, "committed": False}
     if a.commit and records:
