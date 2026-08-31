@@ -12,10 +12,12 @@ import hashlib
 import time
 import random
 import urllib.parse
+from contextlib import ExitStack
 from datetime import datetime, timezone
 from typing import List, Dict, Optional, Tuple
 import requests
 from bs4 import BeautifulSoup
+from db_safety import guarded_connection, make_backup
 
 CONV_WORKSPACE = "/home/.z/workspaces/con_ezJjjBZwcPFeBKED/read_webpage"
 DB_PATHS = [
@@ -158,7 +160,6 @@ def add_scholarship(conn: sqlite3.Connection, scholarship: Dict) -> int:
             scholarship.get("link_notes"),
         ),
     )
-    conn.commit()
     return cur.lastrowid
 
 
@@ -563,39 +564,34 @@ def main():
     errors = []
     verified = []
     
-    for c in unique[:limit]:
+    for path in DB_PATHS:
+        make_backup(path, "global-batch")
+    with ExitStack() as stack:
+      connections = {path: stack.enter_context(guarded_connection(path)) for path in DB_PATHS}
+      for c in unique[:limit]:
         dup = False
-        for path in DB_PATHS:
-            conn = sqlite3.connect(path)
+        for path, conn in connections.items():
             if is_dup(conn, c["scholarship_name"], c["organization"]):
                 dup = True
-                conn.close()
                 break
-            conn.close()
         if dup:
             skipped_dup += 1
             continue
-        
-        # Verify the application URL
         vr = verify_link(c.get("application_url"))
         if not vr.get("ok"):
             skipped_verify += 1
             continue
-        
         if vr.get("final_url"):
             c["application_url"] = vr["final_url"]
             c["form_url"] = vr["final_url"]
-        
-        for path in DB_PATHS:
-            try:
-                conn = sqlite3.connect(path)
+        try:
+            for conn in connections.values():
                 add_scholarship(conn, c)
-                conn.close()
-            except Exception as e:
-                errors.append(str(e))
-        added += 1
-        verified.append(c)
-    
+            added += 1
+            verified.append(c)
+        except Exception as e:
+            errors.append(str(e))
+            raise
     after = {}
     for path in DB_PATHS:
         conn = sqlite3.connect(path)

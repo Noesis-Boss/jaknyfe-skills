@@ -9,6 +9,7 @@ import os, sys, json, re, sqlite3, hashlib, time
 from datetime import datetime, timezone
 from typing import List, Dict, Optional
 import requests
+from db_safety import guarded_connection, make_backup
 
 CONV_WORKSPACE = "/home/.z/workspaces/con_3iAHN4wWm8rptujP"
 SEARCH_DIR = os.path.join(CONV_WORKSPACE, "read_webpage")
@@ -292,42 +293,38 @@ def main():
     print(f"After internal dedup: {len(unique)} unique candidates")
     
     # Verify and insert
-    conn = sqlite3.connect(DB_PATH)
+    make_backup(DB_PATH, "discover-search")
+    conn = None
     added = 0
     skipped_dup = 0
     skipped_verify = 0
     verified = []
     errors = []
     
-    for c in unique[:limit]:
-        if is_dup(conn, c):
-            skipped_dup += 1
-            continue
-        
-        vr = verify_link(c.get("application_url"))
-        if not vr.get("ok"):
-            skipped_verify += 1
-            continue
-        
-        if vr.get("final_url"):
-            c["application_url"] = vr["final_url"]
-            c["form_url"] = vr["final_url"]
-        
-        try:
-            add_scholarship(conn, c)
-            added += 1
-            verified.append(c)
-        except Exception as e:
-            errors.append(str(e))
-    
-    conn.close()
+    with guarded_connection(DB_PATH) as conn:
+        for c in unique[:limit]:
+            if is_dup(conn, c):
+                skipped_dup += 1
+                continue
+            vr = verify_link(c.get("application_url"))
+            if not vr.get("ok"):
+                skipped_verify += 1
+                continue
+            if vr.get("final_url"):
+                c["application_url"] = vr["final_url"]
+                c["form_url"] = vr["final_url"]
+            try:
+                add_scholarship(conn, c)
+                added += 1
+                verified.append(c)
+            except Exception as e:
+                errors.append(str(e))
     
     total = 8255 + added  # approximate, we'll query properly below
-    conn = sqlite3.connect(DB_PATH)
-    cur = conn.cursor()
-    cur.execute("SELECT COUNT(*) FROM scholarships")
-    after = cur.fetchone()[0]
-    conn.close()
+    with sqlite3.connect(DB_PATH) as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) FROM scholarships")
+        after = cur.fetchone()[0]
     
     print(f"\nResults:")
     print(f"  Added: {added}")
