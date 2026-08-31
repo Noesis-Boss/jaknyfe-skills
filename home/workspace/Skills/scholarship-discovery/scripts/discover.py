@@ -490,12 +490,22 @@ def batch_insert(scholarships: List[Dict]) -> Dict:
     rejected = 0
     verified = 0
     errors = []
+    rejections = []
+    by_source = {}
+
+    def source_counts(s):
+        source = str(s.get("source") or s.get("source_url") or "unknown")
+        return by_source.setdefault(source, {"discovered": 0, "verified": 0, "rejected": 0, "duplicate": 0, "link_failed": 0, "errors": 0})
 
     for s in scholarships:
+        counts = source_counts(s)
+        counts["discovered"] += 1
         reason = reject_reason(s)
         if reason:
             rejected += 1
+            counts["rejected"] += 1
             s["link_notes"] = reason
+            rejections.append({"source": str(s.get("source") or s.get("source_url") or "unknown"), "candidate": s, "reason": reason})
             continue
 
         duplicate = False
@@ -509,12 +519,15 @@ def batch_insert(scholarships: List[Dict]) -> Dict:
                 break
         if duplicate:
             skipped_dup += 1
+            counts["duplicate"] += 1
             continue
 
         checked_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
         v = verify_link(s["application_url"])
         if not v["ok"]:
             skipped_link += 1
+            counts["link_failed"] += 1
+            rejections.append({"source": str(s.get("source") or s.get("source_url") or "unknown"), "candidate": s, "reason": v.get("reason", "link_failed")})
             continue
 
         s["application_url"] = v["final_url"]
@@ -523,6 +536,7 @@ def batch_insert(scholarships: List[Dict]) -> Dict:
         s["last_checked"] = checked_at
         s["link_notes"] = f"HTTP {v.get('status', 200)}; final URL recorded"
         verified += 1
+        counts["verified"] += 1
         try:
             for db_path in DBS:
                 with guarded_connection(db_path) as conn:
@@ -536,6 +550,7 @@ def batch_insert(scholarships: List[Dict]) -> Dict:
                     added_total += 1
         except Exception as e:
             errors.append(str(e))
+            counts["errors"] += 1
 
     return {
         "added": added_total,
@@ -545,6 +560,8 @@ def batch_insert(scholarships: List[Dict]) -> Dict:
         "rejected": rejected,
         "verified_candidates": verified,
         "errors": errors,
+        "rejections": rejections,
+        "by_source": by_source,
     }
 
 
@@ -620,10 +637,23 @@ def main():
     result = batch_insert(scholarships)
     after = stats()
 
+    report = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "limit": args.limit,
+        "before": before,
+        "after": after,
+        "result": result,
+        "source_report": source_report,
+    }
+    report_path = os.path.join(os.path.dirname(QUEUE_PATH), "last_discovery_report.json")
+    with open(report_path, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2, default=str)
+
     print("Result:", result)
     print("After:", after)
     print("Source report:", json.dumps(source_report[:10], indent=2))
     print(f"Total scholarships: {before} -> {after}")
+    print(f"Report saved: {report_path}")
 
 
 if __name__ == "__main__":
