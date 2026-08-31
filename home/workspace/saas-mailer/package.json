@@ -1,0 +1,21 @@
+{
+  "name": "saas-mailer",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --hot src/server.ts",
+    "build": "vite build",
+    "start": "NODE_ENV=production bun run src/server.ts",
+    "start:worker": "NODE_ENV=production bun run src/worker/main.ts",
+    "prod": "bun run build && NODE_ENV=production bun run src/server.ts"
+  },
+  "dependencies": {
+    "hono": "^4.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "lucide-react": "^0.400.0",
+    "vite": "^5.0.0",
+    "@vitejs/plugin-react": "^4.0.0"
+  }
+}
