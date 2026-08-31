@@ -262,6 +262,8 @@ def parse_candidates_from_html(url: str, html_text: str, src_group: str) -> List
         
         # Look in many tag types, not just headings and lists
         for tag in soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6", "a", "li", "div", "span", "p", "td", "th", "strong", "b", "em"]):
+            if tag.find_parent(["script", "style", "noscript", "svg"]):
+                continue
             text = tag.get_text(" ", strip=True)
             if not text or len(text) < 15 or len(text) > 300:
                 continue
@@ -293,6 +295,11 @@ def parse_candidates_from_html(url: str, html_text: str, src_group: str) -> List
             
             if link and not link.startswith("http"):
                 link = urllib.parse.urljoin(url, link)
+            link_text = f"{link or ''} {text}".lower()
+            if not link or not re.search(r"scholarship|fellowship|award|grant|bursary|application", link_text):
+                continue
+            if re.search(r"financial-aid|admitted-students|appeal|fafsa|tuition|undergraduate-financial-aid", link_text):
+                continue
             
             # Extract amount from text
             amount_min = None
@@ -323,56 +330,6 @@ def parse_candidates_from_html(url: str, html_text: str, src_group: str) -> List
                 "deadline": deadline,
                 "source_url": url,
             })
-    
-    # Strategy 2: Regex-based extraction for structured text
-    # Find patterns like "Scholarship Name - $Amount - Deadline"
-    scholarship_blocks = re.findall(
-        r"([A-Z][^.\n]{15,150}(?:scholarship|award|grant|fellowship|bursary)[^.\n]{0,100})",
-        html_text,
-        re.I
-    )
-    for block in scholarship_blocks:
-        text = block.strip()
-        if len(text) < 15 or len(text) > 300:
-            continue
-        key = normalize(text)
-        if key in seen:
-            continue
-        seen.add(key)
-        
-        amount_min = None
-        amount_max = None
-        amount_match = re.search(r"\$([0-9,]+)(?:\s*-\s*\$([0-9,]+))?", text)
-        if amount_match:
-            amount_min = int(amount_match.group(1).replace(",", ""))
-            amount_max = int(amount_match.group(2).replace(",", "")) if amount_match.group(2) else None
-            # Cap absurdly high amounts at $500,000
-            if amount_min and amount_min > 500000:
-                amount_min = None
-            if amount_max and amount_max > 500000:
-                amount_max = None
-        
-        deadline = ""
-        deadline_match = re.search(r"(?:deadline|due|closes?|apply by)[\s:]+(\w+ \d{1,2},? \d{4}|\d{1,2}/\d{1,2}/\d{4}|\w+ \d{4})", text, re.I)
-        if deadline_match:
-            deadline = deadline_match.group(1)
-        
-        # Try to find a link near this text
-        link_match = re.search(r'href="([^"]+)"', html_text[html_text.find(text)-200:html_text.find(text)+200])
-        link = link_match.group(1) if link_match else None
-        if link and not link.startswith("http"):
-            link = urllib.parse.urljoin(url, link)
-        
-        candidates.append({
-            "scholarship_name": text[:180],
-            "organization": src_group.replace("_", " ").title(),
-            "application_url": link,
-            "amount_display": parse_amount_display(amount_min, amount_max),
-            "amount_min": amount_min,
-            "amount_max": amount_max,
-            "deadline": deadline,
-            "source_url": url,
-        })
     
     return candidates[:80]
 
