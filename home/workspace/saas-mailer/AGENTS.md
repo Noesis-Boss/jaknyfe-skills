@@ -17,6 +17,7 @@ Standalone Bun/Hono/React MVP for multi-tenant outbound email. Run commands from
 Run `bun test` for the full suite. The dashboard must also be screenshot-verified after frontend changes. Keep provider credentials server-side and preserve organization-scoped composite constraints.
 
 ## Feature Log
+- 2026-08-31: Dashboard rebuilt from single-screen MVP into five working sections (Overview, Contacts, Campaigns, Sending accounts, Events) with live counts, real nav, CSV import in-section, campaign create (name + first step) and draft approval, and provider list. Added tenant-scoped `GET /api/contacts` and `GET /api/campaigns`; sending-accounts and campaigns list responses wrapped as `{accounts}`/`{campaigns}`; cache-bust bumped to `v=20260831-1`. Verified in-browser: CSV import (3 contacts), campaign create/refresh/approve, empty states for accounts/events. `bun test` 32/32; screenshot-verified per section.
 
 - 2026-08-22: Fixed Google Contacts CSV imports by recognizing `E-mail 1 - Value` and equivalent numbered email columns after header normalization. The supplied export parses to 649 valid contacts; 13 contact tests pass.
 

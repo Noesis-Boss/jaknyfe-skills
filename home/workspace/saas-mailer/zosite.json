@@ -1,0 +1,16 @@
+{
+  "name": "saas-mailer",
+  "entrypoint": "bun run start",
+  "local_port": 3000,
+  "public": true,
+  "publish": {
+    "label": "saas-mailer",
+    "type": "http",
+    "entrypoint": "bash -c 'source ~/.zo_secrets 2>/dev/null; exec bun run start'",
+    "published_port": 59321,
+    "env": {
+      "APP_ENV": "production"
+    },
+    "public": true
+  }
+}
