@@ -20,6 +20,7 @@ function Dashboard() {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [events, setEvents] = useState<EventRow[]>([]);
+  const [mockEmail, setMockEmail] = useState("");
   const [form, setForm] = useState({ name: "", subject: "", body: "" });
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -65,6 +66,17 @@ function Dashboard() {
     loadAll();
   };
   const logout = async () => { await api("/api/auth/logout", { method: "POST" }); location.reload(); };
+  const connectMock = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = await api("/api/sending-accounts", { method: "POST", body: JSON.stringify({ provider: "mock", email: mockEmail, credentials: {} }) });
+    if (result.id) { setNotice(`Test account ${result.email} connected`); setMockEmail(""); loadAll(); } else setNotice(result.error || "Unable to connect account");
+  };
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const connected = params.get("connected");
+    if (connected) { setNotice(`${connected === "gmail" ? "Gmail" : "Microsoft"} account connected`); window.history.replaceState({}, "", "/"); }
+  }, []);
 
   const navItems = ["Overview", "Contacts", "Campaigns", "Sending accounts", "Events"];
   return (
@@ -135,7 +147,15 @@ function Dashboard() {
 
         {section === "Sending accounts" && <section className="panel">
           <div className="panel-head"><div><p className="eyebrow">Providers</p><h3>Sending accounts ({accounts.length})</h3></div></div>
-          {accounts.length ? accounts.map(a => <div className="record" key={a.id}><b>{a.email}</b><small>{a.provider} · {a.status}</small></div>) : <div className="empty"><span>∿</span><b>No sending accounts</b><p>Accounts connect via the API. Credentials stay encrypted server-side.</p></div>}
+          <div className="connect-row">
+            <button type="button" onClick={() => { window.location.href = "/api/oauth/gmail/start"; }}>Connect Gmail ↗</button>
+            <button type="button" onClick={() => { window.location.href = "/api/oauth/microsoft/start"; }}>Connect Microsoft ↗</button>
+          </div>
+          <form className="create-campaign" onSubmit={connectMock}>
+            <input aria-label="Test account email" type="email" placeholder="Test account email (mock sender)" value={mockEmail} onChange={e => setMockEmail(e.target.value)} required />
+            <button type="submit">Connect test account</button>
+          </form>
+          {accounts.length ? accounts.map(a => <div className="record" key={a.id}><b>{a.email}</b><small>{a.provider} · {a.status}</small></div>) : <div className="empty"><span>∿</span><b>No sending accounts</b><p>Connect Gmail or Microsoft via OAuth, or add a mock account for testing. Credentials stay encrypted server-side.</p></div>}
         </section>}
 
         {section === "Events" && <section className="panel">
