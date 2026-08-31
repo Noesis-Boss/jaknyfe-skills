@@ -34,6 +34,8 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 
 ## Issue Log
 
+- 2026-08-31: Wired legacy search discovery writers `discover_search.py` and `global_batch_discover.py` to validated backups, lock-protected transactions, and rollback-safe insertion. Removed direct commits from insertion helpers; Python safety/recovery/verification suite passes 10/10. Commit `fdd7ccb`.
+
 - 2026-08-31: Hardened `Skills/scholarship-discovery/scripts/run_discovery_batch.py` so its guarded mutation path rejects missing, aggregator, installer, redirected-aggregator, or failed application URLs before insertion. A bounded run created validated backups and made no database changes; discovery remains paused pending a runner that produces qualifying candidates.
 
 - 2026-08-31: Wired the canonical global runner `Skills/scholarship-discovery/scripts/discover.py` to `db_safety.py`: validated backups before batches and exclusive rollback-safe transactions for inserts. Syntax and 10 safety/discovery tests pass.
