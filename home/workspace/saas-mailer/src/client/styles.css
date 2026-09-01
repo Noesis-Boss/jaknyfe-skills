@@ -20,3 +20,4 @@ nav button{background:none;border:0;color:var(--muted);font:inherit;font-size:.7
 .step-meta{align-items:center;display:flex;justify-content:space-between;gap:.75rem}
 .step-meta label{color:var(--muted);display:flex;flex-direction:column;font-size:.62rem;gap:.25rem}
 .step-meta input{width:6rem}
+ .stat-link{background:none;border:1px solid var(--line);color:inherit;cursor:pointer;display:flex;flex-direction:column;font:inherit;justify-content:center;padding:1.4rem;text-align:left;width:100%}.stat-link:hover{background:#171b17;border-color:#596058}.stat-link small{color:var(--orange)!important}

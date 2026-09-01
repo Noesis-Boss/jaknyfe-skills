@@ -13,6 +13,23 @@ type Campaign = { id: string; name: string; status: string; created_at: string; 
 type Account = { id: string; provider: string; email: string; status: string };
 type EventRow = { id: string; type: string; contact_id: string | null; created_at: string };
 
+function ContactDetail({ contact, form, onChange, onClose, onSave, onDelete }: { contact: Contact; form: { firstName: string; lastName: string }; onChange: (patch: Partial<{ firstName: string; lastName: string }>) => void; onClose: () => void; onSave: () => void; onDelete: () => void }) {
+  return (
+    <div className="contact-detail">
+      <div className="panel-head"><div><p className="eyebrow">Contact</p><h3>{contact.email}</h3></div><button className="text-button" onClick={onClose}>← Back</button></div>
+      <div className="contact-form">
+        <label>First name<input value={form.firstName} onChange={e => onChange({ firstName: e.target.value })} /></label>
+        <label>Last name<input value={form.lastName} onChange={e => onChange({ lastName: e.target.value })} /></label>
+        <div className="contact-actions">
+          <button onClick={onSave}>Save changes</button>
+          <button className="danger" onClick={onDelete}>Delete contact</button>
+        </div>
+      </div>
+      <p className="table-note">Created {contact.created_at?.slice(0, 10)}</p>
+    </div>
+  );
+}
+
 function Dashboard() {
   const [notice, setNotice] = useState("Workspace ready");
   const [section, setSection] = useState("Overview");
@@ -20,6 +37,9 @@ function Dashboard() {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [events, setEvents] = useState<EventRow[]>([]);
+  const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
+  const [editForm, setEditForm] = useState<{ firstName: string; lastName: string }>({ firstName: "", lastName: "" });
+  const [searchQuery, setSearchQuery] = useState("");
   const [mockEmail, setMockEmail] = useState("");
   const [form, setForm] = useState<{ name: string; steps: Array<{ subject: string; body: string; delay: number }> }>({ name: "", steps: [{ subject: "", body: "", delay: 0 }] });
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -33,6 +53,44 @@ function Dashboard() {
   };
   useEffect(() => { loadAll(); }, []);
 
+  useEffect(() => {
+    const term = searchQuery.trim();
+    const fetchFiltered = async () => {
+      const url = term ? `/api/contacts?q=${encodeURIComponent(term)}` : "/api/contacts";
+      const result = await api(url);
+      if (result.contacts) setContacts(result.contacts);
+    };
+    const handle = setTimeout(() => { fetchFiltered(); }, 250);
+    return () => clearTimeout(handle);
+  }, [searchQuery]);
+
+  const selectContact = async (c: Contact) => {
+    setSelectedContact(c);
+    setEditForm({ firstName: c.first_name || "", lastName: c.last_name || "" });
+  };
+  const handleSaveContact = async () => {
+    if (!selectedContact) return;
+    const result = await api(`/api/contacts/${selectedContact.id}`, { method: "PATCH", body: JSON.stringify({ firstName: editForm.firstName, lastName: editForm.lastName }) });
+    if (result.id) {
+      setNotice("Contact updated");
+      setSelectedContact(null);
+      loadAll();
+    } else {
+      setNotice(result.error || "Unable to update contact");
+    }
+  };
+  const handleDeleteContact = async () => {
+    if (!selectedContact) return;
+    if (!confirm("Delete this contact? This cannot be undone.")) return;
+    const result = await api(`/api/contacts/${selectedContact.id}`, { method: "DELETE" });
+    if (result.ok) {
+      setNotice("Contact deleted");
+      setSelectedContact(null);
+      loadAll();
+    } else {
+      setNotice(result.error || "Unable to delete contact");
+    }
+  };
   const importContacts = async (csv: string) => {
     try {
       const result = await api("/api/contacts/import", { method: "POST", headers: { "Content-Type": "text/csv" }, body: csv });
@@ -42,6 +100,7 @@ function Dashboard() {
       if (fresh.contacts) setContacts(fresh.contacts);
     } catch { setNotice("Contact import failed. Check the CSV and try again."); }
   };
+
   const handleContactsFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) await importContacts(await file.text());
@@ -112,7 +171,7 @@ function Dashboard() {
               <div className="orbit"><div className="orbit-ring ring-one" /><div className="orbit-ring ring-two" /><div className="signal">01</div></div>
             </article>
             <div className="stats">
-              <article><span>Contacts</span><strong>{contacts.length || "—"}</strong><small>{contacts.length ? "in your list" : "awaiting first import"}</small></article>
+              <button type="button" className="stat-link" onClick={() => setSection("Contacts")}><span>Contacts</span><strong>{contacts.length || "—"}</strong><small>{contacts.length ? "Manage your list ↗" : "awaiting first import"}</small></button>
               <article><span>Campaigns</span><strong>{campaigns.length || "—"}</strong><small>{campaigns.length ? `${campaigns.filter(c => c.status === "approved").length} approved` : "nothing in motion"}</small></article>
               <article><span>Events</span><strong>{events.length || "—"}</strong><small>{events.length ? "latest activity" : "no activity yet"}</small></article>
             </div>
@@ -134,7 +193,10 @@ function Dashboard() {
 
         {section === "Contacts" && <section className="panel">
           <div className="panel-head"><div><p className="eyebrow">Audience</p><h3>Contacts ({contacts.length})</h3></div><button className="text-button" onClick={() => fileInputRef.current?.click()}>Import CSV ↗</button><input ref={fileInputRef} type="file" accept=".csv,text/csv" onChange={handleContactsFile} hidden /></div>
-          {contacts.length ? <div className="table">{contacts.slice(0, 50).map(c => <div className="row" key={c.id}><b>{[c.first_name, c.last_name].filter(Boolean).join(" ") || "—"}</b><span>{c.email}</span></div>)}{contacts.length > 50 && <p className="table-note">Showing first 50 of {contacts.length}</p>}</div> : <div className="empty"><span>∿</span><b>No contacts yet</b><p>Import a CSV to get started.</p></div>}
+          {selectedContact ? <ContactDetail contact={selectedContact} form={editForm} onChange={patch => setEditForm(form => ({ ...form, ...patch }))} onClose={() => setSelectedContact(null)} onSave={handleSaveContact} onDelete={handleDeleteContact} /> : <>
+            <input className="search-input" placeholder="Search contacts..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+            {contacts.length ? <div className="table">{contacts.slice(0, 50).map(c => <div className="row" key={c.id} onClick={() => selectContact(c)} style={{ cursor: "pointer" }}><b>{[c.first_name, c.last_name].filter(Boolean).join(" ") || "—"}</b><span>{c.email}</span></div>)}{contacts.length > 50 && <p className="table-note">Showing first 50 of {contacts.length}</p>}</div> : <div className="empty"><span>∿</span><b>No contacts yet</b><p>Import a CSV to get started.</p></div>}
+          </>}
         </section>}
 
         {section === "Campaigns" && <section className="panel">
