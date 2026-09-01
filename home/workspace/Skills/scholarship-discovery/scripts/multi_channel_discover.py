@@ -53,6 +53,12 @@ SOURCES = {
         ("P.E.O. International", "https://www.peointernational.org/about-peo-scholarships"),
     ],
 }
+SEARCH_PATTERNS = {
+    "universities": ["scholarship application", "department scholarship award", "fellowship application"],
+    "sponsors": ["scholarship application", "foundation scholarship apply", "2026 scholarship deadline"],
+    "associations": ["member scholarship application", "professional scholarship apply", "student award application"],
+    "government_nonprofit": ["scholarship application", "community foundation scholarship", "education award apply"],
+}
 HEADERS = {"User-Agent": "ScholarSearch/3.0 (+direct-application research)"}
 
 def fetch(url: str) -> tuple[str, str]:
@@ -62,12 +68,13 @@ def fetch(url: str) -> tuple[str, str]:
     except Exception:
         return url, ""
 
-def candidates(kind: str, source: str, url: str) -> list[dict]:
+def candidates(kind: str, source: str, url: str, depth: int = 0) -> list[dict]:
     final, html = fetch(url)
     if not html:
         return []
     soup = BeautifulSoup(html, "html.parser")
     out = []
+    detail_pages = []
     for a in soup.find_all("a", href=True):
         text = " ".join(a.get_text(" ", strip=True).split())
         href = urljoin(final, a["href"])
@@ -80,7 +87,14 @@ def candidates(kind: str, source: str, url: str) -> list[dict]:
         if not host or host == urlparse(final).netloc.lower() and not re.search(r"apply|application|scholar|fellow|award", blob):
             continue
         title = text[:180] or href.rsplit("/", 2)[-1].replace("-", " ").title()
-        out.append({"scholarship_name": title, "organization": source, "application_url": href, "source": kind, "source_url": url})
+        is_detail = bool(re.search(r"apply|application|scholarship|fellowship|award", blob))
+        if depth == 0 and is_detail and urlparse(href).netloc.lower() == urlparse(final).netloc.lower():
+            detail_pages.append(href)
+        if is_detail:
+            out.append({"scholarship_name": title, "organization": source, "application_url": href, "source": kind, "source_url": url})
+    if depth == 0:
+        for detail_url in list(dict.fromkeys(detail_pages))[:40]:
+            out.extend(candidates(kind, source, detail_url, depth=1))
     return out
 
 def verified(c: dict) -> bool:
@@ -114,8 +128,15 @@ def main():
     p = argparse.ArgumentParser(); p.add_argument("--limit", type=int, default=100); p.add_argument("--commit", action="store_true"); p.add_argument("--output", type=Path, default=Path(__file__).with_name("multi_channel_report.json")); a = p.parse_args()
     jobs = [(k, n, u) for k, rows in SOURCES.items() for n, u in rows]
     raw = []
+    source_yields = {k: {"sources": len(v), "landing_candidates": 0, "detail_candidates": 0} for k, v in SOURCES.items()}
     with ThreadPoolExecutor(max_workers=12) as pool:
-        for f in as_completed([pool.submit(candidates, *j) for j in jobs]): raw.extend(f.result())
+        futures = {pool.submit(candidates, *j): j for j in jobs}
+        for f in as_completed(futures):
+            kind, _, _ = futures[f]
+            found = f.result()
+            raw.extend(found)
+            source_yields[kind]["landing_candidates"] += len(found)
+            source_yields[kind]["detail_candidates"] += sum(1 for c in found if c["source_url"] != c["application_url"])
     unique = {}; rejected = 0
     pool_candidates = raw[:a.limit * 3]
     with ThreadPoolExecutor(max_workers=16) as pool:
@@ -130,7 +151,7 @@ def main():
             if key in unique or not accepted: rejected += 1
             else: unique[key] = c
     records = list(unique.values())[:a.limit]
-    report = {"sources": {k: len(v) for k, v in SOURCES.items()}, "raw_candidates": len(raw), "verified_candidates": len(records), "rejected": rejected, "committed": False}
+    report = {"sources": source_yields, "search_patterns": SEARCH_PATTERNS, "crawl_depth": 1, "raw_candidates": len(raw), "verified_candidates": len(records), "rejected": rejected, "committed": False}
     if a.commit and records:
         for db in DBS: make_backup(db)
         report["added_each_db"] = [insert(records, db) for db in DBS]; report["committed"] = True
