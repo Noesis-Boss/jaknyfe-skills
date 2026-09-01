@@ -18,6 +18,7 @@ export function repositories(context: RepositoryContext) {
       find: (id: string) => scoped(db => one(db, "SELECT * FROM contacts WHERE organization_id = $1 AND id = $2", [organizationId, id])),
       insert: (input: { email: string; firstName?: string; lastName?: string; customFields?: object }) => scoped(db => one(db, "INSERT INTO contacts (id, organization_id, email, first_name, last_name, custom_fields) VALUES ($1,$2,$3,$4,$5,$6) ON CONFLICT (organization_id,email) DO NOTHING RETURNING *", [randomUUID(), organizationId, input.email.trim().toLowerCase(), input.firstName || null, input.lastName || null, JSON.stringify(input.customFields || {})])),
       update: (id: string, input: { firstName?: string; lastName?: string; customFields?: object }) => scoped(db => one(db, "UPDATE contacts SET first_name = $1, last_name = $2, custom_fields = $3 WHERE organization_id = $4 AND id = $5 RETURNING *", [input.firstName || null, input.lastName || null, JSON.stringify(input.customFields || {}), organizationId, id])),
+      delete: (id: string) => scoped(db => db.execute("DELETE FROM contacts WHERE organization_id = $1 AND id = $2", [organizationId, id])),
     },
     accounts: {
       list: () => scoped(db => rows(db, "SELECT id, organization_id, provider, email, status, daily_send_limit, timezone, created_at FROM sending_accounts WHERE organization_id = $1 ORDER BY created_at, id", [organizationId])),

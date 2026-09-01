@@ -3,6 +3,7 @@
 nav button{background:none;border:0;color:var(--muted);font:inherit;font-size:.7rem;padding:.7rem .75rem;text-align:left}nav button:hover,nav button.active{background:#252a25;color:var(--paper)}nav button.active{border-left:2px solid var(--orange)}.check{background:none;border-left:0;border-right:0;border-bottom:0;color:inherit;font:inherit;text-align:left;width:100%}.check:hover{background:#171b17}
 .table{border:1px solid var(--line);margin-top:1rem}
 .row{display:flex;flex-direction:column;gap:.25rem;padding:1rem 0;border-top:1px solid var(--line)}
+.row{align-items:center;flex-direction:row;gap:.75rem}.row-contact{background:none;border:0;color:inherit;display:flex;flex:1;flex-direction:column;gap:.25rem;padding:0;text-align:left}.row-contact span{color:var(--muted);font-size:.65rem}.list-tools{display:grid;gap:.6rem;margin-top:1rem}.list-tools form,.list-assign{display:flex;gap:.6rem}.list-tools input,.list-tools select{background:#171b17;border:1px solid var(--line);color:var(--paper);font:inherit;padding:.7rem;font-size:.65rem}.list-tools button{background:var(--orange);border:0;color:var(--ink);font-size:.62rem;padding:.7rem 1rem}.list-tools button:disabled{cursor:not-allowed;opacity:.45}
 .row:first-child{border-top:0}
 .record b{font-size:.72rem;font-weight:500}
 .record small{color:var(--muted)}

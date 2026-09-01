@@ -82,8 +82,9 @@ export function registerSendingAdapter(provider: string, adapter: SendingAdapter
 
 export function getSendingAdapter(provider: string): SendingAdapter {
   const adapter = adapters.get(provider);
-  if (!adapter) throw new Error(`Unsupported sending provider: ${provider}`);
-  return adapter;
+  if (adapter) return adapter;
+  if (provider === "gmail" || provider === "microsoft") return { send: async () => { throw new Error(`Use provider-specific send path for ${provider}`); } };
+  throw new Error(`Unsupported sending provider: ${provider}`);
 }
 
 export function isConfiguredProvider(provider: string): boolean {

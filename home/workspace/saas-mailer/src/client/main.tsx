@@ -40,6 +40,10 @@ function Dashboard() {
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
   const [editForm, setEditForm] = useState<{ firstName: string; lastName: string }>({ firstName: "", lastName: "" });
   const [searchQuery, setSearchQuery] = useState("");
+  const [lists, setLists] = useState<Array<{ id: string; name: string; contact_count: number }>>([]);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [listName, setListName] = useState("");
+  const [targetList, setTargetList] = useState("");
   const [mockEmail, setMockEmail] = useState("");
   const [form, setForm] = useState<{ name: string; steps: Array<{ subject: string; body: string; delay: number }> }>({ name: "", steps: [{ subject: "", body: "", delay: 0 }] });
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -52,6 +56,7 @@ function Dashboard() {
     if (e.events) setEvents(e.events);
   };
   useEffect(() => { loadAll(); }, []);
+  useEffect(() => { api("/api/contact-lists").then(result => { if (result.lists) setLists(result.lists); }); }, []);
 
   useEffect(() => {
     const term = searchQuery.trim();
@@ -91,6 +96,8 @@ function Dashboard() {
       setNotice(result.error || "Unable to delete contact");
     }
   };
+  const createList = async (e: React.FormEvent) => { e.preventDefault(); const result = await api("/api/contact-lists", { method: "POST", body: JSON.stringify({ name: listName }) }); if (result.id) { setLists(current => [...current, result]); setTargetList(result.id); setListName(""); setNotice(`List "${result.name}" created`); } else setNotice(result.error || "Unable to create list"); };
+  const addToList = async () => { if (!targetList || !selectedIds.length) return; const result = await api(`/api/contact-lists/${targetList}/members`, { method: "POST", body: JSON.stringify({ contact_ids: selectedIds }) }); setNotice(`${result.added || 0} contacts added to the list`); setSelectedIds([]); api("/api/contact-lists").then(value => { if (value.lists) setLists(value.lists); }); };
   const importContacts = async (csv: string) => {
     try {
       const result = await api("/api/contacts/import", { method: "POST", headers: { "Content-Type": "text/csv" }, body: csv });
@@ -195,7 +202,8 @@ function Dashboard() {
           <div className="panel-head"><div><p className="eyebrow">Audience</p><h3>Contacts ({contacts.length})</h3></div><button className="text-button" onClick={() => fileInputRef.current?.click()}>Import CSV ↗</button><input ref={fileInputRef} type="file" accept=".csv,text/csv" onChange={handleContactsFile} hidden /></div>
           {selectedContact ? <ContactDetail contact={selectedContact} form={editForm} onChange={patch => setEditForm(form => ({ ...form, ...patch }))} onClose={() => setSelectedContact(null)} onSave={handleSaveContact} onDelete={handleDeleteContact} /> : <>
             <input className="search-input" placeholder="Search contacts..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
-            {contacts.length ? <div className="table">{contacts.slice(0, 50).map(c => <div className="row" key={c.id} onClick={() => selectContact(c)} style={{ cursor: "pointer" }}><b>{[c.first_name, c.last_name].filter(Boolean).join(" ") || "—"}</b><span>{c.email}</span></div>)}{contacts.length > 50 && <p className="table-note">Showing first 50 of {contacts.length}</p>}</div> : <div className="empty"><span>∿</span><b>No contacts yet</b><p>Import a CSV to get started.</p></div>}
+            <div className="list-tools"><form onSubmit={createList}><input aria-label="New list name" placeholder="New list name" value={listName} onChange={e => setListName(e.target.value)} required /><button type="submit">Create list</button></form>{lists.length > 0 && <div className="list-assign"><select aria-label="Choose list" value={targetList} onChange={e => setTargetList(e.target.value)}><option value="">Choose a list</option>{lists.map(list => <option key={list.id} value={list.id}>{list.name} ({list.contact_count})</option>)}</select><button type="button" onClick={addToList} disabled={!targetList || !selectedIds.length}>Add {selectedIds.length || "selected"} to list</button></div>}</div>
+            {contacts.length ? <div className="table">{contacts.slice(0, 50).map(c => <div className="row" key={c.id}><input type="checkbox" aria-label={`Select ${c.email}`} checked={selectedIds.includes(c.id)} onChange={e => setSelectedIds(ids => e.target.checked ? [...ids, c.id] : ids.filter(id => id !== c.id))} /><button type="button" className="row-contact" onClick={() => selectContact(c)}><b>{[c.first_name, c.last_name].filter(Boolean).join(" ") || "—"}</b><span>{c.email}</span></button></div>)}{contacts.length > 50 && <p className="table-note">Showing first 50 of {contacts.length}</p>}</div> : <div className="empty"><span>∿</span><b>No contacts yet</b><p>Import a CSV to get started.</p></div>}
           </>}
         </section>}
 

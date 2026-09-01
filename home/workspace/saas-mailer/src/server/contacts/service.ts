@@ -46,12 +46,41 @@ export async function importContactsPostgres(database: PostgresDatabase, organiz
 
 export type ContactRow = { id: string; email: string; first_name: string | null; last_name: string | null; created_at: string };
 
-export function listContacts(database: Database, organizationId: string): ContactRow[] {
+export function listContacts(database: Database, organizationId: string, q?: string): ContactRow[] {
+  if (q) {
+    const term = `%${q.toLowerCase()}%`;
+    return database.query<ContactRow, [string, string, string, string]>(
+      "SELECT id, email, first_name, last_name, created_at FROM contacts WHERE organization_id = ? AND (lower(email) LIKE ? OR lower(first_name) LIKE ? OR lower(last_name) LIKE ?) ORDER BY created_at DESC, id"
+    ).all(organizationId, term, term, term);
+  }
   return database.query<ContactRow, [string]>("SELECT id, email, first_name, last_name, created_at FROM contacts WHERE organization_id = ? ORDER BY created_at DESC, id").all(organizationId);
 }
 
-export async function listContactsPostgres(database: PostgresDatabase, organizationId: string): Promise<ContactRow[]> {
+export async function listContactsPostgres(database: PostgresDatabase, organizationId: string, q?: string): Promise<ContactRow[]> {
   const store = repositories({ database, organizationId });
-  const rows = await store.contacts.list();
+  let rows;
+  if (q) {
+    const term = `%${q.toLowerCase()}%`;
+    rows = await database.query(
+      "SELECT id, email, first_name, last_name, created_at FROM contacts WHERE organization_id = $1 AND (lower(email) LIKE $2 OR lower(first_name) LIKE $2 OR lower(last_name) LIKE $2) ORDER BY created_at DESC, id",
+      [organizationId, term]
+    );
+  } else {
+    rows = await store.contacts.list();
+  }
   return rows.map(row => ({ id: row.id, email: row.email, first_name: row.first_name, last_name: row.last_name, created_at: row.created_at }));
+}
+
+export function contactStore(database: PostgresDatabase, organizationId: string) {
+  const store = repositories({ database, organizationId });
+  return {
+    find: (id: string) => store.contacts.find(id),
+    update: (id: string, input: { firstName?: string; lastName?: string }) => store.contacts.update(id, input),
+    delete: async (id: string) => {
+      const existing = await store.contacts.find(id);
+      if (!existing) return false;
+      await database.execute("DELETE FROM contacts WHERE organization_id = $1 AND id = $2", [organizationId, id]);
+      return true;
+    },
+  };
 }

@@ -77,10 +77,10 @@ export async function enrollContactsPostgres(database: PostgresDatabase, campaig
   });
 }
 
-export function listCampaigns(database: Database, organizationId: string): Campaign[] {
-  return database.query<Campaign, [string]>("SELECT * FROM campaigns WHERE organization_id = ? ORDER BY created_at DESC, id").all(organizationId);
+export function listCampaigns(database: Database, organizationId: string): (Campaign & { step_count: number })[] {
+  return database.query<Campaign & { step_count: number }, [string]>("SELECT c.*, (SELECT COUNT(*) FROM campaign_steps s WHERE s.campaign_id = c.id) AS step_count FROM campaigns c WHERE c.organization_id = ? ORDER BY c.created_at DESC, c.id").all(organizationId);
 }
 
-export async function listCampaignsPostgres(database: PostgresDatabase, organizationId: string): Promise<Campaign[]> {
-  return database.query<Campaign>("SELECT * FROM campaigns WHERE organization_id = $1 ORDER BY created_at DESC, id", [organizationId]);
+export async function listCampaignsPostgres(database: PostgresDatabase, organizationId: string): Promise<(Campaign & { step_count: number })[]> {
+  return database.query<Campaign & { step_count: number }>("SELECT c.*, (SELECT COUNT(*)::int FROM campaign_steps s WHERE s.campaign_id = c.id) AS step_count FROM campaigns c WHERE c.organization_id = $1 ORDER BY c.created_at DESC, c.id", [organizationId]);
 }

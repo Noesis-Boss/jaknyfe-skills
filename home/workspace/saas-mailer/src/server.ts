@@ -8,6 +8,7 @@ import { createCampaignRoutes } from "./server/routes/campaigns";
 import { createEventRoutes } from "./server/routes/events";
 import { createAuthRoutes } from "./server/routes/auth";
 import { createProviderCallbackRoutes } from "./server/routes/provider-callbacks";
+import { createContactListRoutes } from "./server/routes/contact-lists";
 
 const app = new Hono();
 export const config = loadConfig();
@@ -26,6 +27,7 @@ app.route("/", createContactsRoutes(database));
 app.route("/", createSendingAccountRoutes(database));
 app.route("/", createCampaignRoutes(database));
 app.route("/", createEventRoutes(database));
+app.route("/", createContactListRoutes(database));
 
 app.get("/src/client/main.js", (c) => c.text(clientScript, 200, { "Content-Type": "application/javascript; charset=UTF-8" }));
 
