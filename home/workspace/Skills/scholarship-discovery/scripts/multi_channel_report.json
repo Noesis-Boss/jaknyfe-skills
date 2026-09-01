@@ -1,13 +1,52 @@
 {
   "sources": {
-    "universities": 8,
-    "sponsors": 6,
-    "associations": 6,
-    "government_nonprofit": 6
+    "universities": {
+      "sources": 8,
+      "landing_candidates": 557,
+      "detail_candidates": 525
+    },
+    "sponsors": {
+      "sources": 6,
+      "landing_candidates": 953,
+      "detail_candidates": 787
+    },
+    "associations": {
+      "sources": 6,
+      "landing_candidates": 248,
+      "detail_candidates": 211
+    },
+    "government_nonprofit": {
+      "sources": 6,
+      "landing_candidates": 480,
+      "detail_candidates": 434
+    }
   },
-  "raw_candidates": 280,
-  "verified_candidates": 100,
-  "rejected": 102,
+  "search_patterns": {
+    "universities": [
+      "scholarship application",
+      "department scholarship award",
+      "fellowship application"
+    ],
+    "sponsors": [
+      "scholarship application",
+      "foundation scholarship apply",
+      "2026 scholarship deadline"
+    ],
+    "associations": [
+      "member scholarship application",
+      "professional scholarship apply",
+      "student award application"
+    ],
+    "government_nonprofit": [
+      "scholarship application",
+      "community foundation scholarship",
+      "education award apply"
+    ]
+  },
+  "crawl_depth": 1,
+  "raw_candidates": 2238,
+  "verified_candidates": 243,
+  "rejected": 1257,
   "committed": true,
   "added_each_db": [
     49,

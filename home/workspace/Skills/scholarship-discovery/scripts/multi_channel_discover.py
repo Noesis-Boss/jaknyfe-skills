@@ -64,6 +64,9 @@ HEADERS = {"User-Agent": "ScholarSearch/3.0 (+direct-application research)"}
 def fetch(url: str) -> tuple[str, str]:
     try:
         with urlopen(Request(url, headers=HEADERS), timeout=10) as r:
+            content_type = r.headers.get_content_type().lower()
+            if content_type not in {"text/html", "application/xhtml+xml"}:
+                return r.geturl(), ""
             return r.geturl(), r.read(800_000).decode("utf-8", "replace")
     except Exception:
         return url, ""
@@ -72,7 +75,10 @@ def candidates(kind: str, source: str, url: str, depth: int = 0) -> list[dict]:
     final, html = fetch(url)
     if not html:
         return []
-    soup = BeautifulSoup(html, "html.parser")
+    try:
+        soup = BeautifulSoup(html, "html.parser")
+    except Exception:
+        return []
     out = []
     detail_pages = []
     for a in soup.find_all("a", href=True):
