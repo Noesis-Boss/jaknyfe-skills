@@ -42,7 +42,7 @@ app.get("/", (c) =>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SaaS-Mailer</title>
-    <link rel="stylesheet" href="/src/client/styles.css?v=20260901-2" />
+    <link rel="stylesheet" href="/src/client/styles.css?v=20260902-2" />
   </head>
   <body>
     <div id="root"></div>
