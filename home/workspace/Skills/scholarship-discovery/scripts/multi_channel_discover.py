@@ -35,6 +35,13 @@ SOURCES = {
         ("Horatio Alger Association", "https://horatioalger.org/scholarships-and-services/"),
         ("Jack Kent Cooke Foundation", "https://www.jkcf.org/our-scholarships/"),
         ("Elks National Foundation", "https://www.elks.org/scholars/scholarships/mvs.cfm"),
+        ("Barry Goldwater Scholarship Foundation", "https://goldwaterscholarship.gov/"),
+        ("DRI Foundation", "https://foundation.drii.org/scholarship-award/"),
+        ("Alpha Sigma Alpha Foundation", "https://alphasigmaalpha.org/home/alpha-sigma-alpha-foundation/foundation-scholarships-grants/foundation-scholarships/"),
+        ("Dell Scholars", "https://www.dellscholars.org/"),
+        ("Gates Millennium Scholars", "https://gmsp.org/"),
+        ("Ron Brown Scholar Program", "https://ronbrown.org/"),
+        ("APIASF", "https://www.apiasf.org/"),
     ],
     "associations": [
         ("American Nurses Foundation", "https://www.nursingworld.org/foundation/scholarships/"),
@@ -43,6 +50,10 @@ SOURCES = {
         ("American Legion", "https://www.legion.org/scholarships"),
         ("American Psychological Association", "https://www.apa.org/apf/funding/scholarships"),
         ("National Society of Black Engineers", "https://www.nsbe.org/scholarships"),
+        ("PA Foundation", "https://pa-foundation.org/pa-student-scholarships/"),
+        ("Korean-American Scholars and Students Foundation", "https://www.ssfa.org/Home/Apply"),
+        ("NASPA Foundation", "https://www.naspa.org/about/naspa-foundation/scholarships"),
+        ("Scholars Apply", "https://start.scholarsapply.org/"),
     ],
     "government_nonprofit": [
         ("Federal Student Aid", "https://studentaid.gov/understand-aid/types/scholarships"),
@@ -51,6 +62,9 @@ SOURCES = {
         ("Point Foundation", "https://pointfoundation.org/scholarships/"),
         ("Hispanic Scholarship Fund", "https://www.hsf.net/scholarship"),
         ("P.E.O. International", "https://www.peointernational.org/about-peo-scholarships"),
+        ("San Diego Foundation", "https://www.sdfoundation.org/students/common-scholarship-application/"),
+        ("Philadelphia Foundation", "https://www.philafound.org/students/apply-for-a-scholarship/"),
+        ("Austin Community Foundation", "https://www.austincf.org/apply-for-funding/scholarships/opportunities/"),
     ],
 }
 SEARCH_PATTERNS = {
@@ -60,6 +74,7 @@ SEARCH_PATTERNS = {
     "government_nonprofit": ["scholarship application", "community foundation scholarship", "education award apply"],
 }
 HEADERS = {"User-Agent": "ScholarSearch/3.0 (+direct-application research)"}
+NON_APPLICATION_PATHS = re.compile(r"/(?:eventdetail|page/|news|blog|gallery|recap|results)(?:/|$)", re.I)
 
 def fetch(url: str, timeout: float = 10) -> tuple[str, str]:
     try:
@@ -90,6 +105,8 @@ def candidates(kind: str, source: str, url: str, depth: int = 0, deadline: float
         if not re.search(r"scholar|fellowship|award|grant", blob):
             continue
         if is_search_aggregator(href) or is_installer_url(href):
+            continue
+        if urlparse(href).netloc.lower().endswith("facebook.com") or NON_APPLICATION_PATHS.search(urlparse(href).path):
             continue
         host = urlparse(href).netloc.lower()
         if not host or host == urlparse(final).netloc.lower() and not re.search(r"apply|application|scholar|fellow|award", blob):
@@ -128,7 +145,7 @@ def insert(records: list[dict], db: str) -> int:
             h = hashlib.md5(re.sub(r"\W", "", name.lower()).encode()).hexdigest()
             if conn.execute("SELECT 1 FROM scholarships WHERE name_hash=? OR lower(scholarship_name)=lower(?)", (h, name)).fetchone():
                 continue
-            vals = [r["source"], f"multi-{date.today()}-{h[:10]}", name, r["organization"], "", "Discovered from an official scholarship resource.", "", None, None, "Varies", "", url, "Academic", "Undergraduate", None, "US", None, "", "", "", "active", date.today().isoformat(), h, 1, date.today().isoformat(), date.today().isoformat()]
+            vals = [r["source"], f"multi-{date.today()}-{h[:10]}", name, r["organization"], "", "Discovered from an official scholarship resource.", "", None, None, "Varies", "", url, "Academic", "Undergraduate", None, "US", None, "", "", "", "verified", date.today().isoformat(), h, 1, date.today().isoformat(), date.today().isoformat()]
             cols = "source,source_id,scholarship_name,organization,organization_type,description,eligibility,amount_min,amount_max,amount_display,deadline,application_url,category,education_level,field_of_study,state_restriction,gpa_min,citizenship,ethnicity,gender,url_status,last_checked,name_hash,active,created_at,updated_at"
             conn.execute(f"INSERT INTO scholarships ({cols}) VALUES ({','.join('?' for _ in vals)})", vals)
             existing.add(url); added += 1
