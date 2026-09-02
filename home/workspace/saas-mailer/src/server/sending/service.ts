@@ -103,6 +103,16 @@ export function listSendingAccounts(database: Database, organizationId: string):
   return database.query<SendingAccount, [string]>("SELECT id, organization_id, provider, email, status, created_at FROM sending_accounts WHERE organization_id = ? ORDER BY created_at, id").all(organizationId);
 }
 
+export function deleteSendingAccount(database: Database, organizationId: string, accountId: string): void {
+  const result = database.query("DELETE FROM sending_accounts WHERE id = ? AND organization_id = ?").run(accountId, organizationId);
+  if (result.changes === 0) throw new Error("Sending account not found");
+}
+
+export async function deleteSendingAccountPostgres(database: PostgresDatabase, organizationId: string, accountId: string): Promise<void> {
+  const changed = await repositories({ database, organizationId }).accounts.delete(accountId);
+  if (changed === 0) throw new Error("Sending account not found");
+}
+
 export async function sendWithAccount(database: Database, organizationId: string, accountId: string, input: SendInput): Promise<SendResult> {
   const account = database.query<{ provider: string; email: string }, [string, string]>("SELECT provider, email FROM sending_accounts WHERE id = ? AND organization_id = ?").get(accountId, organizationId);
   if (!account) throw new Error("Sending account not found");

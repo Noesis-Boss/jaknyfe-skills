@@ -140,6 +140,12 @@ function Dashboard() {
     const result = await api("/api/sending-accounts", { method: "POST", body: JSON.stringify({ provider: "mock", email: mockEmail, credentials: {} }) });
     if (result.id) { setNotice(`Test account ${result.email} connected`); setMockEmail(""); loadAll(); } else setNotice(result.error || "Unable to connect account");
   };
+  const removeAccount = async (account: Account) => {
+    if (!confirm(`Remove ${account.email}? This disconnects the account and cannot be undone.`)) return;
+    const result = await api(`/api/sending-accounts/${account.id}`, { method: "DELETE" });
+    if (result.ok) { setNotice(`${account.email} removed`); loadAll(); }
+    else setNotice(result.error || "Unable to remove account");
+  };
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -236,7 +242,7 @@ function Dashboard() {
             <input aria-label="Test account email" type="email" placeholder="Test account email (mock sender)" value={mockEmail} onChange={e => setMockEmail(e.target.value)} required />
             <button type="submit">Connect test account</button>
           </form>
-          {accounts.length ? accounts.map(a => <div className="record" key={a.id}><b>{a.email}</b><small>{a.provider} · {a.status}</small></div>) : <div className="empty"><span>∿</span><b>No sending accounts</b><p>Connect Gmail or Microsoft via OAuth, or add a mock account for testing. Credentials stay encrypted server-side.</p></div>}
+          {accounts.length ? accounts.map(a => <div className="record" key={a.id}><div><b>{a.email}</b><small>{a.provider} · {a.status}</small></div><button className="text-button danger-text" type="button" onClick={() => removeAccount(a)}>Remove</button></div>) : <div className="empty"><span>∿</span><b>No sending accounts</b><p>Connect Gmail or Microsoft via OAuth, or add a mock account for testing. Credentials stay encrypted server-side.</p></div>}
         </section>}
 
         {section === "Events" && <section className="panel">

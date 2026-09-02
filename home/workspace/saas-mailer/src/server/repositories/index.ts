@@ -26,6 +26,7 @@ export function repositories(context: RepositoryContext) {
       updateCredentials: (id: string, credentialCiphertext: string) => scoped(db => one(db, "UPDATE sending_accounts SET credential_ciphertext = $1 WHERE organization_id = $2 AND id = $3 RETURNING *", [credentialCiphertext, organizationId, id])),
       findActive: (id: string) => scoped(db => one(db, "SELECT * FROM sending_accounts WHERE organization_id = $1 AND id = $2 AND status = 'active'", [organizationId, id])),
       pause: (id: string) => scoped(db => db.execute("UPDATE sending_accounts SET status = 'paused' WHERE organization_id = $1 AND id = $2", [organizationId, id])),
+      delete: (id: string) => scoped(db => db.execute("DELETE FROM sending_accounts WHERE organization_id = $1 AND id = $2", [organizationId, id])),
     },
     campaigns: {
       list: () => scoped(db => rows(db, "SELECT * FROM campaigns WHERE organization_id = $1 ORDER BY created_at, id", [organizationId])),

@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import type { Database } from "bun:sqlite";
 import type { PostgresDatabase } from "../postgres";
 import { requireTenant, requireTenantPostgres } from "../auth/middleware";
-import { connectSendingAccount, connectSendingAccountPostgres, listSendingAccounts, listSendingAccountsPostgres, sendWithAccount, sendWithAccountPostgres } from "../sending/service";
+import { connectSendingAccount, connectSendingAccountPostgres, deleteSendingAccount, deleteSendingAccountPostgres, listSendingAccounts, listSendingAccountsPostgres, sendWithAccount, sendWithAccountPostgres } from "../sending/service";
 
 function logRouteError(operation: string, error: unknown): void {
   console.error(`Sending account ${operation} failed`, error);
@@ -28,6 +28,17 @@ export function createSendingAccountRoutes(database: Database | PostgresDatabase
     catch (error) {
       logRouteError("listing", error);
       return c.json({ error: "Unable to list sending accounts" }, 400);
+    }
+  });
+  routes.delete("/api/sending-accounts/:id", async (c) => {
+    try {
+      const organizationId = (isPostgres(database) ? await requireTenantPostgres(database, c.req.raw) : requireTenant(database, c.req.raw)).organizationId;
+      if (isPostgres(database)) await deleteSendingAccountPostgres(database, organizationId, c.req.param("id"));
+      else deleteSendingAccount(database, organizationId, c.req.param("id"));
+      return c.json({ ok: true });
+    } catch (error) {
+      logRouteError("deletion", error);
+      return c.json({ error: error instanceof Error && error.message.includes("foreign") ? "Account is used by a campaign or message" : "Unable to remove sending account" }, 400);
     }
   });
   routes.post("/api/sending-accounts/:id/send", async (c) => {
