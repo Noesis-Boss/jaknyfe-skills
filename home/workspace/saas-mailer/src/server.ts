@@ -46,7 +46,7 @@ app.get("/", (c) =>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/client/main.js?v=20260902-1"></script>
+    <script type="module" src="/src/client/main.js?v=20260902-3"></script>
   </body>
 </html>`),
 );
