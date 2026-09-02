@@ -35,6 +35,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 ## Issue Log
 
+- 2026-09-02: Gmail test send initially reached the API but failed because the MIME builder emitted literal `\\r\\n` text instead of CRLF line endings, causing Gmail to report `Recipient address required`. Fixed `src/server/sending/gmail-adapter.ts`; 32 tests pass. One live test to `don@noesisgroup.com` succeeded with Gmail message ID `1a060b7dc5de6bd6`; live dashboard screenshot verified.
+
 - 2026-08-31: The production worker was in BACKOFF because the managed command called the missing `start:worker` package script, not because `CREDENTIAL_ENCRYPTION_KEY` was absent. Restored the script to run `src/worker/main.ts`; the worker started successfully with the configured 64-character key. `bun test` passes 32/32.
 
 - 2026-08-22: CSV imports could still report a missing email header when files began with blank lines or used quoted delimiter characters. Delimiter detection now scans the first nonblank line and ignores separators inside quoted headers; 13 contact tests pass and the public dashboard was republished.
