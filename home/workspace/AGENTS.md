@@ -26,6 +26,15 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 
 - **Skills system** — see `Skills/AGENTS.md` for the full index. Notable: `Skills/faceless-explainer/` is the empty visual-render skill (rebuild when used); `Skills/youtube-channel-framework/` is the empty strategy skill (use the new `Skills/faceless-yt-system/` system instead). Recently added a 5-stage prompt-driven faceless YouTube system (`Skills/faceless-yt-{niche-brand,content-engine,discoverability,retention-script,monetization,system}`) with an `init/run.ts` orchestrator. Enhanced: `video-script` (retention-arc structure, 3-5s hook emphasis, clickbait-free guard), `hook-generator` (scroll-stopper scoring + retention-bridge contract).
 
+## Three-layer context stack
+
+- **Caveman** (`/usr/bin/caveman`, v0.65.2) is the response/output layer. Use terse mode for routine execution, debugging, and status; preserve normal detail for architecture, teaching, and safety-sensitive work. The existing `Skills/caveman-code/` wrapper remains the supported CLI entrypoint.
+- **Graphify** (`graphify`, installed via `uv tool`, v0.9.53) is the repository/retrieval layer. Codex and Hermes guidance is installed in their agent skill directories. The global graph is `/root/.graphify/global-graph.json`; current indexed projects are `robinhood-trading-bot`, `open-jobs`, and `scholarsearch-site`. Each project graph lives in its own `graphify-out/` directory.
+- **Headroom** is the application/input layer, not a global shell filter. Use it inside agent or RAG applications that produce oversized tool output, logs, JSON, or search results. Treat published reduction percentages as claims until measured locally; the existing `Skills/headroom-eval/` is only a restored stub and is not a production integration.
+- **Routing rule:** Classify first, then route: Graphify for repository structure, dependencies, and “where/how is this connected?” questions; Headroom inside applications for oversized logs, JSON, tool output, or retrieval context; Caveman `brief` for routine execution/status, `normal` for ordinary work, and `deep`/`safety` for architecture, teaching, publishing, financial, or safety-sensitive work. Do not compress source code or safety-critical evidence without retaining a recoverable original.
+- **Graphify maintenance:** Graphify post-commit and post-checkout hooks are installed for `robinhood-trading-bot`, `open-jobs`, and `scholarsearch-site`; each rebuilds code-only graph data incrementally. Set `GRAPHIFY_SKIP_HOOK=1` for an intentional bypass. Verify with `uv tool run --from graphifyy graphify hook status` from the repository.
+- **Routing decision table:** Use the narrowest layer that solves the task. If a task has multiple needs, apply them in this order: Graphify retrieval → Headroom only if the resulting context is oversized → full-detail execution → Caveman formatting at the end. Skip compression for source code, evidence, and safety-critical material.
+
 ## Filesystem migration
 
 - 2026-08-13: Moved seven isolated root artifacts to `Archive/root-artifacts/` after reference and tracking checks.
@@ -89,6 +98,30 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - 2026-08-25: Astra memory full sync repeatedly stalled because `sync.ts` spawned and reloaded the embedding model once per missing document, reconciled writes sequentially, lacked an HTTP timeout, and limited reads to the first 100 records. Added batched single-process embeddings, eight-write concurrency, a 30-second request timeout, input deduplication, and a 1,000-record paginated read limit. Rebuilt only the corrupted `memories` mirror from its filesystem sources, inserted 185 unique records, verified a second idempotent pass with zero inserts, and confirmed Chapter 10 lexical recall.
 
 ## Feature Log
+
+- 2026-09-02: Evaluated five uploaded AlexAI Empire business-prompt images. Enhanced `Skills/find-moneymaking-biz/SKILL.md` with assumption/evidence separation, scoring criteria, rejection rules, and a 48-hour validation gate. Added `Skills/business-prompt-system/SKILL.md` to sequence discovery, validation, offer, copy, acquisition, fulfillment, automation, and measurement without treating prompts as proof of demand.
+
+- 2026-09-01: Enacted three-layer routing improvements. Installed Graphify post-commit/post-checkout maintenance hooks for `robinhood-trading-bot`, `open-jobs`, and `scholarsearch-site`; documented Caveman `brief`/`normal`/`deep`/`safety` modes; added explicit Graphify → optional Headroom → full-detail execution → Caveman formatting order. Graphify benchmarks: 6.5× robinhood-trading-bot, 3.5× open-jobs, and 30.1× scholarsearch-site. Headroom `0.28.0` is installed, but its proxy is intentionally not globally routed; `headroom doctor` reports port 8787 unreachable and no savings recorded. Claims remain workload-dependent.
+
+- 2026-09-01: Integrated selected prompt-master patterns into `Skills/prompt-improver/SKILL.md`: intent extraction, target-tool routing, decompiler mode, untrusted-content and credential sanitization, bounded agentic execution contracts, and token/verification audits. No standalone prompt-master skill was installed.
+
+- 2026-09-01: Upgraded `Skills/weekend-business-launch/SKILL.md` with conditional capability routing: it selects specialists by need, includes brainstorming and frontend design, adds conditional dashboard scope, records skipped skills, and preserves validation gates.
+
+- 2026-09-01: Created `Skills/launch-metrics/SKILL.md` for launch funnel tracking, conversion math, unit economics, capacity measurement, and CONTINUE/ADJUST/STOP readouts.
+
+- 2026-09-01: Created `Skills/product-delivery-builder/SKILL.md` for minimum purchase-to-outcome fulfillment, onboarding, access, support, refunds, capacity limits, failure recovery, and measured automation triggers.
+
+- 2026-09-01: Created `Skills/customer-validation/SKILL.md` for bounded customer discovery and demand tests, with behavior-based evidence, interview guidance, predeclared thresholds, and PROCEED/ITERATE/STOP gates.
+
+- 2026-09-01: Created `Skills/no-code-mvp-builder/SKILL.md` to choose and verify a minimum no-code/low-code stack for a paid MVP, including conversion, intake, delivery, measurement, costs, limits, privacy, and manual fallback gates.
+
+- 2026-09-01: Enhanced the social-media skill system from Charlie947's review patterns. Added `Skills/post-formatter/SKILL.md`; added evidence-versus-hypothesis safeguards to `content-matrix`, `post-scorer`, and `eval-content`; added absence-signal auditing to `audience-profile`. Frontmatter and `git diff --check` validation passed.
+
+- 2026-08-31: Continued guarded ScholarSearch multi-channel discovery. Parallelized direct endpoint verification in `Skills/scholarship-discovery/scripts/multi_channel_discover.py`; latest batch found 280 candidates, verified 100, and inserted 49 new records into each database. Safety tests 10/10 and SQLite integrity checks passed. Current active totals: primary 9,217, site mirror 1,474; the 5,000 target remains open because the database mirrors diverge.
+
+- 2026-08-31: Added `Skills/scholarship-discovery/scripts/multi_channel_discover.py` for guarded discovery across universities, sponsors, professional associations, and government/nonprofit sources. Real endpoint fetch verification found 334 candidates, accepted 20, and inserted 12 new records into each database after validated backups; 10/10 discovery tests passed and both databases passed SQLite integrity checks. Current active verified counts diverge: primary 4,452, site mirror 1,117; the 5,000 target remains open.
+
+- 2026-08-31: Updated `Skills/video-use/` from upstream `browser-use/video-use` commit `9575612` (2026-08-30), replacing the restored stub documentation with the production workflow, preserving the existing `.venv`, and adding upstream tests. Validation: 16 tests passed, 15 subtests passed; helper Python compilation passed; FFmpeg 5.1.8 and yt-dlp 2026.03.17 are available.
 
 - 2026-08-30: Recreated the missing AZPS printer-repair hero artwork and added it as `azps/public/azps-printer-hero-bg.png`, with the production static copy at `azps/dist/azps-printer-hero-bg.png`. Local root-page screenshot verified the hero image renders behind the existing overlay and text; the repository's `bun run build` remains blocked by its pre-existing missing `index.html` Vite entry.
 
