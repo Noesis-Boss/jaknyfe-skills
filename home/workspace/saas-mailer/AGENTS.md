@@ -1,5 +1,7 @@
 # SaaS-Mailer
 
+- 2026-09-02: Added CSV import feedback: multipart uploads now preserve browser boundaries, and Contacts shows imported, skipped, and invalid-row totals after each import. Commit `cd36ba7`; 32/32 tests pass and the live dashboard screenshot renders.
+
 - 2026-08-20: Added production `start` and `start:worker` scripts, changed the Site entrypoint from hot development mode to `bun run start`, wired worker polling/batch settings through `loadConfig()`, and removed SMTP from the production adapter list. Registered private managed service `saas-mailer-worker` (`svc_eZzzmcvdlKk`); it is currently in BACKOFF because Zo secrets do not yet include a valid 32-byte `CREDENTIAL_ENCRYPTION_KEY`.
 
 Standalone Bun/Hono/React MVP for multi-tenant outbound email. Run commands from `saas-mailer/`.
