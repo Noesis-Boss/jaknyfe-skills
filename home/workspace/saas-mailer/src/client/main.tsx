@@ -3,7 +3,9 @@ import { createRoot } from "react-dom/client";
 import "./styles.css";
 
 const api = async (path: string, options: RequestInit = {}) => {
-  const response = await fetch(path, { ...options, credentials: "same-origin", headers: { "Content-Type": "application/json", ...(options.headers || {}) } });
+  const headers = new Headers(options.headers);
+  if (!(options.body instanceof FormData) && !headers.has("Content-Type")) headers.set("Content-Type", "application/json");
+  const response = await fetch(path, { ...options, credentials: "same-origin", headers });
   return response.json();
 };
 document.title = "Outbound workspace";
@@ -44,6 +46,7 @@ function Dashboard() {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [listName, setListName] = useState("");
   const [targetList, setTargetList] = useState("");
+  const [importReport, setImportReport] = useState<{ inserted: number; skipped: number; invalid: number } | null>(null);
   const [mockEmail, setMockEmail] = useState("");
   const [form, setForm] = useState<{ name: string; steps: Array<{ subject: string; body: string; delay: number }> }>({ name: "", steps: [{ subject: "", body: "", delay: 0 }] });
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -98,10 +101,11 @@ function Dashboard() {
   };
   const createList = async (e: React.FormEvent) => { e.preventDefault(); const result = await api("/api/contact-lists", { method: "POST", body: JSON.stringify({ name: listName }) }); if (result.id) { setLists(current => [...current, result]); setTargetList(result.id); setListName(""); setNotice(`List "${result.name}" created`); } else setNotice(result.error || "Unable to create list"); };
   const addToList = async () => { if (!targetList || !selectedIds.length) return; const result = await api(`/api/contact-lists/${targetList}/members`, { method: "POST", body: JSON.stringify({ contact_ids: selectedIds }) }); setNotice(`${result.added || 0} contacts added to the list`); setSelectedIds([]); api("/api/contact-lists").then(value => { if (value.lists) setLists(value.lists); }); };
-  const importContacts = async (csv: string) => {
+  const importContacts = async (file: File) => {
     try {
-      const result = await api("/api/contacts/import", { method: "POST", headers: { "Content-Type": "text/csv" }, body: csv });
-      if (result.inserted) setNotice(`${result.inserted} contact${result.inserted === 1 ? "" : "s"} imported`);
+      const data = new FormData(); data.append("file", file);
+      const result = await api("/api/contacts/import", { method: "POST", body: data });
+      if (result.inserted != null) { setImportReport(result); setNotice(`${result.inserted} imported · ${result.skipped} skipped · ${result.invalid} invalid`); }
       else setNotice(result.error || "No new contacts imported");
       const fresh = await api("/api/contacts");
       if (fresh.contacts) setContacts(fresh.contacts);
@@ -110,7 +114,7 @@ function Dashboard() {
 
   const handleContactsFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file) await importContacts(await file.text());
+    if (file) await importContacts(file);
     event.target.value = "";
   };
   const createCampaign = async (e: React.FormEvent) => {
@@ -206,6 +210,7 @@ function Dashboard() {
 
         {section === "Contacts" && <section className="panel">
           <div className="panel-head"><div><p className="eyebrow">Audience</p><h3>Contacts ({contacts.length})</h3></div><button className="text-button" onClick={() => fileInputRef.current?.click()}>Import CSV ↗</button><input ref={fileInputRef} type="file" accept=".csv,text/csv" onChange={handleContactsFile} hidden /></div>
+          {importReport && <div className="import-report"><b>Last import</b><span>{importReport.inserted} imported</span><span>{importReport.skipped} skipped</span><span className={importReport.invalid ? "invalid" : ""}>{importReport.invalid} invalid rows</span></div>}
           {selectedContact ? <ContactDetail contact={selectedContact} form={editForm} onChange={patch => setEditForm(form => ({ ...form, ...patch }))} onClose={() => setSelectedContact(null)} onSave={handleSaveContact} onDelete={handleDeleteContact} /> : <>
             <input className="search-input" placeholder="Search contacts..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
             <div className="list-tools"><form onSubmit={createList}><input aria-label="New list name" placeholder="New list name" value={listName} onChange={e => setListName(e.target.value)} required /><button type="submit">Create list</button></form>{lists.length > 0 && <div className="list-assign"><select aria-label="Choose list" value={targetList} onChange={e => setTargetList(e.target.value)}><option value="">Choose a list</option>{lists.map(list => <option key={list.id} value={list.id}>{list.name} ({list.contact_count})</option>)}</select><button type="button" onClick={addToList} disabled={!targetList || !selectedIds.length}>Add {selectedIds.length || "selected"} to list</button></div>}</div>
