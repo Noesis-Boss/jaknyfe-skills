@@ -46,7 +46,11 @@ function Dashboard() {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [listName, setListName] = useState("");
   const [targetList, setTargetList] = useState("");
-  const [importReport, setImportReport] = useState<{ inserted: number; skipped: number; invalid: number } | null>(null);
+  const [importReport, setImportReport] = useState<{ inserted: number; skipped: number; invalid: number; invalid_rows?: Array<{ row: number; email: string; reason: string }>; invalid_csv?: string } | null>(null);
+  const [importListMode, setImportListMode] = useState("none");
+  const [importListId, setImportListId] = useState("");
+  const [importNewListName, setImportNewListName] = useState("");
+  const [importListColumn, setImportListColumn] = useState("");
   const [mockEmail, setMockEmail] = useState("");
   const [form, setForm] = useState<{ name: string; steps: Array<{ subject: string; body: string; delay: number }> }>({ name: "", steps: [{ subject: "", body: "", delay: 0 }] });
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -103,9 +107,9 @@ function Dashboard() {
   const addToList = async () => { if (!targetList || !selectedIds.length) return; const result = await api(`/api/contact-lists/${targetList}/members`, { method: "POST", body: JSON.stringify({ contact_ids: selectedIds }) }); setNotice(`${result.added || 0} contacts added to the list`); setSelectedIds([]); api("/api/contact-lists").then(value => { if (value.lists) setLists(value.lists); }); };
   const importContacts = async (file: File) => {
     try {
-      const data = new FormData(); data.append("file", file);
+      const data = new FormData(); data.append("file", file); data.append("list_id", importListMode === "existing" ? importListId : ""); data.append("new_list_name", importListMode === "new" ? importNewListName : ""); data.append("list_column", importListMode === "column" ? importListColumn : "");
       const result = await api("/api/contacts/import", { method: "POST", body: data });
-      if (result.inserted != null) { setImportReport(result); setNotice(`${result.inserted} imported · ${result.skipped} skipped · ${result.invalid} invalid`); }
+      if (result.inserted != null) { setImportReport(result); setNotice(`${result.inserted} imported · ${result.skipped} skipped · ${result.invalid} invalid`); api("/api/contact-lists").then(value => { if (value.lists) setLists(value.lists); }); }
       else setNotice(result.error || "No new contacts imported");
       const fresh = await api("/api/contacts");
       if (fresh.contacts) setContacts(fresh.contacts);
@@ -210,7 +214,8 @@ function Dashboard() {
 
         {section === "Contacts" && <section className="panel">
           <div className="panel-head"><div><p className="eyebrow">Audience</p><h3>Contacts ({contacts.length})</h3></div><button className="text-button" onClick={() => fileInputRef.current?.click()}>Import CSV ↗</button><input ref={fileInputRef} type="file" accept=".csv,text/csv" onChange={handleContactsFile} hidden /></div>
-          {importReport && <div className="import-report"><b>Last import</b><span>{importReport.inserted} imported</span><span>{importReport.skipped} skipped</span><span className={importReport.invalid ? "invalid" : ""}>{importReport.invalid} invalid rows</span></div>}
+          <div className="import-panel"><b>Import contacts</b><span>Choose how imported contacts join a list.</span><div className="import-options"><select aria-label="Import list mode" value={importListMode} onChange={e => setImportListMode(e.target.value)}><option value="none">No list assignment</option><option value="existing">Add to existing list</option><option value="new">Create a new list</option><option value="column">Use CSV list column</option></select>{importListMode === "existing" && <select aria-label="Import target list" value={importListId} onChange={e => setImportListId(e.target.value)}><option value="">Choose a list</option>{lists.map(list => <option key={list.id} value={list.id}>{list.name}</option>)}</select>}{importListMode === "new" && <input aria-label="Import new list name" placeholder="New list name" value={importNewListName} onChange={e => setImportNewListName(e.target.value)} />}{importListMode === "column" && <input aria-label="CSV list column" placeholder="CSV column name, e.g. list" value={importListColumn} onChange={e => setImportListColumn(e.target.value)} />}<button type="button" onClick={() => fileInputRef.current?.click()}>Choose CSV</button></div></div>
+          {importReport && <div className="import-report"><b>Last import</b><span>{importReport.inserted} imported</span><span>{importReport.skipped} skipped</span><span className={importReport.invalid ? "invalid" : ""}>{importReport.invalid} invalid rows</span>{importReport.invalid_csv && <button type="button" className="text-button" onClick={() => { const url = URL.createObjectURL(new Blob([importReport.invalid_csv!], { type: "text/csv" })); const link = document.createElement("a"); link.href = url; link.download = "invalid-contacts.csv"; link.click(); URL.revokeObjectURL(url); }}>Download invalid rows</button>}</div>}
           {selectedContact ? <ContactDetail contact={selectedContact} form={editForm} onChange={patch => setEditForm(form => ({ ...form, ...patch }))} onClose={() => setSelectedContact(null)} onSave={handleSaveContact} onDelete={handleDeleteContact} /> : <>
             <input className="search-input" placeholder="Search contacts..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
             <div className="list-tools"><form onSubmit={createList}><input aria-label="New list name" placeholder="New list name" value={listName} onChange={e => setListName(e.target.value)} required /><button type="submit">Create list</button></form>{lists.length > 0 && <div className="list-assign"><select aria-label="Choose list" value={targetList} onChange={e => setTargetList(e.target.value)}><option value="">Choose a list</option>{lists.map(list => <option key={list.id} value={list.id}>{list.name} ({list.contact_count})</option>)}</select><button type="button" onClick={addToList} disabled={!targetList || !selectedIds.length}>Add {selectedIds.length || "selected"} to list</button></div>}</div>
