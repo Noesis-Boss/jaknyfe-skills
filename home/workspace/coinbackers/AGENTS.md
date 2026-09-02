@@ -15,6 +15,8 @@
 
 ## Feature Log
 
+- 2026-09-02: Added a Dashboard wallet-connection affordance. Browser wallets use `eth_requestAccounts`; environments without a provider use a clearly labeled local demo address, persisted in local storage. Build passed and the rendered Dashboard was screenshot-verified at `coinbackers-wallet-verified.png`.
+
 - 2026-09-02: Added live Explore search and category filtering for Technology, Sustainability, and Community campaigns. Search/category states update the visible project count and empty state; build and rendered-page screenshot passed at `coinbackers-explore-filters-final.png`.
 
 - 2026-09-01: Added a white CoinBackers header with coin icon and a functional “Back to Main” link to the Explore Projects page. Build passed and the rendered page was screenshot-verified at `coinbackers-explore-back-main-verified.png`.
