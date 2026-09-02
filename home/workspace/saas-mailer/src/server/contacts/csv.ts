@@ -95,3 +95,17 @@ export function countInvalidContacts(csvText: string): number {
   if (emailIndex < 0) throw new InvalidContactsCsvError("Invalid CSV: missing required email header");
   return rows.slice(1).filter((row) => !validEmail((row[emailIndex] || "").trim())).length;
 }
+
+export type InvalidContactRow = { row: number; email: string; reason: string };
+
+export function invalidContactRows(csvText: string): InvalidContactRow[] {
+  const rows = parseRows(csvText);
+  if (!rows.length) return [];
+  const headers = rows[0].map((header, index) => normalizeHeader(index === 0 ? header.replace(/^\uFEFF/, "") : header));
+  const emailIndex = findHeader(headers, "email");
+  if (emailIndex < 0) throw new InvalidContactsCsvError("Invalid CSV: missing required email header");
+  return rows.slice(1).flatMap((row, index) => {
+    const email = (row[emailIndex] || "").trim();
+    return validEmail(email) ? [] : [{ row: index + 2, email, reason: email ? "Invalid email address" : "Email is required" }];
+  });
+}
