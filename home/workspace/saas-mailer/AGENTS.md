@@ -19,6 +19,7 @@ Standalone Bun/Hono/React MVP for multi-tenant outbound email. Run commands from
 Run `bun test` for the full suite. The dashboard must also be screenshot-verified after frontend changes. Keep provider credentials server-side and preserve organization-scoped composite constraints.
 
 ## Feature Log
+- 2026-09-02: Extended CSV import feedback with invalid-row reasons and downloadable `invalid-contacts.csv`; imports can assign valid rows to an existing list, create a new list, or use a CSV list column. Tests pass and the live dashboard renders the updated import panel. Commit `f6fd1b8`.
 - 2026-09-02: Added tenant-scoped sending-account removal for SQLite and PostgreSQL, with confirmation UI and foreign-key protection when an account is still used by campaigns or messages. Tests pass; live dashboard verification completed.
 - 2026-09-01: Cleared the confirmed `don@noesisgroup.com` SaaS-Mailer tenant contact list. Deleted 1,101 contacts; campaigns, sending accounts, and contact-linked history were preserved because no dependent records existed.
 - 2026-09-01: Fixed contact management for both SQLite and PostgreSQL detail, edit, and delete routes; bumped client assets to `20260901-2` to force browsers to load the management UI. Tests pass and production restarted.
