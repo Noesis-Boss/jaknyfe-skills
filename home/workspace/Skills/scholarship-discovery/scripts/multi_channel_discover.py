@@ -2,7 +2,7 @@
 """Discover scholarship opportunities from official university, sponsor, association, and government sources."""
 from __future__ import annotations
 
-import argparse, hashlib, json, re, sqlite3
+import argparse, hashlib, json, re, sqlite3, time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
 from pathlib import Path
@@ -61,9 +61,9 @@ SEARCH_PATTERNS = {
 }
 HEADERS = {"User-Agent": "ScholarSearch/3.0 (+direct-application research)"}
 
-def fetch(url: str) -> tuple[str, str]:
+def fetch(url: str, timeout: float = 10) -> tuple[str, str]:
     try:
-        with urlopen(Request(url, headers=HEADERS), timeout=10) as r:
+        with urlopen(Request(url, headers=HEADERS), timeout=timeout) as r:
             content_type = r.headers.get_content_type().lower()
             if content_type not in {"text/html", "application/xhtml+xml"}:
                 return r.geturl(), ""
@@ -71,8 +71,10 @@ def fetch(url: str) -> tuple[str, str]:
     except Exception:
         return url, ""
 
-def candidates(kind: str, source: str, url: str, depth: int = 0) -> list[dict]:
-    final, html = fetch(url)
+def candidates(kind: str, source: str, url: str, depth: int = 0, deadline: float | None = None) -> list[dict]:
+    if deadline is not None and time.monotonic() >= deadline:
+        return []
+    final, html = fetch(url, max(0.5, min(10, (deadline - time.monotonic()) if deadline else 10)))
     if not html:
         return []
     try:
@@ -100,7 +102,9 @@ def candidates(kind: str, source: str, url: str, depth: int = 0) -> list[dict]:
             out.append({"scholarship_name": title, "organization": source, "application_url": href, "source": kind, "source_url": url})
     if depth == 0:
         for detail_url in list(dict.fromkeys(detail_pages))[:40]:
-            out.extend(candidates(kind, source, detail_url, depth=1))
+            if deadline is not None and time.monotonic() >= deadline:
+                break
+            out.extend(candidates(kind, source, detail_url, depth=1, deadline=deadline))
     return out
 
 def verified(c: dict) -> bool:
@@ -131,23 +135,39 @@ def insert(records: list[dict], db: str) -> int:
     return added
 
 def main():
-    p = argparse.ArgumentParser(); p.add_argument("--limit", type=int, default=100); p.add_argument("--commit", action="store_true"); p.add_argument("--output", type=Path, default=Path(__file__).with_name("multi_channel_report.json")); a = p.parse_args()
+    p = argparse.ArgumentParser(); p.add_argument("--limit", type=int, default=100); p.add_argument("--commit", action="store_true"); p.add_argument("--crawl-deadline", type=float, default=90, help="Maximum seconds for source crawling"); p.add_argument("--verify-deadline", type=float, default=90, help="Maximum seconds for endpoint verification"); p.add_argument("--output", type=Path, default=Path(__file__).with_name("multi_channel_report.json")); a = p.parse_args()
     jobs = [(k, n, u) for k, rows in SOURCES.items() for n, u in rows]
     raw = []
     source_yields = {k: {"sources": len(v), "landing_candidates": 0, "detail_candidates": 0} for k, v in SOURCES.items()}
-    with ThreadPoolExecutor(max_workers=12) as pool:
-        futures = {pool.submit(candidates, *j): j for j in jobs}
-        for f in as_completed(futures):
+    crawl_started = time.monotonic()
+    crawl_deadline = crawl_started + a.crawl_deadline
+    pool = ThreadPoolExecutor(max_workers=12)
+    futures = {pool.submit(candidates, *j, deadline=crawl_deadline): j for j in jobs}
+    done = set()
+    try:
+        remaining = max(0.01, crawl_deadline - time.monotonic())
+        for f in as_completed(futures, timeout=remaining):
+            done.add(f)
             kind, _, _ = futures[f]
             found = f.result()
             raw.extend(found)
             source_yields[kind]["landing_candidates"] += len(found)
             source_yields[kind]["detail_candidates"] += sum(1 for c in found if c["source_url"] != c["application_url"])
+    except TimeoutError:
+        pass
+    finally:
+        for f in futures:
+            if f not in done:
+                f.cancel()
+        pool.shutdown(wait=False, cancel_futures=True)
+    crawl_timed_out = time.monotonic() >= crawl_deadline
     unique = {}; rejected = 0
     pool_candidates = raw[:a.limit * 3]
-    with ThreadPoolExecutor(max_workers=16) as pool:
-        checks = {pool.submit(verified, c): c for c in pool_candidates}
-        for f in as_completed(checks):
+    verify_started = time.monotonic()
+    verify_pool = ThreadPoolExecutor(max_workers=16)
+    checks = {verify_pool.submit(verified, c): c for c in pool_candidates}
+    try:
+        for f in as_completed(checks, timeout=a.verify_deadline):
             c = checks[f]
             key = (c["scholarship_name"].lower(), c["organization"].lower(), c["application_url"])
             try:
@@ -156,8 +176,14 @@ def main():
                 accepted = False
             if key in unique or not accepted: rejected += 1
             else: unique[key] = c
+    except TimeoutError:
+        for f in checks:
+            if not f.done():
+                f.cancel()
+    finally:
+        verify_pool.shutdown(wait=False, cancel_futures=True)
     records = list(unique.values())[:a.limit]
-    report = {"sources": source_yields, "search_patterns": SEARCH_PATTERNS, "crawl_depth": 1, "raw_candidates": len(raw), "verified_candidates": len(records), "rejected": rejected, "committed": False}
+    report = {"sources": source_yields, "search_patterns": SEARCH_PATTERNS, "crawl_depth": 1, "raw_candidates": len(raw), "verified_candidates": len(records), "rejected": rejected, "committed": False, "crawl_seconds": round(time.monotonic() - crawl_started, 2), "crawl_timed_out": crawl_timed_out, "verify_seconds": round(time.monotonic() - verify_started, 2)}
     if a.commit and records:
         for db in DBS: make_backup(db)
         report["added_each_db"] = [insert(records, db) for db in DBS]; report["committed"] = True

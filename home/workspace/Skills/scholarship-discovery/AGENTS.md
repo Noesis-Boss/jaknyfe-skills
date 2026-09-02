@@ -1,5 +1,9 @@
 # Scholarship Discovery
 
+## Issue Log
+
+- 2026-09-02: Added crawl-phase and verification-phase wall-clock deadlines to `multi_channel_discover.py`. Unfinished futures are cancelled, bounded pools shut down without waiting on stale work, and reports record crawl duration/timeout state. Python safety suite passes 10/10; both production databases remain intact at 2,842 active verified records.
+
 ## Current discovery model
 
 The multi-channel runner uses university, sponsor, professional-association, and government/nonprofit source classes. Each source page is crawled for scholarship-specific detail pages, then detail pages are crawled one level deeper before endpoint verification. Aggregator and installer sites remain discovery-only and cannot be inserted. The runner reports landing-vs-detail yield and the query-pattern families used for future source expansion.
