@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import type { Database } from "bun:sqlite";
 import type { PostgresDatabase } from "../postgres";
 import { requireTenant, requireTenantPostgres } from "../auth/middleware";
-import { signTrackingToken, verifyTrackingToken, recordPublicEvent } from "../tracking/tokens";
+import { verifyTrackingToken, verifyUnsubscribeToken, recordPublicEvent, resolveMessageRecipient, suppressEmail } from "../tracking/tokens";
 
 const transparentPixel = Uint8Array.from([71,73,56,57,97,1,0,1,0,128,0,0,0,0,0,255,255,255,33,249,4,1,0,0,0,0,44,0,0,0,0,1,0,1,0,0,2,2,68,1,0,59]);
 function pg(db: Database | PostgresDatabase): db is PostgresDatabase { return "sql" in db; }
@@ -39,6 +39,19 @@ export function createAnalyticsRoutes(database: Database | PostgresDatabase) {
     const target = c.req.query("url") || "/";
     try { const id = verifyTrackingToken(c.req.param("token")); if (id) await recordPublicEvent(database, id, "clicked", { url: target }); } catch {}
     return c.redirect(target);
+  });
+  routes.get("/api/t/u/:token", async c => {
+    const confirmed = `<html><body style="font-family:sans-serif;text-align:center;padding:48px"><h1 style="font-size:20px">You're unsubscribed</h1><p style="color:#666">You will not receive further emails from this sender.</p></body></html>`;
+    try {
+      const messageId = verifyUnsubscribeToken(c.req.param("token"));
+      if (!messageId) return c.html(confirmed);
+      const recipient = await resolveMessageRecipient(database, messageId);
+      if (recipient) {
+        await suppressEmail(database, recipient.organizationId, recipient.email, "one_click_unsubscribe");
+        await recordPublicEvent(database, messageId, "unsubscribed");
+      }
+    } catch {}
+    return c.html(confirmed);
   });
   return routes;
 }

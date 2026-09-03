@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { signTrackingToken, verifyTrackingToken, injectTracking } from "../src/server/tracking/tokens";
+import { signTrackingToken, verifyTrackingToken, signUnsubscribeToken, verifyUnsubscribeToken, injectTracking } from "../src/server/tracking/tokens";
 
 describe("tokenized tracking", () => {
   test("signs and verifies a message token", () => {
@@ -16,5 +16,20 @@ describe("tokenized tracking", () => {
     expect(html).toContain("https%3A%2F%2Fexample.com%2Fx");
     const token = html.match(/api\/t\/c\/([^?']+)/)![1];
     expect(verifyTrackingToken(decodeURIComponent(token))).toBe("msg-123");
+  });
+
+  test("signs and verifies unsubscribe tokens separately from click tokens", () => {
+    const token = signUnsubscribeToken("msg-123");
+    expect(verifyUnsubscribeToken(token)).toBe("msg-123");
+    expect(verifyTrackingToken(token)).toBeNull();
+    expect(verifyUnsubscribeToken(signTrackingToken("msg-123"))).toBeNull();
+  });
+
+  test("injects unsubscribe footer into html", () => {
+    const html = injectTracking("<p>Hi</p>", "msg-123");
+    expect(html).toContain("/api/t/u/");
+    expect(html).toContain("Unsubscribe");
+    const token = html.match(/api\/t\/u\/([^"]+)/)![1];
+    expect(verifyUnsubscribeToken(token)).toBe("msg-123");
   });
 });
