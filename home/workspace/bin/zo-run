@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -o pipefail
+
+if [[ $# -eq 0 ]]; then
+  echo "Usage: zo-run COMMAND [ARGS...]" >&2
+  exit 2
+fi
+
+case "$1" in
+  cat|sed|awk|head|tail|less|more|vi|vim|nano|nvim|sh|bash|zsh|python|python3|bun|node)
+    exec "$@"
+    ;;
+  *)
+    exec bun run /home/workspace/Skills/token-saver/scripts/run.ts "$*"
+    ;;
+esac

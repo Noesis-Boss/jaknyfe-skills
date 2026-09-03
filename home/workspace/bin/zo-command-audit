@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -u
+
+cmd="${*:-}"
+if [[ -z "$cmd" ]]; then
+  echo "Usage: zo-command-audit COMMAND [ARGS...]"
+  exit 2
+fi
+
+case "$cmd" in
+  git\ *|*pytest*|*"bun run"*|*"npm "*|*"docker "*|*"kubectl "*|*"terraform "*)
+    echo "ROUTE  token-saver: bun run /home/workspace/Skills/token-saver/scripts/run.ts '$cmd'"
+    ;;
+  *"rg "*|*"grep "*|*"find "*|*"curl "*|*"jq "*|*"yq "*)
+    echo "ROUTE  token-saver or targeted query: inspect only the needed paths and fields"
+    ;;
+  *)
+    echo "ROUTE  direct command acceptable"
+    ;;
+esac
+
+if [[ ${#cmd} -gt 240 ]]; then
+  echo "BUDGET long command: split into bounded checks"
+else
+  echo "BUDGET command length: ${#cmd} characters"
+fi

@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -u
+pass=0
+fail=0
+check() {
+  local label="$1"; shift
+  if "$@" >/dev/null 2>&1; then printf 'PASS  %s\n' "$label"; pass=$((pass+1)); else printf 'FAIL  %s\n' "$label"; fail=$((fail+1)); fi
+}
+
+check "token-saver" test -f /root/.token-saver/scripts/wrap.py
+check "token-saver wrapper" test -f /home/workspace/Skills/token-saver/scripts/run.ts
+check "Caveman" command -v caveman
+check "Graphify" uv tool run --from graphifyy graphify --help
+check "Astra sync" test -f /home/workspace/Skills/astra-memory/scripts/sync.ts
+check "zobodhi memory" test -f /home/workspace/Skills/zobodhi-memory/scripts/memory.ts
+for repo in robinhood-trading-bot open-jobs scholarsearch-site; do
+  if [[ -f "/home/workspace/$repo/.git/hooks/post-commit" || -f "/home/workspace/$repo/.git/hooks/post-checkout" ]]; then
+    printf 'PASS  Graphify hook: %s\n' "$repo"; pass=$((pass+1))
+  else
+    printf 'FAIL  Graphify hook: %s\n' "$repo"; fail=$((fail+1))
+  fi
+done
+
+printf '%s checks: %s passed, %s failed\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$pass" "$fail"
+exit "$fail"
