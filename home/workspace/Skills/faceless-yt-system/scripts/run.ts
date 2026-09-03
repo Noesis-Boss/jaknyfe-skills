@@ -1,11 +1,11 @@
 #!/usr/bin/env bun
 /**
- * faceless-yt-system runner — orchestrate the 5 stages of the faceless-youtube-system.
+ * faceless-yt-system runner — orchestrate the 6 stages of the faceless-youtube-system.
  *
  * Each stage is a SKILL.md; this runner only enforces:
  *   1. The handoff contract (each stage's required previous-stage output exists).
  *   2. The output file naming (so the next stage finds the previous one).
- *   3. The argument contract (niche for stage 1, video slug for stage 4).
+ *   3. The argument contract (niche for stage 1, video slug for stages 4 and 6).
  *
  * The actual stage content is produced by the LLM reading the stage's SKILL.md.
  * This runner does not produce the content; it tells the LLM which stage to run.
@@ -26,6 +26,7 @@ const STAGES: Array<{
   { n: 3, label: "Discoverability",      skill: "faceless-yt-discoverability",   output: "03-discoverability-pack.md",  requires: [1, 2], argHint: "(no args)" },
   { n: 4, label: "Retention script",     skill: "faceless-yt-retention-script",  output: "04-script-<SLUG>.md",         requires: [1, 2, 3], argHint: "<VIDEO-SLUG>" },
   { n: 5, label: "Monetization roadmap", skill: "faceless-yt-monetization",      output: "05-monetization-roadmap.md",  requires: [1, 2, 3], argHint: "(no args)" },
+  { n: 6, label: "Video production",     skill: "faceless-yt-video-production",  output: "06-production-<SLUG>.md",     requires: [1, 2, 3], argHint: "<VIDEO-SLUG>" },
 ];
 
 function findChannelDir(): string {
@@ -62,8 +63,8 @@ Usage:
 
 Commands:
   stage <N> [ARG]   Run stage N with the given arg. Stage 1 needs <NICHE>,
-                     stage 4 needs <VIDEO-SLUG>, others take no args.
-  list               Print the 5 stages and their handoff contract.
+                     stages 4 and 6 need <VIDEO-SLUG>, others take no args.
+  list               Print the 6 stages and their handoff contract.
   check              Verify the current directory has the right files for the
                      next stage to run.
 
@@ -74,11 +75,13 @@ Examples:
   bun run run.ts stage 3
   bun run run.ts stage 4 "sheet-pan-chicken-mistakes"
   bun run run.ts stage 5
+  bun run run.ts stage 6 "sheet-pan-chicken-mistakes"
+  bun run run.ts stage 6 "sheet-pan-chicken-mistakes"
 `);
 }
 
 function printList() {
-  console.log("faceless-yt-system — 5 stages\n");
+  console.log("faceless-yt-system — 6 stages\n");
   for (const s of STAGES) {
     const prev = s.requires.length === 0 ? "(no prerequisites)" : "requires stage " + s.requires.join(" + ");
     console.log(`  ${s.n}. ${s.label.padEnd(22)} → ${s.output.padEnd(32)} ${prev}`);
@@ -92,7 +95,7 @@ function printList() {
 function runStage(channelDir: string, stageN: number, arg: string | undefined) {
   const stage = STAGES.find(s => s.n === stageN);
   if (!stage) {
-    console.error(`Unknown stage: ${stageN}. Use 1-5.`);
+    console.error(`Unknown stage: ${stageN}. Use 1-6.`);
     process.exit(2);
   }
 
@@ -110,6 +113,10 @@ function runStage(channelDir: string, stageN: number, arg: string | undefined) {
   }
   if (stageN === 4 && !arg) {
     console.error(`Stage 4 requires a video slug: bun run run.ts stage 4 "<VIDEO-SLUG>"`);
+    process.exit(2);
+  }
+  if (stageN === 6 && !arg) {
+    console.error(`Stage 6 requires a video slug: bun run run.ts stage 6 "<VIDEO-SLUG>"`);
     process.exit(2);
   }
 
@@ -161,7 +168,7 @@ if (cmd === "list") {
 } else if (cmd === "stage") {
   const n = parseInt(args[1] || "", 10);
   if (isNaN(n)) {
-    console.error("Stage number required: bun run run.ts stage <1-5> [ARG]");
+    console.error("Stage number required: bun run run.ts stage <1-6> [ARG]");
     process.exit(2);
   }
   runStage(channelDir, n, args[2]);
