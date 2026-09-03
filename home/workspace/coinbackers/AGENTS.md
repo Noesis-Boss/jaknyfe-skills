@@ -2,6 +2,8 @@
 
 ## Issue Log
 
+- 2026-09-03: Replaced local-only wallet identity with server-verified Ethereum wallet ownership. Added five-minute nonce challenges and `personal_sign` recovery via `ethers`; Dashboard now requires a matching signature before showing a connected wallet. Build passed and Dashboard screenshot was verified at `coinbackers-wallet-signature-verified.png`.
+
 - 2026-09-02: Added JSON-backed campaign persistence in `data/campaigns.json`; campaign creation and pledges now save after successful API writes and reload after server restarts. Build passed, restart persistence returned HTTP 200, and Explore rendered in `coinbackers-persistence-verified.png`.
 
 - 2026-09-02: Completed the campaign creation upload path. Added `/api/upload` with image-type and 5MB validation, generated safe unique filenames under `dist/uploads`, and added visible form errors for failed uploads or campaign creation. Build passed, upload returned HTTP 201, and the create page was screenshot-verified at `coinbackers-create-upload-verified.png`.
