@@ -14,6 +14,7 @@ const campaignStore = (await campaignFile.exists()
 const walletChallenges = new Map<string, { message: string; expiresAt: number }>();
 const verifiedWalletFile = Bun.file(verifiedWalletsPath);
 const verifiedWallets = new Set<string>(await (await verifiedWalletFile.exists() ? verifiedWalletFile.json() : []));
+const walletSessions = new Map<string, string>();
 
 async function saveVerifiedWallets() {
   await Bun.write(verifiedWalletsPath, JSON.stringify([...verifiedWallets].sort(), null, 2) + "\n");
@@ -47,10 +48,18 @@ app.post("/api/wallet/verify", async (c) => {
     walletChallenges.delete(address.toLowerCase());
     verifiedWallets.add(recovered.toLowerCase());
     await saveVerifiedWallets();
-    return c.json({ verified: true, address: recovered });
+    const token = crypto.randomUUID();
+    walletSessions.set(token, recovered.toLowerCase());
+    return c.json({ verified: true, address: recovered, token });
   } catch {
     return c.json({ error: "Invalid wallet signature" }, 401);
   }
+});
+
+app.get("/api/wallet/session", (c) => {
+  const token = c.req.header("authorization")?.replace(/^Bearer\s+/i, "");
+  const address = token ? walletSessions.get(token) : undefined;
+  return address ? c.json({ verified: true, address }) : c.json({ verified: false }, 401);
 });
 
 app.get("/api/campaigns/:id", (c) => {
@@ -63,8 +72,9 @@ app.post("/api/campaigns", async (c) => {
   if (!campaign.id || !campaign.title || !campaign.description || !Number.isFinite(Number(campaign.goal))) {
     return c.json({ error: "Invalid campaign" }, 400);
   }
-  const creatorWallet = typeof campaign.creatorWallet === "string" ? campaign.creatorWallet.trim() : "";
-  if (!/^0x[a-fA-F0-9]{40}$/.test(creatorWallet) || !verifiedWallets.has(creatorWallet.toLowerCase())) {
+  const token = c.req.header("authorization")?.replace(/^Bearer\s+/i, "");
+  const creatorWallet = token ? walletSessions.get(token) : undefined;
+  if (!creatorWallet || !verifiedWallets.has(creatorWallet)) {
     return c.json({ error: "Verify your wallet before creating a campaign" }, 401);
   }
   campaign.creatorWallet = creatorWallet;
