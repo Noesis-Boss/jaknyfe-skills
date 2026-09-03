@@ -102,6 +102,15 @@ Each formula: structure + when to use + when **not** to use.
 - **No tonal whiplash.** The opening tone must match the final-30s tone. Calm + specific throughout, or energetic + entertaining throughout.
 - **No "we'll get to that later" without naming when.** "We'll cover that in 4 minutes" lands; "I'll explain later" loses the viewer.
 
+### Section 5 — Voice performance seeds
+
+The script is read aloud, so write for the ear. At the end of the script file, record the seeds stage 6 expands into full voice direction:
+
+1. **Per-phase pace + energy** — one line per script phase (hook / establish / deep payoff / middle / payoff+CTA): target pace and emotional register. Never a single global "energetic".
+2. **Emphasis words** — 3–5 words per minute the voice must punch: numbers, contrasts, names.
+3. **Pause marks** — where silence replaces transition words; minimum after the hook and before each payoff.
+4. **Spoken-rhythm rules** — sentences ≤ 20 words in the hook; vary sentence length every 2–3 sentences (short-long-short); concrete verbs over abstract ones ("burns $40 an hour", not "incurs ongoing costs").
+
 ## Quality rules
 
 - Every phase must have a named responsibility, not just a duration. "0–15s: stuff happens" is not a framework.
@@ -118,6 +127,7 @@ Writes `04-script-<slug>.md` into the channel project directory. One file per vi
 
 - `Skills/faceless-yt-content-engine/` — produces the video idea this stage consumes.
 - `Skills/faceless-yt-discoverability/` — produces the main-promise contract the script must deliver.
+- `Skills/faceless-yt-video-production/` — stage 6; consumes this script's Section 5 beats and produces the full production plan.
 - `Skills/hook-generator/` — produces the 3–5s opening line; this stage places it in the script.
 - `Skills/video-script/` — full production-ready script with timestamps, visual direction, captions, and accessibility notes. Use after this stage for the render-ready version.
 - `Skills/faceless-explainer/` — render layer; takes the script and produces motion-graphics frames.
