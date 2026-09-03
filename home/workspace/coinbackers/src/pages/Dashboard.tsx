@@ -22,7 +22,7 @@ export default function CreatorDashboard() {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [loading, setLoading] = useState(true);
   const [wallet, setWallet] = useState<string | null>(() => localStorage.getItem("coinbackers-wallet"));
-  const [verified, setVerified] = useState(() => localStorage.getItem("coinbackers-wallet-verified") === "true");
+  const [verified, setVerified] = useState(false);
   const [walletError, setWalletError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const visibleCampaigns = wallet && verified
@@ -39,10 +39,11 @@ export default function CreatorDashboard() {
       const { message } = await challengeRes.json();
       const signature = await ethereum.request({ method: "personal_sign", params: [message, address] } as { method: string; params: string[] }) as unknown as string;
       const verifyRes = await fetch("/api/wallet/verify", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ address, message, signature }) });
-      if (!verifyRes.ok) throw new Error((await verifyRes.json()).error || "Verification failed");
+      const verification = await verifyRes.json();
+      if (!verifyRes.ok) throw new Error(verification.error || "Verification failed");
       setWallet(address); setVerified(true);
       localStorage.setItem("coinbackers-wallet", address);
-      localStorage.setItem("coinbackers-wallet-verified", "true");
+      localStorage.setItem("coinbackers-wallet-session", verification.token);
     } catch (error) { setWalletError(error instanceof Error ? error.message : "Wallet verification failed"); }
   };
 
@@ -54,7 +55,10 @@ export default function CreatorDashboard() {
   };
 
   useEffect(() => {
-    fetch("/api/campaigns")
+    const token = localStorage.getItem("coinbackers-wallet-session");
+    fetch("/api/wallet/session", { headers: token ? { Authorization: `Bearer ${token}` } : {} })
+      .then((r) => { if (!r.ok) throw new Error(); return r.json(); })
+      .then((session) => { setWallet(session.address); setVerified(true); return fetch("/api/campaigns"); })
       .then((r) => r.json())
       .then((data) => {
         setCampaigns(data);

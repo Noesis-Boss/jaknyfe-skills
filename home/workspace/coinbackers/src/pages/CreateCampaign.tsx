@@ -57,8 +57,8 @@ export default function CreateCampaign() {
 
       const id = crypto.randomUUID();
       const creatorWallet = localStorage.getItem("coinbackers-wallet");
-      const walletVerified = localStorage.getItem("coinbackers-wallet-verified") === "true";
-      if (!creatorWallet || !walletVerified) throw new Error("Connect and verify your wallet on the Dashboard before creating a campaign");
+      const sessionToken = localStorage.getItem("coinbackers-wallet-session");
+      if (!creatorWallet || !sessionToken) throw new Error("Connect and verify your wallet on the Dashboard before creating a campaign");
       const campaign = { 
         id, 
         title, 
@@ -73,7 +73,7 @@ export default function CreateCampaign() {
 
       const campaignRes = await fetch("/api/campaigns", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${sessionToken}` },
         body: JSON.stringify(campaign),
       });
       if (!campaignRes.ok) {
