@@ -17,6 +17,8 @@
 
 ## Feature Log
 
+- 2026-09-03: Persisted server-verified wallet addresses in `data/verified-wallets.json`; verified wallet ownership now survives CoinBackers server restarts. Fixed an async file-existence initialization bug found during restart testing. Build and fresh Dashboard screenshot passed at `coinbackers-dashboard-session-persistence-verified.png`.
+
 - 2026-09-03: Connected campaign ownership to verified wallets. Campaign creation now requires a server-tracked wallet signature and stores `creatorWallet`; Dashboard totals and campaign cards are filtered to the connected verified wallet. Build passed and Dashboard screenshot was verified at `coinbackers-dashboard-filter-verified.png`.
 
 - 2026-09-02: Added a Dashboard wallet-connection affordance. Browser wallets use `eth_requestAccounts`; environments without a provider use a clearly labeled local demo address, persisted in local storage. Build passed and the rendered Dashboard was screenshot-verified at `coinbackers-wallet-verified.png`.

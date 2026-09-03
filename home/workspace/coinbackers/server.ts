@@ -6,12 +6,18 @@ import { verifyMessage } from "ethers";
 const app = new Hono();
 
 const campaignDataPath = "./data/campaigns.json";
+const verifiedWalletsPath = "./data/verified-wallets.json";
 const campaignFile = Bun.file(campaignDataPath);
 const campaignStore = (await campaignFile.exists()
   ? await campaignFile.json()
   : [...campaigns]) as Array<Record<string, unknown>>;
 const walletChallenges = new Map<string, { message: string; expiresAt: number }>();
-const verifiedWallets = new Set<string>();
+const verifiedWalletFile = Bun.file(verifiedWalletsPath);
+const verifiedWallets = new Set<string>(await (await verifiedWalletFile.exists() ? verifiedWalletFile.json() : []));
+
+async function saveVerifiedWallets() {
+  await Bun.write(verifiedWalletsPath, JSON.stringify([...verifiedWallets].sort(), null, 2) + "\n");
+}
 
 async function saveCampaigns() {
   await Bun.write(campaignDataPath, JSON.stringify(campaignStore, null, 2) + "\n");
@@ -40,6 +46,7 @@ app.post("/api/wallet/verify", async (c) => {
     if (recovered.toLowerCase() !== address.toLowerCase()) return c.json({ error: "Signature does not match wallet" }, 401);
     walletChallenges.delete(address.toLowerCase());
     verifiedWallets.add(recovered.toLowerCase());
+    await saveVerifiedWallets();
     return c.json({ verified: true, address: recovered });
   } catch {
     return c.json({ error: "Invalid wallet signature" }, 401);
