@@ -12,7 +12,10 @@ nav button{background:none;border:0;color:var(--muted);font:inherit;font-size:.7
 .section-head{align-items:flex-start;display:flex;justify-content:space-between;margin-bottom:1.25rem}
 .record{align-items:center;border-top:1px solid var(--line);display:flex;gap:1rem;padding:1rem 0}
 .record>div{display:grid;gap:.25rem}
-.analytics{color:#a9c8a9;font-size:.58rem}
+.analytics{color:#a9c8a9;font-size:.58rem;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.analytics .stat{display:inline-flex;align-items:center;gap:.25rem}
+.analytics .bar{display:inline-block;width:2.5rem;height:.35rem;background:#182518;border-radius:.2rem;overflow:hidden}
+.analytics .bar span{display:block;height:100%;background:#7fbf7f;border-radius:.2rem}
 .record .text-button{margin-left:auto}
 .danger-text{color:#ef8b72}
 .record:first-of-type{border-top:0}
