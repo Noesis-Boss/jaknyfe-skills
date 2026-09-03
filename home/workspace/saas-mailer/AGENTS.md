@@ -1,5 +1,7 @@
 # SaaS-Mailer
 
+- 2026-09-02: Added optional shared Authentik OIDC login routes at `/api/auth/oidc/start` and `/api/auth/oidc/callback`, with PKCE state and existing tenant-session reuse. UI exposes “Sign in with Noesis” when configured. `bun test`: 32/32 passed. Authentik client provisioning and Momball integration remain pending.
+
 - 2026-09-02: Added CSV import feedback: multipart uploads now preserve browser boundaries, and Contacts shows imported, skipped, and invalid-row totals after each import. Commit `cd36ba7`; 32/32 tests pass and the live dashboard screenshot renders.
 
 - 2026-08-20: Added production `start` and `start:worker` scripts, changed the Site entrypoint from hot development mode to `bun run start`, wired worker polling/batch settings through `loadConfig()`, and removed SMTP from the production adapter list. Registered private managed service `saas-mailer-worker` (`svc_eZzzmcvdlKk`); it is currently in BACKOFF because Zo secrets do not yet include a valid 32-byte `CREDENTIAL_ENCRYPTION_KEY`.
@@ -19,6 +21,7 @@ Standalone Bun/Hono/React MVP for multi-tenant outbound email. Run commands from
 Run `bun test` for the full suite. The dashboard must also be screenshot-verified after frontend changes. Keep provider credentials server-side and preserve organization-scoped composite constraints.
 
 ## Feature Log
+- 2026-09-03: Began Ghost-inspired unified campaigns: added newsletter/sequence campaign metadata, preview/template/schedule fields, tenant-scoped subscriber preferences with unsubscribe suppression, preference API routes, and newsletter-aware composer controls. Existing 32-test suite passes; server bundle and diff checks pass. Vite wrapper remains blocked by the pre-existing missing `index.html` entry.
 - 2026-09-02: Extended CSV import feedback with invalid-row reasons and downloadable `invalid-contacts.csv`; imports can assign valid rows to an existing list, create a new list, or use a CSV list column. Tests pass and the live dashboard renders the updated import panel. Commit `f6fd1b8`.
 - 2026-09-02: Added tenant-scoped sending-account removal for SQLite and PostgreSQL, with confirmation UI and foreign-key protection when an account is still used by campaigns or messages. Tests pass; live dashboard verification completed.
 - 2026-09-01: Cleared the confirmed `don@noesisgroup.com` SaaS-Mailer tenant contact list. Deleted 1,101 contacts; campaigns, sending accounts, and contact-linked history were preserved because no dependent records existed.
@@ -37,6 +40,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 - 2026-08-21: Published the dashboard as a private production Zo Site at `https://saas-mailer-jaknyfe.zo.computer`. The Site entrypoint sources `~/.zo_secrets`; the public browser verification correctly reached Zo's sign-in gate.
 
 ## Issue Log
+
+- 2026-09-02: Provisioned the SaaS-Mailer OIDC client, applied production OIDC secrets, and changed account signup to link directly to the Noesis self-signup flow. Tests passed 32/32; live login screenshot verified.
 
 - 2026-09-02: Gmail test send initially reached the API but failed because the MIME builder emitted literal `\\r\\n` text instead of CRLF line endings, causing Gmail to report `Recipient address required`. Fixed `src/server/sending/gmail-adapter.ts`; 32 tests pass. One live test to `don@noesisgroup.com` succeeded with Gmail message ID `1a060b7dc5de6bd6`; live dashboard screenshot verified.
 

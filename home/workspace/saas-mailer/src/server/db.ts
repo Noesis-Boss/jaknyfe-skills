@@ -35,6 +35,8 @@ export function migrate(database: Database): void {
   if (!hasWorkerFields) database.exec(readFileSync(new URL("../../db/migrations/006_worker_events.sql", import.meta.url), "utf8"));
   database.exec(readFileSync(new URL("../../db/migrations/007_auth_sessions.sql", import.meta.url), "utf8"));
   database.exec(readFileSync(new URL("../../db/migrations/008_contact_lists.sql", import.meta.url), "utf8"));
+  const hasCampaignType = database.query("SELECT 1 FROM pragma_table_info('campaigns') WHERE name = 'campaign_type'").get();
+  if (!hasCampaignType) database.exec(readFileSync(new URL("../../db/migrations/009_ghost_campaigns.sql", import.meta.url), "utf8"));
 }
 
 export function query<T extends Record<string, unknown>>(

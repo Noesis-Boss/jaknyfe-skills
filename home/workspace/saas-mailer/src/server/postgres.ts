@@ -26,6 +26,7 @@ export function createPostgresDatabase(databaseUrl: string): PostgresDatabase {
     async migrate() {
       const migration = await readFile(new URL("../../db/migrations/postgres/001_initial.sql", import.meta.url), "utf8");
       const listsMigration = await readFile(new URL("../../db/migrations/postgres/002_contact_lists.sql", import.meta.url), "utf8");
+      const campaignsMigration = await readFile(new URL("../../db/migrations/009_ghost_campaigns.sql", import.meta.url), "utf8");
       await sql.begin(async (tx) => {
         await tx.unsafe("CREATE TABLE IF NOT EXISTS schema_migrations (version TEXT PRIMARY KEY, applied_at TIMESTAMPTZ NOT NULL DEFAULT now())");
         const applied = await tx.unsafe("SELECT 1 FROM schema_migrations WHERE version = $1", ["001_initial"]);
@@ -35,6 +36,11 @@ export function createPostgresDatabase(databaseUrl: string): PostgresDatabase {
         await tx.unsafe("ALTER TABLE messages ADD COLUMN IF NOT EXISTS lease_until TIMESTAMPTZ");
         await tx.unsafe("CREATE INDEX IF NOT EXISTS idx_messages_queue ON messages(status, next_attempt_at, lease_until, created_at)");
         await tx.unsafe(listsMigration);
+        await tx.unsafe("ALTER TABLE campaigns ADD COLUMN IF NOT EXISTS campaign_type TEXT NOT NULL DEFAULT 'sequence'");
+        await tx.unsafe("ALTER TABLE campaigns ADD COLUMN IF NOT EXISTS preview_text TEXT NOT NULL DEFAULT ''");
+        await tx.unsafe("ALTER TABLE campaigns ADD COLUMN IF NOT EXISTS template TEXT NOT NULL DEFAULT 'plain'");
+        await tx.unsafe("ALTER TABLE campaigns ADD COLUMN IF NOT EXISTS scheduled_at TIMESTAMPTZ");
+        await tx.unsafe(campaignsMigration.replace(/ALTER TABLE campaigns ADD COLUMN[^;]+;\n/g, "").replace("PRAGMA foreign_keys = ON;", ""));
       });
     },
     async transaction<T>(fn) {
