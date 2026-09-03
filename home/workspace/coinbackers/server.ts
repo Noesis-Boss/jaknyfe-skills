@@ -158,6 +158,11 @@ app.get("/api/price", (c) => {
   return usdPrice ? c.json({ symbol, usdPrice }) : c.json({ error: "Unsupported currency" }, 400);
 });
 
+app.get("/api/moonpay-config", (c) => {
+  const publicKey = process.env.MOONPAY_PUBLIC_KEY || "";
+  return c.json({ publicKey, enabled: Boolean(publicKey) });
+});
+
 const ARTWORK_COLORS = [
   ["#4f46e5", "#7c3aed"],
   ["#0ea5e9", "#6366f1"],
