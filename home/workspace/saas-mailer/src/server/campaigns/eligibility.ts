@@ -11,7 +11,7 @@ function parseTime(value: string | null | undefined): number | null {
 }
 
 export function isEligibleToSend(contact: EligibilityContact, campaign: EligibilityCampaign, now = new Date()): EligibilityResult {
-  if (campaign.status !== "approved" || !campaign.approved_at) return { eligible: false, reason: "campaign_not_approved" };
+  if (!["approved", "scheduled"].includes(campaign.status) || !campaign.approved_at) return { eligible: false, reason: "campaign_not_approved" };
   if (contact.suppressed) return { eligible: false, reason: "suppressed" };
   if (contact.replied) return { eligible: false, reason: "replied" };
   if (contact.bounced) return { eligible: false, reason: "bounced" };
