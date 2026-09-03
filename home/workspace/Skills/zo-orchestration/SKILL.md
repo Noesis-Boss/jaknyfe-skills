@@ -5,7 +5,6 @@ compatibility: Created for Zo Computer
 metadata:
   author: jaknyfe.zo.computer
 ---
-
 # Zo orchestration
 
 Use this skill as the control layer for substantial work. The main Zo session remains the owner of scope, safety, integration, and the final user report.
