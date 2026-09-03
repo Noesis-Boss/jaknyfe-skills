@@ -22,6 +22,8 @@
 - 2026-09-01: Added an explicit Hono route for `/images/coins/:file` after nested PNG requests returned zero-byte responses during verification.
 
 ## Feature Log
+- 2026-09-03: Added Facebook, LinkedIn, Nextdoor, and Instagram share buttons to Campaign Detail (Nextdoor/Instagram copy the link and open the network since neither supports a URL-parameter share endpoint). Added USD card funding: a currency toggle (USD card vs crypto) on the pledge panel, "Pay with card" confirmation flow, and a MoonPay integration stub that activates with MOONPAY_PUBLIC_KEY (currently demo mode). Build passed; live share row and card-confirm states were DOM/screenshot-verified. Committed and pushed as `e4146d6`.
+
 
 - 2026-09-03: Added server-issued wallet session tokens. `/api/wallet/verify` now returns an opaque token, `/api/wallet/session` validates it, and campaign creation requires its bearer authorization; Dashboard restores sessions without treating local storage as proof. Build and fresh Dashboard screenshot passed at `coinbackers-session-token-verified.png`.
 
