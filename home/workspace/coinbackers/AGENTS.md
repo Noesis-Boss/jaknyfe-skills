@@ -2,6 +2,10 @@
 
 ## Issue Log
 
+- 2026-09-03: Added browser-wallet `accountsChanged` handling to revoke the current server session and clear cached wallet state when the user switches accounts. Build passed and Dashboard render was screenshot-verified at `coinbackers-wallet-change-verified.png`.
+
+- 2026-09-03: Hardened wallet sessions with 24-hour server-side expiration and added `POST /api/wallet/logout`; expired tokens are rejected and removed, while logout clears the browser session.
+
 - 2026-09-03: Replaced local-only wallet identity with server-verified Ethereum wallet ownership. Added five-minute nonce challenges and `personal_sign` recovery via `ethers`; Dashboard now requires a matching signature before showing a connected wallet. Build passed and Dashboard screenshot was verified at `coinbackers-wallet-signature-verified.png`.
 
 - 2026-09-02: Added JSON-backed campaign persistence in `data/campaigns.json`; campaign creation and pledges now save after successful API writes and reload after server restarts. Build passed, restart persistence returned HTTP 200, and Explore rendered in `coinbackers-persistence-verified.png`.
