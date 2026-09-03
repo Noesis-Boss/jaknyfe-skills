@@ -48,6 +48,7 @@ When humanizing text, apply the user's voice rules. If the user has a persona co
 4. Check against voice rules
 5. Verify: varied sentence length, actual opinions present, no robotic uniformity
 6. Cluster check: a single sign (one em dash, one AI word) proves nothing. Flag text only when 3+ signals converge in the same passage — uniform sentence length + repeated transitions + hedging + AI vocabulary together. Treat the cluster, not the word.
+Calibration: judging text AI-written because it says "delve" is, as the Economist put it in 2026, like judging it Jane Austen's because it says "imprudence". There is no single style of AI writing, just as there is no single style of human writing.
 7. Optional: run the result through a detector (GPTZero, Copyleaks, Originality, Turnitin) as a sanity check — treat its number as advisory, not verdict (see "Detector Reality Check").
 
 ## Pattern Catalog
@@ -137,6 +138,7 @@ After: The mascot redesign drew complaints from fans of the old logo. The new on
 **11. Em dash overuse**
 
 AI text overuses em dashes. Use periods, commas, semicolons, colons, or restructure the sentence.
+2026 drift: this is now model-specific. The Economist's July 2026 corpus study (55,940 sentences, 1.2m words, human vs ChatGPT/Claude/Gemini/Grok) found only Claude still overuses em dashes — ChatGPT now uses markedly fewer than humans. Punctuation scarcity (#46) is the higher-signal tell. Calibration: Emily Dickinson loved em dashes; a dash alone proves nothing.
 
 Before: The project -- which started in January -- has been making progress -- albeit slower than expected.
 After: The project started in January. Progress has been slower than expected.
@@ -148,6 +150,7 @@ Words that appear far more in post-2023 AI text: "Additionally," "delve," "cruci
 Also on the high-signal list: "meticulous," "moreover," "furthermore," "notably," "ultimately," "empower," "holistic," "seamless," "robust," "comprehensive," "multifaceted," "a testament to," "a plethora of," "a multitude of," "in conclusion," "overall," "studies show," "research suggests," "experts argue," "plays a vital role," "in today's fast-paced world."
 
 Model-era drift: GPT-4-era tells were single words (delve, tapestry, meticulous, pivotal). GPT-4o-era shifted to verb clusters (fostering, showcasing, align with). GPT-5-era leans on framing verbs (emphasizing, enhancing, highlighting). Detector word lists rotate every few months — when in doubt, the cluster rule beats the word list: AI vocab terms appear roughly 10-200x more often in AI text than human text, so several in one paragraph is the signal, not a single occurrence.
+2026 rotation (Economist corpus study): "delve" and "tapestry" have dropped out of model output. Current overused set: polysyllables like "significant", "increasingly", "consequences"; rare words ("interdependence", "reindustrialisation"); scientific lingo ("parameter", "methodology"); heavy nominalisation (verbs turned into nouns: "expand" → "expansion"); more Latinate suffixes than human text — Orwell's "pretentious diction". Worst offenders: Gemini and Claude.
 
 Before: Additionally, a crucial aspect of the strategy is fostering an enduring partnership that underscores the intricate interplay between brand and distributor in the evolving landscape.
 After: The strategy depends on keeping distributors happy. Long-term deals beat one-offs.
@@ -483,10 +486,19 @@ Fix: grep the document for "cite:", "oaicite", "contentReference", "turn0search"
 A long document with zero grammatical deviations is itself a signal — no fragments, no informal constructions, no typos, no slightly-off phrasing. Humans leave fingerprints: an occasional fragment, a doubled word, a mixed tense. (See also: what NOT to strip in the "Signs of Human Writing" note below.)
 
 Fix: don't deliberately add typos. Instead, add one informal construction or fragment where a human would naturally write one, and keep any authentic awkwardness in quoted material.
+**46. Punctuation poverty**
+
+LLMs under-punctuate: fewer commas and semicolons than humans, almost no parentheses, and longer sentences strung together with "and" — the Economist's 2026 corpus study found "and" is the most overused word in AI text. Models also rarely quote experts. Detection: count semicolons and parentheses per 1,000 words; count sentences over 30 words joined by "and"; flag claimed-opinion sentences with no quoted source.
+
+Before: The platform supports real-time sync and it handles offline mode and it scales across regions and the team is planning to add audit logging.
+After: The platform supports real-time sync and offline mode, and it scales across regions. Audit logging is planned for next quarter.
+
+Fix: break "and"-chained sentences at natural seams. Use semicolons for true parallel clauses, parentheses for asides, and quote a real person when attributing an opinion.
 
 ### Detector Reality Check
 
 - Detectors are probabilistic, not proof. GPTZero-style tools score likelihood; they do not establish authorship. Universities (e.g., Gonzaga) explicitly warn against using detector output as sole evidence of misconduct.
+- Convergence erodes detectors in real time. Pangram claims 99.98% accuracy (now partnered with Substack) but is a black box giving no reasons; models train on human writing and learn from human feedback (Tommie Juzek, Florida State), so each update makes AI prose more human-like. Dated lexical tells decay; structural signals (rhythm, punctuation habits, specificity) outlast them.
 - False positives are real and biased: Stanford research found perplexity-based systems falsely flag non-native English writers at up to 61-70%. The U.S. Constitution, the Bible, and the Declaration of Independence have all scored as "AI-generated."
 - Adversarial editing destroys accuracy: a 2025 study found paraphrase/evasion editing cut six major detectors' baseline accuracy from 39.5% to 17.4%.
 - Therefore: never claim "this is AI-written" on detector output alone. Use this skill's pattern cluster + the forensic checklist; use detectors only as a secondary check, and treat a "human" score on edited text as weak evidence either way.
@@ -521,6 +533,7 @@ The patterns above were independently confirmed by an AI-detection reviewer scor
 10. **Transition openers** — flag 3+ consecutive paragraphs opening with explicit transitions (Moreover, Furthermore, Additionally, Overall, In conclusion).
 11. **Specificity audit** — flag every claim that should carry a date/number/name but floats at abstraction.
 12. **Citation verification** — resolve every citation; flag fabricated sources, `utm_source=` tracking, and AI citation scaffolding.
+13. **Punctuation scarcity** — flag passages with near-zero semicolons and parentheses, 30+ word sentences chained with "and", and opinion claims with no quoted source.
 
 Confidence is moderate (~75%) for any single signal, but when three or more fire in the same chapter, the prose reads as AI-assisted to a human reviewer even if every individual sentence is grammatical. Treat the checklist as a hard gate: a chapter must clear every flag before it is considered publication-ready.
 
@@ -624,6 +637,7 @@ When to use: text flagged for pattern 50 vocabulary density or pattern 15 transi
 ## Reference
 
 Pattern catalog adapted from Wikipedia's "Signs of AI writing" guide (maintained by WikiProject AI Cleanup), SearchAtlas's AI pattern analysis, Leap AI's perplexity/burstiness explainer, GPTZero's AI Vocabulary, and the ACL BEA-2025 evaluation of GPTZero's vocab list.
+2026 Economist corpus study ("Ghost writer", 2026-07-30): 55,940 sentences / 1.2m words comparing ChatGPT, Claude, Gemini, Grok against Economist prose, CNN/NYT/WaPo, and novels 1950-2022. Source of the em-dash reversal, punctuation-poverty, and vocabulary-rotation findings (#11, #12, #46): https://www.economist.com/culture/2026/07/30/how-to-spot-ai-writing
 
 Key sources:
 - https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
