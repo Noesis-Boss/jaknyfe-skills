@@ -17,6 +17,8 @@
 
 ## Feature Log
 
+- 2026-09-03: Connected campaign ownership to verified wallets. Campaign creation now requires a server-tracked wallet signature and stores `creatorWallet`; Dashboard totals and campaign cards are filtered to the connected verified wallet. Build passed and Dashboard screenshot was verified at `coinbackers-dashboard-filter-verified.png`.
+
 - 2026-09-02: Added a Dashboard wallet-connection affordance. Browser wallets use `eth_requestAccounts`; environments without a provider use a clearly labeled local demo address, persisted in local storage. Build passed and the rendered Dashboard was screenshot-verified at `coinbackers-wallet-verified.png`.
 
 - 2026-09-02: Added live Explore search and category filtering for Technology, Sustainability, and Community campaigns. Search/category states update the visible project count and empty state; build and rendered-page screenshot passed at `coinbackers-explore-filters-final.png`.

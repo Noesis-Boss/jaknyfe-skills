@@ -11,6 +11,7 @@ const campaignStore = (await campaignFile.exists()
   ? await campaignFile.json()
   : [...campaigns]) as Array<Record<string, unknown>>;
 const walletChallenges = new Map<string, { message: string; expiresAt: number }>();
+const verifiedWallets = new Set<string>();
 
 async function saveCampaigns() {
   await Bun.write(campaignDataPath, JSON.stringify(campaignStore, null, 2) + "\n");
@@ -38,6 +39,7 @@ app.post("/api/wallet/verify", async (c) => {
     const recovered = verifyMessage(body.message, body.signature);
     if (recovered.toLowerCase() !== address.toLowerCase()) return c.json({ error: "Signature does not match wallet" }, 401);
     walletChallenges.delete(address.toLowerCase());
+    verifiedWallets.add(recovered.toLowerCase());
     return c.json({ verified: true, address: recovered });
   } catch {
     return c.json({ error: "Invalid wallet signature" }, 401);
@@ -54,6 +56,11 @@ app.post("/api/campaigns", async (c) => {
   if (!campaign.id || !campaign.title || !campaign.description || !Number.isFinite(Number(campaign.goal))) {
     return c.json({ error: "Invalid campaign" }, 400);
   }
+  const creatorWallet = typeof campaign.creatorWallet === "string" ? campaign.creatorWallet.trim() : "";
+  if (!/^0x[a-fA-F0-9]{40}$/.test(creatorWallet) || !verifiedWallets.has(creatorWallet.toLowerCase())) {
+    return c.json({ error: "Verify your wallet before creating a campaign" }, 401);
+  }
+  campaign.creatorWallet = creatorWallet;
   campaignStore.push(campaign);
   await saveCampaigns();
   return c.json(campaign, 201);

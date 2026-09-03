@@ -15,6 +15,7 @@ interface Campaign {
   backers?: number;
   daysLeft?: number;
   imageUrl?: string;
+  creatorWallet?: string;
 }
 
 export default function CreatorDashboard() {
@@ -24,6 +25,9 @@ export default function CreatorDashboard() {
   const [verified, setVerified] = useState(() => localStorage.getItem("coinbackers-wallet-verified") === "true");
   const [walletError, setWalletError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const visibleCampaigns = wallet && verified
+    ? campaigns.filter((campaign) => campaign.creatorWallet?.toLowerCase() === wallet.toLowerCase())
+    : [];
 
   const connectWallet = async () => {
     const ethereum = (window as Window & { ethereum?: { request: (args: { method: string }) => Promise<string[]> } }).ethereum;
@@ -59,7 +63,7 @@ export default function CreatorDashboard() {
       .catch(() => setLoading(false));
   }, []);
 
-  const totalPledged = campaigns.reduce((acc, c) => acc + c.pledged, 0);
+  const totalPledged = visibleCampaigns.reduce((acc, c) => acc + c.pledged, 0);
   const platformFee = totalPledged * 0.10;
   const netPayout = totalPledged - platformFee;
 
@@ -131,18 +135,24 @@ export default function CreatorDashboard() {
           </Card>
         </div>
 
-        <h2 className="text-2xl font-bold text-slate-900 mb-6">Your Campaigns</h2>
+        <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900">Your Campaigns</h2>
+            <p className="text-sm text-slate-500">Showing campaigns owned by your verified wallet.</p>
+          </div>
+          {wallet && verified && <span className="text-sm font-semibold text-indigo-600">{visibleCampaigns.length} campaign{visibleCampaigns.length === 1 ? "" : "s"}</span>}
+        </div>
         
-        {campaigns.length === 0 ? (
+        {visibleCampaigns.length === 0 ? (
           <div className="text-center py-20 bg-white rounded-3xl border border-dashed border-slate-200">
-            <p className="text-slate-500 mb-6">No campaigns found.</p>
+            <p className="text-slate-500 mb-6">{wallet && verified ? "No campaigns belong to this wallet yet." : "Connect and verify your wallet to view your campaigns."}</p>
             <Button asChild>
               <Link to="/create">Launch your first campaign</Link>
             </Button>
           </div>
         ) : (
           <div className="space-y-4">
-            {campaigns.map((c) => (
+            {visibleCampaigns.map((c) => (
               <Card key={c.id} className="rounded-2xl border-slate-100 shadow-sm overflow-hidden hover:border-indigo-200 transition-colors">
                 <div className="flex flex-col md:flex-row items-center p-4 gap-6">
                   <div className="w-full md:w-32 h-20 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0">
