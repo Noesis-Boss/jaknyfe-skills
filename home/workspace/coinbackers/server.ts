@@ -129,6 +129,51 @@ app.get("/api/price", (c) => {
   return usdPrice ? c.json({ symbol, usdPrice }) : c.json({ error: "Unsupported currency" }, 400);
 });
 
+const ARTWORK_COLORS = [
+  ["#4f46e5", "#7c3aed"],
+  ["#0ea5e9", "#6366f1"],
+  ["#10b981", "#0ea5e9"],
+  ["#f59e0b", "#ef4444"],
+  ["#8b5cf6", "#ec4899"],
+  ["#14b8a6", "#22c55e"],
+  ["#f97316", "#eab308"],
+  ["#6366f1", "#0ea5e9"],
+];
+
+function hashCode(input: string): number {
+  let h = 0;
+  for (let i = 0; i < input.length; i++) h = (Math.imul(31, h) + input.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
+app.get("/api/artwork/:seed", (c) => {
+  const seed = c.req.param("seed");
+  const h = hashCode(seed);
+  const [c1, c2] = ARTWORK_COLORS[h % ARTWORK_COLORS.length];
+  const initials = seed
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0]!.toUpperCase())
+    .join("") || "CB";
+  const circles = Array.from({ length: 6 }, (_, i) => {
+    const r = 40 + ((h >> (i * 2)) % 120);
+    const cx = (h >> (i * 3)) % 900;
+    const cy = (h >> (i * 4)) % 500;
+    return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="#ffffff" opacity="${0.04 + ((h >> i) % 5) * 0.02}" />`;
+  }).join("");
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">` +
+    `<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">` +
+    `<stop offset="0%" stop-color="${c1}"/><stop offset="100%" stop-color="${c2}"/></linearGradient></defs>` +
+    `<rect width="900" height="500" fill="url(#g)"/>${circles}` +
+    `<circle cx="450" cy="250" r="95" fill="#ffffff" opacity="0.14"/>` +
+    `<text x="450" y="285" text-anchor="middle" font-family="system-ui, sans-serif" font-size="88" font-weight="700" fill="#ffffff" opacity="0.9">${initials}</text>` +
+    `</svg>`;
+  return new Response(svg, {
+    headers: { "Content-Type": "image/svg+xml", "Cache-Control": "public, max-age=86400" },
+  });
+});
+
 app.get("/images/coins/:file", (c) => {
   const file = c.req.param("file");
   if (!/^coin-\d{2}\.png$/.test(file)) return c.notFound();
