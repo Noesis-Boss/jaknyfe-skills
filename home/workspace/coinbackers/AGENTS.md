@@ -2,6 +2,8 @@
 
 ## Issue Log
 
+- 2026-09-03: Added an inline pledge confirmation step and visible API error feedback to Campaign Detail. Pledges are only sent after confirmation; build passed and the live confirmation state was screenshot-verified at `coinbackers-pledge-confirmation-verified.png`.
+
 - 2026-09-03: Added browser-wallet `accountsChanged` handling to revoke the current server session and clear cached wallet state when the user switches accounts. Build passed and Dashboard render was screenshot-verified at `coinbackers-wallet-change-verified.png`.
 
 - 2026-09-03: Hardened wallet sessions with 24-hour server-side expiration and added `POST /api/wallet/logout`; expired tokens are rejected and removed, while logout clears the browser session.

@@ -6,7 +6,9 @@
     "goal": 50000,
     "pledged": 12500,
     "backers": 142,
-    "daysLeft": 18
+    "daysLeft": 18,
+    "imageUrl": "/uploads/campaign-solar-purifier.jpg",
+    "pledges": []
   },
   {
     "id": "2",
@@ -15,7 +17,8 @@
     "goal": 100000,
     "pledged": 85000,
     "backers": 956,
-    "daysLeft": 5
+    "daysLeft": 5,
+    "imageUrl": "/uploads/campaign-ai-assistant.jpg"
   },
   {
     "id": "3",
@@ -24,6 +27,7 @@
     "goal": 250000,
     "pledged": 45000,
     "backers": 84,
-    "daysLeft": 42
+    "daysLeft": 42,
+    "imageUrl": "/uploads/campaign-tiny-home.jpg"
   }
 ]
