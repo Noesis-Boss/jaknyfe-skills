@@ -123,7 +123,12 @@ export default function Explore() {
                 <Card key={c.id} className="group overflow-hidden flex flex-col border-slate-200 hover:border-indigo-300 transition-all hover:shadow-lg">
                   <div className="aspect-video bg-slate-200 relative overflow-hidden">
                     <img 
-                      src={c.imageUrl || `https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop&sig=${c.id}`} 
+                      src={c.imageUrl || `/api/artwork/${encodeURIComponent(c.title)}`} 
+                      onError={(e) => {
+                        const img = e.currentTarget;
+                        const fallback = `/api/artwork/${encodeURIComponent(c.title)}`;
+                        if (!img.src.endsWith(fallback)) img.src = fallback;
+                      }}
                       alt={c.title}
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                     />

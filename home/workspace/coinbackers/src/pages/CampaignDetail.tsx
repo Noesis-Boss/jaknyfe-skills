@@ -31,6 +31,7 @@ interface Campaign {
   backers?: number;
   daysLeft?: number;
   imageUrl?: string;
+  creatorWallet?: string;
 }
 
 const SUPPORTED_CURRENCIES = [
@@ -55,6 +56,8 @@ export default function CampaignDetail() {
   const [pledging, setPledging] = useState(false);
   const [usdEquivalent, setUsdEquivalent] = useState<number | null>(null);
   const [success, setSuccess] = useState(false);
+  const [confirming, setConfirming] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetch(`/api/campaigns/${id}`)
@@ -86,7 +89,11 @@ export default function CampaignDetail() {
   const handlePledge = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!pledgeAmount || !usdEquivalent) return;
-    
+    setError("");
+    if (!confirming) {
+      setConfirming(true);
+      return;
+    }
     setPledging(true);
     try {
       const res = await fetch(`/api/campaigns/${id}/pledge`, {
@@ -98,9 +105,10 @@ export default function CampaignDetail() {
       setCampaign(updated);
       setSuccess(true);
       setPledgeAmount("");
+      setConfirming(false);
       setTimeout(() => setSuccess(false), 5000);
-    } catch (err) {
-      console.error(err);
+    } catch {
+      setError("Your pledge could not be recorded. Check your connection and try again.");
     } finally {
       setPledging(false);
     }
@@ -136,7 +144,12 @@ export default function CampaignDetail() {
           <div className="lg:col-span-2 space-y-8">
             <div className="rounded-3xl overflow-hidden bg-slate-200 aspect-video shadow-sm">
               <img 
-                src={campaign.imageUrl || `https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop`} 
+                src={campaign.imageUrl || `/api/artwork/${encodeURIComponent(campaign.title)}`} 
+                onError={(e) => {
+                  const img = e.currentTarget;
+                  const fallback = `/api/artwork/${encodeURIComponent(campaign.title)}`;
+                  if (!img.src.endsWith(fallback)) img.src = fallback;
+                }}
                 alt={campaign.title}
                 className="w-full h-full object-cover"
               />
@@ -146,7 +159,16 @@ export default function CampaignDetail() {
               <h1 className="text-3xl font-bold text-slate-900 mb-4">{campaign.title}</h1>
               <div className="flex flex-wrap gap-4 mb-8">
                 <Badge className="bg-indigo-50 text-indigo-600 border-indigo-100 px-3 py-1">Technology</Badge>
-                <Badge className="bg-emerald-50 text-emerald-600 border-emerald-100 px-3 py-1">Verified Creator</Badge>
+                {campaign.creatorWallet ? (
+                  <span className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 border border-emerald-100 rounded-full px-3 py-1 text-xs font-medium">
+                    <span className="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[9px] font-bold">
+                      {campaign.creatorWallet.slice(2, 4).toUpperCase()}
+                    </span>
+                    Verified creator {campaign.creatorWallet.slice(0, 6)}…{campaign.creatorWallet.slice(-4)}
+                  </span>
+                ) : (
+                  <Badge className="bg-emerald-50 text-emerald-600 border-emerald-100 px-3 py-1">Verified Creator</Badge>
+                )}
               </div>
               
               <div className="prose prose-slate max-w-none">
@@ -234,13 +256,37 @@ export default function CampaignDetail() {
                     </div>
                   )}
 
-                  <Button 
+                  {error && (
+                    <div className="bg-red-50 text-red-700 p-4 rounded-2xl border border-red-100 flex items-center gap-3" role="alert">
+                      <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                      <span className="text-sm font-medium">{error}</span>
+                    </div>
+                  )}
+
+                  {confirming && usdEquivalent !== null && (
+                    <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 space-y-3">
+                      <p className="text-sm font-semibold text-amber-950">Confirm your pledge</p>
+                      <p className="text-sm text-amber-800">
+                        Pledge {pledgeAmount} {currency.toUpperCase()} (estimated ${usdEquivalent.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}) to this project?
+                      </p>
+                      <div className="flex gap-2">
+                        <Button type="submit" className="flex-1 rounded-xl bg-amber-600 hover:bg-amber-700 text-white" disabled={pledging}>
+                          {pledging ? "Recording..." : "Confirm pledge"}
+                        </Button>
+                        <Button type="button" variant="outline" className="rounded-xl" onClick={() => setConfirming(false)} disabled={pledging}>
+                          Cancel
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+
+                  {!confirming && <Button 
                     type="submit" 
                     disabled={pledging || !pledgeAmount || !usdEquivalent}
                     className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl py-6 font-bold shadow-indigo-200 shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98]"
                   >
                     {pledging ? "Processing..." : "Back this project"}
-                  </Button>
+                  </Button>}
                 </form>
               </CardContent>
               <CardFooter className="bg-slate-50 border-t border-slate-100 p-6">
