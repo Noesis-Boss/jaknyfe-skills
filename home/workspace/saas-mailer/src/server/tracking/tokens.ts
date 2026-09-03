@@ -46,12 +46,24 @@ export function publicBaseUrl(): string {
   return (process.env.PUBLIC_BASE_URL || process.env.OAUTH_CALLBACK_ORIGIN || "http://localhost:3000").replace(/\/$/, "");
 }
 
+export function unsubscribeUrl(messageId: string): string {
+  return `${publicBaseUrl()}/api/t/u/${signUnsubscribeToken(messageId)}`;
+}
+
+export async function resolveTenantBrand(database: Database | PostgresDatabase, organizationId: string): Promise<string | null> {
+  if (pg(database)) {
+    const rows = await database.query<{ name: string }>("SELECT name FROM organizations WHERE id = $1", [organizationId]);
+    return rows[0]?.name || null;
+  }
+  const row = database.query<{ name: string }, [string]>("SELECT name FROM organizations WHERE id = ?").get(organizationId);
+  return row?.name || null;
+}
+
 export function injectTracking(body: string, messageId: string): string {
   const base = publicBaseUrl();
   const token = signTrackingToken(messageId);
-  const unsubToken = signUnsubscribeToken(messageId);
   const rewritten = body.replace(/(https?:\/\/[^\s"'<>]+)/g, url => `${base}/api/t/c/${token}?url=${encodeURIComponent(url)}`);
-  const footer = `<div style="margin-top:24px;padding-top:12px;border-top:1px solid #e5e5e5;font-family:sans-serif;font-size:12px;color:#888"><a href="${base}/api/t/u/${unsubToken}" style="color:#888">Unsubscribe</a></div>`;
+  const footer = `<div style="margin-top:24px;padding-top:12px;border-top:1px solid #e5e5e5;font-family:sans-serif;font-size:12px;color:#888"><a href="${unsubscribeUrl(messageId)}" style="color:#888">Unsubscribe</a></div>`;
   return `${rewritten}${footer}<img src="${base}/api/t/o/${token}" width="1" height="1" alt="" style="display:none" />`;
 }
 
@@ -96,4 +108,13 @@ export async function suppressEmail(database: Database | PostgresDatabase, organ
       "INSERT INTO suppression_list (organization_id, email, reason) VALUES (?, ?, ?) ON CONFLICT (organization_id, email) DO UPDATE SET reason = excluded.reason",
     ).run(organizationId, email, reason);
   }
+}
+
+export async function processUnsubscribe(database: Database | PostgresDatabase, token: string): Promise<void> {
+  const messageId = verifyUnsubscribeToken(token);
+  if (!messageId) return;
+  const recipient = await resolveMessageRecipient(database, messageId);
+  if (!recipient) return;
+  await suppressEmail(database, recipient.organizationId, recipient.email, "one_click_unsubscribe");
+  await recordPublicEvent(database, messageId, "unsubscribed");
 }

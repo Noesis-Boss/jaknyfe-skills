@@ -6,7 +6,8 @@ function base64Url(value: string): string {
 }
 
 function message(input: SendInput): string {
-  return [`From: ${input.from}`, `To: ${input.to}`, `Subject: ${input.subject}`, "MIME-Version: 1.0", "Content-Type: text/plain; charset=utf-8", "", input.body].join("\r\n");
+  const headers = Object.entries(input.headers || {}).map(([name, value]) => `${name}: ${value}`);
+  return [`From: ${input.from}`, `To: ${input.to}`, `Subject: ${input.subject}`, ...headers, "MIME-Version: 1.0", "Content-Type: text/plain; charset=utf-8", "", input.body].join("\r\n");
 }
 
 export function gmailAdapter(accessToken: string, fetcher: typeof fetch = fetch): SendingAdapter {

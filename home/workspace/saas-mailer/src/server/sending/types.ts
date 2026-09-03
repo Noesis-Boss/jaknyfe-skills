@@ -3,6 +3,7 @@ export type SendInput = {
   to: string;
   subject: string;
   body: string;
+  headers?: Record<string, string>;
 };
 
 export type SendResult = {

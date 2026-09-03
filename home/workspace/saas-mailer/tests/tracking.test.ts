@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { signTrackingToken, verifyTrackingToken, signUnsubscribeToken, verifyUnsubscribeToken, injectTracking } from "../src/server/tracking/tokens";
+import { signTrackingToken, verifyTrackingToken, signUnsubscribeToken, verifyUnsubscribeToken, injectTracking, unsubscribeUrl } from "../src/server/tracking/tokens";
 
 describe("tokenized tracking", () => {
   test("signs and verifies a message token", () => {
@@ -33,3 +33,12 @@ describe("tokenized tracking", () => {
     expect(verifyUnsubscribeToken(token)).toBe("msg-123");
   });
 });
+
+  test("builds RFC 8058 unsubscribe URL and headers", () => {
+    const url = unsubscribeUrl("msg-123");
+    expect(url).toContain("/api/t/u/");
+    const token = url.split("/api/t/u/")[1];
+    expect(verifyUnsubscribeToken(token)).toBe("msg-123");
+    const html = injectTracking("<p>Hi</p>", "msg-123");
+    expect(html).toContain(url);
+  });
