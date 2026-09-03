@@ -36,7 +36,11 @@ DEMOGRAPHICS = [
     "first responder dependent", "left handed", "vegan", "tall",
     "redhead", "twin", "eagle scout", "girl scout",
 ]
-STATES = ["Arizona", "Texas", "California", "Florida", "New York", "Georgia", "Ohio", "Michigan", "North Carolina", "Washington"]
+STATES = ["Arizona", "Texas", "California", "Florida", "New York", "Georgia", "Ohio", "Michigan", "North Carolina", "Washington",
+          "Alabama", "Alaska", "Arkansas", "Colorado", "Connecticut", "Delaware", "Hawaii", "Idaho", "Illinois", "Indiana",
+          "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Minnesota", "Mississippi", "Missouri",
+          "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "North Dakota", "Oklahoma", "Oregon", "Pennsylvania",
+          "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Utah", "Vermont", "Virginia", "West Virginia", "Wisconsin", "Wyoming", "District of Columbia"]
 SPONSORS = ["civic organization", "professional association", "labor union", "credit union",
             "utility company", "foundation", "fraternal organization", "employer"]
 
