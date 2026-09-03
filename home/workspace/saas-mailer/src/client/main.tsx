@@ -11,7 +11,7 @@ const api = async (path: string, options: RequestInit = {}) => {
 document.title = "Outbound workspace";
 
 type Contact = { id: string; email: string; first_name: string | null; last_name: string | null; created_at: string };
-type Campaign = { id: string; name: string; status: string; created_at: string; step_count?: number };
+type Campaign = { id: string; name: string; status: string; campaign_type?: "newsletter" | "sequence"; preview_text?: string; template?: string; scheduled_at?: string | null; created_at: string; step_count?: number };
 type Account = { id: string; provider: string; email: string; status: string };
 type EventRow = { id: string; type: string; contact_id: string | null; created_at: string };
 
@@ -52,7 +52,7 @@ function Dashboard() {
   const [importNewListName, setImportNewListName] = useState("");
   const [importListColumn, setImportListColumn] = useState("");
   const [mockEmail, setMockEmail] = useState("");
-  const [form, setForm] = useState<{ name: string; steps: Array<{ subject: string; body: string; delay: number }> }>({ name: "", steps: [{ subject: "", body: "", delay: 0 }] });
+  const [form, setForm] = useState<{ name: string; campaignType: "newsletter" | "sequence"; previewText: string; template: string; scheduledAt: string; steps: Array<{ subject: string; body: string; delay: number }> }>({ name: "", campaignType: "sequence", previewText: "", template: "plain", scheduledAt: "", steps: [{ subject: "", body: "", delay: 0 }] });
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const loadAll = async () => {
@@ -123,8 +123,8 @@ function Dashboard() {
   };
   const createCampaign = async (e: React.FormEvent) => {
     e.preventDefault();
-    const result = await api("/api/campaigns", { method: "POST", body: JSON.stringify({ name: form.name, steps: form.steps.map(st => ({ subject: st.subject, body: st.body, delay_minutes: st.delay })) }) });
-    if (result.id) { setNotice(`Campaign "${result.name}" created as draft`); setForm({ name: "", steps: [{ subject: "", body: "", delay: 0 }] }); loadAll(); }
+    const result = await api("/api/campaigns", { method: "POST", body: JSON.stringify({ name: form.name, campaign_type: form.campaignType, preview_text: form.previewText, template: form.template, scheduled_at: form.scheduledAt || undefined, steps: form.steps.map(st => ({ subject: st.subject, body: st.body, delay_minutes: st.delay })) }) });
+    if (result.id) { setNotice(`${form.campaignType === "newsletter" ? "Newsletter" : "Campaign"} "${result.name}" created as draft`); setForm({ name: "", campaignType: "sequence", previewText: "", template: "plain", scheduledAt: "", steps: [{ subject: "", body: "", delay: 0 }] }); loadAll(); }
     else setNotice(result.error || "Unable to create campaign");
   };
   const updateStep = (index: number, patch: Partial<{ subject: string; body: string; delay: number }>) => setForm(f => ({ ...f, steps: f.steps.map((st, i) => i === index ? { ...st, ...patch } : st) }));
@@ -224,9 +224,11 @@ function Dashboard() {
         </section>}
 
         {section === "Campaigns" && <section className="panel">
-          <div className="panel-head"><div><p className="eyebrow">Sequences</p><h3>Campaigns ({campaigns.length})</h3></div></div>
+          <div className="panel-head"><div><p className="eyebrow">Unified campaigns</p><h3>Campaigns ({campaigns.length})</h3></div></div>
           <form className="create-campaign" onSubmit={createCampaign}>
             <input aria-label="Campaign name" placeholder="Campaign name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required />
+            <select aria-label="Campaign type" value={form.campaignType} onChange={e => setForm({ ...form, campaignType: e.target.value as "newsletter" | "sequence" })}><option value="sequence">Sequence — timed outreach</option><option value="newsletter">Newsletter — one editorial send</option></select>
+            {form.campaignType === "newsletter" && <><input aria-label="Preview text" placeholder="Preview text" value={form.previewText} onChange={e => setForm({ ...form, previewText: e.target.value })} /><select aria-label="Newsletter template" value={form.template} onChange={e => setForm({ ...form, template: e.target.value })}><option value="plain">Plain</option><option value="editorial">Editorial</option><option value="announcement">Announcement</option></select><label className="schedule-field">Schedule <input type="datetime-local" value={form.scheduledAt} onChange={e => setForm({ ...form, scheduledAt: e.target.value })} /></label></>}
             {form.steps.map((st, i) => <fieldset className="step-row" key={i}>
               <legend>Step {i + 1}</legend>
               <input aria-label={`Step ${i + 1} subject`} placeholder={i === 0 ? "First email subject" : `Email ${i + 1} subject`} value={st.subject} onChange={e => updateStep(i, { subject: e.target.value })} required />
@@ -239,7 +241,7 @@ function Dashboard() {
             <button type="button" className="text-button" onClick={addStep}>+ Add step</button>
             <button type="submit">Create draft campaign</button>
           </form>
-          {campaigns.length ? campaigns.map(camp => <div className="record" key={camp.id}><div><b>{camp.name}</b><small>{camp.status} · {camp.step_count ?? 1} step{(camp.step_count ?? 1) === 1 ? "" : "s"} · created {camp.created_at?.slice(0, 10)}</small></div>{camp.status === "draft" && <button className="text-button" onClick={() => approve(camp.id)}>Approve ✓</button>}{camp.status !== "draft" && <button className="text-button" onClick={() => enrollAll(camp)}>Enroll contacts</button>}</div>) : <div className="empty"><span>∿</span><b>No campaigns yet</b><p>Create your first sequence above.</p></div>}
+          {campaigns.length ? campaigns.map(camp => <div className="record" key={camp.id}><div><b>{camp.name}</b><small>{camp.campaign_type === "newsletter" ? "newsletter" : "sequence"} · {camp.status} · {camp.step_count ?? 1} step{(camp.step_count ?? 1) === 1 ? "" : "s"} · created {camp.created_at?.slice(0, 10)}</small></div>{camp.status === "draft" && <button className="text-button" onClick={() => approve(camp.id)}>Approve ✓</button>}{camp.status !== "draft" && <button className="text-button" onClick={() => enrollAll(camp)}>Enroll contacts</button>}</div>) : <div className="empty"><span>∿</span><b>No campaigns yet</b><p>Create your first campaign above.</p></div>}
         </section>}
 
         {section === "Sending accounts" && <section className="panel">
