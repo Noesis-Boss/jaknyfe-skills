@@ -29,9 +29,9 @@ async function main() {
 
     const orgId = await firstOrg(database);
     await database.execute(
-      "INSERT INTO events (id, organization_id, contact_id, type, payload, created_at) VALUES ($1, $2, 'live_e2e_test', $3, now())",
-      [crypto.randomUUID(), orgId, JSON.stringify({ providerMessageId: result.providerMessageId, to: TO })],
-    ).catch(() => console.log("event insert skipped (schema mismatch)"));
+      "INSERT INTO events (id, organization_id, message_id, type, payload) VALUES ($1, $2, NULL, 'delivered', $3::jsonb)",
+      [crypto.randomUUID(), orgId, JSON.stringify({ providerMessageId: result.providerMessageId, to: TO, source: "live-send-test" })],
+    );
     console.log("done");
   } finally {
     await database.close();
