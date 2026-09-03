@@ -15,6 +15,7 @@ const walletChallenges = new Map<string, { message: string; expiresAt: number }>
 const verifiedWalletFile = Bun.file(verifiedWalletsPath);
 const verifiedWallets = new Set<string>(await (await verifiedWalletFile.exists() ? verifiedWalletFile.json() : []));
 const walletSessions = new Map<string, { address: string; expiresAt: number }>();
+const pledgeChallenges = new Map<string, { message: string; expiresAt: number }>();
 const SESSION_TTL_MS = 24 * 60 * 60 * 1000;
 
 async function saveVerifiedWallets() {
@@ -110,16 +111,44 @@ app.post("/api/upload", async (c) => {
   return c.json({ url: `/uploads/${filename}` }, 201);
 });
 
+app.post("/api/campaigns/:id/pledge/challenge", async (c) => {
+  const campaign = campaignStore.find((item) => item.id === c.req.param("id"));
+  if (!campaign) return c.json({ error: "Campaign not found" }, 404);
+  const body = await c.req.json<{ address?: string; amount?: number }>();
+  const address = body.address?.trim();
+  const amount = Number(body.amount);
+  if (!address || !/^0x[a-fA-F0-9]{40}$/.test(address)) return c.json({ error: "Invalid wallet address" }, 400);
+  if (!Number.isFinite(amount) || amount <= 0) return c.json({ error: "Invalid pledge amount" }, 400);
+  const message = `CoinBackers pledge confirmation\nCampaign: ${campaign.title} (${campaign.id})\nAmount (USD): ${amount.toFixed(2)}\nAddress: ${address}\nNonce: ${crypto.randomUUID()}`;
+  pledgeChallenges.set(`${campaign.id}:${address.toLowerCase()}`, { message, expiresAt: Date.now() + 5 * 60 * 1000 });
+  return c.json({ message, expiresAt: Date.now() + 5 * 60 * 1000 });
+});
+
 app.post("/api/campaigns/:id/pledge", async (c) => {
   const campaign = campaignStore.find((item) => item.id === c.req.param("id"));
   if (!campaign) return c.json({ error: "Campaign not found" }, 404);
-  const body = await c.req.json<{ amount?: number }>();
+  const body = await c.req.json<{ amount?: number; address?: string; message?: string; signature?: string }>();
   const amount = Number(body.amount);
+  const address = body.address?.trim();
+  const challenge = address ? pledgeChallenges.get(`${campaign.id}:${address.toLowerCase()}`) : undefined;
   if (!Number.isFinite(amount) || amount <= 0) return c.json({ error: "Invalid pledge" }, 400);
-  campaign.pledged = Number(campaign.pledged || 0) + amount;
-  campaign.backers = Number(campaign.backers || 0) + 1;
-  await saveCampaigns();
-  return c.json(campaign);
+  if (!address || !body.message || !body.signature || !challenge || challenge.expiresAt < Date.now() || challenge.message !== body.message) {
+    return c.json({ error: "Pledge signature missing, expired, or invalid" }, 401);
+  }
+  try {
+    const recovered = verifyMessage(body.message, body.signature);
+    if (recovered.toLowerCase() !== address.toLowerCase()) return c.json({ error: "Signature does not match wallet" }, 401);
+    pledgeChallenges.delete(`${campaign.id}:${address.toLowerCase()}`);
+    campaign.pledged = Number(campaign.pledged || 0) + amount;
+    campaign.backers = Number(campaign.backers || 0) + 1;
+    const pledges = Array.isArray(campaign.pledges) ? campaign.pledges : [];
+    pledges.push({ amount, backerWallet: recovered.toLowerCase(), at: new Date().toISOString() });
+    campaign.pledges = pledges;
+    await saveCampaigns();
+    return c.json(campaign);
+  } catch {
+    return c.json({ error: "Invalid pledge signature" }, 401);
+  }
 });
 
 app.get("/api/price", (c) => {
