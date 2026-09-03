@@ -21,17 +21,25 @@ export default function CreatorDashboard() {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [loading, setLoading] = useState(true);
   const [wallet, setWallet] = useState<string | null>(() => localStorage.getItem("coinbackers-wallet"));
+  const [verified, setVerified] = useState(() => localStorage.getItem("coinbackers-wallet-verified") === "true");
+  const [walletError, setWalletError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
   const connectWallet = async () => {
     const ethereum = (window as Window & { ethereum?: { request: (args: { method: string }) => Promise<string[]> } }).ethereum;
-    const address = ethereum
-      ? (await ethereum.request({ method: "eth_requestAccounts" }))[0]
-      : "0xDemo...Backers";
-    if (address) {
-      setWallet(address);
+    setWalletError(null);
+    if (!ethereum) { setWalletError("A browser wallet is required for verification."); return; }
+    try {
+      const address = (await ethereum.request({ method: "eth_requestAccounts" }))[0];
+      const challengeRes = await fetch("/api/wallet/challenge", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ address }) });
+      const { message } = await challengeRes.json();
+      const signature = await ethereum.request({ method: "personal_sign", params: [message, address] } as { method: string; params: string[] }) as unknown as string;
+      const verifyRes = await fetch("/api/wallet/verify", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ address, message, signature }) });
+      if (!verifyRes.ok) throw new Error((await verifyRes.json()).error || "Verification failed");
+      setWallet(address); setVerified(true);
       localStorage.setItem("coinbackers-wallet", address);
-    }
+      localStorage.setItem("coinbackers-wallet-verified", "true");
+    } catch (error) { setWalletError(error instanceof Error ? error.message : "Wallet verification failed"); }
   };
 
   const copyWallet = async () => {
@@ -71,7 +79,7 @@ export default function CreatorDashboard() {
           </div>
           <h1 className="text-3xl font-bold text-slate-900">Creator Dashboard</h1>
           </div>
-          {wallet ? (
+          {wallet && verified ? (
             <button type="button" onClick={copyWallet} className="inline-flex items-center gap-2 self-start rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-700 sm:self-auto" aria-label="Copy connected wallet address">
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               {copied ? "Copied" : wallet}
@@ -82,6 +90,7 @@ export default function CreatorDashboard() {
             </button>
           )}
         </div>
+        {walletError && <p role="alert" className="mb-6 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">{walletError}</p>}
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
