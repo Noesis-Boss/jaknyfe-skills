@@ -15,6 +15,13 @@ type Campaign = { id: string; name: string; status: string; campaign_type?: "new
 type Account = { id: string; provider: string; email: string; status: string };
 type EventRow = { id: string; type: string; contact_id: string | null; created_at: string };
 
+function CampaignAnalytics({ campaignId }: { campaignId: string }) {
+  const [analytics, setAnalytics] = useState<Record<string, number> | null>(null);
+  useEffect(() => { api(`/api/campaigns/${campaignId}/analytics`).then(result => { if (result.analytics) setAnalytics(result.analytics); }); }, [campaignId]);
+  if (!analytics) return <small className="analytics">No activity yet</small>;
+  return <small className="analytics">{Object.entries(analytics).map(([type, count]) => `${type} ${count}`).join(" · ") || "No activity yet"}</small>;
+}
+
 function ContactDetail({ contact, form, onChange, onClose, onSave, onDelete }: { contact: Contact; form: { firstName: string; lastName: string }; onChange: (patch: Partial<{ firstName: string; lastName: string }>) => void; onClose: () => void; onSave: () => void; onDelete: () => void }) {
   return (
     <div className="contact-detail">
@@ -135,6 +142,12 @@ function Dashboard() {
     if (result.id) { setNotice(`Campaign "${result.name}" approved`); loadAll(); }
     else setNotice(result.error || "Unable to approve campaign");
   };
+  const schedule = async (camp: Campaign) => {
+    const scheduledAt = camp.scheduled_at || new Date(Date.now() + 5 * 60 * 1000).toISOString();
+    const result = await api(`/api/campaigns/${camp.id}/schedule`, { method: "POST", body: JSON.stringify({ scheduled_at: scheduledAt }) });
+    if (result.scheduled_at) { setNotice(`${camp.name} scheduled · ${result.queued || 0} message${result.queued === 1 ? "" : "s"} queued`); loadAll(); }
+    else setNotice(result.error || "Unable to schedule campaign");
+  };
   const enrollAll = async (camp: Campaign) => {
     const ids = contacts.map(c => c.id);
     if (!ids.length) { setNotice("Import contacts before enrolling them"); return; }
@@ -241,7 +254,7 @@ function Dashboard() {
             <button type="button" className="text-button" onClick={addStep}>+ Add step</button>
             <button type="submit">Create draft campaign</button>
           </form>
-          {campaigns.length ? campaigns.map(camp => <div className="record" key={camp.id}><div><b>{camp.name}</b><small>{camp.campaign_type === "newsletter" ? "newsletter" : "sequence"} · {camp.status} · {camp.step_count ?? 1} step{(camp.step_count ?? 1) === 1 ? "" : "s"} · created {camp.created_at?.slice(0, 10)}</small></div>{camp.status === "draft" && <button className="text-button" onClick={() => approve(camp.id)}>Approve ✓</button>}{camp.status !== "draft" && <button className="text-button" onClick={() => enrollAll(camp)}>Enroll contacts</button>}</div>) : <div className="empty"><span>∿</span><b>No campaigns yet</b><p>Create your first campaign above.</p></div>}
+          {campaigns.length ? campaigns.map(camp => <div className="record" key={camp.id}><div><b>{camp.name}</b><small>{camp.campaign_type === "newsletter" ? "newsletter" : "sequence"} · {camp.status} · {camp.step_count ?? 1} step{(camp.step_count ?? 1) === 1 ? "" : "s"} · created {camp.created_at?.slice(0, 10)}</small><CampaignAnalytics campaignId={camp.id} />{camp.scheduled_at && <small>Scheduled {new Date(camp.scheduled_at).toLocaleString()}</small>}</div>{camp.status === "draft" && <button className="text-button" onClick={() => approve(camp.id)}>Approve ✓</button>}{camp.status === "approved" && <button className="text-button" onClick={() => enrollAll(camp)}>Enroll contacts</button>}{camp.status === "approved" && camp.campaign_type === "newsletter" && <button className="text-button" onClick={() => schedule(camp)}>Schedule ↗</button>}</div>) : <div className="empty"><span>∿</span><b>No campaigns yet</b><p>Create your first campaign above.</p></div>}
         </section>}
 
         {section === "Sending accounts" && <section className="panel">
