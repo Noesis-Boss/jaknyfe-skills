@@ -1,0 +1,17 @@
+{
+  "skill_name": "zo-orchestration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Plan a multi-file feature in a Git repository with two implementation workers and independent verification.",
+      "expected_output": "A bounded, dependency-aware graph with ownership, verification, stop conditions, and isolated integration.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Deploy a frontend change and update the project record.",
+      "expected_output": "The workflow requires build, rendered screenshot verification, deployment approval, and durable project/Trello updates.",
+      "files": []
+    }
+  ]
+}
