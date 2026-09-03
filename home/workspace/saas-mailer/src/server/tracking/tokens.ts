@@ -74,7 +74,7 @@ function pg(db: Database | PostgresDatabase): db is PostgresDatabase {
 export async function recordPublicEvent(database: Database | PostgresDatabase, messageId: string, type: "opened" | "clicked" | "unsubscribed", payload: Record<string, unknown> = {}) {
   const json = JSON.stringify(payload);
   if (pg(database)) {
-    await database.query("INSERT INTO events (id, organization_id, message_id, type, payload) SELECT gen_random_uuid()::text, organization_id, id, $3, $4::jsonb FROM messages WHERE id = $1", [messageId, messageId, type, json]);
+    await database.query("INSERT INTO events (id, organization_id, message_id, type, payload) SELECT gen_random_uuid()::text, organization_id, id, $2, $3::jsonb FROM messages WHERE id = $1", [messageId, type, json]);
   } else {
     database.query("INSERT INTO events (id, organization_id, message_id, type, payload) SELECT lower(hex(randomblob(16))), organization_id, id, ?, ? FROM messages WHERE id = ?").run(type, json, messageId);
   }
