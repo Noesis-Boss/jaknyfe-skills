@@ -19,7 +19,8 @@ function CampaignAnalytics({ campaignId }: { campaignId: string }) {
   const [analytics, setAnalytics] = useState<Record<string, number> | null>(null);
   useEffect(() => { api(`/api/campaigns/${campaignId}/analytics`).then(result => { if (result.analytics) setAnalytics(result.analytics); }); }, [campaignId]);
   if (!analytics) return <small className="analytics">No activity yet</small>;
-  return <small className="analytics">{Object.entries(analytics).map(([type, count]) => `${type} ${count}`).join(" · ") || "No activity yet"}</small>;
+  const max = Math.max(...Object.values(analytics), 1);
+  return <small className="analytics">{Object.entries(analytics).map(([type, count]) => <span className="stat" key={type} title={`${type}: ${count}`}><span className="bar"><span style={{ width: `${Math.round((count / max) * 100)}%` }} /></span>{type} {count}</span>) || "No activity yet"}</small>;
 }
 
 function ContactDetail({ contact, form, onChange, onClose, onSave, onDelete }: { contact: Contact; form: { firstName: string; lastName: string }; onChange: (patch: Partial<{ firstName: string; lastName: string }>) => void; onClose: () => void; onSave: () => void; onDelete: () => void }) {

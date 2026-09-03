@@ -7,6 +7,7 @@ import { recordEvent } from "../events/service";
 import { recordEventPostgres } from "../events/service";
 import { sendWithAccount } from "../sending/service";
 import { sendWithAccountPostgres } from "../sending/service";
+import { injectTracking } from "../tracking/tokens";
 import type { QueuedSendJob } from "./queue";
 
 export type SendAttempt = { status: "sent" | "duplicate" | "rejected" | "retryable_failure" | "permanent_failure"; messageId?: string; reason?: string; retryable?: boolean };
@@ -24,7 +25,7 @@ export async function processQueuedSend(database: Database, job: QueuedSendJob):
   if (!eligibility.eligible) return { status: "rejected", reason: eligibility.reason };
   const messageId = randomUUID();
   try {
-    const result = await sendWithAccount(database, job.organizationId, job.sendingAccountId, { to: database.query<{ email: string }, [string, string]>("SELECT email FROM contacts WHERE id = ? AND organization_id = ?").get(job.contactId, job.organizationId)!.email, subject: job.subject, body: job.body, from: "" });
+    const result = await sendWithAccount(database, job.organizationId, job.sendingAccountId, { to: database.query<{ email: string }, [string, string]>("SELECT email FROM contacts WHERE id = ? AND organization_id = ?").get(job.contactId, job.organizationId)!.email, subject: job.subject, body: injectTracking(job.body, messageId), from: "" });
     database.query("INSERT INTO messages (id, organization_id, campaign_id, contact_id, sending_account_id, provider_message_id, status, idempotency_key, sent_at, subject, body) VALUES (?, ?, ?, ?, ?, ?, 'sent', ?, ?, ?, ?)").run(messageId, job.organizationId, job.campaignId, job.contactId, job.sendingAccountId, result.providerMessageId, job.idempotencyKey, result.acceptedAt, job.subject, job.body);
     recordEvent(database, { organizationId: job.organizationId, type: "delivered", messageId, contactId: job.contactId, payload: { provider_message_id: result.providerMessageId } });
     database.query("UPDATE campaign_contacts SET status = 'sent' WHERE organization_id = ? AND campaign_id = ? AND contact_id = ?").run(job.organizationId, job.campaignId, job.contactId);
@@ -60,7 +61,7 @@ export async function processQueuedSendPostgres(database: PostgresDatabase, job:
   const messageId = claim.id;
 
   try {
-    const result = await sendWithAccountPostgres(database, job.organizationId, job.sendingAccountId, { to: contact.email, subject: job.subject, body: job.body, from: "" });
+    const result = await sendWithAccountPostgres(database, job.organizationId, job.sendingAccountId, { to: contact.email, subject: job.subject, body: injectTracking(job.body, messageId), from: "" });
     await database.transaction(async tx => {
       await tx.execute("UPDATE messages SET provider_message_id = $1, status = 'sent', sent_at = $2, error_code = NULL, subject = $3, body = $4 WHERE organization_id = $5 AND id = $6", [result.providerMessageId, result.acceptedAt, job.subject, job.body, job.organizationId, messageId]);
       await tx.execute("UPDATE campaign_contacts SET status = 'sent' WHERE organization_id = $1 AND campaign_id = $2 AND contact_id = $3", [job.organizationId, job.campaignId, job.contactId]);

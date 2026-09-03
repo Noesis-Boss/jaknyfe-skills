@@ -2,8 +2,9 @@ import { Hono } from "hono";
 import type { Database } from "bun:sqlite";
 import type { PostgresDatabase } from "../postgres";
 import { requireTenant, requireTenantPostgres } from "../auth/middleware";
+import { signTrackingToken, verifyTrackingToken, recordPublicEvent } from "../tracking/tokens";
 
-const transparentPixel = Uint8Array.from([71,73,70,56,57,97,1,0,1,0,128,0,0,0,0,0,255,255,255,33,249,4,1,0,0,0,0,44,0,0,0,0,1,0,1,0,0,2,2,68,1,0,59]);
+const transparentPixel = Uint8Array.from([71,73,56,57,97,1,0,1,0,128,0,0,0,0,0,255,255,255,33,249,4,1,0,0,0,0,44,0,0,0,0,1,0,1,0,0,2,2,68,1,0,59]);
 function pg(db: Database | PostgresDatabase): db is PostgresDatabase { return "sql" in db; }
 export function createAnalyticsRoutes(database: Database | PostgresDatabase) {
   const routes = new Hono();
@@ -29,6 +30,15 @@ export function createAnalyticsRoutes(database: Database | PostgresDatabase) {
       else database.query("INSERT INTO events (id,organization_id,message_id,type,payload) SELECT lower(hex(randomblob(16))),?,id,'clicked',? FROM messages WHERE organization_id=? AND id=?").run(tenant.organizationId, JSON.stringify({ url: target || "" }), tenant.organizationId, id);
       return c.redirect(target || "/");
     } catch { return c.redirect("/"); }
+  });
+  routes.get("/api/t/o/:token", async c => {
+    try { const id = verifyTrackingToken(c.req.param("token")); if (id) await recordPublicEvent(database, id, "opened"); } catch {}
+    return new Response(transparentPixel, { headers: { "Content-Type": "image/gif", "Cache-Control": "no-store" } });
+  });
+  routes.get("/api/t/c/:token", async c => {
+    const target = c.req.query("url") || "/";
+    try { const id = verifyTrackingToken(c.req.param("token")); if (id) await recordPublicEvent(database, id, "clicked", { url: target }); } catch {}
+    return c.redirect(target);
   });
   return routes;
 }
