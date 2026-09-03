@@ -28,6 +28,9 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 
 ## Three-layer context stack
 
+- **Execution helpers**: `bin/zo-run` routes verbose command families through token-saver while preserving direct execution for shell, file viewing, and interpreter commands. `bin/zo-command-audit` is a non-blocking routing check. `bin/zo-stack-doctor` reports installed-layer and Graphify-hook health.
+- **Per-project profiles**: `docs/agent-profiles/` records retrieval, safety, verification, and output rules for indexed projects. These profiles are guidance, not hard bans.
+
 - **Caveman** (`/usr/bin/caveman`, v0.65.2) is the response/output layer. Use terse mode for routine execution, debugging, and status; preserve normal detail for architecture, teaching, and safety-sensitive work. The existing `Skills/caveman-code/` wrapper remains the supported CLI entrypoint.
 - **Graphify** (`graphify`, installed via `uv tool`, v0.9.53) is the repository/retrieval layer. Codex and Hermes guidance is installed in their agent skill directories. The global graph is `/root/.graphify/global-graph.json`; current indexed projects are `robinhood-trading-bot`, `open-jobs`, and `scholarsearch-site`. Each project graph lives in its own `graphify-out/` directory.
 - **Headroom** is the application/input layer, not a global shell filter. Use it inside agent or RAG applications that produce oversized tool output, logs, JSON, or search results. Treat published reduction percentages as claims until measured locally; the existing `Skills/headroom-eval/` is only a restored stub and is not a production integration.
@@ -98,6 +101,12 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - 2026-08-25: Astra memory full sync repeatedly stalled because `sync.ts` spawned and reloaded the embedding model once per missing document, reconciled writes sequentially, lacked an HTTP timeout, and limited reads to the first 100 records. Added batched single-process embeddings, eight-write concurrency, a 30-second request timeout, input deduplication, and a 1,000-record paginated read limit. Rebuilt only the corrupted `memories` mirror from its filesystem sources, inserted 185 unique records, verified a second idempotent pass with zero inserts, and confirmed Chapter 10 lexical recall.
 
 ## Feature Log
+
+- 2026-09-03: Added token-efficiency helpers: `bin/zo-run` for safe compressed command execution, `bin/zo-command-audit` for non-blocking routing advice, `bin/zo-stack-doctor` for stack health checks, and per-project profiles under `docs/agent-profiles/`. A representative git log benchmark compressed 15,305 characters to 619 (96.0% savings). Doctor currently identifies missing Graphify hooks in `robinhood-trading-bot` and `scholarsearch-site`; `open-jobs` passes.
+
+- 2026-09-02: Established `docs/universal-sso-contract.md` as the active Authentik/OIDC contract for universal Noesis sign-in. It defines discovery, PKCE, claims, per-app secrets, callback/logout rules, authorization boundaries, and onboarding checks for Momball, SaaS-Mailer, and future apps.
+
+- 2026-09-02: BankBox added configurable transaction-cost profiles and movement-cost records for Stripe, Plaid, sponsor-bank/FBO, and BankBox service fees. `/api/money/costs/report` exposes estimated versus actual totals; seeded planning rates remain replaceable by vendor quotes. Backend tests pass 42/42.
 
 - 2026-09-02: Evaluated five uploaded AlexAI Empire business-prompt images. Enhanced `Skills/find-moneymaking-biz/SKILL.md` with assumption/evidence separation, scoring criteria, rejection rules, and a 48-hour validation gate. Added `Skills/business-prompt-system/SKILL.md` to sequence discovery, validation, offer, copy, acquisition, fulfillment, automation, and measurement without treating prompts as proof of demand.
 

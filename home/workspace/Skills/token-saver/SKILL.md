@@ -54,6 +54,14 @@ alias ts='python3 /root/.token-saver/scripts/wrap.py'
 ```
 Use: `ts git log --oneline -50`
 
+### Zo-safe command helper
+
+Use `/home/workspace/bin/zo-run COMMAND [ARGS...]` for routine commands. It
+routes supported verbose command families through token-saver and leaves shell,
+file-viewing, and interpreter commands direct. Use
+`/home/workspace/bin/zo-command-audit COMMAND [ARGS...]` to inspect routing
+without executing anything.
+
 ## Supported commands (processor routing)
 
 | Command family | Processor |
