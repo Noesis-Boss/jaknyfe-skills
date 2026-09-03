@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "Solar-Powered Water Purifier",
+    "description": "A low-cost, portable water purification system for remote communities, powered entirely by the sun. Join us in bringing clean water to thousands.",
+    "goal": 50000,
+    "pledged": 12500,
+    "backers": 142,
+    "daysLeft": 18
+  },
+  {
+    "id": "2",
+    "title": "Decentralized AI Assistant",
+    "description": "An open-source, privacy-focused AI assistant that runs entirely on your local machine or a decentralized network. No data harvesting, just pure intelligence.",
+    "goal": 100000,
+    "pledged": 85000,
+    "backers": 956,
+    "daysLeft": 5
+  },
+  {
+    "id": "3",
+    "title": "Eco-Friendly Modular Tiny Home",
+    "description": "Sustainable, affordable, and beautiful modular homes that can be assembled in a weekend. Made from recycled materials and carbon-neutral.",
+    "goal": 250000,
+    "pledged": 45000,
+    "backers": 84,
+    "daysLeft": 42
+  }
+]

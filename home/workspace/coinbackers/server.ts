@@ -14,7 +14,8 @@ const campaignStore = (await campaignFile.exists()
 const walletChallenges = new Map<string, { message: string; expiresAt: number }>();
 const verifiedWalletFile = Bun.file(verifiedWalletsPath);
 const verifiedWallets = new Set<string>(await (await verifiedWalletFile.exists() ? verifiedWalletFile.json() : []));
-const walletSessions = new Map<string, string>();
+const walletSessions = new Map<string, { address: string; expiresAt: number }>();
+const SESSION_TTL_MS = 24 * 60 * 60 * 1000;
 
 async function saveVerifiedWallets() {
   await Bun.write(verifiedWalletsPath, JSON.stringify([...verifiedWallets].sort(), null, 2) + "\n");
@@ -49,8 +50,8 @@ app.post("/api/wallet/verify", async (c) => {
     verifiedWallets.add(recovered.toLowerCase());
     await saveVerifiedWallets();
     const token = crypto.randomUUID();
-    walletSessions.set(token, recovered.toLowerCase());
-    return c.json({ verified: true, address: recovered, token });
+    walletSessions.set(token, { address: recovered.toLowerCase(), expiresAt: Date.now() + SESSION_TTL_MS });
+    return c.json({ verified: true, address: recovered, token, expiresAt: Date.now() + SESSION_TTL_MS });
   } catch {
     return c.json({ error: "Invalid wallet signature" }, 401);
   }
@@ -58,8 +59,18 @@ app.post("/api/wallet/verify", async (c) => {
 
 app.get("/api/wallet/session", (c) => {
   const token = c.req.header("authorization")?.replace(/^Bearer\s+/i, "");
-  const address = token ? walletSessions.get(token) : undefined;
-  return address ? c.json({ verified: true, address }) : c.json({ verified: false }, 401);
+  const session = token ? walletSessions.get(token) : undefined;
+  if (!session || session.expiresAt <= Date.now()) {
+    if (token) walletSessions.delete(token);
+    return c.json({ verified: false }, 401);
+  }
+  return c.json({ verified: true, address: session.address, expiresAt: session.expiresAt });
+});
+
+app.post("/api/wallet/logout", (c) => {
+  const token = c.req.header("authorization")?.replace(/^Bearer\s+/i, "");
+  if (token) walletSessions.delete(token);
+  return c.json({ loggedOut: true });
 });
 
 app.get("/api/campaigns/:id", (c) => {
@@ -73,7 +84,8 @@ app.post("/api/campaigns", async (c) => {
     return c.json({ error: "Invalid campaign" }, 400);
   }
   const token = c.req.header("authorization")?.replace(/^Bearer\s+/i, "");
-  const creatorWallet = token ? walletSessions.get(token) : undefined;
+  const session = token ? walletSessions.get(token) : undefined;
+  const creatorWallet = session && session.expiresAt > Date.now() ? session.address : undefined;
   if (!creatorWallet || !verifiedWallets.has(creatorWallet)) {
     return c.json({ error: "Verify your wallet before creating a campaign" }, 401);
   }
