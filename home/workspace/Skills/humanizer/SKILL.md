@@ -38,6 +38,8 @@ When humanizing text, apply the user's voice rules. If the user has a persona co
 - Prefer active voice and short sentences.
 - Vary sentence length. Real writing isn't uniform.
 
+**Writing sample mode (borrowed from upstream v2.11.2):** If the user provides a writing sample (their own previous writing), analyze it before rewriting: note its sentence length, word choice, paragraph openings, punctuation, repeated phrases, and transitions, then match those habits. The sample takes priority over the default rules — if the sample uses em dashes, keep them at about the same rate and do not apply #11 as a ban. Do not replace casual words with formal ones or remove deliberate quirks.
+
 **To customize**: Edit the "Voice Calibration" section above to match your persona's voice rules. For example, if your persona avoids em dashes and emojis, add those as hard rules. If your persona uses humor, specify the style.
 
 ## Process
@@ -48,6 +50,12 @@ When humanizing text, apply the user's voice rules. If the user has a persona co
 4. Check against voice rules
 5. Verify: varied sentence length, actual opinions present, no robotic uniformity
 6. Cluster check: a single sign (one em dash, one AI word) proves nothing. Flag text only when 3+ signals converge in the same passage — uniform sentence length + repeated transitions + hedging + AI vocabulary together. Treat the cluster, not the word.
+7. Fact integrity check (upstream v2.11.2): ask two questions before finishing — "What still sounds AI-generated?" and "Did the rewrite add or remove any fact, name, number, date, quote, citation, ranking, or other claim?" Treat any unsupported addition or lost claim as an error. Do not invent facts; if a sentence needs a missing detail, ask or use a simpler sentence. Fiction is exempt.
+
+**Return modes (upstream v2.11.2):**
+- **Pasted text (default):** return the draft, a short list of remaining AI patterns, and the final rewrite.
+- **File mode:** when the user names a file, run the full rewrite but write only the final text to the file. Keep code blocks, YAML metadata, data, and link targets unchanged. Then give a short summary.
+- **Embedded mode:** when another task uses this skill (PR description, commit message, document), return only the final text.
 Calibration: judging text AI-written because it says "delve" is, as the Economist put it in 2026, like judging it Jane Austen's because it says "imprudence". There is no single style of AI writing, just as there is no single style of human writing.
 7. Optional: run the result through a detector (GPTZero, Copyleaks, Originality, Turnitin) as a sanity check — treat its number as advisory, not verdict (see "Detector Reality Check").
 
@@ -308,6 +316,98 @@ After:
 
 Opening with a summary, doing the body, then restating the summary. Trust the reader to get it once.
 
+### Upstream v2.11.2 Additions (borrowed 2026-09-04, blader/humanizer)
+
+**47. Tailing negation / clipped negative endings**
+
+Extends #14. AI appends a clipped fragment instead of writing a clear clause.
+
+Before: The options come from the selected item, no guessing.
+After: The options come from the selected item without forcing the user to guess.
+
+**48. Passive voice and missing subjects**
+
+AI hides who acts or drops the subject. Use active voice when it makes the actor and action clearer.
+
+Before: No configuration file needed. The results are preserved automatically.
+After: You do not need a configuration file. The system preserves the results automatically.
+
+**49. Too many hyphenated word pairs**
+
+Words to watch: third-party, cross-functional, client-facing, data-driven, decision-making, well-known, high-quality, real-time, long-term, end-to-end.
+
+Rule: keep the hyphen before a noun when grammar needs it ("a high-quality report"). Drop it after the noun ("the report is high quality").
+
+Before: The cross-functional team delivered a high-quality, data-driven report. The team is cross-functional, the report is high-quality, and the methodology is data-driven.
+After: The cross-functional team delivered a high-quality, data-driven report. The team is cross functional, the report is high quality, and the methodology is data driven.
+
+**50. Pretending to reveal a deeper truth**
+
+Phrases to watch: the real question is, at its core, in reality, what really matters, fundamentally, the deeper issue, the heart of the matter. Used to make an ordinary point sound like a hidden truth.
+
+Before: The real question is whether teams can adapt. At its core, what really matters is organizational readiness.
+After: The question is whether teams can adapt. That mostly depends on whether the organization is ready to change its habits.
+
+**51. Announcing the next point**
+
+Phrases to watch: let's dive in, let's explore, let's break this down, here's what you need to know, now let's look at, without further ado, heads up, quick note, before I forget. Remove the announcement, not just its formal tone — casual register ("one thing that bit me, so pay attention") has the same problem.
+
+Before: Let's dive into how caching works in Next.js. Here's what you need to know.
+After: Next.js caches data at multiple layers, including request memoization, the data cache, and the router cache.
+
+**52. A heading repeated in the first sentence**
+
+A heading followed by a one-line paragraph that only restates the heading before real content begins. Delete the restating line.
+
+Before: ## Performance / Speed matters. / When users hit a slow page, they leave.
+After: ## Performance / When users hit a slow page, they leave.
+
+**53. Writing about the previous version**
+
+Documentation and comments should describe current behavior. Mention the previous version only in change logs, release notes, and migration guides.
+
+Before: This function was added to replace the previous approach of iterating through all items, which caused O(n²) performance.
+After: This function uses a hash map for O(1) lookups, avoiding the O(n²) cost of naive iteration.
+
+**54. Forced punchlines and dramatic fragments**
+
+AI turns each sentence into a dramatic closing line. One short sentence adds emphasis; a row of short fragments feels forced.
+
+Before: Then AlphaEvolve arrived. It had no preference for symmetry. No aesthetic prior. No nostalgia for human taste. The old rules were gone.
+After: AlphaEvolve changed the search because it did not favor symmetry or human-looking designs. That made some of the older assumptions less useful.
+
+**55. Formulaic sayings**
+
+Words to watch: X is the Y of Z, X becomes a trap, X is not a tool but a mirror, the language of, the currency of, the architecture of. Replace the saying with the specific claim.
+
+Before: Symmetry is the language of trust. Efficiency becomes a trap when teams forget the human layer.
+After: Symmetric layouts often feel more predictable to users. Teams can over-optimize workflows and miss how people actually use them.
+
+**56. Fake-candid openings**
+
+Phrases to watch: honestly?, look, here's the thing, the thing is, let's be honest, real talk — used as standalone hooks or staged pauses before an ordinary point.
+
+Before: Is it worth the price? Honestly? It depends on how often you'll use it.
+After: Whether it's worth the price depends on how often you'll use it.
+
+**57. Answering objections no one raised**
+
+Phrases to watch: this isn't (mainly/really) about, I'm not saying/arguing/trying to, to be clear, don't get me wrong, this is not to say, you could argue/frame this differently but, some might say... but. Watch for an unattributed statement about what the writer does not mean, especially when the topic appears nowhere else. A direct claim such as "the API is not thread-safe" is not this pattern.
+
+Before: This isn't mainly about prompt length, and I'm not arguing that documentation doesn't matter. You could categorize the problem another way, but the issue is whether the agent can use the instruction when it acts.
+After: The issue is whether the agent can use the instruction when it acts.
+
+Remove only the unsupported defense. If it contains a real claim, state that claim directly. Keep an objection when the text names its source or answers it in full.
+
+**58. Rejecting fake alternatives**
+
+Phrases to watch: a tempting option/approach would be, one might be tempted to, an obvious approach would be, you might think... but, it would be easy to just, some would suggest. AI introduces an option no reader would consider, rejects it in a clause, and never mentions it again.
+
+Before: Session tokens are rotated every 24 hours. A tempting approach would be to rotate them by restarting the auth service on a cron job, but that would drop every active session. Rotation happens in place, and clients refresh transparently.
+After: Session tokens are rotated every 24 hours, in place, and clients refresh transparently.
+
+One rejected option may be valid. Several short, unrelated rejections are a stronger sign.
+
 ### Long-Form Patterns
 
 These patterns emerge in sustained prose (novels, long essays, multi-section reports) where AI drafting leaves more visible artifacts.
@@ -518,6 +618,8 @@ When humanizing, keep (don't "fix") these human fingerprints — they are anti-A
 - Uneven formatting: mixed quote styles, a stray double space
 - Jokes or references that require shared context
 - Specific, falsifiable details: names, dates, counts, prices, quotes — the things a model would have to invent
+
+Additional upstream false-positive guards: letter-style salutations and sign-offs predate chatbots; one transition word in isolation is not a tell; curly quotes and em dashes alone prove nothing (macOS/Word auto-curl); a single short sentence for emphasis is fine — flag dramatic fragments only in rows; mid-sentence "honestly" or "look" is ordinary; keep scope statements, legal/safety notices, real corrections, named objections, and FAQ answers; keep real alternatives a reader may consider in design docs and tutorials; unsourced claims alone prove nothing; do not rewrite watched phrases inside quotations, titles, proper names, or examples where the phrase is discussed rather than used.
 
 Ineffective indicators (do NOT treat these as proof of AI): perfect grammar alone, formal tone alone, presence of citations alone, length, or emotional language. AI does all of these on demand.
 
