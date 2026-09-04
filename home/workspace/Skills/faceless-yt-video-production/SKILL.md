@@ -78,6 +78,20 @@ The script is information; the voiceover is a performance. For each script phase
 
 Produce **2 complete variants** of Sections 1–4 for the same script (MPT's `video_count` concept), differing in at least: hook b-roll, transition order, and music bed. Render both when budget allows and let real CTR/retention pick the winner; otherwise render variant A and keep B as the pre-approved alternate.
 
+## Section 6 — Packaging output + teleprompter
+
+Two production artifacts the script stage does not produce:
+
+### Thumbnail
+- **Input**: the outlier-format breakdown from stage 3 (Section F) + the thumbnail-text idea from Section C.
+- **Generate in the outlier's format, with the channel's own spin** — same composition pattern (face position, text placement, color contrast strategy), different subject/styling. Iterate with the image model: describe what is wrong in each revision pass rather than regenerating from scratch.
+- Judge it against the title as a unit: does the combo open exactly one curiosity gap?
+
+### Teleprompter
+- **Output a clean read-along version of the final script** — short lines (≤ 8 words per line), no markup, no stage directions, no emphasis notation unless read emphasis is wanted.
+- Punctuation is pacing: periods = full stop, commas = beat. The voiceover artist reads punctuation, not intent.
+- For screencast/faceless formats, the teleprompter is also the recording checklist: one screen-share or visual cue per beat, derived from Section 1's visual beats.
+
 ## Quality rules
 
 - Every scene has a visual, a search term, and a motion note — no "TBD".

@@ -16,6 +16,19 @@ Use this skill as **stage 1** of the faceless-youtube-system. The 5 stages are: 
 
 ## Output (single markdown document)
 
+### 0. Personal brand blueprint (living memory file)
+
+Before the angles, produce a separate `00-personal-brand-blueprint.md` — the voice/identity memory file every downstream stage (and every AI session) reads first. This is the single highest-leverage input: the more completely the AI is taught who the creator is, the more the output sounds like a person and not a template.
+
+Include, and write as much as possible for each — volume of raw material matters more than polish:
+
+- **Credentials + proof** — jobs, projects, wins, failures; the specifics that make claims credible.
+- **Voice samples** — 3–5 paragraphs the creator actually wrote or said, verbatim (emails, posts, transcripts). AI pattern-matches voice from real text, not from adjectives.
+- **Opinions** — what the creator believes that the niche disagrees with; the takes that make content non-generic.
+- **Constraints** — time available per week, faceless status, tools, budget, what the creator will never do on camera or on the page.
+- **Ikigai check** — what the creator is good at, what they love, what the audience needs, what the audience pays for. When starting out it is acceptable to weight "good at + loves" and defer "world needs / pays" — but the blueprint must say which quadrants are unproven so monetization (stage 5) can close them.
+- **Update rule** — the blueprint is a living document. After every 8 published videos (or any strong audience reaction), append what resonated. It gets more personalized over time; never let it go stale.
+
 ### 1. Three differentiated channel angles
 
 For each angle, write 2–3 sentences explaining:
@@ -24,7 +37,7 @@ For each angle, write 2–3 sentences explaining:
 - **The differentiation vs. existing competitors** (the reason someone chooses this channel over a similar one).
 - **The faceless angle** (why this channel works without an on-camera presenter — voiceover over stock, motion graphics, screencast, etc.).
 
-All three angles must serve the same niche but compete on different axes (e.g., one depth-first, one entertainment-first, one update-first). Do not produce three near-duplicates.
+All three angles must serve the same niche but compete on different axes (e.g., one depth-first, one entertainment-first, one update-first). Do not produce three near-duplicates. Derive angles from the blueprint's Ikigai check — an angle the creator cannot sustain (no skill, no proof, no willingness) is a rejected angle regardless of market size.
 
 ### 2. Five memorable channel-name candidates
 
@@ -87,6 +100,7 @@ The stack must assume a solo creator with $0–50/month to start. No enterprise 
 
 ```
 <channel-name-candidate>/
+  00-personal-brand-blueprint.md ← the living voice/identity memory file (Section 0)
   01-niche-and-brand.md       ← this skill's full output
   02-30-day-calendar.md       ← Skills/faceless-yt-content-engine output
   03-discoverability-pack.md  ← Skills/faceless-yt-discoverability output

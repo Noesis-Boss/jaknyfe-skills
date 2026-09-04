@@ -90,12 +90,24 @@ Organized by the four metrics named in the prompt: **click-through rate, watch t
 
 Prioritize the plan ruthlessly. The biggest gains in the first 30 days almost always come from CTR (packaging) and watch time (script), not from tag tweaks or upload time.
 
+### Section F — Outlier format mining
+
+Keyword opportunity (Section A) answers "what should this video be about?" Outlier mining answers "what should this video look like?" Do both before packaging anything.
+
+- **Build a competitor watchlist** — 5–10 channels in the niche, similar size or one band larger. Follow their output, not their advice.
+- **Identify outliers** — a video whose views are a large multiple of that channel's own median. Ignore subscriber count; the outlier signal is relative to the channel's own baseline.
+- **Ask AI to analyze why it worked** — title structure, thumbnail composition/text, hook pacing, format (tutorial vs. story vs. list), length. The deliverable is a written breakdown, not a vibe.
+- **Copy the format, never the content.** Reuse the structural elements (format, packaging pattern, promise shape) with the channel's own topic, voice, and spin. A near-identical copy reads as déjà vu and gets dismissed; the format is the transferable asset.
+- **Combine frameworks** — the channel's own best-performing format merged with an outlier's format beats either alone.
+- **Packaging triad rule** — thumbnail + title + hook are one unit. If any of the three is weak, the video does not surface, regardless of content quality. Section C outputs must be judged as a triad, not as separate fields.
+
 ## Quality rules
 
 - **Useful beats keyword-stuffed.** "Prioritize ideas that are useful to viewers — not keyword stuffing" is a hard constraint, not a guideline. If a "high-potential" keyword serves no viewer, drop it.
 - **No fake numbers in CTR/watch-time bands.** Use bands derived from publicly reported YouTube norms (e.g., "channel-level CTR: 2–10%"), not invented absolutes.
 - **No two topics in the same calendar window** (per stage 2's 7-day anti-cannibalization rule) — this stage's 10 topics should be drawn from across the calendar, not clustered.
-- **Thumbnail text is ≤ 5 words.** More is unreadable on mobile.
+- **Thumbnail text is ≤ 5 words.** More is unreadable on mobile.- **Thumbnail text is ≤ 5 words.** More is unreadable on mobile.
+- **Outlier mining is mandatory before packaging.** A topic with no format evidence behind it gets flagged, not packaged.
 
 ## Output file
 
