@@ -1,4 +1,4 @@
-# Zo orchestration skill
+# Zo Conductor skill
 
 ## Objective
 
@@ -14,7 +14,7 @@ The workflow reads workspace and project instructions, searches memory before re
 
 ## Repository basis
 
-The design draws bounded principles from `wshobson/agents`, `alp82/forge`, `andyyaro/orkestra`, `realgarit/fable-baton`, and `codejunkie99/fable-orchestrator`. Their roles and adopted limits are documented in `Skills/zo-orchestration/references/repository-bases.md`.
+The design draws bounded principles from `wshobson/agents`, `alp82/forge`, `andyyaro/orkestra`, `realgarit/fable-baton`, and `codejunkie99/fable-orchestrator`. Their roles and adopted limits are documented in `Skills/zo-conductor/references/repository-bases.md`.
 
 ## Acceptance criteria
 
