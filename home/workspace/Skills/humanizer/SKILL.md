@@ -318,7 +318,7 @@ Opening with a summary, doing the body, then restating the summary. Trust the re
 
 ### Upstream v2.11.2 Additions (borrowed 2026-09-04, blader/humanizer)
 
-**133. Duplicated draft fragments / scene echoes**
+**33. Duplicated draft fragments / scene echoes**
 
 In long-form AI drafting, the same scene, sentence, or narrative beat often appears twice — typically because the model regenerated a passage but the prior version wasn't fully removed. Look for: identical paragraphs a few pages apart, the same plot beat landing twice (e.g. "she leaves the room" then "she leaves the room"), run-on endings that re-state the chapter's closing image.
 
