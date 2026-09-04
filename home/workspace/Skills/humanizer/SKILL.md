@@ -93,7 +93,7 @@ After: The market grew 12% YoY through Q3, per industry data.
 
 **5. Formulaic "challenges and future" sections**
 
-The "despite challenges, the future looks bright" sandwich.
+The "despite challenges, the future looks bright" sandwich. Trigger phrases: "Despite its... faces several challenges," "Despite these challenges," "continues to thrive," "future prospects," and stock section headings "Challenges and Legacy" / "Future Outlook." Cut the section or keep only the facts in it.
 
 Before: Despite facing challenges typical of emerging markets, including regulatory uncertainty and market saturation, the company continues to thrive as a key player in the landscape.
 After: Regulatory delays pushed the launch from Q1 to Q3. The market is getting crowded but margins held steady.
@@ -117,7 +117,7 @@ Fix: audit every paragraph for names, dates, numbers, places, prices, and measur
 
 **8. Canned notability and coverage claims**
 
-Reciting proof of importance: "featured in prominent media outlets," "garnered widespread recognition," "maintains an active social media presence," "profiled in," "independent coverage." This phrasing is idiosyncratic to AI output. Detection: the text tells you the subject was covered instead of saying what the coverage said.
+Reciting proof of importance: "featured in prominent media outlets," "garnered widespread recognition," "maintains an active social media presence," "profiled in," "independent coverage," "written by a leading expert," "local/regional/national media outlets" as a bare list. This phrasing is idiosyncratic to AI output. Detection: the text tells you the subject was covered instead of saying what the coverage said. If the source explains what the person said and where, keep that useful citation; do not invent context for a shorter version.
 
 Before: The studio has been profiled in prominent media outlets and maintains an active social media presence, earning widespread recognition for its innovative work.
 
