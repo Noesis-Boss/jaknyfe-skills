@@ -496,7 +496,7 @@ Fix: grep the document for "cite:", "oaicite", "contentReference", "turn0search"
 A long document with zero grammatical deviations is itself a signal — no fragments, no informal constructions, no typos, no slightly-off phrasing. Humans leave fingerprints: an occasional fragment, a doubled word, a mixed tense. (See also: what NOT to strip in the "Signs of Human Writing" note below.)
 
 Fix: don't deliberately add typos. Instead, add one informal construction or fragment where a human would naturally write one, and keep any authentic awkwardness in quoted material.
-**46. Punctuation poverty**
+**146. Punctuation poverty**
 
 LLMs under-punctuate: fewer commas and semicolons than humans, almost no parentheses, and longer sentences strung together with "and" — the Economist's 2026 corpus study found "and" is the most overused word in AI text. Models also rarely quote experts. Detection: count semicolons and parentheses per 1,000 words; count sentences over 30 words joined by "and"; flag claimed-opinion sentences with no quoted source.
 
