@@ -47,6 +47,7 @@ function Dashboard() {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [events, setEvents] = useState<EventRow[]>([]);
+  const [worker, setWorker] = useState<{ state: string; counts?: Record<string, number> }>({ state: "unknown" });
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
   const [editForm, setEditForm] = useState<{ firstName: string; lastName: string }>({ firstName: "", lastName: "" });
   const [searchQuery, setSearchQuery] = useState("");
@@ -64,11 +65,12 @@ function Dashboard() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const loadAll = async () => {
-    const [c, k, a, e] = await Promise.all([api("/api/contacts"), api("/api/campaigns"), api("/api/sending-accounts"), api("/api/events")]);
+    const [c, k, a, e, w] = await Promise.all([api("/api/contacts"), api("/api/campaigns"), api("/api/sending-accounts"), api("/api/events"), api("/api/worker/health")]);
     if (c.contacts) setContacts(c.contacts);
     if (k.campaigns) setCampaigns(k.campaigns);
     if (a.accounts) setAccounts(a.accounts);
     if (e.events) setEvents(e.events);
+    if (w.state) setWorker(w);
   };
   useEffect(() => { loadAll(); }, []);
   useEffect(() => { api("/api/contact-lists").then(result => { if (result.lists) setLists(result.lists); }); }, []);
@@ -187,6 +189,7 @@ function Dashboard() {
         <header className="topbar">
           <div><p className="eyebrow">SaaS-Mailer / command center</p><h1>Outbound, under control.</h1></div>
           <div className="top-actions">
+            <span className={`status-pill worker-${worker.state}`}><i /> Worker {worker.state}</span>
             <span className="status-pill"><i /> {accounts.filter(a => a.status === "active").length} active account{accounts.filter(a => a.status === "active").length === 1 ? "" : "s"}</span>
             <button className="avatar" type="button" onClick={logout} aria-label="Sign out">DL</button>
           </div>

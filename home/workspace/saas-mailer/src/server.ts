@@ -11,6 +11,7 @@ import { createProviderCallbackRoutes } from "./server/routes/provider-callbacks
 import { createContactListRoutes } from "./server/routes/contact-lists";
 import { createPreferenceRoutes } from "./server/routes/preferences";
 import { createAnalyticsRoutes } from "./server/routes/analytics";
+import { requireTenant, requireTenantPostgres } from "./server/auth/middleware";
 
 const app = new Hono();
 export const config = loadConfig();
@@ -23,6 +24,18 @@ if (config.database === "sqlite") {
 const clientScript = await Bun.build({ entrypoints: [new URL("./client/main.tsx", import.meta.url).pathname], target: "browser", minify: false }).then((result) => result.outputs[0].text());
 
 app.get("/api/health", (c) => c.json({ ok: true }));
+app.get("/api/worker/health", async (c) => {
+  try {
+    const tenant = config.database === "postgres" ? await requireTenantPostgres(database, c.req.raw) : requireTenant(database, c.req.raw);
+    const rows = config.database === "postgres"
+      ? await (database as import("./server/postgres").PostgresDatabase).query<{ status: string; due: number }>("SELECT status, COUNT(*)::int AS due FROM messages WHERE organization_id = $1 GROUP BY status", [tenant.organizationId])
+      : (database as import("bun:sqlite").Database).query<{ status: string; due: number }, [string]>("SELECT status, COUNT(*) AS due FROM messages WHERE organization_id = ? GROUP BY status").all(tenant.organizationId);
+    const counts = Object.fromEntries(rows.map(row => [row.status, Number(row.due)]));
+    return c.json({ ok: true, state: counts.processing ? "sending" : counts.queued ? "ready" : "idle", counts });
+  } catch (error) {
+    return c.json({ ok: false, state: "unknown", error: error instanceof Error ? error.message : "unavailable" }, 401);
+  }
+});
 app.route("/", createAuthRoutes(database, config.appEnv));
 app.route("/", createProviderCallbackRoutes(database, config));
 app.route("/", createContactsRoutes(database));
