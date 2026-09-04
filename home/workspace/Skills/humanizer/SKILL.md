@@ -166,12 +166,16 @@ After: The dashboard is the main sales tracker. It has four panels with real-tim
 
 "Not only... but also," "It's not just about X, it's about Y," "It's not merely X, it's Y." Also the short forms: "Not X, but Y" and "X rather than Y."
 
+2026 model split (Economist corpus study): all four major models use "not X but Y" above the human baseline; Gemini 3.5 Flash was the heaviest user. Treat this construction as a top rhetorical tell, not a style quirk.
+
 Before: It's not just about the numbers; it's about building lasting relationships. It's not merely a tool, it's a transformation.
 After: The numbers matter, but the repeat orders matter more.
 
 **15. Rule of three overuse**
 
 Forcing ideas into groups of three to sound comprehensive.
+
+2026 model split (Economist corpus study): ChatGPT was the heaviest rule-of-three user, well above the human baseline; Gemini and Claude also exceeded it. Confirms this as one of the most reliable cross-model tells.
 
 Before: The event features keynote sessions, panel discussions, and networking opportunities. Attendees can expect innovation, inspiration, and industry insights.
 After: The event has talks and panels. There's also time for networking between sessions.
