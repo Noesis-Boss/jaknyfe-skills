@@ -128,8 +128,16 @@ function runStage(channelDir: string, stageN: number, arg: string | undefined) {
   console.log(`  output: ${join(channelDir, outputFile)}`);
   console.log(`  niche:  ${arg || "(from stage 1)"}`);
   console.log(`\nRead ${skillPath} and produce the output file at the path above.`);
+  if (stageN === 3) console.log(`  outlier data: ${join(channelDir, "outlier-formats.md")} (optional — grounds the format-mining section)`);
   console.log(`The skill's SKILL.md contains the full output contract.`);
 
+  if (stageN === 1 && existsSync(join(channelDir, "00-personal-brand-blueprint.md"))) {
+    console.log(`\nBlueprint found: ${join(channelDir, "00-personal-brand-blueprint.md")} — voice/identity source per SKILL.md Section 0.`);
+  } else if (stageN === 1) {
+    console.log(`\nOptional pre-step: 00-personal-brand-blueprint.md not found. Before generating angles,`);
+    console.log(`interview for voice/proof/offers/stories and write ${join(channelDir, "00-personal-brand-blueprint.md")}`);
+    console.log(`per SKILL.md Section 0, then re-run this stage. Proceeding without it.`);
+  }
   if (stageN === 3) {
     const outlierFile = join(channelDir, "outlier-formats.md");
     if (existsSync(outlierFile)) {
