@@ -129,6 +129,17 @@ function runStage(channelDir: string, stageN: number, arg: string | undefined) {
   console.log(`  niche:  ${arg || "(from stage 1)"}`);
   console.log(`\nRead ${skillPath} and produce the output file at the path above.`);
   console.log(`The skill's SKILL.md contains the full output contract.`);
+
+  if (stageN === 3) {
+    const outlierFile = join(channelDir, "outlier-formats.md");
+    if (existsSync(outlierFile)) {
+      console.log(`\nOutlier input found: ${outlierFile} — mine formats from it per SKILL.md Section F.`);
+    } else {
+      console.log(`\nOptional pre-step: ${outlierFile} not found. To ground Section F in real data,`);
+      console.log(`collect 3-5 outlier videos in the niche (view-to-subscriber ratio >= 5x) and save`);
+      console.log(`title + format + estimated views per line, then re-run this stage. Proceeding without it.`);
+    }
+  }
 }
 
 function checkDir(channelDir: string) {
