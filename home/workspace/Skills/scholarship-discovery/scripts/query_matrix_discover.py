@@ -35,6 +35,13 @@ DEMOGRAPHICS = [
     "diabetes", "LGBTQ student", "asian american student", "rural student",
     "first responder dependent", "left handed", "vegan", "tall",
     "redhead", "twin", "eagle scout", "girl scout",
+    "military spouse", "active duty military", "adult learner over 30", "homeschool graduate",
+    "immigrant student", "pacific islander student", "hbcu student", "graduate student",
+    "doctoral student", "law student", "medical student", "engineering student",
+    "computer science student", "teacher education major", "social work student", "trade school student",
+    "children of teachers", "children of nurses", "children of police officers", "children of firefighters",
+    "church member", "deaf or hard of hearing student", "blind or low vision student", "cancer survivor",
+    "cancer survivor scholarship", "epilepsy", "asthma", " ROTC cadet",
 ]
 STATES = ["Arizona", "Texas", "California", "Florida", "New York", "Georgia", "Ohio", "Michigan", "North Carolina", "Washington",
           "Alabama", "Alaska", "Arkansas", "Colorado", "Connecticut", "Delaware", "Hawaii", "Idaho", "Illinois", "Indiana",
