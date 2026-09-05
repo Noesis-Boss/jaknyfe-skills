@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS contact_lists (id TEXT PRIMARY KEY, organization_id TEXT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE, name TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, UNIQUE (organization_id, name));
+CREATE TABLE IF NOT EXISTS contact_list_members (list_id TEXT NOT NULL REFERENCES contact_lists(id) ON DELETE CASCADE, contact_id TEXT NOT NULL REFERENCES contacts(id) ON DELETE CASCADE, organization_id TEXT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (list_id, contact_id));
+CREATE INDEX IF NOT EXISTS idx_contact_lists_org ON contact_lists(organization_id);

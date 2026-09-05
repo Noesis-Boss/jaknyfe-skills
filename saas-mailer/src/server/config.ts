@@ -20,6 +20,7 @@ export type AppConfig = {
     pollIntervalMs: number;
     batchSize: number;
     maxSendsPerHour: number;
+    tenantSendsPerMinute: number;
   };
 };
 
@@ -27,6 +28,7 @@ const DEFAULTS = {
   pollIntervalMs: 5_000,
   batchSize: 25,
   maxSendsPerHour: 100,
+  tenantSendsPerMinute: 30,
 } as const;
 
 function required(env: NodeJS.ProcessEnv, name: string): string {
@@ -98,6 +100,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
       pollIntervalMs: positiveInteger(env, "WORKER_POLL_INTERVAL_MS", DEFAULTS.pollIntervalMs),
       batchSize: positiveInteger(env, "WORKER_BATCH_SIZE", DEFAULTS.batchSize),
       maxSendsPerHour: positiveInteger(env, "WORKER_MAX_SENDS_PER_HOUR", DEFAULTS.maxSendsPerHour),
+      tenantSendsPerMinute: positiveInteger(env, "WORKER_TENANT_SENDS_PER_MINUTE", DEFAULTS.tenantSendsPerMinute),
     },
   };
 }

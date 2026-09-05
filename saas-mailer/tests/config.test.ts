@@ -61,7 +61,7 @@ describe("loadConfig", () => {
 
     const config = loadConfig();
 
-    expect(config.worker).toEqual({ pollIntervalMs: 2500, batchSize: 25, maxSendsPerHour: 100 });
+    expect(config.worker).toEqual({ pollIntervalMs: 2500, batchSize: 25, maxSendsPerHour: 100, tenantSendsPerMinute: 30 });
   });
 
   test("rejects production startup before database initialization", () => {

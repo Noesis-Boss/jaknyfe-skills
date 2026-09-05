@@ -16,6 +16,11 @@ function failureInfo(error: unknown) {
   return { retryable: value?.retryable === true, code: value?.code || "provider_error", message: value?.message || "Provider send failed" };
 }
 
+const bouncePattern = /550|551|553|user unknown|no such (?:user|recipient|address)|recipient (?:not found|address rejected)|invalid (?:recipient|address|email)|does not exist|mailbox (?:not found|unavailable)|address rejected|bad recipient/i;
+function isHardBounce(info: { code: string; message: string; retryable: boolean }) {
+  return info.code === "hard_bounce" || (!info.retryable && bouncePattern.test(info.message));
+}
+
 export async function processQueuedSend(database: Database, job: QueuedSendJob): Promise<SendAttempt> {
   const existing = database.query<{ id: string; status: string }, [string]>("SELECT id, status FROM messages WHERE idempotency_key = ?").get(job.idempotencyKey);
   if (existing && existing.status !== "retryable_failure") return { status: "duplicate", messageId: existing.id };
@@ -34,6 +39,7 @@ export async function processQueuedSend(database: Database, job: QueuedSendJob):
     if (info.code === "auth_failed" || info.code === "quota_exceeded") database.query("UPDATE sending_accounts SET status = 'paused' WHERE id = ? AND organization_id = ?").run(job.sendingAccountId, job.organizationId);
     database.query("INSERT INTO messages (id, organization_id, campaign_id, contact_id, sending_account_id, status, idempotency_key, error_code) VALUES (?, ?, ?, ?, ?, ?, ?, ?)").run(messageId, job.organizationId, job.campaignId, job.contactId, job.sendingAccountId, info.retryable ? "retryable_failure" : "failed", job.idempotencyKey, info.code);
     recordEvent(database, { organizationId: job.organizationId, type: "failure", messageId, contactId: job.contactId, payload: { code: info.code, message: info.message, retryable: info.retryable } });
+    if (isHardBounce(info)) recordEvent(database, { organizationId: job.organizationId, type: "bounce", messageId, contactId: job.contactId, payload: { code: info.code, message: info.message } });
     return { status: info.retryable ? "retryable_failure" : "permanent_failure", messageId, retryable: info.retryable, reason: info.code };
   }
 }
@@ -74,6 +80,7 @@ export async function processQueuedSendPostgres(database: PostgresDatabase, job:
     await database.query("UPDATE messages SET status = $1, error_code = $2 WHERE organization_id = $3 AND id = $4", [info.retryable ? "retryable_failure" : "failed", info.code, job.organizationId, messageId]);
     const saved = (await database.query<{ id: string }>("SELECT id FROM messages WHERE organization_id = $1 AND idempotency_key = $2", [job.organizationId, job.idempotencyKey]))[0];
     await recordEventPostgres(database, { organizationId: job.organizationId, type: "failure", messageId: saved.id, contactId: job.contactId, payload: { code: info.code, message: info.message, retryable: info.retryable } });
+    if (isHardBounce(info)) await recordEventPostgres(database, { organizationId: job.organizationId, type: "bounce", messageId: saved.id, contactId: job.contactId, payload: { code: info.code, message: info.message } });
     return { status: info.retryable ? "retryable_failure" : "permanent_failure", messageId: saved.id, retryable: info.retryable, reason: info.code };
   }
 }

@@ -76,3 +76,17 @@ export async function enrollContactsPostgres(database: PostgresDatabase, campaig
     return count;
   });
 }
+
+export function listCampaigns(database: Database, organizationId: string) {
+  return database.query<any, [string]>(`SELECT c.id, c.name, c.status, c.created_at,
+    (SELECT COUNT(*) FROM messages m WHERE m.organization_id = c.organization_id AND m.campaign_id = c.id AND m.status = 'sent') AS sent,
+    (SELECT COUNT(*) FROM campaign_contacts cc WHERE cc.organization_id = c.organization_id AND cc.campaign_id = c.id) AS enrolled
+    FROM campaigns c WHERE c.organization_id = ? ORDER BY c.created_at DESC`).all(organizationId);
+}
+
+export async function listCampaignsPostgres(database: PostgresDatabase, organizationId: string) {
+  return database.query<any>(`SELECT c.id, c.name, c.status, c.created_at,
+    (SELECT COUNT(*) FROM messages m WHERE m.organization_id = c.organization_id AND m.campaign_id = c.id AND m.status = 'sent')::int AS sent,
+    (SELECT COUNT(*) FROM campaign_contacts cc WHERE cc.organization_id = c.organization_id AND cc.campaign_id = c.id)::int AS enrolled
+    FROM campaigns c WHERE c.organization_id = $1 ORDER BY c.created_at DESC`, [organizationId]);
+}
