@@ -49,10 +49,11 @@ When humanizing text, apply the user's voice rules. If the user has a persona co
 1. Scan for patterns listed below
 2. Fix each instance
 3. Read the result aloud in your head. Does it sound like a person talking?
-4. Check against voice rules
-5. Verify: varied sentence length, actual opinions present, no robotic uniformity
-6. Cluster check: a single sign (one em dash, one AI word) proves nothing. Flag text only when 3+ signals converge in the same passage — uniform sentence length + repeated transitions + hedging + AI vocabulary together. Treat the cluster, not the word.
-7. Fact integrity check (upstream v2.11.2): ask two questions before finishing — "What still sounds AI-generated?" and "Did the rewrite add or remove any fact, name, number, date, quote, citation, ranking, or other claim?" Treat any unsupported addition or lost claim as an error. Do not invent facts; if a sentence needs a missing detail, ask or use a simpler sentence. Fiction is exempt.
+4. Paragraph fallback: if a sentence stays awkward after two fixes, rewrite the whole paragraph around its main point instead of word-by-word fixes.
+5. Check against voice rules
+6. Verify: varied sentence length, actual opinions present, no robotic uniformity
+7. Cluster check: a single sign (one em dash, one AI word) proves nothing. Flag text only when 3+ signals converge in the same passage — uniform sentence length + repeated transitions + hedging + AI vocabulary together. Treat the cluster, not the word.
+8. Fact integrity check (upstream v2.11.2): ask two questions before finishing — "What still sounds AI-generated?" and "Did the rewrite add or remove any fact, name, number, date, quote, citation, ranking, or other claim?" Treat any unsupported addition or lost claim as an error. Do not invent facts; if a sentence needs a missing detail, ask or use a simpler sentence. Fiction is exempt.
 
 **Return modes (upstream v2.11.2):**
 - **Pasted text (default):** return the draft, a short list of remaining AI patterns, and the final rewrite.
