@@ -75,7 +75,7 @@ After: The partnership started in 2023 and gave them distribution in three new s
 
 **2. Superficial -ing analyses**
 
-Tacking "-ing" phrases onto sentences for fake depth: "highlighting," "underscoring," "reflecting," "ensuring," "showcasing."
+Tacking "-ing" phrases onto sentences for fake depth: "highlighting," "underscoring," "emphasizing," "reflecting," "symbolizing," "ensuring," "showcasing," "fostering," "cultivating," "contributing to," "encompassing."
 
 Before: The template uses blue and gold colors, symbolizing trust and premium quality, reflecting the brand's deep connection to its customer base.
 After: The template uses blue and gold to match the existing brand palette.
@@ -93,6 +93,8 @@ Attributing opinions to nobody: "Industry experts believe," "Observers have note
 
 Before: Industry experts believe the market is poised for significant growth.
 After: The market grew 12% YoY through Q3, per industry data.
+
+Guard (upstream v3): name a real source when the source text provides one. Otherwise remove the unsupported claim. Never invent a source to replace a vague one.
 
 **5. Formulaic "challenges and future" sections**
 
@@ -150,6 +152,8 @@ After: The mascot redesign drew complaints from fans of the old logo. The new on
 
 AI text overuses em dashes. Use periods, commas, semicolons, colons, or restructure the sentence.
 2026 drift: this is now model-specific. The Economist's July 2026 corpus study (55,940 sentences, 1.2m words, human vs ChatGPT/Claude/Gemini/Grok) found only Claude still overuses em dashes — ChatGPT now uses markedly fewer than humans. Punctuation scarcity (#46) is the higher-signal tell. Calibration: Emily Dickinson loved em dashes; a dash alone proves nothing.
+
+Mechanical final pass (upstream v3): before returning, search the rewrite for em dashes (—), en dashes (–), and double hyphens (` -- `). Replace each with a period, comma, colon, or parentheses unless the writing sample uses that mark; if the sample uses it, match the sample's rate.
 
 Before: The project -- which started in January -- has been making progress -- albeit slower than expected.
 After: The project started in January. Progress has been slower than expected.
