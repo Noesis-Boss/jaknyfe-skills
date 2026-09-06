@@ -83,7 +83,42 @@ I'm about to show you how to save money by replacing subscriptions that you pay 
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+- **Onyx-Dev-Labs/doodle-note** — Local-first, privacy-first AI meeting note taker that records and transcribes on-device (Granola alternative).
+  Signals: 120★ · TypeScript · MIT · pushed 2026-09-05 · not archived.
+  Recommendation: TRIAL — small but active TS project; could slot into Zo automations for meeting/notes capture without sending audio off-box.
+
+- **CapSoftware/Cap** — Open-source Loom alternative for screen recording and shareable video links.
+  Signals: 21.8k★ · Rust/TypeScript · license: Other · pushed 2026-09-06 · not archived.
+  Recommendation: SKIP — desktop GUI app; this environment is a headless Linux server with no screen-recording use case.
+
+- **dani-garcia/vaultwarden** — Self-hosted Bitwarden-compatible password/secret server written in Rust.
+  Signals: 66.9k★ · Rust · AGPL-3.0 · pushed 2026-09-03 · not archived.
+  Recommendation: SKIP — overlaps installed tooling: Zo's Settings > Advanced secrets + env vars already store credentials on this box.
+
+- **TryGhost/Ghost** — Node publishing platform with memberships, newsletters, and paid subscriptions (Substack alternative).
+  Signals: 55.2k★ · JavaScript/Node · MIT · pushed 2026-09-06 · not archived.
+  Recommendation: TRIAL — MIT Node app could run as a Zo user service to host an author newsletter for the JThorne/DELowery books (KDP-adjacent marketing surface).
+
+- **twentyhq/twenty** — Self-hosted open-source CRM (contacts, pipelines, workflows; Salesforce alternative).
+  Signals: 56.3k★ · TypeScript · license: Other (AGPL/commercial split) · pushed 2026-09-06 · not archived.
+  Recommendation: SKIP — no CRM workload in this environment; Trello already covers project tracking.
+
+- **languagetool-org/languagetool** — Grammar/style/spelling checker server for 25+ languages (Grammarly alternative).
+  Signals: 15k★ · Java · LGPL-2.1 · pushed 2026-09-06 · not archived.
+  Recommendation: TRIAL — run its API server locally and wire a Python hook into the KDP manuscript preflight for a deterministic grammar pass alongside the humanizer skill.
+
+- **umami-software/umami** — Privacy-first, self-hosted web analytics (Google Analytics alternative).
+  Signals: 38.6k★ · TypeScript · MIT · pushed 2026-09-06 · not archived.
+  Recommendation: SKIP — zo.space and zocomputer.io pages are managed-platform hosting without a clear need for a second always-on analytics service.
+
+- **nextcloud/server** — Self-hosted files/contacts/calendar cloud (Google Drive alternative).
+  Signals: 36.7k★ · PHP · AGPL-3.0 · pushed 2026-09-06 · not archived.
+  Recommendation: SKIP — overlaps installed tooling: workspace files + zo.pub already handle storage and public sharing; heavy PHP stack adds nothing here.
+
+- **chatwoot/chatwoot** — Self-hosted omni-channel customer support inbox (Intercom alternative).
+  Signals: 36.5k★ · Ruby · license: Other (MIT core + commercial editions) · pushed 2026-09-04 · not archived.
+  Recommendation: SKIP — no customer-support desk; chat already flows through Zo's native Telegram/Discord/Slack channels.
+
+- **VonHoltenCodes/SlowBooks-Pro-2026** — Source-available desktop accounting with double-entry books, invoicing, payroll, and AI-queryable financial data (QuickBooks alternative).
+  Signals: 330★ · Python · license: Other (source-available, not OSI) · pushed 2026-09-06 · not archived.
+  Recommendation: TRIAL — Python and AI-queryable books fit this stack; verify the nonstandard license and single-maintainer risk before relying on it for real financial data.

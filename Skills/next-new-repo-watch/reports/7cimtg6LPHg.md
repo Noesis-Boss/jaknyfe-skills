@@ -28,7 +28,9 @@ This going to be so hot with our audience. It's a stack of 34 free AI tiers that
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+Shorts companion to the full episode evaluated in `TWCSvvTfJNU.md` (same repo: `tashfeenahmed/freellmapi`).
+
+### tashfeenahmed/freellmapi
+Open-source LLM router that aggregates ~34 free provider tiers (635 free model endpoints, 7.4B tokens/month claimed) behind a single OpenAI-compatible `/v1` endpoint with smart routing, automatic failover, and encrypted keys.
+- **Signals**: 24,491 stars - TypeScript - MIT - pushed 2026-09-06 - not archived. Caveat from the video itself: free tiers get abused and withdrawn, so endpoints churn; personal-experimentation use only.
+- **Recommendation: TRIAL** - could back cheap Zo automations (email digests, repo-watch runs) when BYOK quota runs dry, but ToS-gray free-tier rotation means production work should stay on paid/keyed endpoints. Self-host in the sandbox first; do not put Zo secrets in it.
