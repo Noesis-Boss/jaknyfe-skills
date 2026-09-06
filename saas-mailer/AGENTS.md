@@ -26,7 +26,11 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 - 2026-08-21: Published the dashboard as a private production Zo Site at `https://saas-mailer-jaknyfe.zo.computer`. The Site entrypoint sources `~/.zo_secrets`; the public browser verification correctly reached Zo's sign-in gate.
 
+- 2026-09-05: Completed the scheduled-sends batch (commit `f7ede7f3`, local-only pending leak purge — see Issue Log): `POST /api/campaigns/:id/schedule` queues idempotent future messages (`{campaign_type}:{id}:{contactId}` keys, `next_attempt_at`) for enrolled contacts and rejects unapproved/duplicate scheduling (SQLite + Postgres); migrations 008–010 now auto-apply in `migrate()` (this was the scheduled-send test's 400/missing-column root cause); deduped the triple `tenantSendsPerMinute` in `src/worker/main.ts`; config/sending tests now strip host-secret env vars so the suite is environment-independent. Suite: 74 pass / 0 fail / 1 skip. Site republished; live sign-in page screenshot-verified.
+
 ## Issue Log
+- 2026-09-05: Push of commit `f7ede7f3` to `Noesis-Boss/jaknyfe-skills` (master) is blocked by the gitleaks pre-push hook. All findings (30) are pre-existing history leaks from the 2026-09-05 audit (caa8e637 etc.); the new commit's diff is secret-free (verified). Per the never-push-keys rule I did not bypass — blocked until the pending history purge (git filter-repo + force push) is approved.
+
 
 - 2026-08-22: CSV imports could still report a missing email header when files began with blank lines or used quoted delimiter characters. Delimiter detection now scans the first nonblank line and ignores separators inside quoted headers; 13 contact tests pass and the public dashboard was republished.
 
