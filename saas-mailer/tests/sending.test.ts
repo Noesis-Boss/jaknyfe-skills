@@ -28,6 +28,7 @@ describe("sending accounts", () => {
     const database = fixture();
     const configuredKey = process.env.SENDING_CREDENTIAL_ENCRYPTION_KEY;
     delete process.env.SENDING_CREDENTIAL_ENCRYPTION_KEY;
+    delete process.env.CREDENTIAL_ENCRYPTION_KEY;
     try {
       expect(() => connectSendingAccount(database, "org-a", { provider: "mock", email: "x@example.com", credentials: { token: "secret" } })).toThrow("Credential encryption is not configured");
       expect(database.query("SELECT COUNT(*) AS count FROM sending_accounts").get()).toEqual({ count: 0 });

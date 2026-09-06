@@ -3,7 +3,7 @@ import type { Database } from "bun:sqlite";
 import type { PostgresDatabase } from "../postgres";
 import { requireTenant } from "../auth/middleware";
 import { requireTenantPostgres } from "../auth/middleware";
-import { approveCampaign, approveCampaignPostgres, createCampaign, createCampaignPostgres, enrollContacts, enrollContactsPostgres, listCampaigns, listCampaignsPostgres } from "../campaigns/service";
+import { approveCampaign, approveCampaignPostgres, createCampaign, createCampaignPostgres, enrollContacts, enrollContactsPostgres, listCampaigns, listCampaignsPostgres, scheduleCampaign, scheduleCampaignPostgres } from "../campaigns/service";
 import { loadQueueEligibility, loadQueueEligibilityPostgres } from "../campaigns/eligibility";
 function isPostgres(database: Database | PostgresDatabase): database is PostgresDatabase { return "sql" in database; }
 export function createCampaignRoutes(database: Database | PostgresDatabase): Hono {
@@ -13,5 +13,6 @@ export function createCampaignRoutes(database: Database | PostgresDatabase): Hon
   routes.post("/api/campaigns/:id/approve", async c => { try { const tenant = isPostgres(database) ? await requireTenantPostgres(database, c.req.raw) : requireTenant(database, c.req.raw); return c.json(isPostgres(database) ? await approveCampaignPostgres(database, c.req.param("id"), tenant.organizationId) : approveCampaign(database, c.req.param("id"), tenant.organizationId)); } catch { return c.json({ error: "Unable to approve campaign" }, 400); } });
   routes.get("/api/campaigns/:id/contacts/:contactId/eligibility", async c => { try { const tenant = isPostgres(database) ? await requireTenantPostgres(database, c.req.raw) : requireTenant(database, c.req.raw); return c.json(isPostgres(database) ? await loadQueueEligibilityPostgres(database, tenant.organizationId, c.req.param("id"), c.req.param("contactId")) : loadQueueEligibility(database, tenant.organizationId, c.req.param("id"), c.req.param("contactId"))); } catch { return c.json({ error: "Unable to evaluate campaign eligibility" }, 400); } });
   routes.post("/api/campaigns/:id/enroll", async c => { try { const tenant = isPostgres(database) ? await requireTenantPostgres(database, c.req.raw) : requireTenant(database, c.req.raw); const ids = (await c.req.json()).contact_ids || []; return c.json({ enrolled: isPostgres(database) ? await enrollContactsPostgres(database, c.req.param("id"), tenant.organizationId, ids) : enrollContacts(database, c.req.param("id"), tenant.organizationId, ids) }); } catch { return c.json({ error: "Unable to enroll contacts" }, 400); } });
+  routes.post("/api/campaigns/:id/schedule", async c => { try { const tenant = isPostgres(database) ? await requireTenantPostgres(database, c.req.raw) : requireTenant(database, c.req.raw); const body = await c.req.json().catch(() => ({})); return c.json(isPostgres(database) ? await scheduleCampaignPostgres(database, c.req.param("id"), tenant.organizationId, body.scheduled_at) : scheduleCampaign(database, c.req.param("id"), tenant.organizationId, body.scheduled_at)); } catch { return c.json({ error: "Unable to schedule campaign" }, 400); } });
   return routes;
 }

@@ -5,7 +5,7 @@ import { repositories } from "../repositories";
 
 export type Campaign = { id: string; organization_id: string; name: string; status: string; approved_at: string | null; approved_by: string | null; sending_account_id: string | null; sending_window_start: string | null; sending_window_end: string | null; daily_send_limit: number; created_at: string };
 export type CampaignStep = { id: string; organization_id: string; campaign_id: string; step_order: number; subject: string; body: string; delay_minutes: number };
-export type CampaignInput = { name: string; sending_account_id?: string; sending_window_start?: string; sending_window_end?: string; daily_send_limit?: number; steps?: Array<{ subject: string; body: string; delay_minutes?: number }> };
+export type CampaignInput = { name: string; campaign_type?: "newsletter" | "sequence"; sending_account_id?: string; sending_window_start?: string; sending_window_end?: string; daily_send_limit?: number; steps?: Array<{ subject: string; body: string; delay_minutes?: number }> };
 function validateWindow(value?: string): void { if (value != null && !/^([01]\d|2[0-3]):[0-5]\d$/.test(value)) throw new Error("Invalid sending window"); }
 
 export function createCampaign(database: Database, organizationId: string, input: CampaignInput): Campaign {
@@ -17,7 +17,8 @@ export function createCampaign(database: Database, organizationId: string, input
   const id = randomUUID();
   database.exec("BEGIN IMMEDIATE");
   try {
-    database.query("INSERT INTO campaigns (id, organization_id, name, sending_account_id, sending_window_start, sending_window_end, daily_send_limit) VALUES (?, ?, ?, ?, ?, ?, ?)").run(id, organizationId, input.name.trim(), input.sending_account_id || null, input.sending_window_start || null, input.sending_window_end || null, input.daily_send_limit ?? 100);
+    const campaignType = input.campaign_type === "newsletter" ? "newsletter" : "sequence";
+    database.query("INSERT INTO campaigns (id, organization_id, name, campaign_type, sending_account_id, sending_window_start, sending_window_end, daily_send_limit) VALUES (?, ?, ?, ?, ?, ?, ?, ?)").run(id, organizationId, input.name.trim(), campaignType, input.sending_account_id || null, input.sending_window_start || null, input.sending_window_end || null, input.daily_send_limit ?? 100);
     for (const [index, step] of (input.steps || []).entries()) database.query("INSERT INTO campaign_steps (id, organization_id, campaign_id, step_order, subject, body, delay_minutes) VALUES (?, ?, ?, ?, ?, ?, ?)").run(randomUUID(), organizationId, id, index, step.subject, step.body, step.delay_minutes || 0);
     database.exec("COMMIT");
   } catch (error) { database.exec("ROLLBACK"); throw error; }
@@ -48,7 +49,7 @@ export async function createCampaignPostgres(database: PostgresDatabase, organiz
   const repo = repositories({ database, organizationId });
   return repo.transaction(async tx => {
     if (input.sending_account_id && !(await tx.accounts.findActive(input.sending_account_id))) throw new Error("Sending account not found or inactive");
-    const campaign = await tx.campaigns.insert(input.name.trim());
+    const campaign = await tx.campaigns.insert(input.name.trim(), input.campaign_type === "newsletter" ? "newsletter" : "sequence");
     if (!campaign) throw new Error("Unable to create campaign");
     const updated = await tx.campaigns.updateSettings(campaign.id, input.sending_account_id || null, input.sending_window_start || null, input.sending_window_end || null, input.daily_send_limit ?? 100);
     for (const [index, step] of (input.steps || []).entries()) await tx.campaigns.insertStep(campaign.id, index, step.subject, step.body, step.delay_minutes || 0);
@@ -74,6 +75,57 @@ export async function enrollContactsPostgres(database: PostgresDatabase, campaig
     let count = 0;
     for (const contactId of contactIds) if (await tx.campaigns.enroll(campaignId, contactId)) count++;
     return count;
+  });
+}
+
+export function scheduleCampaign(database: Database, campaignId: string, organizationId: string, scheduledAt?: string): { queued: number } {
+  const campaign = database.query<Campaign & { campaign_type: string; scheduled_at: string | null }, [string, string]>("SELECT * FROM campaigns WHERE id = ? AND organization_id = ?").get(campaignId, organizationId);
+  if (!campaign) throw new Error("Campaign not found");
+  if (campaign.status !== "approved" || !campaign.approved_at) throw new Error("Campaign must be approved before scheduling");
+  if (campaign.scheduled_at) throw new Error("Campaign is already scheduled");
+  if (!campaign.sending_account_id) throw new Error("Campaign has no active sending account");
+  const step = database.query<{ subject: string; body: string }, [string, string]>("SELECT subject, body FROM campaign_steps WHERE campaign_id = ? AND organization_id = ? ORDER BY step_order LIMIT 1").get(campaignId, organizationId);
+  if (!step) throw new Error("Campaign has no steps");
+  const when = scheduledAt ? new Date(scheduledAt) : new Date();
+  if (Number.isNaN(when.getTime())) throw new Error("Invalid scheduled_at");
+  const nextAttempt = when.toISOString();
+  const contacts = database.query<{ contact_id: string }, [string, string]>("SELECT contact_id FROM campaign_contacts WHERE campaign_id = ? AND organization_id = ?").all(campaignId, organizationId);
+  if (!contacts.length) throw new Error("Campaign has no enrolled contacts");
+  let queued = 0;
+  database.exec("BEGIN IMMEDIATE");
+  try {
+    const insert = database.query("INSERT OR IGNORE INTO messages (id, organization_id, campaign_id, contact_id, sending_account_id, status, idempotency_key, subject, body, next_attempt_at) VALUES (?, ?, ?, ?, ?, 'queued', ?, ?, ?, ?)");
+    for (const contact of contacts) {
+      if (insert.run(randomUUID(), organizationId, campaignId, contact.contact_id, campaign.sending_account_id, `${campaign.campaign_type}:${campaignId}:${contact.contact_id}`, step.subject, step.body, nextAttempt).changes) queued++;
+    }
+    database.query("UPDATE campaigns SET scheduled_at = ? WHERE id = ? AND organization_id = ?").run(nextAttempt, campaignId, organizationId);
+    database.exec("COMMIT");
+  } catch (error) { database.exec("ROLLBACK"); throw error; }
+  return { queued };
+}
+
+export async function scheduleCampaignPostgres(database: PostgresDatabase, campaignId: string, organizationId: string, scheduledAt?: string): Promise<{ queued: number }> {
+  const repo = repositories({ database, organizationId });
+  return repo.transaction(async tx => {
+    const campaign = await tx.campaigns.find(campaignId, true);
+    if (!campaign) throw new Error("Campaign not found");
+    if (campaign.status !== "approved" || !campaign.approved_at) throw new Error("Campaign must be approved before scheduling");
+    if (campaign.scheduled_at) throw new Error("Campaign is already scheduled");
+    if (!campaign.sending_account_id) throw new Error("Campaign has no active sending account");
+    const step = await tx.campaigns.firstStep(campaignId);
+    if (!step) throw new Error("Campaign has no steps");
+    const when = scheduledAt ? new Date(scheduledAt) : new Date();
+    if (Number.isNaN(when.getTime())) throw new Error("Invalid scheduled_at");
+    const nextAttempt = when.toISOString();
+    const contacts = await tx.campaigns.enrolledContacts(campaignId);
+    if (!contacts.length) throw new Error("Campaign has no enrolled contacts");
+    let queued = 0;
+    for (const contact of contacts) {
+      const inserted = await tx.messages.insertQueued({ campaignId, contactId: contact.contact_id, sendingAccountId: campaign.sending_account_id, idempotencyKey: `${campaign.campaign_type}:${campaignId}:${contact.contact_id}`, subject: step.subject, body: step.body, nextAttemptAt: nextAttempt });
+      if (inserted) queued++;
+    }
+    await tx.campaigns.schedule(campaignId, nextAttempt);
+    return { queued };
   });
 }
 

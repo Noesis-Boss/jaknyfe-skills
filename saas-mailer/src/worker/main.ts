@@ -14,8 +14,6 @@ try {
     pollMs: config.worker.pollIntervalMs,
     batchSize: config.worker.batchSize,
     tenantSendsPerMinute: config.worker.tenantSendsPerMinute,
-    tenantSendsPerMinute: config.worker.tenantSendsPerMinute,
-    tenantSendsPerMinute: config.worker.tenantSendsPerMinute,
     onError: error => console.error(JSON.stringify({ event: "worker_error", error: error instanceof Error ? error.message : "unknown" })),
   });
 } finally {

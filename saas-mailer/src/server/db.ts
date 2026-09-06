@@ -34,6 +34,11 @@ export function migrate(database: Database): void {
   const hasWorkerFields = database.query("SELECT 1 FROM pragma_table_info('messages') WHERE name = 'error_code'").get();
   if (!hasWorkerFields) database.exec(readFileSync(new URL("../../db/migrations/006_worker_events.sql", import.meta.url), "utf8"));
   database.exec(readFileSync(new URL("../../db/migrations/007_auth_sessions.sql", import.meta.url), "utf8"));
+  database.exec(readFileSync(new URL("../../db/migrations/008_contact_lists.sql", import.meta.url), "utf8"));
+  const hasCampaignType = database.query("SELECT 1 FROM pragma_table_info('campaigns') WHERE name = 'campaign_type'").get();
+  if (!hasCampaignType) database.exec(readFileSync(new URL("../../db/migrations/009_ghost_campaigns.sql", import.meta.url), "utf8"));
+  const hasNextAttempt = database.query("SELECT 1 FROM pragma_table_info('messages') WHERE name = 'next_attempt_at'").get();
+  if (!hasNextAttempt) database.exec(readFileSync(new URL("../../db/migrations/010_worker_queue_columns.sql", import.meta.url), "utf8"));
 }
 
 export function query<T extends Record<string, unknown>>(

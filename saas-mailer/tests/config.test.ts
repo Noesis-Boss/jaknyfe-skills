@@ -35,6 +35,7 @@ describe("loadConfig", () => {
 
   test("rejects production without required persistence and encryption settings", () => {
     process.env = { ...originalEnv, APP_ENV: "production" };
+    for (const key of ["DATABASE_URL", "SESSION_SECRET", "CREDENTIAL_ENCRYPTION_KEY", "OAUTH_CALLBACK_ORIGIN", "GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", "MICROSOFT_CLIENT_ID", "MICROSOFT_CLIENT_SECRET"]) delete process.env[key];
 
     expect(() => loadConfig()).toThrow(/DATABASE_URL.*CREDENTIAL_ENCRYPTION_KEY/);
   });
