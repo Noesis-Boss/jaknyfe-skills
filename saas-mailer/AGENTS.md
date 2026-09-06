@@ -18,6 +18,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 
 ## Feature Log
 
+- 2026-09-06: Wired scheduled sends end-to-end: added POST /api/campaigns/:id/schedule (SQLite + Postgres) that gates on approved + enrolled + not-already-scheduled, inserts queued messages with `campaign_type:campaign:contact` idempotency keys and next_attempt_at, and stamps campaigns.scheduled_at; createCampaign now persists campaign_type; SQLite migrate() applies migrations 008-010; deduped worker option keys in src/worker/main.ts; fixed 3 env-dependent tests (host secrets leaked into process.env; stale tenancy table list). Suite: 74 pass, 0 fail, 1 skip (Postgres contract needs TEST_POSTGRES_URL). Live site republished and screenshot-verified. Push of f7ede7f3 blocked by gitleaks pre-push hook on PRE-EXISTING history leaks (caa8e637 et al., pending purge approval) - commit is clean and sits local.
+
 - 2026-08-22: Fixed Google Contacts CSV imports by recognizing `E-mail 1 - Value` and equivalent numbered email columns after header normalization. The supplied export parses to 649 valid contacts; 13 contact tests pass.
 
 - 2026-08-22: Contact CSV import now detects common CRM/export aliases for email and names, splits full-name columns, and preserves all other columns as custom fields. Dedicated parser tests pass.
