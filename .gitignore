@@ -5,3 +5,7 @@ poly-bot/
 void_daily_no_s.sh
 .superpowers/
 Archive/stash-recovery-2026-09-06/
+
+# env files (key-leak 2026-09-06)
+*.env
+freellmapi/server/.env
