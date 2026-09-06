@@ -71,7 +71,31 @@ This founder is doing $250,000 a month in revenue with zero employees. Everythin
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+The episode is a SaaS-stack demo (Claude Code + hosted tools) rather than an OSS-repo showcase. Four evaluable open-source repos surfaced. Most named products (WhisperFlow, Kit, Vercel Eve, Cubic, Attio, Apollo, Granola, Taskblade, Resend, Jamie, Zapier, the agentaccelerator.ai LinkedIn-infographic skill) are closed-source SaaS with no usable GitHub repo — repo not identified after 2-3 searches each.
+
+### openclaw/openclaw — TRIAL
+Self-hosted autonomous agent platform ("the AI that really does things") that runs shell-enabled AI agents on any OS and connects to Telegram/Slack/email channels.
+- Signals: 389,009 stars · TypeScript · license "Other" (custom/semi-open, not OSI-standard) · pushed 2026-09-06 · not archived.
+- Recommendation: TRIAL — agent-with-shell-access rule. Could run the scheduled cloud-agent tasks Vercel Eve demos here, but it substantially duplicates Zo Computer's own agent runtime and carries a custom license, so prove value in a sandboxed trial before any INCLUDE.
+
+### NousResearch/hermes-agent — TRIAL
+Python personal AI agent ("the agent that grows with you") with memory, skills, and channel integrations; the video positions Hermes as the easier on-ramp to autonomous cloud agents alongside OpenClaw.
+- Signals: 242,245 stars · Python · MIT · pushed 2026-09-06 · not archived.
+- Recommendation: TRIAL — agent-with-shell-access rule. MIT + Python fits the stack and could drive scheduled Noesis workflows, but it overlaps Zo automations as a second agent runtime, so test in isolation (no secrets granted) before adopting.
+
+### microsoft/playwright — SKIP
+Cross-browser web testing and automation framework (Chromium/Firefox/WebKit) used in the video so Claude can inspect and test its own generated pages.
+- Signals: 95,710 stars · TypeScript · Apache-2.0 · pushed 2026-09-04 · not archived.
+- Recommendation: SKIP — overlaps installed tooling: this Zo environment already ships the `agent-browser` CLI plus Zo's persistent browser (open/use webpage with screenshot verification), which covers the test-your-own-work loop Playwright would provide.
+
+### PostHog/posthog — SKIP
+Open-core product analytics platform (dashboards, session replay, flags, experiments, error tracking) that James uses to show Claude what content and landing pages perform.
+- Signals: 39,609 stars · Python · license "Other" (core with commercial terms) · pushed 2026-09-06 · not archived.
+- Recommendation: SKIP — hosted SaaS is the intended consumption path and a PostHog MCP server (`mcp:posthog`) is already catalog-connectable in Zo; self-hosting the full stack inside the Zo sandbox is impractical.
+
+### getsentry/sentry — SKIP
+Error-tracking and performance-monitoring platform; in the episode Sentry (with Cubic) catches issues in the AI-generated site before deployment.
+- Signals: 44,735 stars · Python · license "Other" (BSL-style, not fully open) · pushed 2026-09-06 · not archived.
+- Recommendation: SKIP — same reasoning as PostHog: hosted Sentry (or the catalog `mcp:sentry` MCP) is the workable path; self-hosting Sentry's full service stack on Zo is disproportionate to Don's sites.
+
+**Video verdict**: SKIP as a repo source (4 of ~15 named products map to OSS repos, zero INCLUDEs), though the workflow — connected agents + knowledge base + reusable skills — is a useful pattern reference for Zo automations.

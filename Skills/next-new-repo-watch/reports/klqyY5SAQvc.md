@@ -55,7 +55,47 @@ Personal robots are here. You're about to get an inexpensive robot that you can 
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+Verdict: 1 TRIAL, 6 SKIP, 6 not evaluable (closed-source products or no repo found).
+
+**pollen-robotics/microduck** — Open-source stack for MicroDuck, a $399 programmable biped duck robot from Pollen Robotics/Hugging Face; Rust firmware with a companion RL training repo (`pollen-robotics/microduck_rl`).
+- Signals: 7,460 stars, Rust, Apache-2.0, pushed 2026-09-03, not archived.
+- Recommendation: **SKIP** — hardware robot; no robotics workflow in this environment (Python trading bot, KDP publishing, zo.space pages).
+
+**skorotkiewicz/midi-autocomplete** — AI autocomplete for piano: generates the next musical phrases as you play MIDI (from simedw.com's viral demo).
+- Signals: 0 stars, Rust, no license, pushed 2026-08-25.
+- Recommendation: **SKIP** — zero-star/no-license per rules; no music-production pipeline here.
+
+**Outbid (outbid.lol)** — Viral pay-to-rank business leaderboard ($236K revenue in a week); vibe-coded closed product. Repo not identified after 3 searches. Derivative `shadcn-labs/outbid-template` exists (22 stars, TS, no license) but was not the presented product.
+- Recommendation: **N/A** — repo not identified.
+
+**Bezalel (bezalel.sh)** — Single MCP bundling agent infrastructure: memory, email (AgentMail), money, texting, computer sandboxes (Orgo VM), connectors; free alpha by Raz Myku. Repo not identified after 3 searches.
+- Recommendation: **N/A** — repo not identified; even if found it would SKIP as overlapping Zo's built-in agent infra (email, SMS, computer, MCP connectors).
+
+**Instinct (instinct.co)** — Closed-source AI agent with access to messages, calls, email, and business tools; recently raised $250M, keeps user data on its servers. Repo not identified.
+- Recommendation: **N/A** — no OSS repo; also a trust risk (unknown founder, server-side data retention).
+
+**Zapier MCP** — Sponsor segment: scoped agent access (read/write granularity) across 8,000+ apps. Closed-source SaaS at zapier.com/mcp.
+- Recommendation: **SKIP** — closed-source sponsor product; Zo already provides scoped integrations and MCP access.
+
+**Gas Station Game** — Vibe-coded gas station management game getting a Steam release; no public repo surfaced.
+- Recommendation: **N/A** — repo not identified.
+
+**programasweights/claudish** — Translator between English and "Claudish" (Claude's idiosyncratic phrasing) built from tiny ProgramAsWeights functions; the related `gvzdv/claudish-to-english` has 2,533 stars (Shell, MIT).
+- Signals: 257 stars, Python, MIT, pushed 2026-08-29.
+- Recommendation: **SKIP** — novelty demo tool; only useful here as an example of the micro-tool-as-marketing trend.
+
+**X1 (x1.new)** — Closed-source subscription service ($8–$20/mo) for planning, building, and publishing iPhone apps end-to-end. No OSS repo found.
+- Recommendation: **N/A** — closed-source SaaS, no repo.
+
+**Supernova (supernova.ai)** — Closed-source SaaS that pulls all business-tool data (Stripe, HubSpot, etc.) into a data lake exposed to Claude/Codex via MCP; pricing unclear. Repo not identified.
+- Recommendation: **N/A** — closed-source SaaS, no repo.
+
+**Expertise.ai** — Closed-source marketplace for buying/selling packaged AI skills (e.g., $80–$99/mo go-to-market skill stacks). No repo.
+- Recommendation: **N/A** — closed-source marketplace, no repo; Zo Skills already covers skill packaging for this environment.
+
+**Claude Academy (academy.claude.com)** — Anthropic's official Claude courses/certificates, rebranded from Anthropic Academy. Course platform, not software.
+- Recommendation: **N/A** — not a repo.
+
+**petergyang/fuck-cancer** — Open-source Claude skill by Peter Yang that builds and maintains a patient/caregiver advocacy brief: care-team reference info, next-step guidance after diagnosis, plain-English medical terms, and a care log of updates and decisions.
+- Signals: 139 stars, Python, MIT, pushed 2026-08-26, not archived.
+- Recommendation: **TRIAL** — free MIT-licensed Claude skill with zero infra, directly portable into the Zo Skills format (markdown + scripts); broadly useful caregiving tool.

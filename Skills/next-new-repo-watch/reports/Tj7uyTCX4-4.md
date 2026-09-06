@@ -52,7 +52,18 @@ I met the most nontechnical person who's using an agent to get customers, grow h
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+**Hyperagent (hyperagent.com) — only GitHub artifact: `alex-hyperagent/hyperagent-public-skills`** — Commercial hosted agent-building platform (the video's subject): non-technical users chat to build persistent agents that run scheduled jobs (cold-email outreach, document/PCI report generation, video creation) with per-agent tool isolation and Slack/web access for teammates. The core product is closed SaaS; the only OSS is the team's skills collection.
+- Signals: 1,126 stars; no language; no license; last push 2026-06-25; not archived. Core product: no repo (SaaS).
+- Recommendation: **SKIP** — no usable OSS core to install; the skills repo is unlicensed (can't safely adapt), and this environment already has a large agent-skills ecosystem (Zo + 300+ Skills). The $150k-quotes/3%-reply workflow is worth studying, not installing.
+
+**`NousResearch/hermes-agent`** (named conversationally — the agent Warner used before Hyperagent) — Open-source personal agent ("the agent that grows with you") with shell/computer access, Python-based, from Nous Research.
+- Signals: 242k stars; Python; MIT; last push 2026-09-06 (today); not archived.
+- Recommendation: **SKIP** — overlaps installed tooling: Zo itself is the workspace's shell-access agent; a second resident agent adds nothing but attack surface and maintenance.
+
+**`openclaw/openclaw`** (named conversationally alongside Hermes) — Cross-OS open-source autonomous agent platform ("the AI that really does things"), TypeScript, the lobster-mascot project formerly known as Clawdbot/Moltbot.
+- Signals: 389k stars; TypeScript; custom (non-OSI) license; last push 2026-09-06 (today); not archived.
+- Recommendation: **SKIP** — overlaps the Zo agent role entirely; Warner's own complaint (every agent gets full tool access, heavy setup) applies here, and Zo already provides scoped skills and automations.
+
+Passing mentions not evaluable as OSS: Fable 5 (commercial video-gen tool used inside Hyperagent), Opus (Anthropic model), Grok bot (xAI product).
+
+Video verdict: the demoed product is a closed commercial SaaS; the open-source items were only name-drops that duplicate existing tooling.

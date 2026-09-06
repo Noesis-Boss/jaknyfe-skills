@@ -56,7 +56,36 @@ I have an AI pitchwoman who can sell anything for you. You're going to see the m
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+### openclaw/openclaw
+The flagship open-source personal AI agent (OpenClaw 2.0) — a full OS-level agent runtime with shell access, chat-based delegation, and a 5,400+ skill ecosystem. The video documents 2.0's instability: frozen sub-agent demos ("48 minutes in, done absolutely nothing") and claims it is being lapped by Hermes and Grockbot.
+- Signals: 389,009 stars · TypeScript · custom license (NOASSERTION) · pushed 2026-09-06 · not archived
+- Recommendation: **TRIAL** — agent-with-shell-access rule says TRIAL not INCLUDE, it overlaps what Zo already provides, and 2.0 is reportedly unstable — sandbox-test only.
+
+### THU-MAIC/OpenMAIC
+Open Multi-Agent Interactive Classroom: one prompt ("teach me quantum physics") spawns an AI teacher who lectures aloud, AI classmates that ask questions, a whiteboard with step-by-step diagrams, graded real-time quizzes, and a roundtable debate mode.
+- Signals: 32,202 stars · TypeScript · MIT · pushed 2026-09-06 · not archived
+- Recommendation: **TRIAL** — TypeScript/MIT and self-hostable; a Zo-hosted instance could power interactive training content (DeMolay decks, teaching material).
+
+### superdesigndev/treg
+Treg — open-source people-search/enrichment MCP (treg.to/people-search) for Claude/Codex: finds verified emails, phone numbers, and contact data at ~$0.0089/verified email, replacing hundreds-to-$1,000/mo Apollo/Clay subscriptions.
+- Signals: 1,211 stars · Python · custom "Other" license · pushed 2026-09-06 · not archived
+- Recommendation: **TRIAL** — Python MCP fits the stack and cheap enrichment is directly useful for book-marketing and podcast-pitch outreach; per-use API cost and nonstandard license keep it at TRIAL.
+
+### AgentPhone-AI/agentphone-mcp
+Agent Phone MCP: gives an agent its own phone number for outbound/inbound voice calls, SMS, and iMessage ($3/mo number + $0.13/min; iMessage tier $250/mo); includes self-serve 10DLC approval.
+- Signals: 121 stars · TypeScript · MIT · pushed 2026-08-29 · not archived
+- Recommendation: **TRIAL** — Zo already handles SMS to Don, but agent-initiated voice calls are new capability; only 121 stars, so test before any real outbound use.
+
+### diffusionstudio/core
+Browser-based video compositing engine built on WebCodecs; Diffusion Studio's product turns manual edits into reusable code blocks so edits re-render identically.
+- Signals: 1,238 stars · TypeScript · MPL-2.0 · last push 2025-11-18 (~9 months stale) · not archived
+- Recommendation: **SKIP** — overlaps installed tooling: the video pipeline already runs on ffmpeg, and this targets in-browser editing apps rather than server-side rendering.
+
+### Not identified (no usable OSS repo found)
+- **PixelShop** (pixelshop.com) — closed AI live-shopping SaaS → SKIP.
+- **Infinite Slop** (infiniteslop.ai, Levels IO) — no official repo; GitHub shows only 0–2 star clones/mirrors → SKIP.
+- **Google Pix** — closed Google Workspace feature → SKIP.
+- **Dial** (getdial.ai) — closed agent-phone SaaS; no repo found (AgentPhone MCP above is the evaluable counterpart) → SKIP.
+- **Claude computer use** — Anthropic API feature (already available via Claude Code), not a repo → SKIP.
+- **Radar** (radar.particle.pro) — podcast-discovery MCP; official repo not found in 3 GitHub searches → SKIP.
+- **Hermes Agent** — name-dropped as OpenClaw competitor; not demonstrated, canonical repo not located in searches → not evaluated.

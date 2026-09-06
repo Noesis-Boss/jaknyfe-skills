@@ -24,7 +24,18 @@ Corey, first story is this. What is this? >> This is Micro Duck. So, this is the
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+**Verdict: hardware story, not a software tool.** The video demos the $399 MicroDuck biped robot (Pollen Robotics / Hugging Face). The OSS repos are real and healthy, but every line of code is gated behind owning the physical robot — no fit for this environment's Bun/TS + Python stack, Zo automations, trading bot, or publishing pipeline.
+
+### pollen-robotics/microduck
+
+Official software stack for the MicroDuck biped robot: firmware and host tooling to program tricks and behaviors. The companion repo `pollen-robotics/microduck_rl` (1,789★, Python, Apache-2.0, pushed 2026-09-05) provides the mjlab RL training environments mentioned in the video.
+
+- **Signals**: 7,460★ · Rust (main) / Python (RL) · Apache-2.0 · pushed 2026-09-03 · not archived
+- **Recommendation: SKIP** — hardware-gated; code is useless without buying the $399 robot, and it serves none of this environment's projects (trading bot, KDP publishing, zo.space, automations).
+
+### pollen-robotics/microduck_rl
+
+RL training environments (mjlab) for training MicroDuck policies, per the video's "train yourself with reinforcement learning" pitch.
+
+- **Signals**: 1,789★ · Python · Apache-2.0 · pushed 2026-09-05 · not archived
+- **Recommendation: SKIP** — trains policies that only run on MicroDuck hardware; no standalone value for the Python trading-bot/automation stack.

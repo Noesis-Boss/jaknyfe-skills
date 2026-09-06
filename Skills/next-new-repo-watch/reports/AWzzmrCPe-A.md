@@ -119,8 +119,89 @@ You're going to get a gorgeous visual that will explain your project's code easi
   - https://github.com/templetongroup/radiant
 
 ## Agent eval
+Evaluated 2026-09-06 against this environment: Bun/TS + Python stack, Zo automations, Python trading bot, KDP publishing pipeline, zo.space pages.
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+### tt-a1i/archify
+Agent skill that turns system descriptions into beautiful, verifiable interactive architecture/workflow/sequence diagrams as self-contained HTML with motion and crisp export.
+- Signals: 50,150★ · JavaScript · MIT · pushed 2026-09-06 · not archived.
+- Recommendation: **INCLUDE** — drops into Skills/ as an agent skill; generates architecture/spec diagrams for the trading bot and project docs without a whiteboard.
+
+### bilawalsidhu/gods-eye-view
+Browser-based spy-satellite simulator on a photorealistic 3D globe with real live data (planes, ships, satellites, wildfires, cameras).
+- Signals: 18,249★ · JavaScript · NOASSERTION license · pushed 2026-09-05 · not archived.
+- Recommendation: **SKIP** — impressive demo but nonstandard license and no mapping to trading, publishing, or automation work.
+
+### THU-MAIC/OpenMAIC
+Open Multi-Agent Interactive Classroom that generates immersive, AI-powered interactive courses on almost any topic.
+- Signals: 32,202★ · TypeScript · MIT · pushed 2026-09-06 · not archived.
+- Recommendation: **SKIP** — courseware product with no current project; KDP pipeline produces books, not interactive classrooms.
+
+### JetBrains/go-modern-guidelines
+Guidelines repo that helps AI coding agents write modern Go using current packages and best practices.
+- Signals: 3,249★ · Go · Apache-2.0 · pushed 2026-08-31 · not archived.
+- Recommendation: **SKIP** — no Go anywhere in this stack (Bun/TS + Python only).
+
+### Gitlawb/openclaude
+Open Claude Code-style coding agent harness that "runs anywhere, uses anything" — OpenAI, Gemini, DeepSeek, or local models.
+- Signals: 32,768★ · TypeScript · NOASSERTION license · pushed 2026-09-06 · not archived.
+- Recommendation: **SKIP** — overlaps installed tooling (Claude Code CLI plus the Zo agent already cover this), and the license is nonstandard.
+
+### K-Dense-AI/scientific-agent-skills
+Library of 165+ validated scientific research/lab skills plus 100+ science databases, compatible with the open Agent Skills standard.
+- Signals: 43,153★ · Python · MIT · pushed 2026-09-02 · not archived.
+- Recommendation: **SKIP** — excellent library but no scientific-research workload here; nothing to point it at.
+
+### jingyaogong/minimind
+Trains a 64M-parameter LLM (and VLM/Omni variants) from scratch in ~2 hours on ordinary hardware, full training pipeline included.
+- Signals: 58,993★ · Python · Apache-2.0 · pushed 2026-09-04 · not archived.
+- Recommendation: **SKIP** — model training project with no fit; trading bot uses yfinance signal research, not LLM training.
+
+### every-app/open-seo
+Open-source alternative to Semrush/Ahrefs for SEO auditing and research, built in TypeScript.
+- Signals: 17,366★ · TypeScript · MIT · pushed 2026-09-03 · not archived.
+- Recommendation: **TRIAL** — could audit the Scottish Rite site, jaknyfe.zo.space, and book landing pages for organic discoverability where ad spend is zero.
+
+### omacom/omarchy
+DHH's opinionated, AI-native Arch Linux desktop setup that revives old laptops with a complete tiling/Hyprland config.
+- Signals: 38,450★ · Shell · MIT · pushed 2026-09-06 · not archived.
+- Recommendation: **SKIP** — requires bare-metal Arch install; this environment is a managed Debian container.
+
+### google-research/timesfm
+Google's pretrained time-series foundation model for forecasting, available as a Python package with checkpointed inference.
+- Signals: 31,441★ · Python · Apache-2.0 · pushed 2026-09-04 · not archived.
+- Recommendation: **TRIAL** — pure Python and Apache-2.0; could serve as a forecasting baseline to compare against the trading bot's EMA/VWAP entries in Strategy Lab backtests.
+
+### EfficientStreet/hindsight
+Self-improvement skill for AI coding assistants: reviews a session end-to-end and saves only the durable process lessons as persistent memory.
+- Signals: 67★ · language n/a · MIT · pushed 2026-08-20 · not archived.
+- Recommendation: **INCLUDE** — small, MIT, and directly matches the Zorro self-improvement loop; the lesson-extraction output can feed Zorro memory after each session.
+
+### timharris707/modeldeck
+macOS menu bar app tracking live "% left" rate-limit meters across Claude Code and Codex CLI accounts with reset countdowns and alerts.
+- Signals: 48★ · JavaScript · NOASSERTION license · pushed 2026-09-06 · not archived.
+- Recommendation: **SKIP** — macOS SwiftUI app; this environment is headless Linux and usage metering is already visible in Zo's Usage page.
+
+### Artistsyn/cortex_suite
+Persistent-memory and codebase-context suite for coding agents, written in Rust.
+- Signals: 30★ · Rust · no license · pushed 2026-08-27 · not archived · no README description.
+- Recommendation: **SKIP** — no license and effectively undocumented; unusable legally and practically.
+
+### sulabhdubey/rta-smriti-brain
+Local-first, evidence-aware project memory for AI coding agents that preserves grounded context between sessions.
+- Signals: 43★ · Python · MIT · pushed 2026-09-04 · not archived.
+- Recommendation: **SKIP** — overlaps installed tooling (Zorro + astra-memory already provide cross-session AstraDB memory); running two memory layers invites drift.
+
+### EfficientStreet/youtube-subscriptions-ingest
+Pulls YouTube subscription metadata into a cross-linked knowledge graph in a second-brain vault as searchable Markdown.
+- Signals: 70★ · Python · MIT · pushed 2026-08-14 · not archived · PR #1 open fixing the youtube_transcript_api dependency.
+- Recommendation: **TRIAL** — same Python transcript plumbing as next-new-repo-watch; could widen the watch pipeline from one channel to full subscriptions, but needs interactive Google OAuth first.
+
+### Kayforkind/reimagine-it
+Content-derived design CLI: HTML in, standalone HTML out, building the design system from the source's own nouns, dates, numbers, and colors — not the reimagineit.ai SaaS.
+- Signals: 72★ · JavaScript · MIT · pushed 2026-09-06 · not archived.
+- Recommendation: **TRIAL** — emits exactly the DESIGN.md-style tokens/HTML this workspace's frontend rule wants; could draft design systems for zo.space pages and the books showcase.
+
+### templetongroup/radiant
+Local coding harness for Mac: chat with multiple coding agents across cloud and local models, watch tool calls live, drive a terminal in one window.
+- Signals: 43★ · JavaScript · MIT · pushed 2026-09-05 · not archived.
+- Recommendation: **SKIP** — macOS-local desktop harness; wrong OS for this headless Linux server.

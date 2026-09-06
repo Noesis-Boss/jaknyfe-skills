@@ -22,7 +22,13 @@ Check out what this guy built. Auto complete for piano. >> [music] [music] >> Th
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+No evaluable open-source repos in this video.
+
+**Identified product**: On-device piano autocomplete by Simon Edwardsson (simedw) — a 125M-parameter transformer autocompleting MIDI piano performances in real time (~108 notes/sec on iPhone 15), shipped as a free iOS app (blog: simedw.com/2026/08/20/midi-autocomplete; HN thread 49373456). The transcript names no repo.
+
+**Repo identification attempts (all failed)**:
+1. `gh search repos "piano autocomplete"` / `"piano-autocomplete"` / `"autocomplete piano"` — only unrelated 0-star student projects (e.g. imPatidar/Piano-Autocomplete-Melody-Using-RNN, 2019, HTML).
+2. `gh repo list simedw` (full public list) — no piano/MIDI/model repo exists; closest are unrelated (mac-shhh, lupp, qkill, fetchfs).
+3. The blog post links only to the author's GitHub profile, not a project repo; app and model weights appear closed-source.
+
+**Verdict**: N/A — notable product demo, but no usable OSS repo to evaluate for this environment (Bun/TS + Python stack, trading bot, publishing pipeline).

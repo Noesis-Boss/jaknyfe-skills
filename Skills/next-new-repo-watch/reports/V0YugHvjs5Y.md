@@ -29,7 +29,6 @@ Graphify, you're going to turn a folder of code into queryable knowledge graph. 
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+- **Graphify-Labs/graphify** — Turns a codebase (source, docs, SQL schemas, configs, PDFs) into a queryable knowledge graph via local deterministic AST parsing, so coding agents navigate pre-mapped structure instead of re-discovering relationships each session; ships as a `/graphify` skill for Claude Code, Cursor, Codex, and Gemini CLI.
+  - Signals: 115,198★ · Python · Apache-2.0 · pushed 2026-09-05 · not archived.
+  - Recommendation: **TRIAL** — Python/Apache-2.0, actively maintained, no overlap with installed tooling; test it as an index over the large local repos (robinhood-trading-bot, jaknyfe-skills) before adopting it as standing agent infrastructure.

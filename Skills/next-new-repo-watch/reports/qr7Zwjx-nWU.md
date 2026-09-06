@@ -24,7 +24,18 @@ This has gone incredibly viral on X. What this guy, Jonathan, had created was ou
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+**outbid.lol** — repo not identified. The video's subject is a closed-source commercial product (pay-to-rank leaderboard, ~$236K revenue in week one); no official GitHub repo exists. Searches for `outbid.lol`, `outbid`, and `pay-to-rank leaderboard` returned only community clones, none by the creator. This is a business story, not an OSS release.
+
+### Community repos surfaced by search
+
+**shadcn-labs/outbid-template** — Template for building outbid.lol-style pay-to-rank leaderboard sites (TypeScript, shadcn tooling).
+- Signals: 22 stars, TypeScript, pushed 2026-08-22, not archived, **no license** (all rights reserved).
+- Recommendation: **SKIP** — no license means no legal right to reuse, and a paid-leaderboard site is not applicable to this environment (trading bot, KDP publishing, automations, zo.space).
+
+**osspakistan/outbidwatch-lol** — Curated directory/live index of pay-to-rank leaderboards across the indie web.
+- Signals: 6 stars, TypeScript, MIT license, pushed 2026-08-29, not archived.
+- Recommendation: **SKIP** — content/observatory listing, not functional tooling; offers nothing for the Bun/TS + Python stack here.
+
+All other search hits (vicalogs/payrank.cc-outbid.lol, Alain00/wallid, jay7ven-dev/naija-outbid, imbnsn/outbid-india, nilay-pagnis/beontop, supportaff/secbid, etc.) are 0-star, unlicensed weekend clones — SKIP by rule.
+
+**Video verdict: N/A** — no evaluable open-source repos presented; the video covers a closed-source product's revenue story.

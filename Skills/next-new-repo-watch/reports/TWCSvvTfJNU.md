@@ -82,8 +82,54 @@ You're about to get loads of Anthropic approved Claude plugins. Do you have an o
   - https://github.com/securo-finance/securo
 
 ## Agent eval
+### **anthropics/claude-plugins-community**
+- Anthropic's community plugin marketplace for Claude Code/Cowork: 2,000+ security-scanned plugins, structured so AI agents can search it instead of humans scrolling a web directory.
+- Signals: 3,501 stars / Python / Apache-2.0 / pushed 2026-08-25 / not archived.
+- **Recommendation: TRIAL** — reference data source for finding vetted Claude Code plugins/skills; nothing to install, but a useful curated plugin catalog.
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+### **freestylefly/awesome-gpt-image-2**
+- "Prompt as Code" prompt-engineering library for GPT-Image 2: 530+ reverse-engineered cases and 20+ industrial templates distilled into reusable skills.
+- Signals: 28,244 stars / JavaScript (mostly prompt templates) / MIT / pushed 2026-09-03 / not archived.
+- **Recommendation: TRIAL** — prompt templates plug directly into the built-in OpenAI image tooling (book covers, deck art); templates, not software.
+
+### **omacom/omarchy**
+- DHH's opinionated Arch-based Linux desktop (Hyprland) that revives older hardware with a Mac-like experience.
+- Signals: 38,451 stars / Shell / MIT / pushed 2026-09-06 / not archived.
+- **Recommendation: SKIP** — this Zo sandbox is a headless Debian container; no desktop or spare hardware to install it on.
+
+### **AprilNEA/OpenLogi**
+- Local-first Rust replacement for Logitech Options+: remaps buttons, DPI, SmartShift over HID++ with no account or telemetry.
+- Signals: 19,617 stars / Rust / Apache-2.0 / pushed 2026-09-03 / not archived.
+- **Recommendation: SKIP** — hardware-only utility (HID++ device control); no Logitech devices attached to this environment.
+
+### **openai/codex**
+- OpenAI's open-source terminal coding agent: customizable models, prompts, and interfaces.
+- Signals: 121,877 stars / Rust / Apache-2.0 / pushed 2026-09-06 / not archived.
+- **Recommendation: SKIP** — overlaps installed tooling: caveman-code CLI already provides a provider-agnostic terminal coding agent here.
+
+### **apache/maka**
+- Apache-incubating high-performance agent workspace that keeps a complete audit record of everything an agent did.
+- Signals: 4,806 stars / TypeScript / Apache-2.0 / pushed 2026-09-06 / not archived.
+- **Recommendation: TRIAL** — auditable agent-workspace architecture is useful reference for Syndicate-style orchestration; young/incubating, don't depend on it yet.
+
+### **modular/modular**
+- Modular platform shipping MAX + Mojo, a Python-family language aiming for C/C++-level performance for AI workloads.
+- Signals: 29,570 stars / Mojo / custom license (NOASSERTION) / pushed 2026-09-03 / not archived.
+- **Recommendation: SKIP** — new language platform doesn't fit the Python + Bun/TS workflow; nonstandard license complicates vendoring.
+
+### **harry0703/MoneyPrinterTurbo**
+- Python app that turns a topic/keyword into an HD short video end-to-end: LLM script, TTS voiceover, stock footage, subtitles, ffmpeg assembly.
+- Signals: 120,957 stars / Python / MIT / pushed 2026-09-05 / not archived.
+- **Recommendation: TRIAL** — direct fit for the noesis_content faceless-video pipeline (Python and ffmpeg already present); test on one episode before adopting.
+
+### **tashfeenahmed/freellmapi**
+- Self-hosted gateway aggregating 34 free LLM providers / 635 free endpoints behind one OpenAI-compatible /v1 endpoint with smart routing and failover.
+- Signals: 24,500 stars / TypeScript / MIT / pushed 2026-09-06 / not archived; "personal experimentation only" per README.
+- **Recommendation: TRIAL** — TS/Bun-friendly; free-tier routing could back cheap automations, but experimentation-only license rules out production use.
+
+### **securo-finance/securo**
+- Self-hosted, privacy-first personal finance manager that connects thousands of banks to track net worth locally.
+- Signals: 3,095 stars / Python / AGPL-3.0 / pushed 2026-09-05 / not archived.
+- **Recommendation: SKIP** — personal net-worth app with no active project here (trading bot already covers market needs); AGPL hosting burden.
+
+Note: The 05:51 segment (Zapier MCP & SDK) is sponsor content — no evaluable open-source repo.

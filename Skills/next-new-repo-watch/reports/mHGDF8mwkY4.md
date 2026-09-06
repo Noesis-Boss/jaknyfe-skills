@@ -28,7 +28,10 @@ Omachi, how would you describe this Adam? >> It's some blend between Mac and Lin
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+### omacom/omarchy
+
+**Functionality**: Opinionated Arch Linux desktop environment/installer (DHH / Basecamp's Omarchy) that turns Hyprland + Wayland + a curated app set into a Mac-like Linux setup, aimed at reviving older Mac hardware dropped by macOS. Companions shown in the video: try-omarchy (run it in a macOS VM) and omarchy-iso.
+
+**Signals**: 38,450 stars - Shell - MIT license - pushed 2026-09-06 (active daily) - not archived. Video description links basecamp/omarchy; the canonical repo now lives at omacom/omarchy.
+
+**Recommendation: SKIP** - Desktop OS environment for physical Macs; this workspace is a headless server running Bun/TS + Python services (Zo automations, trading bot, publishing pipeline). No target hardware or user-facing desktop here.
