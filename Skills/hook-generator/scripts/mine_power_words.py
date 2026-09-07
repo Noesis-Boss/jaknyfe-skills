@@ -52,7 +52,7 @@ def parse_md_ledger(path):
         except ValueError:
             score = 0.0
         rows.append({
-            "text": col(row, "First 20 chars", "text", "Text"),
+            "text": col(row, "Full text", "First 20 chars", "text", "Text"),
             "score": score,
             "topic": col(row, "Topic"),
             "hook": col(row, "Hook"),
