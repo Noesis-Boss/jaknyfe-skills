@@ -202,3 +202,15 @@ This skill is designed to be called from a bot/agent that auto-posts to X or pub
 - **Output**: the 5-hook block + recommendation, in plain text. Easy to parse the `RECOMMENDED: #N` line if a downstream automation wants just the winner.
 
 If you're wiring this into a pipeline, recommended hook = the line beginning with `RECOMMENDED: #N` — extract the quoted text after that, strip the quotes, and you have the auto-posted opener.
+
+## Power-word mining (scripts/mine_power_words.py)
+
+Mine power words/phrases from a post-performance ledger so new hooks reuse what already earned engagement. Run weekly after the X Growth Analysis refreshes the ledger at `/home/workspace/x-growth-analysis.md`.
+
+```
+python3 Skills/hook-generator/scripts/mine_power_words.py --ledger /home/workspace/x-growth-analysis.md --top 15 --json-out /tmp/wordbank.json
+```
+
+- Input: the X Growth Analysis markdown ledger (any table with `URL`, `First 20 chars`, `Topic`, `Score` columns), or CSV (`text,score[,topic,hook]`), or JSON list.
+- Output: engagement-weighted top words (weight = score+1 per occurrence), top 2-gram phrases (min 2 occurrences), best post per topic bucket, and a ready-to-paste remix prompt line for `generate_hooks.py` topic.
+- Notes: ledger text is truncated to 20 chars, so expect some fragment words in the bank; treat the bank as input to hook drafting, not as final copy. Use `--min-score 1` to keep only posts that scored.
