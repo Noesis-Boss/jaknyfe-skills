@@ -54,6 +54,7 @@ When humanizing text, apply the user's voice rules. If the user has a persona co
 6. Verify: varied sentence length, actual opinions present, no robotic uniformity
 7. Cluster check: a single sign (one em dash, one AI word) proves nothing. Flag text only when 3+ signals converge in the same passage — uniform sentence length + repeated transitions + hedging + AI vocabulary together. Treat the cluster, not the word.
 8. Fact integrity check (upstream v2.11.2): ask two questions before finishing — "What still sounds AI-generated?" and "Did the rewrite add or remove any fact, name, number, date, quote, citation, ranking, or other claim?" Treat any unsupported addition or lost claim as an error. Do not invent facts; if a sentence needs a missing detail, ask or use a simpler sentence. Fiction is exempt.
+9. Self-check (borrowed 2026-09-07 from peterygyang/no-ai-slop): before returning, answer each check pass/fail — no binary contrasts, no faux-insight setups, no colon reveals, no negative listings, no interpretive metadiscourse, no significance inflation, no vague attributions, varied sentence length, no fact drift. If any check fails, fix the draft and run the checks again.
 
 **Return modes (upstream v2.11.2):**
 - **Pasted text (default):** return the draft, a short list of remaining AI patterns, and the final rewrite.
@@ -145,6 +146,43 @@ AI situates mundane subjects inside society-level "debates," "discussions," or "
 Before: The mascot redesign has generated debate about authenticity and tradition, prompting broader reflection on identity in a digital age and blurring the boundaries between heritage and reinvention.
 
 After: The mascot redesign drew complaints from fans of the old logo. The new one is being phased in over a year.
+
+### Rhetorical-Structure Patterns (borrowed 2026-09-07 from peterygyang/no-ai-slop, MIT)
+
+**R1. Binary contrasts ("It's not X. It's Y.")**
+
+The "not X, it's Y" / "isn't just X but Y" construction that makes a strawman look refuted. State Y directly. This is the top rhetorical tell in the 2026 Economist corpus study (see the model-split note under AI Vocabulary).
+
+Before: The question isn't the model. It's the eval.
+After: The eval matters more than the model.
+
+**R2. Faux-insight setups**
+
+"What nobody tells you," "The part everyone misses," "This is the part most people skip," "What most people get wrong." These flatter the writer as the lone expert. Cut the setup and make the claim stand on its own.
+
+Before: The part everyone misses: distribution is the real moat.
+After: Distribution is the moat.
+
+**R3. Colon reveals**
+
+A noun phrase, a colon, then a lowercase dramatic reveal: "The best part: it learns." Rewrite as a plain sentence. Use colons for lists, labels, and quotes, not fake drama; sentence case after a colon unless grammar, a proper noun, a title, or code requires otherwise.
+
+Before: The detail that makes it work: a separate agent grades it.
+After: A separate agent does the grading, which is what makes it work.
+
+**R4. Negative listing**
+
+"Not a X. Not a Y. A Z." — a drumroll built from negations. Just say Z.
+
+Before: Not a chatbot. Not a copilot. A true autonomous agent.
+After: It's an autonomous agent.
+
+**R5. Interpretive metadiscourse**
+
+Lines that step outside the subject to tell the reader what to notice or how much weight to give it: "That last part matters more than it sounds," "The key point is," "As you can see," "This distinction matters," redundant "In other words." If the point is clear, delete the aside; otherwise replace it with the fact that earns the emphasis.
+
+Before: The deadline moved twice — and that last part matters more than it sounds.
+After: The deadline moved twice.
 
 ### Language Patterns
 
