@@ -66,6 +66,21 @@ curl -s -X POST "https://api.trello.com/1/cards/{cardId}/actions/comments?key=$T
   -d "text=Your comment here"
 ```
 
+### Add a comment and bump the card to the top of its list
+Always use this pattern when adding a progress note or any new comment to an existing card — the comment makes the card active again, so it should move to the top of its list. Run both commands:
+
+```bash
+# 1. Add the comment
+curl -s -X POST "https://api.trello.com/1/cards/{cardId}/actions/comments?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" \
+  -d "text=Your comment here"
+
+# 2. Bump the card to the top of its list
+curl -s -X PUT "https://api.trello.com/1/cards/{cardId}?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" \
+  -d "pos=top"
+```
+
+The same bump applies when editing a card's name or description via `PUT /1/cards/{cardId}`: include `-d "pos=top"` in that call so the edited card surfaces at the top. When creating a NEW card, pass `-d "pos=top"` on the POST as well.
+
 ### Archive a card
 ```bash
 curl -s -X PUT "https://api.trello.com/1/cards/{cardId}?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" \
