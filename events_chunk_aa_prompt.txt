@@ -1,0 +1,90 @@
+You are creating 75 Google Calendar all-day events on donandsuzi@gmail.com.
+
+For each line: "YYYY-MM-DDT00:00:00 | Assignee | Task", call use_app_google_calendar with:
+- tool_name: google_calendar-create-event
+- email: donandsuzi@gmail.com
+- summary: "[Assignee] Task"
+- eventStartDate: "YYYY-MM-DD"
+- eventEndDate: "YYYY-MM-DD"
+
+Make all 75 calls in parallel in a single response. Use the email donandsuzi@gmail.com explicitly (not your own).
+
+Events:
+2026-07-06T00:00:00 | Alex | Clean bathroom
+2026-07-07T00:00:00 | Alex | Clean living room (A)
+2026-07-07T00:00:00 | Don | Clean kitchen (C)
+2026-07-08T00:00:00 | Alex | Clean kitchen (A)
+2026-07-08T00:00:00 | Don | Sweep kitchen & living room (A)
+2026-07-09T00:00:00 | Alex | Clean backyard
+2026-07-10T00:00:00 | Alex | Clean Alex's room
+2026-07-10T00:00:00 | Don | Clean living room (B)
+2026-07-11T00:00:00 | Don | Clean Don & Suzi's room
+2026-07-11T00:00:00 | Alex | Sweep kitchen & living room (B)
+2026-07-12T00:00:00 | Alex | Mop kitchen & living room
+2026-07-12T00:00:00 | Don | Clean kitchen (B)
+2026-07-13T00:00:00 | Don | Clean bathroom
+2026-07-14T00:00:00 | Don | Clean living room (A)
+2026-07-14T00:00:00 | Alex | Clean kitchen (C)
+2026-07-15T00:00:00 | Don | Clean kitchen (A)
+2026-07-15T00:00:00 | Alex | Sweep kitchen & living room (A)
+2026-07-16T00:00:00 | Don | Clean backyard
+2026-07-17T00:00:00 | Alex | Clean Alex's room
+2026-07-17T00:00:00 | Don | Clean living room (B)
+2026-07-18T00:00:00 | Don | Clean Don & Suzi's room
+2026-07-18T00:00:00 | Alex | Sweep kitchen & living room (B)
+2026-07-19T00:00:00 | Don | Mop kitchen & living room
+2026-07-19T00:00:00 | Alex | Clean kitchen (B)
+2026-07-20T00:00:00 | Alex | Clean bathroom
+2026-07-21T00:00:00 | Alex | Clean living room (A)
+2026-07-21T00:00:00 | Don | Clean kitchen (C)
+2026-07-22T00:00:00 | Alex | Clean kitchen (A)
+2026-07-22T00:00:00 | Don | Sweep kitchen & living room (A)
+2026-07-23T00:00:00 | Alex | Clean backyard
+2026-07-24T00:00:00 | Alex | Clean Alex's room
+2026-07-24T00:00:00 | Don | Clean living room (B)
+2026-07-25T00:00:00 | Don | Clean Don & Suzi's room
+2026-07-25T00:00:00 | Alex | Sweep kitchen & living room (B)
+2026-07-26T00:00:00 | Alex | Mop kitchen & living room
+2026-07-26T00:00:00 | Don | Clean kitchen (B)
+2026-07-27T00:00:00 | Don | Clean bathroom
+2026-07-28T00:00:00 | Don | Clean living room (A)
+2026-07-28T00:00:00 | Alex | Clean kitchen (C)
+2026-07-29T00:00:00 | Don | Clean kitchen (A)
+2026-07-29T00:00:00 | Alex | Sweep kitchen & living room (A)
+2026-07-30T00:00:00 | Don | Clean backyard
+2026-07-31T00:00:00 | Alex | Clean Alex's room
+2026-07-31T00:00:00 | Don | Clean living room (B)
+2026-08-01T00:00:00 | Don | Clean Don & Suzi's room
+2026-08-01T00:00:00 | Alex | Sweep kitchen & living room (B)
+2026-08-02T00:00:00 | Don | Mop kitchen & living room
+2026-08-02T00:00:00 | Alex | Clean kitchen (B)
+2026-08-03T00:00:00 | Alex | Clean bathroom
+2026-08-04T00:00:00 | Alex | Clean living room (A)
+2026-08-04T00:00:00 | Don | Clean kitchen (C)
+2026-08-05T00:00:00 | Alex | Clean kitchen (A)
+2026-08-05T00:00:00 | Don | Sweep kitchen & living room (A)
+2026-08-06T00:00:00 | Alex | Clean backyard
+2026-08-07T00:00:00 | Alex | Clean Alex's room
+2026-08-07T00:00:00 | Don | Clean living room (B)
+2026-08-08T00:00:00 | Don | Clean Don & Suzi's room
+2026-08-08T00:00:00 | Alex | Sweep kitchen & living room (B)
+2026-08-09T00:00:00 | Alex | Mop kitchen & living room
+2026-08-09T00:00:00 | Don | Clean kitchen (B)
+2026-08-10T00:00:00 | Don | Clean bathroom
+2026-08-11T00:00:00 | Don | Clean living room (A)
+2026-08-11T00:00:00 | Alex | Clean kitchen (C)
+2026-08-12T00:00:00 | Don | Clean kitchen (A)
+2026-08-12T00:00:00 | Alex | Sweep kitchen & living room (A)
+2026-08-13T00:00:00 | Don | Clean backyard
+2026-08-14T00:00:00 | Alex | Clean Alex's room
+2026-08-14T00:00:00 | Don | Clean living room (B)
+2026-08-15T00:00:00 | Don | Clean Don & Suzi's room
+2026-08-15T00:00:00 | Alex | Sweep kitchen & living room (B)
+2026-08-16T00:00:00 | Don | Mop kitchen & living room
+2026-08-16T00:00:00 | Alex | Clean kitchen (B)
+2026-08-17T00:00:00 | Alex | Clean bathroom
+2026-08-18T00:00:00 | Alex | Clean living room (A)
+2026-08-18T00:00:00 | Don | Clean kitchen (C)
+2026-08-19T00:00:00 | Alex | Clean kitchen (A)
+
+After: report how many succeeded and any failures.

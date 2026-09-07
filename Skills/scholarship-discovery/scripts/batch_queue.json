@@ -1,0 +1,185 @@
+{
+  "description": "Source rotation queue for the daily global scholarship discovery batch. Each entry is one research slice; the runner consumes slices in rotation order (round-robin by last_used date) and the researcher fan-out uses the slice prompts.",
+  "rotation_order": [
+    "international_foundations_europe",
+    "international_foundations_asia_pacific",
+    "international_foundations_americas",
+    "international_foundations_africa_mideast",
+    "government_bilateral_programs",
+    "university_funded_international_europe",
+    "university_funded_international_americas",
+    "university_funded_international_asia",
+    "stem_field_specific_global",
+    "humanities_arts_social_sciences_global",
+    "public_health_medicine_global",
+    "environment_climate_sustainability_global",
+    "women_and_underrepresented_groups_global",
+    "developing_country_students_global",
+    "graduate_masters_fellowships_global",
+    "phd_doctoral_funding_global",
+    "short_term_exchange_language_global",
+    "athletics_leadership_service_global",
+    "region_europe",
+    "region_asia_pacific",
+    "region_latin_america_caribbean",
+    "region_africa",
+    "region_middle_east_north_africa",
+    "region_north_america_international",
+    "region_oceania",
+    "region_central_asia_south_asia"
+  ],
+  "slices": {
+    "international_foundations_europe": {
+      "region": "Europe / global",
+      "prompt": "Find scholarships and fellowships funded by European foundations (e.g. Rhodes, Gates Cambridge, Chevening, Erasmus Mundus joint programs, Wellcome, Onassis, Humboldt) open to international students."
+    },
+    "international_foundations_asia_pacific": {
+      "region": "Asia-Pacific / global",
+      "prompt": "Find scholarships funded by Asia-Pacific foundations and governments (e.g. MEXT Japan, Korea GKS, Chinese Government Scholarship, Taiwan MOE, Singapore SINGA, Australia Awards) open to international students."
+    },
+    "international_foundations_americas": {
+      "region": "Americas / global",
+      "prompt": "Find scholarships funded by foundations and programs in the Americas (e.g. Fulbright Foreign Student Program, OAS Academic Scholarship, Organization of American States, IDB, Canada Vanier) open to international students."
+    },
+    "international_foundations_africa_mideast": {
+      "region": "Africa / Middle East / global",
+      "prompt": "Find scholarships funded by African or Middle Eastern foundations and programs (e.g. Mastercard Foundation Scholars, DAAD-related partnerships, Qatar Foundation, KAUST fellowship, Al-Fanar-listed programs) open to international students."
+    },
+    "government_bilateral_programs": {
+      "region": "global",
+      "prompt": "Find government bilateral scholarship programs (e.g. Swedish Institute, Holland Scholarship, Eiffel Excellence, Swiss Government Excellence, Turkish T\u00fcrkiye Burslar\u0131, Russian Government Scholarship) open to international students."
+    },
+    "university_funded_international_europe": {
+      "region": "Europe",
+      "prompt": "Find specific university-funded scholarships for international students at named European universities (e.g. Utrecht Excellence, ETH Excellence, Clarendon Oxford, Cambridge Trust, KU Leuven Science@Leuven)."
+    },
+    "university_funded_international_americas": {
+      "region": "Americas",
+      "prompt": "Find specific university-funded scholarships for international students at named universities in the US, Canada, and Latin America (e.g. Yale scholarships for international students, UBC International Scholars, university-named awards)."
+    },
+    "university_funded_international_asia": {
+      "region": "Asia",
+      "prompt": "Find specific university-funded scholarships for international students at named Asian universities (e.g. NUS Global Merit, HKUST international entrance scholarship, Seoul National University scholarships)."
+    },
+    "stem_field_specific_global": {
+      "region": "global",
+      "prompt": "Find field-specific STEM scholarships and fellowships open internationally (e.g. Schlumberger Foundation Faculty for the Future, L'Or\u00e9al-UNESCO For Women in Science, IEEE scholarships, physics/engineering society awards)."
+    },
+    "humanities_arts_social_sciences_global": {
+      "region": "global",
+      "prompt": "Find field-specific humanities, arts, and social science scholarships open to international applicants (e.g. literature, history, music, fine arts, sociology society awards and foundation grants)."
+    },
+    "public_health_medicine_global": {
+      "region": "global",
+      "prompt": "Find public health, medicine, and nursing scholarships open to international students (e.g. Global Health Council listings, WHO-region programs, nursing foundation awards)."
+    },
+    "environment_climate_sustainability_global": {
+      "region": "global",
+      "prompt": "Find environmental science, climate, and sustainability scholarships open to international students (e.g. DAAD climate fellowships, conservation society awards, renewable energy scholarships)."
+    },
+    "women_and_underrepresented_groups_global": {
+      "region": "global",
+      "prompt": "Find scholarships for women and underrepresented groups open internationally (e.g. AAUW International Fellowships, P.E.O. International Peace Scholarship, Zonta International Amelia Earhart Fellowship, Margaret McNamara Education Grants)."
+    },
+    "developing_country_students_global": {
+      "region": "developing countries",
+      "prompt": "Find scholarships specifically for students from developing countries (e.g. Aga Khan Foundation International Scholarship, Joint Japan/World Bank Graduate Scholarship, Rotary Foundation Global Grants, OFID/OPEC Fund scholarship)."
+    },
+    "graduate_masters_fellowships_global": {
+      "region": "global",
+      "prompt": "Find master's-level scholarships and fellowships open to international students (e.g. Erasmus Mundus specific programs, Chevening partner awards, foundation master's grants)."
+    },
+    "phd_doctoral_funding_global": {
+      "region": "global",
+      "prompt": "Find PhD/doctoral funding opportunities open to international applicants (e.g. specific doctoral fellowships from named foundations, research council international programs)."
+    },
+    "short_term_exchange_language_global": {
+      "region": "global",
+      "prompt": "Find short-term exchange and language-study scholarships (e.g. Critical Language Scholarship equivalents, JASSO, DAAD language grants, language school scholarships)."
+    },
+    "athletics_leadership_service_global": {
+      "region": "global",
+      "prompt": "Find leadership, community-service, and athletics scholarships open to international students (e.g. Rotary Youth leadership awards with scholarship component, foundation leadership grants)."
+    },
+    "region_europe": {
+      "region": "Europe",
+      "prompt": "Find scholarships for students studying in or from specific European countries (e.g. Nordic country funds, German, French, Dutch, Italian, Spanish, Polish scholarship programs for internationals)."
+    },
+    "region_asia_pacific": {
+      "region": "Asia-Pacific",
+      "prompt": "Find scholarships for students in specific Asia-Pacific countries (e.g. ASEAN scholarships, India-specific, Japan, South Korea, Vietnam, Indonesia, Philippines programs open to internationals)."
+    },
+    "region_latin_america_caribbean": {
+      "region": "Latin America / Caribbean",
+      "prompt": "Find scholarships for Latin American and Caribbean students (e.g. BECA programs, Santander Universities, Funda\u00e7\u00e3o Estudar, Mexican CONACYT/CONAHCYT equivalents open to internationals)."
+    },
+    "region_africa": {
+      "region": "Africa",
+      "prompt": "Find scholarships for African students (e.g. African Union scholarships, Mandela Rhodes, Kofi Annan foundation-linked awards, country-specific funds)."
+    },
+    "region_middle_east_north_africa": {
+      "region": "Middle East / North Africa",
+      "prompt": "Find scholarships for Middle Eastern and North African students (e.g. HESPAL, Said Foundation, Emirates Foundation programs open to internationals)."
+    },
+    "region_north_america_international": {
+      "region": "North America",
+      "prompt": "Find North American scholarships open to international students that are NOT aggregator pages (e.g. specific university international student awards, foundation grants)."
+    },
+    "region_oceania": {
+      "region": "Oceania",
+      "prompt": "Find Australia and New Zealand scholarships open to international students (e.g. Australia Awards, Destination Australia, NZ Manaaki, university-specific international scholarships)."
+    },
+    "region_central_asia_south_asia": {
+      "region": "Central / South Asia",
+      "prompt": "Find scholarships for Central and South Asian students (e.g. Inlaks Shivdasani, JN Tata Endowment, Pakistan HEC-linked, Kazakhstan Bolashak open components)."
+    },
+    "gov_national_asia": {
+      "region": "Asia",
+      "prompt": "Find major national government scholarship programs for international students in Asia, e.g. Japan MEXT, Korea Global Korea Scholarship (GKS), China Scholarship Council, Taiwan MOE, Singapore, Malaysia, Brunei, Thailand, Indonesia LPDP, Vietnam, India, Kazakhstan."
+    },
+    "gov_national_europe": {
+      "region": "Europe",
+      "prompt": "Find major national government scholarship programs for international students in Europe, e.g. Germany DAAD, France Eiffel/Campus France, Netherlands Holland Scholarship/Orange Knowledge, Sweden SI, Switzerland, Austria, Hungary Stipendium Hungaricum, Romania, Poland NAWA, Czech Republic, Turkey Turkiye Burslari, Ireland Government IES."
+    },
+    "gov_national_amer_oceania": {
+      "region": "Americas / Oceania",
+      "prompt": "Find major national government scholarship programs for international students in the Americas and Oceania, e.g. Canada Vanier/Banting/Ontario Trillium, Mexico CONAHCYT, Brazil, Chile, Colombia, USA Fulbright/Hubert Humphrey, Australia Awards/Destination Australia, New Zealand Scholarships, Fiji/Pacific awards."
+    },
+    "prof_associations_societies": {
+      "region": "Global",
+      "prompt": "Find scholarships, fellowships and grants offered by professional associations and scholarly societies worldwide (e.g. IEEE, ACM, ASME, ACS, AMS, American Psychological Association, bar associations, nursing/medical societies, engineering institutes)."
+    },
+    "religious_service_orgs": {
+      "region": "Global",
+      "prompt": "Find scholarships offered by religious organizations, service clubs, and community organizations worldwide, e.g. Rotary Foundation Global Grants, Lions Clubs, Kiwanis, Elks, Knights of Columbus, Masonic lodges, church denominational funds, Junior Chamber."
+    },
+    "minority_identity_focused": {
+      "region": "Global",
+      "prompt": "Find scholarships for underrepresented and minority students worldwide, e.g. indigenous students scholarships, LGBTQ+ scholarships (Point Foundation, Pride foundations), first-generation college student awards, racial/ethnic minority scholarship funds, disability-focused scholarships."
+    },
+    "refugee_displaced_students": {
+      "region": "Global",
+      "prompt": "Find scholarships and funding for refugee, asylum-seeking, and displaced students worldwide, e.g. UNHCR DAFI Albert Einstein scholarship, Borderless Higher Education, Open Society scholarship programs, university sanctuary scholarships for refugees."
+    },
+    "women_stem_leadership": {
+      "region": "Global",
+      "prompt": "Find scholarships and fellowships specifically for women worldwide, e.g. AAUW International Fellowships, P.E.O. International Peace Scholarship, Schlumberger Faculty for the Future, Zonta International Amelia Earhart, Google Generation, L'Oreal-UNESCO For Women in Science."
+    },
+    "country_specific_eu_students": {
+      "region": "Europe",
+      "prompt": "Find university-funded scholarships for international (non-EU) students at specific European universities: Germany (Deutschlandstipendium, university daad-funded awards), UK (GREAT Scholarships, Commonwealth, Chevening, university international awards), Ireland, Nordic countries (Danish, Finnish, Norwegian, Icelandic government/university scholarships)."
+    },
+    "uk_chevening_commonwealth": {
+      "region": "United Kingdom",
+      "prompt": "Find UK-specific scholarships for international students: Chevening Scholarships, Commonwealth Scholarships and Fellowships, GREAT Scholarships at specific universities, Gates Cambridge, Rhodes Scholarship, Clarendon (Oxford), Imperial College President's, Edinburgh Global, King's College, UCL scholarships. Get each program's official application page URL."
+    },
+    "exchange_language_immersion": {
+      "region": "Global",
+      "prompt": "Find exchange and language-study scholarships worldwide, e.g. Critical Language Scholarship, Boren Awards, DAAD language courses, Japan Student Services, Confucius Institute, Goethe-Institut scholarships, Alliance Francaise, CIEE and IIE-administered grants, national language immersion awards."
+    },
+    "graduate_research_fellowships2": {
+      "region": "Global",
+      "prompt": "Find graduate research fellowships and doctoral funding worldwide, e.g. EMBO fellowships, Marie Sklodowska-Curie Actions, Humboldt Research Fellowships, Wellcome Trust programs, Max Planck, CNRS, European Research Council grants for individuals, national science foundation doctoral awards outside the US."
+    }
+  }
+}

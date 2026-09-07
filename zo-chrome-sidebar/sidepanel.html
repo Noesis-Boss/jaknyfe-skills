@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sidepanel.css" />
+    <title>Zo Sidebar</title>
+  </head>
+  <body>
+    <header>
+      <strong>Zo Sidebar</strong>
+      <span class="spacer"></span>
+      <button id="newChat" class="ghost" title="New chat">New</button>
+      <button id="settingsBtn" class="ghost" title="Settings">⚙</button>
+    </header>
+
+    <div id="authBar" class="auth-bar">
+      <span id="authStatus"></span>
+      <span id="authActions">
+        <button id="loginBtn">Log in to Zo</button>
+        <button id="pasteBtn">Paste token</button>
+        <button id="clearBtn" class="hidden">Clear</button>
+      </span>
+      <span id="pasteWrap" class="hidden">
+        <input id="pasteToken" type="text" placeholder="zo_sk_..." autocomplete="off" spellcheck="false" />
+        <button id="pasteSave">Save</button>
+      </span>
+    </div>
+
+    <div id="messages"></div>
+
+    <div id="composer">
+      <textarea id="input" placeholder="Message Zo…  (Shift+Enter = newline, Enter = send)" rows="2"></textarea>
+      <button id="send">Send</button>
+    </div>
+
+    <div id="settings" class="hidden">
+      <h3>Relay</h3>
+      <label>Relay URL <input id="relayUrl" type="text" placeholder="http://127.0.0.1:18720" /></label>
+      <label><input id="browserControl" type="checkbox" /> Enable browser control</label>
+      <p class="hint">Browser control lets Zo run actions (navigate, click, fill, read, etc.) on the current tab.</p>
+      <h3>Chat</h3>
+      <label>Model override <input id="modelName" type="text" placeholder="(default)" /></label>
+      <label>Persona override <input id="personaId" type="text" placeholder="(default)" /></label>
+      <button id="saveSettings" class="primary">Save</button>
+    </div>
+
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

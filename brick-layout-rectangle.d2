@@ -1,0 +1,17 @@
+direction: right
+
+subgraph border {
+  label: "8\" Border Frame (14 bricks)"
+  direction: right
+  b1: 8" --> b2: 8" --> b3: 8" --> b4: 8"
+}
+subgraph interior {
+  label: "48\"×72\" Interior — 6\" bricks"
+  direction: right
+  i1: 6" --> i2: 6" --> i3: 6" --> i4: 6" --> i5: 6" --> i6: 6" --> i7: 6" --> i8: 6"
+}
+note: "4 extra 6\" bricks → 12\"×12\" accent cluster" {
+  shape: text
+}
+border --> interior
+interior --> note

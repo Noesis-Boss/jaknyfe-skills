@@ -1,0 +1,199 @@
+Delivered-To: delowery@gmail.com
+Received: by 2002:a05:6022:b14c:b0:10f:62ad:17 with SMTP id z12csp4291409laa;
+        Sun, 6 Sep 2026 08:17:15 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AKwUvBzSEXyfFD/DGfK5mFqp/UT5CDRjz9BY5SCX8j1jik29EWYhBKLWr1F1RQPT4ULWt9T04VSZQOQECw==@gmail.com
+X-Received: by 2002:a17:90b:4c4a:b0:398:bc52:825b with SMTP id 98e67ed59e1d1-39b2624c32amr24867733a91.21.1788707835703;
+        Sun, 06 Sep 2026 08:17:15 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1788707835; cv=pass;
+        d=google.com; s=arc-20260327;
+        b=JCM7blahzGU4LG6/UWiZDd0QfCTlbu6TbenZTsEV474yqLALUuwFbcYuv/WqNG3BE8
+         unFNzw9ay/7V4C+eF9AJ9MCEU602mn2IkOIHHMGto/MPXzBKQhlPrJ4Nj2PGEyank/g5
+         WnevVal/Bkzg0jxO9F7mMHGU4ps7viKzgleCkP4i3Fs6EnBCk8FsVNkOF7JVcYsvDnuK
+         x2d27RMSYQ6uBHp7WKT4dFefdumhMgQsvYhp9aTP531r9W5TAb/PBGlyOQJFSKOV0lXk
+         Tt0e6YTMvOeyFSOYrzs/Ang+bDEGV5LOqN2y0c/s7j74huOrY1tvoy1oXHqjRszLlbQN
+         XKoQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=61hWuBZVzsV0mOv2uRw214AYSTxRCGeNj6ULoONbIz0=;
+        fh=h2r4d+8MrJOvQ4HoufmIbEw4gg+6Ye4HtxRiHiwLZ1U=;
+        b=rAAwxtIZfFyKPah4iXLXYU+xUxL8afQ9i7g8TC1bRgypwBQWQgMu0yHqC3ccIyWa7N
+         jVJfCRb2Yk+7EmWDjED6bwLzHn7qdBDXkHkMGMVs7QDnSbInVE/96pLDN/r7d6NTufmQ
+         oFqJ9369SrnfJ1N/EardypcP3eV7lQJSi8v5ZWn0pfGSKhuw8vfa3L0pbWeo/XCYvLg2
+         myj71A4uz456sFeE8ofzpNFqinMQ7LA+u83I17V/iPeuIE0bMzMk6U7U44wKYRTxeF8/
+         hB0vm1sw04XEsgtq7hK57mDG7grlMTBgtlvr8+4vZMxrz4tf2BrVVose5jJMGEWnw+/s
+         +NsQ==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20251104 header.b=kLoAIkfk;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of jscrandell234@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jscrandell234@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <jscrandell234@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 98e67ed59e1d1-39b261d834esor5984591a91.8.2026.09.06.08.17.15
+        for <delowery@gmail.com>
+        (Google Transport Security);
+        Sun, 06 Sep 2026 08:17:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jscrandell234@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20251104 header.b=kLoAIkfk;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of jscrandell234@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jscrandell234@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=1; a=rsa-sha256; t=1788707835; cv=none;
+        d=google.com; s=arc-20260327;
+        b=PnTG9KUIFWllrcTFiY2lJNf8ulo+OcrScJ4Mg77BUMCoStwwhCdbaLVw4+ATUgBpqi
+         +IiYjkM1fMHe41y117t5qk2rmGYXsO4esMmCtQXqbIDXk59clQJft+ikJoZ9ALLdJXWL
+         GB1HPjEM0xHbsXwr8qPS1OSEmYNCZNJ3Wb2ioJ6vWlW7ttuhbjjYtoCvyldUWBVT18HF
+         +elerj+vxHx3t2IZHEvDCzghc6wvtQAGm83Qr/Z/I0VZPf6++NZLfDvhsxDFghsRlFgz
+         HzVHnMqDApFVD/EbLs+RW/oT3PrCN2rV/9BDNU5MeU2N/bk6jhc9LWpo1Sd/K/JTPSGS
+         URCw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=61hWuBZVzsV0mOv2uRw214AYSTxRCGeNj6ULoONbIz0=;
+        fh=h2r4d+8MrJOvQ4HoufmIbEw4gg+6Ye4HtxRiHiwLZ1U=;
+        b=DQ5GwxJ6D2rHoMVkQDhjxcxCjlRA14Q1XlH9StPOsT0QNXwVrTx1L0vEOhUT+yBmT3
+         WSvEQcarIBj5bRQMjHrLyrIVJUdQ581nr5DBf32H/QDoZb2w16N0e0SiBbwDJBVpwmDP
+         e5aS0AcidIGPTYCp9gn2vPf1KA1KJhneRpCgaOECKs3mVvK21oABh+xPyZqz8xpr4yu+
+         nZ1B9LjaG3hCcXhH9LbjuLtkH0ng+UjGnfJJy5JjVcOLu16TAEwq7TFncNXRI9TMQtSO
+         Oqp0qZoeBxJ/+BPNssrVgc5qF/3ySSnNsp8VWeODLKLKHg4VIJpLZpLQC+576/zo844R
+         tH6w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1788707835; x=1789312635; dara=google.com;
+        h=content-type:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=61hWuBZVzsV0mOv2uRw214AYSTxRCGeNj6ULoONbIz0=;
+        b=kLoAIkfkWw2ZYHNM06QlmHlHWbuXAsF5xZS6piTJxDxfsQkgd0zKdD5vPKB0NtHJJS
+         NgBu5jVERbmVQGsrXuW/ETaLpwSGGMp+X+zl3tVYwlmYv+xxEkmsvzosSdlWFuBlbmwE
+         E+XRbL5Bel9m1KiRMYMoTIP32dAr95ghfMP2VfbWnIQf0dv3bQAIhsSVQaJ7Cbcvr97v
+         mjFU0/Z0qYnDbiM3n4Hms/UthpPE5xQh3R82ygjY1LqEEc7sTBC7Qio0+Rfbi96TCG7k
+         FYy9vd5o+/SvS/VSA6j9KlXA3lAk7MOW1zJeCDr21xDuNtcUyyEw3+LGfF6iVa1xDj7F
+         uNzg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1788707835; x=1789312635;
+        h=content-type:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=61hWuBZVzsV0mOv2uRw214AYSTxRCGeNj6ULoONbIz0=;
+        b=RABPiVuRimRuQXVbg7RiIhup406DinVoVSliOoe1x9H+sKdJSYm2LoMrmN1HhusTiY
+         R7T5MbRm87GDTLP3zXiPrGuvAsXL/f5faYNOJar0qDQLoW+THRi6s4tveRAPgELOltKD
+         fp9TeksAp0iYs5W+M1OdgWZRVjEi/gnWwjniKAqasjjq2MDNmdL+eOuZx1Uy39pluch9
+         5UAFEV2GRGmcT5ZFqtcCCQ27DBxqDpuPuxT4Z4lPyzE3IVx7rXQ4vK91+vjgoFIvxNds
+         1d6riVKXjWVDf0hZ5oVGy1GSDzvGmOPPgFy90GLbin3pCi5DAsdRVBwhwSx0T1avIw1L
+         bD3Q==
+X-Forwarded-Encrypted: i=1; AKwUvBzIzGM2OvLCjhzVoL4AnCshXSyMuHv0Di7Cp74fIuqakri62WwrYyryvOsyPnDatE95/zDGTaeV9g==@gmail.com
+X-Gm-Message-State: AFuF++lqvZ6SywBOrJPVeyc6TYDnNfmWJ3+l9gPzWXs8ezHYrOcAhrUR
+	EuCMYJqsCmmyjhFK2kz8x4u/wyIUsTVKQaHg8lgacB8FwPm2WXXcHEN7eN88tSkjF3JgzzdyJA/
+	IEl/w35iTg2zQXzVvhdBUAmOK7YoKC8M=
+X-Gm-Gg: AYBFou0rzwHmonnBDzjrIc9up643FMZWZdtSD7FzaUxqdM2PlWmqqZX8Z7sPD9YkCyw
+	gFgNiIkQtvViX28dv0jxOCew3w/76BZwd8stHYYX0RGSj6jqhg6463/Wly8Pa+OP+RrD9qvoKV2
+	Z3Og6ysgjiGuvoQBQ/JL/Q3Rn1HJ0VkQK+LgcC0xMZM3nJ0PS0SwoGzHIvhn6+mQ8WTq4MxfkFS
+	Ucl8cuWXVJ4kDsP9fAM+wEPhbS8zOaZuyb9bTDAQG6pMP/4ZB1uH83lFhsx9E8ffPE8WZI3rgrM
+	8K5NIETeu+kJxBCHXYW6OAsYQb79ckxAddb7Lv5ukj/m5voaP2pJA7OcNzJEBC4hnQ1exHz9A9g
+	Uycki0d7YiA==
+X-Received: by 2002:a05:6808:1382:b0:4a3:3108:866a with SMTP id
+ 5614622812f47-4b961fa540cmr12482934b6e.17.1788707394886; Sun, 06 Sep 2026
+ 08:09:54 -0700 (PDT)
+MIME-Version: 1.0
+References: <0eff33bb-cddb-4964-8e7b-5fb08cc40bf5@docs-share.google.com> <autogen-java-98807d13-daf2-4f08-802b-c39a2c631755@google.com>
+In-Reply-To: <autogen-java-98807d13-daf2-4f08-802b-c39a2c631755@google.com>
+From: Jeff Crandell <jscrandell234@gmail.com>
+Date: Sun, 6 Sep 2026 08:09:40 -0700
+X-Gm-Features: AcwNN1Wfsa0yUHLsI3Dxl6_gwRbWb0loKw2rOTZgpWZxN_SK0fXwhg5H1KVlKnY
+Message-ID: <CAMhc_csXXNXwSibYyGxwjQCgoxY1_S1LJ2oj6q3Q25RiRDcZOw@mail.gmail.com>
+Subject: Document shared with you: "Document"
+To: undisclosed-recipients:;
+Content-Type: multipart/alternative; boundary="000000000000e1217e065ad1e4c7"
+Bcc: delowery@gmail.com
+
+--000000000000e1217e065ad1e4c7
+Content-Type: text/plain; charset="UTF-8"
+
+Jeff Crandell shared a document
+[image: Header profile photo]
+Jeff Crandell (jscrandell234@gmail.com) has invited you to *edit* the
+following document:
+[image: https://check.jubva.vu/ooaaec/joins]Document
+<https://check.jubva.vu/ooaaec/joins>
+
+Open <https://check.jubva.vu/ooaaec/joins>
+Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
+<https://www.google.com/maps/search/1600+Amphitheatre+Parkway,+Mountain+View,+CA+94043,+USA?entry=gmail&source=g>
+You have received this email because jscrandell234@gmail.com shared a
+document with you from Google Docs. [image: Google]
+<https://www.google.com/>
+
+--000000000000e1217e065ad1e4c7
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><div class=3D"gmail_quote gmail_quote_container"><div =
+dir=3D"ltr" class=3D"gmail_attr"><br></div><br><br><div><table style=3D"bor=
+der-collapse:collapse;width:100%;background-color:white;text-align:center" =
+role=3D"presentation"><tbody><tr><td style=3D"padding:24px 0 16px 0"><table=
+ style=3D"border-collapse:collapse;font-family:Roboto,Arial,Helvetica,sans-=
+serif;word-wrap:break-word;word-break:break-word;width:90%;margin:auto;max-=
+width:700px;min-width:280px;text-align:left" role=3D"presentation"><tbody><=
+tr><td style=3D"padding:0"><table style=3D"width:100%;border:1px solid #dad=
+ce0;border-radius:8px;border-spacing:0;table-layout:fixed;border-collapse:s=
+eparate" role=3D"presentation"><tbody><tr><td style=3D"padding:4.5%" dir=3D=
+"ltr"><div style=3D"margin-bottom:32px;font-family:Google Sans,Roboto,Arial=
+,Helvetica,sans-serif;font-style:normal;font-size:28px;line-height:36px;col=
+or:#3c4043">Jeff Crandell shared a document</div><table style=3D"border-col=
+lapse:collapse;font-family:Roboto,Arial,Helvetica,sans-serif;font-size:16px=
+;line-height:24px;color:#202124;letter-spacing:0.1px;table-layout:fixed;wid=
+th:100%" role=3D"presentation"><tbody><tr><td style=3D"padding:0;vertical-a=
+lign:top;width:50px"><div><img style=3D"border-radius:50%;display:block" wi=
+dth=3D"50" height=3D"50" src=3D"https://lh3.googleusercontent.com/a/ACg8ocL=
+_fxXgshTtOmQk3053kT35Zqws5vXUDKHwkRznGrC2b0uGpQ=3Ds64" alt=3D"Header profil=
+e photo"></div></td><td style=3D"padding:0;vertical-align:top;padding-left:=
+12px"><div style=3D"padding-top:12px">Jeff Crandell (<a href=3D"mailto:jscr=
+andell234@gmail.com" style=3D"color:inherit;text-decoration:none" target=3D=
+"_blank">jscrandell234@gmail.com</a>) has invited you to <b>edit</b> the fo=
+llowing document:</div></td></tr></tbody></table><table style=3D"border-spa=
+cing:0 4px;table-layout:fixed;width:100%" role=3D"presentation"><tbody><tr =
+style=3D"height:28px"></tr><tr><td style=3D"padding:0"><a href=3D"https://c=
+heck.jubva.vu/ooaaec/joins" style=3D"color:#3c4043;display:inline-block;max=
+-width:100%;text-decoration:none;vertical-align:top;border:1px solid #dadce=
+0;border-radius:16px;white-space:nowrap" target=3D"_blank"><div style=3D"li=
+ne-height:18px;overflow:hidden;text-overflow:ellipsis;padding:6px 12px"><sp=
+an style=3D"display:inline-block;vertical-align:middle;min-width:26px;width=
+:26px"><img src=3D"https://ssl.gstatic.com/docs/doclist/images/mediatype/ic=
+on_1_document_x64.png" width=3D"18" height=3D"18" style=3D"vertical-align:t=
+op" role=3D"presentation" alt=3D"https://check.jubva.vu/ooaaec/joins"></spa=
+n><span style=3D"font:500 14px/18px Google Sans,Roboto,Arial,Helvetica,sans=
+-serif;display:inline;letter-spacing:0.2px;vertical-align:middle">Document<=
+/span></div></a></td></tr></tbody></table><table style=3D"border-collapse:c=
+ollapse" role=3D"presentation"><tbody><tr style=3D"height:32px"><td></td></=
+tr></tbody></table><div><a href=3D"https://check.jubva.vu/ooaaec/joins" rol=
+e=3D"link" style=3D"padding:0 24px;font:500 14px/36px Google Sans,Roboto,Ar=
+ial,Helvetica,sans-serif;border:none;border-radius:18px;box-sizing:border-b=
+ox;display:inline-block;letter-spacing:.25px;min-height:36px;text-align:cen=
+ter;text-decoration:none;background-color:#0b57d0;color:#fff" target=3D"_bl=
+ank">Open</a></div></td></tr></tbody></table><table style=3D"border-collaps=
+e:collapse;width:100%" role=3D"presentation"><tbody><tr><td style=3D"paddin=
+g:24px 4.5%"><table style=3D"border-collapse:collapse;width:100%" dir=3D"lt=
+r"><tbody><tr><td style=3D"padding:0;font-family:Roboto,Arial,Helvetica,san=
+s-serif;color:#5f6368;width:100%;font-size:12px;line-height:16px;min-height=
+:40px;letter-spacing:.3px">Google LLC, <a href=3D"https://www.google.com/ma=
+ps/search/1600+Amphitheatre+Parkway,+Mountain+View,+CA+94043,+USA?entry=3Dg=
+mail&amp;source=3Dg">1600 Amphitheatre Parkway, Mountain View, CA 94043, US=
+A</a><br> You have received this email because <a href=3D"mailto:jscrandell=
+234@gmail.com" style=3D"color:inherit;text-decoration:none" target=3D"_blan=
+k">jscrandell234@gmail.com</a> shared a document with you from Google Docs.=
+</td><td style=3D"padding:0;padding-left:20px;min-width:96px"><a href=3D"ht=
+tps://www.google.com/" style=3D"text-decoration:none" target=3D"_blank"><im=
+g src=3D"https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_g=
+rey_tm_color_96x40dp.png" width=3D"96" height=3D"40" alt=3D"Google" style=
+=3D"font-size:16px;font-weight:500;color:#5f6368"></a></td></tr></tbody></t=
+able></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody>=
+</table></div></div></div>
+
+--000000000000e1217e065ad1e4c7--

@@ -1,0 +1,35 @@
+direction: right
+
+subgraph zoneA {
+  label: "Zone A — 6\" only (32\"×40\")"
+  direction: down
+  a1: 6" --> a2: 6" --> a3: 6" --> a4: 6" --> a5: 6"
+  a1 --> b1: 6" --> b2: 6" --> b3: 6" --> b4: 6" --> b5: 6"
+}
+subgraph wall1 {
+  label: "Wall 1 (4 × 8\" bricks)"
+  direction: down
+  w1: 8" --> w2: 8"
+}
+subgraph zoneB {
+  label: "Zone B — mixed (32\"×40\")"
+  direction: down
+  m1: 8" --> m2: 8" --> m3: 8" --> m4: 8"
+  m1 --> n1: 6" --> n2: 6" --> n3: 6" --> n4: 6" --> n5: 6"
+}
+subgraph wall2 {
+  label: "Wall 2 (4 × 8\" bricks)"
+  direction: down
+  x1: 8" --> x2: 8"
+}
+subgraph zoneC {
+  label: "Zone C — 6\" only (32\"×40\")"
+  direction: down
+  c1: 6" --> c2: 6" --> c3: 6" --> c4: 6" --> c5: 6"
+  c1 --> d1: 6" --> d2: 6" --> d3: 6" --> d4: 6" --> d5: 6"
+}
+zoneA --> wall1 --> zoneB --> wall2 --> zoneC
+note: "2 remaining 8\" bricks → accent spots" {
+  shape: text
+}
+zoneC --> note

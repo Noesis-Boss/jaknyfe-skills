@@ -1,0 +1,20 @@
+{
+  "skill_name": "finance-youtube-breakdown",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Evaluate this faceless finance YouTube article and turn it into a practical test plan.",
+      "expected_output": "Separates verified evidence from claims, produces a ranked test slate, and includes a stop/continue rule."
+    },
+    {
+      "id": 2,
+      "prompt": "Use three competitor transcripts to find five original video gaps and draft the best one.",
+      "expected_output": "Analyzes structure without copying expression, cites gaps, and returns a complete brief with scenes, thumbnail, titles, and disclaimers."
+    },
+    {
+      "id": 3,
+      "prompt": "Automate a weekly scan for a new faceless finance channel.",
+      "expected_output": "Creates a research-only brief, flags freshness and financial-risk issues, and requires human approval before publishing."
+    }
+  ]
+}

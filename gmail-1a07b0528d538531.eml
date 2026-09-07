@@ -1,0 +1,241 @@
+Delivered-To: delowery@gmail.com
+Received: by 2002:a05:6022:b14c:b0:10f:62ad:17 with SMTP id z12csp4953959laa;
+        Mon, 7 Sep 2026 01:38:51 -0700 (PDT)
+X-Received: by 2002:a05:620a:5ed9:b0:937:3b26:c9e9 with SMTP id af79cd13be357-93980435324mr1728175585a.25.1788770330789;
+        Mon, 07 Sep 2026 01:38:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1788770330; cv=none;
+        d=google.com; s=arc-20260327;
+        b=ng5VI1wURKCnmTtlApNXrKpPY8omYK12Rj3/+OPxLMDmX2ZFn/7X04T+HmCEbi6lUg
+         6tVm+LL0ea10z0aTGcZG+WTlFw6wzUoy/2gWNmf/bZ9OfBUh6SWh0A/lTjbTjU3oINfl
+         wxwkYBkldVvS0CpTyJuLkHMnzFJgrxu9pAZOuMy5QeqWoFV8u8AfT00E0tBc/GNn4fZ2
+         k+do68PJkV8nW5EpSP5R+/RMQN9EUpRDPSpbOf02KGoAs06U2j2wo496vmeyQXZQp0hJ
+         HolUB2BaGj8bHgO1qSscb2EgLib5TecRQleqx62jgobLrHJwLiw3o57TxBEFDF+Sdrja
+         4ELg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=content-transfer-encoding:message-id:to:from:subject:mime-version
+         :date:sender:list-unsubscribe:list-unsubscribe-post:dkim-signature
+         :dkim-signature;
+        bh=OXdpDF4CpFNbFWYemup1YyD5RC4oGZx1f7Q4TePiyes=;
+        fh=TVInHuKyb2mPowR9p7IdvgXvUiGTahZWOyH0It6LGI4=;
+        b=l2VH1VfdjQPV7tU7sAQ17O+k1Lep//1CQV2roHcEcxaXgOTFIQN+0Yxk1jfp9p7DEu
+         GZjGS4SUzPKarq33H3dl5bHwZiOGRmH8UqoD76Q10pSnE7W31FYH1hzpMdHDXkHX++BV
+         /NXB9Ra7iie3QRag1QPHPu47PMRJENLwTQqSuDqNq/s2TKhvOpoC1nqVwgQ+LvIkCCz9
+         8rlIO6mMV+rH5DB6xh+p633qi2OiOm/iAekU0z2ffrKgakuRiK2vmkHSbfdkSktYcp/p
+         GiB4mScB4tSdYjU7LrYje9UZ9A4vqzPfisKNnGU/fTx1nRHw6/Oz5and2K0yvChojteU
+         G2xQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@getgitguardian.com header.s=pic header.b=JLKlEM+0;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=nlLrbTlV;
+       spf=pass (google.com: domain of bounce+54ec99.dcab04-delowery=gmail.com@getgitguardian.com designates 204.220.184.8 as permitted sender) smtp.mailfrom="bounce+54ec99.dcab04-delowery=gmail.com@getgitguardian.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=getgitguardian.com
+Return-Path: <bounce+54ec99.dcab04-delowery=gmail.com@getgitguardian.com>
+Received: from k8.kb8c70eb.use4.send.mailgun.net (k8.kb8c70eb.use4.send.mailgun.net. [204.220.184.8])
+        by mx.google.com with UTF8SMTPS id af79cd13be357-9397fa41e29si785507985a.373.2026.09.07.01.38.50
+        for <delowery@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 07 Sep 2026 01:38:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+54ec99.dcab04-delowery=gmail.com@getgitguardian.com designates 204.220.184.8 as permitted sender) client-ip=204.220.184.8;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@getgitguardian.com header.s=pic header.b=JLKlEM+0;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=nlLrbTlV;
+       spf=pass (google.com: domain of bounce+54ec99.dcab04-delowery=gmail.com@getgitguardian.com designates 204.220.184.8 as permitted sender) smtp.mailfrom="bounce+54ec99.dcab04-delowery=gmail.com@getgitguardian.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=getgitguardian.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=getgitguardian.com; q=dns/txt; s=pic; t=1788770330; x=1788777530;
+ h=Content-Transfer-Encoding: Content-Type: Message-Id: To: To: From: From: Subject: Subject: Mime-Version: Date: Sender: Sender: X-Feedback-Id: List-Unsubscribe: List-Unsubscribe-Post;
+ bh=OXdpDF4CpFNbFWYemup1YyD5RC4oGZx1f7Q4TePiyes=;
+ b=JLKlEM+0TPxcR59plZbNyIhKkEiuaQuIm16B0GoP0ukeM9JDuBUdE/4Zd08qPIySHIK3MkWeWYLwCvO1iaua1Cr0n0qLyfGh5lpLxH0jrCoqFYWHG5o+6jn5aceV6NkRE4JTwl3fwC9sozlHs53Q5qg7ipwP9F5EGWu+mvR/b/OMvf728VaNLX5jehRyvFj7jrpobrFMtsUMCAdiI4eSDy/smg0APRviOMmEbMQySLDyAZ2wSteBZpQACmX9RBGh173Jk0HOFuOWOolvCgXEuyLZ+5LuFy76doPf7rWz+gGyJ0nTfVtsseOuUml1ARPn6x3l5TmxmiHvpKDtWIAvKA==
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1788770330; x=1788777530;
+ h=Content-Transfer-Encoding: Content-Type: Message-Id: To: To: From: From: Subject: Subject: Mime-Version: Date: Sender: Sender: X-Feedback-Id: List-Unsubscribe: List-Unsubscribe-Post;
+ bh=OXdpDF4CpFNbFWYemup1YyD5RC4oGZx1f7Q4TePiyes=;
+ b=nlLrbTlVVL/W0zJR0lR6/8R2k9Q33SzaDu6WqFakHozNN4wofeVkSFQnZtQQOlM3be0SqpEnpx7rB3cbFem30CWvzrzQneCExfJaQNoBTDkUF9gGwDYhWzz5whddRn6EWVa4GF72ESNcS4wNVlyZJIcwrazASTcfn4J7Njnn0aY=
+X-Mailgun-Sid: WyJkZjg1NCIsImRlbG93ZXJ5QGdtYWlsLmNvbSIsImRjYWIwNCJd
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://email.getgitguardian.com/u/eJx0kk1r3DAQhn-NfVkS5BnZlg4-bJK6bBKSLc0H9GJG0sh21147tnbD5tcXh5KGQC8CvegV8zwMdTyFqnVFImWmjSNhldQWPaCXIqcEfGJznwqLBlALDcxaEqFiMJpQkVGOjXQxje2OT1XT1k3X1k1gVx2mrmhCGOcI1xGUEZR1G5qDObdDH0F5N_DczmcXwzxHUP6m3f7k-WzetV23BHbo-zZEUJJLXJZnjkjKPAerckxTZoPGee21d47ReeQI0LXeny0IaD0n7JE95BZVlqQmNUIk3qSYkSVt0aQuR6cptWRswoygcwsk5G0au8JZMkLGjgPbMEyVa-exo1O1p56Lu6fN1Wa9Wm83qxs-xTxbGtlV3FPbFY674ZWnUwSpFPUSLbwfjzqmXdXQ3BTwenTb9eFCbcv6RW64TDab0_W1-PXj-7eHw9vVqX-St9dTN93Y-whSKLPnu61_vt-_NZf4sr95edTm49uJx-HvcJ-1pl_FxnzkfagcBa78MPUUArviJ4-Be8PTKg_NCgRkEVyuhIpwjbAcuHp8uIybIsuEtsokQkk01hulcsUJKEKWKmGK22JpCy1yoVCl4hwpcZlgx0ImWnuIpKg51G2oDzS5lvbvdqZ_2j5Le6dathOyLJNKo4r_A_oVMxQRrOPA_dgtqO-Fj9s49dUR4mMBfwIAAP__Bp_6ZQ>
+X-Feedback-Id: security@getgitguardian.com:prod_incident_landing_2-NVIDIA-nvidia_apikey:611a21ec93db5cdb24de3c81:mailgun
+Received: by 6dfcbf6fded5eb41a502290a205b5249cdbbce39098031d1aaf3173b83c58418 with HTTP
+ id 6a9e781acfa3fca089627de7; Mon, 07 Sep 2026 08:38:50 GMT
+X-Mailgun-Sending-Ip: 204.220.184.8
+Sender: security@getgitguardian.com
+Date: Mon, 07 Sep 2026 08:38:50 +0000
+Mime-Version: 1.0
+Subject: [Noesis-Boss/jaknyfe-skills] NVIDIA API Key exposed on GitHub
+From: GitGuardian <security@getgitguardian.com>
+To: delowery@gmail.com
+X-Mailgun-Tag: prod_incident_landing_2
+X-Mailgun-Tag: NVIDIA
+X-Mailgun-Tag: nvidia_apikey
+X-Mailgun-Drop-Message: false
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: true
+X-Mailgun-Variables: {"template_name":"template_prm_v2","apikey_highlighted_url":"https://github.com/Noesis-Boss/jaknyfe-skills/commit/ad1d676daa44772c87355eeb3bdf9f9fdde3df3e#diff-0c843cfe1ef3ef27c38615b5b001fb536aca9c3b5d73d9a5cabc1ee3297c2a04L5","repo_name":"Noesis-Boss/jaknyfe-skills","escaped_repo_name":"Noesis-Boss%2Fjaknyfe-skills","repo_id":1266648938,"event_date_formatted":"September
+ 7th 2026, 08:32:33
+ UTC","escaped_leak_hash":"2wvdPAuB8PFgq4IeF1IIyJJ0ZQGETuzDymV4LJrlrKcO%2F6WNPfWOnzhC3qnKqU9b","detector_display_name":"NVIDIA
+ API
+ Key","escaped_email":"delowery%40gmail.com","alert_id":"14469bda0c849c3f23f407a12f1c7f50c3b239092ee94aa38e2b9a38ab8deb4d"}
+X-Mailgun-Template-Name: template_prm_v2
+X-Mailgun-Template-Version: prod_incident_landing_2
+Message-Id: <20260907083850.3a1d60ede04199f2@getgitguardian.com>
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/x=
+html1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"font-family: 'Helveti=
+ca Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; margin: 0">
+
+<head>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+">
+    <title>[Noesis-Boss/jaknyfe-skills] NVIDIA API Key exposed on GitHub</t=
+itle>
+    <style type=3D"text/css">
+        @media only screen and (max-width: 640px) {
+            body {
+                padding: 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body itemscope itemtype=3D"http://schema.org/EmailMessage"
+    style=3D"height:100%; width:100% !important; line-height:1.6em; font-fa=
+mily: 'Helvetica Neue',Helvetica,Arial,sans-serif; background-color:#f6f6f6=
+; box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-text=
+-size-adjust: none; width: 100% !important; margin: 0">
+    <table class=3D"body-wrap" style=3D"font-size:16px; width: 100%; backgr=
+ound-color: #f6f6f6; margin: 0"bgcolor=3D"#f6f6f6">
+        <tr style=3D"margin: 0">
+            <td style=3D"vertical-align: top; margin: 0" valign=3D"top"></t=
+d>
+            <td class=3D"container" width=3D"600"
+                style=3D"vertical-align: top; display: block !important; ma=
+x-width: 600px !important; clear: both !important; margin: 0 auto" valign=
+=3D"top">
+                <div class=3D"content" style=3D"max-width: 600px; display: =
+block; margin: 0 auto; padding: 25px">
+                    <table class=3D"main" width=3D"100%" cellpadding=3D"0" =
+cellspacing=3D"0" style=3D"border-radius: 5px; background-color: #fff; marg=
+in: 0" bgcolor=3D"#ffffff">
+                        <tr style=3D"margin: 0">
+                           =20
+                        </tr>
+                        <tr style=3D"margin: 0">
+                            <td style=3D"vertical-align: top; margin: 0; pa=
+dding: 15px 25px 20px 25px" valign=3D"top">
+                                <table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D"margin: 0">
+                                    <tr style=3D"margin: 0">
+                                        <td style=3D"vertical-align: top; m=
+argin: 0; padding: 0 0 20px" valign=3D"top">
+                                           <strong>GitGuardian has detected=
+ the following NVIDIA API Key exposed within your GitHub account.</strong>
+                                        </td>
+                                    </tr>
+                                    <tr style=3D"margin: 0">
+                                        <td style=3D"vertical-align: top; m=
+argin: 0; padding: 0 0 20px; font-size: 14px" valign=3D"top">
+                                            <p style=3D"margin:0"><strong>D=
+etails</strong></p>
+                                            <p style=3D"margin:0">- Secret =
+type: <a href=3D"https://github.com/Noesis-Boss/jaknyfe-skills/commit/ad1d6=
+76daa44772c87355eeb3bdf9f9fdde3df3e#diff-0c843cfe1ef3ef27c38615b5b001fb536a=
+ca9c3b5d73d9a5cabc1ee3297c2a04L5">NVIDIA API Key</a></p>
+                                            <p style=3D"margin:0">- Reposit=
+ory: Noesis-Boss/jaknyfe-skills</p>
+                                            <p style=3D"margin:0">- Pushed =
+date: September 7th 2026, 08:32:33 UTC</p>
+                                        </td>
+                                    </tr>
+                                    <tr style=3D"margin: 0">
+                                        <td style=3D"vertical-align: top; m=
+argin: 0; padding: 0 0 20px" valign=3D"top">
+                                        <a href=3D"https://dashboard.gitgua=
+rdian.com/api/v1/auth/user/github_login/authorize/?utm_source=3Dalerting&ut=
+m_medium=3Dnewdomainemail&utm_campaign=3DIncidentLanding&ca_github_repo_id=
+=3D1266648938&ca_leak_hash=3D2wvdPAuB8PFgq4IeF1IIyJJ0ZQGETuzDymV4LJrlrKcO%2=
+F6WNPfWOnzhC3qnKqU9b&ca_github_repo_name=3DNoesis-Boss%2Fjaknyfe-skills&ema=
+il=3Ddelowery%40gmail.com"
+                                                class=3D"btn-primary"
+                                                style=3D"font-size: 18px; c=
+olor: #FFF; text-decoration: none; line-height: 2em; font-weight: bold; cur=
+sor: pointer; display: inline-block; border-radius: 6px; text-transform: ca=
+pitalize; background-color: #0D6EF5; margin: 0; border-color: #0D6EF5; bord=
+er-style: solid; border-width: 10px 30px">Fix this secret leak</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table style=3D"width: 100%; color: #87888E; margin: 0;=
+ clear: both; margin: 0; padding: 0px 25px 10px 25px; border-radius: 0 0 5p=
+x 5px; line-height: 1em; background-color:#FFF;" bgcolor=3D"#FFF">
+                        <tr style=3D"margin: 0">
+                            <td style=3D"font-size: 14px">
+                                <p style=3D"margin-top:5px">Read our <a=20
+                                    href=3D"https://blog.gitguardian.com/le=
+aking-secrets-on-github-what-to-do/?utm_source=3Dalerting&utm_medium=3Demai=
+l&utm_campaign=3Dabv10AB"=20
+                                    style=3D"color: #87888E; text-decoratio=
+n: underline; margin: 0 ">guide</a> to remediate an exposed secret.</p>
+                                <p><a href=3D"https://www.gitguardian.com/f=
+aq" style=3D"color: #87888E; text-decoration: underline;">GitGuardian</a> i=
+s the code security platform for the DevOps generation, trusted by 300,000 =
+developers worldwide.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <table style=3D"width: 100%; color: #87888E; margin: 0;=
+ clear: both; margin: 0; padding: 10px; border-radius: 0 0 5px 5px; line-he=
+ight: 1em">
+                        <tr style=3D"margin: 0; padding: 20px">
+                            <td style=3D"font-size: 11px; vertical-align: t=
+op; text-align: center; margin: 0; padding:20px" align=3D"center" valign=3D=
+"top">
+                                <a href=3D"https://email.getgitguardian.com=
+/u/eJx0kk1r3DAQhn-NfVkS5BnZlg4-bJK6bBKSLc0H9GJG0sh21147tnbD5tcXh5KGQC8CvegV=
+8zwMdTyFqnVFImWmjSNhldQWPaCXIqcEfGJznwqLBlALDcxaEqFiMJpQkVGOjXQxje2OT1XT1k3=
+X1k1gVx2mrmhCGOcI1xGUEZR1G5qDObdDH0F5N_DczmcXwzxHUP6m3f7k-WzetV23BHbo-zZEUJ=
+JLXJZnjkjKPAerckxTZoPGee21d47ReeQI0LXeny0IaD0n7JE95BZVlqQmNUIk3qSYkSVt0aQuR=
+6cptWRswoygcwsk5G0au8JZMkLGjgPbMEyVa-exo1O1p56Lu6fN1Wa9Wm83qxs-xTxbGtlV3FPb=
+FY674ZWnUwSpFPUSLbwfjzqmXdXQ3BTwenTb9eFCbcv6RW64TDab0_W1-PXj-7eHw9vVqX-St9d=
+TN93Y-whSKLPnu61_vt-_NZf4sr95edTm49uJx-HvcJ-1pl_FxnzkfagcBa78MPUUArviJ4-Be8=
+PTKg_NCgRkEVyuhIpwjbAcuHp8uIybIsuEtsokQkk01hulcsUJKEKWKmGK22JpCy1yoVCl4hwpc=
+Zlgx0ImWnuIpKg51G2oDzS5lvbvdqZ_2j5Le6dathOyLJNKo4r_A_oVMxQRrOPA_dgtqO-Fj9s4=
+9dUR4mMBfwIAAP__Bp_6ZQ" style=3D"font-size: 11px; color: #87888E; text-deco=
+ration: underline; margin: 0">Unsubscribe</a> from these alerts.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+<br>
+<p><a href=3D"https://email.getgitguardian.com/u/eJx0kk1r3DAQhn-NfVkS5BnZlg=
+4-bJK6bBKSLc0H9GJG0sh21147tnbD5tcXh5KGQC8CvegV8zwMdTyFqnVFImWmjSNhldQWPaCXI=
+qcEfGJznwqLBlALDcxaEqFiMJpQkVGOjXQxje2OT1XT1k3X1k1gVx2mrmhCGOcI1xGUEZR1G5qD=
+ObdDH0F5N_DczmcXwzxHUP6m3f7k-WzetV23BHbo-zZEUJJLXJZnjkjKPAerckxTZoPGee21d47=
+ReeQI0LXeny0IaD0n7JE95BZVlqQmNUIk3qSYkSVt0aQuR6cptWRswoygcwsk5G0au8JZMkLGjg=
+PbMEyVa-exo1O1p56Lu6fN1Wa9Wm83qxs-xTxbGtlV3FPbFY674ZWnUwSpFPUSLbwfjzqmXdXQ3=
+BTwenTb9eFCbcv6RW64TDab0_W1-PXj-7eHw9vVqX-St9dTN93Y-whSKLPnu61_vt-_NZf4sr95=
+edTm49uJx-HvcJ-1pl_FxnzkfagcBa78MPUUArviJ4-Be8PTKg_NCgRkEVyuhIpwjbAcuHp8uIy=
+bIsuEtsokQkk01hulcsUJKEKWKmGK22JpCy1yoVCl4hwpcZlgx0ImWnuIpKg51G2oDzS5lvbvdq=
+Z_2j5Le6dathOyLJNKo4r_A_oVMxQRrOPA_dgtqO-Fj9s49dUR4mMBfwIAAP__Bp_6ZQ">unsub=
+scribe</a></p>
+<img width=3D"1" height=3D"1" alt=3D"" src=3D"https://email.getgitguardian.=
+com/o/eJx0ks1O9DYUhq8m2Yz45NhObC-yGKCpBhBMVX6kbqJjn-PEnfyReAYNV1-FIoqQurHkI=
+_uVn8cvdDTHOmCZSVkYi8CclsYJz4WXTEHGfeaUz5kTlgvDDCcyEkBo4taA0GA1kpWYwhQOdK7b=
+0LRdaNpIWB_nrmxjnJZEbBNeJbxqQmyP9pcb-4RX9yMtYbm4HJcl4dXfcBjOni6WQ-i6deDGvg8=
+x4RVghoUqEEBKpbjTSuQ5kRUWvfHGI5JALyjhAoP3FyuCcJ4y8oI8V07oIsttbhnLvM1FAQ6MEz=
+ZHJdBA7sC6jEhwoxwHJu_yFEt0YJlMkSK5OM41hmXq4FwP0FN5_7y73m032_1uc0vnlMpMaa0UE=
+4KltDiYCGvqIXQlUje-0XxOeC5Zs45W-K9DHcGhbmFpS_52wv32eKn3VfMqd1Rlu9355ob99cfv=
+vz0e36_P_bO8u5m7-dY9JDznVfFyv_cvD8N7eyVeh9vXJ2O_Ymeaxs-Xfnec_7Sc0omGWCNEqv0=
+49xAjYfknTZF6S_NGxXbDGS8SfrVhOhFbwddFbJ4er9K29GSFsJljzhNThpPJqLAyz8AVShtKQ7=
+neZoYppoXO2S8BGRaMkJjMjPE8kayh2ITYHGHGAMOHnfk_bd-lfVCtVeVFUUhthE7_B_QnZiyne=
+cQ6DC7gCtzBgGFoap7Gz79MYzmcAgao_-1xGqmfutXLR_rXbpr7-sTTU8n_CQAA___8rg8x"></=
+body>

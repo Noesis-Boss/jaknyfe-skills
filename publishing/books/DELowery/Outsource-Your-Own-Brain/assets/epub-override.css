@@ -1,0 +1,27 @@
+/* Override pandoc default: ragged-right is more readable on narrow e-reader screens.
+   Full justification causes uneven word spacing (rivers/gaps) on 6-7" displays. */
+body { text-align: left; }
+
+/* Center cover art on the first page.
+   Pandoc's generated cover.xhtml wraps the art in
+   <body id="cover"><div id="cover-image"><svg width=100% height=100% .../></div></body>.
+   With no height on the containers, readers collapse the SVG to the top-left. */
+html, body#cover {
+  height: 100%;
+}
+body#cover {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+body#cover #cover-image {
+  display: block;
+  height: 100%;
+  text-align: center;
+}
+body#cover #cover-image svg {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}

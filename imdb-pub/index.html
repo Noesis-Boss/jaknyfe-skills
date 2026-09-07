@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMDb Search: Animation, Family, G-Rated, 7.5-10</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #0f0f0f;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  .card:hover { transform: translateY(-4px); }
+  .poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    display: block;
+  }
+  .info {
+    padding: 12px;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #fff;
+    line-height: 1.3;
+  }
+  .meta {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 6px;
+  }
+  .rating {
+    display: inline-block;
+    background: #f5c518;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .desc {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.4;
+    margin-top: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #555;
+    font-size: 12px;
+  }
+  a { color: #4da6ff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Animation + Family + G-Rated</h1>
+<p class="subtitle">IMDb rating 7.5 – 10 • Sorted by Popularity • <a href="https://www.imdb.com/search/title/?user_rating=7.5,10&genres=animation,family&certificates=US:G">View on IMDb</a></p>
+
+<div class="grid">
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BZTIzZmViNjgtZjYyMy00ZTFkLWI3YTEtODNlYzdmZjBlNGY3XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Toy Story 4">
+    <div class="info">
+      <div class="title">Toy Story 4</div>
+      <div class="meta">2019 • 1h 40m • G</div>
+      <span class="rating">7.6</span>
+      <p class="desc">When Woody, Buzz, and the gang join Bonnie on a road trip with her new craft project turned toy, Forky, the innocent little spork's antics launch Woody on a wild quest.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMDEwOWFmMzItZTVkNi00ZjY4LWI4ZjYtYmYxYzc2Mjc5OTVjXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Toy Story">
+    <div class="info">
+      <div class="title">Toy Story</div>
+      <div class="meta">1995 • 1h 21m • G</div>
+      <span class="rating">8.3</span>
+      <p class="desc">A cowboy doll is profoundly jealous when a new spaceman action figure supplants him as the top toy in a boy's bedroom. When circumstances separate them from their owner, the duo have to put aside their differences to return to him.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTgxOTc3NDYzMl5BMl5BanBnXkFtZTcwNzQzMDk0Mw@@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Toy Story 3">
+    <div class="info">
+      <div class="title">Toy Story 3</div>
+      <div class="meta">2010 • 1h 43m • G</div>
+      <span class="rating">8.3</span>
+      <p class="desc">As Andy prepares to leave for college, Woody, Buzz and the gang face an uncertain future when a mix-up sends them to a daycare center full of new toys.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNGNiYWM5NzAtNjJjYS00NzQzLWI2YWYtN2M1Njg4MmFlOWZhXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Toy Story 2">
+    <div class="info">
+      <div class="title">Toy Story 2</div>
+      <div class="meta">1999 • 1h 32m • G</div>
+      <span class="rating">7.9</span>
+      <p class="desc">When Woody is stolen by a toy collector, Buzz and his friends set out on a rescue mission to save Woody before he becomes a museum toy property with his roundup gang Jessie, Prospector, and Bullseye.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNjIzNzE1ODg4NV5BMl5BanBnXkFtZTcwNjYxNDU2Mw@@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Ratatouille">
+    <div class="info">
+      <div class="title">Ratatouille</div>
+      <div class="meta">2007 • 1h 51m • G</div>
+      <span class="rating">8.1</span>
+      <p class="desc">A rat who can cook makes an unusual alliance with a young kitchen worker at a famous Paris restaurant.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNzM5NjU1MzYtYjU4MS00OWUwLTg0MTYtNzc5YjJhZGQyOTZhXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Finding Nemo">
+    <div class="info">
+      <div class="title">Finding Nemo</div>
+      <div class="meta">2003 • 1h 40m • G</div>
+      <span class="rating">8.2</span>
+      <p class="desc">After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTMxOTUyMTI5NF5BMl5BanBnXkFtZTcwOTM1OTk1OQ@@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Lion King">
+    <div class="info">
+      <div class="title">The Lion King</div>
+      <div class="meta">1994 • 1h 28m • G</div>
+      <span class="rating">8.5</span>
+      <p class="desc">Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTY3NjI0ODEtNmI1Zi00YzUzLWE0OGEtNmNiYjczYmJmMTkzXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="WALL·E">
+    <div class="info">
+      <div class="title">WALL·E</div>
+      <div class="meta">2008 • 1h 38m • G</div>
+      <span class="rating">8.4</span>
+      <p class="desc">In a future where humans have temporarily abandoned Earth, a trash-compacting robot falls in love with a flying droid and helps her on her quest to restore hope to mankind.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTg0MjE1NzItNTE4ZS00YjMyLThiMTItYzA1ZGYwYjJmYjQ3XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Monsters, Inc.">
+    <div class="info">
+      <div class="title">Monsters, Inc.</div>
+      <div class="meta">2001 • 1h 32m • G</div>
+      <span class="rating">8.1</span>
+      <p class="desc">Two monsters whose job is to make human children scream accidentally let a little girl into their world and must now protect her from their own kind to return her home unscathed.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BOWQwNGI1OWItYWYzYy00MmUwLWE1MTYtZjFjMjI2NTVlYzE2XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="My Neighbor Totoro">
+    <div class="info">
+      <div class="title">My Neighbor Totoro</div>
+      <div class="meta">1988 • 1h 26m • G</div>
+      <span class="rating">8.1</span>
+      <p class="desc">When two girls move to the country to be near their ailing mother, they have adventures with the wondrous forest spirits who live nearby.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTk1NzQ1OTc4NF5BMl5BanBnXkFtZTcwNzQwNDIzMw@@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Mulan">
+    <div class="info">
+      <div class="title">Mulan</div>
+      <div class="meta">1998 • 1h 27m • G</div>
+      <span class="rating">7.7</span>
+      <p class="desc">To save her father from death in the army, a young maiden secretly goes in his place and becomes one of China's greatest heroines in the process.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BN2M2YjM5MGMtNjkyMS00MmNlLWI4YzEtMjNiYTVhYjQwZTA3XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Beauty and the Beast">
+    <div class="info">
+      <div class="title">Beauty and the Beast</div>
+      <div class="meta">1991 • 1h 24m • G</div>
+      <span class="rating">8.0</span>
+      <p class="desc">A prince cursed to spend his days as a hideous monster sets out to regain his humanity by earning a young woman's love.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNDJhYWI4ZDgtMmFjZi00YjM4LTg2YjgtMTI0NzUxYzFiYTM3XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Aladdin">
+    <div class="info">
+      <div class="title">Aladdin</div>
+      <div class="meta">1992 • 1h 30m • G</div>
+      <span class="rating">8.0</span>
+      <p class="desc">A kind-hearted street urchin and a power-hungry Grand Vizier vie for a magic lamp that has the power to make their deepest wishes come true.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNjdkZGRhMWMtZGNmNy00OTAyLTlhODktYWFkZjRmN2UzMDY2XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Little Mermaid">
+    <div class="info">
+      <div class="title">The Little Mermaid</div>
+      <div class="meta">1989 • 1h 23m • G</div>
+      <span class="rating">7.6</span>
+      <p class="desc">A mermaid princess makes a Faustian bargain in an attempt to become human and win a prince's love.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BODFkOGY1ZjQtZTgxMC00NjBjLWI0YzItZGQwZjdlYjM3NjRhXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Kiki's Delivery Service">
+    <div class="info">
+      <div class="title">Kiki's Delivery Service</div>
+      <div class="meta">1989 • 1h 43m • G</div>
+      <span class="rating">7.8</span>
+      <p class="desc">Along with her black cat Jiji, Kiki settles in a seaside town and starts a high-flying delivery service. Here begins her magical encounter with independence and responsibility, making lifelong friends and finding her place in the world.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BYTAyOWZhZjgtZTI3My00MDNmLWIzNjYtYzRiYjM4OWFjNTVmXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Ponyo">
+    <div class="info">
+      <div class="title">Ponyo</div>
+      <div class="meta">2008 • 1h 41m • G</div>
+      <span class="rating">7.6</span>
+      <p class="desc">A five-year-old boy develops a relationship with Ponyo, a young goldfish princess who longs to become a human after falling in love with him.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNWQxYjJmZDItNjliOC00YjYzLWI0ZjYtZDdzMjM0YjQ0NTVmXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Snow White and the Seven Dwarfs">
+    <div class="info">
+      <div class="title">Snow White and the Seven Dwarfs</div>
+      <div class="meta">1937 • 1h 23m • Approved</div>
+      <span class="rating">7.6</span>
+      <p class="desc">Exiled into the dangerous forest by her wicked stepmother, a princess is rescued by seven dwarf miners who make her part of their household.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNTdjYjAxMGItNjg3MS00YWYwLWIzNjYtOWI4ZTQyMzUyYjdhXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Secret of NIMH">
+    <div class="info">
+      <div class="title">The Secret of NIMH</div>
+      <div class="meta">1982 • 1h 22m • G</div>
+      <span class="rating">7.5</span>
+      <p class="desc">To save her ill son, a field mouse must seek the aid of a colony of rats, with whom she has a deeper link than she suspected.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTQxNjUwMjQ5OF5BMl5BanBnXkFtZTcwNzQyNzUyMw@@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Robin Hood">
+    <div class="info">
+      <div class="title">Robin Hood</div>
+      <div class="meta">1973 • 1h 23m • G</div>
+      <span class="rating">7.5</span>
+      <p class="desc">The story of the legendary British outlaw portrayed with the characters as anthropomorphic animals.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNWJiYmE5NjYtNjJhNi00NmFhLWFhZjYtOGI4YjUyNDE0YjMzXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Jungle Book">
+    <div class="info">
+      <div class="title">The Jungle Book</div>
+      <div class="meta">1967 • 1h 18m • Approved</div>
+      <span class="rating">7.6</span>
+      <p class="desc">Bagheera the Panther and Baloo the Bear have a difficult time trying to convince a boy to leave the jungle for human civilization.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BZTIzZWYyMGItYmY1NC00YjMzLWEwN2MtNzYwNGU4ZWYyNjFjXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Secret World of Arrietty">
+    <div class="info">
+      <div class="title">The Secret World of Arrietty</div>
+      <div class="meta">2010 • 1h 34m • G</div>
+      <span class="rating">7.6</span>
+      <p class="desc">The Clock family consists of three four-inch-tall people who live incognito among humans, borrowing only what they need to survive. Their quiet life changes when their teenage daughter, Arrietty, is discovered.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTk2MjMyMDUtN2MzNi00YjMzLWI3OTgtNmUyZTY4NjUwYzUwXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Whisper of the Heart">
+    <div class="info">
+      <div class="title">Whisper of the Heart</div>
+      <div class="meta">1995 • 1h 51m • G</div>
+      <span class="rating">7.8</span>
+      <p class="desc">A love story between a girl who loves reading books and a boy who has previously checked out all of the library books she chooses.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BOTk5MzQ4OTYtN2M2Yi00YzgyLWJhYzQtNjFiYWYwOTczZTBmXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Fantasia">
+    <div class="info">
+      <div class="title">Fantasia</div>
+      <div class="meta">1940 • 2h 4m • G</div>
+      <span class="rating">7.7</span>
+      <p class="desc">A series of eight famous pieces of classical music, conducted by Leopold Stokowski and interpreted in animation by Walt Disney's team of artists.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTUwNzk2Mzk4Nl5BMl5BanBnXkFtZTcwNjQxNjk5Mw@@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Wallace & Gromit: The Curse of the Were-Rabbit">
+    <div class="info">
+      <div class="title">Wallace & Gromit: The Curse of the Were-Rabbit</div>
+      <div class="meta">2005 • 1h 25m • G</div>
+      <span class="rating">7.5</span>
+      <p class="desc">Wallace and his loyal dog, Gromit, set out to discover the mystery behind the garden sabotage that plagues their village and threatens the annual giant vegetable growing contest.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNDU4MjU1NTItNTYxMS00YWFiLWEzODEtYzFmNDNlODFhOWM4XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Scooby-Doo on Zombie Island">
+    <div class="info">
+      <div class="title">Scooby-Doo on Zombie Island</div>
+      <div class="meta">1998 • 1h 17m • G • Video</div>
+      <span class="rating">7.7</span>
+      <p class="desc">The Mystery Gang reunite and visit Moonscar Island, a remote island with a dark secret. Daphne wants more than just a villain in a costume, and they get more than they ever expected.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTM1MTQyMDE0NF5BMl5BanBnXkFtZTcwMTUyMTQyMw@@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Many Adventures of Winnie the Pooh">
+    <div class="info">
+      <div class="title">The Many Adventures of Winnie the Pooh</div>
+      <div class="meta">1977 • 1h 14m • G</div>
+      <span class="rating">7.5</span>
+      <p class="desc">In this collection of animated shorts based on the stories and characters by A.A. Milne, Winnie the Pooh, a honey-loving teddy bear, embarks on some eccentric adventures.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BZjhkOWUyYWUtMDE0OC00MjJkLWI3MzgtNmJlNzJhOGY0MGJmXkEyXkFqcGc@._V1_QL75_UY133_CR8,0,90,133_.jpg" alt="How the Grinch Stole Christmas!">
+    <div class="info">
+      <div class="title">How the Grinch Stole Christmas!</div>
+      <div class="meta">1966 • 26m • G • TV Movie</div>
+      <span class="rating">8.3</span>
+      <p class="desc">A grumpy hermit hatches a plan to steal Christmas from the Whos of Whoville.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTUwNzU4MjYtNjU2MS00YjY3LWE3ZWItNzFiYjYwNzliNjFmXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Rise of Kirmada">
+    <div class="info">
+      <div class="title">The Rise of Kirmada</div>
+      <div class="meta">2012 • 1h 8m • G • TV Movie</div>
+      <span class="rating">7.6</span>
+      <p class="desc">Bheem and young lord Krishna team up to protect the world against the wicked and powerful Kirmada and his equally dangerous bat army.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BZjMyMzU2OWItODkxNi00YjY1LWIyNzItOWNlZDAzZGIwMWMyXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Pinchcliffe Grand Prix">
+    <div class="info">
+      <div class="title">The Pinchcliffe Grand Prix</div>
+      <div class="meta">1975 • 1h 28m • G</div>
+      <span class="rating">8.5</span>
+      <p class="desc">Reodor Felgen decides that he will enter a car race to defeat his former friend who has stolen his plans for a car.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BZTIzZmViNjgtZjYyMy00ZTFkLWI3YTEtODNlYzdmZjBlNGY3XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Once Upon a Studio">
+    <div class="info">
+      <div class="title">Once Upon a Studio</div>
+      <div class="meta">2023 • 9m • G • Short</div>
+      <span class="rating">8.3</span>
+      <p class="desc">An all-star ensemble of beloved characters from Walt Disney Animation Studios come together for a joyful, entertaining and emotional reunion as they assemble for a spectacular group photo to mark Disney's 100th anniversary.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTgzNDAxNDg2Nl5BMl5BanBnXkFtZTcwNzMzNTIyNw@@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Tangled Ever After">
+    <div class="info">
+      <div class="title">Tangled Ever After</div>
+      <div class="meta">2012 • 6m • G • Short</div>
+      <span class="rating">7.5</span>
+      <p class="desc">Rapunzel and Flynn Rider have their wedding, but Pascal and Maximus must recover the rings they lose in mid-ceremony.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BZjhkOWUyYWUtMDE0OC00MjJkLWI3MzgtNmJlNzJhOGY0MGJmXkEyXkFqcGc@._V1_QL75_UY133_CR2,0,90,133_.jpg" alt="Peter and The Wolf">
+    <div class="info">
+      <div class="title">Peter and The Wolf</div>
+      <div class="meta">2006 • 32m • G • Short</div>
+      <span class="rating">7.5</span>
+      <p class="desc">An animated retelling set to Prokofiev's suite.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNjdkZGRhMWMtZGNmNy00OTAyLTlhODktYWFkZjRmN2UzMDY2XkEyXkFqcGc@._V1_QL75_UY133_CR2,0,90,133_.jpg" alt="Bao">
+    <div class="info">
+      <div class="title">Bao</div>
+      <div class="meta">2018 • 8m • G • Short</div>
+      <span class="rating">7.5</span>
+      <p class="desc">A Chinese-Canadian woman suffering from empty nest syndrome gets a second shot at motherhood when one of her handmade dumplings comes alive.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNDU1ZTYwNmYtNjM1Zi00NTlkLWI5ZmQtNjM2OWM0ZTMxYTFlXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Piper">
+    <div class="info">
+      <div class="title">Piper</div>
+      <div class="meta">2016 • 6m • G • Short</div>
+      <span class="rating">8.3</span>
+      <p class="desc">A hungry sandpiper hatchling ventures from her nest for the first time to dig for food by the shoreline. The problem is, the food is buried in the sand where scary waves roll up.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BODdhM2E1M2MtZDBiZi00YzUyLTk3MWItMzI1NzE4N2IxZTQzXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Geri's Game">
+    <div class="info">
+      <div class="title">Geri's Game</div>
+      <div class="meta">1997 • 5m • G • Short</div>
+      <span class="rating">7.8</span>
+      <p class="desc">Geri sets up a chess game to play his greatest opponent - himself.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNzdmYzM2YmMtMzcxMC00NWQ1LTliYjktOGEyN2UwMTFlZmE5XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="For the Birds">
+    <div class="info">
+      <div class="title">For the Birds</div>
+      <div class="meta">2000 • 3m • G • Short</div>
+      <span class="rating">7.9</span>
+      <p class="desc">A group of snooty birds roosting on a telephone wire get their just deserts when a goofy bird drops in.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BN2RlYTZkYWQtYTU1Mi00N2JhLTg5NDktNjZmZjVmNmU2NjQyXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Mickey's Christmas Carol">
+    <div class="info">
+      <div class="title">Mickey's Christmas Carol</div>
+      <div class="meta">1983 • 26m • G • Short</div>
+      <span class="rating">8.0</span>
+      <p class="desc">The classic Disney animated characters play the roles in this animated retelling of the Charles Dickens masterpiece.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BOTAzYmU0NzctZTQwOS00MjYwLWJkZjctMmFiMWJkMTA2MjY1XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Snowman">
+    <div class="info">
+      <div class="title">The Snowman</div>
+      <div class="meta">1982 • 26m • G • TV Short</div>
+      <span class="rating">8.2</span>
+      <p class="desc">On Christmas Eve, a young boy builds a snowman that comes to life and takes him to the North Pole to meet Father Christmas.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTM4ODg0MzM0MV5BMl5BanBnXkFtZTcwNDY2MTc3Nw@@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Paperman">
+    <div class="info">
+      <div class="title">Paperman</div>
+      <div class="meta">2012 • 7m • G • Short</div>
+      <span class="rating">8.2</span>
+      <p class="desc">An office worker meets the girl of his dreams and uses a fleet of paper airplanes to get her attention.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BZjk3MTlmZDgtMjA0ZS00MzUzLThjMDQtM2FjZTU2NjI4OTFkXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Feast">
+    <div class="info">
+      <div class="title">Feast</div>
+      <div class="meta">2014 • 6m • G • Short</div>
+      <span class="rating">8.1</span>
+      <p class="desc">The love life of a man as told through the meals he gives his adopted dog, Winston.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNDJhOGU2OGMtZDRmMS00ODllLWEyYjctYzIwNDBmZDBlYzM0XkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Burn-E">
+    <div class="info">
+      <div class="title">Burn-E</div>
+      <div class="meta">2008 • 8m • G • Video</div>
+      <span class="rating">7.5</span>
+      <p class="desc">If BURN-E (a welding robot) had known how much trouble he'd be caused by WALL-E's pursuit of EVE, then he'd have taken the day off.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNDBmYzhmOTItZDhiOS00M2MxLTk3ZWQtNjc4NDI0ZTAzNWVmXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="One Man Band">
+    <div class="info">
+      <div class="title">One Man Band</div>
+      <div class="meta">2005 • 4m • G • Short</div>
+      <span class="rating">7.6</span>
+      <p class="desc">Two buskers engage in a petty feud over a child's donation.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTc5NmVmMDMtY2VlZC00ZjIwLTg3ZTYtNDYzYmQxNTk0ODJlXkEyXkFqcGc@._V1_QL75_UX90_CR0,3,90,133_.jpg" alt="Winnie the Pooh and the Honey Tree">
+    <div class="info">
+      <div class="title">Winnie the Pooh and the Honey Tree</div>
+      <div class="meta">1966 • 25m • G • Short</div>
+      <span class="rating">8.0</span>
+      <p class="desc">Christopher Robin's bear attempts to raid a beehive in a tall tree.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BOGI5MjVhNDMtYWUyZi00YzhhLTk5NzUtZmUxNzdiOTk4ZjdjXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Partly Cloudy">
+    <div class="info">
+      <div class="title">Partly Cloudy</div>
+      <div class="meta">2009 • 6m • G • Short</div>
+      <span class="rating">8.0</span>
+      <p class="desc">Babies both human and beast are created up in the stratosphere, by the clouds themselves. One cloud specializes in "dangerous" babies, creating a challenge for his loyal stork that has to deliver them.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BYzVhMWQxMzUtNmE1OS00YzZlLWE4ZTgtMTg2YzFlZDNmZTgxXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Presto">
+    <div class="info">
+      <div class="title">Presto</div>
+      <div class="meta">2008 • 5m • G • Short</div>
+      <span class="rating">8.3</span>
+      <p class="desc">A stage magician's rabbit gets into a magical onstage brawl against his neglectful guardian with two magic hats.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTZkOGM0YWEtMzIxNi00NzdjLTljMDItOTgwMDU2OTU2NmVmXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Vincent">
+    <div class="info">
+      <div class="title">Vincent</div>
+      <div class="meta">1982 • 6m • G • Short</div>
+      <span class="rating">8.2</span>
+      <p class="desc">Young Vincent Malloy dreams of being just like Vincent Price and loses himself in macabre daydreams which annoys his mother.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTYyMTk1MjE3NF5BMl5BanBnXkFtZTgwMjkxMDgwMjE@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Day & Night">
+    <div class="info">
+      <div class="title">Day & Night</div>
+      <div class="meta">2010 • 6m • G • Short</div>
+      <span class="rating">8.0</span>
+      <p class="desc">Day encounters Night, a stranger of distinctly darker moods. But their suspicions soon turn to curiosity and they are delighted to find the joys of their budding friendship.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BODZlYWI0YTUtZWM4My00M2JkLWEzYmEtZjM0NTkxYjIxZmY1XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Winnie the Pooh and the Blustery Day">
+    <div class="info">
+      <div class="title">Winnie the Pooh and the Blustery Day</div>
+      <div class="meta">1968 • 25m • G • Short</div>
+      <span class="rating">7.9</span>
+      <p class="desc">Winnie the Pooh and his friends experience high winds, heavy rains, and a flood in Hundred Acre Wood.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNDQ0MWUzNTYtNzNhYi00NTMxLTlmODQtOWVlNWIzZjk3ZmZhXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="La Luna">
+    <div class="info">
+      <div class="title">La Luna</div>
+      <div class="meta">2011 • 7m • G • Short</div>
+      <span class="rating">7.8</span>
+      <p class="desc">A fable of a young boy coming of age in the most peculiar of circumstances. It's the first time his Papa and Grandpa are taking him to work. Will he be able to find his own way?</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMDE4OGQ2ZGUtYWIwZC00MWU4LTgzYzktNGE3NDc4OTM1YWU2XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Chip 'n' Dale's Rescue Rangers to the Rescue">
+    <div class="info">
+      <div class="title">Chip 'n' Dale's Rescue Rangers to the Rescue</div>
+      <div class="meta">1989 • 1h 25m • G • TV Movie</div>
+      <span class="rating">7.6</span>
+      <p class="desc">Chip and Dale, Disney's favorite chipmunk team, form their own protection agency for their fellow animals, where they seek to help the helpless and protect those in peril from those who would exploit them.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Showing 1–50 of 106 results • Data from <a href="https://www.imdb.com/search/title/?user_rating=7.5,10&genres=animation,family&certificates=US:G">IMDb</a></p>
+</div>
+
+</body>
+</html>

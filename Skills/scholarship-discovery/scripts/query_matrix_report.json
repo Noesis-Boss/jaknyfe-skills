@@ -1,0 +1,1732 @@
+{
+  "generated_at": "2026-09-04T03:39:43+0000",
+  "queries_run": 112,
+  "search_results": 351,
+  "query_empty": 16,
+  "skipped": {
+    "aggregator_installer": 35,
+    "already_in_db": 8
+  },
+  "landing_urls_crawled": 124,
+  "detail_candidates": 134513,
+  "verification": {
+    "candidates": 481,
+    "A": 0,
+    "B": 341,
+    "C": 140,
+    "reject": 0
+  },
+  "accepted": [
+    {
+      "name": "Women in Engineering Empowerment Scholarship",
+      "org": "tacunasystems.com",
+      "url": "https://tacunasystems.com/women-in-stem-empowerment-scholarship"
+    },
+    {
+      "name": "Federal Aid & Scholarships",
+      "org": "gafutures.org",
+      "url": "https://www.gafutures.org/federal-aid-scholarships"
+    },
+    {
+      "name": "Federal Pell Grant",
+      "org": "gafutures.org",
+      "url": "https://www.gafutures.org/federal-aid-scholarships/federal-student-grants/federal-pell-grant"
+    },
+    {
+      "name": "2026-2027 Award Amounts",
+      "org": "apps.gsfc.org",
+      "url": "https://apps.gsfc.org/SecureNextGen/dsp_award_amounts.cfm"
+    },
+    {
+      "name": "View Scholarships & Grants",
+      "org": "cornerstone.edu",
+      "url": "https://www.cornerstone.edu/tuition-financial-aid/apply-for-aid/scholarships-grants/undergraduate-scholarships"
+    },
+    {
+      "name": "Scholarship Search Use this tool to find eligible national and local scholarships.",
+      "org": "secure.gafutures.org",
+      "url": "https://secure.gafutures.org/scholarship-search"
+    },
+    {
+      "name": "Federal Student Grants",
+      "org": "gafutures.org",
+      "url": "https://www.gafutures.org/federal-aid-scholarships/federal-student-grants"
+    },
+    {
+      "name": "Next NC Scholarship Calculator",
+      "org": "cfnc.org",
+      "url": "https://www.cfnc.org/pay-for-college/scholarship-search/check-my-eligibility"
+    },
+    {
+      "name": "NC Need-Based Scholarship for Private Colleges and Universities",
+      "org": "cfnc.org",
+      "url": "https://www.cfnc.org/pay-for-college/apply-for-financial-aid/nc-need-based-scholarship-for-private-college-students"
+    },
+    {
+      "name": "Scholarship Search",
+      "org": "cfnc.org",
+      "url": "https://www.cfnc.org/pay-for-college/scholarship-search"
+    },
+    {
+      "name": "Scholarship Opportunities.Html",
+      "org": "bgsu.edu",
+      "url": "https://www.bgsu.edu/nontraditional-and-military-students/financial-aid-scholarships/scholarship-opportunities.html"
+    },
+    {
+      "name": "Scholarship overview",
+      "org": "bgsu.edu",
+      "url": "https://www.bgsu.edu/financial-aid/scholarships.html"
+    },
+    {
+      "name": "Financial Aid Scholarships.Html",
+      "org": "bgsu.edu",
+      "url": "https://www.bgsu.edu/nontraditional-and-military-students/financial-aid-scholarships.html"
+    },
+    {
+      "name": "Apply for aid and scholarships.",
+      "org": "bgsu.edu",
+      "url": "https://www.bgsu.edu/financial-aid/apply.html"
+    },
+    {
+      "name": "Next NC Scholarship",
+      "org": "cfnc.org",
+      "url": "https://www.cfnc.org/pay-for-college/next-nc-scholarship"
+    },
+    {
+      "name": "Writing a Scholarship Essay About Your Disability: What Works (and What Doesn't) Mar 27, 2026",
+      "org": "specialneeds.com",
+      "url": "https://www.specialneeds.com/articles/financial/scholarships/writing-a-scholarship-essay-about-your-disability-what-works-and-what-doesnt"
+    },
+    {
+      "name": "March 11, 2026 Scholarships for Students with Disabilities: The Complete Guide for 2026",
+      "org": "specialneeds.com",
+      "url": "https://www.specialneeds.com/articles/financial/scholarships/scholarships-for-students-with-disabilities-the-complete-guide-for-2026"
+    },
+    {
+      "name": "Wellness Coach Scholarship Program",
+      "org": "hcai.ca.gov",
+      "url": "https://hcai.ca.gov/workforce/initiatives/cwc/becoming-and-serving-as-cwc"
+    },
+    {
+      "name": "Allied Healthcare Scholarship Program",
+      "org": "hcai.ca.gov",
+      "url": "https://hcai.ca.gov/workforce/financial-assistance/scholarships/ahsp"
+    },
+    {
+      "name": "Advanced Practice Healthcare Scholarship Program",
+      "org": "hcai.ca.gov",
+      "url": "https://hcai.ca.gov/workforce/financial-assistance/scholarships/aphsp"
+    },
+    {
+      "name": "Associate Degree Nursing Scholarship Program",
+      "org": "hcai.ca.gov",
+      "url": "https://hcai.ca.gov/workforce/financial-assistance/scholarships/adnsp"
+    },
+    {
+      "name": "NC Assist No Essay Scholarship Giveaway",
+      "org": "ncassist.org",
+      "url": "https://www.ncassist.org/nc-assist-no-essay-scholarship-giveaway"
+    },
+    {
+      "name": "Alabama Advantage Scholarship",
+      "org": "afford.ua.edu",
+      "url": "https://afford.ua.edu/alabama-advantage"
+    },
+    {
+      "name": "UA Sworn Officer Scholarship Program",
+      "org": "afford.ua.edu",
+      "url": "https://afford.ua.edu/scholarships/sworn-officer"
+    },
+    {
+      "name": "Scholarship/Aid Timeline",
+      "org": "afford.ua.edu",
+      "url": "https://afford.ua.edu/timeline"
+    },
+    {
+      "name": "Out-of-State and International Freshman Scholarship",
+      "org": "afford.ua.edu",
+      "url": "https://afford.ua.edu/scholarships/oos-international-freshman"
+    },
+    {
+      "name": "Baccalaureate Scholarship newsletter",
+      "org": "createsend.com",
+      "url": "https://createsend.com/t/y-1770B6F75F1572C92540EF23F30FEDED"
+    },
+    {
+      "name": "Current Student Scholarship",
+      "org": "afford.ua.edu",
+      "url": "https://afford.ua.edu/current"
+    },
+    {
+      "name": "Career & Technical Scholarship newsletter",
+      "org": "createsend.com",
+      "url": "https://createsend.com/t/y-567C16B7AA4E1D1F2540EF23F30FEDED"
+    },
+    {
+      "name": "Alabama College Counts Scholarship",
+      "org": "treasury.alabama.gov",
+      "url": "https://treasury.alabama.gov/collegecounts-scholarship"
+    },
+    {
+      "name": "Step 2: Complete Scholarships in ASAM",
+      "org": "afford.ua.edu",
+      "url": "https://afford.ua.edu/scholarships/how-to-apply-for-scholarships"
+    },
+    {
+      "name": "Scholarship Essentials",
+      "org": "colorado.edu",
+      "url": "https://www.colorado.edu/scholarships/scholarship-essentials"
+    },
+    {
+      "name": "Cuboulder Scholarship App",
+      "org": "colorado.edu",
+      "url": "https://www.colorado.edu/scholarships/cuboulder-scholarship-app"
+    },
+    {
+      "name": "Office of External Scholarships and Fellowships",
+      "org": "honors.ua.edu",
+      "url": "https://honors.ua.edu/experience/office-of-external-scholarships-and-fellowships"
+    },
+    {
+      "name": "CU Boulder Faculty/Staff Dependent Scholarship Opportunities",
+      "org": "colorado.edu",
+      "url": "https://www.colorado.edu/scholarships/cu-boulder-scholarships/facultystaff-dependent-scholarships"
+    },
+    {
+      "name": "How Scholarships Work",
+      "org": "colorado.edu",
+      "url": "https://www.colorado.edu/scholarships/prospective-first-year-students"
+    },
+    {
+      "name": "School/College-specific scholarships",
+      "org": "colorado.edu",
+      "url": "https://www.colorado.edu/scholarships/cu-boulder-scholarships/schools-colleges-scholarships"
+    },
+    {
+      "name": "First Generation Scholarship",
+      "org": "colorado.edu",
+      "url": "https://www.colorado.edu/scholarships/first-generation"
+    },
+    {
+      "name": "Next Scholarship",
+      "org": "scholarshipbuddymichigan.com",
+      "url": "https://scholarshipbuddymichigan.com/scholarships/130351/michigan-elks-gold-key-scholarship"
+    },
+    {
+      "name": "No Essay Scholarship by Sallie",
+      "org": "scholarshipbuddymichigan.com",
+      "url": "https://scholarshipbuddymichigan.com/scholarships/117357/no-essay-scholarship-by-sallie"
+    },
+    {
+      "name": "Owl Scholarship",
+      "org": "scholarshipbuddymichigan.com",
+      "url": "https://scholarshipbuddymichigan.com/scholarships/117530/owl-scholarship"
+    },
+    {
+      "name": "Be Bold Scholarship",
+      "org": "scholarshipbuddymichigan.com",
+      "url": "https://scholarshipbuddymichigan.com/scholarships/114902/be-bold-scholarship"
+    },
+    {
+      "name": "Scholarships360 \"No Essay\" Scholarship",
+      "org": "scholarshipbuddymichigan.com",
+      "url": "https://scholarshipbuddymichigan.com/scholarships/129017/scholarships360-no-essay-scholarship"
+    },
+    {
+      "name": "CollegeXpress Autumn Award",
+      "org": "scholarshipbuddymichigan.com",
+      "url": "https://scholarshipbuddymichigan.com/scholarships/116771/collegexpress-autumn-award"
+    },
+    {
+      "name": "Karen Raforth Scholarship",
+      "org": "colorado.academicworks.com",
+      "url": "https://colorado.academicworks.com/opportunities/12242"
+    },
+    {
+      "name": "Medi-Cal Behavioral Health Scholarship Program",
+      "org": "hcai.ca.gov",
+      "url": "https://hcai.ca.gov/workforce/initiatives/behavioral-health-bh-connect/mbhsp"
+    },
+    {
+      "name": "College Scholarships (Overview)",
+      "org": "financialaidfinder.com",
+      "url": "https://www.financialaidfinder.com/scholarships/introduction"
+    },
+    {
+      "name": "College Scholarship Applications",
+      "org": "financialaidfinder.com",
+      "url": "https://www.financialaidfinder.com/scholarships/the-application-process"
+    },
+    {
+      "name": "College Scholarship Essay Writing Tips",
+      "org": "financialaidfinder.com",
+      "url": "https://www.financialaidfinder.com/scholarships/college-scholarship-essays"
+    },
+    {
+      "name": "Free College Scholarship Searches",
+      "org": "financialaidfinder.com",
+      "url": "https://www.financialaidfinder.com/scholarships/find-a-scholarship"
+    },
+    {
+      "name": "College Scholarships.org:",
+      "org": "collegescholarships.org",
+      "url": "http://www.collegescholarships.org/financial-aid"
+    },
+    {
+      "name": "Lipsky/Whittaker Scholarship Fund",
+      "org": "youthprideri.org",
+      "url": "https://www.youthprideri.org/applications-open-for-the-2021-lipsky-whittaker-scholarship-fund"
+    },
+    {
+      "name": "Find a Scholarship",
+      "org": "financialaidfinder.com",
+      "url": "https://www.financialaidfinder.com/student-scholarship-search"
+    },
+    {
+      "name": "Student Scholarships by College Major",
+      "org": "financialaidfinder.com",
+      "url": "https://www.financialaidfinder.com/student-scholarship-search/student-scholarships-college-major"
+    },
+    {
+      "name": "LGBTQ Studies Minor Scholarship",
+      "org": "lgbtq.studentaffairs.miami.edu",
+      "url": "https://lgbtq.studentaffairs.miami.edu/resources/scholarships/index.html"
+    },
+    {
+      "name": "Scholarship Sites",
+      "org": "financialaid.wwu.edu",
+      "url": "https://financialaid.wwu.edu/scholarships/scholarship-sites"
+    },
+    {
+      "name": "Scholarship Scams",
+      "org": "financialaid.wwu.edu",
+      "url": "https://financialaid.wwu.edu/scholarships/scholarship-scams"
+    },
+    {
+      "name": "GSBA Scholarship Fund",
+      "org": "thegsba.org",
+      "url": "https://www.thegsba.org/scholarship-home/become-a-scholar"
+    },
+    {
+      "name": "WWU Scholarship FAQs help",
+      "org": "financialaid.wwu.edu",
+      "url": "https://financialaid.wwu.edu/Scholarship-FAQ"
+    },
+    {
+      "name": "Graduate Scholarship",
+      "org": "waopportunityscholarship.org",
+      "url": "https://waopportunityscholarship.org/applicants/grd"
+    },
+    {
+      "name": "Baccalaureate Scholarship",
+      "org": "waopportunityscholarship.org",
+      "url": "https://waopportunityscholarship.org/applicants/baccalaureate"
+    },
+    {
+      "name": "Choose the right scholarship",
+      "org": "waopportunityscholarship.org",
+      "url": "https://waopportunityscholarship.org/applicants/apply-for-a-scholarship"
+    },
+    {
+      "name": "Career & Technical Scholarship",
+      "org": "waopportunityscholarship.org",
+      "url": "https://waopportunityscholarship.org/applicants/career-technical"
+    },
+    {
+      "name": "Award Increase Request.",
+      "org": "waopportunityscholarship.org",
+      "url": "https://waopportunityscholarship.org/current-scholars/baccaluareate/award-increase-request"
+    },
+    {
+      "name": "Scholarship funding details & deadlines",
+      "org": "waopportunityscholarship.org",
+      "url": "https://waopportunityscholarship.org/current-scholars/baccaluareate"
+    },
+    {
+      "name": "Audria M. Edwards Scholarship",
+      "org": "financialaid.wwu.edu",
+      "url": "https://financialaid.wwu.edu/scholarships/audria-m-edwards-scholarship"
+    },
+    {
+      "name": "HRC Scholarship Database",
+      "org": "financialaid.wwu.edu",
+      "url": "https://financialaid.wwu.edu/scholarships/hrc-scholarship-database"
+    },
+    {
+      "name": "Leroy F. Aarons Scholarship",
+      "org": "financialaid.wwu.edu",
+      "url": "https://financialaid.wwu.edu/scholarships/leroy-f-aarons-scholarship"
+    },
+    {
+      "name": "LGBTQ+ Scholarships",
+      "org": "uis.edu",
+      "url": "https://www.uis.edu/gsss/lgbtq-scholarships"
+    },
+    {
+      "name": "FinAid's Scholarship Scam Alert",
+      "org": "finaid.org",
+      "url": "https://finaid.org/scholarships/scams"
+    },
+    {
+      "name": "scholarship notification form",
+      "org": "finaid.wwu.edu",
+      "url": "https://www.finaid.wwu.edu/scholarships/pages/private-scholarships/scholarship-notification.php"
+    },
+    {
+      "name": "Support Allen College Through a Scholarship or Donation",
+      "org": "unitypoint.org",
+      "url": "https://www.unitypoint.org/giving/allen-foundation"
+    },
+    {
+      "name": "AsACC Scholarships & AMP Awards",
+      "org": "asacc.uconn.edu",
+      "url": "https://asacc.uconn.edu/about-us/asacc-scholarships-amp-awards"
+    },
+    {
+      "name": "100%Free, Personalized Results | Step 1 Scholarship Search",
+      "org": "step1scholarships.org",
+      "url": "https://www.step1scholarships.org/?utm_source=ia_fao&utm_medium=email"
+    },
+    {
+      "name": "Asian and Pacific Islander Queer Women and Transgender Community (APIQWTC) Scholarship",
+      "org": "apiqwtc.org",
+      "url": "https://apiqwtc.org/resources/apiqwtc-scholarship"
+    },
+    {
+      "name": "DAISY Award for Nursing Faculty",
+      "org": "allencollege.edu",
+      "url": "https://www.allencollege.edu/about-us/leaders-faculty-staff-board/daisy-award-for-nursing-faculty"
+    },
+    {
+      "name": "Science Undergraduate Research Presentation Awards",
+      "org": "cos.unt.edu",
+      "url": "https://cos.unt.edu/scholarships/science-undergraduate-research-presentation-awards.html"
+    },
+    {
+      "name": "Graduate Student Travel Award",
+      "org": "cos.unt.edu",
+      "url": "https://cos.unt.edu/scholarships/graduate-student-travel-award.html"
+    },
+    {
+      "name": "Dr. Jerome L. Duggan Memorial Scholarship",
+      "org": "cos.unt.edu",
+      "url": "https://cos.unt.edu/scholarships/college-level-scholarships/dr-jerome-l-duggan-memorial-scholarship.html"
+    },
+    {
+      "name": "Kay Longcope Scholarship Award",
+      "org": "nlgja.org",
+      "url": "https://www.nlgja.org/resources/longcope"
+    },
+    {
+      "name": "Conway/Proetz Scholarship in Art",
+      "org": "admissions.washu.edu",
+      "url": "https://admissions.washu.edu/conway-proetz-scholarship-in-art"
+    },
+    {
+      "name": "Dr. Thomas F. Frist, Jr. Scholarship",
+      "org": "admissions.washu.edu",
+      "url": "https://admissions.washu.edu/frist-scholarship"
+    },
+    {
+      "name": "James W. Fitzgibbon Scholarship in Architecture",
+      "org": "admissions.washu.edu",
+      "url": "https://admissions.washu.edu/james-w-fitzgibbon-scholarship-in-architecture"
+    },
+    {
+      "name": "Alexander S. Langsdorf Fellowships",
+      "org": "admissions.washu.edu",
+      "url": "https://admissions.washu.edu/alexander-s-langsdorf-fellowships"
+    },
+    {
+      "name": "Other Scholarship Opportunities",
+      "org": "cfncw.org",
+      "url": "https://cfncw.org/other-scholarship-opportunities"
+    },
+    {
+      "name": "Student Financial Aid & Scholarships' Work Study",
+      "org": "essc.unt.edu",
+      "url": "http://essc.unt.edu/finaid/workstudy.htm"
+    },
+    {
+      "name": "Current Scholarship Volunteers",
+      "org": "cfncw.org",
+      "url": "https://cfncw.org/scholarship-volunteers"
+    },
+    {
+      "name": "Receive Updates on Scholarship News & Deadlines (opens in new tab)",
+      "org": "cfncw.org",
+      "url": "https://cfncw.org/subscribe"
+    },
+    {
+      "name": "HOPE Scholarship",
+      "org": "cfncw.org",
+      "url": "https://cfncw.org/hope-scholarship"
+    },
+    {
+      "name": "Open a Scholarship Fund",
+      "org": "cfncw.org",
+      "url": "https://cfncw.org/establishafund"
+    },
+    {
+      "name": "Natalie Kuehler of Methow Valley Honored with Robert L. White Award for Excellence in Community Philanthropy",
+      "org": "cfncw.org",
+      "url": "https://cfncw.org/2026/05/18/robert-l-white-2026-awardee"
+    },
+    {
+      "name": "60 Scholarships for Native Hawaiian Students - Scholaroo",
+      "org": "scholaroo.nationaltoday.com",
+      "url": "https://scholaroo.nationaltoday.com/native-hawaiian-scholarships"
+    },
+    {
+      "name": "Previous University-Specific Scholarships in Laurel, Maryland 2026",
+      "org": "discris.com",
+      "url": "https://www.discris.com/university-specific-scholarships-in-laurel-maryland-2026"
+    },
+    {
+      "name": "Nursing Scholarships 2026\u20132027: 30+ Scholarships for Nursing Students",
+      "org": "discris.com",
+      "url": "https://www.discris.com/nursing-scholarships"
+    },
+    {
+      "name": "Australia Global Excellence Scholarship 2026 in Australia (Fully Funded)",
+      "org": "discris.com",
+      "url": "https://www.discris.com/australia-global-excellence-scholarship-2026"
+    },
+    {
+      "name": "Scholarship Prep Programs in the USA 2026: The Hidden System Behind University Admissions",
+      "org": "discris.com",
+      "url": "https://www.discris.com/fully-funded-scholarships-2026"
+    },
+    {
+      "name": "Grant & Fellowship Database",
+      "org": "collegewhale.com",
+      "url": "https://collegewhale.com/college-grant-search"
+    },
+    {
+      "name": "Scholarships for High School Seniors",
+      "org": "scholarshipinstitute.org",
+      "url": "https://scholarshipinstitute.org/scholarships/high-school-seniors"
+    },
+    {
+      "name": "Scholarships for Black Students",
+      "org": "scholarshipinstitute.org",
+      "url": "https://scholarshipinstitute.org/scholarships/black-students"
+    },
+    {
+      "name": "Maryland State Scholarships 2026: Top Opportunities for Laurel Students",
+      "org": "discris.com",
+      "url": "https://www.discris.com/maryland-state-scholarships-2026"
+    },
+    {
+      "name": "Scholarship Institute Editorial Team",
+      "org": "scholarshipinstitute.org",
+      "url": "https://scholarshipinstitute.org/author/dutch"
+    },
+    {
+      "name": "scholarships for athletes",
+      "org": "scholarshipinstitute.org",
+      "url": "https://scholarshipinstitute.org/scholarships-for-athletes"
+    },
+    {
+      "name": "Indiana Commission for Higher Education - Next Generation Hoosier Educators Scholarship",
+      "org": "in.gov",
+      "url": "https://www.in.gov/che/state-financial-aid/state-financial-aid-by-program/next-generation-hoosier-educators-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "HMSA Kaimana Awards and Scholarship Program",
+      "org": "hmsa.com",
+      "url": "https://hmsa.com/awards-and-scholarships/hmsa-kaimana-awards-and-scholarship-program"
+    },
+    {
+      "name": "Scholarship Reviews",
+      "org": "scholarshipinstitute.org",
+      "url": "https://scholarshipinstitute.org/scholarship-reviews"
+    },
+    {
+      "name": "Previous Previous Top Scholarships for Left-Handed Students",
+      "org": "scholarshipinstitute.org",
+      "url": "https://scholarshipinstitute.org/top-scholarships-for-left-handed-students-v3"
+    },
+    {
+      "name": "IRS scholarship guidelines",
+      "org": "irs.gov",
+      "url": "https://www.irs.gov/individuals/international-taxpayers/withholding-federal-income-tax-on-scholarships-fellowships-and-grants-paid-to-aliens"
+    },
+    {
+      "name": "William James College Mental Health Scholarship",
+      "org": "williamjames.edu",
+      "url": "https://www.williamjames.edu/admissions/scholarships/serving-the-mental-health-needs-of-the-underserved-scholarship.html"
+    },
+    {
+      "name": "Indiana Commission for Higher Education - Mitch Daniels Early Graduation Scholarship",
+      "org": "in.gov",
+      "url": "https://www.in.gov/che/state-financial-aid/state-financial-aid-by-program/mitch-daniels-early-graduation-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Scholarships by Category",
+      "org": "collegewhale.com",
+      "url": "https://collegewhale.com/scholarships-by-category-find-awards-by-major-state-and-more"
+    },
+    {
+      "name": "Behavioral Health Workforce Scholarship",
+      "org": "mass.edu",
+      "url": "https://www.mass.edu/osfa/programs/behavhealthscholarship.asp"
+    },
+    {
+      "name": "Banyan Scholarship",
+      "org": "gradfellowships.gwu.edu",
+      "url": "https://gradfellowships.gwu.edu/banyan-scholarship-clinical-education-and-healthcare-professions"
+    },
+    {
+      "name": "Dr Pepper Scholarship 2026 \u2013 Easy Application & Winning Tips",
+      "org": "discris.com",
+      "url": "https://www.discris.com/dr-pepper-scholarship-2026"
+    },
+    {
+      "name": "St. Ambrose Athletic Scholarships",
+      "org": "sau.edu",
+      "url": "https://sau.edu/tuition-financial-aid/scholarships/athletic-scholarship"
+    },
+    {
+      "name": "St. John\u2019s University Catholic Scholarships:",
+      "org": "stjohns.edu",
+      "url": "https://www.stjohns.edu/admission/scholarships/catholic-scholarships"
+    },
+    {
+      "name": "Hesburgh-Yusko Scholarship",
+      "org": "hesburgh-yusko.nd.edu",
+      "url": "https://hesburgh-yusko.nd.edu/scholars"
+    },
+    {
+      "name": "1 Scholarship FastFind\u2122 - Alaska Scholarship & Grants",
+      "org": "collegewhale.com",
+      "url": "https://collegewhale.com/alaska"
+    },
+    {
+      "name": "Lockheed Martin STEM Scholarship",
+      "org": "lockheedmartin.com",
+      "url": "https://www.lockheedmartin.com/en-us/who-we-are/communities/stem-education/lm-scholarship-program.html"
+    },
+    {
+      "name": "Lilly Endowment Community Scholarship",
+      "org": "lillyendowment.org",
+      "url": "https://lillyendowment.org/for-grantseekers/lilly-endowment-community-scholarship-program"
+    },
+    {
+      "name": "Race to Inspire Scholarship",
+      "org": "raceentry.com",
+      "url": "https://www.raceentry.com/race-to-inspire-scholarship"
+    },
+    {
+      "name": "Indian Health Service Scholarship Program",
+      "org": "collegewhale.com",
+      "url": "https://collegewhale.com/indian-health-service-scholarship-program"
+    },
+    {
+      "name": "GE-Reagan Foundation Scholarship",
+      "org": "reaganfoundation.org",
+      "url": "https://www.reaganfoundation.org/education/scholarship-programs/ge-reagan-foundation-scholarship-program"
+    },
+    {
+      "name": "APIA Scholars Scholarship",
+      "org": "apiascholars.org",
+      "url": "https://apiascholars.org/scholarship/apia-scholarship"
+    },
+    {
+      "name": "Next Generation Hoosier Educators Scholarship",
+      "org": "in.gov",
+      "url": "https://www.in.gov/che/state-financial-aid/state-financial-aid-by-program/next-generation-hoosier-educators-scholarship"
+    },
+    {
+      "name": "JKC College Scholarship Program",
+      "org": "jkcf.org",
+      "url": "https://www.jkcf.org/our-scholarships/college-scholarship-program"
+    },
+    {
+      "name": "Trustees Scholarship",
+      "org": "admissions.purdue.edu",
+      "url": "https://admissions.purdue.edu/costsandfinaid/freshman.php"
+    },
+    {
+      "name": "Wanda Munn Scholarship",
+      "org": "collegewhale.com",
+      "url": "https://collegewhale.com/wanda-munn-scholarship"
+    },
+    {
+      "name": "Return2College Scholarship",
+      "org": "return2college.com",
+      "url": "https://www.return2college.com/awardprogram.cfm"
+    },
+    {
+      "name": "Esperanza Scholarship",
+      "org": "esperanzainc.org",
+      "url": "https://esperanzainc.org/esperanza-scholarship-overview"
+    },
+    {
+      "name": "Alaska Sea Grant State Fellowship",
+      "org": "collegewhale.com",
+      "url": "https://collegewhale.com/alaska-sea-grant-state-fellowship"
+    },
+    {
+      "name": "Osher Reentry Scholarship \u2013 CSU Chico",
+      "org": "rce.csuchico.edu",
+      "url": "https://rce.csuchico.edu/reentry-scholarships"
+    },
+    {
+      "name": "National Career & Technical Scholarship",
+      "org": "horatioalger.org",
+      "url": "https://horatioalger.org/career-technical-education-scholarships"
+    },
+    {
+      "name": "AGC Education & Research Foundation Scholarships",
+      "org": "agc.org",
+      "url": "https://www.agc.org/learn/education-and-research-foundation/scholarship-program"
+    },
+    {
+      "name": "College JumpStart Scholarship",
+      "org": "jumpstart-scholarship.net",
+      "url": "https://www.jumpstart-scholarship.net/application-us"
+    },
+    {
+      "name": "James W. McLamore Whopper Scholarship",
+      "org": "burgerkingfoundation.org",
+      "url": "https://www.burgerkingfoundation.org/programs/burger-king-sm-scholars"
+    },
+    {
+      "name": "Reagan Foundation GE Scholarship Page",
+      "org": "reaganfoundation.org",
+      "url": "https://www.reaganfoundation.org/education/ge-reagan-foundation-scholarship"
+    },
+    {
+      "name": "Springfield Foundation \u2013 Non-Traditional Student Scholarship",
+      "org": "springfieldfoundation.org",
+      "url": "https://www.springfieldfoundation.org/scholarships/applyforascholarship.html"
+    },
+    {
+      "name": "Phillips Scholarship Fund",
+      "org": "phillips-scholarship.org",
+      "url": "https://phillips-scholarship.org/apply/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Taco Bell Live M\u00e1s Scholarship",
+      "org": "tacobellfoundation.org",
+      "url": "https://www.tacobellfoundation.org/our-scholarships/live-mas-scholarship"
+    },
+    {
+      "name": "Jackie Robinson Foundation Scholarship",
+      "org": "jackierobinson.org",
+      "url": "https://jackierobinson.org/apply"
+    },
+    {
+      "name": "Soroptimist Live Your Dream Awards",
+      "org": "soroptimist.org",
+      "url": "https://www.soroptimist.org/our-work/live-your-dream-awards/apply-for-the-live-your-dream-awards.html"
+    },
+    {
+      "name": "Boundless Opportunity Scholarship",
+      "org": "msudenver.academicworks.com",
+      "url": "https://msudenver.academicworks.com/opportunities/8315"
+    },
+    {
+      "name": "Elks Most Valuable Student Scholarship",
+      "org": "elks.org",
+      "url": "https://www.elks.org/scholars/scholarships/mvs.cfm"
+    },
+    {
+      "name": "John and Abigail Adams Scholarship",
+      "org": "mass.edu",
+      "url": "https://www.mass.edu/osfa/programs/adams.asp"
+    },
+    {
+      "name": "LIFE Scholarship",
+      "org": "che.sc.gov",
+      "url": "https://www.che.sc.gov/students-families-and-military/scholarships-and-grants-sc-residents"
+    },
+    {
+      "name": "Fisher House \u2014 Scholarships for Military Children",
+      "org": "fisherhouse.org",
+      "url": "https://www.fisherhouse.org/programs/scholarship-programs/scholarships-for-military-children/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Prochnow Foundation Scholarship",
+      "org": "prochnowfoundation.org",
+      "url": "https://www.prochnowfoundation.org/scholarship-program"
+    },
+    {
+      "name": "Lurleen B. Wallace Community College \u2013 Non-Traditional Scholarships",
+      "org": "lbwcc.edu",
+      "url": "https://www.lbwcc.edu/future-students/scholarships/non-traditional-scholarships"
+    },
+    {
+      "name": "AFCEA \u2014 War Veterans Scholarships",
+      "org": "afcea.org",
+      "url": "https://www.afcea.org/war-veterans"
+    },
+    {
+      "name": "Davidson Fellows Scholarship",
+      "org": "davidsongifted.org",
+      "url": "https://www.davidsongifted.org/gifted-programs/fellows-scholarship"
+    },
+    {
+      "name": "VA \u2014 Rogers STEM Scholarship",
+      "org": "va.gov",
+      "url": "https://www.va.gov/education/other-va-education-benefits/stem-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "VFW \u2014 Scholarships",
+      "org": "vfw.org",
+      "url": "https://www.vfw.org/community/youth-and-education/youth-scholarships"
+    },
+    {
+      "name": "mpowerfinancing.com/scholarships",
+      "org": "mpowerfinancing.com",
+      "url": "https://www.mpowerfinancing.com/scholarships/women-in-stem"
+    },
+    {
+      "name": "NCAAWA Scholarship",
+      "org": "ncaawa.org",
+      "url": "https://www.ncaawa.org/scholarships/ncaawa-scholarship?utm_source=chatgpt.com"
+    },
+    {
+      "name": "National Medical Fellowships Scholarships and Awards",
+      "org": "nmfonline.org",
+      "url": "https://nmfonline.org/scholarships-programs/scholarships-and-awards/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Marine Corps Scholarship Foundation",
+      "org": "mcsf.org",
+      "url": "https://www.mcsf.org/apply/eligibility"
+    },
+    {
+      "name": "American Indian Medical Scholarship",
+      "org": "nscda.org",
+      "url": "https://nscda.org/grants-scholarships-awards/american-indian-medical-scholarship"
+    },
+    {
+      "name": "SAA Scholarships and Grants",
+      "org": "saa.org",
+      "url": "https://saa.org/Member/SAAMember/Career-and-Practice/Scholarships-and-Grants.aspx"
+    },
+    {
+      "name": "Wi\u2019\u00e1a\u015fal Future Leaders Scholarship",
+      "org": "collegefund.org",
+      "url": "https://collegefund.org/students/wiaasal-great-oak-future-leaders-pechanga-scholarship-fund"
+    },
+    {
+      "name": "Udall Undergraduate Scholarship",
+      "org": "udall.gov",
+      "url": "https://www.udall.gov/ourprograms/scholarship/apply.aspx"
+    },
+    {
+      "name": "AER Mrs. Patty Shinseki Spouse Scholarship",
+      "org": "armyemergencyrelief.org",
+      "url": "https://www.armyemergencyrelief.org/scholarships/spouse/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "IHS Scholarship Program",
+      "org": "ihs.gov",
+      "url": "https://www.ihs.gov/scholarship/apply"
+    },
+    {
+      "name": "EFWA Horizons Scholarship",
+      "org": "efwa.org",
+      "url": "https://www.efwa.org/scholarships_bachelors_degree.php"
+    },
+    {
+      "name": "Fresh Start Scholarship Foundation (Delaware)",
+      "org": "freshstartscholarship.org",
+      "url": "https://www.freshstartscholarship.org/scholarship-program"
+    },
+    {
+      "name": "Lily and Catello Sorrentino Memorial Scholarship",
+      "org": "rifoundation.org",
+      "url": "https://rifoundation.org/grants-scholarships/browse-scholarships/p4"
+    },
+    {
+      "name": "nawic.org/nfsf-scholarships",
+      "org": "nawic.org",
+      "url": "https://www.nawic.org/nfsf-scholarships"
+    },
+    {
+      "name": "IEEE WIE Travel Grants",
+      "org": "wie.ieee.org",
+      "url": "https://wie.ieee.org/grants-scholarships/travel-grants"
+    },
+    {
+      "name": "Richard L. Taylor Flight Training Scholarship",
+      "org": "nata.aero",
+      "url": "https://nata.aero/national-air-transportation-foundation/scholarships/richard-l-taylor-flight-training-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Osher Reentry Scholarship (various universities)",
+      "org": "osherfoundation.org",
+      "url": "https://www.osherfoundation.org/scholars.html"
+    },
+    {
+      "name": "Navigate Your Future Scholarship",
+      "org": "nata.aero",
+      "url": "https://nata.aero/national-air-transportation-foundation/scholarships/navigate-your-future-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "LEO Foundation Golf Scholarship",
+      "org": "leofoundationusa.org",
+      "url": "https://leofoundationusa.org/richard-mccurdy-club-sports-golf-scholarship"
+    },
+    {
+      "name": "Tiffany D. Mealman Scholarship",
+      "org": "leofoundationusa.org",
+      "url": "https://leofoundationusa.org/tiffany-d-mealman-women-excellence-in-chemistry-and-christian-character-scholarship"
+    },
+    {
+      "name": "swe.org/apply-for-a-swe-scholarship",
+      "org": "swe.org",
+      "url": "https://swe.org/apply-for-a-swe-scholarship"
+    },
+    {
+      "name": "AIAA Roger W. Kahn Scholarship",
+      "org": "aiaa.org",
+      "url": "https://aiaa.org/get-involved/k-12-students/scholarships/aiaa-roger-w-kahn-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "AIAA and Club for the Future Scholarship",
+      "org": "aiaa.org",
+      "url": "https://aiaa.org/get-involved/k-12-students/scholarships/club-for-the-future-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Dan L. Meisinger Sr. Memorial Learn to Fly Scholarship",
+      "org": "nata.aero",
+      "url": "https://nata.aero/national-air-transportation-foundation/scholarships/dan-l-meisinger-sr-memorial-learn-to-fly-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "AAUW Seattle Undergraduate Scholarship",
+      "org": "aauw-seattle.org",
+      "url": "https://aauw-seattle.org/what-we-do/college-scholarships?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Pioneers of Flight Scholarship",
+      "org": "nata.aero",
+      "url": "https://nata.aero/national-air-transportation-foundation/scholarships/pioneers-of-flight-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "UAA Janice K. Barden Aviation Scholarship",
+      "org": "nbaa.org",
+      "url": "https://nbaa.org/professional-development/scholarships/barden-aviation-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Women\u2019s Independence Scholarship Program (WISP)",
+      "org": "wispinc.org",
+      "url": "https://wispinc.org/how-to-apply/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Lawrence Ginocchio Aviation Scholarship",
+      "org": "nbaa.org",
+      "url": "https://nbaa.org/professional-development/scholarships/ginocchio-aviation-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Point Foundation Access Scholarship",
+      "org": "pointfoundation.org",
+      "url": "https://pointfoundation.org/scholarships/access?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Davis-Putter Scholarship Fund",
+      "org": "davisputter.org",
+      "url": "https://www.davisputter.org/apply?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Zonta Amelia Earhart Fellowship",
+      "org": "zonta.org",
+      "url": "https://www.zonta.org/Web/Web/Programs/Education/Amelia_Earhart_Fellowship.aspx?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Point Foundation Community College Scholarship",
+      "org": "pointfoundation.org",
+      "url": "https://pointfoundation.org/scholarships/community-college?utm_source=chatgpt.com"
+    },
+    {
+      "name": "James Sullivan Aviation Scholarship",
+      "org": "nbaa.org",
+      "url": "https://nbaa.org/professional-development/scholarships/james-sullivan-aviation-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "DAR American Indian Scholarship",
+      "org": "dar.academicworks.com",
+      "url": "https://dar.academicworks.com/opportunities/431"
+    },
+    {
+      "name": "Science Ambassador Scholarship",
+      "org": "scienceambassadorscholarship.org",
+      "url": "https://www.scienceambassadorscholarship.org/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Semillas de Esperanza Scholarship",
+      "org": "skagitcf.org",
+      "url": "https://www.skagitcf.org/semillas-de-esperanza.html?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Ford Family Foundation Scholarship Application",
+      "org": "tfff.org",
+      "url": "https://www.tfff.org/scholarships/apply/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Point Foundation Flagship Scholarship",
+      "org": "pointfoundation.org",
+      "url": "https://pointfoundation.org/scholarships/flagship?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Maryland Women of Asphalt Scholarship",
+      "org": "marylandwofa.com",
+      "url": "https://marylandwofa.com/educational-trust-scholarship-application/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "NAHB PWB Scholarships Page",
+      "org": "nahb.org",
+      "url": "https://www.nahb.org/nahb-community/councils/professional-women-in-building-council/pwb-nhe-scholarships?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Women in Auto Tech Scholarship Criteria",
+      "org": "thehourglassfoundation.org",
+      "url": "https://thehourglassfoundation.org/women-in-auto-tech-scholarship-criteria/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Women Rock Trades Scholarship Criteria",
+      "org": "thehourglassfoundation.org",
+      "url": "https://thehourglassfoundation.org/women-rock-trades-scholarship-criteria/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "ABC Keystone Women in the Trades Scholarship",
+      "org": "abckeystone.org",
+      "url": "https://abckeystone.org/women-in-the-trades-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "PHCC Educational Foundation Scholarship Program",
+      "org": "phccfoundation.org",
+      "url": "https://www.phccfoundation.org/scholarship-program/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Edison International Lineworker Scholarship",
+      "org": "edison.com",
+      "url": "https://www.edison.com/community/lineworker-scholarship?utm_source=chatgpt.com"
+    },
+    {
+      "name": "CLLCF Scholarship Program",
+      "org": "cllcf.org",
+      "url": "https://www.cllcf.org/scholarship-program?utm_source=chatgpt.com"
+    },
+    {
+      "name": "REM Scholarship",
+      "org": "imf4kids.org",
+      "url": "https://imf4kids.org/2026-rem-official-rules?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Ron Collier Educational Scholarship",
+      "org": "imf4kids.org",
+      "url": "https://imf4kids.org/2026-rc-official-rules?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Dr. Miriam Z. Langsam Scholarship",
+      "org": "imf4kids.org",
+      "url": "https://imf4kids.org/2026-langsam-official-rules?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Arbor Financial Scholarship Program",
+      "org": "arborfcu.org",
+      "url": "https://www.arborfcu.org/scholarship-program?utm_source=chatgpt.com"
+    },
+    {
+      "name": "DCU for Kids Annual Memorial Scholarship Program",
+      "org": "dcuforkids.org",
+      "url": "https://www.dcuforkids.org/scholarships.html?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Prince George\u2019s Community Federal Credit Union Scholarship",
+      "org": "princegeorgescfcu.org",
+      "url": "https://www.princegeorgescfcu.org/our-difference/community/virginia-stallings-cindy-prestandrea-scholarship?utm_source=chatgpt.com"
+    },
+    {
+      "name": "APIQWTC Scholarship",
+      "org": "apiqwtc.org",
+      "url": "https://apiqwtc.org/call-for-applications-apiqwtc-scholarship-2026/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Beginnings Credit Union Community Service Award",
+      "org": "beginnings.com",
+      "url": "https://www.beginnings.com/about-us/member-benefits/scholarships-awards?utm_source=chatgpt.com"
+    },
+    {
+      "name": "GMiS Scholarship Guidelines",
+      "org": "greatmindsinstem.org",
+      "url": "https://greatmindsinstem.org/gmis-scholarship-application/gmis-scholarships/gmis-scholarship-guidelines/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "All In Credit Union Jim H. Mitchell Scholarship Program",
+      "org": "allincu.com",
+      "url": "https://allincu.com/why-us/scholarship--program.html?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Terri Higa Memorial Scholarship",
+      "org": "apiqwtc.org",
+      "url": "https://apiqwtc.org/call-for-applications-terri-higa-memorial-scholarship-2026/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Women of Asphalt Scholarship Program",
+      "org": "womenofasphalt.org",
+      "url": "https://www.womenofasphalt.org/women-of-asphalt-scholarship-program?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Service CU Impact Foundation Scholarship Program",
+      "org": "servicecuimpactfoundation.org",
+      "url": "https://servicecuimpactfoundation.org/apply-for-a-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Library of Congress Federal Credit Union Scholarship Program",
+      "org": "lcfcu.org",
+      "url": "https://www.lcfcu.org/library-of-congress-fcu-scholarship-2025-official-rules/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "ESET Women in Cybersecurity Scholarship",
+      "org": "eset.com",
+      "url": "https://www.eset.com/us/women-in-cybersecurity-scholarship"
+    },
+    {
+      "name": "AWS Welder Training Scholarship",
+      "org": "aws.org",
+      "url": "https://www.aws.org/career-resources/students/scholarships/welder-training-scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "MCWT 2026\u20132027 College Scholarship Application",
+      "org": "mcwt.smapply.io",
+      "url": "https://mcwt.smapply.io/prog/26-27_MCWT_scholarship/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Office of Scholarships & Financial Aid",
+      "org": "financialaid.arizona.edu",
+      "url": "https://financialaid.arizona.edu/ScholarshipUniverse?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Duke Credit Union Undergraduate Scholarship Program",
+      "org": "dukefcu.org",
+      "url": "https://www.dukefcu.org/resources/duke-credit-union-undergraduate-scholarship-program-2026?utm_source=chatgpt.com"
+    },
+    {
+      "name": "GTE Financial Student Scholarship",
+      "org": "gtefinancial.org",
+      "url": "https://www.gtefinancial.org/personal/for-students/student-scholarships?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Awards & Honors",
+      "org": "hws.edu",
+      "url": "https://www.hws.edu/alum/honors-and-awards.aspx"
+    },
+    {
+      "name": "NCWIT Aspirations in Computing High School Award",
+      "org": "aspirations.org",
+      "url": "https://www.aspirations.org/award-programs/aic-high-school-award?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Merit Based Awards",
+      "org": "hws.edu",
+      "url": "https://www.hws.edu/admissions/tuition-scholarships-and-aid/merit-based-awards.aspx"
+    },
+    {
+      "name": "HBAGC Scholarship Information",
+      "org": "hbacharlotte.com",
+      "url": "https://www.hbacharlotte.com/scholarship-information/?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Howard Roush Memorial Scholarship",
+      "org": "aboundcu.com",
+      "url": "https://www.aboundcu.com/community-support/community-involvement/roush-scholarship?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Financial Aid & Scholarships",
+      "org": "hws.edu",
+      "url": "https://www.hws.edu/admissions/tuition-scholarships-and-aid"
+    },
+    {
+      "name": "Need Based Awards",
+      "org": "hws.edu",
+      "url": "https://www.hws.edu/admissions/tuition-scholarships-and-aid/need-based-awards.aspx"
+    },
+    {
+      "name": "Charles Salisbury Award",
+      "org": "hws.edu",
+      "url": "https://www.hws.edu/alum/involved/charles-salisbury-award.aspx"
+    },
+    {
+      "name": "Food Safety Inspection Service Adel A. Malak Scholarship",
+      "org": "usajobs.gov",
+      "url": "https://www.usajobs.gov/job/698543400"
+    },
+    {
+      "name": "no-essay scholarship offered by Citizens",
+      "org": "citizensbank.com",
+      "url": "https://www.citizensbank.com/student-loans/scholarship.aspx"
+    },
+    {
+      "name": "Veteran Awards",
+      "org": "hws.edu",
+      "url": "https://www.hws.edu/admissions/tuition-scholarships-and-aid/veteran-students.aspx"
+    },
+    {
+      "name": "cyberdefensemagazine.com/women-in-cybersecurity-scholarship",
+      "org": "cyberdefenseawards.com",
+      "url": "https://cyberdefenseawards.com/women-in-cybersecurity-scholarship-fund-for-2026"
+    },
+    {
+      "name": "Keep Going Forward Scholarship",
+      "org": "keepgoingforward.org",
+      "url": "https://www.keepgoingforward.org/kgfscholarship"
+    },
+    {
+      "name": "The Denver Foundation Community Scholarship",
+      "org": "denverfoundation.org",
+      "url": "https://denverfoundation.org/scholarship/the-denver-foundation-community-scholarship"
+    },
+    {
+      "name": "Reisher Graduate Scholarship",
+      "org": "denverfoundation.org",
+      "url": "https://denverfoundation.org/scholarship/reisher-graduate-scholarship"
+    },
+    {
+      "name": "CFNIL Amber Huber Memorial Scholarship",
+      "org": "cfnil.org",
+      "url": "https://www.cfnil.org/scholarships/amber-huber-memorial-scholarship"
+    },
+    {
+      "name": "Gates Cambridge Scholarship",
+      "org": "gatescambridge.org",
+      "url": "https://www.gatescambridge.org/programme/the-scholarship"
+    },
+    {
+      "name": "Atlanta Track Club Hawthorne Wesley Scholarship",
+      "org": "atlantatrackclub.org",
+      "url": "https://www.atlantatrackclub.org/hawthorne-wesley-scholarship"
+    },
+    {
+      "name": "CSU Trustees\u2019 Award for Outstanding Achievement.",
+      "org": "calstate.edu",
+      "url": "https://www.calstate.edu/csu-trustee-awards"
+    },
+    {
+      "name": "Promise Act Scholarship",
+      "org": "kansasregents.gov",
+      "url": "https://kansasregents.gov/students/student_financial_aid/promise-act-scholarship"
+    },
+    {
+      "name": "7 Sisters Global Scholarship info",
+      "org": "7sistersglobal.com",
+      "url": "https://7sistersglobal.com/scholarship-info"
+    },
+    {
+      "name": "College Ave Scholarship",
+      "org": "collegeavestudentloans.com",
+      "url": "https://www.collegeavestudentloans.com/promotions/monthly-scholarship-award"
+    },
+    {
+      "name": "Franciscan Alliance Family Scholarship",
+      "org": "be.sf.edu",
+      "url": "https://be.sf.edu/franciscan-alliance-family-scholarship"
+    },
+    {
+      "name": "Sachs Foundation Undergraduate Scholarship",
+      "org": "sachsfoundation.org",
+      "url": "https://www.sachsfoundation.org/undergraduate-scholarships"
+    },
+    {
+      "name": "G.W. Networks PRINT IT Scholarship for Aspiring Content Creators:",
+      "org": "nam11.safelinks.protection.outlook.com",
+      "url": "https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmmanuts.com%2Fscholarships%2F&data=05%7C02%7Cwebmaster%40sf.edu%7C7df0a00cc6ea486edc9d08dd4c498527%7Cdab90d29dc71414cbc6ca393a8ebd0fb%7C0%7C0%7C638750600903866374%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=0zW49ZwpASoCwvxe1p8TjgfL0s86Y7rmV%2F7PV8UePZ4%3D&reserved=0"
+    },
+    {
+      "name": "Alma M. Poe Scholarship",
+      "org": "denverfoundation.org",
+      "url": "https://denverfoundation.org/scholarship/alma-m-poe-scholarship"
+    },
+    {
+      "name": "Brayman-Beach Scholarship",
+      "org": "denverfoundation.org",
+      "url": "https://denverfoundation.org/scholarship/brayman-beach-scholarship-ua1"
+    },
+    {
+      "name": "Francis H. Mahon Scholarship",
+      "org": "denverfoundation.org",
+      "url": "https://denverfoundation.org/scholarship/francis-h-mahon-scholarship"
+    },
+    {
+      "name": "Red Cross Scholarship Opportunity",
+      "org": "redcrossblood.org",
+      "url": "https://www.redcrossblood.org/rccl/application.html"
+    },
+    {
+      "name": "O\u2019Brien-Vrba Scholarship Trust-Scholarship America",
+      "org": "learnmore.scholarsapply.org",
+      "url": "https://learnmore.scholarsapply.org/obrien"
+    },
+    {
+      "name": "Denver Foundation Ambassador Scholarship",
+      "org": "denverfoundation.org",
+      "url": "https://denverfoundation.org/scholarship/ambassador-scholarship"
+    },
+    {
+      "name": "Steel Dynamics Foundation Scholarship",
+      "org": "be.sf.edu",
+      "url": "https://be.sf.edu/steel-dynamics-foundation-scholarship"
+    },
+    {
+      "name": "Ancient Accepted Scottish Rite Scholarship",
+      "org": "scottishrite.org",
+      "url": "https://scottishrite.org/philanthropy/scholarships/national"
+    },
+    {
+      "name": "GBES Sustainability Undergraduate College Scholarship",
+      "org": "gbes.com",
+      "url": "https://gbes.com/sustainability-undergraduate-college-scholarship"
+    },
+    {
+      "name": "Probo Medical Foundation Scholarship",
+      "org": "probomedical.com",
+      "url": "https://www.probomedical.com/probo-medical-scholarship"
+    },
+    {
+      "name": "National Science Foundation Scholarships in Science, Technology, Engineering, and Math (S-STEM)",
+      "org": "new.nsf.gov",
+      "url": "https://new.nsf.gov/funding/opportunities/s-stem-nsf-scholarships-science-technology-engineering-mathematics/5257/nsf02-006"
+    },
+    {
+      "name": "Distinguished Eagle Scout Award",
+      "org": "nesa.org",
+      "url": "https://nesa.org/awards-and-recognition/distinguished-eagle-scout-award"
+    },
+    {
+      "name": "NESA Outstanding Eagle Scout Award",
+      "org": "nesa.org",
+      "url": "https://nesa.org/awards-and-recognition/outstanding-eagle-scout-award"
+    },
+    {
+      "name": "Awards and Recognition",
+      "org": "nesa.org",
+      "url": "https://nesa.org/awards-and-recognition"
+    },
+    {
+      "name": "NESA Silver Wreath Award",
+      "org": "nesa.org",
+      "url": "https://nesa.org/awards-and-recognition/silver-wreath-award"
+    },
+    {
+      "name": "NESA Distinguished Service Award",
+      "org": "nesa.org",
+      "url": "https://nesa.org/awards-and-recognition/nesa-distinguished-service-award"
+    },
+    {
+      "name": "Service Project of the Year Award",
+      "org": "nesa.org",
+      "url": "https://nesa.org/awards-and-recognition/service-project-of-the-year-award"
+    },
+    {
+      "name": "Badges, Journeys, & Awards Badges, Journeys, & Awards",
+      "org": "girlscouts.org",
+      "url": "https://www.girlscouts.org/en/members/for-girl-scouts/badges-journeys-awards.html"
+    },
+    {
+      "name": "Gold Award Recognition Gold Award Recognition",
+      "org": "girlscouts.org",
+      "url": "https://www.girlscouts.org/en/support-us/advocacy/gold-award-recognition.html"
+    },
+    {
+      "name": "Gold Award",
+      "org": "girlscouts.org",
+      "url": "https://www.girlscouts.org/en/members/for-girl-scouts/badges-journeys-awards/highest-awards/gold-award.html"
+    },
+    {
+      "name": "Highest Awards",
+      "org": "girlscouts.org",
+      "url": "https://www.girlscouts.org/en/members/for-girl-scouts/badges-journeys-awards/highest-awards.html"
+    },
+    {
+      "name": "Leadership Awards",
+      "org": "girlscouts.org",
+      "url": "https://www.girlscouts.org/en/members/for-girl-scouts/badges-journeys-awards/leadership-awards.html"
+    },
+    {
+      "name": "The Wells Call Annual Scholarship Contest",
+      "org": "wccbc.com",
+      "url": "https://www.wccbc.com/scholarship-contest"
+    },
+    {
+      "name": "SHOP GOLD AWARD",
+      "org": "girlscoutshop.com",
+      "url": "https://www.girlscoutshop.com/girls/gifts/highest-award-gifts"
+    },
+    {
+      "name": "PTDF Scholarship 2026 Apply Online Eligibility Benefits and Last Date",
+      "org": "scholarshipred.com",
+      "url": "https://scholarshipred.com/scholarships/ptdf-scholarship"
+    },
+    {
+      "name": "Master\u2019s Scholarships",
+      "org": "scholarshipred.com",
+      "url": "https://scholarshipred.com/masters-scholarships"
+    },
+    {
+      "name": "Brain Development Scholarship 2026 \u2013 Full Guide, Exam & Result Info",
+      "org": "scholarshipred.com",
+      "url": "https://scholarshipred.com/scholarships/brain-development-scholarship"
+    },
+    {
+      "name": "search available scholarships and start your application today",
+      "org": "scholarship.education",
+      "url": "https://scholarship.education/?vendor_id=46966&sub_id=blog"
+    },
+    {
+      "name": "Major-Based Financial Aid: Scholarships and Grants by Field",
+      "org": "scholarship.education",
+      "url": "https://scholarship.education/major-based-financial-aid-scholarships-and-grants-by-field"
+    },
+    {
+      "name": "Internal PhD scholarship listings",
+      "org": "socialwork.illinois.edu",
+      "url": "https://socialwork.illinois.edu/admissions-academics/costs-and-financial-aid/scholarships/phd-scholarships"
+    },
+    {
+      "name": "University of Palermo Scholarship Application Process 2026 | International Students",
+      "org": "scholarshipred.com",
+      "url": "https://scholarshipred.com/scholarships/university-of-palermo-scholarship"
+    },
+    {
+      "name": "ITMO University Scholarships 2026: Tuition-Free Russia Study",
+      "org": "scholarshipred.com",
+      "url": "https://scholarshipred.com/undergraduate-scholarships/itmo-university-scholarships"
+    },
+    {
+      "name": "Honhaar Undergraduate Scholarship Program 2026",
+      "org": "scholarshipred.com",
+      "url": "https://scholarshipred.com/undergraduate-scholarships/honhaar-scholarship-program"
+    },
+    {
+      "name": "Military Undergraduate Scholarship",
+      "org": "wright.edu",
+      "url": "https://www.wright.edu/admissions/veteran-and-military/military-undergraduate-scholarship"
+    },
+    {
+      "name": "Choose Ohio First Scholarship",
+      "org": "wright.edu",
+      "url": "https://www.wright.edu/enrollment-services/financial-aid/choose-ohio-first-scholarship"
+    },
+    {
+      "name": "NESA Legacy Society Fellowship",
+      "org": "give.scouting.org",
+      "url": "https://give.scouting.org/a/nesa-legacy-society"
+    },
+    {
+      "name": "Access Your Award Notice",
+      "org": "wright.edu",
+      "url": "https://www.wright.edu/enrollment-services/financial-aid/access-your-award-notice"
+    },
+    {
+      "name": "Over-Awards",
+      "org": "wright.edu",
+      "url": "https://www.wright.edu/enrollment-services/financial-aid/over-awards"
+    },
+    {
+      "name": "2026 scholarships for military spouses, military kids",
+      "org": "militaryfamilies.com",
+      "url": "https://militaryfamilies.com/military-education/2026-scholarships-for-military-spouses-military-kids"
+    },
+    {
+      "name": "35+ scholarships for military spouses and military kids",
+      "org": "militaryfamilies.com",
+      "url": "https://militaryfamilies.com/military-education/35-scholarships-for-military-spouses-and-military-kids-2"
+    },
+    {
+      "name": "circle-check International Graduate Student Scholarships",
+      "org": "wright.edu",
+      "url": "https://www.wright.edu/node/528081"
+    },
+    {
+      "name": "circle-check International Undergraduate Student Scholarships",
+      "org": "wright.edu",
+      "url": "https://www.wright.edu/node/528076"
+    },
+    {
+      "name": "Awards & Recognition",
+      "org": "umgc.edu",
+      "url": "https://www.umgc.edu/experience/why-choose-umgc/awards-recognition"
+    },
+    {
+      "name": "donor scholarship process",
+      "org": "umgc.edu",
+      "url": "https://www.umgc.edu/tuition-financial-assistance/scholarships/donor"
+    },
+    {
+      "name": "Pillars of Strength Scholarship",
+      "org": "umgc.edu",
+      "url": "https://www.umgc.edu/tuition-financial-assistance/scholarships/pillars-of-strength"
+    },
+    {
+      "name": "at least 10 scholarships",
+      "org": "umgc.edu",
+      "url": "https://www.umgc.edu/tuition-financial-assistance/scholarships/nmfa-military-spouses"
+    },
+    {
+      "name": "MD Completion Scholarship",
+      "org": "umgc.edu",
+      "url": "https://www.umgc.edu/tuition-financial-assistance/scholarships/maryland-completion"
+    },
+    {
+      "name": "Bob Feller Act of Valor Award Foundation",
+      "org": "militaryfamilies.com",
+      "url": "https://militaryfamilies.com/tag/bob-feller-act-of-valor-award-foundation"
+    },
+    {
+      "name": "MHEC Important Scholarship and Grant Deadlines",
+      "org": "mhec.maryland.gov",
+      "url": "https://mhec.maryland.gov/preparing/Pages/Important-Scholarship-and-Grant-Deadlines.aspx"
+    },
+    {
+      "name": "MHEC's state scholarship application webpage",
+      "org": "mhec.maryland.gov",
+      "url": "https://mhec.maryland.gov/Pages/New-Tool-to-Streamline-the-State-Scholarship-Application-Process-is-Available.aspx"
+    },
+    {
+      "name": "MHEC scholarship and grant program",
+      "org": "mhec.maryland.gov",
+      "url": "https://mhec.maryland.gov/preparing/Pages/FinancialAid/descriptions.aspx"
+    },
+    {
+      "name": "2+2 Transfer Scholarship\u200b",
+      "org": "mhec.maryland.gov",
+      "url": "https://mhec.maryland.gov/preparing/Pages/FinancialAid/ProgramDescriptions/prog_2_plus_2.aspx"
+    },
+    {
+      "name": "Cybersecurity Public Service Scholarship Program\u200b",
+      "org": "mhec.maryland.gov",
+      "url": "https://mhec.maryland.gov/preparing/Pages/FinancialAid/CyberSecurity-Scholarship-Program.aspx"
+    },
+    {
+      "name": "Charles W. Riley Firefighter and Ambulance and Rescue Squad Member Scholarship Program",
+      "org": "mhec.maryland.gov",
+      "url": "https://mhec.maryland.gov/preparing/Pages/FinancialAid/ProgramDescriptions/prog_fire.aspx"
+    },
+    {
+      "name": "Augsburg American Indian Recognition Full Tuition Scholarship",
+      "org": "augsburg.edu",
+      "url": "https://www.augsburg.edu/american-indian-recognition"
+    },
+    {
+      "name": "Graduate Out-of-State Scholarship",
+      "org": "umgc.edu",
+      "url": "https://www.umgc.edu/tuition-financial-assistance/scholarships/graduate-out-of-state"
+    },
+    {
+      "name": "Department of Defense\u2019s Science, Mathematics, and Research for Transformation (SMART) scholarship",
+      "org": "smartscholarship.org",
+      "url": "https://www.smartscholarship.org/smart?id=smart_index"
+    },
+    {
+      "name": "Lockheed Martin Vocational Scholarship (opens in new tab)",
+      "org": "lockheedmartin.com",
+      "url": "https://www.lockheedmartin.com/en-us/who-we-are/communities/stem-education/lockheed-martin-vocational-scholarship.html"
+    },
+    {
+      "name": "Varsity Tutors Scholarship (opens in new tab)",
+      "org": "varsitytutors.com",
+      "url": "https://www.varsitytutors.com/college-scholarship"
+    },
+    {
+      "name": "Scholarship Search Tool",
+      "org": "collegereadyparent.org",
+      "url": "https://collegereadyparent.org/crp-scholarship-search-tool"
+    },
+    {
+      "name": "Full Ride & Full Tuition Scholarships",
+      "org": "collegereadyparent.org",
+      "url": "https://collegereadyparent.org/full-tuition-full-ride-scholarships"
+    },
+    {
+      "name": "Scholarships by GPA (2.5\u20134.0)",
+      "org": "collegereadyparent.org",
+      "url": "https://collegereadyparent.org/find-scholarships-by-gpa"
+    },
+    {
+      "name": "Establishing a Scholarship",
+      "org": "westgatech.edu",
+      "url": "https://www.westgatech.edu/discover-wgtc/foundation/student-scholarships"
+    },
+    {
+      "name": "NMFA Scholarship Application",
+      "org": "militaryfamily.org",
+      "url": "https://www.militaryfamily.org/military-spouse-scholarships-at-umgc"
+    },
+    {
+      "name": "State-by-State College Scholarships & Grants",
+      "org": "collegereadyparent.org",
+      "url": "https://collegereadyparent.org/state-scholarships-and-grants"
+    },
+    {
+      "name": "Our Data Methodology & Scholarship Verification Process",
+      "org": "collegereadyparent.org",
+      "url": "https://collegereadyparent.org/our-data-methodology"
+    },
+    {
+      "name": "Scholarship Phase II",
+      "org": "alcorn.edu",
+      "url": "https://www.alcorn.edu/giving-back/scholarships-phase-ii"
+    },
+    {
+      "name": "Scholarship Requirements",
+      "org": "alcorn.edu",
+      "url": "https://www.alcorn.edu/admissions/scholarship-requirements"
+    },
+    {
+      "name": "CAAS Scholarship Program",
+      "org": "alcorn.edu",
+      "url": "https://www.alcorn.edu/academics/schools-and-departments/caas/saas-scholar"
+    },
+    {
+      "name": "Available Scholarships and Grants (opens in new tab)",
+      "org": "westgatech.edu",
+      "url": "https://www.westgatech.edu/financial-aid/types-of-aid"
+    },
+    {
+      "name": "automatic merit scholarship",
+      "org": "collegereadyparent.org",
+      "url": "https://collegereadyparent.org/find-colleges"
+    },
+    {
+      "name": "Awards Process & Timeline",
+      "org": "msfinancialaid.org",
+      "url": "https://www.msfinancialaid.org/sfa/awards-timeline"
+    },
+    {
+      "name": "Grants, Loans & Work-Study",
+      "org": "millsaps.edu",
+      "url": "https://millsaps.edu/apply-to-millsaps/financial-aid-scholarships/grants-loans-work-study"
+    },
+    {
+      "name": "Millsaps Advantage Scholarship",
+      "org": "millsaps.edu",
+      "url": "https://millsaps.edu/apply-to-millsaps/financial-aid-scholarships/millsaps-advantage-scholarship"
+    },
+    {
+      "name": "The W\u2019s freshman scholarship page",
+      "org": "muw.edu",
+      "url": "https://www.muw.edu/admissions/affordable/scholarships/freshmen"
+    },
+    {
+      "name": "T\u00fcrkiye Burslari Scholarship 2026 | Fully Funded Stipend up to 9,000 TL & No Exam Scores",
+      "org": "scholarships.jobzhiring.com",
+      "url": "https://scholarships.jobzhiring.com/turkiye-burslari-scholarship-2026-fully-funded-no-gre"
+    },
+    {
+      "name": "View Official Scholarship Details",
+      "org": "uml.edu",
+      "url": "https://www.uml.edu/thesolutioncenter/financial-aid/default.aspx"
+    },
+    {
+      "name": "Marshall Scholarship 2026 | Fully Funded UK Masters & PhD Guide (3.7 GPA Required)",
+      "org": "scholarships.jobzhiring.com",
+      "url": "https://scholarships.jobzhiring.com/marshall-scholarship-2026-fully-funded-uk-3-7-gpa"
+    },
+    {
+      "name": "Chinese Government Scholarship (CSC) 2026-2027 | Fully Funded Masters & PhD (No IELTS)",
+      "org": "scholarships.jobzhiring.com",
+      "url": "https://scholarships.jobzhiring.com/chinese-government-scholarship-csc-2026-fully-funded-masters-phd"
+    },
+    {
+      "name": "Harvard University MBA Scholarship 2026 (Boustany Foundation) | Fully Funded",
+      "org": "scholarships.jobzhiring.com",
+      "url": "https://scholarships.jobzhiring.com/harvard-university-mba-scholarship-2026-boustany-foundation"
+    },
+    {
+      "name": "Masters Scholarships in Germany 2026 for International Students | Fully Funded (No IELTS Options)",
+      "org": "scholarships.jobzhiring.com",
+      "url": "https://scholarships.jobzhiring.com/masters-scholarships-germany-2026-fully-funded-no-ielts"
+    },
+    {
+      "name": "UMBC Scholarships 2026 Guide | Merit, Scholar Programs, & International Awards",
+      "org": "scholarships.jobzhiring.com",
+      "url": "https://scholarships.jobzhiring.com/umbc-scholarships-2026-merit-transfer-international-guide"
+    },
+    {
+      "name": "State Scholarships for Delaware Residents",
+      "org": "scholarships.delawarestudentsuccess.org",
+      "url": "https://scholarships.delawarestudentsuccess.org/state-scholarships-for-de-residents"
+    },
+    {
+      "name": "Scholarships Listed Alphabetically",
+      "org": "scholarships.delawarestudentsuccess.org",
+      "url": "https://scholarships.delawarestudentsuccess.org/scholarships-listed-alphabetically"
+    },
+    {
+      "name": "Scholarships Listed by Deadline",
+      "org": "scholarships.delawarestudentsuccess.org",
+      "url": "https://scholarships.delawarestudentsuccess.org/scholarships-listed-by-deadline"
+    },
+    {
+      "name": "Scholarship Tips & Strategies",
+      "org": "scholarships.delawarestudentsuccess.org",
+      "url": "https://scholarships.delawarestudentsuccess.org/scholarship-tips-strategies"
+    },
+    {
+      "name": "Scholarships Listed by Category",
+      "org": "scholarships.delawarestudentsuccess.org",
+      "url": "https://scholarships.delawarestudentsuccess.org/scholarships-listed-by-category"
+    },
+    {
+      "name": "Alma Exley Scholarship",
+      "org": "scholaroo.nationaltoday.com",
+      "url": "https://scholaroo.nationaltoday.com/scholarship/alma-exley-scholarship"
+    },
+    {
+      "name": "Wikipedia +2 ScholarshipOwl +2",
+      "org": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/FTC_fair_information_practice?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Jacobs Holly A. Cornell Scholarship",
+      "org": "scholaroo.nationaltoday.com",
+      "url": "https://scholaroo.nationaltoday.com/scholarship/jacobs-holly-a-cornell-scholarship"
+    },
+    {
+      "name": "Thear Sy Suzuki R.I.S.E. Scholarship",
+      "org": "scholaroo.nationaltoday.com",
+      "url": "https://scholaroo.nationaltoday.com/scholarship/thear-sy-suzuki-r-i-s-e-scholarship"
+    },
+    {
+      "name": "2026\u201327 Federal Pell Grant Maximum and Minimum Award Amounts",
+      "org": "fsapartners.ed.gov",
+      "url": "https://fsapartners.ed.gov/knowledge-center/library/dear-colleague-letters/2026-01-30/2026-27-federal-pell-grant-maximum-and-minimum-award-amounts?utm_source=chatgpt.com"
+    },
+    {
+      "name": "Milliman Opportunity Scholarship",
+      "org": "scholaroo.nationaltoday.com",
+      "url": "https://scholaroo.nationaltoday.com/scholarship/milliman-opportunity-scholarship"
+    },
+    {
+      "name": "RICOH Scholarship Program",
+      "org": "scholaroo.nationaltoday.com",
+      "url": "https://scholaroo.nationaltoday.com/scholarship/ricoh-scholarship-program"
+    },
+    {
+      "name": "Scholarship Administrator Login",
+      "org": "scholarships.delawarestudentsuccess.org",
+      "url": "https://scholarships.delawarestudentsuccess.org/user-login"
+    },
+    {
+      "name": "Admin \u2013 Scholarship Applications \u2013 2026",
+      "org": "tallclubfoundation.org",
+      "url": "https://tallclubfoundation.org/admin/admin-scholarship-applications-2026"
+    },
+    {
+      "name": "Admin \u2013 Scholarship Applications (by Year)",
+      "org": "tallclubfoundation.org",
+      "url": "https://tallclubfoundation.org/admin/admin-scholarship-applications-by-year"
+    }
+  ],
+  "inserted": {
+    "/home/workspace/scholarsearch/data/processed/scholarships.db": 97,
+    "/home/workspace/scholarsearch-site/data/processed/scholarships.db": 97
+  },
+  "commit": true,
+  "filtered_junk": 134032
+}

@@ -9,3 +9,9 @@ Archive/stash-recovery-2026-09-06/
 # env files (key-leak 2026-09-06)
 *.env
 freellmapi/server/.env
+
+# Large local backup archives (kept on disk, never pushed)
+Archive/snapshots/
+Archive/restore-points/*.tar.gz
+Archive/stash-recovery-2026-09-06.tar.gz
+heartbeat.sh

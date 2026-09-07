@@ -420,3 +420,88 @@ Posted: 2026-06-26 09:00 ET — https://x.com/zdsentry/status/207049324102405366
 - **Hook used:** "Every time I think I get SCOTUS, the model breaks in a new direction." (curiosity — recommended variant)
 - **Tweet:** https://x.com/zdsentry/status/2070644151083848134
 - **Trending sources:** Coffee & Covid News (SCOTUS reverse-lawfare), Scott Presler (SAVE America Act), Trump "Dumocrats"
+## 2026-09-06 04:40 MST — Evening Slot
+
+- **Topic:** AP report on volatile 2026 midterm environment
+- **Account:** @zdsentry
+- **Timestamp UTC:** 2026-09-06 11:40 UTC
+- **Format:** text-only news analysis
+- **Tweet:** https://x.com/zdsentry/status/2096564997606322582
+- **Text:** The Associated Press says the 2026 midterms are entering a volatile stretch. Trump remains central to the campaign, while tariffs, immigration, election rules, and crypto-policy disputes are shaping the national debate.
+- **Word count:** 27
+- **Media:** none; image search completed, no timely relevant asset selected
+- **Source:** https://apnews.com/article/f07499f53269e37ccd2565564cc01e4e
+- **Source reply:** https://x.com/zdsentry/status/2096565045995929628
+- **Hook type:** named-outlet news lead
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** named-outlet lead with neutral current-events summary; hold account, evening slot, text-only format, and no-CTA structure stable for seven-day comparison
+- **Visible result at posting:** posted successfully; engagement metrics not yet available
+
+## 2026-09-06 07:00 MST — Reply attempt
+- **Target URL:** https://x.com/beinlibertarian/status/2096594039076188408
+- **Topic:** Tax exemption versus new family-support program
+- **Reply text:** The tax-exemption alternative is simpler to audit: it changes the marginal cost of working without creating a new eligibility system. The tradeoff is that nonworking families receive no direct benefit.
+- **Result:** failed
+- **Reason:** X API 403 — replies allowed only to posts where the account is mentioned or is the author. No retry.
+- **Experiment variable:** target quality; reply angle and CTA held stable
+- **Visible metrics:** target search showed 97 likes, 5 reposts, 1,429 views; reply metrics unavailable
+
+## 2026-09-06 10:00 MST — Midday Slot
+
+- **Topic:** Jamie Raskin leaves impeachment on the table
+- **Account:** @zdsentry
+- **Timestamp UTC:** 2026-09-06 17:00 UTC
+- **Format:** text-only news analysis
+- **Tweet URL:** https://x.com/zdsentry/status/2096645502959853664
+- **Text:** Jamie Raskin leaves impeachment on the table. On Meet the Press, the Maryland Democrat said impeachment “isn’t a taboo” if Democrats regain the House, while naming healthcare as another priority. The 2026 midterm conversation is already taking shape.
+- **Word count:** 35
+- **Media:** none; image search completed, no verified relevant asset selected
+- **Source:** https://www.nbcuniversalnewsgroup.com/nbc-news/2026/09/04/exclusive-interviews-with-sen-john-kennedy-and-rep-jamie-raskin-this-sunday-on-meet-the-press/
+- **Source reply:** none
+- **Hook type:** named-person lead / direct statement
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** named-person lead with neutral current-events summary; hold account, midday slot, text-only format, 15–50 word length, and no-CTA structure stable for seven-day comparison
+- **Visible result at posting:** posted successfully; engagement metrics not yet available
+
+## 2026-09-06 16:05 MST — Evening Slot
+
+- **Topic:** Nick Shirley lawsuit challenging California AB 2624
+- **Account:** @zdsentry
+- **Timestamp UTC:** 2026-09-06 23:05:35 UTC
+- **Format:** text-only news analysis
+- **Tweet URL:** https://x.com/zdsentry/status/2096736601694941311
+- **Text:** California Assembly Bill 2624 is now in federal court. Journalist Nick Shirley sued AG Rob Bonta and Secretary of State Shirley Weber, arguing the law’s privacy protections for immigration-service providers unconstitutionally restrict public records and reporting.
+- **Word count:** 35
+- **Media:** none; image search completed; no verified relevant asset selected
+- **Source:** https://www.siskiyoudaily.com/story/news/nation/california/2026/04/23/california-ab-2624-nick-shirley-free-speech-controversy/89738131007
+- **Source reply:** none
+- **Hook type:** named-bill lead / direct legal development
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** named-entity legal-news lead; hold account, evening slot, text-only format, 15–50 word length, and no-CTA structure stable for seven-day comparison
+- **Visible result at posting:** posted successfully
+- **Visible result on verification:** 0 likes, 0 reposts, 0 quotes, 0 replies, 0 bookmarks; views unavailable
+2026-09-07 | 9AM ET | post | 2096948137273246082 | George Clooney raised $30 million for Biden—then urged him to quit weeks later. The same Hollywood class that buys access, lectures voters, and rewrites its own failures still gets treated as an authority. $30 million buys influence, not wisdom. | media attached: yes (/home/workspace/clooney-biden.jpg) | 39 words | source: https://www.nytimes.com/2024/07/10/opinion/joe-biden-george-clooney.html | source reply: https://x.com/zdsentry/status/2096948175831474280
+
+2026-09-07 10:04 MST — Midday Slot
+- **Topic:** AP report on volatile 2026 midterm environment
+- **Account:** @zdsentry
+- **Timestamp UTC:** 2026-09-07 17:04:08 UTC
+- **Format:** text-only news analysis
+- **Tweet URL:** https://x.com/zdsentry/status/2097008007750066276
+- **Text:** The Associated Press says the 2026 midterms are entering a volatile stretch. Tariffs, immigration, election rules, crypto policy, and Trump’s dominance are reshaping the national debate.
+- **Word count:** 25
+- **Media:** none; image search completed; no verified relevant asset selected
+- **Source:** https://apnews.com/article/f07499f53269e37ccd2565564cc01e4e
+- **Source reply:** none
+- **Hook type:** named-outlet news lead
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** named-outlet lead with neutral current-events summary; hold account, midday slot, text-only format, 15–50 word length, and no-CTA structure stable for seven-day comparison
+- **Visible result at posting:** posted successfully; engagement metrics not yet available

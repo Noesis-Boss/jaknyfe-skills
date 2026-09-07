@@ -1,0 +1,25 @@
+Don and Bill,
+
+As you both know, we have discussed making  a change and having the both of you exchange positions next year.
+
+With both of your approvals, I would like to formally announce to the State Officers and Appointed Officers at our next E.O. meeting, that for the remainder of the year, Dad Enloe will be assisting the State Dad in order to learn the position.   As well, Dad Lowery will work with Dad Enloe to transition into the Membership Advisor position.
+
+I would leave it to both of you to work out how you would like to divide the responsibitilities.
+
+The positions would become official at the next Conclave Installation.
+
+Please let me know if you have any questions or concerns.   Please know how much I appreciate you both.
+
+Fraternally yours,
+
+Steve
+
+Steve Johnston
+
+**Executive Officer**
+
+Arizona DeMolay State Association
+
+3535 East Blanche Drive, Phoenix, AZ 85032  
+(602) 931-3403  
+[executive.officer@azdemolay.org](mailto:executive.officer@azdemolay.org)   [www.azdemolay.org](http://www.azdemolay.org/)

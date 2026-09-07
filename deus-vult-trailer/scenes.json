@@ -1,0 +1,26 @@
+{
+  "resolution": [1280, 720],
+  "fps": 30,
+  "total_duration": 30.0,
+  "audio": {"narration": "assets/audio/narration.wav", "music": "assets/audio/music.wav", "sfx": "assets/audio/sfx.wav"},
+  "scenes": [
+    {"id": 1, "duration": 2, "asset": "assets/storyboard/scene_01.jpg", "animation": {"type": "kenburns", "zoom_end": 1.08}},
+    {"id": 2, "duration": 2, "asset": "assets/storyboard/scene_02.jpg", "animation": {"type": "kenburns", "zoom_end": 1.06}},
+    {"id": 3, "duration": 4, "asset": "assets/storyboard/scene_03.jpg", "animation": {"type": "pan", "direction": "left"}},
+    {"id": 4, "duration": 1, "asset": "assets/storyboard/scene_04.jpg", "animation": {"type": "rotate", "start_angle": -4, "end_angle": 0}},
+    {"id": 5, "duration": 1, "asset": "assets/storyboard/scene_05.jpg", "animation": {"type": "reveal"}},
+    {"id": 6, "duration": 2, "asset": "assets/storyboard/scene_06.jpg", "animation": {"type": "kenburns", "zoom_end": 1.12}},
+    {"id": 7, "duration": 1, "asset": "assets/storyboard/scene_07.jpg", "animation": {"type": "rotate", "start_angle": -3, "end_angle": 0}},
+    {"id": 8, "duration": 1, "asset": "assets/storyboard/scene_08.jpg", "animation": {"type": "reveal"}},
+    {"id": 9, "duration": 2, "asset": "assets/storyboard/scene_09.jpg", "animation": {"type": "kenburns", "zoom_end": 1.1}},
+    {"id": 10, "duration": 1, "asset": "assets/storyboard/scene_10.jpg", "animation": {"type": "rotate", "start_angle": -3, "end_angle": 0}},
+    {"id": 11, "duration": 1, "asset": "assets/storyboard/scene_11.jpg", "animation": {"type": "reveal"}},
+    {"id": 12, "duration": 2, "asset": "assets/storyboard/scene_12.jpg", "animation": {"type": "kenburns", "zoom_end": 1.08}},
+    {"id": 13, "duration": 2, "asset": "assets/storyboard/scene_13.jpg", "animation": {"type": "rise"}},
+    {"id": 14, "duration": 1, "asset": "assets/storyboard/scene_14.jpg", "animation": {"type": "rotate", "start_angle": -4, "end_angle": 0}},
+    {"id": 15, "duration": 1, "asset": "assets/storyboard/scene_15.jpg", "animation": {"type": "reveal"}},
+    {"id": 16, "duration": 1, "asset": "assets/storyboard/scene_16.jpg", "animation": {"type": "fan"}},
+    {"id": 17, "duration": 2, "asset": "assets/storyboard/scene_17.jpg", "animation": {"type": "kenburns", "zoom_end": 1.06}},
+    {"id": 18, "duration": 3, "asset": "assets/storyboard/scene_18.jpg", "animation": {"type": "fit"}}
+  ]
+}

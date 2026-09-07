@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Zo Sidebar",
+  "version": "0.1.10",
+  "description": "Chat with your Zo Computer from a Chrome sidebar. Optional browser-control actions.",
+  "permissions": ["sidePanel", "storage", "tabs", "scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Open Zo Sidebar" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "content_scripts": [
+    {
+      "matches": ["*://*.zo.computer/*"],
+      "js": ["token-capture.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

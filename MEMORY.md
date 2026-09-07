@@ -20,3 +20,4 @@
 | memory/projects/meerkat-mcp.md | project | Meerkat (getmeerkat.dev) MCP evaluation — auth captured, /api/custom-chat broken, paused |
 | memory/projects/bound-by-ash-and-thorn.md | project | Bound by Ash and Thorn — 99,346-word romantasy novel (Book 1 of The Withered Court trilogy), v7 prose pass complete (eval 9.76/10), manuscript + PDF up to date, query letter drafted |
 | memory/daily/2026-06-27.md | daily | Astra memory upgraded — local Nomic embeddings + hybrid semantic/lexical RRF |
+- [key-rotation-checklist-2026-09-06](memory/key-rotation-checklist-2026-09-06.md) — GitHub key leak: rotate list, incident closed

@@ -1,0 +1,42 @@
+[
+  {
+    "source": "web_discovery_v4",
+    "source_id": "web_v4_20260725_004",
+    "scholarship_name": "Bingham Scholarship for Vermont Trades",
+    "organization": "VSAC",
+    "organization_type": "State Grant Agency",
+    "description": "$1,000 scholarship for a student living in Addison County who wants to pursue a career in the trades.",
+    "eligibility": "Vermont resident, Addison County, trades career",
+    "amount_min": 1000,
+    "amount_max": 1000,
+    "amount_display": "$1,000",
+    "deadline": "Feb 11, 2026",
+    "application_url": "https://www.vsac.org/blog/secure-your-future-education-vsac-scholarships-deadline-ahead",
+    "form_url": "https://www.vsac.org/scholarships",
+    "category": "Trade School",
+    "education_level": "Undergraduate",
+    "field_of_study": "Trades",
+    "state_restriction": "VT",
+    "status": "active"
+  },
+  {
+    "source": "web_discovery_v4",
+    "source_id": "web_v4_20260725_005",
+    "scholarship_name": "Searles Memorial Scholarship",
+    "organization": "VSAC",
+    "organization_type": "State Grant Agency",
+    "description": "$1,000 scholarship for a current high school senior graduating from a Vermont high school with commitment to public service, leadership, academic achievement, strong work ethic, and financial need.",
+    "eligibility": "Vermont high school senior, financial need",
+    "amount_min": 1000,
+    "amount_max": 1000,
+    "amount_display": "$1,000",
+    "deadline": "Feb 11, 2026",
+    "application_url": "https://www.vsac.org/blog/secure-your-future-education-vsac-scholarships-deadline-ahead",
+    "form_url": "https://www.vsac.org/scholarships",
+    "category": "Academic",
+    "education_level": "Undergraduate",
+    "field_of_study": "General",
+    "state_restriction": "VT",
+    "status": "active"
+  }
+]

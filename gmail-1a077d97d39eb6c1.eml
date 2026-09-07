@@ -1,0 +1,175 @@
+Delivered-To: state.officer.director@azdemolay.org
+Received: by 2002:a05:612c:6a0a:b0:5fa:23ce:790b with SMTP id 10csp4451740vqa;
+        Sun, 6 Sep 2026 10:52:17 -0700 (PDT)
+X-Received: by 2002:a05:6402:2b88:b0:6a6:306c:cceb with SMTP id 4fb4d7f45d1cf-6a7e8d8df90mr6360511a12.12.1788717137431;
+        Sun, 06 Sep 2026 10:52:17 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1788717137; cv=pass;
+        d=google.com; s=arc-20260327;
+        b=S9wc2xIqHeGGGcxlbzMvwtugYjtYE33LKk/GSGttbD2D9oM+cIFBrMLTZW/2RAVmjY
+         g4oyBlXJ0n+ETQlZbl8Q8TZgFpu2n3mImj3pAEO1h9j+0N1MrDoZL0tQssC0FMoEol8G
+         RTXCltTIz2/uEbloLxIcj+WH0bUTX5ECQa+X+/U4S1JO+T7siHRUVez7EgDmO8PG+/lz
+         k/2KUGtfGGQdT0d+MCd/MqyFTic4VfoiP5OA8Qnmyz3gfPVrbSLhoQQMEHVcf/7GP15p
+         kGTu2ycdWD/3LdUVne5bNfKakQpI8rrPVb8DV3JXH2SaxtLehi+vZisT7aj98P8zSfIh
+         sGQw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=0DVrcBcg28ZPb4s34DYeRk2h+DbLcsyPz0akGvRHFBk=;
+        fh=yKXNPk01m20j+9+RlQGG/x5ngo7J95yQeb2hldVsbtA=;
+        b=AgfRTJ0d2ocsqLGiZVAUM56AQA0EfY8QlXSR+AC30Ri/DTzKqb7xaUXUqBSjUwWH+R
+         tvyGRQoBbIEZNG9S+r+THth1HDoL2klg/i4N1l0t6pxmdVW0/le1bHok+uTAIQ22iDHf
+         QVsGYPzu+HUvGcAfSEGigktAmWPiUL1ZbDO52Kvslk1CYZ6UNQy3PpSFbsu1ibuR0n5d
+         EBG/rXR/eJg9fWyxhGfHOT9r9yMfuyaC1fNwr2YJy7Juet7fqVSTlu6Q8QSl1g+qBo+N
+         NGOicnXnfiAxCWk6S2Emc7w7nJxIHmEoKLOBDOTF22uZDMUAkOIVpUkR4niMUYSlSDDR
+         yK1w==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@azdemolay-org.20251104.gappssmtp.com header.s=20251104 header.b="vwsK/7rl";
+       arc=pass (i=1);
+       spf=none (google.com: executive.officer@azdemolay.org does not designate permitted sender hosts) smtp.mailfrom=executive.officer@azdemolay.org;
+       dara=fail header.i=@azdemolay.org
+Return-Path: <executive.officer@azdemolay.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 4fb4d7f45d1cf-6a7e6cf005dsor1608496a12.16.2026.09.06.10.52.17
+        for <state.officer.director@azdemolay.org>
+        (Google Transport Security);
+        Sun, 06 Sep 2026 10:52:17 -0700 (PDT)
+Received-SPF: none (google.com: executive.officer@azdemolay.org does not designate permitted sender hosts) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@azdemolay-org.20251104.gappssmtp.com header.s=20251104 header.b="vwsK/7rl";
+       arc=pass (i=1);
+       spf=none (google.com: executive.officer@azdemolay.org does not designate permitted sender hosts) smtp.mailfrom=executive.officer@azdemolay.org;
+       dara=fail header.i=@azdemolay.org
+ARC-Seal: i=1; a=rsa-sha256; t=1788717137; cv=none;
+        d=google.com; s=arc-20260327;
+        b=qSWWEqnnYJNDniCVQbXnZb+Tf2Sh+W+Zhb5q58jbX3GXRJ+vmZ/nsCEzoXuVkzsZZg
+         fWyKhZcuDK9+Qw4VjMR6ThvoS3cyHM3BW3LFYV/vSNKooDDML5HrPkkicsQHbSn6D+pL
+         8yaSmdPoltTzk5JC2BLHbbIwg0nEl2W7kZsj1MGHxl7tGYQmy7xe3rF6IBqFqbW/GjOZ
+         +V70WVQGLoNmBKYhfdAUvmbScyXyyfo5NyiHXwKCWkMZjNxTaiyCU+Wpp6FQIN0NXKW7
+         q0JMG1+QysJzzEoXVOVcrqbiZ4GcoZ94HL7JDLhDR3eV5fTiEVezgRtl0tIP73wiac3b
+         cJ0w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=0DVrcBcg28ZPb4s34DYeRk2h+DbLcsyPz0akGvRHFBk=;
+        fh=yKXNPk01m20j+9+RlQGG/x5ngo7J95yQeb2hldVsbtA=;
+        b=GIUIos8MUXzs5qiX8+4kXZVdgDDTH5/ScPW7LSrJjzCNSNDYReotis324lDEJz+cZD
+         V5MOqEuFdULtLjxvq0RxPCWFtqcr3Qq5BVWLWogSlZEqpFds7JD/LtMbxLVLkEX+ylIK
+         TaOlu8dGAvJypQfsf51M7138zRu/tBQXuNscq6aylAT9zEFZm7TVhUbSxGatLRzyleZk
+         2asHiGgvMs34zUdjtDlid+4BwqCDag7FJtqQfzHe8sfFKUrV2WaT2nJHSk0k8hAjIJhZ
+         aZvYV6MgOAoJgOULhEcQzgXyrUGzwpapSZEYrb4lVtkPWpiW4dhR6KdmMYWOgMQwXfBz
+         0utA==;
+        darn=azdemolay.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=azdemolay-org.20251104.gappssmtp.com; s=20251104; t=1788717137; x=1789321937; darn=azdemolay.org;
+        h=content-type:to:subject:message-id:date:from:mime-version:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=0DVrcBcg28ZPb4s34DYeRk2h+DbLcsyPz0akGvRHFBk=;
+        b=vwsK/7rlYGKYun01VucvYHkOB/UWx84EYMgT/xdI7x+/UQg8BEv/eQJNviGUGs2818
+         7sycx8ERCAmgV8w7E3oSat55D3oHHEtdpS1BgOvCebECW27VvYhzaanim15gZkHspHKn
+         m0ecHtB/hj39f1ZHX71+81RG2FJ2JNMJoXu2IHZdnLazftWlM2rWpGbo6Qmi1tYHFF6i
+         g6p7uv4v6jqlyjEP6cxxEhjFfA5VqssErQ6TPxmxOWd2UNBt57/nsrcqPY/iF7owwkCb
+         ImGxP+SnkOfHr/pLoPRGTIvk8vjNTf9wdOyfX/gjWXUVQ7j6xFmYihvodQP5sK11JBRC
+         fFVg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1788717137; x=1789321937;
+        h=content-type:to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=0DVrcBcg28ZPb4s34DYeRk2h+DbLcsyPz0akGvRHFBk=;
+        b=YlcE52C6JePXy5YD+1oi9ZuDstpw8RigYHria/RaIZel2vojOvRm+rE6NjshFCcrRi
+         It8UB3rtkFI68s1sDSO90H9BROp71k6ajmLN5YwMSRznl5p+LAdtDYZopFLIm44nlB6K
+         o4h3KjK5VNIILgVNT9Vc6ToS9wDdJ1HQNvGDCQXBjviixWY7syUrps7hSEULuuDSaJ+2
+         mevEhUICknOfEQxrF7IlrdyQ/nuP6ALuPxLZQdCtYUaSFQ2INFrlNgLh8lcCxq8BZAob
+         4GcOHfsbzjU4lThXzkFWyhEL8UKidgnK6+XWQxlfwzk/nBKyAGOTFZp8I5HiWVb2zmnc
+         0kYg==
+X-Gm-Message-State: AFuF++l1suq6uM4soYPcWT7tzBmhTGoQi9nxqAdHAaOo90GiXT/R1Zsy
+	h8Wj2IuzZT1fN6DBwvUzWDnKAfdQj33Xkb8TMCPl7hV27lH4vLazygy1K5LNl1lu9KBTZfVQO/R
+	8dL7/zGw6EvhZV/lZMbqjWZy04p66Ug5Uhupajb3fOM8cUBwYO8NFLgM=
+X-Gm-Gg: AYBFou0nrlQ/VK2a+OqVfJdh8gRpoGj60VZTDdknN+HCili0UlZQf542YTXa7p0Myhm
+	VnVcMeB8TcqEZiDNPkBURETOWfqLmCNop8H9U3k+rk6jSeBkxLdYf1o/csoPd6gfJpI65rxA+4Y
+	hsIHxhFqMzv2X+TPJb6VsNbldS+pPQHII+JB4g1uuTcM5p5W57KDxJ3zaTdubdL/ZvNHx1Vthyo
+	Y/NjU53xAOI5jXxT3MZfFz8ujM9VAtHC39SSRflsKd4oWGXpMV1gQL0yUFiTwZeqlKmd/4GUhOn
+	NrX7Vn/hXSuG21v/SwHFIhnfPqCbmv5wEU4JS4BjyP9cYhXECyadsnawswFql/JXqury0kQfa06
+	bDEuM0TG0NUMLOtYHlVMavxMAFQfMnM/ueuU=
+X-Received: by 2002:a05:6402:3706:b0:6a7:ee56:6164 with SMTP id
+ 4fb4d7f45d1cf-6a7ee56623cmr5315162a12.38.1788717136038; Sun, 06 Sep 2026
+ 10:52:16 -0700 (PDT)
+MIME-Version: 1.0
+From: Steve Johnston <executive.officer@azdemolay.org>
+Date: Sun, 6 Sep 2026 10:52:03 -0700
+X-Gm-Features: AcwNN1XLADOabjWucQxc-emNF_3rJuBBJs_A5MKmY_yMbW6QT-7oE6rvnFHiuYY
+Message-ID: <CAGDJSM+KxNQ3xfy+RM+SC=+t=nBA3=m2VZjfHvpbSF=-QyWtSA@mail.gmail.com>
+Subject: OFFICIAL: Re:Eventual Title Changes.
+To: State Officer Director <state.officer.director@azdemolay.org>, 
+	Membership Director <membership@azdemolay.org>
+Content-Type: multipart/alternative; boundary="0000000000007f6403065ad42974"
+
+--0000000000007f6403065ad42974
+Content-Type: text/plain; charset="UTF-8"
+
+Don and Bill,
+
+As you both know, we have discussed making  a change and having the both of
+you exchange positions next year.
+
+With both of your approvals, I would like to formally announce to the State
+Officers and Appointed Officers at our next E.O. meeting, that for the
+remainder of the year, Dad Enloe will be assisting the State Dad in order
+to learn the position.   As well, Dad Lowery will work with Dad Enloe to
+transition into the Membership Advisor position.
+
+I would leave it to both of you to work out how you would like to divide
+the responsibitilities.
+
+The positions would become official at the next Conclave Installation.
+
+Please let me know if you have any questions or concerns.   Please know how
+much I appreciate you both.
+
+Fraternally yours,
+Steve
+
+*Steve Johnston*
+
+*Executive Officer*
+
+Arizona DeMolay State Association
+
+3535 East Blanche Drive, Phoenix, AZ 85032
+(602) 931-3403
+executive.officer@azdemolay.org   www.azdemolay.org
+
+--0000000000007f6403065ad42974
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><div>Don and Bill,</div><div dir=3D"auto"><br></div><div =
+dir=3D"auto">As you both know, we have discussed making=C2=A0 a change and =
+having the both of you exchange positions next year.=C2=A0 =C2=A0=C2=A0</di=
+v><div dir=3D"auto"><br></div><div dir=3D"auto">With both of your approvals=
+, I would like to formally announce to the State Officers and Appointed Off=
+icers at our next E.O. meeting, that for the remainder of the year, Dad Enl=
+oe will be assisting the State Dad in order to learn the position.=C2=A0 =
+=C2=A0As well, Dad Lowery will work with Dad Enloe to transition into the M=
+embership Advisor position.</div><div dir=3D"auto"><br></div><div dir=3D"au=
+to">I would leave it to both of you to work out how you would like to divid=
+e the responsibitilities.</div><div dir=3D"auto"><br></div><div dir=3D"auto=
+">The positions would become official at the next Conclave Installation.</d=
+iv><div dir=3D"auto"><br></div><div dir=3D"auto">Please let me know if you=
+=C2=A0have any questions=C2=A0or concerns.=C2=A0 =C2=A0Please know how much=
+ I appreciate you both.=C2=A0=C2=A0</div><div dir=3D"auto"><br></div><div d=
+ir=3D"auto">Fraternally yours,</div><div dir=3D"auto">Steve</div><div><br><=
+/div><div data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div dir=3D"l=
+tr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><p><span style=3D"co=
+lor:black"><u><span style=3D"font-size:18.6667px">Steve Johnston</span></u>=
+</span></p><p><font color=3D"#000000"><b>Executive Officer</b></font></p><p=
+><span style=3D"color:black">Arizona DeMolay State Association</span></p><p=
+><font color=3D"#000000">3535 East Blanche Drive, Phoenix, AZ 85032<br></fo=
+nt><font color=3D"#1155cc">(602) 931-3403</font><font><br></font><a href=3D=
+"mailto:executive.officer@azdemolay.org" target=3D"_blank"><span style=3D"c=
+olor:blue">executive.officer@azdemolay.org</span></a><span style=3D"color:b=
+lack"> =C2=A0 </span><a href=3D"http://www.azdemolay.org/" target=3D"_blank=
+"><span style=3D"color:blue">www.azdemolay.org</span></a><span style=3D"col=
+or:black">=C2=A0<br></span></p></div></div></div></div></div></div></div>
+
+--0000000000007f6403065ad42974--

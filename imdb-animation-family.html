@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMDb Search: Animation, Family, G-Rated, 7.5-10</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+    background: #0f0f0f;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .sub {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #222;
+  }
+  .card img {
+    width: 90px;
+    height: 133px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background: #111;
+  }
+  .info {
+    flex: 1;
+    min-width: 0;
+  }
+  .rank {
+    display: inline-block;
+    background: #e50914;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  h3 {
+    margin: 0 0 6px;
+    font-size: 14px;
+    line-height: 1.3;
+    color: #fff;
+  }
+  .year {
+    color: #888;
+    font-weight: normal;
+  }
+  .meta {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
+  .rating {
+    color: #f5c518;
+    font-weight: bold;
+  }
+  .votes {
+    color: #777;
+  }
+  p {
+    font-size: 12px;
+    color: #bbb;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+  <h1>IMDb Search: Animation, Family, G-Rated, 7.5-10</h1>
+  <div class="sub">Sorted by IMDb popularity desc &middot; 50 titles</div>
+  <div class="grid">
+    
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTYzMDM4NzkxOV5BMl5BanBnXkFtZTgwNzM1Mzg2NzM@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Toy Story 4" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">1</div>
+      <h3>Toy Story 4 <span class="year">(2019)</span></h3>
+      <div class="meta">1h 40m &middot; G &middot; <span class="rating">7.6</span> <span class="votes">(323K)</span></div>
+      <p>84Metascore Mark as watched When Woody, Buzz, and the gang join Bonnie on a road trip with her new craft project turned toy, Forky, the innocent little spork's antics launch Woody on a wild quest.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BZTA3OWVjOWItNjE1NS00NzZiLWE1MjgtZDZhMWI1ZTlkNzYwXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Toy Story" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">2</div>
+      <h3>Toy Story <span class="year">(1995)</span></h3>
+      <div class="meta">1h 21m &middot; G &middot; <span class="rating">8.3</span> <span class="votes">(1.2M)</span></div>
+      <p>96Metascore Mark as watched A cowboy doll is profoundly jealous when a new spaceman action figure supplants him as the top toy in a boy's bedroom. When circumstances separate them from their owner, the duo have to put aside their differences to return to him.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_QL75_UY133_CR2,0,90,133_.jpg" alt="Toy Story 3" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">3</div>
+      <h3>Toy Story 3 <span class="year">(2010)</span></h3>
+      <div class="meta">1h 43m &middot; G &middot; <span class="rating">8.3</span> <span class="votes">(980K)</span></div>
+      <p>92Metascore Mark as watched As Andy prepares to leave for college, Woody, Buzz and the gang face an uncertain future when a mix-up sends them to a daycare center full of new toys.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BNzVmODlhMDEtY2YxZi00OTVjLTlkNTktN2Q2OTRlM2I4M2FhXkEyXkFqcGc@._V1_QL75_UY133_CR0,0,90,133_.jpg" alt="Toy Story 2" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">4</div>
+      <h3>Toy Story 2 <span class="year">(1999)</span></h3>
+      <div class="meta">1h 32m &middot; G &middot; <span class="rating">7.9</span> <span class="votes">(677K)</span></div>
+      <p>88Metascore Mark as watched When Woody is stolen by a toy collector, Buzz and his friends set out on a rescue mission to save Woody before he becomes a museum toy property with his roundup gang Jessie, Prospector, and Bullseye.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Ratatouille" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">5</div>
+      <h3>Ratatouille <span class="year">(2007)</span></h3>
+      <div class="meta">1h 51m &middot; G &middot; <span class="rating">8.1</span> <span class="votes">(952K)</span></div>
+      <p>96Metascore Mark as watched A rat who can cook makes an unusual alliance with a young kitchen worker at a famous Paris restaurant.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTc5NjExNTA5OV5BMl5BanBnXkFtZTYwMTQ0ODY2._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Finding Nemo" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">6</div>
+      <h3>Finding Nemo <span class="year">(2003)</span></h3>
+      <div class="meta">1h 40m &middot; G &middot; <span class="rating">8.2</span> <span class="votes">(1.2M)</span></div>
+      <p>90Metascore Mark as watched After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BZGRiZDZhZjItM2M3ZC00Y2IyLTk3Y2MtMWY5YjliNDFkZTJlXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Lion King" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">7</div>
+      <h3>The Lion King <span class="year">(1994)</span></h3>
+      <div class="meta">1h 28m &middot; G &middot; <span class="rating">8.5</span> <span class="votes">(1.3M)</span></div>
+      <p>88Metascore Mark as watched Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="WALL·E" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">8</div>
+      <h3>WALL·E <span class="year">(2008)</span></h3>
+      <div class="meta">1h 38m &middot; G &middot; <span class="rating">8.4</span> <span class="votes">(1.3M)</span></div>
+      <p>95Metascore Mark as watched In a future where humans have temporarily abandoned Earth, a trash-compacting robot falls in love with a flying droid and helps her on her quest to restore hope to mankind.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTY1NTI0ODUyOF5BMl5BanBnXkFtZTgwNTEyNjQ0MDE@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Monsters, Inc." loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">9</div>
+      <h3>Monsters, Inc. <span class="year">(2001)</span></h3>
+      <div class="meta">1h 32m &middot; G &middot; <span class="rating">8.1</span> <span class="votes">(1.1M)</span></div>
+      <p>79Metascore Mark as watched Two monsters whose job is to make human children scream accidentally let a little girl into their world and must now protect her from their own kind to return her home unscathed.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BYWM3MDE3YjEtMzIzZC00ODE5LTgxNTItNmUyMTBkM2M2NmNiXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="My Neighbor Totoro" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">10</div>
+      <h3>My Neighbor Totoro <span class="year">(1988)</span></h3>
+      <div class="meta">1h 26m &middot; G &middot; <span class="rating">8.1</span> <span class="votes">(435K)</span></div>
+      <p>87Metascore Mark as watched When two girls move to the country to be near their ailing mother, they have adventures with the wondrous forest spirits who live nearby.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzU0ZTQxZDktOGY0Yy00NjdiLTllNDItMTMzMjI1YjMyYjRhXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Mulan" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">11</div>
+      <h3>Mulan <span class="year">(1998)</span></h3>
+      <div class="meta">1h 27m &middot; G &middot; <span class="rating">7.7</span> <span class="votes">(348K)</span></div>
+      <p>72Metascore Mark as watched To save her father from death in the army, a young maiden secretly goes in his place and becomes one of China's greatest heroines in the process.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BYTY3NDg2YzktYWFjZC00MTExLTlmZDctMGY3MWYzZTlkYTNiXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Beauty and the Beast" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">12</div>
+      <h3>Beauty and the Beast <span class="year">(1991)</span></h3>
+      <div class="meta">1h 24m &middot; G &middot; <span class="rating">8.0</span> <span class="votes">(507K)</span></div>
+      <p>95Metascore Mark as watched A prince cursed to spend his days as a hideous monster sets out to regain his humanity by earning a young woman's love.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMmQwYWZjZGItYzc0OC00ZDllLTg3NjItOWIyOWYwMDljMjAyXkEyXkFqcGc@._V1_QL75_UX90_CR0,3,90,133_.jpg" alt="Aladdin" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">13</div>
+      <h3>Aladdin <span class="year">(1992)</span></h3>
+      <div class="meta">1h 30m &middot; G &middot; <span class="rating">8.0</span> <span class="votes">(503K)</span></div>
+      <p>86Metascore Mark as watched A kind-hearted street urchin and a power-hungry Grand Vizier vie for a magic lamp that has the power to make their deepest wishes come true.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BNmJmMTVmNGUtZGZmYS00ZDA2LTlkMzMtY2I5OGI4ZmY1ODVkXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="The Little Mermaid" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">14</div>
+      <h3>The Little Mermaid <span class="year">(1989)</span></h3>
+      <div class="meta">1h 23m &middot; G &middot; <span class="rating">7.6</span> <span class="votes">(313K)</span></div>
+      <p>88Metascore Mark as watched A mermaid princess makes a Faustian bargain in an attempt to become human and win a prince's love.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BOTFhYWI1NGUtZWFhZS00MTdkLWIzZTItMDBhNWNiZDNlMjYyXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Kiki's Delivery Service" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">15</div>
+      <h3>Kiki's Delivery Service <span class="year">(1989)</span></h3>
+      <div class="meta">1h 43m &middot; G &middot; <span class="rating">7.8</span> <span class="votes">(190K)</span></div>
+      <p>85Metascore Mark as watched Along with her black cat Jiji, Kiki settles in a seaside town and starts a high-flying delivery service. Here begins her magical encounter with independence and responsibility, making lifelong friends and finding her place in the world.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BZDkzMzQ5ZmQtOTA3MC00MjhiLTk5M2UtNzk0MjEzZmVjN2UxXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Ponyo" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">16</div>
+      <h3>Ponyo <span class="year">(2008)</span></h3>
+      <div class="meta">1h 41m &middot; G &middot; <span class="rating">7.6</span> <span class="votes">(187K)</span></div>
+      <p>86Metascore Mark as watched A five-year-old boy develops a relationship with Ponyo, a young goldfish princess who longs to become a human after falling in love with him.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTQwMzE2Mzc4M15BMl5BanBnXkFtZTcwMTE4NTc1Nw@@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Snow White and the Seven Dwarfs" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">17</div>
+      <h3>Snow White and the Seven Dwarfs <span class="year">(1937)</span></h3>
+      <div class="meta">1h 23m &middot; Approved &middot; <span class="rating">7.6</span> <span class="votes">(239K)</span></div>
+      <p>96Metascore Mark as watched Exiled into the dangerous forest by her wicked stepmother, a princess is rescued by seven dwarf miners who make her part of their household.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMDdkMzM0MDYtM2RjNC00ZGZiLWIwMmMtZGNhOGY0NzNmMTFhXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Secret of NIMH" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">18</div>
+      <h3>The Secret of NIMH <span class="year">(1982)</span></h3>
+      <div class="meta">1h 22m &middot; G &middot; <span class="rating">7.5</span> <span class="votes">(49K)</span></div>
+      <p>76Metascore Mark as watched To save her ill son, a field mouse must seek the aid of a colony of rats, with whom she has a deeper link than she suspected.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BZDk2NTEzNjktZDg0MS00MWEwLTkzMWItNTU4ZjcxODM5ODdhXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Robin Hood" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">19</div>
+      <h3>Robin Hood <span class="year">(1973)</span></h3>
+      <div class="meta">1h 23m &middot; G &middot; <span class="rating">7.5</span> <span class="votes">(151K)</span></div>
+      <p>57Metascore Mark as watched The story of the legendary British outlaw portrayed with the characters as anthropomorphic animals.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BNGE4M2NiZDktY2E2MC00ZTY5LWIyMDktZWIxNzQ2OWU2NmQzXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="The Jungle Book" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">20</div>
+      <h3>The Jungle Book <span class="year">(1967)</span></h3>
+      <div class="meta">1h 18m &middot; Approved &middot; <span class="rating">7.6</span> <span class="votes">(214K)</span></div>
+      <p>65Metascore Mark as watched Bagheera the Panther and Baloo the Bear have a difficult time trying to convince a boy to leave the jungle for human civilization.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTAxNjk3OTYyODReQTJeQWpwZ15BbWU3MDgyODY2OTY@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="The Secret World of Arrietty" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">21</div>
+      <h3>The Secret World of Arrietty <span class="year">(2010)</span></h3>
+      <div class="meta">1h 34m &middot; G &middot; <span class="rating">7.6</span> <span class="votes">(118K)</span></div>
+      <p>80Metascore Mark as watched The Clock family consists of three four-inch-tall people who live incognito among humans, borrowing only what they need to survive. Their quiet life changes when their teenage daughter, Arrietty, is discovered.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BZWVlOGNlYjgtYWE4Yi00MjdiLWE1MTEtZTRmNzI1ODk5NzMzXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Whisper of the Heart" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">22</div>
+      <h3>Whisper of the Heart <span class="year">(1995)</span></h3>
+      <div class="meta">1h 51m &middot; G &middot; <span class="rating">7.8</span> <span class="votes">(84K)</span></div>
+      <p>75Metascore Mark as watched A love story between a girl who loves reading books and a boy who has previously checked out all of the library books she chooses.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMmM1NGNjZWUtZTk2Zi00ZjdmLTk3Y2QtMDQyNjJjMWI1ZDFlXkEyXkFqcGc@._V1_QL75_UX90_CR0,4,90,133_.jpg" alt="Fantasia" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">23</div>
+      <h3>Fantasia <span class="year">(1940)</span></h3>
+      <div class="meta">2h 4m &middot; G &middot; <span class="rating">7.7</span> <span class="votes">(112K)</span></div>
+      <p>96Metascore Mark as watched A series of eight famous pieces of classical music, conducted by Leopold Stokowski and interpreted in animation by Walt Disney's team of artists.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BM2JkOTRkZTctN2ZiMy00ZGRmLWJkNzQtOGJkNmFiM2ZjNjYzXkEyXkFqcGc@._V1_QL75_UY133_CR1,0,90,133_.jpg" alt="Wallace & Gromit: The Curse of the Were-Rabbit" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">24</div>
+      <h3>Wallace & Gromit: The Curse of the Were-Rabbit <span class="year">(2005)</span></h3>
+      <div class="meta">1h 25m &middot; G &middot; <span class="rating">7.5</span> <span class="votes">(158K)</span></div>
+      <p>87Metascore Mark as watched Wallace and his loyal dog, Gromit, set out to discover the mystery behind the garden sabotage that plagues their village and threatens the annual giant vegetable growing contest.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BZWM4NDk4MDgtZTRmMy00MDg1LTkzY2UtMzliZjUzOTNlYjg2XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Scooby-Doo on Zombie Island" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">25</div>
+      <h3>Scooby-Doo on Zombie Island <span class="year">(1998)</span></h3>
+      <div class="meta">1h 17m &middot; G &middot; <span class="rating">7.7</span> <span class="votes">(22K)</span></div>
+      <p>Mark as watched The Mystery Gang reunite and visit Moonscar Island, a remote island with a dark secret. Daphne wants more than just a villain in a costume, and they get more than they ever expected.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzkwMmI1YjktNDM4Ni00MmU5LWEyYWQtNTgyNjcxOTQ2OWJhXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="The Many Adventures of Winnie the Pooh" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">26</div>
+      <h3>The Many Adventures of Winnie the Pooh <span class="year">(1977)</span></h3>
+      <div class="meta">1h 14m &middot; G &middot; <span class="rating">7.5</span> <span class="votes">(43K)</span></div>
+      <p>Mark as watched In this collection of animated shorts based on the stories and characters by A.A. Milne, Winnie the Pooh, a honey-loving teddy bear, embarks on some eccentric adventures.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BZmQ3YWZhNDctY2JmOS00MTEwLTg4MjYtY2NmNjg2MzUzYzhmXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="How the Grinch Stole Christmas!" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">27</div>
+      <h3>How the Grinch Stole Christmas! <span class="year">(1966)</span></h3>
+      <div class="meta">26m &middot; G &middot; <span class="rating">8.3</span> <span class="votes">(66K)</span></div>
+      <p>Mark as watched A grumpy hermit hatches a plan to steal Christmas from the Whos of Whoville.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BNzg4MTdhYTktMzJhYy00N2Q3LWFlODYtM2M3OGI3ZjE1MTczXkEyXkFqcGc@._V1_QL75_UY133_CR5,0,90,133_.jpg" alt="The Rise of Kirmada" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">28</div>
+      <h3>The Rise of Kirmada <span class="year">(2012)</span></h3>
+      <div class="meta">1h 8m &middot; G &middot; <span class="rating">7.6</span> <span class="votes">(638)</span></div>
+      <p>Mark as watched Bheem and young lord Krishna team up to protect the world against the wicked and powerful Kirmada and his equally dangerous bat army.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BZjkxNDE4ODMtYTBmYS00MWMzLWI3NTItM2E0MTE5OWI5MWVjXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="The Pinchcliffe Grand Prix" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">29</div>
+      <h3>The Pinchcliffe Grand Prix <span class="year">(1975)</span></h3>
+      <div class="meta">1h 28m &middot; G &middot; <span class="rating">8.5</span> <span class="votes">(15K)</span></div>
+      <p>Mark as watched Reodor Felgen decides that he will enter a car race to defeat his former friend who has stolen his plans for a car.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BZTIzZmViNjgtZjYyMy00ZTFkLWI3YTEtODNlYzdmZjBlNGY3XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="Once Upon a Studio" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">30</div>
+      <h3>Once Upon a Studio <span class="year">(2023)</span></h3>
+      <div class="meta">9m &middot; G &middot; <span class="rating">8.3</span> <span class="votes">(8.5K)</span></div>
+      <p>Mark as watched An all-star ensemble of beloved characters from Walt Disney Animation Studios come together for a joyful, entertaining and emotional reunion as they assemble for a spectacular group photo to mark Disney's 100th anniversary.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTgzNDAxNDg2Nl5BMl5BanBnXkFtZTcwNzMzNTIyNw@@._V1_QL75_UY133_CR8,0,90,133_.jpg" alt="Tangled Ever After" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">31</div>
+      <h3>Tangled Ever After <span class="year">(2012)</span></h3>
+      <div class="meta">6m &middot; G &middot; <span class="rating">7.5</span> <span class="votes">(21K)</span></div>
+      <p>Mark as watched Rapunzel and Flynn Rider have their wedding, but Pascal and Maximus must recover the rings they lose in mid-ceremony.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BZjhkOWUyYWUtMDE0OC00MjJkLWI3MzgtNmJlNzJhOGY0MGJmXkEyXkFqcGc@._V1_QL75_UY133_CR2,0,90,133_.jpg" alt="Peter and The Wolf" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">32</div>
+      <h3>Peter and The Wolf <span class="year">(2006)</span></h3>
+      <div class="meta">32m &middot; G &middot; <span class="rating">7.5</span> <span class="votes">(4.7K)</span></div>
+      <p>Mark as watched An animated retelling set to Prokofiev's suite.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BNjdkZGRhMWMtZGNmNy00OTAyLTlhODktYWFkZjRmN2UzMDY2XkEyXkFqcGc@._V1_QL75_UY133_CR2,0,90,133_.jpg" alt="Bao" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">33</div>
+      <h3>Bao <span class="year">(2018)</span></h3>
+      <div class="meta">8m &middot; G &middot; <span class="rating">7.5</span> <span class="votes">(36K)</span></div>
+      <p>Mark as watched A Chinese-Canadian woman suffering from empty nest syndrome gets a second shot at motherhood when one of her handmade dumplings comes alive.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BNDU1ZTYwNmYtNjM1Zi00NTlkLWI5ZmQtNjM2OWM0ZTMxYTFlXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Piper" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">34</div>
+      <h3>Piper <span class="year">(2016)</span></h3>
+      <div class="meta">6m &middot; G &middot; <span class="rating">8.3</span> <span class="votes">(34K)</span></div>
+      <p>Mark as watched A hungry sandpiper hatchling ventures from her nest for the first time to dig for food by the shoreline. The problem is, the food is buried in the sand where scary waves roll up.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BODdhM2E1M2MtZDBiZi00YzUyLTk3MWItMzI1NzE4N2IxZTQzXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Geri's Game" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">35</div>
+      <h3>Geri's Game <span class="year">(1997)</span></h3>
+      <div class="meta">5m &middot; G &middot; <span class="rating">7.8</span> <span class="votes">(29K)</span></div>
+      <p>Mark as watched Geri sets up a chess game to play his greatest opponent - himself.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BNzdmYzM2YmMtMzcxMC00NWQ1LTliYjktOGEyN2UwMTFlZmE5XkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg" alt="For the Birds" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">36</div>
+      <h3>For the Birds <span class="year">(2000)</span></h3>
+      <div class="meta">3m &middot; G &middot; <span class="rating">7.9</span> <span class="votes">(36K)</span></div>
+      <p>Mark as watched A group of snooty birds roosting on a telephone wire get their just deserts when a goofy bird drops in.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BN2RlYTZkYWQtYTU1Mi00N2JhLTg5NDktNjZmZjVmNmU2NjQyXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Mickey's Christmas Carol" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">37</div>
+      <h3>Mickey's Christmas Carol <span class="year">(1983)</span></h3>
+      <div class="meta">26m &middot; G &middot; <span class="rating">8.0</span> <span class="votes">(18K)</span></div>
+      <p>Mark as watched The classic Disney animated characters play the roles in this animated retelling of the Charles Dickens masterpiece.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BOTAzYmU0NzctZTQwOS00MjYwLWJkZjctMmFiMWJkMTA2MjY1XkEyXkFqcGc@._V1_QL75_UY133_CR4,0,90,133_.jpg" alt="The Snowman" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">38</div>
+      <h3>The Snowman <span class="year">(1982)</span></h3>
+      <div class="meta">26m &middot; G &middot; <span class="rating">8.2</span> <span class="votes">(19K)</span></div>
+      <p>Mark as watched On Christmas Eve, a young boy builds a snowman that comes to life and takes him to the North Pole to meet Father Christmas.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTM4ODg0MzM0MV5BMl5BanBnXkFtZTcwNDY2MTc3Nw@@._V1_QL75_UY133_CR1,0,90,133_.jpg" alt="Paperman" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">39</div>
+      <h3>Paperman <span class="year">(2012)</span></h3>
+      <div class="meta">7m &middot; G &middot; <span class="rating">8.2</span> <span class="votes">(37K)</span></div>
+      <p>Mark as watched An office worker meets the girl of his dreams and uses a fleet of paper airplanes to get her attention.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BZjk3MTlmZDgtMjA0ZS00MzUzLThjMDQtM2FjZTU2NjI4OTFkXkEyXkFqcGc@._V1_QL75_UY133_CR2,0,90,133_.jpg" alt="Feast" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">40</div>
+      <h3>Feast <span class="year">(2014)</span></h3>
+      <div class="meta">6m &middot; G &middot; <span class="rating">8.1</span> <span class="votes">(25K)</span></div>
+      <p>Mark as watched The love life of a man as told through the meals he gives his adopted dog, Winston.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BNDJhOGU2OGMtZDRmMS00ODllLWEyYjctYzIwNDBmZDBlYzM0XkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Burn-E" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">41</div>
+      <h3>Burn-E <span class="year">(2008)</span></h3>
+      <div class="meta">8m &middot; G &middot; <span class="rating">7.5</span> <span class="votes">(14K)</span></div>
+      <p>Mark as watched If BURN-E (a welding robot) had known how much trouble he'd be caused by WALL-E's pursuit of EVE, then he'd have taken the day off.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BNDBmYzhmOTItZDhiOS00M2MxLTk3ZWQtNjc4NDI0ZTAzNWVmXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="One Man Band" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">42</div>
+      <h3>One Man Band <span class="year">(2005)</span></h3>
+      <div class="meta">4m &middot; G &middot; <span class="rating">7.6</span> <span class="votes">(18K)</span></div>
+      <p>Mark as watched Two buskers engage in a petty feud over a child's donation.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTc5NmVmMDMtY2VlZC00ZjIwLTg3ZTYtNDYzYmQxNTk0ODJlXkEyXkFqcGc@._V1_QL75_UX90_CR0,3,90,133_.jpg" alt="Winnie the Pooh and the Honey Tree" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">43</div>
+      <h3>Winnie the Pooh and the Honey Tree <span class="year">(1966)</span></h3>
+      <div class="meta">25m &middot; G &middot; <span class="rating">8.0</span> <span class="votes">(5.1K)</span></div>
+      <p>Mark as watched Christopher Robin's bear attempts to raid a beehive in a tall tree.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BOGI5MjVhNDMtYWUyZi00YzhhLTk5NzUtZmUxNzdiOTk4ZjdjXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Partly Cloudy" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">44</div>
+      <h3>Partly Cloudy <span class="year">(2009)</span></h3>
+      <div class="meta">6m &middot; G &middot; <span class="rating">8.0</span> <span class="votes">(25K)</span></div>
+      <p>Mark as watched Babies both human and beast are created up in the stratosphere, by the clouds themselves. One cloud specializes in &quot;dangerous&quot; babies, creating a challenge for his loyal stork that has to deliver them.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzVhMWQxMzUtNmE1OS00YzZlLWE4ZTgtMTg2YzFlZDNmZTgxXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Presto" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">45</div>
+      <h3>Presto <span class="year">(2008)</span></h3>
+      <div class="meta">5m &middot; G &middot; <span class="rating">8.3</span> <span class="votes">(27K)</span></div>
+      <p>Mark as watched A stage magician's rabbit gets into a magical onstage brawl against his neglectful guardian with two magic hats.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTZkOGM0YWEtMzIxNi00NzdjLTljMDItOTgwMDU2OTU2NmVmXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Vincent" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">46</div>
+      <h3>Vincent <span class="year">(1982)</span></h3>
+      <div class="meta">6m &middot; G &middot; <span class="rating">8.2</span> <span class="votes">(26K)</span></div>
+      <p>Mark as watched Young Vincent Malloy dreams of being just like Vincent Price and loses himself in macabre daydreams which annoys his mother.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTYyMTk1MjE3NF5BMl5BanBnXkFtZTgwMjkxMDgwMjE@._V1_QL75_UY133_CR0,0,90,133_.jpg" alt="Day & Night" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">47</div>
+      <h3>Day & Night <span class="year">(2010)</span></h3>
+      <div class="meta">6m &middot; G &middot; <span class="rating">8.0</span> <span class="votes">(21K)</span></div>
+      <p>Mark as watched Day encounters Night, a stranger of distinctly darker moods. But their suspicions soon turn to curiosity and they are delighted to find the joys of their budding friendship.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BODZlYWI0YTUtZWM4My00M2JkLWEzYmEtZjM0NTkxYjIxZmY1XkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg" alt="Winnie the Pooh and the Blustery Day" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">48</div>
+      <h3>Winnie the Pooh and the Blustery Day <span class="year">(1968)</span></h3>
+      <div class="meta">25m &middot; G &middot; <span class="rating">7.9</span> <span class="votes">(5.8K)</span></div>
+      <p>Mark as watched Winnie the Pooh and his friends experience high winds, heavy rains, and a flood in Hundred Acre Wood.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BNDQ0MWUzNTYtNzNhYi00NTMxLTlmODQtOWVlNWIzZjk3ZmZhXkEyXkFqcGc@._V1_QL75_UY133_CR3,0,90,133_.jpg" alt="La Luna" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">49</div>
+      <h3>La Luna <span class="year">(2011)</span></h3>
+      <div class="meta">7m &middot; G &middot; <span class="rating">7.8</span> <span class="votes">(18K)</span></div>
+      <p>Mark as watched A fable of a young boy coming of age in the most peculiar of circumstances. It's the first time his Papa and Grandpa are taking him to work. Will he be able to find his own way?</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/M/MV5BMDE4OGQ2ZGUtYWIwZC00MWU4LTgzYzktNGE3NDc4OTM1YWU2XkEyXkFqcGc@._V1_QL75_UY133_CR0,0,90,133_.jpg" alt="Chip 'n' Dale's Rescue Rangers to the Rescue" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%22133%22><rect width=%2290%22 height=%22133%22 fill=%22%23333%22/><text x=%2245%22 y=%2266%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23666%22 font-size=%2212%22>No Image</text></svg>'">
+    <div class="info">
+      <div class="rank">50</div>
+      <h3>Chip 'n' Dale's Rescue Rangers to the Rescue <span class="year">(1989)</span></h3>
+      <div class="meta">1h 25m &middot; G &middot; <span class="rating">7.6</span> <span class="votes">(2.2K)</span></div>
+      <p>Mark as watched Chip and Dale, Disney's favorite chipmunk team, form their own protection agency for their fellow animals, where they seek to help the helpless and protect those in peril from those who would exploit them. 50 more ### Recently viewed You have no recently viewed pages [Get the IMDb app](https://slyb.app.link/SKdyQ6A449) Follow IMDb on social Get the IMDb app For Android and iOS ![Get the IMDb app](https://m.media-amazon.com/images/G/01/IMDb/Mobile/DesktopQRCode-png.png) * [Help](https://help.imdb.com/imdb) * [Site Index](https://help.imdb.com/article/imdb/general-information/imdb-site-index/GNCX7BHNSPBTFALQ#so) * [IMDbPro](https://pro.imdb.com?ref_=cons_tf_pro&rf=cons_tf_pro) * [Box Office Mojo](https://www.boxofficemojo.com) * [License IMDb Data](https://developer.imdb.com/) * [Press Room](https://www.imdb.com/pressroom/?ref_=sr_ftr) * [Advertising](https://advertising.amazon.com/resources/ad-specs/imdb/) * [Jobs](https://www.amazon.jobs/en/teams/imdb) * [Conditions of Use](https://www.imdb.com/conditions/?ref_=sr_ftr) * [Privacy Policy](https://www.imdb.com/privacy/?ref_=sr_ftr) * [Your Ads Privacy Choices](https://www.imdb.com/privacy/redirect/?ref_=sr_ftr) IMDb, an Amazon company © 1990-2026 by IMDb.com, Inc. Back to top ![](https://fls-na.amazon.com/1/batch/1/OP/A1EVAM02EL8SFB:133-1055739-9888314:SWN6FC8887G07YD7FXMF$uedata=s:%2Fuedata%2Fuedata%3Fnoscript%26id%3DSWN6FC8887G07YD7FXMF:0)</p>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

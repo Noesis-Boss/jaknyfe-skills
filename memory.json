@@ -59,6 +59,17 @@
       "text": "Meerkat MCP evaluated 2026-06-12: auth captured as delowery@gmail.com, 5 tools listed, /api/roast works but /api/custom-chat returns HTTP 500 for every model slug. Paused pending vendor fix. Full note: memory/projects/meerkat-mcp.md",
       "addedAt": "2026-06-12T21:19:13.216Z",
       "tags": []
+    },
+    {
+      "id": 1788786630761,
+      "text": "Senior Eyes AI-review service specced 2026-09-07: sheet at senior-eyes/SERVICE-SHEET.md, web+automation review lanes, $250 single / $750-1200 audit / $150/mo watch / $2000 retainer, nonprofit 20% off, side-income goal 500-1500/mo",
+      "addedAt": "2026-09-07T13:10:30.761Z",
+      "lastSeenAt": "2026-09-07T13:10:30.761Z",
+      "type": "fact",
+      "status": "pending",
+      "confidence": 1,
+      "source": "manual",
+      "tags": []
     }
   ]
 }

@@ -1,0 +1,171 @@
+Delivered-To: state.officer.director@azdemolay.org
+Received: by 2002:a05:612c:450e:b0:5f7:b53f:d3de with SMTP id ls14csp1670197vqb;
+        Wed, 2 Sep 2026 06:18:20 -0700 (PDT)
+X-Received: by 2002:a05:6402:5298:b0:6a6:32f9:d7ce with SMTP id 4fb4d7f45d1cf-6a682ac0024mr3484189a12.19.1788355100513;
+        Wed, 02 Sep 2026 06:18:20 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1788355100; cv=pass;
+        d=google.com; s=arc-20260327;
+        b=fTprgqzM31RireHknMj154CXBur2EN0wj646fSTT5VLEp4BJX3VJnEUT0ZSEv10kB1
+         EIF/I93l11WaQQAG3ZvAG+DYXUa/v/ft08Hc0mRjVv/xkP7Ow8YRuH9j5S6ZybnaIc4P
+         QLVFuXA7GF6FwUCaYDTHjnPCO+Ov1la6IWJu668zPllzucQxHEh4gsdbbhBXYK1KfmkJ
+         xC40mp+6zPCl5mDcZp8l+UEJvawEB3F4YHcXI2jlyWDcgcP2gH7I/5sYZ9kj0UUyRVtD
+         KOMHcqTC9dQ+gWbBL8jStBaLmzuQsSFx9MCOt1bP2lpMyQTCh3TTuQsU7gd0tm11M7nQ
+         r5hw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=Bwseze60U7QlJijVGuTwgi3zdgxQG2ANlBmMNe/OJg4=;
+        fh=0taFMM20cnNhIUVkaAbwU4qKMg4XwLibUsh/WNQC63o=;
+        b=tBVIIvQBth7M7GFZg95rcWzYXDbNB1WuaLqq1niFL6X24/m36RvUxT0uOoNaBvffXE
+         bJ64aRb7/x0q1stdZXErVHEKXnkO8UOZwKTSJrRQLnLxFjRHSGIWGhpZ7RcJSGMRpHSl
+         n+14xDrTty3A3UDE5xxAN7wu4IQxtXzhCgA3b+3sbu6Iypsi3CM1hcPVxWioeon50EEa
+         Y21I3gkI/1et/H6VfavilKq6ltpXOc1/w0bzuo9smK7ZxSbiz9N3m2W9TmUniNdFFGjc
+         Yz4aJjuJFGLMagPhXyVtFOuqMcsgP/IrR4IscU2oRacLMzG/rzJg2x3xz60lSq/NnsUK
+         v2bA==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@azdemolay-org.20251104.gappssmtp.com header.s=20251104 header.b=yJtdmHdh;
+       arc=pass (i=1);
+       spf=none (google.com: executive.officer@azdemolay.org does not designate permitted sender hosts) smtp.mailfrom=executive.officer@azdemolay.org;
+       dara=fail header.i=@azdemolay.org
+Return-Path: <executive.officer@azdemolay.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 4fb4d7f45d1cf-6a68dcc5adesor117255a12.3.2026.09.02.06.18.20
+        for <state.officer.director@azdemolay.org>
+        (Google Transport Security);
+        Wed, 02 Sep 2026 06:18:20 -0700 (PDT)
+Received-SPF: none (google.com: executive.officer@azdemolay.org does not designate permitted sender hosts) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@azdemolay-org.20251104.gappssmtp.com header.s=20251104 header.b=yJtdmHdh;
+       arc=pass (i=1);
+       spf=none (google.com: executive.officer@azdemolay.org does not designate permitted sender hosts) smtp.mailfrom=executive.officer@azdemolay.org;
+       dara=fail header.i=@azdemolay.org
+ARC-Seal: i=1; a=rsa-sha256; t=1788355100; cv=none;
+        d=google.com; s=arc-20260327;
+        b=HSOrTqZDLhTsqLNZxHxXWNsJogBi1aWornQwO1gRt3t/ij39lVgikEy8ttUKe8O6bU
+         Ab1o/Ftnfy3oWS7rNzYEoh4ldy4NB/B727jGdiWWWD1C/Tk+xSy9uWLGZy0klVBKB66m
+         ealSHJ/R2LO8rR8YKLMhfUaIikIX/YNwXuPraykJYhyzRQSltgKR8/bL9RlInfGylYVV
+         0qjO94RsEu31g8iBesN5Fix4lbyoz2pDycTLO90UcGnWwoZRCv7SAPpK/d1B8jUlQQfV
+         sPqOfylQrGtSpWjHdmsxJn+g945Qajdfs0nB4gQRBLAtbcC7xV+qI5Deaw10YwdZyZUf
+         ZUcA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=Bwseze60U7QlJijVGuTwgi3zdgxQG2ANlBmMNe/OJg4=;
+        fh=0taFMM20cnNhIUVkaAbwU4qKMg4XwLibUsh/WNQC63o=;
+        b=rlVpD35BfervfL/H+ytiTlwkbNZSeNaPi4zVCew9Y4XHlEB2dYh8k3yT6k9lX6Kgzd
+         x7F1PiMmm4g9QFF52mHQFOAOCK5ECKH6vWbkQNP9xqk/+4TFnXootLL46gu7+XWhl8yj
+         1YDOG/W0wrqmZc2q8Dim9IJfU9DPNfimB+sNrQUw4coYmdmzQvLw8fWpjPyURQdPfvAh
+         kXcn/xu4Wb9/v3XqUgWtKs/B08l+eNu7koNEsc9EK3+RQ9Qa5MWaTDFnJdKt1y2cpazf
+         Z3NsQ8MkO8JwBAPuzgYPqL8Zptzx67r21Ro69FjBuIpDTClFlti5DEaXeBrtBCpOpta0
+         nXbg==;
+        darn=azdemolay.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=azdemolay-org.20251104.gappssmtp.com; s=20251104; t=1788355100; x=1788959900; darn=azdemolay.org;
+        h=content-type:to:subject:message-id:date:from:mime-version:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=Bwseze60U7QlJijVGuTwgi3zdgxQG2ANlBmMNe/OJg4=;
+        b=yJtdmHdh8MjYX4h0QT7uU0g/A9ZRFjJ7CY9Rqw4vrcg94XAYy+wNqm3OuUBVzRThFN
+         XFW1RoP1mQwoCyNiQVBNxAnDUYCvYwwwRgrScd7uIuay0scYMRLjt0JXBaCcTy036UGo
+         5vuwHZRWt9fGg7mkRR4DiZDukJvU8upAl2aLgSYlXkS/exUwxGegbC4q4v98bU8pzZCC
+         u+ULN+WaF1/VsPLK96Q2/iyiO2I5QONKxGorX1y82ZQBLiHumQXO4J6tZ1xjL8M+T81S
+         1hQsrevCGMIUtV+iy4XImiNnUnRYnJElV0eiTSfIf4SXXJ1GCohvBh8R3kQ1iHuVfRwP
+         3frQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1788355100; x=1788959900;
+        h=content-type:to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=Bwseze60U7QlJijVGuTwgi3zdgxQG2ANlBmMNe/OJg4=;
+        b=FpqhPpei3h8BIWmbx0UDI1V3St548DDXoCcxYnvKAzDpbEfPC/uVNu3IxHX44u5OWZ
+         odLlUssqyVqP1p0+7OmMyAp7XWFognm+6JLs9l0G51CvW2Yo4fbGEHYXe9EGzGGLEmIy
+         Lj5jx11f7dqQjrc8HlJ676cmOu+7+clMvmYEgyk9GAxsYzZNc57aFbDMfRyavVh054BY
+         FY2EoSRBOu9uM+hii69fXHiyRNKj5GJ5leiKySLuRmIX7EPc1ezzFf+0/2DJkoHUVRRO
+         rDHxc4kx552aQPCFYs792aX0mkOhwPD6Le1iJIefM6x59laIe+lVgheSH0SPlOfMITie
+         z4UA==
+X-Gm-Message-State: AFuF++n+/Ca1WzrruTCGJ0lwxsVQ8iOrIOb6h38an6kYyYDzl9rOT0C/
+	rwYBFYY4Sz/CRqQ/IH/bDyJf2k0/YTIm2hUptSECa5p8EPPhaTpSB06bH9pKGJmVWOcMEWI+s/f
+	1yqlNUuViLAegNbPwfErCbYrsFYKfUgZilciCplobLm0wA4IuRuriZCU=
+X-Gm-Gg: AYBFou3FJlXmGy4MNYcwWuuhnNQGKCmPqtMjxnm6cjfUtiSIjDPpr4xTXQQzsk5ybQI
+	Hvzhjy13385tU4zRfODivVxjKg3tdpmAC35wsBNgV4KM3ENjymcIllcLd8KkmYovrYX82bHXI5q
+	2o/0ax0wjVdNhKDbqC+y1d7ULmVjH8c+iQFs4vwYiu62ymjIbjJcLXvbep8rZgxUk1agnMR8jgG
+	+e4FI/kcDTyCpXPvKSaEBb2BAtaBE47ztW+A4Y9NoUnhIZkB9x7IIvCef/8VrJEktTYjnyxL8As
+	TFChXIRBASHOY1hb+B4Jy6HKYHWFTYw4AELfoOxMqy//BbSecJ7SSkdP2sR2b06iSY+/JClm8aO
+	wU5biLjVxsajBm+4fKZrc9OuW4cjRGLDsoYU=
+X-Received: by 2002:a05:6402:5109:b0:6a6:32f9:d7cf with SMTP id
+ 4fb4d7f45d1cf-6a682af6276mr2883632a12.20.1788355099547; Wed, 02 Sep 2026
+ 06:18:19 -0700 (PDT)
+MIME-Version: 1.0
+From: Steve Johnston <executive.officer@azdemolay.org>
+Date: Wed, 2 Sep 2026 06:18:07 -0700
+X-Gm-Features: AcwNN1XSeN2_yMNUg-e4B_w4fcghD6_GFAZ4QokY8qJ2h90CWiD1RrVbb2d8R70
+Message-ID: <CAGDJSMKxrX=Ozkis-YpBftoWngmEUEkXeRAxEasobnOHdyFvLw@mail.gmail.com>
+Subject: Re: Conclave 2027
+To: State Officer Director <state.officer.director@azdemolay.org>, 
+	Membership Director <membership@azdemolay.org>, 
+	Ceremonies and Traditions Director <ritual.director@azdemolay.org>, State Master Councilor <SMC@azdemolay.org>
+Content-Type: multipart/alternative; boundary="00000000000070e7bb065a7fdef9"
+
+--00000000000070e7bb065a7fdef9
+Content-Type: text/plain; charset="UTF-8"
+
+Gentlemen,
+Since Prescott Pines is not going to work out for 2027 Conclave, I have
+gotten a quote from Chapel Rock in Prescott which look great.
+
+https://chapelrock.net/
+
+The room accomodations are hotel style with two beds per room  and there is
+a grat looking lodge for us to hold our indoor events (Newell Center)
+
+I am in the process of looking into activities.
+
+The cost is very reasonable.
+
+Please look at the website and let me know your thoughts.
+
+The dates I am looking at are July16 through the 18th.
+
+Dad Johnston
+
+*Steve Johnston*
+
+*Executive Officer*
+
+Arizona DeMolay State Association
+
+3535 East Blanche Drive, Phoenix, AZ 85032
+(602) 931-3403
+executive.officer@azdemolay.org   www.azdemolay.org
+
+--00000000000070e7bb065a7fdef9
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><div>Gentlemen,</div><div dir=3D"auto">Since Prescott Pin=
+es is not going to work out for 2027 Conclave, I have gotten a quote from C=
+hapel Rock in Prescott which look great.</div><div dir=3D"auto"><br></div><=
+div dir=3D"auto"><a href=3D"https://chapelrock.net/">https://chapelrock.net=
+/</a></div><div dir=3D"auto"><br></div><div dir=3D"auto">The room accomodat=
+ions are hotel style with two beds per room=C2=A0 and there is a grat looki=
+ng lodge for us to hold our indoor events (Newell Center)</div><div dir=3D"=
+auto"><br></div><div dir=3D"auto">I am in the process of looking into activ=
+ities.</div><div dir=3D"auto"><br></div><div dir=3D"auto">The cost is very =
+reasonable.=C2=A0 =C2=A0</div><div dir=3D"auto"><br></div><div dir=3D"auto"=
+>Please look at the website and let me know your thoughts.=C2=A0</div><div =
+dir=3D"auto"><br></div><div dir=3D"auto">The dates I am looking at are July=
+16 through the 18th.=C2=A0</div><div dir=3D"auto"><br></div><div dir=3D"aut=
+o">Dad Johnston</div><div><br></div><div data-smartmail=3D"gmail_signature"=
+><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div d=
+ir=3D"ltr"><p><span style=3D"color:black"><u><span style=3D"font-size:18.66=
+67px">Steve Johnston</span></u></span></p><p><font color=3D"#000000"><b>Exe=
+cutive Officer</b></font></p><p><span style=3D"color:black">Arizona DeMolay=
+ State Association</span></p><p><font color=3D"#000000">3535 East Blanche D=
+rive, Phoenix, AZ 85032<br></font><font color=3D"#1155cc">(602) 931-3403</f=
+ont><font><br></font><a href=3D"mailto:executive.officer@azdemolay.org" tar=
+get=3D"_blank"><span style=3D"color:blue">executive.officer@azdemolay.org</=
+span></a><span style=3D"color:black"> =C2=A0 </span><a href=3D"http://www.a=
+zdemolay.org/" target=3D"_blank"><span style=3D"color:blue">www.azdemolay.o=
+rg</span></a><span style=3D"color:black">=C2=A0<br></span></p></div></div><=
+/div></div></div></div></div>
+
+--00000000000070e7bb065a7fdef9--

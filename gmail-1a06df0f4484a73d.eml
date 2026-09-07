@@ -1,0 +1,230 @@
+Delivered-To: delowery@gmail.com
+Received: by 2002:a05:6022:b14c:b0:10f:62ad:17 with SMTP id z12csp2514005laa;
+        Fri, 4 Sep 2026 12:41:43 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AKwUvBxpsw/BdUmT7/aLTuZlyJwdhHWAUn15RugKsp2MH1eXAFyKDyYD5i7haszDJr6+0l8txSG8uENIsw==@gmail.com
+X-Received: by 2002:a05:6214:e4f:b0:90e:9665:71b9 with SMTP id 6a1803df08f44-9103efbc2b1mr95736146d6.27.1788550903294;
+        Fri, 04 Sep 2026 12:41:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1788550903; cv=none;
+        d=google.com; s=arc-20260327;
+        b=Ilr7XRw1Y73HIRohy45YK2TVJfANUkS/OnLGQ96MqrJ6Yrn09Hq8pU3XaiIndwxi0o
+         O15EuHSGL6Mkk4mjrAoDTuRdtDNDI0VUK6wJv3lCje1pjRi55z7Gw2bV+b/ZJKxf/N65
+         67z99l3NdSK6eN+fkECn0T98ZzbmJk8DFKiYeMZ/m+KfgLk97i8biWvgZK4QiFg8ZUeX
+         rpDCgU1bQGYvbr41g9VfrG6jaAG5nSNl3P8jVQK82wc//l0CcIFDf9q63AeZmmiL8r/V
+         I8BbMPg1xKshr8nHRZk8a4LqHozbrJn/IjpaQAeh7pDyxTevRTKpaTdJESNRnT+0kd/m
+         r8iA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=mime-version:subject:references:message-id:from:date:dkim-signature;
+        bh=7poMjGJm0vIGSikuQg4XgyY+7+5vDl45n57QMGKDXWA=;
+        fh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
+        b=UMU4rXNMHdzqxXNOaQ6AxDUwdpgdoT338wjTpw5VU/bt747vDRqp7YDJxEA2sqt755
+         VOXn5KXy581hU37ld9NeL5Zft5RoCKHfwkIPTsqBEHqk9ONQvPL/KfUz8ycxQhkdzaQ8
+         1TyGNwX2beFUtftWoVmdpiYkZAQDZcFKYTV9y5PtY7qMPZkXKdFnlytivaMk/e+dya8h
+         7N8bWK6itd4U2VndctMaItLgDYc4BaZ6QVGAh8IUjgiw6hqphzEWiiDaBFOvDJBdyImF
+         tlVRfuD7EnH7xNPa8LhpDt/zUj+Bvsxgk+oif0KlNjrCFaAEDLZvij0saDGhWB0YQs5Z
+         pitw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@aol.com header.s=a2048 header.b=PTuBIJ83;
+       spf=pass (google.com: domain of lewisw4@aol.com designates 74.6.131.42 as permitted sender) smtp.mailfrom=lewisw4@aol.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=aol.com
+Return-Path: <lewisw4@aol.com>
+Received: from sonic303-3.consmr.mail.bf2.yahoo.com (sonic303-3.consmr.mail.bf2.yahoo.com. [74.6.131.42])
+        by mx.google.com with ESMTPS id 6a1803df08f44-910407d7acasi31143186d6.633.2026.09.04.12.41.43
+        for <delowery@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 04 Sep 2026 12:41:43 -0700 (PDT)
+Received-SPF: pass (google.com: domain of lewisw4@aol.com designates 74.6.131.42 as permitted sender) client-ip=74.6.131.42;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@aol.com header.s=a2048 header.b=PTuBIJ83;
+       spf=pass (google.com: domain of lewisw4@aol.com designates 74.6.131.42 as permitted sender) smtp.mailfrom=lewisw4@aol.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=aol.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aol.com; s=a2048; t=1788550902; bh=7poMjGJm0vIGSikuQg4XgyY+7+5vDl45n57QMGKDXWA=; h=Date:From:References:Subject:From:Subject:Reply-To; b=PTuBIJ83I3SQI9V1yUJJqDD3bbfJhYKPElGoxz8ZEBJfL6+C6QEdOFlVUOGp2w5cnAjH9jGw3iiCTYlN0lzPTwW60McGqFeeXCf/P0CorrrVQHhi+G64cWiHyNta7zOa/H0CAUGhMZf8xvgoddaHCv88oEUAUu9s1ok5N1ej/6L4a1hC56MdtOZcpAwwhGlKU1g7EVyD8gaPOaOwXQXi9Ns6fwei/wIlD82YJOnunGztHRZM48RIj5SwqmkzNoaWk+6z3gD733lc5cnXV87SlsNV94MgvGCX59v0zj63UkcE1TIHOBb3O6VMjOr6mhhL/qPNdWrSn9WyBWJ50PnqsQ==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1788550902; bh=HLJ0TjgBTQ/yXfePzOhyyedtA4MQkzK43SzoEDgMLrh=; h=X-Sonic-MF:Date:From:Subject:From:Subject; b=qwvKrj0JPc1MhJfWlXeDbsDSGWg/3EfTkYPJKG8NIlg8g1Ha8OsacNOWfgslfPq/0kjH0i22+fUcjbxZzE9YlRzTTKhwM1Z88A7zzp/SLaHGQdefiTOG07pRP54/dh59qZhfZ/C7fnzhsGt60tDtfgLTnAk2Cg8o01ngLX7TEymD9J7RRhHzHU9DiKmV13kGMkO67d/jrmVoqEnzpZjoVZ8++0ZvNUBqsUuztZPHZ6moWrQSeXFJS3il37GzTcRQ7L7Pnr57gXC8BH4eov/BvBC10BccScM075Ub3DhT5tLVC/Y8wMRMXtSf18Mx99jFRUbJckZkgNrDcq1DyDv+2w==
+X-YMail-OSG: biB8JBwVM1mC52xLNcwpT1j335rHZTu59A95pEEQ81btH2Kkz6sgNJ.TNmRZxNX
+ lRWaOo40ew6Mr8CVuNyjhLUQ_WUu_Gz1tafez0uCtc05e_MaqGbQRMTAiwWTfcktMvyxo3NHcIQu
+ iCMOkSf.tsxasRiAcwRdgV3bF5aMa4Jlo.0p4PYrPmDdjI5fO0qs_R8_rnenhpQJXrPAaHXq5H_3
+ ct042FHSd5XOglqAeaqJOvLGhOgOUOh5nlYITZ2gHERyTYXfqFsbJ7Ugyhcym5YA5YkIec0n_DUI
+ RLbQozFzN3q.yIYYCK3n7V1rFIngwTFBdY27DPee_80ML18fbSZxo6._LDpkd8V_a1m1_sQJ20cr
+ iUeHj57P4IePsueoS3hp7r3noqMY26sndcKkzsBwu89A6P5BjAYbqHmZHZ5RJOYFKl59vpEK1Tyb
+ NIPuPRAE1ICckSqcykhOgTPY4LNr0aznueoU39XYZD_oH5l3oDfIA.i8lzhTL2TYcna6vOpoOePi
+ smy6RJYZ2vNDGxfBi2J0iPyU86AYbXhec9qtT2IypFZX8Ydc8fhXO91aCmp2lbP6_js6r8h5t_aC
+ 50Y4exSjLYDgZBmgYcEdHcMufXWXV4oD.CHKlceINXzkYIDf4vajlO90MJS5AwO3JD5MsVXfORdW
+ N8cIeIxFZl9vtFmw24eqQSbZI3eK4ZphFpW0qmY2uSXGLFQp8AscDEjBTh_Yp_7OEqQaMJG067CA
+ lJpP7PT1jzB8USiFNZtorgLjXI1gEa1pQiNcHBIptcbJtnreKRHtcklDcyEm_TEjKANbHE9NQXVR
+ 8u9hT9bJca9lYzwI6opopu8mCD2R1.I5A4vKWZztgNEgjHrpx3rE.pXf4y8b.gZrA.EEICLccsRJ
+ ylNZ_fe7pegIsDVEXtYisExfd5wHicYvh9q0GkBZSoSEwIGzRAwY1hoFwtnGL8cgx4g9CBIu.78Q
+ EeZ7a.7YFcn5MspGl9SApg1GZPV0hfkIZ5pLim32LRK9p2oqkQke9omAZJBD3XP77f4m_lZyJ_6z
+ 8Q7sOEdoUagbVhITAzCTZGrlvs3r.6csGuNaBER7gVA.kiCb5GILqhnCOD3Xw6EcSgOkPQJi9jv8
+ YN0fHlfhSKhoUkh5uXqZqYo4QEoP8kIYb0ncOaV57sOyMqvodQr1nJJtXan79gQmAS6EkKecN8wy
+ NNbM4hRQ0L385Q1ymnZo_dGMWhaOuJCOHN4jq.sDU7oo8JCns4B9ESIfQN9U4aNZRCpcYjQLMXAr
+ DqPOC5OMJjlwApB56slQMxAGrL.dY6YAECU7IUSoeA4mQRc5rQjIOKbOIhTD9HLB1a.ejkxW.BPT
+ Z3O3RfzMsBSj0k06E9OmxiH9wVLyuqi0BL7cGj5FicJ3ctvaMTTPGNxRNXaAbap_.lsmIK6jkv8y
+ Tiq4.DryGwrR33ThWba9bn3M5qfqXeEbwHLT6iEWJnIkX9dfsplCfMLTwFGr2eYYARx1pH6TihTO
+ Fdx_pEnyXJ5gP.Ac3h5rJUEzDa4VjATZG8pjLTBRkCMfwG9gxeS3.kVaZD8sfm1c_gM2JSmOSMgC
+ WXGgeoQG8A8iH5PUaYzYIfZPbz8ApsGqpJPR7fA_s9YIRcRDCFMOFOPN.JyZD8Up7BiahWuYDIpU
+ ir7bgpEnaSERqCFGKhUzZF.ZbKMjgcMVfDtmoJsDIS.35WXaQMASDkm2VFQt_sB4FUBH383JtVq1
+ 8UEExwjlypd0XuB6Jj_c.TE_59oWulUWCqvREC0anGiU8NGIgrAsoAc6oHa5_wD6sW7IK7LwjEXz
+ GXfwMnRPzH.0PK91wUUuc9TrKwYlxQ4q7jlUDsgbMYzwxJbCTK7dVjgnszQY69AcwetUhGAlh8NS
+ ak6UExTDZMJMcfK2VxGdBF9gO_G4tUJ9ibVJhpQnO9W0lWtmXAHuV5FdRaE_cMHa9Rm5sfGT3kg3
+ TSpZ2jBUeCsT3WVP83wz6Qak4gZVgytZqQb82IU40rwhC5itCfwEbAyi1.MH_gVo50_xYruOIYqu
+ UaBqNLg1q6bh_jHkBxYV0DfgAzmPFWS_jovNOi8pEErOUdYQnbpaR8lP4P_fc9a06GPh01Cp151o
+ nDbbF0k0maLdJXP.Us8G6s1Y3Gv8sNh2TI8T3jRZg1xqAkjEs9jRpXLLjqiemaPJH9MPJO2mXZnc
+ zzRbxxC39TOQCMk.B56VyoNJeoI.l4PF1KG5eFHfGKtGL8ZuKyr1.jD87_dz__F1oYAXB3sOy82s
+ 4gCcc9xiFpnF3aA6YGvMbsBLIvQid28537OZfMwNgsR7fmS93L4EGkruW4cXu
+X-Sonic-MF: <lewisw4@aol.com>
+X-Sonic-ID: 84ff400a-178a-4bd6-914c-e60730ff1e56
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic303.consmr.mail.bf2.yahoo.com with HTTP; Fri, 4 Sep 2026 19:41:42 +0000
+Date: Fri, 4 Sep 2026 19:41:17 +0000 (UTC)
+From:  <lewisw4@aol.com>
+Message-ID: <72009554.619632.1788550877389@mail.yahoo.com>
+References: <72009554.619632.1788550877389.ref@mail.yahoo.com>
+Subject: Adobe-Upcoming Fellow Craft Degrees and Official Lodge Visit
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_619631_597470781.1788550877387"
+X-Mailer: WebService/1.1.26460 AOLMailBspWeb
+Content-Length: 9506
+
+------=_Part_619631_597470781.1788550877387
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Brethren,
+We will be conducting a Fellow Craft Degree for Brother Rob Loebl on Tuesda=
+y, September 29. A rehearsal is scheduled for Tuesday, September 15. I have=
+ included the planned cast below. If you are unable to participate, please =
+let me know as soon as possible so I can fill your position.
+We will also be conducting a Fellow Craft Military Degree for Brother Romeo=
+ on Tuesday, October 20. I hope you will be able to attend both degrees and=
+ support our Brothers as they continue their Masonic journeys.
+Additionally, Adobe Lodge will make an official visit to Nelson Bledsoe Lod=
+ge No. 74 next Tuesday, September 8. We will gather for dinner at 6:00 p.m.=
+, followed by their stated meeting at 7:00 p.m. Although no charge was ment=
+ioned, please be prepared to make a small donation for dinner.In keeping wi=
+th Adobe=E2=80=99s custom when traveling as a Lodge, please wear a black su=
+it. Nelson Bledsoe meets in casual attire, but we will maintain our traditi=
+onal traveling dress.=C2=A0Please let me know if you plan to attend so I ca=
+n provide the Lodge with an estimated dinner count. Let us make this a stro=
+ng showing of Adobe members and demonstrate our support for our fellow Maso=
+ns.
+Fraternally,
+Will
+Second Degree
+WM/G Lecture =E2=80=93 Sean
+SW =E2=80=93 Will
+JW =E2=80=93 Ron
+SD/Lecture =E2=80=93 Darren
+JD =E2=80=93 Eli
+SS =E2=80=93 Moe
+JS =E2=80=93 Jeff
+Marshall - Nick
+Secretary =E2=80=93 Mike G
+Treasurer =E2=80=93 Tanner
+Charge =E2=80=93 Eli
+Chap =E2=80=93 Kenn
+Tyler- Bob K
+------=_Part_619631_597470781.1788550877387
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helvetica, Ari=
+al, sans-serif; font-size: 12pt">Brethren,</div><div style=3D"font-family: =
+Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-size: =
+12pt"><br></div><div style=3D"font-family: Matter, Helvetica Neue, Segoe UI=
+, Helvetica, Arial, sans-serif; font-size: 12pt">We will be conducting a <b=
+>Fellow Craft Degree</b> for Brother Rob Loebl on <b>Tuesday, September 29<=
+/b>. A <b>rehearsal</b> is scheduled for <b>Tuesday, September 15</b>. I ha=
+ve included the planned cast below. If you are unable to participate, pleas=
+e let me know as soon as possible so I can fill your position.</div><div st=
+yle=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, san=
+s-serif; font-size: 12pt"><br></div><div style=3D"font-family: Matter, Helv=
+etica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-size: 12pt">We wil=
+l also be conducting a <b>Fellow Craft Military Degree</b> for Brother Rome=
+o on <b>Tuesday, October 20</b>. I hope you will be able to attend both deg=
+rees and support our Brothers as they continue their Masonic journeys.</div=
+><div style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helvetica, Ar=
+ial, sans-serif; font-size: 12pt"><br></div><div style=3D"font-family: Matt=
+er, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-size: 12pt=
+">Additionally, Adobe Lodge will make an <b>official visit to Nelson Bledso=
+e Lodge No. 74 next Tuesday, September 8</b>. We will gather for dinner at =
+6:00 p.m., followed by their stated meeting at 7:00 p.m. Although no charge=
+ was mentioned, please be prepared to make a small donation for dinner.</di=
+v><div style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helvetica, A=
+rial, sans-serif; font-size: 12pt">In keeping with Adobe=E2=80=99s custom w=
+hen traveling as a Lodge, please wear a black suit. Nelson Bledsoe meets in=
+ casual attire, but we will maintain our traditional traveling dress.&nbsp;=
+Please let me know if you plan to attend so I can provide the Lodge with an=
+ estimated dinner count. Let us make this a strong showing of Adobe members=
+ and demonstrate our support for our fellow Masons.</div><div style=3D"font=
+-family: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; fo=
+nt-size: 12pt"><br></div><div style=3D"font-family: Matter, Helvetica Neue,=
+ Segoe UI, Helvetica, Arial, sans-serif; font-size: 12pt">Fraternally,</div=
+><div style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helvetica, Ar=
+ial, sans-serif; font-size: 12pt"><br></div><div style=3D"font-family: Matt=
+er, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-size: 12pt=
+">Will</div><div style=3D"font-family: Matter, Helvetica Neue, Segoe UI, He=
+lvetica, Arial, sans-serif; font-size: 12pt"><br></div><div style=3D"font-f=
+amily: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font=
+-size: 12pt"><b><span style=3D"font-family: Aptos, sans-serif;"><span style=
+=3D"font-size: 16pt;">Second Degree</span></span></b></div><div style=3D"fo=
+nt-family: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; =
+font-size: 12pt"><br></div><div style=3D"font-family: Matter, Helvetica Neu=
+e, Segoe UI, Helvetica, Arial, sans-serif; font-size: 12pt"><span style=3D"=
+font-family: Aptos, sans-serif;"><span style=3D"font-size: 12pt;">WM/G Lect=
+ure =E2=80=93 Sean</span></span></div><div style=3D"font-family: Matter, He=
+lvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-size: 12pt"><br>=
+</div><div style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helvetic=
+a, Arial, sans-serif; font-size: 12pt"><span style=3D"font-family: Aptos, s=
+ans-serif;"><span style=3D"font-size: 12pt;">SW =E2=80=93 Will</span></span=
+></div><div style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helveti=
+ca, Arial, sans-serif; font-size: 12pt"><br></div><div style=3D"font-family=
+: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-size=
+: 12pt"><span style=3D"font-family: Aptos, sans-serif;"><span style=3D"font=
+-size: 12pt;">JW =E2=80=93 Ron</span></span></div><div style=3D"font-family=
+: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-size=
+: 12pt"><br></div><div style=3D"font-family: Matter, Helvetica Neue, Segoe =
+UI, Helvetica, Arial, sans-serif; font-size: 12pt"><span style=3D"font-fami=
+ly: Aptos, sans-serif;"><span style=3D"font-size: 12pt;">SD/Lecture =E2=80=
+=93 Darren</span></span></div><div style=3D"font-family: Matter, Helvetica =
+Neue, Segoe UI, Helvetica, Arial, sans-serif; font-size: 12pt"><br></div><d=
+iv style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial=
+, sans-serif; font-size: 12pt"><span style=3D"font-family: Aptos, sans-seri=
+f;"><span style=3D"font-size: 12pt;">JD =E2=80=93 Eli</span></span></div><d=
+iv style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial=
+, sans-serif; font-size: 12pt"><br></div><div style=3D"font-family: Matter,=
+ Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-size: 12pt"><=
+span style=3D"font-family: Aptos, sans-serif;"><span style=3D"font-size: 12=
+pt;">SS =E2=80=93 Moe</span></span></div><div style=3D"font-family: Matter,=
+ Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-size: 12pt"><=
+br></div><div style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helve=
+tica, Arial, sans-serif; font-size: 12pt"><span style=3D"font-family: Aptos=
+, sans-serif;"><span style=3D"font-size: 12pt;">JS =E2=80=93 Jeff</span></s=
+pan></div><div style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helv=
+etica, Arial, sans-serif; font-size: 12pt"><br></div><div style=3D"font-fam=
+ily: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-s=
+ize: 12pt"><span style=3D"font-family: Aptos, sans-serif;"><span style=3D"f=
+ont-size: 12pt;">Marshall - Nick</span></span></div><div style=3D"font-fami=
+ly: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-si=
+ze: 12pt"><br></div><div style=3D"font-family: Matter, Helvetica Neue, Sego=
+e UI, Helvetica, Arial, sans-serif; font-size: 12pt"><span style=3D"font-fa=
+mily: Aptos, sans-serif;"><span style=3D"font-size: 12pt;">Secretary =E2=80=
+=93 Mike G</span></span></div><div style=3D"font-family: Matter, Helvetica =
+Neue, Segoe UI, Helvetica, Arial, sans-serif; font-size: 12pt"><br></div><d=
+iv style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial=
+, sans-serif; font-size: 12pt"><span style=3D"font-family: Aptos, sans-seri=
+f;"><span style=3D"font-size: 12pt;">Treasurer =E2=80=93 Tanner</span></spa=
+n></div><div style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helvet=
+ica, Arial, sans-serif; font-size: 12pt"><br></div><div style=3D"font-famil=
+y: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font-siz=
+e: 12pt"><span style=3D"font-family: Aptos, sans-serif;"><span style=3D"fon=
+t-size: 12pt;">Charge =E2=80=93 Eli</span></span></div><div style=3D"font-f=
+amily: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif; font=
+-size: 12pt"><br></div><div style=3D"font-family: Matter, Helvetica Neue, S=
+egoe UI, Helvetica, Arial, sans-serif; font-size: 12pt"><span style=3D"font=
+-family: Aptos, sans-serif;"><span style=3D"font-size: 12pt;">Chap =E2=80=
+=93 Kenn</span></span></div><div style=3D"font-family: Matter, Helvetica Ne=
+ue, Segoe UI, Helvetica, Arial, sans-serif; font-size: 12pt"><br></div><div=
+ style=3D"font-family: Matter, Helvetica Neue, Segoe UI, Helvetica, Arial, =
+sans-serif; font-size: 12pt"><span style=3D"font-family: Aptos, sans-serif;=
+"><span style=3D"font-size: 12pt;">Tyler- Bob K</span></span></div>
+------=_Part_619631_597470781.1788550877387--

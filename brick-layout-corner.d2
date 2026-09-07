@@ -1,0 +1,24 @@
+direction: right
+
+subgraph corner {
+  label: "16\"×16\" Corner (4 × 8\" bricks)"
+  direction: down
+  ctl: 8"×8" --> ctr: 8"×8"
+  ctl --> cbl: 8"×8" --> cbr: 8"×8"
+}
+subgraph legH {
+  label: "Horizontal leg — 6\" bricks"
+  direction: right
+  h1: 6" --> h2: 6" --> h3: 6" --> h4: 6" --> h5: 6" --> h6: 6"
+}
+subgraph legV {
+  label: "Vertical leg — 6\" bricks"
+  direction: down
+  v1: 6" --> v2: 6" --> v3: 6" --> v4: 6" --> v5: 6" --> v6: 6" --> v7: 6" --> v8: 6" --> v9: 6" --> v10: 6"
+}
+corner --> legH
+corner --> legV
+note: "Remaining 6\" bricks fill the L-shape gaps" {
+  shape: text
+}
+legV --> note

@@ -1,0 +1,57 @@
+# Ollama Provider Config
+
+
+## Skills
+
+- **tinyfish** (`Skills/tinyfish/`): Wraps the TinyFish CLI for web search, fetch, browser automation, and vault credentials. Auth key stored in Zo Secrets as `TINYFISH_API_KEY`.
+  - Usage: `bun run Skills/tinyfish/scripts/tinyfish.ts <command>`
+  - Subcommands: `auth`, `connect`, `search query`, `fetch content`, `browser session`, `agent run`, `vault`, `profile`, `config-claude`
+
+## Service / runtime (host-side)
+
+- Container IP: `172.20.33.184` (updated from `172.20.17.188` after sandbox/container restart — verify with `hostname -I` or `curl` before using)
+- Ollama (`ollama serve`): localhost `127.0.0.1:11434` only (`--host 127.0.0.1`)
+- Proxy (`Skills/ollama-proxy/scripts/proxy.ts`): `*:11435`, forces `stream: false` and strips unsupported params (`services`, `tools`, ...) for `/v1/chat/completions`
+
+## Models on disk
+
+- `gemma3:4b`
+- `gemma3:1b`
+
+## Verified live requests (in-container)
+
+```bash
+# Verify current container IP first
+hostname -I
+
+# Proxy (current IP)
+curl -s http://172.20.33.184:11435/api/tags
+curl -s http://localhost:11435/v1/chat/completions \
+  -H 'Content-Type: application/json' \
+  -d '{"model":"gemma3:4b","messages":[{"role":"user","content":"OK"}],"stream":false}'
+# → 200 OK, body contains "OK."
+
+# Direct Ollama (container-local only)
+curl -s http://127.0.0.1:11434/api/tags
+```
+
+## Zo provider settings
+
+Path: [Settings → AI → Providers](/?t=settings&s=ai&d=providers)
+
+- Base URL: `http://localhost:11435/v1`
+- API key: `ollama`
+- Model: `gemma3:1b`
+- streaming: disabled (provider UI does not expose a streaming toggle; proxy on 11435 enforces `stream: false`)
+
+## Common failure modes
+
+- Using an old/container-local hostname in Base URL (e.g., `172.20.17.188` or `localhost` when the proxy is bound to the container interface) results in connection failures/timeouts. **Always verify current container IP with `hostname -I`** and point Zo provider to that IP on port 11435.
+- “model stream interrupted” = Zo tried streaming. The proxy on 11435 strips/forces non-streaming (`stream: false` in code; deletes `tools`/`functions`). If you still see “stream interrupted”, confirm Zo Base URL hits the proxy (`...:11435/v1`), not direct Ollama (`...:11434`).
+- Durable localhost:11435 — no rebuild updates needed.
+
+## Fix log (stream interrupted)
+
+- 2026-07-26: “stream interrupted” reported by user. Verified proxy (`proxy.ts`) enforces `stream: false` and strips unsupported params; `curl` to `172.20.33.184:11435/v1/chat/completions` returned 200 OK. Root cause: stale container IP (`172.20.17.188`) in Zo provider settings after container restart. Updated this file; instruct user to update Zo provider Base URL to `http://localhost:11435/v1`.
+- 2026-07-19: “model stream interrupted” from Zo provider workaround fixed through local proxy on port 11435 enforcing non-streaming and stripping unsupported fields.
+- 2026-07-23: corrected reachable container IP from `172.20.24.4` to `172.20.17.188`.

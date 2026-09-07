@@ -43,6 +43,39 @@ URL: https://x.com/jak_nyfe/status/2060710029859385768
 > [Full text in tweet]
 
 ---
+
+## 2026-09-06 16:00 MST — Evening Slot
+
+**Topic:** Applied Compute fundraising and the enterprise open-model infrastructure market
+**Tweet:** https://x.com/jaknyfe/status/2096736519910265325
+**Tweet text:** Applied Compute is reportedly raising $350M at a $3.25B valuation—15 months after launch. The signal: enterprise buyers may value customization of open models more than another frontier model. AI’s moat is shifting from weights to workflow data.
+**Word count:** 34
+**Format:** News analysis
+**Media:** None
+**Source:** https://www.forbes.com/sites/richardnieva/2026/09/01/applied-compute-openai-the-ex-openai-guys-building-cheaper-open-source-alternative
+**Hook type:** Named-entity/stat-first
+**CTA:** None
+**Hashtags:** None
+**Mentions:** None
+**Experiment variable:** Relevant image attached to news-analysis posts; this run is the no-media control condition.
+**Visible results:** At 2026-09-06 16:05 MST / 23:05 UTC: likes 0, reposts 0, quotes 0, replies 0, bookmarks 0, views N/A.
+
+
+## 2026-09-06 06:05 MST — Morning Slot
+
+- **Topic:** Crusoe's $3B raise at a $30B valuation; AI infrastructure economics
+- **Timestamp UTC:** 2026-09-06 13:05
+- **Format:** Original text post, no media
+- **Word count:** 33
+- **Hook:** Stat/named-entity-first — "Crusoe just raised $3B at a $30B valuation."
+- **CTA:** None
+- **Hashtags:** None
+- **Mentions:** None
+- **Experiment variable:** Relevant-media test not applied because image search returned no usable real media; held text-only format for this run
+- **Source:** TechCrunch, https://techcrunch.com/2026/09/03/crusoe-reportedly-raises-3b-at-a-30b-valuation/
+- **Tweet URL:** https://x.com/jaknyfe/status/2096585585922113752
+- **Source-reply URL:** None
+- **Status:** Posted; metrics pending
 2026-05-31 23:05 UTC — Evening slot: Posted to X from @jak_nyfe on AI race splitting — Anthropic 65B (5B raise, 7B run-rate) surpassing OpenAI 52B; divergence: agents vs robotics. URL: https://x.com/jak_nyfe/status/2061223389381939220
 
 ## June 1, 2026 — Morning Post
@@ -376,3 +409,12 @@ Tags: #AIProductivity #Anthropic #Claude #TechTrends #FutureOfWork
 **URL:** https://x.com/jak_nyfe/status/2070644254922141872
 **Hashtags:** #AI #TechTrends #Entrepreneurship #OpenAI #InferenceChips #FutureOfAI
 **CTA:** "What application would you build if AI compute was essentially free?" + follow CTA
+
+## 2026-09-06 07:00 MST — Reply attempt
+- **Target URL:** https://x.com/APompliano/status/2096598817462181889
+- **Topic:** AI-assisted learning and multi-agent viewpoints
+- **Reply text:** The useful shift is from one-answer tutoring to structured disagreement: agents should expose assumptions, cite evidence, and let the learner compare models—not just receive a polished consensus.
+- **Result:** failed
+- **Reason:** X API 403 — replies allowed only to posts where the account is mentioned or is the author. No retry.
+- **Experiment variable:** target quality; reply angle and CTA held stable
+- **Visible metrics:** target search showed 17 likes, 3 reposts, 7k+ views; reply metrics unavailable

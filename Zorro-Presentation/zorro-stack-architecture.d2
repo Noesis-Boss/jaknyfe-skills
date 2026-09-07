@@ -1,0 +1,29 @@
+direction: right
+
+Don: Don (operator)
+Zo: Zo Computer {
+  Zorro: Zorro persona (memory + token rules baked in)
+  ZorroSkill: Zorro skill scripts/zorro.ts
+  Memory: 3-layer memory
+  Clarion: Clarion markdown tree
+  Zobodhi: zobodhi-memory memory.json
+  Astra: DataStax AstraDB (67 memories)
+  TokenSaver: token-saver v2.6.3 (32 processors)
+  Provider: Zo AI provider (BYOK)
+  Proxy: ollama-proxy :11435
+  Ollama: Ollama local qwen3:14b (primary) + gemma3 :11434
+  FreeCloud: Free tiers (Gemini flash, ViroScope)
+}
+
+Don -> Zo: chat
+Zorro -> ZorroSkill: task / memory / remember / plan
+ZorroSkill -> Memory: query + remember
+Clarion -> Memory: memory/**
+Zobodhi -> Memory: memory.json facts
+Memory -> Astra: sync.ts + nomic-embed (768d)
+Astra -> ZorroSkill: hybrid RRF results
+Zorro -> TokenSaver: wrap verbose bash
+Zorro -> Provider: model calls
+Provider -> Proxy: OpenAI-compatible /v1
+Proxy -> Ollama: stream=false, tools stripped
+Zorro -> FreeCloud: no-key / free-tier APIs

@@ -6,7 +6,6 @@ metadata:
   author: jaknyfe.zo.computer
   channel_id: UCNZEktrsM5oJZ-MK4jKPMOQ
 ---
-
 # next-new-repo-watch
 
 Watches **The Next New Thing** (Andrew Warner's YouTube show that demos open-source repos) and turns each new video into a repo eval report.

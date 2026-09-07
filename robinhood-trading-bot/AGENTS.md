@@ -1,0 +1,445 @@
+# Robinhood Trading Bot — Project Guidance
+
+London/premarket-breakout day-trading bot. Source strategy: video https://youtu.be/8KblOEu56dM.
+Builds a consolidation box over a window, then enters on either the box-high breakout
+(long) or box-low breakdown (short) with volume confirmation, a breakout-strength buffer,
+directional bias, trend filter, trailing stop to breakeven, and a max holding period.
+
+## Data Provider & Cost (decided 2026-08-08)
+
+**Use Alpaca — IEX feed, free ($0/month).** This is the recommended source for the
+current $200–$300 account.
+
+- `provider="auto"` in `backtest.py` uses Alpaca when `ALPACA_API_KEY` / `ALPACA_SECRET_KEY`
+  are set in Settings > Advanced; otherwise falls back to yfinance.
+- Alpaca IEX gives real-time 1m/5m/15m OHLCV bars + WebSocket streams, free for paper
+  trading, and historical 5m bars well beyond Yahoo's ~60-day limit (enables 6-month backtests).
+- **Limits:** IEX has no bars before **08:00 ET** (earliest SPY bar 08:05) and the feed
+  is gappy on high-volume small-caps (MARA, SOFI) — empty bars expected, not a bot fault.
+- Yahoo 5m data is capped at ~60 days and has no premarket bars (earliest 09:30), so
+  don't use it for long backtests.
+
+Paid upgrades NOT justified at this capital (each eats a chunk of the ~$40/trade theta
+edge before you trade): Polygon Starter $29/mo is delayed 15-min (unusable for day
+trading), Polygon Dev $79/mo, Polygon Advanced $199/mo, Alpaca SIP $99/mo. Revisit only
+after the strategy is proven.
+
+## Window Retune (2026-08-08) — option 1 accepted
+
+The box must be built from bars the data source actually provides. Free Alpaca IEX has
+no London-session data, so the box is now built from the **premarket window 08:00–09:25 ET**
+and entries are taken on **regular-session breakouts 09:30–12:00 ET**.
+
+Config keys in `config.yaml` (kept for backward compat, values retuned):
+- `london_open: "08:00"` (premarket box start)
+- `london_close: "09:25"` (premarket box end, just before regular open)
+- `ny_open: "09:30"` (entry window start = regular session open)
+- `ny_close: "12:00"`
+
+Default `--symbols` is 5 core; pass the full 13 for the full universe:
+`SPY QQQ AAPL TSLA NVDA SOFI F AAL MARA RIVN NIO RBLX DKNG`.
+
+## Backtest (canonical, via Alpaca, 2026-07-01 to 2026-08-06)
+
+Run:
+```
+python3 backtest.py --provider alpaca \
+  --symbols SPY QQQ AAPL TSLA NVDA SOFI F AAL MARA RIVN NIO RBLX DKNG \
+  --start 2026-07-01 --end 2026-08-06
+```
+
+Results with the retuned premarket-box windows (`capital: 10000`):
+- **66 trades** total: 33 directional day-trades + 33 theta spreads
+- **+$1,231.62 net**, 59.1% win rate (39W/27L), profit factor 1.44
+- Directional equity: 33 trades, +$1,203.30 (16W/17L, avg +$36.46/trade)
+- Theta spreads: 33, +$28.32 (23W/10L, avg +$0.86/spread) — realistic band, not a
+  guaranteed profit (realism fix: seed 42, `_estimate_credit` clamps $5–15/contract,
+  spread width bounds max loss ~$20–30)
+- Exit reasons: theta_spread 33, eod_close 24, stop_loss 7, target_hit 2
+
+## EPS-Line Put Selling (added 2026-09-04, paper-only)
+
+Strategy: `src/eps_line_put_selling.py` — sell LONG-dated puts (default 730 DTE, the
+"two-year put") when price is at/below the EPS line (trailing EPS x target P/E, default 15).
+Cash-secured by default; optional margin securing for stress testing. Strike defaults to the
+EPS line itself (assignment at fair value is the thesis). Premium via Black-Scholes (bs_put_price).
+Non-earners are skipped: generate_trade returns None for zero/negative EPS, so loss-making
+trailing-EPS symbols (e.g. F) can never anchor a nonsensical strike. ETFs/funds (SPY, QQQ —
+no trailing EPS) are skipped up front by the runner with a WARNING so `blocked_entries` counts
+only real gate decisions.
+
+Config: `eps_line_put_selling` block in config.yaml (`eps` per-symbol map, `target_pe`, `dte`, `iv`,
+`max_collateral_pct` 0.30, `min_days_between_entries` 21, `securing` cash|margin, `margin_leverage`).
+Requires per-symbol EPS in config or no trades fire. Wired into STRATEGY_MAP and web API
+(`--strategy eps_line_put_selling`); summary reports premium_collected / open_max_liability /
+unrealized_mtm (Black-Scholes mark-to-market of open puts at the window-end close).
+Entry gate: `min_yield_annual_pct` (default 5.0) blocks entries whose annualized yield
+(premium/strike, DTE-adjusted) is below the floor — dead-money low-IV entries never fire;
+each trade reports `yield_annual_pct`. Entry-quality gate (2026-09-05):
+`max_distance_to_line_pct` (default 2.0) requires price within 2% of the EPS line, and
+`rsi_period`/`rsi_max` (14/40.0) require RSI below 40 on the entry day — deep-ITM or
+recently-rallied entries never fire. Both are Strategy Lab UI params.
+Zero-param runs work: config.yaml `eps_line_put_selling` seed (SPY/QQQ/T/VZ) + auto-resolve
+of missing trailing EPS via yfinance in the runner.
+
+Blocked-entry diagnostics: generate_trade counts every veto reason (no_eps,
+min_days_between_entries, above_eps_line, max_distance_to_line_pct, rsi_max,
+min_yield_annual_pct, no_collateral) into `strat.blocked_entries`; the JSON summary reports
+`blocked_entries` so zero-trade runs are explainable. Runner note: the eps loop passes the
+CUMULATIVE frame up to each day (`df[df.index <= day]`), not a same-day slice — generate_trade
+needs trailing daily closes for RSI. Gated validation (2026-07-01→09-03, T+VZ, $100k, yfinance 1d):
+0 trades, 88 blocks by max_distance_to_line_pct — T trades ~42% below its EPS line, VZ ~13%.
+Gate working as designed; no entry-quality violations fired.
+
+Gate sensitivity sweep (2026-01-01→09-05, MO+DG, $100k, auto-EPS 4.75/7.70): the default
+envelope (distance <=2% + RSI<40) never fires in 9 months — MO spent the year above its
+EPS line and its one dip below missed the band; 0 trades is gate-tightness, not a bug.
+Firing envelope: dist 10% + RSI 40 -> 3 trades ($9.3k premium, MTM +$5.9k); dist 10% +
+RSI 50/60 -> 6 trades ($18.2k premium, MTM +$11.8k); dist 5% never fires even at RSI 60.
+Read: the strategy only trades in real drawdowns onto fair value — which is when
+put-selling at fair value is actually the thesis. Keep 2% default (conservative); use
+10%/RSI-50 in Strategy Lab to make it tradeable in quiet regimes.
+
+Margin stress: `src/margin_stress.py` — replays the real 2008 SPX monthly path (-38.5%) with
+stressed IV on down months, maintenance-margin check, forced-liquidation spiral detection.
+Run: `python3 -m src.margin_stress --portfolio-value 100000 --eps 28 --securing margin --margin-leverage 2.0`
+Result at 2x margin: MARGIN_CALL in month 11 (Oct 2008 -16.8%), final equity $28.4k (-72% on a
+-38.5% year). 1 cash-secured contract: SURVIVED, $64.8k (-35%) — drawdown without spiral.
+PAPER ONLY — no order placement anywhere in the module.
+
+Book replay (added 2026-09-04): `replay_book(portfolio_value, eps, ...)` in margin_stress.py rolls a
+staggered entry schedule (num_entries, entry_spacing_days) through the 2008 monthly path. Entries
+are gate-filtered (min_yield_annual_pct) and strike-sized at the EPS line; puts price at their own
+entry-month spot with independent remaining DTE. VZ book ($100k, EPS 3.84, 4 entries / 21-day
+spacing): cash-secured SURVIVED at $78.8k (-21% on a -38.5% year); 2x margin MARGIN_CALL month 10
+(Oct 2008), final $38.0k (-62%). CLI: `--num-entries 4 --entry-spacing-days 21`.
+
+## ORB + FVG (added 2026-09-05, paper-only)
+
+Strategy: `src/orb_fvg.py` — from "The One Candle Setup" video (Cryptic Hustle).
+Marks the first 5-min candle (09:30-09:35 ET, wick-inclusive) high/low on 1-min bars,
+waits for a 1-min close outside the range, then requires a 3-candle FVG in the
+breakout direction (c1 to c3 window scanned from the breakout bar; c1 may be the
+breakout candle). Entry at c3 close, stop at the FVG extreme (wick-inclusive:
+c1.high for longs, c1.low for shorts), fixed 2R target, 1 trade/day, entries stop
+at 11:30, max hold 90 bars. Registered as `orb_fvg` in STRATEGY_MAP; config block
+`orb_fvg` (backtest_interval "1m"). NQ futures are not available on Alpaca — QQQ
+is the proxy.
+
+Baseline backtest (QQQ, Alpaca IEX 1m, 2026-08-01 to 2026-08-28, theta disabled,
+execution realism on: 5bps slippage + 5bps spread):
+- 18 trades, 3W/15L (16.7% win), PF 0.07, net -$368.04, gross -$30.88
+- Negative BEFORE costs: the setup itself has no edge at these parameters.
+- Root cause: wick-inclusive 1-min FVG stops are pennies wide, so 2R targets are
+  tiny in absolute terms (~$0.10-0.25/share); the ~$0.15/share round-trip cost
+  (spread+slippage) exceeds the target distance. Stops also get tagged by normal
+  1-min noise (13/18 stopped).
+- Verdict: fails as specified. Do NOT enable for live (source video evidence
+  quality 2/10: no verified track record, cherry-picked examples).
+
+5-min FVG variant (2026-09-05, same window, backtest_interval 5m, max_holding 18
+bars = 90 min): 14 trades, 3W/11L (21.4% win), PF 0.07, net -$286.11, gross
+-$21.99 — still negative before costs. Wider stops did not help: 8/11 losses
+were shorts into a rallying month (QQQ 690→733); longs were gross +$62 on 4
+trades but the sample is far too small to call an edge. BOTH timeframes fail;
+strategy closed. Parked, not in rotation, no further variants planned.
+
+Run: `python3 -m src.backtest_runner --strategy orb_fvg --symbols QQQ --start 2026-08-01 --end 2026-08-28 --provider alpaca --json`
+(theta_farming.enabled was true in config.yaml and leaked theta_spread trades
+into the first run — disable it or pass a stripped config for orb_fvg runs.)
+
+## Trailing Stop Ladder (added 2026-09-06, paper-only research)
+
+Strategy: `src/trailing_stop_ladder.py` — from the "Claude just changed the stock market" video eval.
+EMA9/EMA50 trend + 3-bar momentum + 1.2x volume; stop at swing low - 0.5 ATR; after each +1R rung
+the stop ladders up to (entry - (rung-1) x R) i.e. breakeven at first rung, +1R locked at second;
+max hold 78 bars, 1 entry/symbol/day, session 09:35-15:45, entries stop at 15:00.
+Registered in STRATEGY_MAP, config block `trailing_stop_ladder`, CLI, API allowlist, Strategy Lab
+UI params; tests in `tests/test_trailing_stop_ladder.py` (3 passed).
+
+**Verdict (2026-08-01→08-08, 1m cache, 13 symbols, $10k, theta off, realism on 5+5bps): NOT VIABLE.**
+- Baseline: 46 trades, 14W/32L (30.4% win), PF 0.51, gross +$80.93, execution cost -$872.73, net -$791.80.
+- Variant rung_r 0.5 / lock 0.75R: 46 trades, 28.3% win, PF 0.47, net -$804.46 (24 trailing-stop exits —
+  locking earlier just cuts winners sooner).
+- Variant strict entries (mom 5, vol 1.5x) + rung 0.5: 36 trades, 25% win, PF 0.37, gross NEGATIVE (-$82.10), net -$780.49.
+- Root cause: the ladder's breakeven lock converts normal pullbacks into trailing-stop losses
+  (same failure mode as Opening Drive Fade's razor stops), and gross edge (~+$81 on 46 trades)
+  never clears the ~$873 round-trip cost. Win rate 30% with avg loss $42.51 vs avg win $24.08.
+- Parked, not in rotation, no further variants planned. Consistent with the video-eval pattern:
+  presentation-quality claims, no verified track record.
+
+## Key Source Files
+
+- `config.yaml` — strategy + theta farming params (tuning knobs: `breakout_strength`
+  `max_holding_bars`, `rr_ratio`, `entry_window_hours`, `min_box_pct`/`max_box_pct`)
+- `src/data.py` — `DataFeed` (alpaca IEX + yfinance fallback)
+- `src/strategy.py` — `LondonBreakoutStrategy` (box, signal, exits, trailing stop)
+- `src/risk.py` — `RiskManager` (position sizing, cash tracking; fractional longs,
+  whole-share shorts)
+- `src/broker.py` — order placement + credit spreads
+- `src/theta_farming.py` — `ThetaFarmer` (weekly credit spreads after confirmations)
+- `src/journal.py` — JSONL trade journal
+- `backtest.py` — historical backtest engine (directional + theta)
+- `project.py` / `project_theta.py` — capital projections → `projections*.json`
+
+## Workflow Notes
+
+- Live trading = paper-sim by default; real Robinhood only via env secrets, never paste
+  keys in chat.
+- Theta farming needs options approval on Robinhood.
+- Before a 6-month run, confirm data source can reach that far (Alpaca yes, Yahoo no).
+
+## Issue Log
+
+- 2026-09-03 — Restored Graphify `post-commit` and `post-checkout` hooks; `graphify hook status` reports both installed and the merge driver registered.
+
+- 2026-08-24 — Completed the interrupted four-layer monitor UI/API integration. Removed duplicate monitor CSS, fixed JSON serialization of infinite profit factor values, and populated behavior trade counts. API JSON, production build, and browser screenshot verified. Three monitor test failures remain isolated to the test fixture's market-hour timestamp generator producing only 7 of its expected 10 rows; the live monitor renders correctly.
+
+- 2026-08-22 — Fixed `tests/test_robinhood_readonly.py` cash assertion (expected string "100.00"; adapter returns floats). Full suite green: 46 passed.
+
+- 2026-08-16 — Fixed the public `/api/zz-dbtest` import error by replacing unsupported `node:sqlite` with the installed `sqlite3` CLI via `Bun.spawn`. Live endpoint now reports both databases successfully: 11,340 and 11,969 scholarships; Space error count is 0.
+
+- 2026-08-16 — Added shared research execution realism: invalid/zero-volume bars are rejected; directional results now report gross P&L, execution cost, and net P&L using configurable 5 bps slippage plus 5 bps spread defaults. HA scalp now has explicit minimum wick-ratio validation. Research strategies remain blocked from paper/live execution.
+
+- 2026-08-16 — Live Strategy Lab rejected the two new research strategies with `Choose a supported strategy` because the public `/api/backtests/*` route retained an older four-strategy allowlist. Expanded the live allowlist to all 8 strategies and forwarded `strategy_params`; live VWAP and T3 API runs now complete successfully.
+
+- 2026-08-16 — Added selectable research-only `vwap_liquidity_proxy` and `t3_range_filter` strategies. VWAP is an OHLCV reclaim proxy and cannot reproduce Bookmap/iceberg/order-flow data. T3 is long-only with T3, green Range Filter, ATR, and safety filters. Both preserve London as default and are blocked from paper/live execution. Focused tests and full suite pass. Six-month 13-symbol VWAP run (2026-07-01 through 2026-08-06, theta disabled) produced 219 trades, 38.81% win rate, 1.07 profit factor, and +$273.69 P&L. T3 produced zero qualifying trades in that sample and needs rule/data review before further conclusions.
+
+- 2026-08-15 — Evaluated the Fabio Valentini auction/order-flow model from the referenced video. Added deterministic OHLCV-only safeguards to `auction_flow_proxy`: directional rejection confirmation, maximum gap filtering, and abnormal-bar-range filtering. Focused and full regression suite: 35 passed. A six-month 13-symbol directional research run (2026-02-10 through 2026-08-10, theta disabled in the directional aggregation) produced 263 trades, 31.94% win rate, 0.18 profit factor, and -$1,443.05 P&L. The strategy remains research-only and must not be enabled for paper/live execution. True footprint/order-flow data and bid/ask spread data are unavailable from the current OHLCV feed.
+
+- 2026-08-09 — Theta P&L previously accumulated in `ThetaFarmer`/`strat._theta_capital`, so it did not compound with directional trades. Fixed by passing shared `RiskManager.capital` into theta sizing and applying theta expiry P&L through `risk.update_cash()`. Regression assertions pass; the Alpaca smoke backtest was blocked because the optional `alpaca` Python package is not installed in this environment.
+
+## Feature Log
+
+- 2026-08-28 — Added the disabled-by-default `ema20_stoch_pullback` research strategy from the Trader DNA video: 20 EMA deviation pullback, Stochastic 8/5/3 crossover, and target at 25% of the distance from entry back to the EMA. Restored missing engine modules from `https://github.com/Noesis-Boss/robinhood-trading-bot` and corrected the local `origin`, which had incorrectly pointed to `domain-finder.git`. The 13-symbol Alpaca run for 2026-07-01 through 2026-08-06 executes successfully but produces 0 trades and $0 net P&L; no profitability claim.
+
+- 2026-08-25 — Added disabled-by-default `ema9_continuation` research strategy based on the SMB Capital 9 EMA continuation tutorial. It uses objective OHLCV proxies for EMA pullback touch, reclaim/rejection, volume confirmation, ATR-defined risk, and paper-only exits; registered in the CLI, API allowlist, Strategy Lab parameters, config, and focused tests. No live or paper-order execution wiring was added.
+
+- 2026-08-25 — Completed the 100-variant strategy boilerplate evaluation: 100 variants ran without execution errors and 75 produced trades. The three top-ranked London variants each had only nine trades, so they remain paper-only. Fixed the forward tester to construct and pass the required premarket box; a $100/latest-10-day incubation run produced zero trades because Alpaca IEX supplied insufficient continuous premarket bars (only 08:25 and 08:30 ET on the inspected August 24 session). Results documented in `framework/REPORT.md`; no live trading enabled.
+
+- 2026-08-22 — Added disabled-by-default `ema_cci_macd` research strategy (`src/ema_cci_macd.py`): EMA 50/110 trend filter, CCI(20) pullback into the trend zone, MACD momentum turn, volume multiplier, ATR stops/targets, session/gap/range guards. Registered in CLI, backtester, live API allowlist, and Strategy Lab dropdown with strategy-specific parameters. Focused tests 5 passed; full suite 46 passed. Six-month 13-symbol run (2026-07-01→2026-08-06, theta disabled): 142 trades, 29.58% win rate, 0.44 profit factor, gross +$131.87, execution cost -$2,496.32, net -$2,364.45. Rejected for enablement; remains research-only.
+
+- 2026-08-22 — Added disabled-by-default `ema_cci_macd` research strategy in `src/ema_cci_macd.py`: EMA 50/110 trend, CCI(20) pullback into the trend zone, MACD momentum turn, volume multiplier, ATR stop/target, session and gap/range guards. Registered in CLI, backtester, live API allowlist, and Strategy Lab dropdown with strategy-specific parameters. Focused tests (5) and full suite (46) pass. Six-month 13-symbol run (2026-07-01 to 2026-08-06, theta disabled): 142 trades, 29.58% win rate, 0.44 profit factor, gross +$131.87, execution cost -$2,496.32, net -$2,364.45. Rejected for enablement; remains research-only.
+
+
+- 2026-08-18 — Added disabled-by-default `reversal_zone_confirmation` research strategy. It converts the video’s futures reversal setup into an OHLCV proxy with rolling support/resistance zones, fast-move, 1-minute structure, confirmation-body, volume, ATR, session, and reward/risk controls. Added CLI/API/Strategy Lab registration and focused tests. It remains research-only; discretionary zone judgment and futures execution are not reproduced.
+
+- 2026-08-18 — Expanded the live investment dashboard holdings feed to include stocks, crypto, and open options when present. Added asset-type labels, crypto quotes/market values, and holdings-table columns; live screenshot verified ELMT/SPCX stocks plus BTC/DOGE crypto.
+
+- 2026-08-18 — Fixed live Robinhood dashboard authentication and data rendering. The managed adapter now receives the existing Zo secrets, runs from the project virtualenv with `robin-stocks`, normalizes account/holding values for the UI, and returns the live account snapshot. Screenshot verified portfolio value ($41.85), cash, buying power, two holdings, and recent activity.
+
+- 2026-08-18 — Added separate public read-only investment dashboard at `https://jaknyfe.zo.space/robinhood-investments`, distinct from the research-only Strategy Lab. It displays account KPIs, holdings, recent activity, refresh state, and explicit credential/unavailable states. The adapter runs as a private process service on localhost:8787; screenshot verification passed.
+
+- 2026-08-18 — Added read-only Robinhood account adapter at `src/robinhood_readonly.py` and `/api/robinhood/status`. It exposes cash, buying power, portfolio value, positions, and orders only; missing credentials return `not_configured`, and authentication failures return a bounded error. No order-placement or live-trading controls were added. Focused tests and API tests: 8 passed.
+
+- 2026-08-16 — Deployed shared execution-realism UI updates to the public Strategy Lab. Live health and page checks returned 200/ok; browser screenshot verified readable rendering, all 8 strategies, and HA-specific wick controls.
+
+- 2026-08-16 — Strategy Lab now lists all 8 registered strategies and dynamically displays each strategy’s complete parameter set. Selected values are forwarded as `strategy_params` into the backtest configuration; VWAP and T3 research strategies default to their required intervals. Browser verification confirmed VWAP and T3 controls render correctly.
+
+- 2026-08-15 — Added disabled-by-default `fundamental_filter` research integration inspired by Investment Council. It scores daily-universe candidates deterministically from available metrics, writes `fundamental_context.json`, rejects only below the configured floor when enabled, and applies a bounded ranking bonus. It never creates orders or changes strategy risk controls. Focused and full test suite: 32 passed. Broader out-of-sample validation is still required before enabling it.
+
+- 2026-08-12 — Added selectable `auction_flow_proxy` research strategy. It approximates the Chris Kmer auction-market process with OHLCV-only trend, Fibonacci location, VWAP, volume, wick-failure, swing-risk, and session filters. It is explicitly labeled a proxy; no GEX, footprint, delta, or live-order behavior is included. Focused tests, full suite (28 passed), frontend build, and dashboard screenshot passed.
+
+- 2026-08-12 — Added selectable `theta_only` options research with scanner-first/fixed-universe fallback and Conservative, Balanced, and Aggressive presets. It sells only defined-risk credit spreads, reports selection mode and theta-specific results, and never opens directional positions. Tests: 25 passed; frontend production build passed.
+
+- 2026-08-12 — Added the `max_entries_per_day` Strategy Lab picker with 1, 2, 3, 5, and Unlimited options. The limit is enforced per ticker/day across London, Ross, Sneaky Pivot, and Heikin-Ashi backtests; default is 1. Tests: 21 passed; frontend build and live screenshot verified.
+
+- 2026-08-11 — Added visible `RUN STOCK PICKER` and `APPLY PICKS` controls to the public Strategy Lab. The picker endpoint returns ranked/fallback symbols, shows the result before replacement, and browser verification confirmed 13 candidates render correctly.
+
+- 2026-08-11 — Hosted the research dashboard at https://jaknyfe.zo.space/robinhood-trading-bot as a public Zo Space subdirectory. The page is screenshot-verified; `/api/backtests/*` bridges the UI to the existing Python backtest engine, and `/api/health` returns `{"status":"ok"}`. No live-order controls were added.
+- 2026-08-11 — Updated all three public dashboards with scanner context: Strategy Lab displays the Ross-ranked universe profile, Strategy Comparison documents fixed-symbol fair comparisons, and Paper Trading Monitor shows scanner configuration plus disabled-by-default safety status. All three pages were screenshot-verified.
+
+- 2026-08-11 — Added `web/` research dashboard with validated local API, real CLI-backed JSON results, controls for current strategies and parameters, metric/equity/trade views, and no live-order controls. Python/API tests: 5 passed; Vite production build passed; browser screenshot verified the rendered idle state.
+
+- 2026-08-10 — Added `src/daily_universe.py` with asset/metric filters, weighted candidate scoring, deterministic JSON output, stale-date/static fallback, and a manual JSON-input CLI. Added `daily_universe` config with live use disabled by default and wired `src/bot.py` to consume only a current-day scan when explicitly enabled. Historical backtests retain their static symbol list. Offline tests: 13 passed; live Alpaca scan not run.
+- 2026-08-10 — Hardened daily scanner selection: missing quotes no longer veto a candidate, hard safety filters are separated from soft ranking filters, near-misses are returned in `watchlist`/`actionable`, and empty scans now expose explicit `fallback_candidates` with `selection_mode: static_fallback`. Scanner tests: 4 passed.
+- 2026-08-11 — Upgraded the daily scanner with Ross-style ranking: configured $1–$20 price, 4% minimum gain, 5x preferred relative volume, up to 200% gain ceiling, low-float preference under 20M shares, catalyst scoring, and a lower $5M average-dollar-volume floor. Missing float/catalyst data remains score-neutral rather than a hard rejection. Scanner tests: 5 passed.
+
+- 2026-08-09 — Added selectable `RossMomentumStrategy` from the Ross Cameron transcript: momentum impulse, first pullback, VWAP/9-EMA reclaim, volume confirmation, pullback stop, breakeven, and 10:00 ET cutoff. Use `python3 backtest.py --strategy ross`; London remains the default. Unit tests pass. The canonical Alpaca period produced zero Ross signals, so no profitability claim is made until the scanner thresholds and a broader sample are evaluated.
+
+## Feature Log
+
+- 2026-08-09 — Added selectable `RossMomentumStrategy` in `src/ross_momentum.py`, deterministic tests in `tests/test_ross_momentum.py`, `--strategy {london,ross}` with London default, and `ross_momentum` config thresholds. Canonical Alpaca run completed: Ross 676 trades, -$2,321.58, 46.3% win rate, 0.68 profit factor; London comparison 66 trades, +$1,232.18, 59.1%, 1.44. Ross is research-only until its high zero/stop-loss rate is addressed.
+- 2026-08-10 — Added selectable `SneakyPivotStrategy` in `src/sneaky_pivot.py`, deterministic tests in `tests/test_sneaky_pivot.py`, and `--strategy sneaky`. A two-symbol Alpaca smoke run (SPY/QQQ, 2026-07-01 to 2026-08-06) produced 68 trades, -$35.31, 60.3% win rate, and 0.93 profit factor. This is not a profitability claim; the strategy remains research-only.
+- 2026-09-04 — `eps_line_put_selling`: EPS auto-fetch wired in the runner (`src/backtest_runner.py` `_resolve_missing_eps` — CLI and `/api/backtest` both go through backtest.py, so the web API inherits it; logs `Auto-resolved trailing EPS for <SYM>: <value>`) (`src/eps_line_put_selling._parse_eps` now accepts `eps: {"eps": {SYM: val}}` from `/zo/ask`-style wrappers). Live yfinance validation 2026-07-01→2026-09-03, $100k, VZ (EPS 3.87, PE line 58.05): 4 cash-secured positions (21-day spacing), $28,495 premium collected, $77,691 open max liability, paper-only. Caveat fixed: local-only `main` branch was shadowing `master`; unified to `master`, set upstream, force-pushed `6218d0b`; remote and local are in sync.
+- 2026-09-05 — Strategy Lab UI: added `eps_line_put_selling` to both the repo dashboard (`web/src/App.tsx`, commit 55c04bd) and the live zo.space Strategy Lab route. Screenshot-verified at /robinhood-trading-bot: dropdown shows "EPS-line put selling (paper)" and selecting it renders all 7 params (target_pe 15, dte 730, iv 0.30, max_collateral_pct 0.30, min_days_between_entries 21, min_yield_annual_pct 5, securing cash).
+- 2026-08-10 — Added selectable `HAScalpStrategy` in `src/ha_scalp.py` and `--strategy ha_scalp`. Six-month Alpaca run at $300 across all 13 symbols (2026-02-10 to 2026-08-10) used 15-minute bars as a runtime approximation to the source's 1-minute chart and produced zero qualifying signals. No profitability claim is made.
+
+## Verified Edge — 6-month regime check (2026-09-05)
+
+Monthly standalone London runs (13 symbols, Alpaca 5m, theta on, execution realism on):
+
+| Month | Trades | Win % | PF | Net |
+|---|---|---|---|---|
+| 2026-03 | 70 | 55.7 | 1.13 | +$342 |
+| 2026-04 | 58 | 58.6 | 0.98 | -$44 |
+| 2026-05 | 84 | 54.8 | 0.99 | -$31 |
+| 2026-06 | 80 | 60.0 | 1.32 | +$754 |
+| 2026-07 (canonical) | 66 | 59.1 | 1.44 | +$1,232 |
+| 2026-08 | 26 | 61.5 | 1.10 | +$113 |
+| 2026-09-01/03 | 2 | 50.0 | 0.04 | -$162 |
+| **Total (~6.5 mo)** | **386** | **~57.8%** | **~1.15** | **+$2,204** |
+
+- Win rate is stable in EVERY window (54.8–61.5%) — that part of the edge is real.
+- Profit is not: expectancy concentrates in Jun+Jul (+$1,986 of +$2,204). Apr/May flat,
+  Mar modest. Overall ~+$315/month on $10k (~3%/mo) with heavy month-to-month variance.
+- Theta contributes ~nothing (avg +$1/spread); the directional book drives results.
+- **Verdict: thin, variance-heavy positive expectancy — keep London as the primary
+  paper candidate, stay paper-only.** Not strong enough to enable live at $200–300
+  capital; one bad regime (Apr/May-type) erases two good months. Prior "edge did not
+  hold" note referred to the Aug 7–Sep 3 slice (PF 0.87) — within normal variance of
+  the full 6-month picture, but confirms no fat edge.
+
+## Opening Drive Fade (added 2026-09-05, paper-only research)
+
+Strategy: `src/opening_drive_fade.py` — fades one-directional opening drives (09:30→drive_end,
+default 09:45): |net move| ≥ drive_min_pct, path pullback ≤ max_pullback_frac of drive range,
+volume confirmation; stop beyond drive extreme + stop_buffer_atr×ATR, fixed-R target, 1 entry/symbol/day.
+Registered in STRATEGY_MAP + `opening_drive_fade` config block; CLI `--strategy opening_drive_fade`.
+
+**Verdict (2026-08-01→08-08, 1m cache, 13 symbols, $10k, execution realism on): NOT VIABLE — do not add to rotation.**
+Baseline: 62 directional trades, -$1,197, 21% win, PF 0.24. Best tuned variant (stop 4×ATR,
+drive ≥0.8%, pullback ≤20%, vol 1.5×, 2R): -$94, 40% win, PF 0.96 — breakeven, not edge.
+3 filter iterations (strict drive quality, shorter 1.5R targets, wider stops to 6×ATR) all lost.
+Dominant lever was stop width (razor-thin 1m-ATR stops → 48/62 stop-outs). Raw drive fading without
+a higher-timeframe level target or news filter has no edge on this universe/window.
+Level-fade variant (2026-09-05): drives must reach prior-day H/L ±level_buffer_atr×ATR (runner passes
+prior_high/prior_low to the strategy; require_level/level_buffer_atr config). Buffers 1/2/3 ATR →
+21/-\$256, 20/-\$312, 20/-\$336 — worse than the -$94 ungated tuned baseline. Level gate improves selectivity
+but kills the better-location entries. Verdict stands: park, do not add to rotation.
+**Level-gate variant (2026-09-05): also NOT VIABLE.** Added `require_level` + `level_buffer_atr`
+(strategy + runner passes prior-day high/low context): drive must terminate at prior-day H/L ±buffer.
+E-best params + gate: buffer 1.0 → 21 trades -$256; 2.0 → 20 trades -$311.70 (30% win, PF 0.64);
+3.0 → 20 trades -$335.64 (30% win, PF 0.63). Level gating raised win rate (21→30%) but cut profit
+trades harder than losers — net worse than the -$94 ungated baseline. Both variants closed: strategy
+parked, kept out of rotation.
+
+## Regime Filter experiment (2026-09-05, paper-only)
+
+Added `regime_filter` config block to `src/backtest_runner.py` (london only, disabled by
+default): daily SPY SMA-N gates long/short entries; `invert: true` flips the gate.
+Purpose: test whether monthly variance (Mar/May losses vs Jun/Jul gains) is regime-driven.
+
+Monthly 13-symbol results (Alpaca 5m, theta on, realism on), directional trades:
+
+| Variant | Trades | Net | Verdict |
+|---|---|---|---|
+| No filter (baseline) | 386 | +$2,204 | best overall |
+| Trend-aligned (long when SPY>SMA50) | 81 | +$326 | actively hurts (kills Jul +$1,502 → -$603) |
+| Inverted (long when SPY<SMA50) | 106 | +$1,449 | halves trades, keeps most P&L, but Mar/May still lose |
+
+Verdict: regime filter does NOT beat the unfiltered baseline. The classic trend filter
+destroys the edge (London breakouts work as counter-trend reversals more than
+trend-continuations here). Inverted variant is intriguing (higher per-trade efficiency)
+but gains concentrate in Jun-Aug exactly like the baseline — same variance problem,
+smaller sample. No variant adopted; London stays unfiltered, paper-only.
+
+## London parameter-robustness grid (2026-09-05, paper-only, theta OFF)
+
+42 runs = 7 months × 6 variants (13 symbols, Alpaca 5m, realism on). Monthly net $:
+
+| Month | baseline | rr2.5 | rr1.5 | hold45 | strength0.6 | strength0.9 |
+|---|---|---|---|---|---|---|
+| 2026-03 | 35t $237 | $-147 | $143 | $237 | $186 | $460 |
+| 2026-04 | 29t $-117 | $-463 | $-372 | $-117 | $67 | $165 |
+| 2026-05 | 42t $-31 | $189 | $34 | $-31 | $54 | $-39 |
+| 2026-06 | 40t $732 | $539 | $2,006 | $732 | $255 | $82 |
+| 2026-07 | 27t $776 | $493 | $1,070 | $776 | $802 | $832 |
+| 2026-08 | 13t $55 | $111 | $-29 | $55 | $55 | $-3 |
+| 2026-09a | 1t $-169 | $-169 | $-169 | $-169 | $-169 | $-169 |
+| **Total** | **187t $1,481** | **$552** | **$2,682** | **$1,481** | **$1,250** | **$1,327** |
+
+- rr1.5 is the only variant that beats baseline (+81%, $2,682 vs $1,481) — but the gain is
+  again concentrated in Jun ($2,006 of $2,682) and Apr gets WORSE. In-sample single test;
+  treat as candidate, not adopted. Needs out-of-sample confirmation before any config change.
+- rr2.5 sharply worse (-$929 vs baseline): wider targets give back open profits.
+- hold45 identical to baseline — 30-bar exit binds before 45 ever triggers.
+- breakout_strength 0.6/0.9 both near baseline: knob is robust, not knife-edge.
+- Structural finding: EVERY variant loses in Apr and (except strength0.9) underperforms
+  its own total in Mar. Month-level variance is not a parameter artifact.
+
+## Gamma Monitor (added 2026-09-05, read-only)
+
+`src/gamma_monitor.py` — naive SPY GEX proxy from yfinance option chains
+(dte_max default 7): BS gamma x OI x 100 x spot, calls positive / puts negative.
+`get_gamma_regime(symbol="SPY", dte_max=7)` returns net_gex + regime label.
+Live check 2026-09-05: SPY 770.19, net GEX -6.3M (negative regime),
+expiries 2026-09-08..09-11. NAIVE assumption (dealers long calls / short puts) —
+proxy only, no dealer-positioning ground truth. Read-only; no order placement;
+not wired into London entries. Use as context filter only, never as a signal.
+
+## Video Eval: "Gamma Trading: The Edge Market Makers Wished You Didn't Know" (Rader Trader, WBqxiVthqEk, 2026-09-05)
+
+**Verdict: 6/10 concept, 3/10 evidence, 2/10 stack fit — NOT tradeable on Alpaca IEX. Stream closed.**
+Dealer-hedging mechanics (gamma flip, range compression vs waterfall risk) are real and well-taught,
+but all three presented strategies require options open interest / real-time option flow — IEX feed
+is OHLCV only, historical OI is not freely available for backtesting. The flagship "Option Volume
+Imbalance" strategy is the author's proprietary paid-platform tool (unverifiable by design). Zero
+backtests shown in 43 minutes; examples cherry-picked. Unbacked claims rejected: gamma hedging
+"controls" 2026 markets, JEX flip always important. The JEX-flip playbook reduces to fading opening
+drives — already tested as opening_drive_fade and failed (see above). Gamma monitor context:
+src/gamma_monitor.py SPY GEX proxy uses a naive dealer assumption (calls+/puts-); regime label is
+context, not a trading signal.
+
+## Video Eval: "Claude Just Changed the Stock Market Forever!" (Samin Yasar, lH5wrfNwL3k, 2026-09-05)
+
+**Verdict: 5/10 concept, 2/10 evidence, 4/10 stack fit. Stream closed.**
+Three Claude Desktop + Alpaca paper-trading builds: (1) trailing-stop bot with
+ladder buys, (2) politician copy-trading via Capitol Trades MCP, (3) wheel
+strategy (cash-secured puts + covered calls). Trailing stop and wheel mechanics
+are textbook-correct; nothing novel. Evidence is weak: zero backtests of the
+actual bot logic; the politician edge is ONE cherry-picked year copying ONE
+politician (Michael McCaul) vs S&P with no slippage, fees, or stale-disclosure
+modeling — disclosure lag hand-waved away with "Congress buys 2 years out." Wheel
+pitched as "income no matter which direction the stock moves" — misleading; the
+wheel carries full underlying downside. Bad practices shown: API keys saved as
+plaintext in a project folder, "bypass permissions" mode for order placement.
+Stack fit vs ours: trailing-stop bot is directly implementable on the IEX OHLCV
+feed + Alpaca order API (only piece with fit); wheel needs options data — same
+blocker as the gamma video (IEX is OHLCV-only, no historical chains for
+backtesting); copy-trading data (Capitol Trades) is free but stale and includes
+names Alpaca can't trade. If anything gets adopted, it is the trailing-stop +
+ladder paper strategy — same paper-only discipline we already use.
+
+## Trailing Stop Ladder (added 2026-09-06, paper-only)
+
+Strategy: `src/trailing_stop_ladder.py` — from the "Claude changed the stock market"
+video eval (concept 4/10, evidence 2/10, stack fit 7/10). The only adoptable piece was
+a trailing-stop ladder. EMA(4/10) trend + momentum + volume-spike continuation entry
+(1/symbol/day, cutoff 11:30), initial stop at N-bar swing extreme minus ATR buffer,
+then a rung ladder: every +1R of peak favorable excursion locks the stop 1R lower
+(rung 1 = breakeven). Exits: trailing stop / initial stop / max hold / session close.
+Registered in STRATEGY_MAP, runner session branch, web API allowlist, Strategy Lab
+dropdown (8 params), config block `trailing_stop_ladder`. Tests: 3 passed; web build OK.
+
+**Verdict (2026-08-01→08-08, Alpaca, 13 symbols, $10k, realism on, theta off): NOT VIABLE — parked, not in rotation.**
+- 1m baseline: 65 trades, 40.0% win, PF 0.75, net -$838.33 (gross +$465.83, cost -$1,304.16). Zero rungs reached.
+- 1m tight rungs (swing 5, buffer 0.25 ATR, rung 0.5R/lock 0.5R): -$1,664.02, PF 0.11 — tighter stops get whipsawed (37 trailing stops lock pennies, 27 full stop-outs).
+- 5m baseline: 46 trades, 30.4% win, PF 0.51, net -$791.80 (gross +$80.93, cost -$872.73). Still zero rungs reached.
+- Root cause, same as orb_fvg: ~$13-20/trade execution cost vs ~$7 avg gross edge; and one full R of intraday favorable excursion is rare on this universe, so the ladder's payoff structure never materializes.
+- Both timeframes and both rung spacings fail; no further variants planned.
+
+## Trailing Stop Ladder (added 2026-09-06, paper-only research)
+
+Strategy: `src/trailing_stop_ladder.py` — from the "Claude just changed the stock
+market" video (lH5wrfNwL3k). EMA9/50 trend + 3-bar momentum + volume entry; stop at
+swing low/high ± 0.5×ATR(14); ladder lock: each +1R peak rung moves the stop to
+entry − (rung−1)×R (breakeven at rung 1, then locks profit). 1 entry/symbol/day,
+cutoff 15:00, eod 15:45, max hold 78 bars. Registered in STRATEGY_MAP, CLI, web
+API allowlist, Strategy Lab UI, config block `trailing_stop_ladder`. Tests:
+`tests/test_trailing_stop_ladder.py` (3 passed).
+
+**Verdict (2026-08-01→08-08, 13 symbols, Alpaca 5m, theta OFF, realism on):
+NOT VIABLE — do not add to rotation.**
+- Baseline: 46 trades, 14W/32L (30.4% win), PF 0.51, gross +$80.93, execution
+  cost -$872.73, net -$791.80.
+- Looser ladder (rung 2R/lock 2R): identical ~PF 0.51, net -$792 — ladder spacing
+  is not the lever.
+- Stricter momentum (5-bar, 1.5× vol): 36 trades, PF 0.47, net -$687 — worse.
+- Same failure shape as opening_drive_fade/orb_fvg: gross edge ≈ $0 before costs;
+  ~$19/trade round-trip cost (5bps slippage + 5bps spread) turns breakeven into
+  -8R over the week. 30 eod_closes vs 16 stop_losses also shows trades never
+  reach the ladder rungs.
+- First theta-on run leaked 46 theta_spread trades into the summary (config
+  theta_farming.enabled) — always pass `--theta false` for directional research.
+Parked, not in rotation, no further variants planned.

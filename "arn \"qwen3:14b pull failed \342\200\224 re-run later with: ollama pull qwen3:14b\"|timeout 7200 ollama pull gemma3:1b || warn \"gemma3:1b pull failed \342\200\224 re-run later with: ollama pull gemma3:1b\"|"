@@ -1,0 +1,2 @@
+  || warn "qwen3:14b pull failed — re-run later with: ollama pull qwen3:14b"
+  || warn "qwen3:14b pull failed — re-run later with: ollama pull qwen3:14b"

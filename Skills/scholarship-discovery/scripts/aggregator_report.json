@@ -1,0 +1,28 @@
+{
+  "sources": {
+    "aggregators": {
+      "sources": 3,
+      "landing_candidates": 4961,
+      "detail_candidates": 4945
+    }
+  },
+  "search_patterns": {
+    "aggregators": [
+      "scholarship sponsor application",
+      "official scholarship apply",
+      "provider application"
+    ]
+  },
+  "crawl_depth": 1,
+  "raw_candidates": 4961,
+  "verified_candidates": 100,
+  "rejected": 155,
+  "committed": true,
+  "crawl_seconds": 21.39,
+  "crawl_timed_out": false,
+  "verify_seconds": 18.05,
+  "added_each_db": [
+    0,
+    0
+  ]
+}

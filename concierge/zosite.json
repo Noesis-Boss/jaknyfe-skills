@@ -1,0 +1,21 @@
+{
+  "name": "concierge",
+  "type": "site",
+  "build": "bun run build",
+  "entrypoint": "PORT=$PORT bun run group-bridge.ts",
+  "local_port": 3000,
+  "public": true,
+  "publish": {
+    "label": "concierge",
+    "type": "http",
+    "entrypoint": "PORT=$PORT bun run group-bridge.ts",
+    "published_port": 3000,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none",
+      "WA_VERIFY_TOKEN": "zorro-trip-2026",
+      "WA_PHONE_NUMBER_ID": "",
+      "WA_ACCESS_TOKEN": ""
+    }
+  }
+}

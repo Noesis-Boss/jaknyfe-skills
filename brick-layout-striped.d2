@@ -1,0 +1,27 @@
+direction: down
+
+subgraph row1 {
+  label: "Row 1: 8\" bricks (h=8\")"
+  direction: right
+  r1a: 8" --> r1b: 8" --> r1c: 8" --> r1d: 8" --> r1e: 8" --> r1f: 8" --> r1g: 8"
+}
+subgraph row2 {
+  label: "Row 2: 6\" bricks (h=6\")"
+  direction: right
+  r2a: 6" --> r2b: 6" --> r2c: 6" --> r2d: 6" --> r2e: 6" --> r2f: 6" --> r2g: 6" --> r2h: 6" --> r2i: 6"
+}
+subgraph row3 {
+  label: "Row 3: 8\" bricks"
+  direction: right
+  r3a: 8" --> r3b: 8" --> r3c: 8" --> r3d: 8" --> r3e: 8" --> r3f: 8" --> r3g: 8"
+}
+subgraph row4 {
+  label: "Row 4: 6\" bricks"
+  direction: right
+  r4a: 6" --> r4b: 6" --> r4c: 6" --> r4d: 6" --> r4e: 6" --> r4f: 6" --> r4g: 6" --> r4h: 6" --> r4i: 6"
+}
+row1 --> row2 --> row3 --> row4
+note: "14 of the 8\" bricks anchor accent rows" {
+  shape: text
+}
+row4 --> note

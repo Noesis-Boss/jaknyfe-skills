@@ -1,0 +1,190 @@
+Delivered-To: state.officer.director@azdemolay.org
+Received: by 2002:a05:612c:6a0a:b0:5fa:23ce:790b with SMTP id 10csp4440864vqa;
+        Sun, 6 Sep 2026 10:36:06 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AKwUvBwSMwpwojspCKtujlAOEEjKZvAqdohiKry6A3l+/90ywA6Hhj8zhBF4LVZTJ3+98qp7Qowt4G81fCqhUTDkkicgU8/p99Ej@azdemolay.org
+X-Received: by 2002:a17:907:d9e:b0:c26:19de:9aed with SMTP id a640c23a62f3a-c2619dea8femr648667166b.44.1788716166283;
+        Sun, 06 Sep 2026 10:36:06 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1788716166; cv=pass;
+        d=google.com; s=arc-20260327;
+        b=oLP/rb5u3fV1qtHAA/2+WGBL1Acu7Q3Vo7ODKjTt8nek/NKRQr6svrHzT3Ttl9F8gi
+         acpkdzxm/QLWKDOrc+XahHY8HZWD7kof05f6pA6NL6FyluZlP0zADPcjvfovseHAb4CJ
+         p3dy5yX3HnhvWsgtRuxIPkbozNjXmbqxVcWmRxVZM/NDJWKUFLVhRcZCdnP1vZJ1Q4aD
+         UwYQtDVR3MC10SakL8ESipt+Sqvt0SGNr+5y8DKLMhifsuIfn9xnqktB6i/Y0TXXsdiU
+         G+dAPCdr/2R8dOhf/4/iEhbwgAU9ZaUlzCx/baakd4M1r52U0+N9upCNlMYi9f9Xr3Eo
+         m9Xw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=fQqJD47FjUWnGnbKHp1KCXsFkO+V21vOoXMOM4qdUkw=;
+        fh=ED+mLZPvC2ww8jCA6Z1P+VafDSmGICapOedH56sQRkQ=;
+        b=bSlVFRLfue7rKSoZZ75xFhaEKmEBunh60hFdfhAPzMHx2ZgBTYGKGzOb+SW3Jox3JK
+         DGKltHW1HCOIrHO1thV2YkVJToDTQaQQ64yXWYoUnl7NdvSRykT/XJl/UHBzqpscV6u8
+         cw9XgpekI/Pq25WX4Vy71SIPdi+PVzOq+C4qe/tWBxdhOlC9e89r9/svJYjGgHZW7POl
+         u13u3a8LsteGNP8+vqh+CnZwzT8UzYRELi8n5OyBOQsGYr/3DF1Vs9U6LaQozYW00Cen
+         jb80I8li/M6mF3W0naO0oaA5Mt8k3ZvS2cnliCS2LbCXyhbt5UNBT9A+4CkzUFAIIMdh
+         oxaA==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@azdemolay-org.20251104.gappssmtp.com header.s=20251104 header.b=iCpiGB73;
+       arc=pass (i=1);
+       spf=none (google.com: executive.officer@azdemolay.org does not designate permitted sender hosts) smtp.mailfrom=executive.officer@azdemolay.org;
+       dara=fail header.i=@azdemolay.org
+Return-Path: <executive.officer@azdemolay.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-c260d46938fsor162858066b.5.2026.09.06.10.36.06
+        for <state.officer.director@azdemolay.org>
+        (Google Transport Security);
+        Sun, 06 Sep 2026 10:36:06 -0700 (PDT)
+Received-SPF: none (google.com: executive.officer@azdemolay.org does not designate permitted sender hosts) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@azdemolay-org.20251104.gappssmtp.com header.s=20251104 header.b=iCpiGB73;
+       arc=pass (i=1);
+       spf=none (google.com: executive.officer@azdemolay.org does not designate permitted sender hosts) smtp.mailfrom=executive.officer@azdemolay.org;
+       dara=fail header.i=@azdemolay.org
+ARC-Seal: i=1; a=rsa-sha256; t=1788716166; cv=none;
+        d=google.com; s=arc-20260327;
+        b=EDlucvktIATqZD8K8DgV9AnQcEXSdVfh1p36DO2ohDlHfUB0YI/21A7978hrDVL+Nj
+         VLg4X67MB5B2K7cOke69TZfBXwsDrONAofp3gpAQpZiqW1feJW6KWIH8uRswg+tYfwFD
+         /akKuBouiom0CgaZN5vy4Ez4AVQC5k2DwWRxlYLvme5oU9mTqdkr40HlseDjeLHRj8HZ
+         19qiQHC69pclcV3ejzlOhbZbIYsmWbFlyHAlIhYkp7r7KC5nSspHI1YOjD3YTyGnpfF1
+         NEKnR9qypvb89wrjiNPD7zPtpyM3VuLrslR17T3OHHsEPQaJ43KkPNqhaeKoNvfh839G
+         49Jg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=fQqJD47FjUWnGnbKHp1KCXsFkO+V21vOoXMOM4qdUkw=;
+        fh=ED+mLZPvC2ww8jCA6Z1P+VafDSmGICapOedH56sQRkQ=;
+        b=ja1XNSda2aSUUOXMiogPu5Z5RuELgScJIS9Hjcaky0HvjVHATjWm7AlbLXjfS3y9Ul
+         /gH28re8fiCwHMwwAomUA0pbI0YRqPatVuKYKOQ0kvGGRGqv6hchlPf+ZFjPwJIqpUtI
+         RKRpAmVl3yQ3QivJudDDhixwicXZwbAIRznRVKJAJBZ97ouElsYKWD9Yc5RT/2IyqVkv
+         UzuO8+1fGI85zGIaIPPlysGngkNb7AjiRh+bcjNX3bJ8YhNF7NQatKS4TupKUwpy5esV
+         /Zkze/SbvbTCam/ZSWC/EV2sA1X2oyUlZBb6ivEtk9WtuS5NarSz8iMOeTmaASKM/95u
+         8POQ==;
+        darn=azdemolay.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=azdemolay-org.20251104.gappssmtp.com; s=20251104; t=1788716166; x=1789320966; darn=azdemolay.org;
+        h=content-type:to:subject:message-id:date:from:mime-version:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=fQqJD47FjUWnGnbKHp1KCXsFkO+V21vOoXMOM4qdUkw=;
+        b=iCpiGB73sqWL1wNZc0saVXVQXb6wk+yXtQATuKmjMYSKVeuNRtKTqxyD1rnrkhoHkH
+         txMkz2YiXSfBDbUvaZ2+Y/A55lVZG/ImMA1tgPKe86Ydg2JV6U9tPnZFS6NLbbsTCXlR
+         tf9QRjWXnhjMLNUEiOXq0UXnL0+l2M7DebIT1iORZjJO7oSRERI59ia1XSj6NV5JXg2c
+         mxOLvPDpQMxlw4sGsTjZ0xA9cB5r9y/9DdeiQUqO1SuCYcbN7UHvtPMBTlA9oEc1LJih
+         ZavLxIu67CSnwKniK+uasqUpVOVE21ZLjLqvZFxW9DmdN/iWd2rp6NamAUK3OUsU9Woa
+         iMmQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1788716166; x=1789320966;
+        h=content-type:to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=fQqJD47FjUWnGnbKHp1KCXsFkO+V21vOoXMOM4qdUkw=;
+        b=eDGLdBxBcX1ciMkJKbEbkOq3k/DufTXHGDJp+j4rg1fgQJMkgw000eRXc/TV5Vge45
+         9PAxjBWqTWj1ssewoX1PmumPVy+QKNw45xpjE3lKlQD4lXkiHueJjBatVW+SqrKlUZ4X
+         e+frNgkVO3jnWCM3N7Fje3bMMup7+AOTkSsunpnU/rnO6tyYpwuTmH1AIIDP6bsn3xeP
+         jNIE6VaLBi+0yPK8q36cEhNtWMYSKDsm3yuaMHWHxsmcldnWPkTqt5DmxpA05aUr8/U2
+         qGyj0stcGhPNON6oaflpPr37M/KO4xzztD/cQwsv/l8As7U2Qa4p2PD+2WfB8ZIaEOLq
+         F0CQ==
+X-Forwarded-Encrypted: i=1; AKwUvBwGgotjPuGyt1yXcLD0c/TH3dg85C/O0KuGo9gqNHA98CJVCFQEC1KZN3PswkxTx5aTBJ+o9ar7T04vjw1Xqf0oftFPjU3T@azdemolay.org
+X-Gm-Message-State: AFuF++n5Xiapz9uf/HqEH4AHKzP1pwJNPtHod5maDKVYr7R/B6zXhqxE
+	xO2USbuxAae55DU8HogPRyy2ThvyP1u0xTrZ4DaMQhUhQGyf4Hnu3rWbWDmGQCe0HSUX+9XPMnm
+	fEfsZxa5PXFHMcUbzinj/qNr/Cws46t2/dQrtpD0Vka5w
+X-Gm-Gg: AYBFou1FGgX40rSQVMIqOELwPch7cxrVeEm3kXeFOz+Y1QuhD9rV1sQdkQIBPMv63S2
+	DZ/FEHqgnqSgI5Fh2DkbpOrVnlK3mRVIpQERQTvx6ET6thtD7U5gV1cZezou9aOGOQEJMu8K8V8
+	dNmnDszQLQwqwNIExbmtZZL/nmh70WyfJRUe68wo+Inz/oqx8JP2frJlgbt73MlRJb5oCGEdirE
+	Twh/la0hXl7rbsVu2yNJU+9yhXqv9uoOWPAtXfPC9w1tdYPXxs/Ps12mMe61yGmHpcn7dktViOb
+	6rzHiiBpqoiZzrmsck8+kt8mqlyZJ75CBf2CnFcUYcliI+okaqWVNzeM/hk+U4jDRfrCFLAU5fn
+	HcgXecJQzr5nbOoVd3aemwx9mxQBNfUJGSuU=
+X-Received: by 2002:a17:907:805:b0:c25:2c70:50ed with SMTP id
+ a640c23a62f3a-c260c6ab6c4mr692052166b.5.1788716165616; Sun, 06 Sep 2026
+ 10:36:05 -0700 (PDT)
+MIME-Version: 1.0
+From: Steve Johnston <executive.officer@azdemolay.org>
+Date: Sun, 6 Sep 2026 10:35:53 -0700
+X-Gm-Features: AcwNN1W17OFGlhSwLsb2v7i4ilLkMeDnX90qahJtVQi5uH6MCvvx0mLD7jwKjiE
+Message-ID: <CAGDJSM+p9vcF8bsNWT9GHNBXP3=6-qA+0QGMqX0yiFZ3jv_dFw@mail.gmail.com>
+Subject: Official: Re: Important Attnedance at Chapter Visit.
+To: Glendale Dad <glendale.dad@azdemolay.org>, 
+	Glendale Chair <glendale.chair@azdemolay.org>, PV Chair <vots.chair@azdemolay.org>, 
+	John givens <VOTS.Dad@azdemolay.org>, 
+	VOTS Assistant Chair <vots.asst.chair@azdemolay.org>, Phoenix Chair <phoenix.chair@azdemolay.org>, 
+	Phoenix Dad <phoenix.dad@azdemolay.org>, Paul Brown <assistant.eo@azdemolay.org>, 
+	State Officer Director <state.officer.director@azdemolay.org>, 
+	Membership Director <membership@azdemolay.org>
+Content-Type: multipart/alternative; boundary="000000000000a7e9c5065ad3ef7c"
+
+--000000000000a7e9c5065ad3ef7c
+Content-Type: text/plain; charset="UTF-8"
+
+Greetings,
+
+As you are aware, the State Officers will be doing their Chapter visit for
+Gelndale, VOTS, and Phoenix on Sunday, September 13th.
+
+During rhe visit, the State Officers will ask the Advisors to breakaway as
+they hold a presentation with the members.
+
+Please encourage all of your members to attend this meeting.
+
+During the breakaway, I would like to have a meeting with the Advisors to
+go over some important information.
+
+It is imperative that all Chapter Dads and Chapter Chairmen from all three
+Chapters attend this meeting on the 13th as I want to discuss a plan to
+grow the membership so that Phoenix and VOTS can function independently.
+
+Please encourage get the word out to your advisors to attend as well.
+
+I look forward to working together to formulate a plan.    It is vital that
+all of you are there to contribute your thoughts and be aware of and have
+an understanding of the plan.
+
+Regards,
+Steve
+
+*Steve Johnston*
+
+*Executive Officer*
+
+Arizona DeMolay State Association
+
+3535 East Blanche Drive, Phoenix, AZ 85032
+(602) 931-3403
+executive.officer@azdemolay.org   www.azdemolay.org
+
+--000000000000a7e9c5065ad3ef7c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><div>Greetings,</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">As you are aware, the State Officers will be doing their Chapter =
+visit for Gelndale, VOTS, and Phoenix on Sunday, September 13th.=C2=A0 =C2=
+=A0</div><div dir=3D"auto"><br></div><div dir=3D"auto">During rhe visit, th=
+e State Officers will ask the Advisors to breakaway as they hold a presenta=
+tion with the members.</div><div dir=3D"auto"><br></div><div dir=3D"auto">P=
+lease encourage all of your members to attend this meeting.</div><div dir=
+=3D"auto"><br></div><div dir=3D"auto">During the breakaway, I would like to=
+ have a meeting with the Advisors to go over some important information.</d=
+iv><div dir=3D"auto"><br></div><div dir=3D"auto">It is imperative that all =
+Chapter Dads and Chapter Chairmen from all three Chapters attend this meeti=
+ng on the 13th as I want to discuss a plan to grow the membership so that P=
+hoenix and VOTS can function independently.=C2=A0 =C2=A0</div><div dir=3D"a=
+uto"><br></div><div dir=3D"auto">Please encourage get the word out to your =
+advisors to attend as well.</div><div dir=3D"auto"><br></div><div dir=3D"au=
+to">I look forward to working together to formulate a plan.=C2=A0 =C2=A0 It=
+ is vital that all of you are there to contribute your thoughts and be awar=
+e of and have an understanding of the plan.=C2=A0=C2=A0</div><div dir=3D"au=
+to"><br></div><div dir=3D"auto">Regards,</div><div dir=3D"auto">Steve</div>=
+<div><br></div><div data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><di=
+v dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><p><span s=
+tyle=3D"color:black"><u><span style=3D"font-size:18.6667px">Steve Johnston<=
+/span></u></span></p><p><font color=3D"#000000"><b>Executive Officer</b></f=
+ont></p><p><span style=3D"color:black">Arizona DeMolay State Association</s=
+pan></p><p><font color=3D"#000000">3535 East Blanche Drive, Phoenix, AZ 850=
+32<br></font><font color=3D"#1155cc">(602) 931-3403</font><font><br></font>=
+<a href=3D"mailto:executive.officer@azdemolay.org" target=3D"_blank"><span =
+style=3D"color:blue">executive.officer@azdemolay.org</span></a><span style=
+=3D"color:black"> =C2=A0 </span><a href=3D"http://www.azdemolay.org/" targe=
+t=3D"_blank"><span style=3D"color:blue">www.azdemolay.org</span></a><span s=
+tyle=3D"color:black">=C2=A0<br></span></p></div></div></div></div></div></d=
+iv></div>
+
+--000000000000a7e9c5065ad3ef7c--

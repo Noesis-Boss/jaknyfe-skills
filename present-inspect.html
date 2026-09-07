@@ -1,0 +1,8 @@
+<!doctype html><html><body><pre id="x"></pre>
+<script>
+  const p = new URLSearchParams(location.search);
+  const m = {};
+  location.pathname.split('/').forEach((v,i,a)=> { if(a[i-1]==='present') m.id=v; });
+  document.getElementById('x').textContent = JSON.stringify({path:location.pathname,params:m,query:Object.fromEntries(p)},null,2);
+</script>
+</body></html>

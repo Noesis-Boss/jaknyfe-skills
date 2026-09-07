@@ -83,6 +83,48 @@
       "text": "Astra memory uses local nomic-embed-text-v1.5 (768-dim, cosine) with hybrid RRF retrieval. Always query via 'sync.ts query <text>' when the user asks about past context, prior decisions, recurring projects, or ambiguous references — returns semantic + lexical matches.",
       "addedAt": "2026-06-27T03:09:12.749Z",
       "tags": []
+    },
+    {
+      "id": 1788697756875,
+      "text": "Momball site commit ae3552a adds client-side Brand settings validation for https-only logo and social URLs; build passed, public republish succeeded, and live /admin screenshot verified.",
+      "addedAt": "2026-09-06T12:29:16.875Z",
+      "tags": []
+    },
+    {
+      "id": 1788740189393,
+      "text": "2026-09-07: MCP catalog gateway scope is catalog plus execution gateway with CLI and local HTTP API; use official MCP Registry as free discovery source.",
+      "addedAt": "2026-09-07T00:16:29.393Z",
+      "tags": []
+    },
+    {
+      "id": 1788743532146,
+      "text": "Key-leak remediation closed 2026-09-06: 0 gitleaks findings, branches clean, keys rotated, pre-push hook enforced",
+      "addedAt": "2026-09-07T01:12:12.146Z",
+      "tags": []
+    },
+    {
+      "id": 1788754701487,
+      "text": "Heist crew mission (Projects/heist-crew/heist) complete 2026-09-07: Opportunity 1 missed-call-text-back launch package staged in final/, Palermo PASS, 4 external actions pending Don approval.",
+      "addedAt": "2026-09-07T04:18:21.487Z",
+      "tags": []
+    },
+    {
+      "id": 1788786626013,
+      "text": "Senior Eyes service specced 2026-09-07: sheet at senior-eyes/SERVICE-SHEET.md, web+automation review lanes, 50 single / 50-1200 audit / 50/mo watch / 000 retainer, nonprofit 20% off",
+      "addedAt": "2026-09-07T13:10:26.013Z",
+      "tags": []
+    },
+    {
+      "id": 1788787286911,
+      "text": "UGC creator project: Don does paid UGC for brands, niche = AI tools for 50+. On camera, pro studio, 2 videos/week, $150/video base rate. Folder /home/workspace/ugc-ai-for-50/",
+      "addedAt": "2026-09-07T13:21:26.911Z",
+      "tags": []
+    },
+    {
+      "id": 1788801013283,
+      "text": "Deletion audit 2026-09-07: x-browser-reply skill deleted untracked; no culprit found; deletion protections (inotify watcher, snapshots) still NOT installed — only gitleaks hook exists",
+      "addedAt": "2026-09-07T17:10:13.283Z",
+      "tags": []
     }
   ]
 }

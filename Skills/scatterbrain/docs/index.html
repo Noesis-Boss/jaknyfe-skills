@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>scatterbrain — give your Zo Computer a deliberate case of ADHD</title>
+<meta name="description" content="Scatterbrain is an open-source Zo Computer skill that fixes anchoring in AI brainstorming: five isolated parallel sessions think under distorted cognitive frames, then one critic scores everything and flags the traps.">
+<link rel="canonical" href="https://the-little-ai-company.github.io/scatterbrain/">
+<meta name="google-site-verification" content="FPocWbwCioRolVIzenG5hNV06ptQgv43NYAz9UbMMmU" />
+<meta name="theme-color" content="#0d0c0a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Little AI Company">
+<meta property="og:url" content="https://the-little-ai-company.github.io/scatterbrain/">
+<meta property="og:title" content="scatterbrain — give your AI a deliberate case of ADHD">
+<meta property="og:description" content="Open-source skill for Zo Computer. Five isolated parallel sessions, distorted cognitive frames, one critic that flags the pretty-but-doomed ideas as traps.">
+<meta property="og:image" content="https://the-little-ai-company.github.io/scatterbrain/assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hollis the owl pinning one idea down while two dozen notes swirl around his head">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="scatterbrain — give your AI a deliberate case of ADHD">
+<meta name="twitter:description" content="Five isolated parallel AI sessions, one critic that flags the traps. Open-source skill for Zo Computer, MIT.">
+<meta name="twitter:image" content="https://the-little-ai-company.github.io/scatterbrain/assets/og-card.jpg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d0c0a;
+    --ink-2:#15130f;
+    --paper:#f2ecdf;
+    --dim:#9a917f;
+    --brass:#d8a657;
+    --brass-hot:#f0c176;
+    --trap:#c96f5a;
+    --line:rgba(242,236,223,.12);
+    --mono:'JetBrains Mono',monospace;
+    --disp:'Space Grotesk',sans-serif;
+    --serif:'Instrument Serif',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--disp);
+    font-size:17px;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--brass);color:var(--ink)}
+
+  /* ---------- hypnotic backdrop ---------- */
+  .spiral{
+    position:fixed;inset:-40vmax;z-index:0;pointer-events:none;
+    background:repeating-conic-gradient(from 0deg,
+      transparent 0deg 9deg,
+      rgba(216,166,87,.05) 9deg 10.5deg,
+      transparent 10.5deg 18deg);
+    animation:spin 140s linear infinite;
+    filter:blur(1px);
+  }
+  .spiral--2{
+    background:repeating-conic-gradient(from 5deg,
+      transparent 0deg 14deg,
+      rgba(242,236,223,.025) 14deg 15deg,
+      transparent 15deg 28deg);
+    animation-duration:220s;animation-direction:reverse;
+  }
+  .vignette{
+    position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(ellipse 90% 70% at 50% 38%, transparent 30%, var(--ink) 100%);
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  main{position:relative;z-index:2}
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100svh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:48px 24px 64px;position:relative;
+  }
+  .owl-orbit{position:relative;width:min(300px,62vw);margin-bottom:8px}
+  .owl-orbit img{
+    width:100%;border-radius:50%;display:block;position:relative;z-index:2;
+    box-shadow:0 0 90px rgba(216,166,87,.22), 0 0 12px rgba(0,0,0,.6);
+  }
+  .ring{
+    position:absolute;inset:0;border-radius:50%;z-index:1;
+    border:1px solid rgba(216,166,87,.35);
+    animation:ripple 5s cubic-bezier(.2,.6,.35,1) infinite;
+  }
+  .ring:nth-child(2){animation-delay:1.25s}
+  .ring:nth-child(3){animation-delay:2.5s}
+  .ring:nth-child(4){animation-delay:3.75s}
+  @keyframes ripple{
+    0%{transform:scale(1);opacity:.7}
+    100%{transform:scale(2.1);opacity:0}
+  }
+  .hero h1{
+    font-size:clamp(52px,10vw,120px);
+    font-weight:700;letter-spacing:-.04em;line-height:1;
+    margin-top:28px;
+  }
+  .hero h1 .tterbr{display:inline-block;animation:jitter 7s ease-in-out infinite}
+  @keyframes jitter{
+    0%,88%,100%{transform:none}
+    90%{transform:translate(1px,-2px) rotate(.6deg)}
+    92%{transform:translate(-2px,1px) rotate(-.8deg)}
+    94%{transform:translate(1px,1px)}
+    96%{transform:translate(-1px,-1px) rotate(.4deg)}
+  }
+  .hero .tag{
+    font-family:var(--serif);font-style:italic;
+    font-size:clamp(20px,3.2vw,30px);color:var(--brass);
+    margin-top:14px;
+  }
+  .hero .sub{
+    max-width:520px;color:var(--dim);margin-top:18px;font-size:16px;
+  }
+  .hero .cta-row{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;justify-content:center}
+  .btn{
+    font-family:var(--mono);font-size:14px;text-decoration:none;
+    padding:13px 22px;border-radius:6px;letter-spacing:.02em;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-brass{background:var(--brass);color:var(--ink);font-weight:500}
+  .btn-brass:hover{box-shadow:0 6px 24px rgba(216,166,87,.35)}
+  .btn-ghost{border:1px solid var(--line);color:var(--paper)}
+  .btn-ghost:hover{border-color:var(--brass)}
+
+  /* drifting frame chips */
+  .chip{
+    position:absolute;z-index:0;pointer-events:none;
+    font-family:var(--mono);font-size:13px;color:var(--dim);
+    border:1px solid var(--line);border-radius:999px;padding:6px 14px;
+    background:rgba(13,12,10,.55);white-space:nowrap;
+    animation:drift var(--dur,26s) ease-in-out infinite alternate;
+    opacity:.85;
+  }
+  .chip.trap{color:var(--trap);border-color:rgba(201,111,90,.4);text-decoration:line-through}
+  @keyframes drift{
+    from{transform:translate(0,0) rotate(var(--r0,-2deg))}
+    to{transform:translate(var(--dx,30px),var(--dy,-40px)) rotate(var(--r1,3deg))}
+  }
+  @media(max-width:720px){
+    .chip{display:none}
+    .chip.keep{display:block;font-size:11px;top:auto!important;bottom:4%}
+    .chip.keep.trap{bottom:auto;top:3%!important;right:5%}
+  }
+
+  /* ---------- sections ---------- */
+  section{max-width:880px;margin:0 auto;padding:96px 24px}
+  .kicker{
+    font-family:var(--mono);font-size:13px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--brass);margin-bottom:18px;
+  }
+  h2{
+    font-size:clamp(30px,5vw,46px);font-weight:700;letter-spacing:-.03em;
+    line-height:1.12;margin-bottom:22px;text-wrap:balance;
+  }
+  h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--brass)}
+  .prose{color:var(--dim);max-width:640px}
+  .prose strong{color:var(--paper);font-weight:500}
+  .prose p+p{margin-top:16px}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* mechanism grid */
+  .mech{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:44px}
+  @media(max-width:720px){.mech{grid-template-columns:1fr}}
+  .mech .card{
+    border:1px solid var(--line);border-radius:10px;padding:26px 24px;
+    background:linear-gradient(160deg,var(--ink-2),rgba(21,19,15,.4));
+  }
+  .card .n{font-family:var(--mono);color:var(--brass);font-size:13px;margin-bottom:12px}
+  .card h3{font-size:19px;font-weight:500;margin-bottom:8px;letter-spacing:-.01em}
+  .card p{color:var(--dim);font-size:15px}
+
+  /* terminal */
+  .term{
+    margin-top:44px;border:1px solid var(--line);border-radius:10px;overflow:hidden;
+    background:#0a0908;font-family:var(--mono);font-size:13.5px;line-height:1.9;
+  }
+  .term-bar{display:flex;gap:6px;padding:11px 14px;border-bottom:1px solid var(--line)}
+  .term-bar span{width:10px;height:10px;border-radius:50%;background:var(--line)}
+  .term pre{padding:20px 22px;overflow-x:auto;color:var(--dim)}
+  .term .b{color:var(--brass)}
+  .term .p{color:var(--paper)}
+
+  /* score bars */
+  .scores{margin-top:44px;display:grid;gap:18px;max-width:560px}
+  .score .lbl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;margin-bottom:8px}
+  .score .lbl b{color:var(--paper);font-weight:500}
+  .score .lbl span{color:var(--dim)}
+  .bar{height:6px;border-radius:3px;background:var(--ink-2);overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--brass);border-radius:3px;width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1) .2s}
+  .in .bar i{width:var(--w)}
+  .score.hot .bar i{background:var(--brass-hot)}
+
+  /* proof */
+  .proof blockquote{
+    border-left:2px solid var(--trap);padding:6px 0 6px 26px;margin-top:36px;
+    font-family:var(--serif);font-style:italic;font-size:clamp(21px,3vw,27px);
+    line-height:1.45;color:var(--paper);max-width:640px;
+  }
+  .proof cite{
+    display:block;margin-top:16px;font-family:var(--mono);font-style:normal;
+    font-size:13px;color:var(--dim);
+  }
+  .tally{display:flex;gap:10px;margin-top:36px;flex-wrap:wrap}
+  .name-chip{
+    font-family:var(--mono);font-size:13px;padding:8px 16px;border-radius:999px;
+    border:1px solid var(--line);color:var(--dim);
+  }
+  .name-chip.dead{text-decoration:line-through;color:var(--trap);border-color:rgba(201,111,90,.35)}
+  .name-chip.live{color:var(--ink);background:var(--brass);border-color:var(--brass);font-weight:500}
+
+  /* frames marquee */
+  .marquee{
+    margin-top:44px;overflow:hidden;position:relative;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  }
+  .marquee .track{display:flex;gap:12px;width:max-content;animation:scroll 46s linear infinite}
+  .marquee:nth-of-type(2) .track{animation-duration:58s;animation-direction:reverse}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .frame-pill{
+    font-family:var(--mono);font-size:13px;white-space:nowrap;
+    border:1px solid var(--line);border-radius:999px;padding:9px 18px;color:var(--dim);
+  }
+  .frame-pill b{color:var(--brass);font-weight:500}
+
+  /* install */
+  .install-box{
+    margin-top:40px;border:1px solid rgba(216,166,87,.35);border-radius:10px;
+    background:#0a0908;padding:24px 26px;font-family:var(--mono);font-size:14px;
+    display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  }
+  .install-box code{color:var(--paper);word-break:break-all;flex:1;min-width:260px;line-height:1.7}
+  .install-box code .b{color:var(--brass)}
+  .copy{
+    font-family:var(--mono);font-size:13px;cursor:pointer;border-radius:6px;
+    background:var(--brass);color:var(--ink);border:0;padding:10px 18px;font-weight:500;
+  }
+  .copy:hover{background:var(--brass-hot)}
+
+  /* faq */
+  .faq .prose h3{
+    font-family:var(--disp);font-size:19px;font-weight:600;
+    color:var(--brass-hot);margin:34px 0 10px;
+  }
+  .faq .prose h3:first-of-type{margin-top:8px}
+  .faq .prose a{color:var(--brass);text-decoration:none}
+  .faq .prose a:hover{text-decoration:underline}
+
+  /* footer */
+  footer{
+    border-top:1px solid var(--line);margin-top:40px;padding:56px 24px 72px;
+    text-align:center;color:var(--dim);font-size:14px;
+  }
+  footer a{color:var(--brass);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  footer .owl{font-family:var(--serif);font-style:italic;font-size:17px;margin-bottom:14px;color:var(--paper)}
+
+  @media (prefers-reduced-motion: reduce){
+    .spiral,.ring,.chip,.marquee .track,.hero h1 .tterbr{animation:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    .bar i{transition:none;width:var(--w)}
+    html{scroll-behavior:auto}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://the-little-ai-company.github.io/scatterbrain/#software",
+      "name": "scatterbrain",
+      "url": "https://the-little-ai-company.github.io/scatterbrain/",
+      "image": "https://the-little-ai-company.github.io/scatterbrain/assets/og-card.jpg",
+      "description": "An open-source Zo Computer skill that fixes anchoring in AI brainstorming: five isolated parallel sessions think under distorted cognitive frames, then one critic session scores every idea and flags the traps.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Zo Computer",
+      "license": "https://opensource.org/licenses/MIT",
+      "isBasedOn": "https://github.com/uditakhourii/adhd",
+      "codeRepository": "https://github.com/The-Little-AI-Company/scatterbrain",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "author": {
+        "@type": "Organization",
+        "name": "The Little AI Company",
+        "url": "https://github.com/The-Little-AI-Company"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://the-little-ai-company.github.io/scatterbrain/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is scatterbrain?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Scatterbrain is an open-source skill for Zo Computer that splits an open-ended question across five isolated parallel AI sessions, each thinking under a deliberately distorted cognitive frame, then runs a separate critic session that scores every idea and flags the ones that look good but are traps. MIT licensed, built by The Little AI Company."}
+        },
+        {
+          "@type": "Question",
+          "name": "Why not just ask one AI session to brainstorm 20 ideas?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Because the ideas share one context window. Every idea in the list can see the ideas above it, so idea 14 is anchored on ideas 1 through 13 and you get one idea wearing 20 hats. Scatterbrain removes the anchoring by architecture, not prompting: the five generating sessions run with zero shared context and physically cannot see each other's output."}
+        },
+        {
+          "@type": "Question",
+          "name": "What are cognitive frames?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Each branch thinks as someone with different physics: a night freight dispatcher, a salvage mechanic who cannot buy new parts, a person paid to sabotage the obvious solution, a mycologist. A frame is not a costume. It bans the default answer, which forces the branch to reach ideas a straight brainstorm never touches. The catalog ships with 14 frames and a guide for writing new ones."}
+        },
+        {
+          "@type": "Question",
+          "name": "How does the critic decide what survives?",
+          "acceptedAnswer": {"@type": "Answer", "text": "A separate session, forbidden to invent ideas of its own, scores every idea on spark (distance from the obvious default, 0.35), legs (could it actually run, 0.40), and aim (does it hit the stated problem, 0.25). Legs is weighted heaviest because a brilliant unshippable idea is a trap with good lighting. Traps get flagged with a one-line reason, and the top three survivors get deepened into a sketch, the load-bearing risk, and a first step."}
+        },
+        {
+          "@type": "Question",
+          "name": "What does a run cost?",
+          "acceptedAnswer": {"@type": "Answer", "text": "About 10 child sessions at default settings (5 frames, 3 deepened), scalable down with flags. Because of that cost the skill gates itself: closed questions, low stakes, or quick phrasing and it refuses to fire and just answers normally."}
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work outside Zo Computer?",
+          "acceptedAnswer": {"@type": "Answer", "text": "The engine is Zo-only, because it needs a platform that can spawn isolated child sessions over an API. The method ports anywhere that can do that: isolated parallel generators, one separate critic, trap detection. The SKILL.md and frame catalog are readable on their own. Scatterbrain is a ground-up rebuild of the ADHD skill for Claude Code by Udit Akhouri, MIT, credited in the repo."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="spiral" aria-hidden="true"></div>
+<div class="spiral spiral--2" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<main>
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <span class="chip keep" style="top:12%;left:7%;--dur:24s;--dx:38px;--dy:-30px">night dispatcher</span>
+    <span class="chip" style="top:22%;right:9%;--dur:31s;--dx:-44px;--dy:24px;--r0:2deg;--r1:-3deg">paid saboteur</span>
+    <span class="chip" style="top:64%;left:5%;--dur:27s;--dx:30px;--dy:-46px">mycologist</span>
+    <span class="chip trap" style="top:76%;right:12%;--dur:22s;--dx:-26px;--dy:-20px">the obvious answer</span>
+    <span class="chip" style="top:44%;left:3%;--dur:35s;--dx:24px;--dy:36px;--r0:-3deg;--r1:2deg">salvage mechanic</span>
+    <span class="chip keep trap" style="top:34%;right:4%;--dur:29s;--dx:-34px;--dy:30px">one idea, 20 hats</span>
+    <span class="chip" style="top:86%;left:22%;--dur:33s;--dx:40px;--dy:-24px">project coroner</span>
+    <span class="chip" style="top:8%;right:26%;--dur:26s;--dx:-30px;--dy:38px;--r0:1deg;--r1:-2deg">lockpicker</span>
+
+    <div class="owl-orbit">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="ring" aria-hidden="true"></span>
+      <span class="ring" aria-hidden="true"></span>
+      <span class="ring" aria-hidden="true"></span>
+      <img src="assets/scatterbrain-hero.png" alt="Hollis the owl at his workbench, one wing pinning a note down while two dozen others swirl around his head">
+    </div>
+
+    <h1>sca<span class="tterbr">tterbr</span>ain</h1>
+    <p class="tag">Give your Zo Computer a deliberate case of ADHD.</p>
+    <p class="sub">Five isolated sessions think in parallel under distorted cognitive frames. Then one cold-blooded critic scores everything and flags the traps.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-brass" href="https://github.com/The-Little-AI-Company/scatterbrain">View on GitHub</a>
+      <a class="btn btn-ghost" href="#install">Install in one line</a>
+    </div>
+  </header>
+
+  <!-- ================= PROBLEM ================= -->
+  <section class="reveal">
+    <p class="kicker">The problem</p>
+    <h2>Ask for 20 ideas, get <em>one idea wearing 20 hats.</em></h2>
+    <div class="prose">
+      <p>The first three answers to any open question are the answers a competent person gives in thirty seconds. Correct, safe, forgettable. The ideas worth paying for live past number three, and a single line of thinking never reaches them, because it anchors on whatever it said first.</p>
+      <p>Every idea in a brainstorm list can see the ideas above it. Idea 14 is a remix of ideas 1 through 13. <strong>That is not a prompt problem. It is an architecture problem.</strong></p>
+    </div>
+  </section>
+
+  <!-- ================= MECHANISM ================= -->
+  <section class="reveal">
+    <p class="kicker">The mechanism</p>
+    <h2>Scatter, then <em>hyperfocus.</em> The two phases never mix.</h2>
+    <div class="mech">
+      <div class="card">
+        <div class="n">01 / reframe</div>
+        <h3>Strip the anchors</h3>
+        <p>A first pass rewrites the question down to the actual job to be done, minus the assumptions smuggled in with it.</p>
+      </div>
+      <div class="card">
+        <div class="n">02 / scatter</div>
+        <h3>Five sessions, zero shared context</h3>
+        <p>Each child session thinks under one distorted frame. They run in parallel and never see each other, so they physically cannot anchor.</p>
+      </div>
+      <div class="card">
+        <div class="n">03 / critic</div>
+        <h3>One cold scoring pass</h3>
+        <p>A separate session, forbidden to invent anything, scores every idea, clusters by angle, and flags the pretty-but-doomed ones as traps with a one-line reason each.</p>
+      </div>
+      <div class="card">
+        <div class="n">04 / deepen</div>
+        <h3>Top survivors get built out</h3>
+        <p>The best three come back as a sketch: how it works, the load-bearing risk, and the first concrete step.</p>
+      </div>
+    </div>
+
+    <div class="term" aria-label="Example run output">
+      <div class="term-bar"><span></span><span></span><span></span></div>
+      <pre><span class="b">[scatterbrain]</span> run plan: 5 frames x 6 ideas, 3 deepened <span class="p">-&gt;</span> about 10 child sessions
+<span class="b">[scatterbrain]</span> reframe: stripping incidental anchors
+<span class="b">[scatterbrain]</span> scatter: 5 frames <span class="p">-&gt;</span> saboteur, street-vendor, mycologist, coroner, lockpicker
+<span class="b">[scatterbrain]</span> hyperfocus: critic scoring 28 ideas
+<span class="b">[scatterbrain]</span> hyperfocus: deepening top 3</pre>
+    </div>
+  </section>
+
+  <!-- ================= SCORING ================= -->
+  <section class="reveal">
+    <p class="kicker">The scoring</p>
+    <h2>Legs weighted heaviest, because a brilliant unshippable idea is <em>a trap with good lighting.</em></h2>
+    <div class="scores">
+      <div class="score">
+        <div class="lbl"><b>spark</b><span>distance from the obvious default · 0.35</span></div>
+        <div class="bar"><i style="--w:35%"></i></div>
+      </div>
+      <div class="score hot">
+        <div class="lbl"><b>legs</b><span>could it actually run · 0.40</span></div>
+        <div class="bar"><i style="--w:40%"></i></div>
+      </div>
+      <div class="score">
+        <div class="lbl"><b>aim</b><span>does it hit the stated problem · 0.25</span></div>
+        <div class="bar"><i style="--w:25%"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROOF ================= -->
+  <section class="reveal proof">
+    <p class="kicker">The proof run</p>
+    <h2>First job: name itself. It rejected <em>four of its own six candidates.</em></h2>
+    <div class="prose">
+      <p>The very first real run pointed scatterbrain at its own naming. The critic flagged four of the six candidates as traps, each with a reason. One rejection, verbatim:</p>
+    </div>
+    <blockquote>
+      &ldquo;It celebrates the scatter while erasing the critic pass, which is the half that makes the skill defensible.&rdquo;
+      <cite>the critic session, on a rejected name</cite>
+    </blockquote>
+    <div class="tally" aria-label="Name candidates: four rejected, scatterbrain chosen">
+      <span class="name-chip dead">candidate 1</span>
+      <span class="name-chip dead">candidate 2</span>
+      <span class="name-chip dead">candidate 3</span>
+      <span class="name-chip dead">candidate 4</span>
+      <span class="name-chip">runner-up</span>
+      <span class="name-chip live">scatterbrain</span>
+    </div>
+  </section>
+
+  <!-- ================= FRAMES ================= -->
+  <section class="reveal" style="max-width:100%;padding-left:0;padding-right:0">
+    <div style="max-width:880px;margin:0 auto;padding:0 24px">
+      <p class="kicker">The frames</p>
+      <h2>Not costumes. <em>Forcing functions.</em></h2>
+      <div class="prose">
+        <p>Each branch gets exactly one deliberately distorted vantage point, with physics. Under the saboteur frame the textbook answer is unreachable, which is the point. Fourteen frames ship in the catalog; every run gets at least one feral one.</p>
+      </div>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span class="frame-pill"><b>night dispatcher</b> · what must move tonight</span>
+        <span class="frame-pill"><b>salvage mechanic</b> · buying new is cheating</span>
+        <span class="frame-pill"><b>paid saboteur</b> · make it fail quietly, then flip it</span>
+        <span class="frame-pill"><b>project coroner</b> · cause-of-death report, two years out</span>
+        <span class="frame-pill"><b>street vendor</b> · the cart version, today</span>
+        <span class="frame-pill"><b>mycologist</b> · routes around damage</span>
+        <span class="frame-pill"><b>lockpicker</b> · abusive but legal</span>
+        <span class="frame-pill"><b>night dispatcher</b> · what must move tonight</span>
+        <span class="frame-pill"><b>salvage mechanic</b> · buying new is cheating</span>
+        <span class="frame-pill"><b>paid saboteur</b> · make it fail quietly, then flip it</span>
+        <span class="frame-pill"><b>project coroner</b> · cause-of-death report, two years out</span>
+        <span class="frame-pill"><b>street vendor</b> · the cart version, today</span>
+        <span class="frame-pill"><b>mycologist</b> · routes around damage</span>
+        <span class="frame-pill"><b>lockpicker</b> · abusive but legal</span>
+      </div>
+    </div>
+    <div class="marquee" aria-hidden="true" style="margin-top:12px">
+      <div class="track">
+        <span class="frame-pill"><b>billionaire skunkworks</b> · shipping small is illegal</span>
+        <span class="frame-pill"><b>air traffic controller</b> · flows and holding patterns</span>
+        <span class="frame-pill"><b>inversion</b> · guarantee the opposite first</span>
+        <span class="frame-pill"><b>assumption thief</b> · steal the one fixed thing</span>
+        <span class="frame-pill"><b>the stranger who inherits this</b> · five years out, no docs</span>
+        <span class="frame-pill"><b>casino pit boss</b> · incentives as ideas</span>
+        <span class="frame-pill"><b>first-time user</b> · convention is invisible</span>
+        <span class="frame-pill"><b>billionaire skunkworks</b> · shipping small is illegal</span>
+        <span class="frame-pill"><b>air traffic controller</b> · flows and holding patterns</span>
+        <span class="frame-pill"><b>inversion</b> · guarantee the opposite first</span>
+        <span class="frame-pill"><b>assumption thief</b> · steal the one fixed thing</span>
+        <span class="frame-pill"><b>the stranger who inherits this</b> · five years out, no docs</span>
+        <span class="frame-pill"><b>casino pit boss</b> · incentives as ideas</span>
+        <span class="frame-pill"><b>first-time user</b> · convention is invisible</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INSTALL ================= -->
+  <section class="reveal" id="install">
+    <p class="kicker">Install</p>
+    <h2>One line. Then say <em>&ldquo;scatterbrain this.&rdquo;</em></h2>
+    <div class="prose">
+      <p>Runs on <a href="https://zo.computer" style="color:var(--brass);text-decoration:none">Zo Computer</a>, which can spawn the isolated child sessions the method needs. Fair warning: a default run is about 10 child sessions, so the skill gates itself and refuses to fire on questions with one right answer.</p>
+    </div>
+    <div class="install-box">
+      <code id="cmd"><span class="b">git clone</span> https://github.com/The-Little-AI-Company/scatterbrain.git /home/workspace/Skills/scatterbrain</code>
+      <button class="copy" id="copyBtn" type="button">copy</button>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="reveal faq" id="faq">
+    <p class="kicker">Questions</p>
+    <h2>The parts people ask about.</h2>
+    <div class="prose">
+      <h3>What is scatterbrain?</h3>
+      <p>Scatterbrain is an open-source skill for <a href="https://zo.computer">Zo Computer</a> that splits an open-ended question across five isolated parallel AI sessions, each thinking under a deliberately distorted cognitive frame, then runs a separate critic session that scores every idea and flags the ones that look good but are traps. MIT licensed, built by The Little AI Company.</p>
+
+      <h3>Why not just ask one AI session to brainstorm 20 ideas?</h3>
+      <p>Because the ideas share one context window. Every idea in the list can see the ideas above it, so idea 14 is anchored on ideas 1 through 13 and you get one idea wearing 20 hats. Scatterbrain removes the anchoring by architecture, not prompting: the five generating sessions run with zero shared context and physically cannot see each other's output.</p>
+
+      <h3>What are cognitive frames?</h3>
+      <p>Each branch thinks as someone with different physics: a night freight dispatcher, a salvage mechanic who cannot buy new parts, a person paid to sabotage the obvious solution, a mycologist. A frame is not a costume. It bans the default answer, which forces the branch to reach ideas a straight brainstorm never touches. The catalog ships with 14 frames and a guide for writing new ones.</p>
+
+      <h3>How does the critic decide what survives?</h3>
+      <p>A separate session, forbidden to invent ideas of its own, scores every idea on spark (distance from the obvious default, 0.35), legs (could it actually run, 0.40), and aim (does it hit the stated problem, 0.25). Legs is weighted heaviest because a brilliant unshippable idea is a trap with good lighting. Traps get flagged with a one-line reason, and the top three survivors get deepened into a sketch, the load-bearing risk, and a first step.</p>
+
+      <h3>What does a run cost?</h3>
+      <p>About 10 child sessions at default settings (5 frames, 3 deepened), scalable down with flags. Because of that cost the skill gates itself: closed questions, low stakes, or "quick" phrasing and it refuses to fire and just answers normally.</p>
+
+      <h3>Does it work outside Zo Computer?</h3>
+      <p>The engine is Zo-only, because it needs a platform that can spawn isolated child sessions over an API. The method ports anywhere that can do that: isolated parallel generators, one separate critic, trap detection. The SKILL.md and frame catalog are readable on their own. Scatterbrain is a ground-up rebuild of the ADHD skill for Claude Code by Udit Akhouri, MIT, credited in the repo.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="owl">Hollis approves of exactly one of your ideas.</p>
+    <p>MIT licensed, by <a href="https://github.com/The-Little-AI-Company">The Little AI Company</a>.<br>
+    A ground-up Zo rebuild of <a href="https://github.com/uditakhourii/adhd">ADHD</a> by Udit Akhouri. Go star the original.</p>
+  </footer>
+</main>
+
+<script>
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.18});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  document.getElementById('copyBtn').addEventListener('click',async()=>{
+    const b=document.getElementById('copyBtn');
+    try{
+      await navigator.clipboard.writeText('git clone https://github.com/The-Little-AI-Company/scatterbrain.git /home/workspace/Skills/scatterbrain');
+      b.textContent='copied';setTimeout(()=>b.textContent='copy',1600);
+    }catch{b.textContent='select it';setTimeout(()=>b.textContent='copy',1600)}
+  });
+</script>
+</body>
+</html>

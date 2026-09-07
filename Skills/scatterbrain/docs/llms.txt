@@ -1,0 +1,23 @@
+# scatterbrain
+
+> Scatterbrain is an open-source skill for Zo Computer that fixes anchoring in AI brainstorming. It splits an open-ended question across five isolated parallel child sessions, each thinking under a deliberately distorted cognitive frame (night dispatcher, salvage mechanic, paid saboteur, mycologist), then runs a separate critic session that scores every idea on spark, legs, and aim, flags the pretty-but-doomed ideas as traps with one-line reasons, and deepens the top survivors. MIT licensed, by The Little AI Company. Ground-up rebuild of the ADHD skill for Claude Code by Udit Akhouri.
+
+Key facts:
+
+- The problem it solves: ideas generated in one context window anchor on each other. Ask one session for 20 ideas and you get one idea wearing 20 hats.
+- The fix is architectural, not prompt engineering: the generating sessions share zero context and cannot see each other's output.
+- Scoring axes: spark 0.35 (distance from the obvious default), legs 0.40 (could it actually run), aim 0.25 (does it hit the stated problem). Legs is weighted heaviest because a brilliant unshippable idea is a trap with good lighting.
+- Cost: about 10 child sessions per default run. The skill gates itself and refuses to fire on closed questions, low stakes, or "quick" phrasing.
+- The engine requires Zo Computer (spawns isolated child sessions over the /zo/ask API). The method ports to any platform with isolated parallel sessions.
+- Install: git clone https://github.com/The-Little-AI-Company/scatterbrain.git /home/workspace/Skills/scatterbrain then say "scatterbrain this."
+
+## Docs
+
+- [README](https://github.com/The-Little-AI-Company/scatterbrain/blob/main/README.md): full overview, install, usage, credits
+- [SKILL.md](https://github.com/The-Little-AI-Company/scatterbrain/blob/main/SKILL.md): the skill contract — cost gate, two-phase law, output shape, anti-patterns
+- [Frame catalog](https://github.com/The-Little-AI-Company/scatterbrain/blob/main/references/frames.md): 14 cognitive frames plus the three-test guide for authoring new ones
+- [Engine source](https://github.com/The-Little-AI-Company/scatterbrain/blob/main/scripts/scatterbrain.ts): zero-dependency Bun script
+
+## Origin
+
+- [ADHD by Udit Akhouri](https://github.com/uditakhourii/adhd): the MIT-licensed Claude Code skill this method was rebuilt from
