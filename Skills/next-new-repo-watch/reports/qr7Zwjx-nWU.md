@@ -39,3 +39,10 @@ This has gone incredibly viral on X. What this guy, Jonathan, had created was ou
 All other search hits (vicalogs/payrank.cc-outbid.lol, Alain00/wallid, jay7ven-dev/naija-outbid, imbnsn/outbid-india, nilay-pagnis/beontop, supportaff/secbid, etc.) are 0-star, unlicensed weekend clones — SKIP by rule.
 
 **Video verdict: N/A** — no evaluable open-source repos presented; the video covers a closed-source product's revenue story.
+
+## Eval
+
+- **Outbid.lol** — SKIP (reference) | Not open source — site only. The lesson (simple Stripe-bid leaderboard, 3-hour build, $236K first week) is the takeaway; filed under viral-mechanic ideas.
+
+## Recommendation
+SKIP — no repo to adopt. Idea value only.

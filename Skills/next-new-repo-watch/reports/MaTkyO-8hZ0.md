@@ -89,3 +89,14 @@ Browser-based video compositing engine built on WebCodecs; Diffusion Studio's pr
 - **Claude computer use** — Anthropic API feature (already available via Claude Code), not a repo → SKIP.
 - **Radar** (radar.particle.pro) — podcast-discovery MCP; official repo not found in 3 GitHub searches → SKIP.
 - **Hermes Agent** — name-dropped as OpenClaw competitor; not demonstrated, canonical repo not located in searches → not evaluated.
+
+## Eval
+
+- **Treg (people-search/enrichment MCP)** — TRIAL | Open-source people-search MCP for Claude/Codex. Adjacent to existing outreach workflows; worth a look only if lead enrichment becomes a need.
+- **Dial (agent phone numbers)** — TRIAL | Gives agents real make/receive phone call capability. Could extend Zo automations (e.g., reminder/confirm calls), but adds a paid telephony dependency — trial only with a concrete use case.
+- **Radar (podcast-search MCP)** — TRIAL | Agents search podcasts for guest/sponsor opportunities. Direct fit for the zdsentry/jak_nyfe growth loop if podcast outreach ever becomes a channel.
+- **Diffusion Studio (video edits as code)** — TRIAL | Programmatic video editing maps well to the documentary pipeline, but current ffmpeg/elevenlabs stack already covers it. Park.
+- **OpenClaw 2.0** — SKIP | Duplicate of Zo's agent role; license and full-tool-access default are the same concerns as 1.0.
+
+## Recommendation
+No includes. Radar and Dial are the two to revisit when a concrete outreach/voice use case exists; everything else is covered by the current stack.

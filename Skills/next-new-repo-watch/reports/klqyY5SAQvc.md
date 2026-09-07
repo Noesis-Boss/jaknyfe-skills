@@ -99,3 +99,18 @@ Verdict: 1 TRIAL, 6 SKIP, 6 not evaluable (closed-source products or no repo fou
 **petergyang/fuck-cancer** — Open-source Claude skill by Peter Yang that builds and maintains a patient/caregiver advocacy brief: care-team reference info, next-step guidance after diagnosis, plain-English medical terms, and a care log of updates and decisions.
 - Signals: 139 stars, Python, MIT, pushed 2026-08-26, not archived.
 - Recommendation: **TRIAL** — free MIT-licensed Claude skill with zero infra, directly portable into the Zo Skills format (markdown + scripts); broadly useful caregiving tool.
+
+## Eval
+
+- **MicroDuck / microduck_rl** — SKIP | Hardware-gated ($399 robot); zero overlap with Bun/TS, trading, or automation stack.
+- **MIDI Autocomplete** — SKIP | Music-generation niche; no current music production workflow.
+- **Outbid (outbid.lol)** — SKIP (as infra) | Viral pay-to-rank leaderboard; closed source. Value is the pattern (Stripe-bid leaderboard in 3 hours → $236K/week), not the code. Worth stealing as an idea for a future quick-ship site.
+- **Bezalel (bundled agent-infra MCP)** — TRIAL | Single MCP bundling agent infrastructure. Only relevant if you outgrow hand-rolled MCP wiring; low priority.
+- **Instinct (messaging/email agent)** — SKIP | Duplicates Zo's native channels and automations.
+- **X1 (iPhone app builder)** — SKIP | iOS-only shipping target; no iOS products in flight.
+- **Supernova (business-data-to-agent connector)** — TRIAL | Only if a business-data source (Sheets/CRM) needs agent access beyond existing connectors.
+- **Expertise.ai (AI skill marketplace)** — SKIP | Marketplace model; Zo's Skills catalog already fills this role.
+- **Peter Yang patient advocacy skill** — SKIP | Domain-specific prompt pack; not your domain.
+
+## Recommendation
+No includes. Keep Outbid on the idea list (viral Stripe-bid mechanic); skip the rest.

@@ -35,3 +35,10 @@ Omachi, how would you describe this Adam? >> It's some blend between Mac and Lin
 **Signals**: 38,450 stars - Shell - MIT license - pushed 2026-09-06 (active daily) - not archived. Video description links basecamp/omarchy; the canonical repo now lives at omacom/omarchy.
 
 **Recommendation: SKIP** - Desktop OS environment for physical Macs; this workspace is a headless server running Bun/TS + Python services (Zo automations, trading bot, publishing pipeline). No target hardware or user-facing desktop here.
+
+## Eval
+
+- **omacom/omarchy** — https://github.com/omacom/omarchy
+- **Functionality:** Opinionated Arch Linux + Hyprland desktop installer ("Beautiful, Modern & Opinionated Linux") from DHH/Basecamp that turns aging Macs dropped by macOS into modern Mac-like Linux machines. The description's basecamp/omarchy link redirects here; companion repos try-omarchy (macOS VM, 1.6k★) and omarchy-iso (266★) exist but aren't shown in the video. Verified live: 38,653★, Shell, MIT, pushed 2026-09-07.
+- **Fit:** None — desktop OS environment for physical Mac hardware; Don's stack is a headless Zo server (Bun/TS + Python services, automations, trading bot, publishing). No target machine, and no overlap with existing skills.
+- **Verdict:** SKIP — desktop OS installer with zero surface area in a headless-server workspace; only worth revisiting if Don resurrects that old MacBook Air as a personal project.

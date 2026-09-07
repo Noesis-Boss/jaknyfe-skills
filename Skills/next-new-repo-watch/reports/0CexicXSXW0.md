@@ -39,3 +39,17 @@ RL training environments (mjlab) for training MicroDuck policies, per the video'
 
 - **Signals**: 1,789★ · Python · Apache-2.0 · pushed 2026-09-05 · not archived
 - **Recommendation: SKIP** — trains policies that only run on MicroDuck hardware; no standalone value for the Python trading-bot/automation stack.
+
+## Eval
+
+### pollen-robotics/microduck — https://github.com/pollen-robotics/microduck
+
+- **Functionality:** Official firmware and host tooling for MicroDuck, a $399 open-source biped duck robot from Pollen Robotics (Hugging Face), programmable for tricks and behaviors. 7,539★, Rust, Apache-2.0, pushed 2026-09-03, not archived.
+- **Fit:** None. All utility is gated behind owning the physical robot; it overlaps nothing in the Bun/TS stack, Python trading bot, Zo automations/skills, or self-hosted services.
+- **Verdict:** SKIP — hardware-gated toy; code is worthless without the $399 robot and serves none of this environment's projects.
+
+### pollen-robotics/microduck_rl — https://github.com/pollen-robotics/microduck_rl
+
+- **Functionality:** RL training environments (mjlab) for training MicroDuck locomotion/trick policies in simulation. 1,835★, Python, Apache-2.0, pushed 2026-09-05, not archived.
+- **Fit:** None. Trained policies only deploy to MicroDuck hardware; no standalone value for the Python trading-bot/automation stack, and mjlab/MuJoCo RL is a heavy detour from active work.
+- **Verdict:** SKIP — output is useless without the robot; pure-robotics niche.

@@ -122,3 +122,19 @@ I'm about to show you how to save money by replacing subscriptions that you pay 
 - **VonHoltenCodes/SlowBooks-Pro-2026** — Source-available desktop accounting with double-entry books, invoicing, payroll, and AI-queryable financial data (QuickBooks alternative).
   Signals: 330★ · Python · license: Other (source-available, not OSI) · pushed 2026-09-06 · not archived.
   Recommendation: TRIAL — Python and AI-queryable books fit this stack; verify the nonstandard license and single-maintainer risk before relying on it for real financial data.
+
+## Eval (Top-10 self-hosted roundup)
+
+- **dani-garcia/vaultwarden** — TRIAL | Lightweight self-hosted Bitwarden (Rust, single binary). Real fit: personal password vault on your server. But note secrets used by Zo belong in Settings > Advanced, not a second vault. Include only as household infra.
+- **umami-software/umami** — TRIAL | Privacy-first web analytics (TS). Direct fit for the momball/esamms/SR sites if you want self-hosted analytics instead of nothing/Vercel analytics.
+- **TryGhost/Ghost** — SKIP | Full publishing platform; zo.space routes + books showcase already serve publishing.
+- **nextcloud/server** — SKIP | Heavy file-sync cloud; Zo workspace + Immich (if adopted) cover the actual needs. Running both is redundant.
+- **chatwoot/chatwoot** — SKIP | Customer-support desk; no support-ops workload exists.
+- **twentyhq/twenty** — SKIP | Open-source CRM; no CRM workflow in play.
+- **languagetool-org/languagetool** — SKIP | Java-heavy grammar server; marginal next to the humanizer skill's use case.
+- **CapSoftware/Cap** — SKIP | Screen-recording SaaS (self-host); Mac-centric, video pipeline already covered by ffmpeg/OBS-style tooling.
+- **Onyx-Dev-Labs/doodle-note** — SKIP | Niche note-taking toy; no fit.
+- **VonHoltenCodes/SlowBooks-Pro-2026** — SKIP | Solo-project bookkeeping app; unproven, and no accounting workflow is hosted here.
+
+## Recommendation
+TRIAL tier: vaultwarden (household vault) and umami (site analytics). Everything else duplicates capability you already run or has no workload.

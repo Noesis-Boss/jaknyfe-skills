@@ -67,3 +67,29 @@ I met the most nontechnical person who's using an agent to get customers, grow h
 Passing mentions not evaluable as OSS: Fable 5 (commercial video-gen tool used inside Hyperagent), Opus (Anthropic model), Grok bot (xAI product).
 
 Video verdict: the demoed product is a closed commercial SaaS; the open-source items were only name-drops that duplicate existing tooling.
+## Eval
+
+**Hyperagent (hyperagent.com) — N/A-repo** (closed commercial SaaS; only GitHub artifact is `alex-hyperagent/hyperagent-public-skills`, https://github.com/alex-hyperagent/hyperagent-public-skills)
+- Functionality: Hosted agent-building platform for non-technical teams — chat to create persistent agents that run scheduled jobs (cold-email outreach with sub-agent fan-out, PCI report generation, video creation, custom web software) with per-agent tool isolation and Slack/web access for teammates.
+- Fit: Nothing to self-host or install; the public skills repo is unlicensed (can't safely adapt), and Zo Computer already provides scoped skills, automations, and per-tool permissions covering the same pattern.
+- Verdict: SKIP — closed SaaS with no usable OSS core; the workflow (isolated tool grants, scheduled outreach agents) is worth copying in Zo, not buying.
+
+**NousResearch/hermes-agent** — https://github.com/NousResearch/hermes-agent
+- Functionality: Open-source personal AI agent ("the agent that grows with you") from Nous Research with shell/computer access, 242k stars, Python, MIT, actively pushed daily.
+- Fit: Python is fine for Don's stack, but it's a resident shell-access agent — a role Zo Computer already plays, with skills/automations already built around it. Would duplicate the entire Zo surface and add attack surface.
+- Verdict: SKIP — direct overlap with Zo's agent role; Warner himself moved off it because of setup pain and no team isolation.
+
+**openclaw/openclaw** — https://github.com/openclaw/openclaw
+- Functionality: Cross-OS open-source autonomous agent platform ("the AI that really does things", formerly Clawdbot/Moltbot); 389k stars, TypeScript, custom non-OSI license, very active.
+- Fit: TypeScript matches the stack, but it's another full resident agent framework requiring its own gateway/process hosting — duplicates Zo + the Hermes/agent layer Don already runs, and agents get full tool access by default (Warner's stated reason for leaving).
+- Verdict: SKIP — duplicates the Zo agent role, non-OSI license, and permissive-by-default tool access contradicts Don's isolation requirements.
+
+**Grokbot / Grok (xAI) — N/A-repo** — closed commercial product, no credible open-source repo.
+- Functionality: xAI's bot Warner uses for personal automation; every agent gets full tool access with no isolation.
+- Fit: None — closed product, and its lack of tool isolation is a disqualifier for Don's environment.
+- Verdict: SKIP — closed product with no per-agent isolation.
+
+**Fable 5 — N/A-repo** — commercial AI video-generation tool used inside Hyperagent for training videos; no matching open-source repo found.
+- Functionality: AI video generation for training/visual content.
+- Fit: Don's video pipeline already uses generate_video/ffmpeg; a commercial video-gen subscription isn't needed.
+- Verdict: SKIP — closed tool; existing video stack covers it.

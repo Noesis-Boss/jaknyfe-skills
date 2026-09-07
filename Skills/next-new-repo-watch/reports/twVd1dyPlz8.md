@@ -32,3 +32,12 @@ No evaluable open-source repos in this video.
 3. The blog post links only to the author's GitHub profile, not a project repo; app and model weights appear closed-source.
 
 **Verdict**: N/A — notable product demo, but no usable OSS repo to evaluate for this environment (Bun/TS + Python stack, trading bot, publishing pipeline).
+
+## Eval
+
+### Piano Autocomplete (Simon Edwardsson / simedw) — N/A-repo
+
+- **owner/repo** — N/A-repo (closed product; app + 125M model weights not published; `gh search repos "piano autocomplete"`, `"midi autocomplete"`, and full `simedw` repo list all return no credible match)
+- **Functionality:** Real-time autocomplete for piano — a 125M-parameter transformer that listens to MIDI input and continues the performance at ~108 notes/sec on an iPhone 15, shipped as a free iOS app.
+- **Fit:** None — no source, no weights, iOS-only; nothing to self-host, script, or wire into Bun/TS, Python trading, or Zo automations.
+- **Verdict:** SKIP — closed-source iOS demo with no repo; nothing actionable for Don's environment.

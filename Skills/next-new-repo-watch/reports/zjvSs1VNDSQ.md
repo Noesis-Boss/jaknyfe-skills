@@ -34,3 +34,10 @@ Your own private Google photos running on your server? Image is a self-hosted ph
 - **Signals**: 113,507★ · TypeScript · AGPL-3.0 · pushed 2026-09-06 (same day) · not archived · very active.
 - **Recommendation**: TRIAL — mature and active, and it matches Don's self-hosting/privacy direction plus photo-heavy media work (memorial slideshows, video stills, book covers), but it is a standalone server product: no integration point for the Bun/TS + Python stack, Zo automations, trading bot, or zo.space routes, and its Docker+Postgres+ML stack is too heavy for the Zo sandbox. Worth trialing on dedicated hardware (home server/NAS), not in this environment.
 - Video verdict: single-repo feature short; no other evaluable repos presented.
+
+## Eval
+
+- **immich-app/immich** — TRIAL | Self-hosted Google Photos replacement (TS/Python, very active). Genuine value: private photo/video backup from phones to your Debian server. Cost: real storage + Docker infra. Recommend a trial only if you want phone-photo backup off Google; otherwise skip — it's a household infra project, not a workflow tool.
+
+## Recommendation
+TRIAL — worth standing up only if getting family photos off Google Photos is a goal. High storage/compute cost, high personal value.

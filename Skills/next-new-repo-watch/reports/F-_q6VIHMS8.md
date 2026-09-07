@@ -99,3 +99,58 @@ Error-tracking and performance-monitoring platform; in the episode Sentry (with 
 - Recommendation: SKIP — same reasoning as PostHog: hosted Sentry (or the catalog `mcp:sentry` MCP) is the workable path; self-hosting Sentry's full service stack on Zo is disproportionate to Don's sites.
 
 **Video verdict**: SKIP as a repo source (4 of ~15 named products map to OSS repos, zero INCLUDEs), though the workflow — connected agents + knowledge base + reusable skills — is a useful pattern reference for Zo automations.
+
+## Eval (2026-09-07, full pass — every named product)
+
+Note: this section supersedes the earlier "Agent eval" verdicts where they differ (OpenClaw/Hermes TRIAL → SKIP under Don's duplication rule). Products named only conversationally were searched via `gh search repos` and verified; closed SaaS with no official repo are marked N/A-repo. Fable/Opus/"JLM 5.2" (GLM) are models, not products, and are not evaluated.
+
+### openclaw/openclaw — https://github.com/openclaw/openclaw
+- **Functionality:** Self-hosted autonomous agent platform ("The AI that really does things") that runs shell-enabled AI agents on any OS and connects them to Telegram/Slack/email channels for scheduled and conversational tasks.
+- **Fit:** TypeScript, but it duplicates what Zo Computer already is: 35 automations, native Telegram/Discord/Slack channels, skills, browser. NOASSERTION (custom) license; a shell-connected messaging agent is a real security surface.
+- **Verdict:** SKIP — wholesale duplicate of Zo's agent runtime + automations; would add a second agent stack to feed and secure for zero new capability.
+
+### NousResearch/hermes-agent — https://github.com/NousResearch/hermes-agent
+- **Functionality:** Python personal AI agent ("the agent that grows with you") with memory, skills, and channel integrations; the video frames it as the easier on-ramp to autonomous cloud agents.
+- **Fit:** Python + MIT fits the stack technically, but its memory/skills/channels pitch is exactly Zorro + astra-memory + Zo channels, which are already running.
+- **Verdict:** SKIP — duplicates the existing Zorro/astra-memory personal-agent setup; a second runtime to maintain, not a capability gain.
+
+### microsoft/playwright — https://github.com/microsoft/playwright
+- **Functionality:** Cross-browser testing/automation framework (Chromium/Firefox/WebKit) used in the video so Claude can inspect and test its own generated pages.
+- **Fit:** TypeScript/Apache-2.0, but this environment already ships the `agent-browser` CLI plus Zo's persistent browser with screenshot verification — the exact test-your-own-work loop.
+- **Verdict:** SKIP — fully covered by agent-browser + Zo browser; adding Playwright is redundant tooling.
+
+### PostHog/posthog — https://github.com/PostHog/posthog
+- **Functionality:** Open-core product analytics (dashboards, session replay, flags, experiments, error tracking) that James uses to show Claude what content and landing pages perform.
+- **Fit:** Python core with commercial terms; self-hosting the full stack inside the Zo sandbox is disproportionate to Don's small sites, and an `mcp:posthog` MCP is already catalog-connectable for hosted use.
+- **Verdict:** SKIP — hosted/mcp:posthog path if analytics are ever needed; self-hosting this repo buys nothing.
+
+### getsentry/sentry — https://github.com/getsentry/sentry
+- **Functionality:** Error tracking and performance monitoring; in the episode Sentry (with Cubic) catches issues in the AI-generated site before deployment.
+- **Fit:** Python, BSL-style NOASSERTION license; Sentry's self-hosted service stack is heavy, and the catalog `mcp:sentry` MCP covers hosted error tracking.
+- **Verdict:** SKIP — same reasoning as PostHog; Don's sites don't justify self-hosting an error-tracking platform.
+
+### vercel/next.js — https://github.com/vercel/next.js
+- **Functionality:** The React framework; James builds and deploys his landing pages with Next.js on Vercel.
+- **Fit:** Don's shipping paths are zo.space routes and Zo Sites (Bun + Hono + Vite); the zo.space homepage is already a Next bundle, so the framework is in use where it matters — nothing to adopt.
+- **Verdict:** SKIP — already in use via zo.space; standing up standalone Next.js projects would fight the existing Vite/Zo Sites workflow.
+
+### GoogleChrome/lighthouse — https://github.com/GoogleChrome/lighthouse
+- **Functionality:** Automated web auditing (performance, SEO, best practices) that James feeds to Claude alongside live SEO data.
+- **Fit:** Apache-2.0, but one-off audits are already achievable with agent-browser (which drives real Chromium) whenever Don wants a page score.
+- **Verdict:** SKIP — ad-hoc audits via agent-browser cover the use case; no standing dependency needed.
+
+### N/A-repo products (closed SaaS or custom agents; no credible official GitHub repo after search + verification)
+- **Vercel Eve** — hosted "turn a folder into a cloud agent" framework; closed beta, only third-party fork-and-deploy templates exist. Verdict: N/A-REPO — and its job (scheduled cloud agents on Telegram) is already done by Zo automations.
+- **WhisperFlow** (wisprflow.ai) — closed voice-dictation for prompting Claude. Verdict: N/A-REPO — OSS alternatives exist (Muesli, agent-cli) if dictation is ever wanted; Zo chat + Telegram already accept voice.
+- **Cubic** — closed AI code-review SaaS (cubic.dev) paired with Sentry; no official repo. Verdict: N/A-REPO.
+- **Kit** (kit.com, ex-ConvertKit) — closed email marketing SaaS; no official repo. Verdict: N/A-REPO.
+- **Resend** — closed transactional-email API; no product repo (react-email is a separate OSS side-project). Verdict: N/A-REPO.
+- **Attio** — closed CRM SaaS. Verdict: N/A-REPO.
+- **Apollo** (apollo.io) — closed lead-enrichment SaaS. Verdict: N/A-REPO.
+- **Granola** — closed AI meeting-notes SaaS. Verdict: N/A-REPO.
+- **Taskblade** (linked to taskade.com) — closed project/SaaS product; GitHub "taskblade" hits are unrelated 0-1 star toys. Verdict: N/A-REPO.
+- **Claude Code** — closed-source npm-distributed product (no official repo). Verdict: N/A-REPO — it's already the driver behind Zo.
+- **Jamie** — James's custom daily sales-briefing Telegram agent built on Vercel Eve; not published. Verdict: N/A-REPO — but the pattern maps 1:1 to a Zo automation posting a daily digest.
+- **LinkedIn Infographic skill** — sold via agentaccelerator.ai, not a public repo. Verdict: N/A-REPO — the pattern (HTML → wireframe → animated GIF infographic) could be rebuilt as a Don-owned skill.
+- **LLM Wiki** — James's own Markdown knowledge base, not a product. Verdict: N/A-REPO — Don already runs the equivalent (workspace AGENTS.md/SOUL.md + memory/ tree + astra-memory hybrid retrieval).
+- **Zapier** — sponsor, closed SaaS. Verdict: N/A-REPO.

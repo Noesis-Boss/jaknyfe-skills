@@ -28,3 +28,10 @@ browser use. Hand it AI a real web browser and tell it to just do the task. >> S
 - **browser-use/browser-use** — Lets an AI agent drive a real web browser (navigate, click, fill forms) to complete web tasks end-to-end; self-host with a headless browser or rent their ~2¢/hour cloud-hosted browsers.
   - Signals: ~112.5k stars, Python, MIT license, pushed 2026-09-05, not archived. Actively maintained and heavily adopted.
   - Recommendation: **TRIAL** — Python-first browser agent, so it goes to trial rather than include. Complements (does not replace) Zo's built-in authenticated browser: useful for headless scripted automation inside Python automations (e.g., scholarship-link checking, KDP workflows) at self-hosted-zero cost. Skip the 2¢/hour cloud tier for now; self-hosted mode covers this environment's batch use cases.
+
+## Eval
+
+- **browser-use/browser-use** — TRIAL | Open-source browser agent (Python, MIT-class license, very popular). Overlaps Zo's built-in browser tools and the agent-browser CLI, so the bar is: use only for sites where agent-browser gets blocked (it's non-proxied). Self-host headless for free; cloud ~2¢/hr. Worth a trial against one currently-blocked site before adopting.
+
+## Recommendation
+TRIAL — test against a site where agent-browser is blocked. If no such pain point materializes, skip; it duplicates existing capability.

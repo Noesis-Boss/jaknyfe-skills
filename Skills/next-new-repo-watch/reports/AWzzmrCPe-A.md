@@ -205,3 +205,95 @@ Content-derived design CLI: HTML in, standalone HTML out, building the design sy
 Local coding harness for Mac: chat with multiple coding agents across cloud and local models, watch tool calls live, drive a terminal in one window.
 - Signals: 43★ · JavaScript · MIT · pushed 2026-09-05 · not archived.
 - Recommendation: **SKIP** — macOS-local desktop harness; wrong OS for this headless Linux server.
+
+## Eval
+
+- **tt-a1i/archify** — https://github.com/tt-a1i/archify
+- **Functionality:** Agent skill that turns system descriptions into beautiful, verifiable interactive architecture/workflow/sequence diagrams as self-contained HTML with motion and crisp export.
+- **Fit:** Drop-in agent skill for Skills/; diagrams the trading bot's strategy flow and project specs without a whiteboard.
+- **Verdict:** INCLUDE — direct Skills/ install, immediately useful for spec-driven development docs.
+
+- **zapier/sdk** — https://github.com/zapier/sdk
+- **Functionality:** Agent-readable docs, verified examples, and skill manifest for the Zapier SDK, which lets your own software connect users to ~9,000 apps (sponsor segment).
+- **Fit:** Redundant with Zo's built-in Pipedream integration catalog (1,000+ apps) and user services; adds a paid external dependency for the same job.
+- **Verdict:** SKIP — Zo already covers app integrations natively; Zapier adds cost and a second integration layer.
+
+- **bilawalsidhu/gods-eye-view** — https://github.com/bilawalsidhu/gods-eye-view
+- **Functionality:** Browser-based spy-satellite simulator on a photorealistic 3D globe showing real live data: planes, ships, satellites, wildfires, street cameras.
+- **Fit:** Impressive demo, but no mapping to trading, publishing, or automation work; NOASSERTION license complicates reuse.
+- **Verdict:** SKIP — wow-factor demo with no workload to point it at.
+
+- **THU-MAIC/OpenMAIC** — https://github.com/THU-MAIC/OpenMAIC
+- **Functionality:** Open Multi-Agent Interactive Classroom that generates immersive, AI-powered interactive courses on almost any topic in one click.
+- **Fit:** TypeScript and popular, but Don's output pipeline is books and sites, not courseware.
+- **Verdict:** SKIP — no current project that needs a multi-agent classroom.
+
+- **JetBrains/go-modern-guidelines** — https://github.com/JetBrains/go-modern-guidelines
+- **Functionality:** Guidelines that teach AI coding agents to write modern Go using current packages and best practices.
+- **Fit:** Stack is Bun/TypeScript + Python; zero Go anywhere.
+- **Verdict:** SKIP — no Go codebase to benefit.
+
+- **Gitlawb/openclaude** — https://github.com/Gitlawb/openclaude
+- **Functionality:** Open Claude Code-style coding-agent harness that "runs anywhere, uses anything" — OpenAI, Gemini, DeepSeek, or local models.
+- **Fit:** Overlaps Claude Code CLI and the Zo agent already in the stack; NOASSERTION license.
+- **Verdict:** SKIP — duplicated by installed tooling.
+
+- **K-Dense-AI/scientific-agent-skills** — https://github.com/K-Dense-AI/scientific-agent-skills
+- **Functionality:** 165 validated scientific research/lab skills plus 100+ scientific databases, compatible with the open Agent Skills standard.
+- **Fit:** High-quality Python skill library, but no biology/chemistry/drug-discovery workload exists here.
+- **Verdict:** SKIP — excellent, irrelevant to this workspace's domains.
+
+- **jingyaogong/minimind** — https://github.com/jingyaogong/minimind
+- **Functionality:** Full pipeline to train a 64M-parameter LLM (plus VLM/Omni variants) from scratch in ~2 hours on ordinary hardware.
+- **Fit:** Model-training project; the trading bot does signal research with yfinance, not LLM training.
+- **Verdict:** SKIP — no training workload, single-GPU curiosity only.
+
+- **every-app/open-seo** — https://github.com/every-app/open-seo
+- **Functionality:** Open-source alternative to Semrush/Ahrefs for SEO auditing and keyword research, built in TypeScript.
+- **Fit:** TypeScript/MIT; can audit scottish-rite site, jaknyfe.zo.space, and book landing pages where ad spend is zero.
+- **Verdict:** TRIAL — worth a run against his live sites before committing.
+
+- **omacom/omarchy** — https://github.com/omacom/omarchy
+- **Functionality:** DHH's opinionated, AI-native Arch Linux desktop setup that revives old laptops with a complete Hyprland/tiling config.
+- **Fit:** Requires bare-metal Arch; this environment is a managed Debian container.
+- **Verdict:** SKIP — wrong platform; only relevant if a spare laptop shows up.
+
+- **google-research/timesfm** — https://github.com/google-research/timesfm
+- **Functionality:** Google's pretrained time-series foundation model for forecasting, available as a Python package with checkpointed inference.
+- **Fit:** Pure Python/Apache-2.0; plausible forecasting baseline to compare against EMA/VWAP entries in the Strategy Lab backtests.
+- **Verdict:** TRIAL — paper-only baseline experiment in the trading bot's existing backtest harness.
+
+- **EfficientStreet/hindsight** — https://github.com/EfficientStreet/hindsight
+- **Functionality:** Self-improvement skill for AI coding assistants that reviews a session end-to-end and saves only the durable process lessons as persistent memory.
+- **Fit:** MIT skill matching the Zorro self-improvement loop; lesson output can feed Zorro memory after each session.
+- **Verdict:** INCLUDE — small, MIT, and directly extends the existing memory skill stack.
+
+- **timharris707/modeldeck** — https://github.com/timharris707/modeldeck
+- **Functionality:** macOS menu bar app showing live "% left" rate-limit meters across Claude Code/Codex accounts with reset countdowns and one-click switching.
+- **Fit:** Native SwiftUI macOS app; this is a headless Linux server, and Zo's Usage page already meters spend.
+- **Verdict:** SKIP — wrong OS, redundant metering.
+
+- **Artistsyn/cortex_suite** — https://github.com/Artistsyn/cortex_suite
+- **Functionality:** Persistent-memory and codebase-context suite for coding agents (Rust).
+- **Fit:** No license, no README description, 30★; and agent memory is already handled by Zorro + astra-memory.
+- **Verdict:** SKIP — unusable legally (no license) and duplicated functionally.
+
+- **sulabhdubey/rta-smriti-brain** — https://github.com/sulabhdubey/rta-smriti-brain
+- **Functionality:** Local-first, evidence-aware project memory for AI coding agents so the next session doesn't reconstruct project reality.
+- **Fit:** Overlaps Zorro's AstraDB memory layer; running two memory systems invites drift.
+- **Verdict:** SKIP — duplicated by installed memory tooling.
+
+- **EfficientStreet/youtube-subscriptions-ingest** — https://github.com/EfficientStreet/youtube-subscriptions-ingest
+- **Functionality:** Pulls YouTube subscription metadata into a cross-linked knowledge graph in a second-brain vault as searchable Markdown (11,500 videos from 41 channels in 10 minutes).
+- **Fit:** Same Python transcript plumbing as next-new-repo-watch; would widen the watch pipeline from one channel to all subscriptions, but needs interactive Google OAuth first.
+- **Verdict:** TRIAL — natural extension of the repo-watch skill once OAuth is sorted.
+
+- **Kayforkind/reimagine-it** — https://github.com/Kayforkind/reimagine-it
+- **Functionality:** Content-derived design CLI: HTML in, standalone HTML out, building the design system from the source's own nouns, dates, numbers, and colors (not the reimagineit.ai SaaS).
+- **Fit:** Emits exactly the DESIGN.md-style tokens the workspace frontend rule wants; could draft design systems for zo.space pages and the books showcase.
+- **Verdict:** TRIAL — complements the existing DESIGN.md rule for page builds.
+
+- **templetongroup/radiant** — https://github.com/templetongroup/radiant
+- **Functionality:** Local coding harness for Mac: multiple AI agents in one shared conversation, live tool-call activity feed, and a real terminal in one window.
+- **Fit:** macOS-local desktop harness; wrong OS for a headless Linux server, and Zo already orchestrates agents.
+- **Verdict:** SKIP — macOS-only and redundant with Zo's agent layer.
