@@ -1,3 +1,5 @@
+import React from 'react';
+import { SectionHeader } from './sr-sections.jsx';
 // Officers, News, Gallery sections
 
 // ── OFFICERS ───────────────────────────────────────────────────────────────
@@ -121,7 +123,7 @@ export const SRGallery = () => {
                 borderRadius: 8, overflow: 'hidden', cursor: 'pointer',
                 position: 'relative',
               }}>
-              <img src={p.img} alt={p.label} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src={p.img} alt={p.label} onError={e => { e.currentTarget.parentElement.style.display = 'none'; }} style={{ width: '100%', height: 'auto', display: 'block' }} />
               <div style={{
                 position: 'absolute', bottom: 0, left: 0, right: 0,
                 background: 'rgba(0,0,0,0.6)', padding: '0.4rem 0.75rem',

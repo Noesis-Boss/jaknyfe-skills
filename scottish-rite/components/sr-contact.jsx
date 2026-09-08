@@ -1,3 +1,5 @@
+import React from 'react';
+import { SectionHeader } from './sr-sections.jsx';
 
 // Membership, Donate, Contact, Footer sections
 

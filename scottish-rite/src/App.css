@@ -1,2 +1,28 @@
-/* minimal css */
-body{margin:0;font-family:Arial;}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Source Sans 3', sans-serif; }
+
+body {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Source Sans 3', sans-serif;
+  --gold: #b8953a; --gold-light: #d4af5a;
+  --navy: #1a1a2e; --cream: #faf7f2;
+  --text-body: #2c2c3e; --text-muted: #6a6a82;
+  --card-bg: #ffffff; --card-border: #e8e4dc; --card-border-heavy: #c8c4ba;
+  --divider: #d8d4cc; --nav-bg: rgba(26,26,46,0.96); --nav-link: #f0ede8;
+  --gold-bg: #f5edda; --stripe-a: #ede9e0; --stripe-b: #e4e0d5;
+}
+
+@keyframes srTwinkle {
+  0%,100%{opacity:0.2;transform:scale(1)} 50%{opacity:0.8;transform:scale(1.5)}
+}
+@keyframes srSpin {
+  from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(360deg)}
+}
+@keyframes srBounce {
+  0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)}
+}
+@media(max-width:768px){
+  .sr-desktop-nav{display:none!important}
+  .sr-hamburger{display:block!important}
+}

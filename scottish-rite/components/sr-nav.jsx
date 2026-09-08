@@ -1,3 +1,4 @@
+import React from 'react';
 
 // Scottish Rite Nav Component
 export const SRNav = ({ theme }) => {
