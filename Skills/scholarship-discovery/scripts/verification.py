@@ -66,6 +66,18 @@ def is_search_aggregator(url: str) -> bool:
     return bool(LISTING_PATH_RE.search(urlparse(url).path or ""))
 
 
+INSTALLER_HOSTS = {"apps.apple.com", "play.google.com"}
+
+
+def is_installer_url(url: str) -> bool:
+    try:
+        host = (urlparse(url).hostname or "").lower().removeprefix("www.")
+        path = (urlparse(url).path or "").lower()
+    except ValueError:
+        return False
+    return host in INSTALLER_HOSTS or bool(re.search(r"\.(apk|ipa|exe|msi|dmg|pkg|appx)(?:$|[?#])", path))
+
+
 def page_text(body: str) -> str:
     return TAG_RE.sub(" ", SCRIPT_RE.sub(" ", body or ""))
 
