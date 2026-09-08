@@ -20,7 +20,8 @@ def ab(*args, timeout=120):
 
 
 def js(expr, timeout=60):
-    return ab("eval", expr, timeout=timeout)[1]
+    out = ab("eval", expr, timeout=timeout)[1]
+    return out.strip().strip('"') if out else ""
 
 
 def logged_in():
@@ -53,9 +54,10 @@ def main():
         sys.exit(1)
 
     if a.cookies:
-        rc, out, err = ab("cookies", "set", "--curl", a.cookies, "--domain", "x.com", timeout=30)
-        if rc != 0:
-            print(json.dumps({"error": f"cookie load failed: {err or out}"}))
+        import x_cookies
+        ok, err = x_cookies.load(a.cookies)
+        if not ok:
+            print(json.dumps({"error": f"cookie load failed: {err}"}))
             sys.exit(2)
 
     status_url = f"https://x.com/{a.user}/status/{tid}" if a.user else f"https://x.com/i/web/status/{tid}"

@@ -1,3 +1,75 @@
 {
-  "processed": {}
+  "processed": {
+    "2097391260008948002": {
+      "tweet_id": "2097391260008948002",
+      "username": "ZackTheGeek",
+      "status": "replied",
+      "found_at": "2026-09-08T18:46:58Z",
+      "followed": true
+    },
+    "2097382665561297286": {
+      "tweet_id": "2097382665561297286",
+      "username": "haveaconcern",
+      "status": "replied",
+      "found_at": "2026-09-08T18:46:58Z",
+      "followed": true
+    },
+    "2097381587906179246": {
+      "tweet_id": "2097381587906179246",
+      "username": "realhiseek",
+      "status": "replied",
+      "found_at": "2026-09-08T18:46:58Z",
+      "followed": true
+    },
+    "2097376121629122997": {
+      "tweet_id": "2097376121629122997",
+      "username": "dearaunty",
+      "status": "found",
+      "found_at": "2026-09-08T18:46:58Z",
+      "followed": false,
+      "note": "skipped - post complains about f4f, not advertising it"
+    },
+    "2097371857041121448": {
+      "tweet_id": "2097371857041121448",
+      "username": "kirukiciasel",
+      "status": "replied",
+      "found_at": "2026-09-08T18:46:58Z",
+      "followed": true
+    }
+  },
+  "2097391260008948002": {
+    "tweet_id": "2097391260008948002",
+    "username": "ZackTheGeek",
+    "status": "replied",
+    "found_at": "2026-09-08T18:46:58Z",
+    "followed": true
+  },
+  "2097382665561297286": {
+    "tweet_id": "2097382665561297286",
+    "username": "haveaconcern",
+    "status": "replied",
+    "found_at": "2026-09-08T18:46:58Z",
+    "followed": true
+  },
+  "2097381587906179246": {
+    "tweet_id": "2097381587906179246",
+    "username": "realhiseek",
+    "status": "replied",
+    "found_at": "2026-09-08T18:46:58Z",
+    "followed": true
+  },
+  "2097376121629122997": {
+    "tweet_id": "2097376121629122997",
+    "username": "dearaunty",
+    "status": "replied",
+    "found_at": "2026-09-08T18:46:58Z",
+    "followed": true
+  },
+  "2097371857041121448": {
+    "tweet_id": "2097371857041121448",
+    "username": "kirukiciasel",
+    "status": "replied",
+    "found_at": "2026-09-08T18:46:58Z",
+    "followed": true
+  }
 }

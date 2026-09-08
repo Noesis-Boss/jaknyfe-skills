@@ -65,9 +65,10 @@ def main():
 
     state = load_state()
     if a.cookies:
-        rc, out, err = ab("cookies", "set", "--curl", a.cookies, "--domain", "x.com", timeout=30)
-        if rc != 0:
-            print(json.dumps({"error": f"cookie load failed: {err or out}"}))
+        import x_cookies
+        ok, err = x_cookies.load(a.cookies)
+        if not ok:
+            print(json.dumps({"error": f"cookie load failed: {err}"}))
             sys.exit(2)
 
     results, q_used = [], 0

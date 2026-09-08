@@ -15,3 +15,8 @@ Archive/snapshots/
 Archive/restore-points/*.tar.gz
 Archive/stash-recovery-2026-09-06.tar.gz
 heartbeat.sh
+Skills/x-browser-reply/cookies*.json
+
+# X session cookies (secrets - never commit)
+Skills/x-browser-reply/cookies*.json
+Skills/x-browser-reply/f4f_state.json

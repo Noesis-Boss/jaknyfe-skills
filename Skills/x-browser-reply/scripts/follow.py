@@ -19,7 +19,8 @@ def ab(*args, timeout=120):
 
 
 def js(expr, timeout=60):
-    return ab("eval", expr, timeout=timeout)[1]
+    out = ab("eval", expr, timeout=timeout)[1]
+    return out.strip().strip('"') if out else ""
 
 
 def logged_in():
@@ -53,9 +54,10 @@ def main():
         sys.exit(1)
 
     if a.cookies:
-        rc, out, err = ab("cookies", "set", "--curl", a.cookies, "--domain", "x.com", timeout=30)
-        if rc != 0:
-            print(json.dumps({"error": f"cookie load failed: {err or out}"}))
+        import x_cookies
+        ok, err = x_cookies.load(a.cookies)
+        if not ok:
+            print(json.dumps({"error": f"cookie load failed: {err}"}))
             sys.exit(2)
 
     rc, _, err = ab("open", f"https://x.com/{user}", timeout=120)
@@ -68,14 +70,19 @@ def main():
         print(json.dumps({"error": "not logged in to x.com (cookies/session expired)"}))
         sys.exit(2)
 
-    # Detect account state
+    # Detect account state (match the profile-header button by aria-label)
     state = js("""(() => {
   if (document.querySelector('[data-testid=\"emptyState\"]')) return 'NOTFOUND';
-  const b = document.querySelector('[data-testid=\"follow\"], [data-testid=\"unfollow\"], [data-testid=\"pending\"]');
+  const user = %USER% ;
+  const btns = Array.from(document.querySelectorAll('[data-testid]')).filter(e => /^-?(follow|unfollow|pending)$/.test(e.dataset.testid.split('-').pop()) && (e.dataset.testid.includes('-') || ['follow','unfollow','pending'].includes(e.dataset.testid)));
+  const b = btns.find(e => (e.getAttribute('aria-label')||'').toLowerCase().includes('@' + user.toLowerCase())) || btns[0];
   if (!b) return 'NOBTN';
-  if (b.dataset.testid === 'pending') return 'PENDING';
-  return b.dataset.testid; // 'follow' or 'unfollow'
-})()""")
+  const lbl = (b.getAttribute('aria-label')||'').toLowerCase();
+  const tid = b.dataset.testid;
+  if (tid === 'pending' || tid.endsWith('-pending') || lbl.startsWith('pending')) return 'PENDING';
+  if (tid === 'unfollow' || tid.endsWith('-unfollow') || lbl.startsWith('following')) return 'unfollow';
+  return 'follow';
+})()""".replace("%USER%", json.dumps(user)))
 
     if state == "NOTFOUND":
         print(json.dumps({"error": f"profile not found: @{user}"}))
@@ -87,7 +94,9 @@ def main():
         print(json.dumps({"error": f"follow button not found (state={state})"}))
         sys.exit(1)
 
-    rc, out, err = ab("click", '[data-testid="follow"]', timeout=30)
+    rc, out, err = ab("click", f'[aria-label="Follow @{user}" i]', timeout=30)
+    if rc != 0:
+        rc, out, err = ab("click", f'[aria-label*="@{user}" i][data-testid$="-follow"]', timeout=30)
     if rc != 0:
         print(json.dumps({"error": f"click failed: {err or out}"}))
         sys.exit(1)
@@ -98,9 +107,16 @@ def main():
     time.sleep(2)
 
     after = js("""(() => {
-  const b = document.querySelector('[data-testid=\"follow\"], [data-testid=\"unfollow\"], [data-testid=\"pending\"]');
-  return b ? b.dataset.testid : 'NOBTN';
-})()""")
+  const user = %USER% ;
+  const btns = Array.from(document.querySelectorAll('[data-testid]')).filter(e => (e.dataset.testid.includes('-follow') || e.dataset.testid.includes('-unfollow') || e.dataset.testid.includes('-pending') || ['follow','unfollow','pending'].includes(e.dataset.testid)));
+  const b = btns.find(e => (e.getAttribute('aria-label')||'').toLowerCase().includes('@' + user.toLowerCase()));
+  if (!b) return 'NOBTN';
+  const lbl = (b.getAttribute('aria-label')||'').toLowerCase();
+  const tid = b.dataset.testid;
+  if (tid === 'pending' || tid.endsWith('-pending') || lbl.startsWith('pending')) return 'pending';
+  if (tid === 'unfollow' || tid.endsWith('-unfollow') || lbl.startsWith('following')) return 'unfollow';
+  return 'follow';
+})()""".replace("%USER%", json.dumps(user)))
     if after in ("unfollow", "pending"):
         print(json.dumps({"ok": True, "username": user, "result": "followed"}))
         sys.exit(0)
