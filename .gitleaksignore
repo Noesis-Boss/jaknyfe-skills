@@ -29,14 +29,4 @@ caa8e6372e3a942453565b02d1dd1ae1255a1a8f:void_daily.sh:generic-api-key:2
 # Gitleaksignore — historical secrets ALREADY ON origin/master (verified ancestors, 2026-09-06).
 # Push adds no new secrets. Rotation pending — see AGENTS.md Issue Log.
 
-# GitHub notification email tokens (thread-unsubscribe only, not account credentials)
-gmail-1a07b7f4ec807825.eml
-gmail-1a07b7f4ec807825.html
-gmail-1a07b052ae18ef9f.eml
-
-# Gmail notification emails: List-Unsubscribe thread tokens, not account credentials (false positives)
-
-# GitHub notification emails carry List-Unsubscribe tokens; kept local, not tracked
-gmail-1a07b7f4ec807825.eml
-gmail-1a07b7f4ec807825.html
-gmail-1a07b052ae18ef9f.eml
+# Gmail notification emails carry List-Unsubscribe tokens; kept local, not tracked.
