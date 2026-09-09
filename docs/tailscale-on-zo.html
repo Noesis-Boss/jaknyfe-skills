@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Installing Tailscale on Zo Computer</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Installing Tailscale on Zo Computer</h1>
+</header>
+<h1 id="install-tailscale-on-a-zo-computer-sandbox">Install Tailscale on
+a Zo Computer Sandbox</h1>
+<p>Zo sandboxes run under gVisor with <strong>no
+<code>/dev/net/tun</code></strong>, so the standard Tailscale install
+won’t work as a system daemon. The fix: run <code>tailscaled</code> in
+<strong>userspace-networking mode</strong> and register it with Zo’s
+user-supervisor so it survives reboots.</p>
+<p>Works on: Zo Computer sandbox (Debian, root, gVisor). Verified with
+Tailscale 1.98.2 (2026-09).</p>
+<p><strong>Persistence:</strong> register tailscaled as a <strong>Zo
+user service</strong> (Websites → Services), not a supervisor config
+edit — Zo regenerates <code>/etc/zo/supervisord-user.conf</code> on each
+boot, so hand edits there are lost. A registered user service survives
+restarts.</p>
+<hr />
+<h2 id="install-tailscale">1. Install Tailscale</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://tailscale.com/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div>
+<p>Do <strong>not</strong> run <code>systemctl enable tailscaled</code>
+— there is no systemd here. It will fail.</p>
+<h2 id="log-in-first-time-only">2. Log in (first time only)</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tailscaled</span> <span class="at">-tun</span> userspace-networking <span class="at">-statedir</span> /var/lib/tailscale <span class="kw">&amp;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sleep</span> 2</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">tailscale</span> up <span class="at">--accept-routes</span></span></code></pre></div>
+<ul>
+<li><code>--accept-routes</code> pulls subnet routes advertised by your
+other nodes (optional, drop if unwanted).</li>
+<li>This prints a login URL. Open it, approve the node, name it
+(e.g. <code>zoltan</code>).</li>
+<li>State persists in <code>/var/lib/tailscale</code>, so login is
+one-time — after reboot the node rejoins automatically.</li>
+</ul>
+<p><strong>No authkey?</strong> Log in to your tailnet normally via the
+browser URL. <strong>Have an authkey?</strong> Use
+<code>tailscale up --authkey=&lt;KEY&gt; --accept-routes</code> instead
+(non-interactive, good for scripts).</p>
+<h2 id="make-it-persistent-register-a-zo-user-service">3. Make it
+persistent: register a Zo user service</h2>
+<p><strong>Do not edit <code>/etc/zo/supervisord-user.conf</code> by
+hand</strong> — Zo regenerates that file on every boot and your block
+disappears. Register tailscaled as a managed user service instead. It’s
+supervised (auto-restart on crash), auto-starts on boot, persists across
+restarts, and <code>mode=process</code> doesn’t count against your
+public service slots.</p>
+<p>Register it (ask Zo in chat, or use the Services page):</p>
+<ul>
+<li><strong>Label:</strong> <code>tailscale</code></li>
+<li><strong>Mode:</strong> <code>process</code> (no public endpoint —
+omit the port)</li>
+<li><strong>Entrypoint:</strong></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="at">-c</span> <span class="st">&#39;tailscaled -statedir /var/lib/tailscale -socket /var/run/tailscale/tailscaled.sock -tun userspace-networking &amp; sleep 2 &amp;&amp; tailscale up --accept-routes; exec sleep infinity&#39;</span></span></code></pre></div>
+<p>Or the one-shot equivalent:</p>
+<pre class="text"><code>register_user_service(
+  label=&quot;tailscale&quot;,
+  mode=&quot;process&quot;,
+  entrypoint=&quot;bash -c &#39;tailscaled -statedir /var/lib/tailscale -socket /var/run/tailscale/tailscaled.sock -tun userspace-networking &amp; sleep 2 &amp;&amp; tailscale up --accept-routes; exec sleep infinity&#39;&quot;
+)</code></pre>
+<p>Notes:</p>
+<ul>
+<li>The
+<code>bash -c '... &amp; sleep 2 &amp;&amp; tailscale up; exec sleep infinity'</code>
+wrapper keeps both the daemon and the <code>tailscale up</code> state
+alive in one supervised process. Without it, the supervisor thinks the
+daemon exited.</li>
+<li>If you already logged in (step 2), <code>tailscale up</code>
+re-joins silently using saved state.</li>
+<li>Replace <code>--accept-routes</code> with your own flags if
+needed.</li>
+<li>Logs land in <code>/dev/shm/tailscale.log</code> (stdout) and
+<code>/dev/shm/tailscale_err.log</code> (stderr), and are indexed by the
+built-in Loki instance.</li>
+</ul>
+<h2 id="verify">4. Verify</h2>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tailscale</span> status        <span class="co"># BackendState: Running, your node + peers listed</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tailscale</span> ip            <span class="co"># should print your 100.x.y.z address</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> /dev/shm/tailscale.log   <span class="co"># service log — should show tailscaled startup</span></span></code></pre></div>
+<p>The <code>tailscale</code> service should show as running on the
+Services page too.</p>
+<p>End-to-end check (from another node on your tailnet, e.g. a laptop
+also running Tailscale):</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tailscale</span> ping zoltan</span></code></pre></div>
+<p>If the sandbox reboots, confirm it came back:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tailscale</span> status <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> OK</span></code></pre></div>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symptom</th>
+<th>Cause / Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>tailscaled cannot open /dev/net/tun</code> or
+<code>operation not permitted</code></td>
+<td>You’re not using <code>-tun userspace-networking</code>. Add that
+flag.</td>
+</tr>
+<tr class="even">
+<td>Node shows offline after sandbox reboot</td>
+<td>Service not running. Check the Services page — restart
+<code>tailscale</code> if stopped, and check
+<code>/dev/shm/tailscale_err.log</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>tailscale up</code> asks to authenticate again</td>
+<td>State dir got wiped (<code>/var/lib/tailscale</code>). Log in again;
+consider <code>--authkey</code> from a reusable key for unattended
+recovery.</td>
+</tr>
+<tr class="even">
+<td>No outbound connectivity through tailnet</td>
+<td>Userspace mode has no kernel routing. Reach other nodes by their
+100.x IPs or MagicDNS names; for subnet routing use
+<code>tailscale up --accept-routes</code> and SOCKS/HTTP proxies via
+<code>tailscale serve</code>/<code>nc</code>-style proxies.</td>
+</tr>
+<tr class="odd">
+<td>Logs</td>
+<td><code>tail -f /dev/shm/tailscale.log /dev/shm/tailscale_err.log</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="gotchas">Gotchas</h2>
+<ul>
+<li><strong>Don’t install via apt on this platform</strong> — the apt
+package assumes systemd + TUN.</li>
+<li><strong>Userspace networking means no transparent subnet
+routing</strong> — this node reaches tailnet nodes by IP/DNS, but other
+LANs can’t route <em>through</em> it like a normal exit node unless you
+use the userspace SOCKS5 proxy
+(<code>--outbound-http-proxy-listen</code>).</li>
+<li><strong>Don’t hand-edit
+<code>/etc/zo/supervisord-user.conf</code></strong> — Zo regenerates it
+on every boot. Use a registered user service for persistence.</li>
+</ul>
+</body>
+</html>

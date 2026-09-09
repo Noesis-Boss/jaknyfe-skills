@@ -4,6 +4,8 @@ Zo sandboxes run under gVisor with **no `/dev/net/tun`**, so the standard Tailsc
 
 Works on: Zo Computer sandbox (Debian, root, gVisor). Verified with Tailscale 1.98.2 (2026-09).
 
+**Persistence:** register tailscaled as a **Zo user service** (Websites → Services), not a supervisor config edit — Zo regenerates `/etc/zo/supervisord-user.conf` on each boot, so hand edits there are lost. A registered user service survives restarts.
+
 ---
 
 ## 1. Install Tailscale
@@ -28,49 +30,46 @@ tailscale up --accept-routes
 
 **No authkey?** Log in to your tailnet normally via the browser URL. **Have an authkey?** Use `tailscale up --authkey=<KEY> --accept-routes` instead (non-interactive, good for scripts).
 
-## 3. Make it persistent via Zo's supervisor
+## 3. Make it persistent: register a Zo user service
 
-Zo runs a user-supervisor at `/etc/zo/supervisord-user.conf`. Append this block:
+**Do not edit `/etc/zo/supervisord-user.conf` by hand** — Zo regenerates that file on every boot and your block disappears. Register tailscaled as a managed user service instead. It's supervised (auto-restart on crash), auto-starts on boot, persists across restarts, and `mode=process` doesn't count against your public service slots.
 
-```ini
-[program:tailscaled]
-command=bash -c 'tailscaled -statedir /var/lib/tailscale -socket /var/run/tailscale/tailscaled.sock -tun userspace-networking & sleep 2 && tailscale up --accept-routes; exec sleep infinity'
-directory=/home/workspace
-environment=
-autostart=true
-autorestart=true
-stopsignal=TERM
-stopasgroup=true
-stdout_logfile=/dev/shm/tailscaled.log
-stderr_logfile=/dev/shm/tailscaled_err.log
-stdout_logfile_maxbytes=10MB
-stdout_logfile_backups=5
-killasgroup=true
-stopwaitsecs=4
+Register it (ask Zo in chat, or use the Services page):
+
+- **Label:** `tailscale`
+- **Mode:** `process` (no public endpoint — omit the port)
+- **Entrypoint:**
+
+```bash
+bash -c 'tailscaled -statedir /var/lib/tailscale -socket /var/run/tailscale/tailscaled.sock -tun userspace-networking & sleep 2 && tailscale up --accept-routes; exec sleep infinity'
+```
+
+Or the one-shot equivalent:
+
+```text
+register_user_service(
+  label="tailscale",
+  mode="process",
+  entrypoint="bash -c 'tailscaled -statedir /var/lib/tailscale -socket /var/run/tailscale/tailscaled.sock -tun userspace-networking & sleep 2 && tailscale up --accept-routes; exec sleep infinity'"
+)
 ```
 
 Notes:
 
-- The `bash -c '... & sleep 2 && tailscale up; exec sleep infinity'` wrapper keeps both the daemon and the `tailscale up` state alive in one supervised process. Without it, supervisor thinks the daemon exited.
+- The `bash -c '... & sleep 2 && tailscale up; exec sleep infinity'` wrapper keeps both the daemon and the `tailscale up` state alive in one supervised process. Without it, the supervisor thinks the daemon exited.
 - If you already logged in (step 2), `tailscale up` re-joins silently using saved state.
 - Replace `--accept-routes` with your own flags if needed.
-
-Then reload the supervisor so it picks up the block:
-
-```bash
-supervisorctl -c /etc/zo/supervisord-user.conf reread
-supervisorctl -c /etc/zo/supervisord-user.conf update
-```
-
-Or, on the next full sandbox reboot, it auto-starts.
+- Logs land in `/dev/shm/tailscale.log` (stdout) and `/dev/shm/tailscale_err.log` (stderr), and are indexed by the built-in Loki instance.
 
 ## 4. Verify
 
 ```bash
 tailscale status        # BackendState: Running, your node + peers listed
 tailscale ip            # should print your 100.x.y.z address
-supervisorctl -c /etc/zo/supervisord-user.conf status   # tailscaled should be RUNNING
+tail /dev/shm/tailscale.log   # service log — should show tailscaled startup
 ```
+
+The `tailscale` service should show as running on the Services page too.
 
 End-to-end check (from another node on your tailnet, e.g. a laptop also running Tailscale):
 
@@ -91,13 +90,13 @@ tailscale status && echo OK
 | Symptom | Cause / Fix |
 |---|---|
 | `tailscaled cannot open /dev/net/tun` or `operation not permitted` | You're not using `-tun userspace-networking`. Add that flag. |
-| Node shows offline after sandbox reboot | Supervisor block missing or not reloaded. Recheck `/etc/zo/supervisord-user.conf` and run `reread`/`update`. |
+| Node shows offline after sandbox reboot | Service not running. Check the Services page — restart `tailscale` if stopped, and check `/dev/shm/tailscale_err.log`. |
 | `tailscale up` asks to authenticate again | State dir got wiped (`/var/lib/tailscale`). Log in again; consider `--authkey` from a reusable key for unattended recovery. |
 | No outbound connectivity through tailnet | Userspace mode has no kernel routing. Reach other nodes by their 100.x IPs or MagicDNS names; for subnet routing use `tailscale up --accept-routes` and SOCKS/HTTP proxies via `tailscale serve`/`nc`-style proxies. |
-| Logs | `tail -f /dev/shm/tailscaled.log /dev/shm/tailscaled_err.log` |
+| Logs | `tail -f /dev/shm/tailscale.log /dev/shm/tailscale_err.log` |
 
 ## Gotchas
 
 - **Don't install via apt on this platform** — the apt package assumes systemd + TUN.
 - **Userspace networking means no transparent subnet routing** — this node reaches tailnet nodes by IP/DNS, but other LANs can't route *through* it like a normal exit node unless you use the userspace SOCKS5 proxy (`--outbound-http-proxy-listen`).
-- `/etc/zo/supervisord-user.conf` may be regenerated on platform updates — re-check the block after major Zo platform changes.
+- **Don't hand-edit `/etc/zo/supervisord-user.conf`** — Zo regenerates it on every boot. Use a registered user service for persistence.
