@@ -12,8 +12,16 @@
   "target_length_min": 8,
   "target_length_max": 15,
   "videos": {
-    "count": 1,
-    "published": 0,
-    "next_video": "02-7-things-chatgpt-can-do-this-week"
+    "count": 2,
+    "completed": [
+      "01-ai-for-beginners-over-40",
+      "02-7-things-chatgpt-can-do-this-week"
+    ],
+    "next": "03-ai-terms"
+  },
+  "voice": {
+    "provider": "heygen",
+    "voice_id": "0f26e50fdfe6446492bff5f33e33ab0a",
+    "label": "Don (cloned)"
   }
 }
