@@ -212,7 +212,7 @@ async function readClarion(): Promise<ClarionDoc[]> {
       out.push({
         source,
         layer: inferLayer(f, fm),
-        text: text.trim(),
+        text: text.trim().slice(0, 7800),
         path: f,
         timestamp:
           fm.date || stat.mtime.toISOString().slice(0, 19) + "Z",
