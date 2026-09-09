@@ -50,3 +50,8 @@ Personal interests (history, Freemasonry, Tucson, gaming, books) are examples in
 ## Tagline
 
 **AI for the Rest of Us — Practical Help for Experienced Adults**
+
+
+## Upload destination
+
+All videos upload to the **delowery@gmail.com YouTube account** (Don's personal channel). The connected `youtube_data_api` integration is currently `noesis-manageme-4288@pages.plusgoogle.com` — do not upload through it. A delowery@gmail.com YouTube connection must be added first (Zo → Integrations).

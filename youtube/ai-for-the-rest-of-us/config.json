@@ -2,7 +2,7 @@
   "channel": "AI for the Rest of Us",
   "slug": "ai-for-the-rest-of-us",
   "tagline": "AI for the Rest of Us \u2014 Practical Help for Experienced Adults",
-  "upload_account": "noesis-manageme-4288@pages.plusgoogle.com",
+  "upload_account": "delowery@gmail.com",
   "auto_publish": false,
   "default_privacy": "private",
   "weekly_schedule": {
@@ -12,16 +12,18 @@
   "target_length_min": 8,
   "target_length_max": 15,
   "videos": {
-    "count": 2,
+    "count": 3,
     "completed": [
       "01-ai-for-beginners-over-40",
-      "02-7-things-chatgpt-can-do-this-week"
+      "02-7-things-chatgpt-can-do-this-week",
+      "03-better-emails-with-ai"
     ],
-    "next": "03-ai-terms"
+    "next": "04-ai-terms"
   },
   "voice": {
     "provider": "heygen",
     "voice_id": "0f26e50fdfe6446492bff5f33e33ab0a",
     "label": "Don (cloned)"
-  }
+  },
+  "upload_account_note": "All videos go to the delowery@gmail.com YouTube account. The currently connected youtube_data_api integration is noesis-manageme-4288@pages.plusgoogle.com \u2014 a delowery@gmail.com connection must be added via Integrations before uploading."
 }
