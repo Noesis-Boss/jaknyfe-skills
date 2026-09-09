@@ -12,7 +12,6 @@ metadata:
   author: jaknyfe.zo.computer
   source: "6-prompt ChatGPT channel-manager carousel (cover claim: most people ask for a script before the model knows their niche, audience, and content style)"
 ---
-
 # YouTube Auto-Posting
 
 Core claim this skill is built on: an AI can run your YouTube channel like a

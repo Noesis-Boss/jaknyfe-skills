@@ -1,0 +1,19 @@
+{
+  "channel": "AI for the Rest of Us",
+  "slug": "ai-for-the-rest-of-us",
+  "tagline": "AI for the Rest of Us \u2014 Practical Help for Experienced Adults",
+  "upload_account": "noesis-manageme-4288@pages.plusgoogle.com",
+  "auto_publish": false,
+  "default_privacy": "private",
+  "weekly_schedule": {
+    "tuesday": "tutorial",
+    "friday": "tool-test"
+  },
+  "target_length_min": 8,
+  "target_length_max": 15,
+  "videos": {
+    "count": 1,
+    "published": 0,
+    "next_video": "02-7-things-chatgpt-can-do-this-week"
+  }
+}
