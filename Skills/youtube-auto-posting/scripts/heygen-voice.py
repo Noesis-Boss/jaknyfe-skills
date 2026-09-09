@@ -36,7 +36,7 @@ def req(method, path, payload=None):
         headers={"x-api-key": KEY, "Content-Type": "application/json"},
     )
     try:
-        with urllib.request.urlopen(r, timeout=120) as resp:
+        with urllib.request.urlopen(r, timeout=600) as resp:
             return json.loads(resp.read())
     except urllib.error.HTTPError as e:
         print(f"HTTP {e.code}: {e.read().decode()}", file=sys.stderr)
