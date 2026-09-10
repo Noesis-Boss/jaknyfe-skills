@@ -79,7 +79,16 @@ curl -s -X PUT "https://api.trello.com/1/cards/{cardId}?key=$TRELLO_API_KEY&toke
   -d "pos=top"
 ```
 
-The same bump applies when editing a card's name or description via `PUT /1/cards/{cardId}`: include `-d "pos=top"` in that call so the edited card surfaces at the top. When creating a NEW card, pass `-d "pos=top"` on the POST as well.
+When editing a card's name or description, use one PUT containing every changed field and `pos=top`:
+
+```bash
+curl -s -X PUT "https://api.trello.com/1/cards/{cardId}?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" \
+  -d "name=Updated card title" \
+  -d "desc=Updated card description" \
+  -d "pos=top"
+```
+
+Do not use a separate update call that omits `pos=top`. When creating a NEW card, pass `-d "pos=top"` on the POST as well. After an edit or bump, verify the returned card has `pos` near `top` or fetch the list and confirm it is first.
 
 ### Archive a card
 ```bash
