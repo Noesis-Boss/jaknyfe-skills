@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -u
+
+repo=${1:-$(git rev-parse --show-toplevel 2>/dev/null)}
+if [[ -z "$repo" || ! -d "$repo/.git" ]]; then
+  echo "Usage: benchmark-pre-push [repository]" >&2
+  exit 2
+fi
+head=$(git -C "$repo" rev-parse HEAD)
+previous=$(git -C "$repo" rev-parse "$head^" 2>/dev/null || printf '%040d' 0)
+started=$(date +%s%N)
+printf 'refs/heads/benchmark %s refs/remotes/benchmark %s\n' "$head" "$previous" |
+  /root/.git-hooks/pre-push
+status=$?
+finished=$(date +%s%N)
+awk -v ns="$((finished - started))" 'BEGIN { printf "pre-push elapsed: %.3fs\n", ns / 1000000000 }'
+exit "$status"
