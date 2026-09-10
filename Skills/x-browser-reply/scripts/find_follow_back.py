@@ -22,6 +22,7 @@ QUERIES = [
     '"follow for follow" -filter:replies lang:en',
     '"#f4f" -filter:replies lang:en',
 ]
+CHALLENGE_MARKERS = ("just a moment", "checking your browser", "verify you are human", "challenge")
 LINK_RE = re.compile(r"/([A-Za-z0-9_]{1,15})/status/(\d+)")
 
 
@@ -72,6 +73,7 @@ def main():
             sys.exit(2)
 
     results, q_used = [], 0
+    challenge_seen = False
     for q in QUERIES:
         if len(results) >= a.max:
             break
@@ -81,16 +83,39 @@ def main():
             continue
         time.sleep(6)
         for scroll in range(2):
-            rc, text, _ = ab("read", timeout=60)
+            rc, text, read_err = ab("read", timeout=60)
             if rc == 0:
+                lowered = text.lower()
+                if any(marker in lowered for marker in CHALLENGE_MARKERS):
+                    challenge_seen = True
+                    break
                 results.extend(extract(text, state))
+            elif read_err:
+                challenge_seen = True
             if len(results) >= a.max:
                 break
             ab("scroll", "down", "1200", timeout=30)
             time.sleep(3)
+        if challenge_seen and not results:
+            for attempt in range(2):
+                time.sleep(8 * (attempt + 1))
+                rc, _, _ = ab("open", f"https://x.com/search?q={quote(q)}&f=live", timeout=120)
+                if rc != 0:
+                    continue
+                time.sleep(6)
+                rc, text, _ = ab("read", timeout=60)
+                lowered = text.lower() if rc == 0 else ""
+                if rc == 0 and not any(marker in lowered for marker in CHALLENGE_MARKERS):
+                    challenge_seen = False
+                    results.extend(extract(text, state))
+                    break
         # dedupe by tweet_id
         uniq = {r["tweet_id"]: r for r in results}
         results = list(uniq.values())[: a.max]
+
+    if challenge_seen and not results:
+        print(json.dumps({"error": "X challenge page blocked timeline access after retries", "challenge": True}))
+        sys.exit(2)
 
     # Record found tweets in state
     for r in results:
