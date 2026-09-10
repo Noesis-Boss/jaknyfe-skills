@@ -15,6 +15,7 @@ function setProductionEnv(): void {
     SESSION_SECRET: "session-secret",
     CREDENTIAL_ENCRYPTION_KEY: "11".repeat(32),
     OAUTH_CALLBACK_ORIGIN: "https://mailer.example.com",
+    RESEND_API_KEY: "re_test",
     GOOGLE_CLIENT_ID: "google-client-id",
     GOOGLE_CLIENT_SECRET: "google-client-secret",
     MICROSOFT_CLIENT_ID: "microsoft-client-id",
@@ -35,7 +36,7 @@ describe("loadConfig", () => {
 
   test("rejects production without required persistence and encryption settings", () => {
     process.env = { ...originalEnv, APP_ENV: "production" };
-    for (const key of ["DATABASE_URL", "SESSION_SECRET", "CREDENTIAL_ENCRYPTION_KEY", "OAUTH_CALLBACK_ORIGIN", "GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", "MICROSOFT_CLIENT_ID", "MICROSOFT_CLIENT_SECRET"]) delete process.env[key];
+    for (const key of ["DATABASE_URL", "SESSION_SECRET", "CREDENTIAL_ENCRYPTION_KEY", "OAUTH_CALLBACK_ORIGIN", "RESEND_API_KEY", "GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", "MICROSOFT_CLIENT_ID", "MICROSOFT_CLIENT_SECRET"]) delete process.env[key];
 
     expect(() => loadConfig()).toThrow(/DATABASE_URL.*CREDENTIAL_ENCRYPTION_KEY/);
   });

@@ -75,6 +75,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
   if (production) {
     const missing = ["DATABASE_URL", "SESSION_SECRET", "OAUTH_CALLBACK_ORIGIN"].filter((name) => !optional(env, name));
     if (!optional(env, "CREDENTIAL_ENCRYPTION_KEY")) missing.push("CREDENTIAL_ENCRYPTION_KEY");
+    if (!optional(env, "RESEND_API_KEY")) missing.push("RESEND_API_KEY");
     if (missing.length) throw new Error(`Missing required configuration: ${missing.join(", ")}`);
   }
   const databaseUrl = optional(env, "DATABASE_URL");
@@ -95,7 +96,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
       microsoftClientId: optional(env, "MICROSOFT_CLIENT_ID"),
       microsoftClientSecret: optional(env, "MICROSOFT_CLIENT_SECRET"),
     },
-    sending: { adapters: production ? ["gmail", "microsoft"] : ["mock"] },
+    sending: { adapters: production ? ["gmail", "microsoft", "resend"] : ["mock"] },
     worker: {
       pollIntervalMs: positiveInteger(env, "WORKER_POLL_INTERVAL_MS", DEFAULTS.pollIntervalMs),
       batchSize: positiveInteger(env, "WORKER_BATCH_SIZE", DEFAULTS.batchSize),

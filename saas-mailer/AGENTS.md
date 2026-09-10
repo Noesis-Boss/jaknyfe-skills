@@ -1,5 +1,7 @@
 # SaaS-Mailer
 
+- 2026-09-10: Added a Resend sending adapter using `RESEND_API_KEY`; production accepts `resend` accounts and sends through `https://api.resend.com/emails` from the verified `mailer@noesisgroup.com` identity. Adapter tests and the full suite pass; production requires the secret in Zo environment settings.
+
 - 2026-08-20: Added production `start` and `start:worker` scripts, changed the Site entrypoint from hot development mode to `bun run start`, wired worker polling/batch settings through `loadConfig()`, and removed SMTP from the production adapter list. Registered private managed service `saas-mailer-worker` (`svc_eZzzmcvdlKk`); it is currently in BACKOFF because Zo secrets do not yet include a valid 32-byte `CREDENTIAL_ENCRYPTION_KEY`.
 
 Standalone Bun/Hono/React MVP for multi-tenant outbound email. Run commands from `saas-mailer/`.

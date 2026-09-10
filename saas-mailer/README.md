@@ -41,7 +41,7 @@ The PostgreSQL adapter uses Bun's pooled `SQL` client. Keep pool sizing in the d
 
 ## Configuration
 
-Local development defaults to `APP_ENV=development` and the deterministic mock adapter. Copy `.env.example` to `.env` only when local overrides are needed. Production requires `DATABASE_URL`, `SESSION_SECRET`, `CREDENTIAL_ENCRYPTION_KEY` (a hex or base64 value encoding 32 bytes), and `OAUTH_CALLBACK_ORIGIN`; provider OAuth credentials and worker limits are parsed by `loadConfig()` at startup. Configuration errors identify variable names only and never secret values.
+Local development defaults to `APP_ENV=development` and the deterministic mock adapter. Copy `.env.example` to `.env` only when local overrides are needed. Production requires `DATABASE_URL`, `SESSION_SECRET`, `CREDENTIAL_ENCRYPTION_KEY` (a hex or base64 value encoding 32 bytes), `RESEND_API_KEY`, and `OAUTH_CALLBACK_ORIGIN`; provider OAuth credentials and worker limits are parsed by `loadConfig()` at startup. Resend sending accounts use the verified `mailer@noesisgroup.com` identity and store no provider secret per account. Configuration errors identify variable names only and never secret values.
 
 ## MVP boundaries
 

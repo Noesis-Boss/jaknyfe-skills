@@ -72,6 +72,8 @@ export async function sendWithAccountPostgres(database: PostgresDatabase, organi
     ? (await import("./gmail-adapter")).gmailAdapter(accessToken)
     : String(account.provider) === "microsoft"
       ? (await import("./microsoft-adapter")).microsoftAdapter(accessToken)
+      : String(account.provider) === "resend"
+        ? (await import("./resend-adapter")).resendAdapter(process.env.RESEND_API_KEY || "")
       : getSendingAdapter(String(account.provider));
   return adapter.send({ ...input, from: input.from || String(account.email) });
 }
@@ -87,7 +89,7 @@ export function getSendingAdapter(provider: string): SendingAdapter {
 }
 
 export function isConfiguredProvider(provider: string): boolean {
-  return provider === "mock" || provider === "gmail" || provider === "microsoft" || provider === "smtp";
+  return provider === "mock" || provider === "gmail" || provider === "microsoft" || provider === "resend" || provider === "smtp";
 }
 
 export function connectSendingAccount(database: Database, organizationId: string, input: ConnectSendingAccountInput): SendingAccount {
@@ -105,7 +107,10 @@ export function listSendingAccounts(database: Database, organizationId: string):
 export async function sendWithAccount(database: Database, organizationId: string, accountId: string, input: SendInput): Promise<SendResult> {
   const account = database.query<{ provider: string; email: string }, [string, string]>("SELECT provider, email FROM sending_accounts WHERE id = ? AND organization_id = ?").get(accountId, organizationId);
   if (!account) throw new Error("Sending account not found");
-  return getSendingAdapter(account.provider).send({ ...input, from: input.from || account.email });
+  const adapter = account.provider === "resend"
+    ? (await import("./resend-adapter")).resendAdapter(process.env.RESEND_API_KEY || "")
+    : getSendingAdapter(account.provider);
+  return adapter.send({ ...input, from: input.from || account.email });
 }
 
 export function getMockSendingAdapter(): MockSendingAdapter {
