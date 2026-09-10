@@ -12,7 +12,7 @@ if (!ACTION) {
 // Helper to fetch a fact from Zobodhi memory (uses the CLI tool added earlier)
 function getMemoryFact(tag: string): string {
   try {
-    const out = execSync(`bun run /home/workspace/Skills/zodobhi-memory/scripts/memory.ts --get "${tag}"`, {
+    const out = execSync(`bun run /home/workspace/Skills/zobodhi-memory/scripts/memory.ts --get "${tag}"`, {
       encoding: "utf8",
     });
     return out.trim();
