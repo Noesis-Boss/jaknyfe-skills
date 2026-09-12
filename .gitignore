@@ -20,3 +20,4 @@ Skills/x-browser-reply/cookies*.json
 # X session cookies (secrets - never commit)
 Skills/x-browser-reply/cookies*.json
 Skills/x-browser-reply/f4f_state.json
+__pycache__/
