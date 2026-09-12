@@ -45,6 +45,7 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - 2026-08-20: Idea Desk boot loop traced to a malformed `/api/idea-desk` X adapter function. Replaced the parser with syntax-safe code; API returned HTTP 200 with 22 live ideas and the dashboard screenshot rendered successfully.
 
 ## Feature Log
+- 2026-09-12: First archify use case: generated `robinhood-trading-bot/docs/strategy-flow.html` — showcase-validated workflow diagram of the London breakout strategy flow (Market Data → Premarket Box → Entry Window/Volume/Bias gates → Enter Trade → Manage+Journal, Theta Farmer side branch), built from real code in src/strategy.py + src/theta_farming.py. Commit 87630ce1.
 - 2026-09-07: `Skills/next-new-repo-watch` backlog fully evaluated — all 16 report stubs now have Eval + Recommendation sections (repos identified from transcripts/descriptions, include/exclude verdicts with reasons). Committed and pushed as f501e54ef. Future new videos appear as stubs; evals are agent work per SKILL.md.
 - 2026-09-11: Added a post-run audit to Trello Project Progress Sync. Each run now records changed, posted, dedupe-skipped, card-created, and failed project counts; names and reasons are included for skips/failures, and posted card moves/marks are verified.
 - 2026-09-12: Trello Project Progress Sync cooldown changed to 2 hours. The automation now calls `trello-progress check "<Project Name>" 2` before card actions, while preserving top-of-list moves and new-card placement.
