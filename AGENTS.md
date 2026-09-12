@@ -45,6 +45,9 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - 2026-08-20: Idea Desk boot loop traced to a malformed `/api/idea-desk` X adapter function. Replaced the parser with syntax-safe code; API returned HTTP 200 with 22 live ideas and the dashboard screenshot rendered successfully.
 
 ## Feature Log
+- 2026-09-11: Added a post-run audit to Trello Project Progress Sync. Each run now records changed, posted, dedupe-skipped, card-created, and failed project counts; names and reasons are included for skips/failures, and posted card moves/marks are verified.
+- 2026-09-11: Trello Project Progress Sync automation was active but its instruction explicitly prohibited moving cards and omitted `pos: "top"` for new cards, so updated cards could not be promoted. Corrected the automation to move every successfully updated card to the top of its current list and create new cards at the top of Inbox; verified the @NextActions board is reachable through the delowery Trello integration and returns 124 cards.
+- 2026-09-10: Meta Pixel diagnostic follow-up: live `https://noesisgroup.com/` executes `fbq`, loads `fbevents.js` with HTTP 200, and requests `signals/config` for pixel `1765605921294392`. Browser detector may be stale or privacy-blocked; source snippet is canonical and present in the live HTML.
 - 2026-09-10: Added Meta Pixel PageView tracking (pixel ID 1765605921294392) to the noesisgroup.com root page; deployed with a dated server backup and screenshot-verified live.
 - 2026-09-10: Fixed `Skills/x-browser-reply/scripts/follow_and_reply.py` reporting and state handling. X challenge pages are now detected, retried twice, and surfaced as an explicit error; successful replies alone mark only their own tweet IDs as replied.
 
