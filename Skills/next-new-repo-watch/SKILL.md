@@ -24,6 +24,7 @@ python3 Skills/next-new-repo-watch/scripts/watch.py scan            # process al
 python3 Skills/next-new-repo-watch/scripts/watch.py scan --dry-run  # list new videos only
 python3 Skills/next-new-repo-watch/scripts/watch.py status          # processed history
 python3 Skills/next-new-repo-watch/scripts/watch.py refetch <vid>   # redo one stub
+python3 Skills/next-new-repo-watch/scripts/summary.py   # rebuild RECOMMENDATIONS.md index (links + verdicts)
 ```
 
 ## Agent eval step (required — the stub is not the deliverable)
