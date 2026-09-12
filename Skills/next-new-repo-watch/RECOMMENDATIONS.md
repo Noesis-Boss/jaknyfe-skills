@@ -2,7 +2,7 @@
 
 Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-12.
 
-**Totals**: 2 INCLUDE · 25 TRIAL · 38 SKIP · 0 pending eval
+**Totals**: 4 INCLUDE · 41 TRIAL · 47 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -10,6 +10,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-12.
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **[EfficientStreet/hindsight](https://github.com/EfficientStreet/hindsight)** — Self-improvement skill for AI coding assistants: reviews a session end-to-end and saves only the durable process lessons as persistent memor
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
+- **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent 
+  - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
+- **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Functionality: An agent skill that turns system descriptions and workflow inputs into explorable architecture, sequence, data-flow, and life
+  - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 
 ## TRIAL
 
@@ -27,6 +31,26 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-12.
   - Report: `reports/F-_q6VIHMS8.md` · Video: https://youtu.be/F-_q6VIHMS8 · *How to have Claude run your company*
 - **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** — Python personal AI agent ("the agent that grows with you") with memory, skills, and channel integrations; the video positions Hermes as the 
   - Report: `reports/F-_q6VIHMS8.md` · Video: https://youtu.be/F-_q6VIHMS8 · *How to have Claude run your company*
+- **[aerovato/magic-compact](https://github.com/aerovato/magic-compact)** — Functionality: A lossless context-compaction plugin for Claude Code and OpenCode. It aims to reduce context size while preserving the inform
+  - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
+- **[headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom)** — Functionality: A Python library, proxy, and MCP server that compresses tool output, logs, files, and retrieval chunks before they reach an L
+  - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
+- **[teamchong/pxpipe](https://github.com/teamchong/pxpipe)** — Functionality: A Claude Code token-reduction tool that renders text context as images instead of sending all text directly. It trades a visu
+  - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
+- **[jia-gao/leanctx](https://github.com/jia-gao/leanctx)** — Functionality: A drop-in Python prompt-compression SDK based on LLMLingua-2. It claims to reduce prompt cost by 40–60% without requiring app
+  - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
+- **[ooples/token-optimizer-mcp](https://github.com/ooples/token-optimizer-mcp)** — Functionality: An MCP server that measures token savings per coding agent, optimizes context, and shares a local knowledge graph across CLI 
+  - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
+- **[mksglu/context-mode](https://github.com/mksglu/context-mode)** — Functionality: A context-optimization layer that sandboxes tool output, persists session memory, and routes work through MCP and hooks. The 
+  - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
+- **[DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)** — Functionality: A minimalism-oriented coding-agent skill that pushes the agent to reuse existing code and avoid unnecessary implementation. I
+  - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
+- **[Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)** — Functionality: A Python skill that parses code, documentation, SQL schemas, configs, and PDFs into a queryable knowledge graph. It emphasize
+  - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
+- **[diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute)** — Functionality: An MIT AI gateway exposing many providers and models through one endpoint, with quota-aware fallback, MCP/A2A support, and op
+  - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
+- **[DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp)** — Functionality: A static C binary that indexes a codebase into a persistent knowledge graph and answers code-intelligence queries. It support
+  - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
 - **openclaw/openclaw** — The flagship open-source personal AI agent (OpenClaw 2.0) — a full OS-level agent runtime with shell access, chat-based delegation, and a 5,
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
 - **THU-MAIC/OpenMAIC** — Open Multi-Agent Interactive Classroom: one prompt ("teach me quantum physics") spawns an AI teacher who lectures aloud, AI classmates that 
@@ -55,6 +79,18 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-12.
   - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
 - **[Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)** — Indexes a codebase — source, docs, SQL schemas, configs, PDFs — into a queryable knowledge graph using local deterministic AST parsing, with
   - Report: `reports/V0YugHvjs5Y.md` · Video: https://youtu.be/V0YugHvjs5Y · *This Tool Gives AI a Map of Your Codebase*
+- **[affaan-m/ECC](https://github.com/affaan-m/ECC)** — Functionality: A broad agent-harness optimization system combining skills, instincts, memory, security checks, and research-first workflows 
+  - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
+- **[DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)** — Functionality: A minimalism-oriented coding-agent skill that pushes the agent to reuse existing code and avoid unnecessary implementation. I
+  - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
+- **[mksglu/context-mode](https://github.com/mksglu/context-mode)** — Functionality: A context-optimization layer that sandboxes tool output, persists session memory, and routes work through MCP and hooks. The 
+  - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
+- **[mattpocock/skills](https://github.com/mattpocock/skills)** — Functionality: A repository of practical engineering skills intended for use by coding agents. It is a broad catalog of reusable instruction
+  - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
+- **[timharris707/skills](https://github.com/timharris707/skills)** — Functionality: A small collection of practical agent skills covering team workflow, model review, media ingestion, and writing. It includes 
+  - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
+- **[rodaddy/ai-marketing-panel](https://github.com/rodaddy/ai-marketing-panel)** — Functionality: A synthetic customer panel that tests marketing copy against calibrated AI personas before publication. It is intended to exp
+  - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **Bezalel (bundled agent-infra MCP)** — 
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
 - **Supernova (business-data-to-agent connector)** — 
@@ -66,8 +102,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-12.
 
 ## SKIP
 
+- [VonHoltenCodes/SlowBooks-Pro-2026](https://github.com/VonHoltenCodes/SlowBooks-Pro-2026) — `reports/-ikuVZ9L-UE.md`
 - [pollen-robotics/microduck](https://github.com/pollen-robotics/microduck) — `reports/0CexicXSXW0.md`
 - [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl) — `reports/0CexicXSXW0.md`
+- [AppGram/agentnotch](https://github.com/AppGram/agentnotch) — `reports/1JTyPNeD9dk.md`
 - [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — `reports/AWzzmrCPe-A.md`
 - [THU-MAIC/OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) — `reports/AWzzmrCPe-A.md`
 - [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines) — `reports/AWzzmrCPe-A.md`
@@ -85,6 +123,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-12.
 - [getsentry/sentry](https://github.com/getsentry/sentry) — `reports/F-_q6VIHMS8.md`
 - [vercel/next.js](https://github.com/vercel/next.js) — `reports/F-_q6VIHMS8.md`
 - [GoogleChrome/lighthouse](https://github.com/GoogleChrome/lighthouse) — `reports/F-_q6VIHMS8.md`
+- [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) — `reports/Jv050l7y6ik.md`
 - diffusionstudio/core — `reports/MaTkyO-8hZ0.md`
 - OpenClaw 2.0 — `reports/MaTkyO-8hZ0.md`
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/TWCSvvTfJNU.md`
@@ -93,6 +132,12 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-12.
 - [modular/modular](https://github.com/modular/modular) — `reports/TWCSvvTfJNU.md`
 - [securo-finance/securo](https://github.com/securo-finance/securo) — `reports/TWCSvvTfJNU.md`
 - [zapier/zapier-mcp](https://github.com/zapier/zapier-mcp) — `reports/TWCSvvTfJNU.md`
+- [humanlayer/skills](https://github.com/humanlayer/skills) — `reports/aX8Y183qDpY.md`
+- [openai/plugins](https://github.com/openai/plugins) — `reports/aX8Y183qDpY.md`
+- [blader/humanizer](https://github.com/blader/humanizer) — `reports/aX8Y183qDpY.md`
+- [openai/skills](https://github.com/openai/skills) — `reports/aX8Y183qDpY.md`
+- [CaptainASIC/reckoner](https://github.com/CaptainASIC/reckoner) — `reports/aX8Y183qDpY.md`
+- [Aotricx/Clodex](https://github.com/Aotricx/Clodex) — `reports/aX8Y183qDpY.md`
 - MicroDuck / microduck_rl — `reports/klqyY5SAQvc.md`
 - MIDI Autocomplete — `reports/klqyY5SAQvc.md`
 - Outbid (outbid.lol) — `reports/klqyY5SAQvc.md`
