@@ -1,0 +1,3 @@
+Gitleaks sweep 2026-09-12 — repos: 18, findings: 3
+/home/workspace/Projects/open-seo: 3 findings
+Report: /home/workspace/memory/security/gitleaks-sweep-2026-09-12.json
