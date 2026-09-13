@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-12.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-13.
 
-**Totals**: 4 INCLUDE · 41 TRIAL · 47 SKIP · 0 pending eval
+**Totals**: 4 INCLUDE · 41 TRIAL · 47 SKIP · 1 pending eval
 
 ## INCLUDE
 
@@ -149,3 +149,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-12.
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`
 - Outbid.lol — `reports/qr7Zwjx-nWU.md`
 - Piano Autocomplete (Simon Edwardsson / simedw) — `reports/twVd1dyPlz8.md`
+
+## Pending eval
+
+- `reports/NdeOsuoIGuc.md` — Have Astra do this right now (1 unevaled)
