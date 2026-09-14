@@ -19,6 +19,8 @@ bun run Skills/agent-contracts/scripts/agent-contract.ts validate config/agents/
 bun run Skills/agent-contracts/scripts/agent-contract.ts start --agent example --surface skill
 bun run Skills/agent-contracts/scripts/agent-contract.ts event --run RUN_ID --type tool --name read_file --status ok
 bun run Skills/agent-contracts/scripts/agent-contract.ts finish --run RUN_ID --status ok --artifact output/result.md
+bun run Skills/agent-contracts/scripts/agent-contract.ts list --limit=20
+bun run Skills/agent-contracts/scripts/agent-contract.ts show RUN_ID
 ```
 
 Required contract fields are `name`, `purpose`, `allowed_paths`, `allowed_tools`, and `forbidden_actions`. Every log record includes `run_id`, `agent`, `surface`, `type`, `status`, and an ISO timestamp.
