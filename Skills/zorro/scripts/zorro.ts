@@ -36,6 +36,10 @@ function finish(runId: string, status: string, artifact?: string) {
   log(["finish", `--run=${runId}`, `--status=${status}`, ...(artifact ? [`--artifact=${artifact}`] : [])]);
 }
 
+function event(runId: string, name: string, status = "ok") {
+  log(["event", `--run=${runId}`, "--type=tool", `--name=${name}`, `--status=${status}`]);
+}
+
 switch (cmd) {
   case "memory": {
     const runId = log(["start", "--agent=zorro", "--surface=zorro"]);
@@ -45,6 +49,7 @@ switch (cmd) {
       console.error("Usage: zorro.ts memory \"<query>\" [--limit=N] [--json]");
       process.exit(1);
     }
+    event(runId, "astra-memory.query");
     const args = ["query", q];
     const lim = rest.indexOf("--limit");
     if (lim !== -1 && rest[lim + 1]) args.push("--limit", rest[lim + 1]);
@@ -58,6 +63,7 @@ switch (cmd) {
   case "autosync": {
     const runId = log(["start", "--agent=zorro", "--surface=zorro"]);
     console.error("[zorro] autosync: syncing zobodhi + clarion → AstraDB…");
+    event(runId, "astra-memory.sync");
     const status = runSync(["sync"]);
     finish(runId, status === 0 ? "ok" : "error");
     process.exit(status);
@@ -66,6 +72,7 @@ switch (cmd) {
     const runId = log(["start", "--agent=zorro", "--surface=zorro"]);
     const task = rest.join(" ") || "(no task given)";
     console.log(`[zorro] plan for: ${task}`);
+    event(runId, "plan.emit");
     console.log("1. RECALL  — bun run Skills/zorro/scripts/zorro.ts memory \"<keywords>\"");
     console.log("2. EXECUTE — smallest change that satisfies the task");
     console.log("3. VERIFY  — user-facing proof (screenshot / endpoint / log line)");

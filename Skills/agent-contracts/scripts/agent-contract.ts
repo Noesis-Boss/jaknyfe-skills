@@ -23,6 +23,10 @@ async function log(record: Record<string, unknown>) {
   await appendFile(join(runsDir, `${runId}.jsonl`), `${JSON.stringify({ timestamp: new Date().toISOString(), ...record })}\n`);
 }
 
+function safeValue(value: string | undefined) {
+  return value?.slice(0, 500);
+}
+
 const [, , command, ...rest] = Bun.argv;
 if (!command) fail("Usage: validate|start|event|finish|list|show");
 
@@ -45,7 +49,7 @@ if (command === "validate") {
   const runId = arg("run");
   const type = arg("type");
   if (!runId || !type) fail("Required: --run=RUN_ID --type=TYPE");
-  await log({ run_id: runId, type, name: arg("name"), status: arg("status") ?? "ok", path: arg("path") });
+  await log({ run_id: runId, type, name: safeValue(arg("name")), status: arg("status") ?? "ok", path: safeValue(arg("path")) });
   console.log(runId);
 } else if (command === "finish") {
   const runId = arg("run");

@@ -21,6 +21,9 @@ bun run Skills/agent-contracts/scripts/agent-contract.ts event --run RUN_ID --ty
 bun run Skills/agent-contracts/scripts/agent-contract.ts finish --run RUN_ID --status ok --artifact output/result.md
 bun run Skills/agent-contracts/scripts/agent-contract.ts list --limit=20
 bun run Skills/agent-contracts/scripts/agent-contract.ts show RUN_ID
+bun run Skills/agent-contracts/scripts/dashboard.ts
 ```
 
 Required contract fields are `name`, `purpose`, `allowed_paths`, `allowed_tools`, and `forbidden_actions`. Every log record includes `run_id`, `agent`, `surface`, `type`, `status`, and an ISO timestamp.
+
+`dashboard.ts` generates `runs/agent-contracts/dashboard.html`, a local read-only audit view with run filtering and event timelines. Zorro records tool events for memory queries, autosync, and plan emission.
