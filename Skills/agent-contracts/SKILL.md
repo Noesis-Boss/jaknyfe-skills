@@ -27,3 +27,7 @@ bun run Skills/agent-contracts/scripts/dashboard.ts
 Required contract fields are `name`, `purpose`, `allowed_paths`, `allowed_tools`, and `forbidden_actions`. Every log record includes `run_id`, `agent`, `surface`, `type`, `status`, and an ISO timestamp.
 
 `dashboard.ts` generates `runs/agent-contracts/dashboard.html`, a local read-only audit view with run filtering and event timelines. Zorro records tool events for memory queries, autosync, and plan emission.
+
+Tool events are enforced against the active contract's `allowed_tools`; denied events fail before they are logged.
+
+The Zo Space dashboard is `/agent-audit` and reads `AGENT_AUDIT_PASSWORD` from Zo Secrets. The page is private at the platform layer; the API also requires the same password before returning audit data.

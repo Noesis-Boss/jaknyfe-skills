@@ -6,6 +6,8 @@ allowed_paths:
 allowed_tools:
   - bash
   - memory
+  - sync
+  - plan
   - read_file
 forbidden_actions:
   - expose_secrets

@@ -27,6 +27,16 @@ function safeValue(value: string | undefined) {
   return value?.slice(0, 500);
 }
 
+async function allowedTools(agent: string, surface: string) {
+  const file = join(root, "Skills/agent-contracts/config/agents", `${agent}.md`);
+  const text = await readFile(file, "utf8").catch(() => "");
+  if (!text) fail(`Missing contract for agent: ${agent}`);
+  const section = text.match(/^allowed_tools:\n([\s\S]*?)(?=^forbidden_actions:|^---)/m)?.[1] ?? "";
+  const tools = section.split("\n").map((line) => line.trim()).filter((line) => line.startsWith("- ")).map((line) => line.slice(2).trim());
+  if (surface === "zorro" && !tools.includes("memory")) fail(`Contract does not allow memory: ${agent}`);
+  return tools;
+}
+
 const [, , command, ...rest] = Bun.argv;
 if (!command) fail("Usage: validate|start|event|finish|list|show");
 
@@ -42,6 +52,7 @@ if (command === "validate") {
   const agent = arg("agent");
   const surface = arg("surface");
   if (!agent || !surface) fail("Required: --agent=NAME --surface=zorro|skill|automation");
+  await allowedTools(agent, surface);
   const runId = `${agent}-${Date.now()}`;
   await log({ run_id: runId, agent, surface, type: "start", status: "running" });
   console.log(runId);
@@ -49,6 +60,15 @@ if (command === "validate") {
   const runId = arg("run");
   const type = arg("type");
   if (!runId || !type) fail("Required: --run=RUN_ID --type=TYPE");
+  if (type === "tool") {
+    const files = (await readdir(runsDir).catch(() => [])).filter((file) => file === `${runId}.jsonl`);
+    if (!files.length) fail(`Unknown run: ${runId}`);
+    const records = (await readFile(join(runsDir, files[0]), "utf8")).trim().split("\n").filter(Boolean).map((line) => JSON.parse(line));
+    const tools = await allowedTools(records[0].agent, records[0].surface);
+    const name = arg("name") ?? "";
+    const permitted = tools.some((tool) => name === tool || name.startsWith(`${tool}.`));
+    if (!permitted) fail(`Contract denied tool: ${name}`);
+  }
   await log({ run_id: runId, type, name: safeValue(arg("name")), status: arg("status") ?? "ok", path: safeValue(arg("path")) });
   console.log(runId);
 } else if (command === "finish") {
