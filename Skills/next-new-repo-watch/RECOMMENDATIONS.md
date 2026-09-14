@@ -1,6 +1,6 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-13.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-14.
 
 **Totals**: 4 INCLUDE · 41 TRIAL · 47 SKIP · 1 pending eval
 
