@@ -1,0 +1,3 @@
+{"timestamp":"2026-09-14T20:31:54.866Z","run_id":"smoke-1789417914864","agent":"smoke","surface":"skill","type":"start","status":"running"}
+{"timestamp":"2026-09-14T20:31:54.892Z","run_id":"smoke-1789417914864","type":"verify","name":"contract","status":"ok"}
+{"timestamp":"2026-09-14T20:31:54.916Z","run_id":"smoke-1789417914864","type":"finish","status":"ok","artifact":"Skills/agent-contracts/SKILL.md"}

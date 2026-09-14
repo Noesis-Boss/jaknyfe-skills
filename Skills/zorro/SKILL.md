@@ -29,6 +29,7 @@ plan "<task>"                           # emit plan → do → verify checklist
 2. **Execute** the task with the recalled context (plan for multi-step work).
 3. **Verify** the user-facing result (screenshot/endpoint/log — backend green ≠ done).
 4. **Autosync**: `bun run Skills/zorro/scripts/zorro.ts autosync` to persist durable facts.
+5. **Log** the run with `Skills/agent-contracts/scripts/agent-contract.ts` when the task changes files, services, or external state.
 
 ## Backing store
 
