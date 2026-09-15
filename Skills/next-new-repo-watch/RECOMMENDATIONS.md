@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-14.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-15.
 
-**Totals**: 4 INCLUDE · 41 TRIAL · 47 SKIP · 1 pending eval
+**Totals**: 4 INCLUDE · 41 TRIAL · 47 SKIP · 3 pending eval
 
 ## INCLUDE
 
@@ -152,4 +152,6 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-14.
 
 ## Pending eval
 
+- `reports/ANJTdT0Ggrw.md` — Free LLM - for building, agents, images, etc. (1 unevaled)
+- `reports/M7cvI4155_E.md` — The easiest way to launch your own iPhone app #startup #ai #ios (1 unevaled)
 - `reports/NdeOsuoIGuc.md` — Have Astra do this right now (1 unevaled)

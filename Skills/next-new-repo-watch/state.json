@@ -244,6 +244,22 @@
       "processed_at": "2026-09-13T12:32:27.273562+00:00",
       "report": "/home/workspace/Skills/next-new-repo-watch/reports/NdeOsuoIGuc.md",
       "auto_repos": []
+    },
+    "M7cvI4155_E": {
+      "title": "The easiest way to launch your own iPhone app #startup #ai #ios",
+      "published": "2026-09-14T20:30:34+00:00",
+      "processed_at": "2026-09-15T12:32:35.399774+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/M7cvI4155_E.md",
+      "auto_repos": []
+    },
+    "ANJTdT0Ggrw": {
+      "title": "Free LLM - for building, agents, images, etc.",
+      "published": "2026-09-14T18:00:12+00:00",
+      "processed_at": "2026-09-15T12:32:36.937282+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/ANJTdT0Ggrw.md",
+      "auto_repos": [
+        "tashfeenahmed/freellmapi"
+      ]
     }
   }
 }
