@@ -26,6 +26,22 @@ Book is already enrolled in Kindle Unlimited. Sequence, roughly one move per mon
 3. Never combine Free Days and Countdown in the same 90-day window.
 4. Track each window's rank and KENP reads in `publishing/books/DELowery/Outsource-Your-Own-Brain/MEMORY.md` to learn which move earns more.
 
+**First Free Days window (staged 2026-09-16):** Monday 2026-10-05 through Wednesday 2026-10-07 (3 days). Announce 10-14 days ahead: Substack issue week of 2026-09-28; LinkedIn promo slot Fri 2026-10-02; X promo slot Sat 2026-10-03 or Sun 2026-10-04 (within the 2-per-7-day cap); day-of reminder on X 2026-10-05. Don must click the window in KDP (2-minute task) by 2026-10-04. After pricing returns 2026-10-08, log rank + KENP in the book MEMORY.md.
+
+### First window — STAGED 2026-09-16 (only manual step: Don clicks it in KDP)
+
+- **Dates: Monday 2026-10-05 through Wednesday 2026-10-07 (3 days).** Price returns to $6.99 on 2026-10-08.
+- Why: 10+ days of announcement runway, Mon-Wed fits the weekly productivity cycle, window stays inside the current 90-day KDP Select period.
+- **Don's 2-minute step:** KDP dashboard -> *Outsource Your Own Brain* -> Promote -> Free Book Promotion -> set 2026-10-05 to 2026-10-07. On 10-05, confirm the listing shows "$0.00 to buy."
+- **Announcement sequence (daily OYYB posting lane handles these):**
+  1. 2026-09-25 (Fri, LinkedIn) — save-the-date post with the three dates.
+  2. 2026-10-02 (Fri, LinkedIn) — one-week-out post.
+  3. 2026-10-04 (Sun, X) — 24-hours-out post.
+  4. 2026-10-05 (Mon, LinkedIn) — free-now launch post.
+  5. 2026-10-06 (Tue, X) — value post tying the free window to the book's 30-day plan.
+  6. 2026-10-07 (Wed, LinkedIn) — last-free-day post.
+- Cap check: Sep 25 and Oct 2 land in different weeks, so the lane's 2-promo-posts-per-7-days cap stays intact.
+
 ## 3. Review flywheel (free, rule-bound)
 
 - Add a "If this helped, please leave an honest review on Amazon" line to: the book's final page (needs a rebuild), Substack footer, and every Free/Countdown announcement.
