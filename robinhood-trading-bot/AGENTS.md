@@ -1,5 +1,17 @@
 # Robinhood Trading Bot — Project Guidance
 
+## Feature Log
+
+- 2026-09-14 — Ran the paper-only EMA Surge validation runner across 13 symbols from 2026-02-10 through 2026-08-06, split at 2026-05-09. Development: 195 trades, 25.13% win rate, 0.27 profit factor, -$3,651.63 net. Held-out: 167 trades, 23.95% win rate, 0.25 profit factor, -$3,447.83 net. London baseline over the same windows: 200 trades, 43.0% win rate, 0.88 profit factor, -$1,310.31 net. Validation rejected; EMA Surge remains excluded from paper/live rotation.
+
+- 2026-09-14 — Added `docs/backtest-dataflow.html`, a browser-verified Archify data-flow diagram covering market bars/config → strategy signals → execution realism → journal/metrics → projections/reports. Linked it from `README.md`; Archify showcase validation passed all 9 checks and automated browser containment passed at 1440×900, 1600×1000, 1920×1080, and 2048×1320.
+
+- 2026-09-13 — Broader EMA Surge research run (2026-02-10→2026-08-06, 13 symbols, Alpaca, theta disabled, execution realism on) produced 362 trades, 24.59% win rate, 0.26 profit factor, -$1,024.66 gross and -$5,860.55 net after $4,835.89 costs. Gross performance was negative before costs; EMA Surge is rejected for paper/live rotation. Comparison recorded in `docs/ema-surge-research.md`.
+
+- 2026-09-13 — Completed the requested EMA Surge follow-up. Canonical 13-symbol Alpaca run (2026-07-01→2026-08-06, theta disabled, execution realism on) produced 62 trades, 30.65% win rate, 0.33 profit factor, -$59.42 gross and -$1,215.18 net after $1,155.76 execution costs. Added EMA Surge walk-forward parameter space (`rr_ratio` and `max_holding_bars`); the 2026-07-01→2026-08-06 run selected rr_ratio=1.0/max_holding_bars=60 on training data, but held-out 2026-07-31→2026-08-06 produced 16 trades, 56.25% win rate, 0.45 profit factor, -$154.41 net, so it was rejected and not auto-loaded. Focused tests: 4 passed.
+
+- 2026-09-13: Added paper-only Validation mode to Strategy Lab. It splits the selected period into development and held-out windows, enforces a configurable minimum trade count, reports held-out profit factor/net P&L, and compares against the London baseline and equal-weight buy-and-hold. Existing single-period backtests remain available.
+
 London/premarket-breakout day-trading bot. Source strategy: video https://youtu.be/8KblOEu56dM.
 Builds a consolidation box over a window, then enters on either the box-high breakout
 (long) or box-low breakdown (short) with volume confirmation, a breakout-strength buffer,
@@ -191,6 +203,8 @@ UI params; tests in `tests/test_trailing_stop_ladder.py` (3 passed).
 
 ## Issue Log
 
+- 2026-09-12 — Fixed EMA Surge zero-trade gate: the runner supplies only the 75 regular-session 5-minute bars available per day, while the strategy required 85 bars (`fast_length + 45`), making signals impossible. Minimum history is now `fast_length + 10` (60 minimum). Cached QQQ replay produced 10 EMA Surge trades over 2026-08-01→08-08; this validates signal reachability, not profitability.
+
 - 2026-09-03 — Restored Graphify `post-commit` and `post-checkout` hooks; `graphify hook status` reports both installed and the merge driver registered.
 
 - 2026-08-24 — Completed the interrupted four-layer monitor UI/API integration. Removed duplicate monitor CSS, fixed JSON serialization of infinite profit factor values, and populated behavior trade counts. API JSON, production build, and browser screenshot verified. Three monitor test failures remain isolated to the test fixture's market-hour timestamp generator producing only 7 of its expected 10 rows; the live monitor renders correctly.
@@ -210,6 +224,18 @@ UI params; tests in `tests/test_trailing_stop_ladder.py` (3 passed).
 - 2026-08-09 — Theta P&L previously accumulated in `ThetaFarmer`/`strat._theta_capital`, so it did not compound with directional trades. Fixed by passing shared `RiskManager.capital` into theta sizing and applying theta expiry P&L through `risk.update_cash()`. Regression assertions pass; the Alpaca smoke backtest was blocked because the optional `alpaca` Python package is not installed in this environment.
 
 ## Feature Log
+
+- 2026-09-13 — Replayed `reversal_zone_confirmation` with scale-out enabled (1.5R, 50% partial) against the cached 13-symbol 1-minute universe for 2026-08-01 through 2026-08-08. The cache contained Aug 3–7 sessions; the strategy produced 0 trades, so scale-out did not activate. This is a signal-reachability result, not a profitability claim. Yahoo could not backfill the period because its 1-minute history limit had expired.
+
+- 2026-09-13 — Reversal-zone scale-out comparison on the canonical 13-symbol Alpaca window (2026-07-01→2026-08-06, theta disabled, execution realism on): scale-out enabled (50% at 1.5R) produced 7 trades, 85.71% win rate, 4.77 PF, and +$213.24 net; disabled produced 4 trades, 75.0% win rate, 3.55 PF, and +$143.96 net. The $69.28 improvement is encouraging but the 7-trade sample is too small for enablement or profitability claims. Strategy remains research-only.
+
+- 2026-09-13 — Extended the research-only `reversal_zone_confirmation` strategy with objective unhealthy-move duration settings, configurable news blackout dates/context, and one-time partial scale-out at a configured R multiple. Defaults remain disabled for live/paper execution; news dates are manual because no calendar feed is wired.
+
+- 2026-09-12 — First London walk-forward optimization completed on Alpaca across the 13-symbol universe. Selected `breakout_strength=0.75`, `max_holding_bars=30`, `rr_ratio=1.5`; held-out window (2026-07-08 through 2026-08-06) produced 50 trades, 64.0% win rate, 1.64 profit factor, and +$1,117.75 net. Record saved to `data/strategy_fitness.json`; weekly paper-only optimization is scheduled Sundays at 06:00 MST.
+
+- 2026-09-12 — Added paper-only per-strategy walk-forward optimizer (`backtest_optimize.py`, `src/strategy_optimizer.py`, `src/param_space.py`). Candidates use `profit_factor × sqrt(trade_count)`, held-out validation, a five-trade minimum, and auto-load only for accepted records in `data/strategy_fitness.json`.
+
+- 2026-09-12 — Added paper-only `ema_cross` and `ema_surge` research strategies based on Bulls, Bears & Backtests. Canonical 13-symbol run (2026-07-01→2026-08-06, execution realism on, theta disabled): EMA Cross produced 46 trades, 26.09% win rate, 0.26 profit factor, -$949.54 net (-$75.12 gross before $874.42 costs). EMA Surge's impossible 85-bar intraday history gate was fixed; cached QQQ replay then produced 10 trades (-$37.63 net after costs, 60% win rate, 0.62 PF). Neither is enabled for paper/live execution. Focused tests and full suite pass (112 tests).
 
 - 2026-08-28 — Added the disabled-by-default `ema20_stoch_pullback` research strategy from the Trader DNA video: 20 EMA deviation pullback, Stochastic 8/5/3 crossover, and target at 25% of the distance from entry back to the EMA. Restored missing engine modules from `https://github.com/Noesis-Boss/robinhood-trading-bot` and corrected the local `origin`, which had incorrectly pointed to `domain-finder.git`. The 13-symbol Alpaca run for 2026-07-01 through 2026-08-06 executes successfully but produces 0 trades and $0 net P&L; no profitability claim.
 
@@ -443,3 +469,31 @@ NOT VIABLE — do not add to rotation.**
 - First theta-on run leaked 46 theta_spread trades into the summary (config
   theta_farming.enabled) — always pass `--theta false` for directional research.
 Parked, not in rotation, no further variants planned.
+
+## Markov Regime Gate (added 2026-09-08, paper-only research)
+
+`src/markov_regime.py` — walk-forward first-order Markov regime classifier on SPY daily
+returns. Per day: fit transition matrix on trailing `lookback` (252) days, project one
+step from yesterday's state, map to BULL/SIDEWAYS/BEAR via 20d-return thresholds
+(bull_th 0.05 / bear_th -0.05); gate is p_bull > p_bear (shorts allowed when false).
+No lookahead: matrix fits only on data before day t; zero-history or tied states emit
+no gate. 8 unit tests (tests/test_markov_regime.py) cover no-lookahead, ties, and
+zero-history contracts. Config: `regime_filter: {mode: sma|markov, lookback, ret_window,
+bull_th, bear_th}`.
+
+**6-month A/B (2026-02-10 to 2026-08-06, 13 symbols, Alpaca 5m, theta off, realism on):**
+| Arm | Trades | Win % | PF | Net |
+|---|---|---|---|---|
+| No gate | 400 | 62.5 | 1.04 | +$572.60 |
+| SMA50 gate | 174 | 61.5 | 1.06 | +$343.09 |
+| Markov gate | 186 | 61.8 | 1.11 | +$802.73 |
+
+- Markov BEATS the unfiltered baseline (+$803 vs +$573) with under half the trades.
+- The edge is COST AVOIDANCE (214 fewer trades x ~$3.10/trade round-trip), not better
+  accuracy — win rate is flat across arms. Cost model: 5bps slippage + 5bps spread.
+- SMA50's hard bull/bear cutoff keeps the worst of both: filters 226 trades but keeps
+  them only when they were already bad.
+- **Verdict: keep the Markov gate as the default research filter for London
+  directional runs. Paper-only.** 2025 data not tested (Alpaca IEX history limits).
+
+- 2026-09-16: Added interactive architecture and workflow diagrams to `robinhood-trading-bot/docs/` via archify: `robinhood-trading-bot-architecture.html` (full component + data-flow map, built from real `src/` files) and `backtest-dataflow.html` (backtest pipeline: config → data → signal → execution realism → journal → metrics → projections). Both shipped with showcase-validated visual checks at 1440×900 and 2048×1320 in light/dark (8 PNGs + `backtest-dataflow.visual-check.html`). README links both. Commit 9e5e6fc.
