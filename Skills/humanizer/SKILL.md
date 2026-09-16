@@ -709,7 +709,22 @@ Use this evaluator when the user asks whether a document has become less AI-like
 
 ### Minimum input
 
-- Under 250 words: report **insufficient text**. Do not calculate a score.
+- Under 250 words: use **Short-form mode** below. Do not report "insufficient text" for short copy that is genuinely publishable (posts, headlines, captions, subject lines) — that is the text being gated.
+
+### Short-form mode (<250 words)
+
+Short copy (X posts, headlines, subject lines, captions, video titles) cannot absorb the long-form cluster logic. Score the same six dimensions, but judge clusters relative to length:
+
+- **Specificity and credibility:** any fabricated or unsupported fact (invented statistic, biography claim, named study, fake quote) scores the full 15 for the dimension. In 40 words, one invented number is the whole signal, not half a cluster.
+- **Vocabulary and transitions:** 2+ AI-vocabulary words or canned transitions in a post scores the full 20; 1 word scores 0. Vague attribution ("studies show", "experts say") with no source scores 8+.
+- **Formatting and artifacts:** 1 em dash scores 0; 2+ em dashes or any citation artifact (utm_source=chatgpt.com, [cite: N], contentReference) scores the full 10. Hashtag or boldface overuse only when it dominates the copy.
+- **Statistical rhythm:** uniform length across 3+ sentences scores the full 25; a two-sentence post can score at most 10 here.
+- **Structure and emphasis:** rule-of-three, "not X but Y", or colon reveals score 8 each; two or more structural tells score the full 20.
+- **Voice and human texture:** absent first-person stance and zero concrete experience in value copy scores 6-10; one real detail keeps it at 2-4.
+
+Confidence is always **low** in short-form mode (say so in the report). Interpretation bands are unchanged: <20 passes, 20-39 revise flagged lines, 40+ run a full humanization pass.
+
+Fabricated-fact override: if any dimension finds a fabricated or unverifiable factual claim, the copy fails the gate regardless of the total score. Revise to verifiable claims and rescore.
 - 250-999 words: calculate a provisional score and mark confidence **low**.
 - 1,000+ words: calculate the score and mark confidence **moderate**.
 - Genre matters. Compare essays with essays, fiction with fiction, and technical writing with technical writing.
