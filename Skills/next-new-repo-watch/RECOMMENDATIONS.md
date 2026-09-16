@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-15.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-16.
 
-**Totals**: 4 INCLUDE · 41 TRIAL · 47 SKIP · 3 pending eval
+**Totals**: 4 INCLUDE · 43 TRIAL · 48 SKIP · 4 pending eval
 
 ## INCLUDE
 
@@ -95,6 +95,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-15.
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
 - **Supernova (business-data-to-agent connector)** — 
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
+- **`openclaw/openclaw`** — Functionality: An open-source personal AI agent that can operate across local computers, browsers, messaging channels, and connected tools. 
+  - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
+- **`zapier/zapier-platform`** — Functionality: Zapier’s JavaScript toolkit for building custom integrations and actions. It could support a narrow connector needed by the p
+  - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
 - **browser-use/browser-use** — 
   - Report: `reports/wvStsbW_fCY.md` · Video: https://youtu.be/wvStsbW_fCY · *I Let AI Take Over My Browser — For 2 Cents*
 - **immich-app/immich** — 
@@ -146,6 +150,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-15.
 - Expertise.ai (AI skill marketplace) — `reports/klqyY5SAQvc.md`
 - Peter Yang patient advocacy skill — `reports/klqyY5SAQvc.md`
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/mHGDF8mwkY4.md`
+- `jdepoix/youtube-transcript-api` — `reports/pkwnJcETgfE.md`
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`
 - Outbid.lol — `reports/qr7Zwjx-nWU.md`
 - Piano Autocomplete (Simon Edwardsson / simedw) — `reports/twVd1dyPlz8.md`
@@ -155,3 +160,4 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-15.
 - `reports/ANJTdT0Ggrw.md` — Free LLM - for building, agents, images, etc. (1 unevaled)
 - `reports/M7cvI4155_E.md` — The easiest way to launch your own iPhone app #startup #ai #ios (1 unevaled)
 - `reports/NdeOsuoIGuc.md` — Have Astra do this right now (1 unevaled)
+- `reports/pkwnJcETgfE.md` — Amazing: FREE AI Agent from Meta (1 unevaled)
