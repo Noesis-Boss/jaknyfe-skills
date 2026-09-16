@@ -282,3 +282,8 @@ Solopreneur productivity — specifically delegating cognitive labor to AI acros
 - **Fix:** PDF — added `\centering` before `\includegraphics` in the cover.tex heredoc in `scripts/build_book.sh`. **Worked.** EPUB — added cover rules to `assets/epub-override.css`: `html, body#cover {height:100%}`, `body#cover {text-align:center}`, `#cover-image {height:100%}`, `#cover-image svg {height:100%; width:auto; max-width:100%; margin:0 auto}`. **Worked.**
 - **Verified:** PDF page 1 rendered to PNG — art centered (42px left / 41px right margins at 72dpi), full height. EPUB — `stylesheet1.css` contains the rules, `cover.xhtml` links it, `content.opf` declares cover. Rebuilt: PDF 213 pages / 86,896 words, EPUB cover declared: 1.
 - **General rule:** Any book with cover art gets it centered on page 1 in both formats — this build script + override CSS are the canonical pattern.
+
+### Autonomous marketing design (2026-09-16)
+- Audited the live Amazon listing: Kindle ASIN `B0HG9NB8PD`, paperback ASIN `B0HG9JGW6D`, Kindle `$6.99`, paperback `$17.99`, Kindle Unlimited enabled, no customer-review proof visible at audit time.
+- Added `docs/autonomous-marketing-plan.md` defining an approval-free-after-setup marketing system with source-grounded content, multi-channel distribution, bounded Amazon Sponsored Products, public-conversation discovery, measurement loops, KDP Select constraints, and hard anti-spam/review-manipulation guardrails.
+- Status: Phase 1 foundation initialized in `Projects/noesis-marketing/`; monthly ad ceiling and exact channel rates remain deferred decisions.
