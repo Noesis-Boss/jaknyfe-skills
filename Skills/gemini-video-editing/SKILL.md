@@ -111,6 +111,38 @@ Create a 20-second vertical reel from this footage using the strongest moments i
 
 For every reel, state the target aspect ratio, whether captions are allowed, and whether original audio must remain. Avoid asking Gemini to “make it viral” without concrete visual instructions.
 
+## Gemini API execution
+
+For an actual local edit, use `file scripts/edit_video.py`. Set `GEMINI_API_KEY` in the environment, keep the source unchanged, and pass the focused prompt as one argument:
+
+```bash
+python3 Skills/gemini-video-editing/scripts/edit_video.py input.mp4 "Apply the edit. Keep everything else the same." output.mp4
+```
+
+The script uploads the source through Gemini Files, waits for processing, calls `gemini-omni-1.1-flash`, retrieves the returned video, and writes a separate output file. It does not claim success until the output file is written. Review the rendered file for identity, timing, artifacts, audio, and captions.
+
+Do not place `GEMINI_API_KEY` in the skill, shell history, or committed files. Store it in Zo Settings → Advanced or inject it for the current process.
+
+## VoiceStudio narration workflow
+
+Use VoiceStudio after the visual edit when the narration should use the user's supplied or consent-verified voice. VoiceStudio runs locally at `http://localhost:3900` and accepts OpenAI-compatible requests at `/v1`.
+
+1. Prepare narration text from the approved script. Do not invent claims or rewrite quoted material.
+2. List available profiles with `GET http://localhost:3900/v1/audio/voices` and select the verified profile ID.
+3. Generate WAV narration with `POST http://localhost:3900/v1/audio/speech`, using `model: "omnivoice"`, the profile ID in `voice`, `response_format: "wav"`, and a deliberate `speed`.
+4. Inspect the WAV, then align it to the video with the local video workflow. Preserve the original track until the replacement has been checked.
+
+Example request:
+
+```bash
+curl -sS http://localhost:3900/v1/audio/speech \
+  -H 'Content-Type: application/json' \
+  -d '{"model":"omnivoice","voice":"<verified-profile-id>","input":"<approved narration>","response_format":"wav","speed":1.0}' \
+  --output narration.wav
+```
+
+For a 20-second reel, keep narration short enough to fit the measured duration, normalize levels, and check lip-sync only when the source is a talking head. Never clone or use another person's voice without permission.
+
 ## Quality rules
 
 - Never invent names, claims, logos, statistics, or product features.
