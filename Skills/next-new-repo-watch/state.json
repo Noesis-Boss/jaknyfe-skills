@@ -269,6 +269,30 @@
       "auto_repos": [
         "jdepoix/youtube-transcript-api"
       ]
+    },
+    "QZXeiuLBlTk": {
+      "title": "This Tool Feeds All Your Business Data to One AI Agent",
+      "published": "2026-09-16T20:30:31+00:00",
+      "processed_at": "2026-09-17T12:32:37.998785+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/QZXeiuLBlTk.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api"
+      ]
+    },
+    "ehab5PtgRo8": {
+      "title": "Why is everyone using these?",
+      "published": "2026-09-16T17:07:11+00:00",
+      "processed_at": "2026-09-17T12:32:41.725871+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/ehab5PtgRo8.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api",
+        "vercel-labs/skills",
+        "mattpocock/skills",
+        "anthropics/skills",
+        "vercel-labs/agent-browser",
+        "vercel-labs/agent-skills",
+        "larksuite/cli"
+      ]
     }
   }
 }

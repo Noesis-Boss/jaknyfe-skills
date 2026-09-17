@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-16.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-17.
 
-**Totals**: 4 INCLUDE · 43 TRIAL · 48 SKIP · 4 pending eval
+**Totals**: 7 INCLUDE · 44 TRIAL · 52 SKIP · 4 pending eval
 
 ## INCLUDE
 
@@ -10,10 +10,16 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-16.
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **[EfficientStreet/hindsight](https://github.com/EfficientStreet/hindsight)** — Self-improvement skill for AI coding assistants: reviews a session end-to-end and saves only the durable process lessons as persistent memor
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
+- **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
+  - Report: `reports/QZXeiuLBlTk.md` · Video: https://youtu.be/QZXeiuLBlTk · *This Tool Feeds All Your Business Data to One AI Agent*
 - **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent 
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Functionality: An agent skill that turns system descriptions and workflow inputs into explorable architecture, sequence, data-flow, and life
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
+- **vercel-labs/agent-browser** — Rust browser automation CLI for navigating, interacting with, and capturing web pages. It matches the existing browser verification workflow
+  - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
+- **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
+  - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 
 ## TRIAL
 
@@ -91,6 +97,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-16.
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[rodaddy/ai-marketing-panel](https://github.com/rodaddy/ai-marketing-panel)** — Functionality: A synthetic customer panel that tests marketing copy against calibrated AI personas before publication. It is intended to exp
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
+- **mattpocock/skills** — Agent instructions for requirements questioning, idea stress testing, repository setup, and tutoring. The named skills are prompt workflows 
+  - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **Bezalel (bundled agent-infra MCP)** — 
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
 - **Supernova (business-data-to-agent connector)** — 
@@ -142,6 +150,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-16.
 - [openai/skills](https://github.com/openai/skills) — `reports/aX8Y183qDpY.md`
 - [CaptainASIC/reckoner](https://github.com/CaptainASIC/reckoner) — `reports/aX8Y183qDpY.md`
 - [Aotricx/Clodex](https://github.com/Aotricx/Clodex) — `reports/aX8Y183qDpY.md`
+- vercel-labs/skills — `reports/ehab5PtgRo8.md`
+- anthropics/skills — `reports/ehab5PtgRo8.md`
+- vercel-labs/agent-skills — `reports/ehab5PtgRo8.md`
+- larksuite/cli — `reports/ehab5PtgRo8.md`
 - MicroDuck / microduck_rl — `reports/klqyY5SAQvc.md`
 - MIDI Autocomplete — `reports/klqyY5SAQvc.md`
 - Outbid (outbid.lol) — `reports/klqyY5SAQvc.md`
