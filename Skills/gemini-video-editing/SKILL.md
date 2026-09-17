@@ -1,0 +1,109 @@
+---
+name: gemini-video-editing
+description: Create precise Google Gemini video-editing prompts for cinematic restyling, background and object replacement, cleanup, wardrobe changes, visual effects, product ads, face preservation, and camera-angle changes. Use when the user wants to edit an existing video through Gemini with natural-language instructions.
+metadata:
+  author: jaknyfe.zo.computer
+---
+
+# Gemini Video Editing
+
+Create a short, executable prompt for Google Gemini's video editor. Treat the source video as authoritative and explicitly preserve anything the user does not want changed.
+
+## Workflow
+
+1. Identify the edit type, subject, desired result, and delivery context.
+2. Ask only for missing details that materially affect the prompt: source clip, target element, style or replacement, timing, aspect ratio, and audio behavior.
+3. Write one primary Gemini prompt using plain language. Keep it focused on the requested change.
+4. Add preservation constraints: “Keep everything else the same,” plus the specific face, clothing, movement, camera, lighting, logo, or background details that must remain stable.
+5. Provide a short fallback prompt if the first edit is too broad or changes unwanted details.
+6. Recommend a visual check for identity, temporal consistency, edges, shadows, reflections, text, and audio before use.
+
+## Prompt construction
+
+Use this shape:
+
+```text
+[Action] [target] [desired result]. Keep [subject and important details] unchanged. Match [lighting, shadows, perspective, movement, and timing] so the edit looks natural. Keep everything else the same.
+```
+
+Prefer one clear transformation over a long cinematic brief. For a single continuous shot, say “in one continuous shot” and state “no scene cuts.” For a timed effect, specify the trigger and timing. For audio, state whether to preserve the original audio or regenerate it.
+
+## Edit patterns
+
+### Cinematic look
+
+```text
+Edit this video into a cinematic clip. Keep [main subject] unchanged. Improve the lighting to [lighting style], add [camera movement], [color treatment], and [mood]. Do not change [protected details]. Keep everything else the same.
+```
+
+### Background replacement
+
+```text
+Replace the background with [new location]. Keep [main subject] exactly the same. Match the lighting, shadows, camera angle, and perspective so it looks real. Do not change [face, clothing, voice, lip movement, or body movement].
+```
+
+### Object removal or replacement
+
+```text
+Remove [object] from this video and fill the space naturally from the surrounding background. Keep [subject], lighting, camera movement, and timing unchanged. Make the edit clean and realistic.
+```
+
+```text
+Replace [old object] with [new object]. Keep the same camera angle, lighting, reflections, shadows, movement, and scale. Do not change [subject] or [background].
+```
+
+### Wardrobe change
+
+```text
+Change [person's outfit] into [new outfit]. Keep the face, body shape, pose, and movement unchanged. Make the clothing move naturally with the body and match the original lighting and shadows.
+```
+
+### Style treatment
+
+```text
+Apply a [style] look to this video with [style details], [color tone], and [texture]. Keep [main subject] unchanged. Do not change [important details]. Keep everything else the same.
+```
+
+### Product advertisement
+
+```text
+Edit this product video into a premium advertisement for [product]. Keep the product's shape, color, logo, screen, and key features unchanged. Add [background], [lighting], and [camera movement]. Keep the result realistic.
+```
+
+### Timed visual effect
+
+```text
+Add [effect] when [specific action] happens. Start it exactly at [timing]. Keep [subject], background, camera movement, and original timing unchanged. Blend the effect naturally into the scene.
+```
+
+### Face preservation
+
+```text
+Keep the original subject's face exactly the same throughout the edit. Do not change the eyes, nose, mouth, skin tone, hair, or facial expression. Only edit [specific element].
+```
+
+### Camera-angle change
+
+```text
+Recreate this scene from a [new camera angle]. Keep [subject], action, outfit, and important details consistent. Adjust lighting, shadows, and background perspective to match the new angle.
+```
+
+## Quality rules
+
+- Never invent names, claims, logos, statistics, or product features.
+- For talking heads, protect face, voice, lip movement, expression, clothing, and body movement unless the user requests otherwise.
+- For products, protect shape, branding, color, text, proportions, and functional details.
+- For replacements, require realistic lighting, shadows, reflections, occlusion, scale, and motion.
+- For removals, require natural background reconstruction and temporal consistency across frames.
+- If the request would alter identity or meaning, call that out and ask what must be preserved.
+- Do not claim Gemini completed an edit. This skill writes the prompt; the user or an available Gemini tool must run it.
+
+## Output format
+
+Return:
+
+1. `Gemini prompt:` followed by the ready-to-paste prompt.
+2. `Preserve:` one sentence listing the critical invariants.
+3. `Check:` one sentence listing the visible and audio checks after rendering.
+
+If the user supplied a video and asks for execution, use the available Gemini or video workflow after presenting the prompt. Preserve the original source and save derived output separately.
