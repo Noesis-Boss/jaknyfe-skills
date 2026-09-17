@@ -4,7 +4,6 @@ description: Create precise Google Gemini video-editing prompts for cinematic re
 metadata:
   author: jaknyfe.zo.computer
 ---
-
 # Gemini Video Editing
 
 Create a short, executable prompt for Google Gemini's video editor. Treat the source video as authoritative and explicitly preserve anything the user does not want changed.
@@ -87,6 +86,30 @@ Keep the original subject's face exactly the same throughout the edit. Do not ch
 ```text
 Recreate this scene from a [new camera angle]. Keep [subject], action, outfit, and important details consistent. Adjust lighting, shadows, and background perspective to match the new angle.
 ```
+
+## 20-second reel templates
+
+Use these when preparing a short vertical reel. Keep the edit focused on one transformation and preserve the source performance.
+
+### Talking-head hook
+
+```text
+Turn this clip into a 20-second vertical social reel. Keep the speaker's face, voice, words, lip movement, expression, clothing, and body movement unchanged. Reframe to 9:16, keep the speaker centered, add readable captions that match the spoken words, and use subtle punch-ins only at natural emphasis points. Preserve the original audio. Do not invent or rewrite any words. Keep everything else the same.
+```
+
+### Product demonstration
+
+```text
+Turn this product demonstration into a 20-second vertical social reel. Keep the product shape, color, logo, text, proportions, and demonstrated action unchanged. Reframe to 9:16 without cropping important details, tighten pauses while preserving the original sequence, and add captions using only words spoken or visibly shown in the source. Preserve the original audio. Do not invent claims or features. Keep everything else the same.
+```
+
+### B-roll montage
+
+```text
+Create a 20-second vertical reel from this footage using the strongest moments in their original order. Keep the subject, locations, colors, movement, and visual meaning unchanged. Use clean cuts, preserve natural motion, and add minimal captions only when supplied with the edit request. Preserve the original audio unless instructed otherwise. Do not create new scenes or alter the subject's identity. Keep everything else the same.
+```
+
+For every reel, state the target aspect ratio, whether captions are allowed, and whether original audio must remain. Avoid asking Gemini to “make it viral” without concrete visual instructions.
 
 ## Quality rules
 
