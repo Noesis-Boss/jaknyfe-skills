@@ -13,7 +13,7 @@ The default development dashboard is available at `/`. Development and tests use
 
 ## Hosted PostgreSQL
 
-Hosted mode is selected with `APP_ENV=production` and requires `DATABASE_URL`. `openProductionDatabase()` creates a Bun PostgreSQL pool and runs the idempotent startup migration in `db/migrations/postgres/001_initial.sql` inside a transaction. Development and tests continue to use the explicit SQLite adapter from `openDatabase()`. The HTTP server opens PostgreSQL before accepting production traffic, and the durable worker uses the same PostgreSQL queue and send processor.
+PostgreSQL mode is selected when `DATABASE_URL` is set. Production additionally requires `APP_ENV=production` and the other production secrets. `openProductionDatabase()` creates a Bun PostgreSQL pool and runs the idempotent startup migration in `db/migrations/postgres/001_initial.sql` inside a transaction. SQLite remains the fallback when no database URL is configured. The HTTP server and durable worker use the same PostgreSQL queue and send processor.
 
 Operational commands:
 
@@ -22,6 +22,13 @@ APP_ENV=production DATABASE_URL="$DATABASE_URL" bun run src/server.ts
 pg_dump --format=custom --file=saas-mailer.dump "$DATABASE_URL"
 pg_restore --clean --if-exists --dbname="$DATABASE_URL" saas-mailer.dump
 ```
+
+For a timestamped local backup, run `DATABASE_URL=... bun run backup:postgres`. Set `BACKUP_DIR` to change the output directory and `BACKUP_RETENTION_DAYS` to change the default 14-day retention. The command writes custom-format dumps and never prints the connection string. The managed `saas-mailer-backup` process runs this command every 24 hours.
+
+Validate a dump without changing any database with `bun run validate:backup -- backups/saas-mailer-YYYYMMDDTHHMMSSZ.dump`. To validate loading into an already-created disposable database, add its name as the second argument; the check filters only PostgreSQL 18 metadata unsupported by the local PostgreSQL 15 server.
+
+The managed `saas-mailer-restore-validation` process runs the disposable restore check every 24 hours and removes its temporary database after each run. It uses the configured `DATABASE_URL` for database creation and restore connections.
+Validation failures are emailed to `RESTORE_VALIDATION_ALERT_TO` (default `delowery@gmail.com`); set `RESTORE_VALIDATION_ALERT_FROM` to change the sender address.
 
 Use a pool-sized PostgreSQL connection string supplied by the hosting provider. Take a backup before migrations; startup migration failure rolls back the transaction and prevents a partially applied schema.
 
@@ -41,7 +48,7 @@ The PostgreSQL adapter uses Bun's pooled `SQL` client. Keep pool sizing in the d
 
 ## Configuration
 
-Local development defaults to `APP_ENV=development` and the deterministic mock adapter. Copy `.env.example` to `.env` only when local overrides are needed. Production requires `DATABASE_URL`, `SESSION_SECRET`, `CREDENTIAL_ENCRYPTION_KEY` (a hex or base64 value encoding 32 bytes), `RESEND_API_KEY`, and `OAUTH_CALLBACK_ORIGIN`; provider OAuth credentials and worker limits are parsed by `loadConfig()` at startup. Resend sending accounts use the verified `mailer@noesisgroup.com` identity and store no provider secret per account. Configuration errors identify variable names only and never secret values.
+Local development defaults to `APP_ENV=development` with PostgreSQL when `DATABASE_URL` is set; `.env.example` contains the shared local database URL. Without it, development uses the deterministic mock adapter with SQLite. Production requires `DATABASE_URL`, `SESSION_SECRET`, `CREDENTIAL_ENCRYPTION_KEY` (a hex or base64 value encoding 32 bytes), `RESEND_API_KEY`, and `OAUTH_CALLBACK_ORIGIN`; provider OAuth credentials and worker limits are parsed by `loadConfig()` at startup. Resend sending accounts use the verified `mailer@noesisgroup.com` identity and store no provider secret per account. Configuration errors identify variable names only and never secret values.
 
 ## MVP boundaries
 

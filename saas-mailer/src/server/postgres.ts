@@ -45,5 +45,6 @@ export async function openProductionDatabase(databaseUrl = process.env.DATABASE_
   if (!databaseUrl) throw new Error("Missing required configuration: DATABASE_URL");
   const database = createPostgresDatabase(databaseUrl);
   await database.migrate();
+  await database.query<{ ok: number }>("SELECT 1 AS ok");
   return database;
 }

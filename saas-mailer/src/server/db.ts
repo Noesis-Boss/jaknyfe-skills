@@ -12,7 +12,7 @@ export function openDatabase(filename = process.env.DATABASE_PATH || ":memory:")
 }
 
 export function hostedMode(env: NodeJS.ProcessEnv = process.env): boolean {
-  return env.APP_ENV === "production";
+  return env.APP_ENV === "production" || Boolean(env.DATABASE_URL?.trim());
 }
 
 export async function openConfiguredDatabase(env: NodeJS.ProcessEnv = process.env): Promise<Database | PostgresDatabase> {

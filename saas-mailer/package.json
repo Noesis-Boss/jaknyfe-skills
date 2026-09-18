@@ -6,6 +6,8 @@
     "dev": "bun run --hot src/server.ts",
     "start": "bun run src/server.ts",
     "start:worker": "bun run src/worker/main.ts",
+    "backup:postgres": "bash scripts/backup-postgres.sh",
+    "validate:backup": "bash scripts/validate-backup.sh",
     "test": "bun test"
   },
   "dependencies": {

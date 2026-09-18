@@ -85,7 +85,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
 
   return {
     appEnv,
-    database: production ? "postgres" : "sqlite",
+    database: production || Boolean(databaseUrl) ? "postgres" : "sqlite",
     databaseUrl,
     sessionSecret,
     credentialEncryptionKey,

@@ -1,5 +1,18 @@
 # SaaS-Mailer
 
+- 2026-09-18: Restore validation now emails `RESTORE_VALIDATION_ALERT_TO` (default `delowery@gmail.com`) on missing backups or failed disposable restores; successful checks remain log-only.
+
+- 2026-09-17: Hardened PostgreSQL backups against zero-byte replacement by writing to a temporary file, requiring non-zero size, then atomically renaming. Added managed `saas-mailer-restore-validation` service (`svc_RYbyiWEHQaA`) for daily disposable restore checks; live log recorded a successful restore and cleanup.
+
+- 2026-09-17: Added managed nightly PostgreSQL backups via `scripts/backup-loop.sh`; backups default to 14-day retention and support `BACKUP_RETENTION_DAYS`. Service registration and one manual backup verification completed.
+- 2026-09-17: Added `bun run validate:backup` catalog validation and a daily alert automation that emails only when the latest backup is missing or older than 26 hours. Full restore remains pending explicit approval because it changes database state.
+
+- 2026-09-17: Added an explicit PostgreSQL startup connectivity check (`SELECT 1`) after migrations and a timestamped `bun run backup:postgres` routine using `pg_dump` with optional `BACKUP_DIR`. Verification: PostgreSQL startup, backup creation, and full test suite pass.
+
+- 2026-09-16: Rewired database selection to use PostgreSQL whenever `DATABASE_URL` is set, including development. The local example points to the isolated `saas_mailer` database at `localhost:5432`; SQLite remains the fallback when no URL is configured. PostgreSQL contract tests pass (2/2), and the default SQLite suite passes (75/75, 1 skipped).
+
+- 2026-09-10: Created the production Resend sending account for the Noesis workspace: provider `resend`, sender `mailer@noesisgroup.com`, active, with no per-account credential. Restarted the SaaS-Mailer HTTP service and worker; live endpoint returns HTTP 200 and the database confirms the account.
+
 - 2026-09-10: Added a Resend sending adapter using `RESEND_API_KEY`; production accepts `resend` accounts and sends through `https://api.resend.com/emails` from the verified `mailer@noesisgroup.com` identity. Adapter tests and the full suite pass; production requires the secret in Zo environment settings.
 
 - 2026-08-20: Added production `start` and `start:worker` scripts, changed the Site entrypoint from hot development mode to `bun run start`, wired worker polling/batch settings through `loadConfig()`, and removed SMTP from the production adapter list. Registered private managed service `saas-mailer-worker` (`svc_eZzzmcvdlKk`); it is currently in BACKOFF because Zo secrets do not yet include a valid 32-byte `CREDENTIAL_ENCRYPTION_KEY`.
@@ -31,6 +44,8 @@ Run `bun test` for the full suite. The dashboard must also be screenshot-verifie
 - 2026-09-05: Completed the scheduled-sends batch (commit `f7ede7f3`, local-only pending leak purge — see Issue Log): `POST /api/campaigns/:id/schedule` queues idempotent future messages (`{campaign_type}:{id}:{contactId}` keys, `next_attempt_at`) for enrolled contacts and rejects unapproved/duplicate scheduling (SQLite + Postgres); migrations 008–010 now auto-apply in `migrate()` (this was the scheduled-send test's 400/missing-column root cause); deduped the triple `tenantSendsPerMinute` in `src/worker/main.ts`; config/sending tests now strip host-secret env vars so the suite is environment-independent. Suite: 74 pass / 0 fail / 1 skip. Site republished; live sign-in page screenshot-verified.
 
 ## Issue Log
+- 2026-09-17: Repaired the PostgreSQL managed service entrypoint from a keepalive-only process to `pg_ctlcluster 15 main start` followed by a resident process. Verified cluster 15/main stays online after service restart. Extended `validate-backup.sh` with an optional restore-database argument; it performs catalog validation plus compatibility SQL restore, filtering only PostgreSQL 18 `transaction_timeout` and `neon_superuser` metadata. Verified a disposable restore with 15 public tables, then removed the database.
+- 2026-09-17: Approved disposable restore smoke test completed. The newest backup was initially 0 bytes because PostgreSQL was down behind the keepalive-only managed service; after starting the local PostgreSQL 15 cluster, a fresh 71 KB dump was created. Direct binary restore exposed PostgreSQL 18-to-15 incompatibilities (`transaction_timeout` and source role `neon_superuser`); compatibility SQL restore removed only those unsupported metadata statements, then loaded successfully into a disposable database. Verified 35 public tables, migration `001_initial`, and 12 organizations; disposable database was removed.
 - 2026-09-05: Push of commit `f7ede7f3` to `Noesis-Boss/jaknyfe-skills` (master) is blocked by the gitleaks pre-push hook. All findings (30) are pre-existing history leaks from the 2026-09-05 audit (caa8e637 etc.); the new commit's diff is secret-free (verified). Per the never-push-keys rule I did not bypass — blocked until the pending history purge (git filter-repo + force push) is approved.
 
 
