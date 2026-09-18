@@ -1,0 +1,25 @@
+name: agent-builder
+description: Build a scoped AI agent specification and implementation plan.
+interface:
+  inputs:
+    - name: job
+      type: string
+      required: true
+    - name: users
+      type: string
+      required: true
+    - name: constraints
+      type: string
+      required: false
+  outputs:
+    - name: specification
+      type: markdown
+      required: true
+    - name: implementation_plan
+      type: markdown
+      required: true
+  behavior:
+    - Define success criteria and boundaries before implementation.
+    - Choose the smallest sufficient model, tool set, memory, orchestration, and interface.
+    - Surface assumptions and require approval for consequential external actions.
+    - Include evaluation scenarios and a concrete definition of done.

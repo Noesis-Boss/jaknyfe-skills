@@ -7,6 +7,10 @@ metadata:
 
 # Agent Builder
 
+## Usage
+
+Use this skill before implementing a new agent or making a material redesign. Complete the eight stages in order, mark unnecessary stages as intentionally unused, and produce the required compact specification before implementation.
+
 Build the smallest agent that can reliably complete the stated job. Treat the eight stages below as a design checklist, not a reason to add components the use case does not need.
 
 ## 1. Define purpose and scope
