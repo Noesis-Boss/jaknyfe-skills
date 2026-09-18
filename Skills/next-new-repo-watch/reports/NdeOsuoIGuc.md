@@ -73,3 +73,4 @@ The transcript could not be retrieved because YouTube blocked the server IP. The
 - **Functionality**: Python library for retrieving YouTube captions, including automatically generated subtitles, without an API key or browser automation. It is the dependency used by this watch skill to fetch video transcripts.
 - **Signals**: 8,319 stars; Python; MIT; last push 2026-09-10; not archived.
 - **Recommendation**: **INCLUDE** — keep it as the transcript dependency for `Skills/next-new-repo-watch/`; it is already the correct fit for the existing Python scan pipeline. The current run installed it successfully, but YouTube still blocked this server IP, so transcript fetches need a proxy or another retrieval fallback.
+Recommendation: INCLUDE

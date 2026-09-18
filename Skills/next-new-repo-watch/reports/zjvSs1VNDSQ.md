@@ -33,6 +33,7 @@ Your own private Google photos running on your server? Image is a self-hosted ph
 **immich-app/immich** — Self-hosted Google Photos / Apple Photos replacement: mobile apps auto-backup photos and videos to your own server, with ML face/object search, albums, sharing, and a web timeline. Ships as a Docker Compose stack (server + Postgres + Redis + ML container), not a library.
 - **Signals**: 113,507★ · TypeScript · AGPL-3.0 · pushed 2026-09-06 (same day) · not archived · very active.
 - **Recommendation**: TRIAL — mature and active, and it matches Don's self-hosting/privacy direction plus photo-heavy media work (memorial slideshows, video stills, book covers), but it is a standalone server product: no integration point for the Bun/TS + Python stack, Zo automations, trading bot, or zo.space routes, and its Docker+Postgres+ML stack is too heavy for the Zo sandbox. Worth trialing on dedicated hardware (home server/NAS), not in this environment.
+Recommendation: TRIAL
 - Video verdict: single-repo feature short; no other evaluable repos presented.
 
 ## Eval

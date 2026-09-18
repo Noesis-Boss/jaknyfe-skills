@@ -31,3 +31,5 @@ Here's the agent that everyone on X has been talking about. Look at this website
 ## Eval
 
 No GitHub repository was presented or identifiable for Instinct. The transcript discusses a private agent product with email, messaging, calling, and connector access, but provides no repository name or public GitHub URL.
+
+**Recommendation:** N/A-repo — no repository to install or adapt; the privacy and retention concerns also make an unverified hosted agent unsuitable for workspace credentials.

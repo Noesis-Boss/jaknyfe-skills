@@ -62,3 +62,4 @@ There's a secret way to get free LLM access for building with Claude code, for h
 - **Functionality**: Free LLM API presents multiple provider credentials and compatible model endpoints behind one OpenAI-compatible `/v1` API. It adds provider failover and smart routing, including reliability, speed, and intelligence preferences; the repository explicitly frames it for personal experimentation.
 - **Signals**: 26,332 stars; TypeScript; MIT license; last push 2026-09-15; not archived. GitHub description reports 34 free providers and 635 model endpoints.
 - **Recommendation**: **TRIAL** — sandbox it as an optional provider adapter for Zo automation experiments and the publishing pipeline, testing key isolation, failover behavior, model consistency, rate limits, and provider terms. Keep production traffic and secrets on approved paid/API providers; rough effort: 2–4 hours for an isolated Bun smoke test.
+Recommendation: TRIAL

@@ -30,3 +30,5 @@ I created an outbound cold email agent for my franchisees. I have a lead scraper
 ## Eval
 
 No GitHub repository was presented or identifiable for Hyper Agent. The transcript shows a hosted agent-builder product and gives a download link in the bio, but no repository name or public GitHub URL.
+
+**Recommendation:** N/A-repo — no repository to install or adapt into Zo automations or the publishing pipeline.

@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-17.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-18.
 
-**Totals**: 7 INCLUDE · 44 TRIAL · 52 SKIP · 4 pending eval
+**Totals**: 8 INCLUDE · 45 TRIAL · 53 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -10,6 +10,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-17.
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **[EfficientStreet/hindsight](https://github.com/EfficientStreet/hindsight)** — Self-improvement skill for AI coding assistants: reviews a session end-to-end and saves only the durable process lessons as persistent memor
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
+- **jdepoix/youtube-transcript-api** — Recommendation: INCLUDE
+  - Report: `reports/NdeOsuoIGuc.md` · Video: https://youtu.be/NdeOsuoIGuc · *Have Astra do this right now*
 - **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
   - Report: `reports/QZXeiuLBlTk.md` · Video: https://youtu.be/QZXeiuLBlTk · *This Tool Feeds All Your Business Data to One AI Agent*
 - **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent 
@@ -25,6 +27,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-17.
 
 - **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Open-source LLM router that aggregates ~34 free provider tiers (635 free model endpoints, 7.4B tokens/month claimed) behind a single OpenAI-
   - Report: `reports/7cimtg6LPHg.md` · Video: https://youtu.be/7cimtg6LPHg · *34 Free AI Models You Can Rotate Between*
+- **tashfeenahmed/freellmapi** — Recommendation: TRIAL
+  - Report: `reports/ANJTdT0Ggrw.md` · Video: https://youtu.be/ANJTdT0Ggrw · *Free LLM - for building, agents, images, etc.*
 - **[every-app/open-seo](https://github.com/every-app/open-seo)** — Open-source alternative to Semrush/Ahrefs for SEO auditing and research, built in TypeScript.
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **[google-research/timesfm](https://github.com/google-research/timesfm)** — Google's pretrained time-series foundation model for forecasting, available as a Python package with checkpointed inference.
@@ -136,6 +140,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-17.
 - [vercel/next.js](https://github.com/vercel/next.js) — `reports/F-_q6VIHMS8.md`
 - [GoogleChrome/lighthouse](https://github.com/GoogleChrome/lighthouse) — `reports/F-_q6VIHMS8.md`
 - [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) — `reports/Jv050l7y6ik.md`
+- X1 (x1.new) — `reports/M7cvI4155_E.md`
 - diffusionstudio/core — `reports/MaTkyO-8hZ0.md`
 - OpenClaw 2.0 — `reports/MaTkyO-8hZ0.md`
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/TWCSvvTfJNU.md`
@@ -166,10 +171,3 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-17.
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`
 - Outbid.lol — `reports/qr7Zwjx-nWU.md`
 - Piano Autocomplete (Simon Edwardsson / simedw) — `reports/twVd1dyPlz8.md`
-
-## Pending eval
-
-- `reports/ANJTdT0Ggrw.md` — Free LLM - for building, agents, images, etc. (1 unevaled)
-- `reports/M7cvI4155_E.md` — The easiest way to launch your own iPhone app #startup #ai #ios (1 unevaled)
-- `reports/NdeOsuoIGuc.md` — Have Astra do this right now (1 unevaled)
-- `reports/pkwnJcETgfE.md` — Amazing: FREE AI Agent from Meta (1 unevaled)

@@ -100,6 +100,8 @@ Signals: 8,337 stars; Python; MIT; last push 2026-09-10; active and not archived
 
 - Recommendation: **SKIP** — it is already the implementation dependency of `Skills/next-new-repo-watch`, and this run confirmed its operational weakness in this environment: YouTube blocked the transcript request.
 
-### Named products without a confirmed repository
+### N/A-repo — named products without a confirmed repository
 
-Muse (`muse.ai`), Tailscale (`tailscale.com`), and the Muse product itself were named as products or services, but no GitHub repository was identified from the available description. They remain pending transcript verification rather than receiving invented repo verdicts.
+Muse (`muse.ai`) and Tailscale (`tailscale.com`) were named as products or services, but no GitHub repository was identified from the available description.
+
+**Recommendation:** N/A-repo — no repository to install or adapt; do not invent a repository identity from a hosted product name.
