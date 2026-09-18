@@ -6,15 +6,26 @@ backup_dir="${BACKUP_DIR:-/home/workspace/saas-mailer/backups}"
 interval="${RESTORE_VALIDATION_INTERVAL_SECONDS:-86400}"
 alert_to="${RESTORE_VALIDATION_ALERT_TO:-delowery@gmail.com}"
 alert_from="${RESTORE_VALIDATION_ALERT_FROM:-saas-mailer@localhost}"
+alert_state_file="${RESTORE_VALIDATION_ALERT_STATE:-$backup_dir/.restore-validation-alert-state}"
+
+clear_alert_state() {
+  rm -f "$alert_state_file"
+}
 
 alert_failure() {
   local reason="$1"
   local subject="SaaS-Mailer restore validation failed"
+  if [[ -f "$alert_state_file" ]] && [[ "$(cat "$alert_state_file")" == "$reason" ]]; then
+    printf '%s restore alert suppressed: unchanged failure\n' "$(date -u '+%Y-%m-%d %H:%M:%S')" >> "$log_file"
+    return 0
+  fi
   if ! printf 'Restore validation failed at %s UTC.\n\n%s\n\nLog: %s\n' \
     "$(date -u '+%Y-%m-%d %H:%M:%S')" "$reason" "$log_file" |
     mail -r "$alert_from" -s "$subject" "$alert_to" >> "$log_file" 2>&1; then
     printf '%s restore alert failed\n' "$(date -u '+%Y-%m-%d %H:%M:%S')" >> "$log_file"
+    return 0
   fi
+  printf '%s' "$reason" > "$alert_state_file"
 }
 
 while true; do
@@ -30,6 +41,7 @@ while true; do
     if psql --dbname="$admin_database" -v ON_ERROR_STOP=1 -c "CREATE DATABASE \"$disposable_db\"" >> "$log_file" 2>&1 && \
       bun run validate:backup -- "$latest" "$disposable_db" >> "$log_file" 2>&1; then
       printf '%s restore validation passed: %s\n' "$(date -u '+%Y-%m-%d %H:%M:%S')" "$latest" >> "$log_file"
+      clear_alert_state
     else
       reason="validation failed for $latest"
       printf '%s restore validation failed: %s\n' "$(date -u '+%Y-%m-%d %H:%M:%S')" "$latest" >> "$log_file"

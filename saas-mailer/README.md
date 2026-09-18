@@ -28,7 +28,7 @@ For a timestamped local backup, run `DATABASE_URL=... bun run backup:postgres`. 
 Validate a dump without changing any database with `bun run validate:backup -- backups/saas-mailer-YYYYMMDDTHHMMSSZ.dump`. To validate loading into an already-created disposable database, add its name as the second argument; the check filters only PostgreSQL 18 metadata unsupported by the local PostgreSQL 15 server.
 
 The managed `saas-mailer-restore-validation` process runs the disposable restore check every 24 hours and removes its temporary database after each run. It uses the configured `DATABASE_URL` for database creation and restore connections.
-Validation failures are emailed to `RESTORE_VALIDATION_ALERT_TO` (default `delowery@gmail.com`); set `RESTORE_VALIDATION_ALERT_FROM` to change the sender address.
+Validation failures are emailed to `RESTORE_VALIDATION_ALERT_TO` (default `delowery@gmail.com`); set `RESTORE_VALIDATION_ALERT_FROM` to change the sender address. Repeated identical failures are deduplicated until a validation succeeds; set `RESTORE_VALIDATION_ALERT_STATE` to relocate the state file.
 
 Use a pool-sized PostgreSQL connection string supplied by the hosting provider. Take a backup before migrations; startup migration failure rolls back the transaction and prevents a partially applied schema.
 

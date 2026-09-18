@@ -1,6 +1,6 @@
 # SaaS-Mailer
 
-- 2026-09-18: Restore validation now emails `RESTORE_VALIDATION_ALERT_TO` (default `delowery@gmail.com`) on missing backups or failed disposable restores; successful checks remain log-only.
+- 2026-09-18: Restore validation now emails `RESTORE_VALIDATION_ALERT_TO` (default `delowery@gmail.com`) on missing backups or failed disposable restores; repeated identical failures are deduplicated until a check succeeds.
 
 - 2026-09-17: Hardened PostgreSQL backups against zero-byte replacement by writing to a temporary file, requiring non-zero size, then atomically renaming. Added managed `saas-mailer-restore-validation` service (`svc_RYbyiWEHQaA`) for daily disposable restore checks; live log recorded a successful restore and cleanup.
 
