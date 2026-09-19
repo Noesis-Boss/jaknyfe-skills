@@ -1,0 +1,25 @@
+name: Zo project template
+
+on:
+  push:
+    paths:
+      - "Skills/zo-project-template/**"
+      - ".github/workflows/zo-project-template.yml"
+  pull_request:
+    paths:
+      - "Skills/zo-project-template/**"
+      - ".github/workflows/zo-project-template.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Python scripts
+        run: python3 -m compileall -q Skills/zo-project-template/scripts
+      - name: Smoke test scaffold and hook installer
+        run: |
+          project=$(mktemp -d)/demo
+          python3 Skills/zo-project-template/scripts/scaffold_project.py "$project" --name Demo --frontend
+          python3 Skills/zo-project-template/scripts/install_hooks.py "$project"
+          python3 Skills/zo-project-template/scripts/validate_project.py "$project" --frontend
