@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-18.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-19.
 
-**Totals**: 8 INCLUDE · 45 TRIAL · 53 SKIP · 0 pending eval
+**Totals**: 8 INCLUDE · 51 TRIAL · 62 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -25,6 +25,18 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-18.
 
 ## TRIAL
 
+- **alibaba/open-code-review** — Functionality: Go code-review service combining deterministic checks with an LLM agent, line-level findings, and HTML reports for security a
+  - Report: `reports/1fHsIveXRa8.md` · Video: https://youtu.be/1fHsIveXRa8 · *Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.*
+- **affaan-m/ECC** — Functionality: Large collection of agent workflows covering planning, TDD, security, research, memory, and review.
+  - Report: `reports/1fHsIveXRa8.md` · Video: https://youtu.be/1fHsIveXRa8 · *Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.*
+- **mksglu/context-mode** — Functionality: TypeScript/MCP tooling that sandboxes noisy tool work, compresses results, and preserves useful agent context.
+  - Report: `reports/1fHsIveXRa8.md` · Video: https://youtu.be/1fHsIveXRa8 · *Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.*
+- **Tencent/WeKnora** — Functionality: Go knowledge platform for document ingestion, searchable RAG, autonomous reasoning, and a maintained wiki/knowledge graph.
+  - Report: `reports/1fHsIveXRa8.md` · Video: https://youtu.be/1fHsIveXRa8 · *Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.*
+- **max-sixty/worktrunk** — Functionality: Rust CLI simplifying Git worktree creation, listing, merging, and removal for parallel agent work.
+  - Report: `reports/1fHsIveXRa8.md` · Video: https://youtu.be/1fHsIveXRa8 · *Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.*
+- **trainingsites/campus-ai-os** — Functionality: Python folder-based AI staff system with persistent business memory and a chief-of-staff pattern for Claude or Codex.
+  - Report: `reports/1fHsIveXRa8.md` · Video: https://youtu.be/1fHsIveXRa8 · *Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.*
 - **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Open-source LLM router that aggregates ~34 free provider tiers (635 free model endpoints, 7.4B tokens/month claimed) behind a single OpenAI-
   - Report: `reports/7cimtg6LPHg.md` · Video: https://youtu.be/7cimtg6LPHg · *34 Free AI Models You Can Rotate Between*
 - **tashfeenahmed/freellmapi** — Recommendation: TRIAL
@@ -122,6 +134,15 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-18.
 - [pollen-robotics/microduck](https://github.com/pollen-robotics/microduck) — `reports/0CexicXSXW0.md`
 - [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl) — `reports/0CexicXSXW0.md`
 - [AppGram/agentnotch](https://github.com/AppGram/agentnotch) — `reports/1JTyPNeD9dk.md`
+- ayghri/i-have-adhd — `reports/1fHsIveXRa8.md`
+- bilawalsidhu/gods-eye-view — `reports/1fHsIveXRa8.md`
+- openai/plugins — `reports/1fHsIveXRa8.md`
+- addyosmani/agent-skills — `reports/1fHsIveXRa8.md`
+- anthropics/claude-code — `reports/1fHsIveXRa8.md`
+- SuperLogicAI/Logic-Loop — `reports/1fHsIveXRa8.md`
+- JonImmsWordpressDev/claude-dashboard — `reports/1fHsIveXRa8.md`
+- Codpal-Limited/deckgauge — `reports/1fHsIveXRa8.md`
+- CaptainASIC/reckoner — `reports/1fHsIveXRa8.md`
 - [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — `reports/AWzzmrCPe-A.md`
 - [THU-MAIC/OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) — `reports/AWzzmrCPe-A.md`
 - [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines) — `reports/AWzzmrCPe-A.md`
