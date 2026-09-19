@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import subprocess
 from pathlib import Path
 
 
@@ -24,6 +25,10 @@ def main() -> int:
     write_if_missing(root / ".env.example", "# Copy to .env and fill locally. Never commit secrets.\n")
     if args.frontend:
         write_if_missing(root / "DESIGN.md", "# Design System\n\nDefine colors, typography, spacing, shape, and interaction rules here.\n")
+    if not (root / ".git").exists():
+        subprocess.run(["git", "init", str(root)], check=True, stdout=subprocess.DEVNULL)
+    validator = Path(__file__).with_name("validate_project.py")
+    subprocess.run(["python3", str(validator), str(root), *( ["--frontend"] if args.frontend else [] )], check=True)
     print(root)
     return 0
 

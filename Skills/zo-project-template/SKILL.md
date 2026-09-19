@@ -12,10 +12,10 @@ Use this skill when starting a new project or checking whether an existing proje
 ## Workflow
 
 1. Choose an isolated project directory under `/home/workspace`.
-2. Run `scripts/scaffold_project.py <path> --name "Project Name"` before substantive implementation.
+2. Run `scripts/scaffold_project.py <path> --name "Project Name"` before substantive implementation. The scaffold initializes the isolated Git repository and validates it immediately.
 3. Review the generated `README.md`, `AGENTS.md`, and `SOUL.md`; add `DESIGN.md` for frontend work.
 4. Run `scripts/validate_project.py <path>` before the first commit and after structural changes.
-5. Initialize the project as its own Git repository if `.git` is absent.
+5. Keep the generated repository isolated; do not add it to another repository.
 
 For a batch check, run `scripts/validate_projects.py <path>...`; add `--frontend` when every supplied project is a frontend project.
 
