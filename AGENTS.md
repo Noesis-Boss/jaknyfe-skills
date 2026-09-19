@@ -7,6 +7,7 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 ## New project convention
 
 - Every new project must be initialized as its own Git repository before substantive implementation begins. Keep repositories isolated; do not add a new project to an unrelated existing repository.
+- Scaffold and validate new projects with `Skills/zo-project-template/`; frontend projects also require `DESIGN.md`.
 
 - **Syndicate** (`Projects/syndicate/`, dev at `http://localhost:57548`) — Existing multi-tenant SaaS agent-orchestration platform kept for reference and explicitly requested maintenance. It is not a default project focus. See `Projects/syndicate/AGENTS.md` for schema, API, and working features when this project is directly requested.
 - **zo.space homepage** (`https://jaknyfe.zo.space/`) — single-page hub. Live stock/crypto tickers (SPCX, BTC, DOGE) at top, animated pegasus flying across the page, UFO visits with beam + laser every ~26s, randomly-pulsing "card ripple" shimmer on project cards, particle field, animated rings + sun behind the profile photo, 11 project cards + Web Showcase modal. Source lives in the `/` route on `jaknyfe.zo.space` (Next.js bundle). Quote data is proxied through `/api/quote` (caches Yahoo Finance for 60s).
