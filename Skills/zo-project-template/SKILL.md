@@ -17,6 +17,8 @@ Use this skill when starting a new project or checking whether an existing proje
 4. Run `scripts/validate_project.py <path>` before the first commit and after structural changes.
 5. Initialize the project as its own Git repository if `.git` is absent.
 
+For a batch check, run `scripts/validate_projects.py <path>...`; add `--frontend` when every supplied project is a frontend project.
+
 The scaffold creates only the reusable structure. It does not create application code or install dependencies. Existing projects should be validated in place; do not move or rewrite files to satisfy the convention without explicit scope.
 
 ## Required structure
