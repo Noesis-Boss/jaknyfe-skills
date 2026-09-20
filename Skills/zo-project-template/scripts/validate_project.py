@@ -5,6 +5,7 @@ from pathlib import Path
 
 
 REQUIRED = ("README.md", "AGENTS.md", "SOUL.md", "src", "tests", "scripts", "docs", ".env.example", ".git")
+SUPPORTED_HARNESSES = {"zo", "codex", "claude-code", "cursor", "gemini", "opencode"}
 
 
 def validate_manifest(root: Path) -> list[str]:
@@ -20,6 +21,13 @@ def validate_manifest(root: Path) -> list[str]:
         errors.append("project.manifest.json: version must be 1")
     if not isinstance(data.get("capabilities"), list) or not data["capabilities"]:
         errors.append("project.manifest.json: capabilities must be a non-empty list")
+    harnesses = data.get("harnesses", [])
+    if not isinstance(harnesses, list):
+        errors.append("project.manifest.json: harnesses must be a list")
+    else:
+        for harness in harnesses:
+            if not isinstance(harness, str) or harness not in SUPPORTED_HARNESSES:
+                errors.append(f"project.manifest.json: unsupported harness {harness!r}")
     for index, capability in enumerate(data.get("capabilities", [])):
         if not isinstance(capability, dict):
             errors.append(f"project.manifest.json: capability {index} must be an object")
