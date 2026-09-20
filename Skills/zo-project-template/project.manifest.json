@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "capabilities": [
+    {
+      "id": "example-capability",
+      "description": "Replace with a concrete capability this project provides.",
+      "entrypoints": ["src/"],
+      "checks": ["tests/"]
+    }
+  ]
+}
