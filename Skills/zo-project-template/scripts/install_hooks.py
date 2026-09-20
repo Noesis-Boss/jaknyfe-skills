@@ -14,8 +14,12 @@ python3 {validator} "$project_root"
 def main() -> int:
     parser = argparse.ArgumentParser(description="Install the Zo project structure pre-commit hook.")
     parser.add_argument("path", type=Path)
+    parser.add_argument("--check", action="store_true", help="Verify the existing hook installation without changing files")
     args = parser.parse_args()
     root = args.path.resolve()
+    if args.check:
+        verifier = Path(__file__).with_name("verify_install.py")
+        return subprocess.run(["python3", str(verifier), str(root)], check=False).returncode
     subprocess.run(["git", "-C", str(root), "rev-parse", "--show-toplevel"], check=True, stdout=subprocess.DEVNULL)
     hooks = root / ".githooks"
     hooks.mkdir(exist_ok=True)

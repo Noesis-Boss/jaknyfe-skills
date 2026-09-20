@@ -51,6 +51,7 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 ## Feature Log
 - 2026-09-20: Extended `Skills/zo-project-template/` scaffolding with repeatable `--publish ID:TYPE:PATH` options that generate validated publish manifest entries; functional checks, compilation, and Gitleaks passed; pushed as `cac549a9`.
 - 2026-09-20: Added `Skills/zo-project-template/scripts/verify_artifacts.py` and wired it into the release gate; declared publish surfaces must exist and be non-empty.
+- 2026-09-20: Added `Skills/zo-project-template/scripts/verify_install.py` and `install_hooks.py --check` to verify executable hook installation and Git hook configuration.
 - 2026-09-20: Extracted ECC publish-surface validation into `Skills/zo-project-template/`: optional manifest `publish` entries now validate IDs, supported types, and declared paths; release gate checks publish paths. Functional checks and Gitleaks passed; pushed as `43162106`.
 - 2026-09-20: Added 4 extraction regression cases for `Skills/humanizer/fixtures/` covering hidden HTML, ARIA-hidden HTML, Markdown link targets, and fenced code preservation; runner now validates 4 detector cases plus 4 extraction cases. Gitleaks passed; pushed as b072fb30.
 - 2026-09-20: Expanded `Skills/humanizer/fixtures/run_fixtures.py` with HTML/Markdown visible-copy extraction and file-mode input; fixture, extraction, compile, and Gitleaks checks passed.
