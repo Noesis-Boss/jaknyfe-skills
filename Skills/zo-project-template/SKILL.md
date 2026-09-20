@@ -18,6 +18,7 @@ Use this skill when starting a new project or checking whether an existing proje
 5. Run `scripts/validate_project.py <path>` before the first commit and after structural changes.
 6. Keep the generated repository isolated; do not add it to another repository.
 7. Install the tracked pre-commit hook with `scripts/install_hooks.py <path>`.
+8. Run `scripts/release_gate.py <path>` before declaring a project release-ready. It requires a valid structure, valid manifest paths when present, and a clean Git worktree. Use `--allow-dirty` only for local pre-commit checks.
 
 For a batch check, run `scripts/validate_projects.py <path>...`; add `--frontend` when every supplied project is a frontend project.
 
