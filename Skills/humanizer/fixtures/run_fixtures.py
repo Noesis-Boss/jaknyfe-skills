@@ -10,6 +10,7 @@ RULES = {
     "binary contrast": re.compile(r"\b(?:is|was|are|were)\s+not\b[^.?!]*[.!?]\s*\b(?:it|that|this)\s+(?:is|was|are|were)\b", re.I),
     "faux-insight setup": re.compile(r"\b(?:what nobody tells you|the part everyone misses|what most people get wrong)\b", re.I),
     "vague attribution": re.compile(r"\b(?:industry experts|observers|some critics|studies|research)\s+(?:believe|have noted|argue|show|suggest)\b", re.I),
+    "fabricated personal authority": re.compile(r"\bI\s+(?:personally\s+)?(?:built|led|managed|tested|used)\b[^.!?]{0,120}\b(?:customers|clients|teams|companies|users)\b", re.I),
 }
 
 class VisibleHTMLParser(HTMLParser):

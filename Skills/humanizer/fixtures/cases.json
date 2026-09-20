@@ -26,5 +26,12 @@
     "failure": "Industry experts believe the market is poised for significant growth.",
     "human": "The market grew 12% through Q3, according to the company filing.",
     "expected": { "failure": "flag", "human": "clean" }
+  },
+  {
+    "id": "fabricated-personal-authority",
+    "rule": "fabricated personal authority",
+    "failure": "I personally led six companies through this transformation and tested the method with thousands of customers.",
+    "human": "I tested the import on one local database and found three missing indexes.",
+    "expected": { "failure": "flag", "human": "clean" }
   }
 ]

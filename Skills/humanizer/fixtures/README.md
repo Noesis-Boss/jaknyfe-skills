@@ -4,6 +4,8 @@ These fixtures are the baseline corpus for a future detector. Each case records 
 
 Keep fixtures short, concrete, and independent. Add a case when a detector rule or extraction behavior changes; rerun every case after changing thresholds, pattern lists, or parsing logic.
 
+The fabricated-personal-authority case is intentionally narrow. It catches explicit claims of broad personal authority while leaving ordinary first-person reporting clean; unsupported experience still requires source comparison and fact-integrity review.
+
 Run the baseline detector with `python3 Skills/humanizer/fixtures/run_fixtures.py`. Extend `RULES` when adding a detector rule, then add its matching fixture before changing thresholds.
 
 Extract visible copy from a file with `python3 Skills/humanizer/fixtures/run_fixtures.py --file path/to/page.html` or `--file path/to/post.md`. Use `--format html`, `--format markdown`, or `--format plain` to override suffix detection. HTML ignores scripts, styles, metadata, comments, and hidden elements. Markdown keeps fenced code and link destinations while removing presentation syntax.
