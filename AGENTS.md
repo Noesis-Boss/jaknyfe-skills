@@ -49,6 +49,7 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - 2026-08-20: Idea Desk boot loop traced to a malformed `/api/idea-desk` X adapter function. Replaced the parser with syntax-safe code; API returned HTTP 200 with 22 live ideas and the dashboard screenshot rendered successfully.
 
 ## Feature Log
+- 2026-09-20: Borrowed SlopMonster's strongest workflow ideas into `Skills/humanizer/SKILL.md`: regression fixtures for detector changes, visible-copy extraction for HTML/Markdown scoring, and an explicitly opt-in rival-model cleanse with confidentiality and fact-preservation gates.
 - 2026-09-20: Folded the strongest no-ai-slop controls into `Skills/humanizer/SKILL.md`: minimum effective edits, portability testing, voice-preservation checks, and explicit detect-mode reporting. Preserved the existing scoring and fact-integrity gates; committed and pushed as `63a21962`.
 - 2026-09-20: Extracted ECC's declarative install-catalog pattern into `Skills/zo-project-template/`: optional `project.manifest.json` capability declarations plus validator checks for version, capability IDs, and descriptions. Existing projects remain valid without the manifest. Commit `f50ef380`; gitleaks passed.
 - 2026-09-20: Added `.github/workflows/gitleaks.yml` to scan full repository history on every push and pull request, plus `SECURITY.md` documenting the false-positive and incident policy. Local 278-commit Gitleaks scan passed; pushed as `d922c8e4`.
