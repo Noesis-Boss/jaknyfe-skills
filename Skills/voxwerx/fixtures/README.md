@@ -1,4 +1,4 @@
-# Humanizer regression fixtures
+# Voxwerx regression fixtures
 
 These fixtures are the baseline corpus for a future detector. Each case records the expected result for one pattern and a nearby human passage that should remain clean. Extraction cases in `extraction_cases.json` verify that visible-copy preprocessing does not score hidden markup or discard useful Markdown content.
 
@@ -16,6 +16,6 @@ The AI-citation-artifact case is intentionally narrow. It catches pasted model m
 
 The unsupported-date-or-timeline case is intentionally narrow. It catches first-person history claims with an unverified year; dates tied to a named record or source remain clean.
 
-Run the baseline detector with `python3 Skills/humanizer/fixtures/run_fixtures.py`. Extend `RULES` when adding a detector rule, then add its matching fixture before changing thresholds.
+Run the baseline detector with `python3 Skills/voxwerx/fixtures/run_fixtures.py`. Extend `RULES` when adding a detector rule, then add its matching fixture before changing thresholds.
 
-Extract visible copy from a file with `python3 Skills/humanizer/fixtures/run_fixtures.py --file path/to/page.html` or `--file path/to/post.md`. Use `--format html`, `--format markdown`, or `--format plain` to override suffix detection. HTML ignores scripts, styles, metadata, comments, and hidden elements. Markdown keeps fenced code and link destinations while removing presentation syntax.
+Extract visible copy from a file with `python3 Skills/voxwerx/fixtures/run_fixtures.py --file path/to/page.html` or `--file path/to/post.md`. Use `--format html`, `--format markdown`, or `--format plain` to override suffix detection. HTML ignores scripts, styles, metadata, comments, and hidden elements. Markdown keeps fenced code and link destinations while removing presentation syntax.
