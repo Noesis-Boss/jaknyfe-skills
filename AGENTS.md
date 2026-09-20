@@ -49,6 +49,7 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - 2026-08-20: Idea Desk boot loop traced to a malformed `/api/idea-desk` X adapter function. Replaced the parser with syntax-safe code; API returned HTTP 200 with 22 live ideas and the dashboard screenshot rendered successfully.
 
 ## Feature Log
+- 2026-09-20: Added a narrow humanizer regression fixture for unsupported credentials and quantified client results, with a clean control for sourced client reporting. Fixture suite now passes 6 detector cases, 12 passages, and 4 extraction cases; full-workspace Gitleaks passed; pushed as `cf5c3b11`.
 - 2026-09-20: Extended `Skills/zo-project-template/` scaffolding with repeatable `--publish ID:TYPE:PATH` options that generate validated publish manifest entries; functional checks, compilation, and Gitleaks passed; pushed as `cac549a9`.
 - 2026-09-20: Added `Skills/zo-project-template/scripts/verify_artifacts.py` and wired it into the release gate; declared publish surfaces must exist and be non-empty.
 - 2026-09-20: Added `Skills/zo-project-template/scripts/verify_install.py` and `install_hooks.py --check` to verify executable hook installation and Git hook configuration.
