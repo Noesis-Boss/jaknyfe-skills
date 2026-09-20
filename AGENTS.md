@@ -49,6 +49,7 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - 2026-08-20: Idea Desk boot loop traced to a malformed `/api/idea-desk` X adapter function. Replaced the parser with syntax-safe code; API returned HTTP 200 with 22 live ideas and the dashboard screenshot rendered successfully.
 
 ## Feature Log
+- 2026-09-20: Added 4 extraction regression cases for `Skills/humanizer/fixtures/` covering hidden HTML, ARIA-hidden HTML, Markdown link targets, and fenced code preservation; runner now validates 4 detector cases plus 4 extraction cases. Gitleaks passed; pushed as b072fb30.
 - 2026-09-20: Expanded `Skills/humanizer/fixtures/run_fixtures.py` with HTML/Markdown visible-copy extraction and file-mode input; fixture, extraction, compile, and Gitleaks checks passed.
 - 2026-09-20: Added `Skills/humanizer/fixtures/run_fixtures.py`, a baseline detector runner covering all 4 regression pairs (8 passages); fixture run passes and full-workspace Gitleaks passes.
 - 2026-09-20: Added machine-readable regression fixtures for `Skills/humanizer/`, pairing known failure passages with nearby clean human passages for future detector implementation.
