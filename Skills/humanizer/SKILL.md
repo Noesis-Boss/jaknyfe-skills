@@ -38,6 +38,10 @@ When humanizing text, apply the user's voice rules. If the user has a persona co
 - Prefer active voice and short sentences.
 - Vary sentence length. Real writing isn't uniform.
 
+**Minimum effective edit:** Change only what improves clarity, specificity, accuracy, or the reader's next step. Leave strong sentences, useful rough edges, personal asides, and intentional repetition alone. Do not polish every paragraph to the same level.
+
+**Portability test:** If a sentence could be moved to another person, company, place, or product without changing it, cut it or replace it with a concrete fact, mechanism, consequence, or judgment specific to the subject.
+
 **Writing sample mode (borrowed from upstream v2.11.2):** If the user provides a writing sample (their own previous writing), analyze it before rewriting: note its sentence length, word choice, paragraph openings, punctuation, repeated phrases, and transitions, then match those habits. The sample takes priority over the default rules — if the sample uses em dashes, keep them at about the same rate and do not apply #11 as a ban. Do not replace casual words with formal ones or remove deliberate quirks.
 
 **Add personality only when it fits (upstream v3):** Voice does not mean quirks everywhere. Add personality where a human writer naturally would have it — an opening hook, a closing line, a transition between ideas, a reaction to something surprising. Keep plain informational passages (specs, changelogs, data descriptions) plain; forcing voice into them reads as more AI-written, not less.
@@ -55,9 +59,12 @@ When humanizing text, apply the user's voice rules. If the user has a persona co
 7. Cluster check: a single sign (one em dash, one AI word) proves nothing. Flag text only when 3+ signals converge in the same passage — uniform sentence length + repeated transitions + hedging + AI vocabulary together. Treat the cluster, not the word.
 8. Fact integrity check (upstream v2.11.2): ask two questions before finishing — "What still sounds AI-generated?" and "Did the rewrite add or remove any fact, name, number, date, quote, citation, ranking, or other claim?" Treat any unsupported addition or lost claim as an error. Do not invent facts; if a sentence needs a missing detail, ask or use a simpler sentence. Fiction is exempt.
 9. Self-check (borrowed 2026-09-07 from peterygyang/no-ai-slop): before returning, answer each check pass/fail — no binary contrasts, no faux-insight setups, no colon reveals, no negative listings, no interpretive metadiscourse, no significance inflation, no vague attributions, varied sentence length, no fact drift. If any check fails, fix the draft and run the checks again.
+10. Voice check (borrowed from no-ai-slop): compare the result with the source or supplied writing sample. Confirm that vocabulary, cadence, humor, uncertainty, digressions, punctuation habits, and useful imperfections survived. If the rewrite sounds more generic than the source, restore the distinctive language.
+11. Minimum-edit check (borrowed from no-ai-slop): identify the changes that were necessary. Undo edits that only make the prose more uniform, formal, polished, or conventionally "professional."
+12. Detect-mode check (borrowed from no-ai-slop): report named patterns with a short quoted line and a short fix. Do not rewrite, score, or claim that the writer used AI.
 
 **Return modes (upstream v2.11.2):**
-- **Pasted text (default):** return the draft, a short list of remaining AI patterns, and the final rewrite.
+- **Pasted text (default):** return the draft, a short list of remaining AI patterns, and the final rewrite. For each meaningful edit, preserve the writer's reason for sounding that way unless it is clearly filler or obscures the point.
 - **File mode:** when the user names a file, run the full rewrite but write only the final text to the file. Keep code blocks, YAML metadata, data, and link targets unchanged. Then give a short summary.
 - **Embedded mode:** when another task uses this skill (PR description, commit message, document), return only the final text.
 Calibration: judging text AI-written because it says "delve" is, as the Economist put it in 2026, like judging it Jane Austen's because it says "imprudence". There is no single style of AI writing, just as there is no single style of human writing.
