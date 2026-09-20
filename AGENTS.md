@@ -49,6 +49,7 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - 2026-08-20: Idea Desk boot loop traced to a malformed `/api/idea-desk` X adapter function. Replaced the parser with syntax-safe code; API returned HTTP 200 with 22 live ideas and the dashboard screenshot rendered successfully.
 
 ## Feature Log
+- 2026-09-20: Added a narrow humanizer regression fixture for invented quotes and fake source links, with a clean control for real attributed links. Fixture suite now passes 8 detector cases, 16 passages, and 4 extraction cases; full-workspace Gitleaks passed; pushed as `3360e695`.
 - 2026-09-20: Added a humanizer regression fixture for polished fabricated citations paired with unsupported percentages, with a clean bounded-survey control. Fixture suite now passes 7 detector cases, 14 passages, and 4 extraction cases; full-workspace Gitleaks passed.
 - 2026-09-20: Added a narrow humanizer regression fixture for unsupported credentials and quantified client results, with a clean control for sourced client reporting. Fixture suite now passes 6 detector cases, 12 passages, and 4 extraction cases; full-workspace Gitleaks passed; pushed as `cf5c3b11`.
 - 2026-09-20: Extended `Skills/zo-project-template/` scaffolding with repeatable `--publish ID:TYPE:PATH` options that generate validated publish manifest entries; functional checks, compilation, and Gitleaks passed; pushed as `cac549a9`.
