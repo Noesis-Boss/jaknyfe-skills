@@ -1,8 +1,8 @@
 # Humanizer regression fixtures
 
-These fixtures are the baseline corpus for a future detector. Each case records the expected result for one pattern and a nearby human passage that should remain clean. A detector runner should load `cases.json`, score both passages, and fail when the expected labels diverge.
+These fixtures are the baseline corpus for a future detector. Each case records the expected result for one pattern and a nearby human passage that should remain clean. Extraction cases in `extraction_cases.json` verify that visible-copy preprocessing does not score hidden markup or discard useful Markdown content.
 
-Keep fixtures short, concrete, and independent. Add a case when a detector rule changes; rerun every case after changing thresholds or pattern lists.
+Keep fixtures short, concrete, and independent. Add a case when a detector rule or extraction behavior changes; rerun every case after changing thresholds, pattern lists, or parsing logic.
 
 Run the baseline detector with `python3 Skills/humanizer/fixtures/run_fixtures.py`. Extend `RULES` when adding a detector rule, then add its matching fixture before changing thresholds.
 

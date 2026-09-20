@@ -1,0 +1,26 @@
+[
+  {
+    "id": "html-hidden-copy",
+    "format": "html",
+    "input": "<main>Visible copy.</main><script>Hidden script.</script><div hidden>Hidden element.</div>",
+    "expected": "Visible copy."
+  },
+  {
+    "id": "html-aria-hidden",
+    "format": "html",
+    "input": "<p>Keep this.</p><span aria-hidden=\"true\">Drop this.</span>",
+    "expected": "Keep this."
+  },
+  {
+    "id": "markdown-link-target",
+    "format": "markdown",
+    "input": "[Read the filing](https://example.com/filing) for details.",
+    "expected": "Read the filing https://example.com/filing for details."
+  },
+  {
+    "id": "markdown-code-block",
+    "format": "markdown",
+    "input": "# Example\n\nUse **plain text**.\n\n```python\nprint(\"kept\")\n```",
+    "expected": "Example Use plain text. ```python print(\"kept\") ```"
+  }
+]

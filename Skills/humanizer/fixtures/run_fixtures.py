@@ -88,11 +88,16 @@ def main() -> int:
             expected = case["expected"][label]
             if actual != expected:
                 failures.append(f'{case["id"]}/{label}: expected {expected}, got {actual}')
+    extraction_cases = json.loads(Path(__file__).with_name("extraction_cases.json").read_text())
+    for case in extraction_cases:
+        actual = extract_visible_text(case["input"], case["format"])
+        if actual != case["expected"]:
+            failures.append(f'{case["id"]}: expected {case["expected"]!r}, got {actual!r}')
     if failures:
         print("FAIL")
         print("\n".join(failures))
         return 1
-    print(f"PASS: {len(cases)} cases, {len(cases) * 2} passages")
+    print(f"PASS: {len(cases)} detector cases, {len(cases) * 2} passages, {len(extraction_cases)} extraction cases")
     return 0
 
 if __name__ == "__main__":
