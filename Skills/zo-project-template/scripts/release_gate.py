@@ -65,11 +65,15 @@ def main() -> int:
         [sys.executable, str(validator), str(root), *( ["--frontend"] if args.frontend else [] )],
         check=False,
     )
+    artifact_check = subprocess.run(
+        [sys.executable, str(Path(__file__).with_name("verify_artifacts.py")), str(root)],
+        check=False,
+    )
     errors = manifest_paths(root)
     if errors:
         print("FAIL: " + "; ".join(errors))
     clean = args.allow_dirty or git_clean(root)
-    if validation.returncode or errors or not clean:
+    if validation.returncode or artifact_check.returncode or errors or not clean:
         return 1
     print(f"RELEASE GATE PASS: {root}")
     return 0
