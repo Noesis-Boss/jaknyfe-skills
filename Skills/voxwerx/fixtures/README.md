@@ -1,4 +1,4 @@
-# Voxwerx regression fixtures
+# VoxWerx regression fixtures
 
 These fixtures are the baseline corpus for a future detector. Each case records the expected result for one pattern and a nearby human passage that should remain clean. Extraction cases in `extraction_cases.json` verify that visible-copy preprocessing does not score hidden markup or discard useful Markdown content.
 

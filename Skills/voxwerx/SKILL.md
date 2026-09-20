@@ -13,7 +13,7 @@ allowed-tools:
   - Grep
   - Glob
 ---
-# Voxwerx
+# VoxWerx
 
 Strip AI writing patterns. Make prose sound like a person wrote it.
 
