@@ -66,6 +66,19 @@ When humanizing text, apply the user's voice rules. If the user has a persona co
 14. Visible-copy extraction (borrowed from SlopMonster): when the input is HTML, score rendered text only. Ignore scripts, styles, metadata, comments, hidden elements, URLs, and markup. For Markdown, preserve code blocks and link targets while scoring prose around them.
 15. Optional rival-model cleanse (borrowed from SlopMonster): use a different model for a rewrite only when the user explicitly requests it and the text is safe to send externally. Never send confidential, personal, client, unpublished, or credential-bearing text to a third-party model by default. The cleanse output still requires fact, voice, and minimum-edit checks here.
 
+### Recommended editing sequence
+
+Use separate passes when a draft needs more than a light edit. Stop when the text sounds like the writer, the facts are intact, and a real reader can move through it without friction.
+
+1. **Voice reset:** remove formal, generic, or mechanical phrasing while keeping the writer's point of view visible.
+2. **Rhythm pass:** vary sentence length, paragraph length, and paragraph endings. Do not force every paragraph into the same shape.
+3. **Pattern pass:** remove repeated transitions, tidy groups of three, restated conclusions, and other predictable structures.
+4. **Weight pass:** cut filler and replace vague claims with concrete facts, examples, judgments, actions, or results.
+5. **Writer-detail pass:** add details the writer can actually support, such as a real example, number, mistake, quote, tool result, or opinion. Never invent personal experience to make a draft sound lived-in.
+6. **Reader pass:** mark slow, obvious, repetitive, preachy, or over-polished passages. Rewrite only those passages and preserve strong sentences unchanged.
+
+The writer-detail pass belongs to the person who owns the text. Ask for missing details or use a simpler claim; do not manufacture an anecdote, memory, credential, or first-person authority.
+
 **Return modes (upstream v2.11.2):**
 - **Pasted text (default):** return the draft, a short list of remaining AI patterns, and the final rewrite. For each meaningful edit, preserve the writer's reason for sounding that way unless it is clearly filler or obscures the point.
 - **File mode:** when the user names a file, run the full rewrite but write only the final text to the file. Keep code blocks, YAML metadata, data, and link targets unchanged. Then give a short summary.
