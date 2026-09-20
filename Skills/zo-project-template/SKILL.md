@@ -12,7 +12,7 @@ Use this skill when starting a new project or checking whether an existing proje
 ## Workflow
 
 1. Choose an isolated project directory under `/home/workspace`.
-2. Run `scripts/scaffold_project.py <path> --name "Project Name"` before substantive implementation. The scaffold initializes the isolated Git repository and validates it immediately.
+2. Run `scripts/scaffold_project.py <path> --name "Project Name"` before substantive implementation. Add `--manifest` when the project has multiple capabilities or entrypoints. The scaffold initializes the isolated Git repository and validates it immediately.
 3. Review the generated `README.md`, `AGENTS.md`, and `SOUL.md`; add `DESIGN.md` for frontend work.
 4. Optionally add `project.manifest.json` when the project has multiple capabilities or entrypoints. It uses version `1` and declares each capability's `id`, `description`, `entrypoints`, and `checks`.
 5. Run `scripts/validate_project.py <path>` before the first commit and after structural changes.
