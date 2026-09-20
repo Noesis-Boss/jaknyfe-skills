@@ -1,0 +1,30 @@
+[
+  {
+    "id": "significance-inflation",
+    "rule": "significance inflation",
+    "failure": "The launch marked a pivotal moment in the evolution of the company and set the stage for industry transformation.",
+    "human": "The launch added two paid plans and moved billing into the dashboard.",
+    "expected": { "failure": "flag", "human": "clean" }
+  },
+  {
+    "id": "binary-contrast",
+    "rule": "binary contrast",
+    "failure": "It is not the model. It is the evaluation.",
+    "human": "The evaluation matters more than the model.",
+    "expected": { "failure": "flag", "human": "clean" }
+  },
+  {
+    "id": "faux-insight",
+    "rule": "faux-insight setup",
+    "failure": "What nobody tells you is that distribution is the real moat.",
+    "human": "Distribution is the moat.",
+    "expected": { "failure": "flag", "human": "clean" }
+  },
+  {
+    "id": "vague-attribution",
+    "rule": "vague attribution",
+    "failure": "Industry experts believe the market is poised for significant growth.",
+    "human": "The market grew 12% through Q3, according to the company filing.",
+    "expected": { "failure": "flag", "human": "clean" }
+  }
+]
