@@ -40,5 +40,12 @@
     "failure": "As a certified growth strategist, I helped 47 clients double revenue in their first quarter.",
     "human": "The client reported a 12% lift after we changed the checkout copy.",
     "expected": { "failure": "flag", "human": "clean" }
+  },
+  {
+    "id": "invented-quote-or-source-link",
+    "rule": "invented quote or source link",
+    "failure": "As Maya Chen wrote in the 2025 Growth Systems Review, \"Every founder needs an AI chief of staff\" (https://example.invalid/growth-systems-review).",
+    "human": "The report links to the client's public filing at https://example.com/filing and quotes its stated revenue target.",
+    "expected": { "failure": "flag", "human": "clean" }
   }
 ]
