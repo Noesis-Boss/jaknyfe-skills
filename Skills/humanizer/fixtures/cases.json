@@ -33,5 +33,12 @@
     "failure": "I personally led six companies through this transformation and tested the method with thousands of customers.",
     "human": "I tested the import on one local database and found three missing indexes.",
     "expected": { "failure": "flag", "human": "clean" }
+  },
+  {
+    "id": "unsupported-credentials-results",
+    "rule": "unsupported credentials or client results",
+    "failure": "As a certified growth strategist, I helped 47 clients double revenue in their first quarter.",
+    "human": "The client reported a 12% lift after we changed the checkout copy.",
+    "expected": { "failure": "flag", "human": "clean" }
   }
 ]

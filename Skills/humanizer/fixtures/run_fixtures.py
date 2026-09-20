@@ -11,6 +11,7 @@ RULES = {
     "faux-insight setup": re.compile(r"\b(?:what nobody tells you|the part everyone misses|what most people get wrong)\b", re.I),
     "vague attribution": re.compile(r"\b(?:industry experts|observers|some critics|studies|research)\s+(?:believe|have noted|argue|show|suggest)\b", re.I),
     "fabricated personal authority": re.compile(r"\bI\s+(?:personally\s+)?(?:built|led|managed|tested|used)\b[^.!?]{0,120}\b(?:customers|clients|teams|companies|users)\b", re.I),
+    "unsupported credentials or client results": re.compile(r"\b(?:as a|with a|as an)\s+(?:certified|licensed|award-winning|seasoned)\s+[^,.!?]{2,50},?\s+I\s+(?:helped|guided|advised|worked with)\s+\d+\s+(?:clients|customers|companies)\b|\bI\s+(?:helped|guided|advised)\s+\d+\s+(?:clients|customers|companies)\s+[^.!?]{0,80}\b(?:double|doubled|triple|tripled|increase|increased|grew)\b", re.I),
 }
 
 class VisibleHTMLParser(HTMLParser):
