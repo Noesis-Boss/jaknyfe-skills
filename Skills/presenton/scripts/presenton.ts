@@ -26,16 +26,15 @@ function parseArgs(argv: string[]): Args {
 
 const args = parseArgs(Bun.argv.slice(2));
 const baseUrl = process.env.PRESENTON_URL;
-const apiKey = process.env.PRESENTON_API_KEY;
 if (!baseUrl) throw new Error("PRESENTON_URL is required");
-if (!apiKey) throw new Error("PRESENTON_API_KEY is required");
+const apiKey = process.env.PRESENTON_API_KEY;
 
 const content = await Bun.file(args.content).text();
 if (content.length > 250_000) throw new Error("content exceeds 250,000 characters");
 
 const response = await fetch(`${baseUrl.replace(/\/$/, "")}/api/v1/ppt/presentation/generate`, {
   method: "POST",
-  headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json", Accept: "application/json" },
+  headers: { ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}), "Content-Type": "application/json", Accept: "application/json" },
   body: JSON.stringify({ content, n_slides: args.slides, export_as: args.output }),
 });
 

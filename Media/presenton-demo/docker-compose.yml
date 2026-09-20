@@ -1,0 +1,18 @@
+services:
+  presenton:
+    image: ghcr.io/presenton/presenton:latest
+    container_name: presenton
+    ports:
+      - "5000:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      LLM: ollama
+      OLLAMA_URL: http://host.docker.internal:11434
+      OLLAMA_MODEL: llama3.2:3b
+      CAN_CHANGE_KEYS: "false"
+      IMAGE_PROVIDER: "none"
+      MEM0_ENABLED: "false"
+    volumes:
+      - ./app_data:/app_data
+    restart: unless-stopped
