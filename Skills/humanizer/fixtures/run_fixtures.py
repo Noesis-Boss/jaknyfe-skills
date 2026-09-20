@@ -15,6 +15,7 @@ RULES = {
     "fabricated citation or unsupported statistic": re.compile(r"\b(?:a|an)\s+\d{4}\s+(?:study|report|survey)\s+by\s+the\s+[A-Z][^.!?]{2,80}\b(?:found|showed|reported)\b[^.!?]*\b\d+%", re.I),
     "invented quote or source link": re.compile(r"(?:https?://(?:example\.invalid|[^\s)]+(?:utm_source=|chatgpt\.com))|\b(?:wrote|said|reported)\s+[^.!?]{0,80}\"[^\"]+\"\s*\([^)]*\b(?:review|report|study)\b)", re.I),
     "AI citation artifact": re.compile(r"(?:contentReference|oaicite|turn\d+search\d+|\[cite:\s*\d+\]|\[span_\d+\]|grok_card|ppl-ai-file-upload|utm_source=chatgpt\.com)", re.I),
+    "unsupported date or timeline": re.compile(r"(?:\b(?:in|by|since)\s+20\d{2}\b[^.!?]{0,80}\bI\s+(?:started|launched|built|led|worked|founded)\b|\bI\s+(?:started|launched|built|led|worked|founded)\b[^.!?]{0,80}\b(?:in|by|since)\s+20\d{2}\b)", re.I),
 }
 
 class VisibleHTMLParser(HTMLParser):
