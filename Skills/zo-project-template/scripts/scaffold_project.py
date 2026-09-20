@@ -10,12 +10,23 @@ def write_if_missing(path: Path, content: str) -> None:
         path.write_text(content, encoding="utf-8")
 
 
+def parse_publish_surface(value: str) -> dict[str, str]:
+    parts = value.split(":", 2)
+    if len(parts) != 3 or not all(part.strip() for part in parts):
+        raise argparse.ArgumentTypeError("publish must use id:type:path")
+    surface_id, surface_type, path = (part.strip() for part in parts)
+    if surface_type not in {"skill", "agent", "command", "plugin"}:
+        raise argparse.ArgumentTypeError(f"unsupported publish type: {surface_type}")
+    return {"id": surface_id, "type": surface_type, "path": path}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Create the standard Zo project structure.")
     parser.add_argument("path", type=Path)
     parser.add_argument("--name", required=True)
     parser.add_argument("--frontend", action="store_true")
     parser.add_argument("--manifest", action="store_true", help="Add an optional project.manifest.json template")
+    parser.add_argument("--publish", action="append", type=parse_publish_surface, metavar="ID:TYPE:PATH", help="Declare a publish surface; repeatable")
     args = parser.parse_args()
     root = args.path.resolve()
     root.mkdir(parents=True, exist_ok=True)
@@ -39,6 +50,8 @@ def main() -> int:
                 }
             ],
         }
+        if args.publish:
+            manifest["publish"] = args.publish
         write_if_missing(root / "project.manifest.json", json.dumps(manifest, indent=2) + "\n")
     if not (root / ".git").exists():
         subprocess.run(["git", "init", str(root)], check=True, stdout=subprocess.DEVNULL)
