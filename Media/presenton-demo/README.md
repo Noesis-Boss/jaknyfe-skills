@@ -1,14 +1,14 @@
-# Local Presenton demo
+# Presenton demo configuration
 
-This configuration runs Presenton on port 5000 and uses the local Ollama service at port 11434. It does not require a Presenton API key. Generated files persist under `app_data/`.
+This configuration is ready for a machine that supports Docker. Zo's infrastructure does not provide a Docker daemon, so Presenton cannot run locally inside Zo.
 
-## Start
+## Run on a Docker-capable machine
 
 ```bash
 docker compose up -d
 ```
 
-Open `http://localhost:5000`, or generate from the workspace runner:
+Open `http://localhost:5000`, or point the workspace runner at a reachable Presenton instance:
 
 ```bash
 PRESENTON_URL=http://localhost:5000 \
@@ -19,6 +19,6 @@ PRESENTON_URL=http://localhost:5000 \
 
 Repeat with `--output pdf` for a PDF.
 
-## Current host requirement
+## Zo usage
 
-Docker Engine must be running. The Docker CLI is installed on Zo, but this host currently has no Docker daemon socket at `/var/run/docker.sock`.
+Use a remote or separately hosted Presenton instance and set `PRESENTON_URL` to its address. Set `PRESENTON_API_KEY` only when that instance requires authentication. Keep the API key in Zo Secrets, never in the command or frontend code.
