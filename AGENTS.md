@@ -49,6 +49,7 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - 2026-08-20: Idea Desk boot loop traced to a malformed `/api/idea-desk` X adapter function. Replaced the parser with syntax-safe code; API returned HTTP 200 with 22 live ideas and the dashboard screenshot rendered successfully.
 
 ## Feature Log
+- 2026-09-20: Expanded `Skills/humanizer/fixtures/run_fixtures.py` with HTML/Markdown visible-copy extraction and file-mode input; fixture, extraction, compile, and Gitleaks checks passed.
 - 2026-09-20: Added `Skills/humanizer/fixtures/run_fixtures.py`, a baseline detector runner covering all 4 regression pairs (8 passages); fixture run passes and full-workspace Gitleaks passes.
 - 2026-09-20: Added machine-readable regression fixtures for `Skills/humanizer/`, pairing known failure passages with nearby clean human passages for future detector implementation.
 - 2026-09-20: Added Presenton configuration under `Media/presenton-demo/` for a Docker-capable host using Ollama and persistent `app_data/` storage. Zo infrastructure cannot run Docker, so generation from Zo requires a remote Presenton instance. Updated `Skills/presenton/scripts/presenton.ts` so self-hosted instances can run without an API key.
