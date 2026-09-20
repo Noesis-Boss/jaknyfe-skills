@@ -49,6 +49,7 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - 2026-08-20: Idea Desk boot loop traced to a malformed `/api/idea-desk` X adapter function. Replaced the parser with syntax-safe code; API returned HTTP 200 with 22 live ideas and the dashboard screenshot rendered successfully.
 
 ## Feature Log
+- 2026-09-20: Added `.github/workflows/gitleaks.yml` to scan full repository history on every push and pull request, plus `SECURITY.md` documenting the false-positive and incident policy. Local 278-commit Gitleaks scan passed; pushed as `d922c8e4`.
 - 2026-09-19: Added `Skills/zo-project-template/scripts/validate_projects.py` for batch structure checks. Help, expected failure behavior, diff validation, and full-workspace Gitleaks passed; pushed as `162453bd`.
 - 2026-09-18: Extended `Skills/agent-builder/` with an interface contract (`openai.yaml`) and reusable agent specification template. Workspace validation, quick validation, and Gitleaks passed; pushed as `4391e29d`.
 - 2026-09-17: Created `Skills/gemini-video-editing/SKILL.md`, a reusable Google Gemini video-editing prompt workflow based on the supplied PDF. Validator passed, full-workspace Gitleaks scan found no leaks, and pushed as `bbbff337`.
