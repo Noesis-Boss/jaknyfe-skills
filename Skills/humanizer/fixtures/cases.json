@@ -40,5 +40,12 @@
     "failure": "As a certified growth strategist, I helped 47 clients double revenue in their first quarter.",
     "human": "The client reported a 12% lift after we changed the checkout copy.",
     "expected": { "failure": "flag", "human": "clean" }
+  },
+  {
+    "id": "fabricated-citation-statistic",
+    "rule": "fabricated citation or unsupported statistic",
+    "failure": "A 2024 study by the Institute for Digital Growth found that this approach improves productivity by 37%.",
+    "human": "Our 2024 customer survey included 18 responses and found that seven preferred the shorter form.",
+    "expected": { "failure": "flag", "human": "clean" }
   }
 ]

@@ -8,6 +8,8 @@ The fabricated-personal-authority case is intentionally narrow. It catches expli
 
 The unsupported-credentials-results case is also intentionally narrow. It catches quantified credentials or client outcomes presented without support; concrete results attributed to a named client or source remain clean.
 
+The fabricated-citation-statistic case catches a polished study attribution paired with an unsupported percentage. A bounded result from a clearly described local survey remains clean.
+
 Run the baseline detector with `python3 Skills/humanizer/fixtures/run_fixtures.py`. Extend `RULES` when adding a detector rule, then add its matching fixture before changing thresholds.
 
 Extract visible copy from a file with `python3 Skills/humanizer/fixtures/run_fixtures.py --file path/to/page.html` or `--file path/to/post.md`. Use `--format html`, `--format markdown`, or `--format plain` to override suffix detection. HTML ignores scripts, styles, metadata, comments, and hidden elements. Markdown keeps fenced code and link destinations while removing presentation syntax.
