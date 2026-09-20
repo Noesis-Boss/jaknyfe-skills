@@ -14,6 +14,7 @@ RULES = {
     "unsupported credentials or client results": re.compile(r"\b(?:as a|with a|as an)\s+(?:certified|licensed|award-winning|seasoned)\s+[^,.!?]{2,50},?\s+I\s+(?:helped|guided|advised|worked with)\s+\d+\s+(?:clients|customers|companies)\b|\bI\s+(?:helped|guided|advised)\s+\d+\s+(?:clients|customers|companies)\s+[^.!?]{0,80}\b(?:double|doubled|triple|tripled|increase|increased|grew)\b", re.I),
     "fabricated citation or unsupported statistic": re.compile(r"\b(?:a|an)\s+\d{4}\s+(?:study|report|survey)\s+by\s+the\s+[A-Z][^.!?]{2,80}\b(?:found|showed|reported)\b[^.!?]*\b\d+%", re.I),
     "invented quote or source link": re.compile(r"(?:https?://(?:example\.invalid|[^\s)]+(?:utm_source=|chatgpt\.com))|\b(?:wrote|said|reported)\s+[^.!?]{0,80}\"[^\"]+\"\s*\([^)]*\b(?:review|report|study)\b)", re.I),
+    "AI citation artifact": re.compile(r"(?:contentReference|oaicite|turn\d+search\d+|\[cite:\s*\d+\]|\[span_\d+\]|grok_card|ppl-ai-file-upload|utm_source=chatgpt\.com)", re.I),
 }
 
 class VisibleHTMLParser(HTMLParser):
