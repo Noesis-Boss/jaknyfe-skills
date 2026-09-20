@@ -10,6 +10,8 @@ The unsupported-credentials-results case is also intentionally narrow. It catche
 
 The invented-quote-or-source-link case is intentionally narrow. It catches obviously fake domains and quote-plus-publication claims that need source verification; real links and attributed claims remain clean.
 
+The AI-citation-artifact case is intentionally narrow. It catches pasted model markup such as `[cite: 1]` and `contentReference`; ordinary prose citations remain clean.
+
 Run the baseline detector with `python3 Skills/humanizer/fixtures/run_fixtures.py`. Extend `RULES` when adding a detector rule, then add its matching fixture before changing thresholds.
 
 Extract visible copy from a file with `python3 Skills/humanizer/fixtures/run_fixtures.py --file path/to/page.html` or `--file path/to/post.md`. Use `--format html`, `--format markdown`, or `--format plain` to override suffix detection. HTML ignores scripts, styles, metadata, comments, and hidden elements. Markdown keeps fenced code and link destinations while removing presentation syntax.

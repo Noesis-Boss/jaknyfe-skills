@@ -47,5 +47,12 @@
     "failure": "As Maya Chen wrote in the 2025 Growth Systems Review, \"Every founder needs an AI chief of staff\" (https://example.invalid/growth-systems-review).",
     "human": "The report links to the client's public filing at https://example.com/filing and quotes its stated revenue target.",
     "expected": { "failure": "flag", "human": "clean" }
+  },
+  {
+    "id": "ai-citation-artifact",
+    "rule": "AI citation artifact",
+    "failure": "The report covers three growth scenarios [cite: 1][cite: 2] and includes a risk appendix (see contentReference).",
+    "human": "The report covers three growth scenarios and links to the public filing that supports the revenue figures.",
+    "expected": { "failure": "flag", "human": "clean" }
   }
 ]
