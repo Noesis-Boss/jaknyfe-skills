@@ -12,6 +12,8 @@ The invented-quote-or-source-link case is intentionally narrow. It catches obvio
 
 The AI-citation-artifact case is intentionally narrow. It catches pasted model markup such as `[cite: 1]` and `contentReference`; ordinary prose citations remain clean.
 
+The unsupported-date-or-timeline case is intentionally narrow. It catches first-person history claims with an unverified year; dates tied to a named record or source remain clean.
+
 Run the baseline detector with `python3 Skills/humanizer/fixtures/run_fixtures.py`. Extend `RULES` when adding a detector rule, then add its matching fixture before changing thresholds.
 
 Extract visible copy from a file with `python3 Skills/humanizer/fixtures/run_fixtures.py --file path/to/page.html` or `--file path/to/post.md`. Use `--format html`, `--format markdown`, or `--format plain` to override suffix detection. HTML ignores scripts, styles, metadata, comments, and hidden elements. Markdown keeps fenced code and link destinations while removing presentation syntax.

@@ -54,5 +54,12 @@
     "failure": "The report covers three growth scenarios [cite: 1][cite: 2] and includes a risk appendix (see contentReference).",
     "human": "The report covers three growth scenarios and links to the public filing that supports the revenue figures.",
     "expected": { "failure": "flag", "human": "clean" }
+  },
+  {
+    "id": "unsupported-date-or-timeline",
+    "rule": "unsupported date or timeline",
+    "failure": "In 2018, I founded a data consultancy and led the team through three major transformations.",
+    "human": "The 2018 release notes document the migration and link to the project changelog.",
+    "expected": { "failure": "flag", "human": "clean" }
   }
 ]
