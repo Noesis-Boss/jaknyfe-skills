@@ -44,6 +44,12 @@ def manifest_paths(root: Path) -> list[str]:
                     errors.append(f"project.manifest.json: capability {index} has invalid {field}")
                 elif not (root / value).exists():
                     errors.append(f"project.manifest.json: missing path {value}")
+    for index, surface in enumerate(data.get("publish", [])):
+        if not isinstance(surface, dict):
+            continue
+        value = surface.get("path")
+        if isinstance(value, str) and value.strip() and not (root / value).exists():
+            errors.append(f"project.manifest.json: publish surface {index} missing path {value}")
     return errors
 
 

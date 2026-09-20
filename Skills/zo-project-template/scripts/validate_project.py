@@ -6,6 +6,7 @@ from pathlib import Path
 
 REQUIRED = ("README.md", "AGENTS.md", "SOUL.md", "src", "tests", "scripts", "docs", ".env.example", ".git")
 SUPPORTED_HARNESSES = {"zo", "codex", "claude-code", "cursor", "gemini", "opencode"}
+SUPPORTED_PUBLISH_TYPES = {"skill", "agent", "command", "plugin"}
 
 
 def validate_manifest(root: Path) -> list[str]:
@@ -35,6 +36,19 @@ def validate_manifest(root: Path) -> list[str]:
         for key in ("id", "description"):
             if not isinstance(capability.get(key), str) or not capability[key].strip():
                 errors.append(f"project.manifest.json: capability {index} needs {key}")
+    publish = data.get("publish", [])
+    if not isinstance(publish, list):
+        errors.append("project.manifest.json: publish must be a list")
+    else:
+        for index, surface in enumerate(publish):
+            if not isinstance(surface, dict):
+                errors.append(f"project.manifest.json: publish surface {index} must be an object")
+                continue
+            for key in ("id", "type", "path"):
+                if not isinstance(surface.get(key), str) or not surface[key].strip():
+                    errors.append(f"project.manifest.json: publish surface {index} needs {key}")
+            if surface.get("type") not in SUPPORTED_PUBLISH_TYPES:
+                errors.append(f"project.manifest.json: unsupported publish type {surface.get('type')!r}")
     return errors
 
 
