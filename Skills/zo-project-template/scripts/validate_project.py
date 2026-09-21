@@ -7,6 +7,7 @@ from pathlib import Path
 REQUIRED = ("README.md", "AGENTS.md", "SOUL.md", "src", "tests", "scripts", "docs", ".env.example", ".git")
 SUPPORTED_HARNESSES = {"zo", "codex", "claude-code", "cursor", "gemini", "opencode"}
 SUPPORTED_PUBLISH_TYPES = {"skill", "agent", "command", "plugin"}
+SUPPORTED_DEPENDENCY_MANAGERS = {"bun", "cargo", "go", "npm", "pip", "pnpm", "poetry", "yarn"}
 
 
 def validate_manifest(root: Path) -> list[str]:
@@ -49,6 +50,19 @@ def validate_manifest(root: Path) -> list[str]:
                     errors.append(f"project.manifest.json: publish surface {index} needs {key}")
             if surface.get("type") not in SUPPORTED_PUBLISH_TYPES:
                 errors.append(f"project.manifest.json: unsupported publish type {surface.get('type')!r}")
+    dependencies = data.get("dependencies", [])
+    if not isinstance(dependencies, list):
+        errors.append("project.manifest.json: dependencies must be a list")
+    else:
+        for index, dependency in enumerate(dependencies):
+            if not isinstance(dependency, dict):
+                errors.append(f"project.manifest.json: dependency {index} must be an object")
+                continue
+            for key in ("name", "manager", "file"):
+                if not isinstance(dependency.get(key), str) or not dependency[key].strip():
+                    errors.append(f"project.manifest.json: dependency {index} needs {key}")
+            if dependency.get("manager") not in SUPPORTED_DEPENDENCY_MANAGERS:
+                errors.append(f"project.manifest.json: unsupported dependency manager {dependency.get('manager')!r}")
     return errors
 
 

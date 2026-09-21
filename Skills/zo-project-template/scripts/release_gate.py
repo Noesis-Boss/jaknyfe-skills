@@ -50,6 +50,12 @@ def manifest_paths(root: Path) -> list[str]:
         value = surface.get("path")
         if isinstance(value, str) and value.strip() and not (root / value).exists():
             errors.append(f"project.manifest.json: publish surface {index} missing path {value}")
+    for index, dependency in enumerate(data.get("dependencies", [])):
+        if not isinstance(dependency, dict):
+            continue
+        value = dependency.get("file")
+        if isinstance(value, str) and value.strip() and not (root / value).exists():
+            errors.append(f"project.manifest.json: dependency {index} missing file {value}")
     return errors
 
 
