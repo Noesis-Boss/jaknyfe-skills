@@ -56,3 +56,5 @@ Three new agents just came out. Should you try them? What are they good for? We 
 No GitHub repositories were presented or identified in this video. The featured items are hosted products or services: Instinct, GrokBot, Muse, Zapier MCP, and Hyperagent. GitHub repository searches for those names returned no usable public repository match, so there are no repo-level INCLUDE/TRIAL/SKIP recommendations for this report.
 
 The product-level takeaway is that Zapier MCP is the only item directly relevant to Zo-style controlled app access, but it is an external hosted service rather than a repository; existing Zo integrations and skills remain the better fit for current workflows. The agent products also involve browser access, purchasing, messaging, or cloud-held data, so any hands-on test would require a separate privacy and permissions review.
+
+Recommendation: SKIP — no usable public GitHub repository was identified; the hosted products require a separate privacy and permissions review and do not belong in the open-source repo recommendations.

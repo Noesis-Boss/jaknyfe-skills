@@ -41,3 +41,5 @@ No evaluable open-source repos in this video.
 - **Functionality:** Real-time autocomplete for piano — a 125M-parameter transformer that listens to MIDI input and continues the performance at ~108 notes/sec on an iPhone 15, shipped as a free iOS app.
 - **Fit:** None — no source, no weights, iOS-only; nothing to self-host, script, or wire into Bun/TS, Python trading, or Zo automations.
 - **Verdict:** SKIP — closed-source iOS demo with no repo; nothing actionable for Don's environment.
+
+Recommendation: SKIP — no usable public GitHub repository was identified, and the closed iOS app plus model weights cannot be installed or adapted in the current Bun/Python and Zo workflows.
