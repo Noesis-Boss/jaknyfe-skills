@@ -88,6 +88,16 @@ Builds the complete artifact — no placeholders, no "add more as needed."
 - Usage guide / README embedded
 - Delivery format: Google Sheets link or downloadable export
 
+#### Reusable short-form video product
+
+When the product is a content system, use this production brief:
+
+> Act as a viral short-form video strategist. Generate 60 plug-and-play script templates for TikTok, Instagram Reels, and YouTube Shorts in the [Your Niche] niche. Divide them into four categories: Myth-Busting, Listicle/Value Stacks, Step-by-Step Roadmaps, and Story/Case Studies. Format each with a Hook Formula, Body Retention Beats, On-Screen Visual Prompt, and Call-to-Action.
+
+The finished deliverable must contain 15 templates per category, a niche customization worksheet, a recording quick-start guide, a 30-day publishing calendar, and a performance tracker. Templates must remain niche-neutral through bracketed fields such as `[NICHE]`, `[AUDIENCE]`, `[PAIN]`, `[RESULT]`, `[PROOF]`, and `[OFFER]`; every template still needs a complete formula and a concrete CTA. Do not ship a list of vague topics or unfinished prompts.
+
+The canonical product package is `gumroad-product/viral-short-form-video-script-system.md`.
+
 ### Phase 5 — Execution Roadmap
 14-day launch sprint on zero-cost stack.
 
