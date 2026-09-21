@@ -8,6 +8,16 @@ REQUIRED = ("README.md", "AGENTS.md", "SOUL.md", "src", "tests", "scripts", "doc
 SUPPORTED_HARNESSES = {"zo", "codex", "claude-code", "cursor", "gemini", "opencode"}
 SUPPORTED_PUBLISH_TYPES = {"skill", "agent", "command", "plugin"}
 SUPPORTED_DEPENDENCY_MANAGERS = {"bun", "cargo", "go", "npm", "pip", "pnpm", "poetry", "yarn"}
+LOCKFILE_NAMES = {
+    "bun": ("bun.lock", "bun.lockb"),
+    "cargo": ("Cargo.lock",),
+    "go": ("go.sum",),
+    "npm": ("package-lock.json",),
+    "pip": ("requirements.lock",),
+    "pnpm": ("pnpm-lock.yaml",),
+    "poetry": ("poetry.lock",),
+    "yarn": ("yarn.lock",),
+}
 
 
 def validate_manifest(root: Path) -> list[str]:
@@ -63,6 +73,9 @@ def validate_manifest(root: Path) -> list[str]:
                     errors.append(f"project.manifest.json: dependency {index} needs {key}")
             if dependency.get("manager") not in SUPPORTED_DEPENDENCY_MANAGERS:
                 errors.append(f"project.manifest.json: unsupported dependency manager {dependency.get('manager')!r}")
+            lockfile = dependency.get("lockfile")
+            if lockfile is not None and (not isinstance(lockfile, str) or not lockfile.strip()):
+                errors.append(f"project.manifest.json: dependency {index} has invalid lockfile")
     return errors
 
 

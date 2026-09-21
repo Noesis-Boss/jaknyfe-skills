@@ -5,6 +5,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from validate_project import LOCKFILE_NAMES
+
 
 def git_clean(root: Path) -> bool:
     result = subprocess.run(
@@ -56,6 +58,16 @@ def manifest_paths(root: Path) -> list[str]:
         value = dependency.get("file")
         if isinstance(value, str) and value.strip() and not (root / value).exists():
             errors.append(f"project.manifest.json: dependency {index} missing file {value}")
+        manager = dependency.get("manager")
+        lockfile = dependency.get("lockfile")
+        candidates = (lockfile,) if isinstance(lockfile, str) and lockfile.strip() else LOCKFILE_NAMES.get(manager, ())
+        if candidates and not any((root / candidate).exists() for candidate in candidates):
+            errors.append(f"project.manifest.json: dependency {index} missing lockfile ({', '.join(candidates)})")
+        elif isinstance(value, str) and value.strip() and candidates:
+            dependency_path = root / value
+            existing = next((root / candidate for candidate in candidates if (root / candidate).exists()), None)
+            if existing and existing.stat().st_mtime < dependency_path.stat().st_mtime:
+                errors.append(f"project.manifest.json: dependency {index} lockfile is older than {value}")
     return errors
 
 
