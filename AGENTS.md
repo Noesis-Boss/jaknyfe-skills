@@ -49,6 +49,7 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - 2026-08-20: Idea Desk boot loop traced to a malformed `/api/idea-desk` X adapter function. Replaced the parser with syntax-safe code; API returned HTTP 200 with 22 live ideas and the dashboard screenshot rendered successfully.
 
 ## Feature Log
+- 2026-09-21: Added `workflow_dispatch` to `.github/workflows/gitleaks.yml` and pushed on `master` as `f37a00a6`; local full-history Gitleaks passed (452 commits, 0 leaks). Manual dispatch could not run because GitHub reports Actions disabled for this user.
 - 2026-09-20: Added repo-specific `.gitleaks.toml` allowlists for reviewed Twenty test/example fixtures and OpenCreator generated metadata/test placeholders. Both repositories scan clean; the weekly workspace sweep now reports only the 3 accepted open-seo placeholders (34 repositories scanned).
 - 2026-09-20: Added a narrow VoxWerx regression fixture for unsupported credentials and quantified client results, with a clean control for sourced client reporting. Fixture suite now passes 6 detector cases, 12 passages, and 4 extraction cases; full-workspace Gitleaks passed; pushed as `cf5c3b11`.
 - 2026-09-20: Added an AI citation-artifact regression fixture covering `[cite: N]` and `contentReference`, with a clean control for ordinary source attribution. Fixture suite now passes 8 detector cases, 16 passages, and 4 extraction cases; Gitleaks passed; pushed as `c955114e`.
