@@ -17,6 +17,8 @@ allowed-tools:
 
 Strip AI writing patterns. Make prose sound like a person wrote it.
 
+> **Supersedes Skills/humanizer.** The former `Skills/humanizer` skill was retired (2026-09-21); VoxWerx is the canonical AI-pattern gate and scorer for all copy. Pattern numbering in older docs and scripts refers to the original blader/humanizer lineage that VoxWerx absorbed. The marketing gate script is `Projects/noesis-marketing/scripts/voxwerx_score.py` (`humanizer_score.py` remains as a deprecated shim).
+
 ## When to Use
 
 - Client deliverables (proposals, reports, analysis)
