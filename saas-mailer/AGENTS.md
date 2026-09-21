@@ -1,6 +1,7 @@
 # SaaS-Mailer
 
 - 2026-09-21: Added a bearer-protected Family Chore Planner invitation endpoint at `/api/integrations/family-chore-planner/invitations`; it sends through the configured Resend adapter without exposing provider credentials to the planner.
+- 2026-09-21: Restarted the managed SaaS-Mailer service against local PostgreSQL and verified the Family Chore Planner integration end to end with a real invite accepted by Resend.
 
 - 2026-09-18: Restore validation now emails `RESTORE_VALIDATION_ALERT_TO` (default `delowery@gmail.com`) on missing backups or failed disposable restores; repeated identical failures are deduplicated until a check succeeds.
 
