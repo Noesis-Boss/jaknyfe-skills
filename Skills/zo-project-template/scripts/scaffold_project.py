@@ -49,6 +49,7 @@ def main() -> int:
                     "checks": ["tests/"],
                 }
             ],
+            "dependencies": [],
         }
         if args.publish:
             manifest["publish"] = args.publish
