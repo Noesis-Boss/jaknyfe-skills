@@ -337,6 +337,34 @@
       "processed_at": "2026-09-20T12:32:56.584866+00:00",
       "report": "/home/workspace/Skills/next-new-repo-watch/reports/6IxiArssGvg.md",
       "auto_repos": []
+    },
+    "H03k_SfxySQ": {
+      "title": "He Built an AI Tool to Help Families Facing Cancer",
+      "published": "2026-09-21T20:30:38+00:00",
+      "processed_at": "2026-09-22T12:32:35.376624+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/H03k_SfxySQ.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api",
+        "petergyang/fuck-cancer"
+      ]
+    },
+    "mny7r505ZpU": {
+      "title": "He Built an Agent That Calls Customers",
+      "published": "2026-09-21T18:34:32+00:00",
+      "processed_at": "2026-09-22T12:32:36.629322+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/mny7r505ZpU.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api"
+      ]
+    },
+    "WPUAZm5rnGc": {
+      "title": "Easy step-by-step setup",
+      "published": "2026-09-21T14:00:35+00:00",
+      "processed_at": "2026-09-22T12:32:38.213186+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/WPUAZm5rnGc.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api"
+      ]
     }
   }
 }

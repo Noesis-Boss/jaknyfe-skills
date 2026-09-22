@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-21.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-22.
 
-**Totals**: 8 INCLUDE · 51 TRIAL · 62 SKIP · 0 pending eval
+**Totals**: 11 INCLUDE · 52 TRIAL · 64 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -10,10 +10,14 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-21.
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **[EfficientStreet/hindsight](https://github.com/EfficientStreet/hindsight)** — Self-improvement skill for AI coding assistants: reviews a session end-to-end and saves only the durable process lessons as persistent memor
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
+- **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
+  - Report: `reports/H03k_SfxySQ.md` · Video: https://youtu.be/H03k_SfxySQ · *He Built an AI Tool to Help Families Facing Cancer*
 - **jdepoix/youtube-transcript-api** — Recommendation: INCLUDE
   - Report: `reports/NdeOsuoIGuc.md` · Video: https://youtu.be/NdeOsuoIGuc · *Have Astra do this right now*
 - **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
   - Report: `reports/QZXeiuLBlTk.md` · Video: https://youtu.be/QZXeiuLBlTk · *This Tool Feeds All Your Business Data to One AI Agent*
+- **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
+  - Report: `reports/WPUAZm5rnGc.md` · Video: https://youtu.be/WPUAZm5rnGc · *Easy step-by-step setup*
 - **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent 
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Functionality: An agent skill that turns system descriptions and workflow inputs into explorable architecture, sequence, data-flow, and life
@@ -22,6 +26,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-21.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
+- **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
+  - Report: `reports/mny7r505ZpU.md` · Video: https://youtu.be/mny7r505ZpU · *He Built an Agent That Calls Customers*
 
 ## TRIAL
 
@@ -53,6 +59,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-21.
   - Report: `reports/F-_q6VIHMS8.md` · Video: https://youtu.be/F-_q6VIHMS8 · *How to have Claude run your company*
 - **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** — Python personal AI agent ("the agent that grows with you") with memory, skills, and channel integrations; the video positions Hermes as the 
   - Report: `reports/F-_q6VIHMS8.md` · Video: https://youtu.be/F-_q6VIHMS8 · *How to have Claude run your company*
+- **[petergyang/fuck-cancer](https://github.com/petergyang/fuck-cancer)** — Functionality: A Python/Markdown workflow that turns a patient's documents and trusted medical sources into a plain-language care brief. It 
+  - Report: `reports/H03k_SfxySQ.md` · Video: https://youtu.be/H03k_SfxySQ · *He Built an AI Tool to Help Families Facing Cancer*
 - **[aerovato/magic-compact](https://github.com/aerovato/magic-compact)** — Functionality: A lossless context-compaction plugin for Claude Code and OpenCode. It aims to reduce context size while preserving the inform
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
 - **[headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom)** — Functionality: A Python library, proxy, and MCP server that compresses tool output, logs, files, and retrieval chunks before they reach an L
@@ -170,6 +178,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-21.
 - [modular/modular](https://github.com/modular/modular) — `reports/TWCSvvTfJNU.md`
 - [securo-finance/securo](https://github.com/securo-finance/securo) — `reports/TWCSvvTfJNU.md`
 - [zapier/zapier-mcp](https://github.com/zapier/zapier-mcp) — `reports/TWCSvvTfJNU.md`
+- Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/WPUAZm5rnGc.md`
 - [humanlayer/skills](https://github.com/humanlayer/skills) — `reports/aX8Y183qDpY.md`
 - [openai/plugins](https://github.com/openai/plugins) — `reports/aX8Y183qDpY.md`
 - [blader/humanizer](https://github.com/blader/humanizer) — `reports/aX8Y183qDpY.md`
@@ -188,6 +197,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-21.
 - Expertise.ai (AI skill marketplace) — `reports/klqyY5SAQvc.md`
 - Peter Yang patient advocacy skill — `reports/klqyY5SAQvc.md`
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/mHGDF8mwkY4.md`
+- Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/mny7r505ZpU.md`
 - `jdepoix/youtube-transcript-api` — `reports/pkwnJcETgfE.md`
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`
 - Outbid.lol — `reports/qr7Zwjx-nWU.md`
