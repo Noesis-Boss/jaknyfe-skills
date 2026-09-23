@@ -365,6 +365,24 @@
       "auto_repos": [
         "jdepoix/youtube-transcript-api"
       ]
+    },
+    "tsWOiibaaxA": {
+      "title": "Better than Jev - because you can build with it",
+      "published": "2026-09-22T22:24:19+00:00",
+      "processed_at": "2026-09-23T12:38:31.674446+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/tsWOiibaaxA.md",
+      "auto_repos": [
+        "cactus-compute/needle"
+      ]
+    },
+    "ktfjaNnxPsQ": {
+      "title": "Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss",
+      "published": "2026-09-22T20:30:37+00:00",
+      "processed_at": "2026-09-23T12:38:32.760560+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/ktfjaNnxPsQ.md",
+      "auto_repos": [
+        "alibaba/open-code-review"
+      ]
     }
   }
 }

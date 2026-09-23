@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-22.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
 
-**Totals**: 11 INCLUDE · 52 TRIAL · 64 SKIP · 0 pending eval
+**Totals**: 12 INCLUDE · 53 TRIAL · 64 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -26,6 +26,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-22.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
+- **[alibaba/open-code-review](https://github.com/alibaba/open-code-review)** — Functionality: A Go code-review tool combining deterministic checks with an LLM-assisted reviewer. It reports line-level findings across com
+  - Report: `reports/ktfjaNnxPsQ.md` · Video: https://youtu.be/ktfjaNnxPsQ · *Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
   - Report: `reports/mny7r505ZpU.md` · Video: https://youtu.be/mny7r505ZpU · *He Built an Agent That Calls Customers*
 
@@ -131,6 +133,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-22.
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
 - **`zapier/zapier-platform`** — Functionality: Zapier’s JavaScript toolkit for building custom integrations and actions. It could support a narrow connector needed by the p
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
+- **[cactus-compute/needle](https://github.com/cactus-compute/needle)** — Functionality: A compact on-device model that maps natural-language requests to constrained tool calls, structured extraction, and embedding
+  - Report: `reports/tsWOiibaaxA.md` · Video: https://youtu.be/tsWOiibaaxA · *Better than Jev - because you can build with it*
 - **browser-use/browser-use** — 
   - Report: `reports/wvStsbW_fCY.md` · Video: https://youtu.be/wvStsbW_fCY · *I Let AI Take Over My Browser — For 2 Cents*
 - **immich-app/immich** — 
