@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-24.
 
-**Totals**: 12 INCLUDE · 53 TRIAL · 64 SKIP · 0 pending eval
+**Totals**: 15 INCLUDE · 55 TRIAL · 65 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -16,6 +16,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
   - Report: `reports/NdeOsuoIGuc.md` · Video: https://youtu.be/NdeOsuoIGuc · *Have Astra do this right now*
 - **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
   - Report: `reports/QZXeiuLBlTk.md` · Video: https://youtu.be/QZXeiuLBlTk · *This Tool Feeds All Your Business Data to One AI Agent*
+- **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without browser automation. It is the transcript backen
+  - Report: `reports/U6ptUFMyaJg.md` · Video: https://youtu.be/U6ptUFMyaJg · *New release: fewer tokens & reliable AI*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
   - Report: `reports/WPUAZm5rnGc.md` · Video: https://youtu.be/WPUAZm5rnGc · *Easy step-by-step setup*
 - **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent 
@@ -26,10 +28,14 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
-- **[alibaba/open-code-review](https://github.com/alibaba/open-code-review)** — Functionality: A Go code-review tool combining deterministic checks with an LLM-assisted reviewer. It reports line-level findings across com
+- **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without a browser automation layer. It is the transcrip
+  - Report: `reports/f1-sphdBqJY.md` · Video: https://youtu.be/f1-sphdBqJY · *This Free Tool Turns Your Browser Into a Spy Satellite*
+- **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without browser automation. It is the transcript backen
   - Report: `reports/ktfjaNnxPsQ.md` · Video: https://youtu.be/ktfjaNnxPsQ · *Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
   - Report: `reports/mny7r505ZpU.md` · Video: https://youtu.be/mny7r505ZpU · *He Built an Agent That Calls Customers*
+- **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without browser automation. It is the transcript backen
+  - Report: `reports/tsWOiibaaxA.md` · Video: https://youtu.be/tsWOiibaaxA · *Better than Jev - because you can build with it*
 
 ## TRIAL
 
@@ -109,6 +115,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
   - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
 - **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Self-hosted gateway aggregating 34 free LLM providers / 635 free endpoints behind one OpenAI-compatible /v1 endpoint with smart routing and 
   - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
+- **Zapier Next Gen Zaps** — Functionality: The demonstrated system combines AI decisions with deterministic workflow steps, approvals, and recovery behavior. It is a ho
+  - Report: `reports/U6ptUFMyaJg.md` · Video: https://youtu.be/U6ptUFMyaJg · *New release: fewer tokens & reliable AI*
 - **[Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)** — Indexes a codebase — source, docs, SQL schemas, configs, PDFs — into a queryable knowledge graph using local deterministic AST parsing, with
   - Report: `reports/V0YugHvjs5Y.md` · Video: https://youtu.be/V0YugHvjs5Y · *This Tool Gives AI a Map of Your Codebase*
 - **[affaan-m/ECC](https://github.com/affaan-m/ECC)** — Functionality: A broad agent-harness optimization system combining skills, instincts, memory, security checks, and research-first workflows 
@@ -129,11 +137,13 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
 - **Supernova (business-data-to-agent connector)** — 
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
+- **[alibaba/open-code-review](https://github.com/alibaba/open-code-review)** — Functionality: A Go-based code-review system that combines deterministic rules with optional LLM analysis and produces line-level findings a
+  - Report: `reports/ktfjaNnxPsQ.md` · Video: https://youtu.be/ktfjaNnxPsQ · *Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss*
 - **`openclaw/openclaw`** — Functionality: An open-source personal AI agent that can operate across local computers, browsers, messaging channels, and connected tools. 
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
 - **`zapier/zapier-platform`** — Functionality: Zapier’s JavaScript toolkit for building custom integrations and actions. It could support a narrow connector needed by the p
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
-- **[cactus-compute/needle](https://github.com/cactus-compute/needle)** — Functionality: A compact on-device model that maps natural-language requests to constrained tool calls, structured extraction, and embedding
+- **[cactus-compute/needle](https://github.com/cactus-compute/needle)** — Functionality: A compact on-device model for constrained natural-language commands, structured tool calls, extraction, and embeddings. Its t
   - Report: `reports/tsWOiibaaxA.md` · Video: https://youtu.be/tsWOiibaaxA · *Better than Jev - because you can build with it*
 - **browser-use/browser-use** — 
   - Report: `reports/wvStsbW_fCY.md` · Video: https://youtu.be/wvStsbW_fCY · *I Let AI Take Over My Browser — For 2 Cents*
@@ -193,6 +203,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
 - anthropics/skills — `reports/ehab5PtgRo8.md`
 - vercel-labs/agent-skills — `reports/ehab5PtgRo8.md`
 - larksuite/cli — `reports/ehab5PtgRo8.md`
+- [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — `reports/f1-sphdBqJY.md`
 - MicroDuck / microduck_rl — `reports/klqyY5SAQvc.md`
 - MIDI Autocomplete — `reports/klqyY5SAQvc.md`
 - Outbid (outbid.lol) — `reports/klqyY5SAQvc.md`
