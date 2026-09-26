@@ -20,25 +20,11 @@ God's Eye View pulls together publicly available open data — live traffic, CCT
 
 ## Transcript
 
-[transcript unavailable: 
-Could not retrieve a transcript for the video https://www.youtube.com/watch?v=f1-sphdBqJY! This is most likely caused by:
-
-YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
-- You have done too many requests and your IP has been blocked by YouTube
-- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
-
-There are two things you can do to work around this:
-1. Use proxies to hide your IP address, as explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
-2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned!
-
-If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!]
+This is God's eye view, and what this does is it pulls together all the open data that's available online to make it available to you in a very, very, very, very, very, very pretty map that you can zoom in on. I've got this video here. You can see he is seeing traffic data, which he put in from TomTom, and then he has got all the cameras, the CCTV cameras on there. All he has to do is like mouse over a camera, and he gets to see a screenshot of it. If he clicks into it, he gets to see live, and it's airplanes that you see overhead and so much data for it. It's kind of fun. I can see this being useful. >> Yeah, it's I mean it's just insane to watch this. It it feels unreal looking looking at it. I I want to go and click around our city and see see what I can see. >> One thing I will say about this is if you do not want to go through all this and set this up yourself on your system, he has got right here on Pinocchio, you can go in and you can download it directly, and he created this guy here in the video. If you look for him, he has got his own version of it. You'll see his face on it, and that's the one that you can just click over and trust here. He's going to show it right now. There it is. And so, you can just go and install it and not have to go into GitHub if you'd rather have just a plain app. >> Download it in the link in the bio.
 
 ## Auto-extracted repos
 
-- **jdepoix/youtube-transcript-api** — 8366★ · Python · pushed 2026-09-10 · license MIT
-  - This is a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles and it does not require an API key nor a headless browser, like other selenium based solutions do!
-  - https://github.com/jdepoix/youtube-transcript-api
-- **bilawalsidhu/gods-eye-view** — 42178★ · JavaScript · pushed 2026-09-24 · license NOASSERTION
+- **bilawalsidhu/gods-eye-view** — 43303★ · JavaScript · pushed 2026-09-26 · license NOASSERTION
   - A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.
   - https://github.com/bilawalsidhu/gods-eye-view
 
@@ -49,20 +35,10 @@ If you are sure that the described cause is not responsible for this error and t
      Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
      trading bot, publishing pipeline. -->
 
-## Eval
+### bilawalsidhu/gods-eye-view
 
-Transcript retrieval was blocked by YouTube for this run. The description identifies the featured repository directly.
+Functionality: Browser-based spatial-intelligence globe using live open data and 3D visualization.
 
-### bilawalsidhu/gods-eye-view — https://github.com/bilawalsidhu/gods-eye-view
+Signals: 43,304 stars; JavaScript; license reported as Other/NOASSERTION; pushed 2026-09-26; active, not archived.
 
-Functionality: A browser-based 3D globe that combines public live data such as traffic, cameras, and aircraft into an interactive spatial-intelligence view. It is primarily an exploration and visualization product rather than a reusable backend library.
-
-- Signals: 42,178 stars · JavaScript · license not detected by GitHub metadata · last push 2026-09-24 · active, not archived.
-- Recommendation: **SKIP** — impressive demo, but it has no clear connection to the trading bot, publishing pipeline, or Zo automations, and the missing license blocks safe adaptation into the Skills repo.
-
-### jdepoix/youtube-transcript-api — https://github.com/jdepoix/youtube-transcript-api
-
-Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without a browser automation layer. It is the transcript backend used by this watcher.
-
-- Signals: 8,366 stars · Python · MIT · last push 2026-09-10 · active, not archived.
-- Recommendation: **INCLUDE** — retain it as the watcher’s transcript dependency; the current YouTube IP block is an operational limitation, not a reason to replace it.
+Recommendation: **SKIP** — it is a visualization product rather than a reusable workflow component, and its unclear license makes adaptation risky.

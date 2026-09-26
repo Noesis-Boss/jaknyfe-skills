@@ -19,25 +19,11 @@ Open-Code-Review is Alibaba's open-source tool for catching common — and not-s
 
 ## Transcript
 
-[transcript unavailable: 
-Could not retrieve a transcript for the video https://www.youtube.com/watch?v=ktfjaNnxPsQ! This is most likely caused by:
-
-YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
-- You have done too many requests and your IP has been blocked by YouTube
-- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
-
-There are two things you can do to work around this:
-1. Use proxies to hide your IP address, as explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
-2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned!
-
-If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!]
+Open code review from Alibaba. This is the thing that will let you check your code to find common or maybe even uncommon problems. I saw this one demo where someone said, "I'm intentionally going to sneak stuff into deliberate problems into my code. I want to see if it finds it." And sure enough, it did find those problems. Like he had a password that was just written in plain text. And then he said, "You know what? I want this to not give me just the red and green on my screen. I want to actually see a nice HTML report." And all he did was fire off one command and he got it. This makes sense coming from Alibaba, especially. >> Yeah, I mean, this is starting to be pretty standard practice where if you're out there, you're vibe coding stuff, you're not reading all the lines of code. You don't exactly know how the integrations work. And you've asked Claude to build it in a secure way, but did it? Did it make mistakes? Did some of the changes that you make open up doors that you didn't know were open? So, having something like this run, and even better run automatically, is table stakes. I I think everybody should be doing this. >> Download it in the link in the bio.
 
 ## Auto-extracted repos
 
-- **jdepoix/youtube-transcript-api** — 8366★ · Python · pushed 2026-09-10 · license MIT
-  - This is a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles and it does not require an API key nor a headless browser, like other selenium based solutions do!
-  - https://github.com/jdepoix/youtube-transcript-api
-- **alibaba/open-code-review** — 40498★ · Go · pushed 2026-09-24 · license Apache-2.0
+- **alibaba/open-code-review** — 40045★ · Go · pushed 2026-09-23 · license Apache-2.0
   - Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.
   - https://github.com/alibaba/open-code-review
 
@@ -48,20 +34,9 @@ If you are sure that the described cause is not responsible for this error and t
      Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
      trading bot, publishing pipeline. -->
 
-## Eval
-
-Transcript retrieval was blocked by YouTube for this run. The description identifies the featured repository directly.
-
 ### alibaba/open-code-review — https://github.com/alibaba/open-code-review
 
-Functionality: A Go-based code-review system that combines deterministic rules with optional LLM analysis and produces line-level findings and HTML reports. It targets security and correctness issues such as injection, XSS, null handling, and thread safety.
+Functionality: A Go code-review tool combining deterministic checks with an LLM-assisted reviewer. It reports line-level findings across common security and correctness issues and can emit readable HTML reports.
 
-- Signals: 40,498 stars · Go · Apache-2.0 · last push 2026-09-24 · active, not archived.
-- Recommendation: **TRIAL** — run it against a disposable checkout of the Skills repository and the trading bot, compare findings with Gitleaks and existing checks, and verify that any LLM configuration can be kept out of source. Rough effort: 2–4 hours; do not make it a release gate until false-positive and credential-handling behavior is measured.
-
-### jdepoix/youtube-transcript-api — https://github.com/jdepoix/youtube-transcript-api
-
-Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without browser automation. It is the transcript backend used by this watcher.
-
-- Signals: 8,366 stars · Python · MIT · last push 2026-09-10 · active, not archived.
-- Recommendation: **INCLUDE** — retain it as the watcher’s transcript dependency.
+- Signals: 40,045 stars · Go · Apache-2.0 · last push 2026-09-23 · active, not archived.
+- Recommendation: **INCLUDE** — add it to the Skills repository and project release gates alongside Gitleaks, using the HTML or machine-readable output to review AI-generated changes before commits and pushes. Start with a sandbox run against representative Skills and Zo route fixtures; rough effort: 2–4 hours.
