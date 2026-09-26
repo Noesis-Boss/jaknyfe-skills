@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-26.
 
-**Totals**: 12 INCLUDE · 53 TRIAL · 64 SKIP · 0 pending eval
+**Totals**: 14 INCLUDE · 61 TRIAL · 72 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -26,10 +26,14 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
+- **affaan-m/ECC** — Functionality: Agent-harness collection covering skills, memory, security, and research-first development.
+  - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **[alibaba/open-code-review](https://github.com/alibaba/open-code-review)** — Functionality: A Go code-review tool combining deterministic checks with an LLM-assisted reviewer. It reports line-level findings across com
   - Report: `reports/ktfjaNnxPsQ.md` · Video: https://youtu.be/ktfjaNnxPsQ · *Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
   - Report: `reports/mny7r505ZpU.md` · Video: https://youtu.be/mny7r505ZpU · *He Built an Agent That Calls Customers*
+- **vercel-labs/agent-browser** — Functionality: Rust CLI for headless browser control, DOM interaction, screenshots, and browser workflows for agents.
+  - Report: `reports/qfRMHqh7tNI.md` · Video: https://youtu.be/qfRMHqh7tNI · *This Skill Gives Your AI Agent a Browser*
 
 ## TRIAL
 
@@ -111,6 +115,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
   - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
 - **[Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)** — Indexes a codebase — source, docs, SQL schemas, configs, PDFs — into a queryable knowledge graph using local deterministic AST parsing, with
   - Report: `reports/V0YugHvjs5Y.md` · Video: https://youtu.be/V0YugHvjs5Y · *This Tool Gives AI a Map of Your Codebase*
+- **elvisun/newsjack** — Functionality: Open-source agent skills that research news opportunities and help execute a PR workflow.
+  - Report: `reports/ZodAaTH-6_E.md` · Video: https://youtu.be/ZodAaTH-6_E · *Meta’s Muse makes you money. And more*
 - **[affaan-m/ECC](https://github.com/affaan-m/ECC)** — Functionality: A broad agent-harness optimization system combining skills, instincts, memory, security checks, and research-first workflows 
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)** — Functionality: A minimalism-oriented coding-agent skill that pushes the agent to reuse existing code and avoid unnecessary implementation. I
@@ -125,6 +131,20 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **mattpocock/skills** — Agent instructions for requirements questioning, idea stress testing, repository setup, and tutoring. The named skills are prompt workflows 
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
+- **cactus-compute/needle** — Functionality: A tiny 2-bit automation model for tool calls, structured extraction, and embeddings on constrained devices.
+  - Report: `reports/fD8k0Qbuu7A.md` · Video: https://youtu.be/fD8k0Qbuu7A · *This Tiny LLM Can Run on Almost Anything*
+- **anthropics/financial-services** — Functionality: Finance-focused agent skills for research, screening, and analysis workflows.
+  - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
+- **alibaba/open-code-review** — Functionality: Hybrid deterministic and LLM code-review service with line comments and security rules.
+  - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
+- **Tencent/WeKnora** — Functionality: Self-hosted knowledge platform for RAG search, an agent, and a maintained wiki.
+  - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
+- **addyosmani/agent-skills** — Functionality: Production-oriented engineering skills for AI coding agents.
+  - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
+- **anthropics/knowledge-work-plugins** — Functionality: Open-source plugins for knowledge-worker workflows.
+  - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
+- **every-app/open-seo** — Functionality: Open-source alternative to Semrush and Ahrefs for SEO research.
+  - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **Bezalel (bundled agent-infra MCP)** — 
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
 - **Supernova (business-data-to-agent connector)** — 
@@ -183,6 +203,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
 - [securo-finance/securo](https://github.com/securo-finance/securo) — `reports/TWCSvvTfJNU.md`
 - [zapier/zapier-mcp](https://github.com/zapier/zapier-mcp) — `reports/TWCSvvTfJNU.md`
 - Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/WPUAZm5rnGc.md`
+- JohnHeibel/PDoomVideo — `reports/ZodAaTH-6_E.md`
+- yoheinakajima/glance-speedlab — `reports/ZodAaTH-6_E.md`
 - [humanlayer/skills](https://github.com/humanlayer/skills) — `reports/aX8Y183qDpY.md`
 - [openai/plugins](https://github.com/openai/plugins) — `reports/aX8Y183qDpY.md`
 - [blader/humanizer](https://github.com/blader/humanizer) — `reports/aX8Y183qDpY.md`
@@ -193,6 +215,12 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
 - anthropics/skills — `reports/ehab5PtgRo8.md`
 - vercel-labs/agent-skills — `reports/ehab5PtgRo8.md`
 - larksuite/cli — `reports/ehab5PtgRo8.md`
+- bilawalsidhu/gods-eye-view — `reports/f1-sphdBqJY.md`
+- anthropics/claude-code — `reports/hlOk-EFUITQ.md`
+- stablyai/orca — `reports/hlOk-EFUITQ.md`
+- TencentCloud/Octop — `reports/hlOk-EFUITQ.md`
+- davila7/claude-code-templates — `reports/hlOk-EFUITQ.md`
+- paperclipai/paperclip — `reports/hlOk-EFUITQ.md`
 - MicroDuck / microduck_rl — `reports/klqyY5SAQvc.md`
 - MIDI Autocomplete — `reports/klqyY5SAQvc.md`
 - Outbid (outbid.lol) — `reports/klqyY5SAQvc.md`
@@ -206,3 +234,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-23.
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`
 - Outbid.lol — `reports/qr7Zwjx-nWU.md`
 - Piano Autocomplete (Simon Edwardsson / simedw) — `reports/twVd1dyPlz8.md`
+
+## Pending eval
+
+- `reports/U6ptUFMyaJg.md` — New release: fewer tokens & reliable AI (0 unevaled)
