@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-26.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-27.
 
-**Totals**: 14 INCLUDE · 61 TRIAL · 72 SKIP · 0 pending eval
+**Totals**: 15 INCLUDE · 61 TRIAL · 72 SKIP · 1 pending eval
 
 ## INCLUDE
 
@@ -32,6 +32,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-26.
   - Report: `reports/ktfjaNnxPsQ.md` · Video: https://youtu.be/ktfjaNnxPsQ · *Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
   - Report: `reports/mny7r505ZpU.md` · Video: https://youtu.be/mny7r505ZpU · *He Built an Agent That Calls Customers*
+- **jdepoix/youtube-transcript-api** — Python library for retrieving manually created and automatically generated YouTube captions without an API key or browser automation. It is 
+  - Report: `reports/pxaMzr7al3I.md` · Video: https://youtu.be/pxaMzr7al3I · *9 things you’ll actually do with Jev*
 - **vercel-labs/agent-browser** — Functionality: Rust CLI for headless browser control, DOM interaction, screenshots, and browser workflows for agents.
   - Report: `reports/qfRMHqh7tNI.md` · Video: https://youtu.be/qfRMHqh7tNI · *This Skill Gives Your AI Agent a Browser*
 
@@ -238,3 +240,4 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-26.
 ## Pending eval
 
 - `reports/U6ptUFMyaJg.md` — New release: fewer tokens & reliable AI (0 unevaled)
+- `reports/pxaMzr7al3I.md` — 9 things you’ll actually do with Jev (1 unevaled)
