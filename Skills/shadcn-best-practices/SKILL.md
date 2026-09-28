@@ -36,3 +36,9 @@ Full upstream guidance is vendored read-only at `plugin/`. Read the file that ma
 ## Provenance and license
 
 Vendored from `openai/plugins` → `plugins/build-web-apps/skills/shadcn-best-practices`. That repo ships **no LICENSE file**, and this bundle's `plugin/` directory is gitignored in `jaknyfe-skills` as a result. Use locally; do not fork, mirror, or publish it.
+
+## Verified against the live CLI (2026-09-27)
+
+`shadcn info` **exits 0 even when the directory is not a shadcn project.** In an empty dir it prints `"framework": "Manual"`, `"config": null`, `"components": []` and still returns 0. Never gate a check on its exit code — parse the JSON and test `config !== null`.
+
+Confirmed by running `bunx --bun shadcn@latest info --help`: the only `info` options are `-c, --cwd`, `--json`, `-h, --help`. `--package-manager` does not exist anywhere in the CLI help, confirming rule 2 above.

@@ -186,6 +186,17 @@ residual MEDIUM is the skill's documented purpose — it tells the assistant to 
 same class of finding as `react-best-practices` (23/100 MEDIUM) and is expected for a CLI-driven
 skill. Proceed.
 
+**CLI verified against the live binary (2026-09-27).** Two claims worth pinning down before anyone
+trusts this skill unattended:
+
+- `shadcn info` **exits 0 even when the directory is not a shadcn project.** Run in an empty dir it
+  prints `"framework": "Manual"`, `"config": null`, `"components": []` and returns 0. Do not gate a
+  check on its exit code — parse the JSON and test `config !== null`.
+- `info` exposes only `-c, --cwd`, `--json`, `-h, --help`. `--package-manager` appears nowhere in
+  the CLI help, which confirms the router's "use the project's package runner" rule.
+
+Both findings are recorded in the Zo router at `Skills/shadcn-best-practices/SKILL.md`.
+
 **Still true after install:** the CLI moves fast. The reference docs are pinned to whatever shipped
 at repo-copy time and will rot silently. Re-check `shadcn@latest --help` and the `info --json`
 output shape before trusting it unattended. The Zo router, not the vendored body, is what pins the
