@@ -258,11 +258,24 @@ the HTML→MP4 path. Note that `whisper-cpp` **is** present, so the transcribe w
 ### `hyperframes init` is not sandboxed
 
 The scaffolder's final step is **"Linked skills into 53 other agent directories"** — it wrote
-~530 symlinks into agent skill directories across `/root` (`.claude`, `.codex`, `.gemini`,
-`.zcode`, `.terramind`, `.iflow`, `.qoder`, `.commandcode`, and others), touching nothing in
-`/home/workspace/Skills`. Nothing was overwritten, but the write is host-wide and silent. Run
-`init` knowing this, and prefer `--non-interactive` from an agent context so it cannot block on
-prompts. Recorded in the Zo router.
+**635 symlinks across 53 agent skill directories** across `/root` (`.claude`, `.codex`, `.gemini`,
+`.terramind`, `.iflow`, `.qoder`, `.commandcode`, `.hermes`, `.kilocode`, `.openclaw`, `.continue`,
+`.config/goose`, and ~30 more), plus 11 empty placeholder dirs under `/root/.claude/skills/`,
+touching nothing in `/home/workspace/Skills`. Nothing was overwritten, but the write is host-wide
+and silent. Prefer `--non-interactive` from an agent context so it cannot block on prompts.
+
+**What could call them: nothing.** Every placeholder is an empty directory (0 files), so all 635
+links resolve to nothing loadable. Verified inert in the three runtimes installed and running on
+this host (`hermes`, `kilocode`, `openclaw`; `zcode` is not installed). A separate ~795-link fanout
+dated 2026-08-18 points at the same empty placeholders — pre-existing platform state, not from this
+run, and deliberately left alone.
+
+**Corrected 2026-09-28:** the original "~530 symlinks across 53 directories" undercounted the
+links (directory count was right). The first inventory stopped at `find -maxdepth 4` and missed 11
+more under `/root/.pi/agent/skills`. Correct figure: 635 links, 53 dirs. An mtime-gated undo
+(remove only links dated on the run day, then `rmdir` the empty placeholders — never `rm -rf`) plus
+a sweep at `-maxdepth 6` is recorded in the Zo router; all 635 were removed and 0 verified
+remaining on 2026-09-28.
 
 ## Decision point after the trial
 

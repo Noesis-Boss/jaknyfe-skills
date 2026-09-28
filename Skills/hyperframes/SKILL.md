@@ -67,15 +67,47 @@ Full path pattern: `/home/workspace/Skills/hyperframes/plugin/skills/<skill>/SKI
 
 ## `hyperframes init` is not sandboxed
 
-`init` scaffolds the project, then links its ten workflow skills into **every agent skills
-directory it can find on the host**. Measured 2026-09-27: ~530 symlinks across 53 directories
-(`/root/.codex/skills`, `/root/.zcode/skills`, `/root/.gemini/skills`, `/root/.claude/skills`,
-`/root/.config/goose`, `/root/.continue`, and so on), all pointing at
-`/root/.claude/skills/hyperframes-*`.
+`init` scaffolds the project, then links its workflow skills into **every agent skills directory it
+can find on the host**, and creates an empty placeholder dir for each linked name under
+`/root/.claude/skills/`.
 
-Nothing lands in `/home/workspace/Skills` — the workspace is not on its search path. But it does
-write outside the workspace on every run, so run it once for a project and then treat the links as
-settled. If they need clearing, they are symlinks only; no real files to lose.
+Measured exactly 2026-09-28: **635 symlinks across 53 directories** (624 across 52 dirs found at
+depth 4, plus 11 more under `/root/.pi/agent/skills` at depth 5 — an inventory that stops at
+`find -maxdepth 4` undercounts, so sweep at depth 6). Directories hit include `.codex`, `.gemini`,
+`.claude`, `.config/goose`, `.continue`, `.hermes`, `.kilocode`, `.openclaw`, `.terramind`,
+`.qoder`, `.iflow`, `.commandcode`, `.roo`, `.trae`, `.codeium/windsurf`, `.augment` and ~30 more.
+
+Every target under `/root/.claude/skills/` is an **empty directory** (0 files), so the links resolve
+but there is nothing behind them — no agent runtime can actually load these skills. Confirmed inert
+in all three runtimes installed and running on this host (`hermes`, `kilocode`, `openclaw`; `zcode`
+is not installed at all). A separate, older 2026-08-18 platform fanout of ~795 links points at the
+same empty placeholders; that one is **pre-existing, not ours** — leave it alone.
+
+Nothing lands in `/home/workspace/Skills` — the workspace is not on its search path — but it does
+write outside the workspace on every run, so run it once per project and then clean up.
+
+To undo a run (recipe used 2026-09-28, removed all 635 and confirmed 0 remaining):
+
+```bash
+# 1. snapshot links before deleting
+find /root -maxdepth 6 -type l 2>/dev/null | while read -r l; do
+  t=$(readlink "$l" 2>/dev/null); case "$t" in *"/.claude/skills/"*) printf '%s\t%s\n' "$t" "$l";; esac
+done > /tmp/hf-links.tsv
+
+# 2. remove ONLY links created by the run (mtime-gated, so the 2026-08-18 fanout survives)
+cut -f2 /tmp/hf-links.tsv | while read -r l; do
+  [ "$(date -u -r "$l" +%F)" = "<run-date>" ] && rm -- "$l"
+done
+
+# 3. drop the empty placeholder dirs the run created
+for d in /root/.claude/skills/*/; do
+  [ -L "${d%/}" ] && continue
+  [ -z "$(ls -A "$d")" ] && [ "$(date -u -r "$d" +%F)" = "<run-date>" ] && rmdir "$d"
+done
+```
+
+`rmdir` (never `rm -rf`) is the safety: it refuses any directory that still has content, so real
+skill files cannot be lost.
 
 `init` also writes `AGENTS.md` and `CLAUDE.md` (identical, 8 KB) into the new project. Both are
 agent instruction files, not build config — review them before they reach a repo you care about.
