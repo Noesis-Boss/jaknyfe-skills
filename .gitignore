@@ -11,6 +11,7 @@ Archive/stash-recovery-2026-09-06/
 freellmapi/server/.env
 
 # Large local backup archives (kept on disk, never pushed)
+saas-mailer/backups/
 Archive/snapshots/
 Archive/restore-points/*.tar.gz
 Archive/stash-recovery-2026-09-06.tar.gz
@@ -21,3 +22,16 @@ Skills/x-browser-reply/cookies*.json
 Skills/x-browser-reply/cookies*.json
 Skills/x-browser-reply/f4f_state.json
 __pycache__/
+.secrets/
+
+# Vendored third-party plugin bundles (OpenAI Codex trial installs, 2026-09-27)
+# These are upstream code, not ours. Do not commit or redistribute:
+#   - openai/plugins ships NO LICENSE file at repo root
+#   - plugins/data-analytics/.codex-plugin/plugin.json declares "license": "Proprietary"
+#   - plugins/plugin-eval/package.json is "private": true
+# Re-vendor with: git clone --depth 1 https://github.com/openai/plugins.git
+# The Zo routers (SKILL.md) and Skills/TRIAL-openai-plugins.md ARE committed.
+Skills/hyperframes/plugin/
+Skills/public-equity-investing/plugin/
+Skills/plugin-eval/plugin/
+Skills/data-analytics/plugin/
