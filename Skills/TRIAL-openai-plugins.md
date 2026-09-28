@@ -121,7 +121,7 @@ whose payload is platform-neutral:
 This is the bundle that answers the trial's own question — it beat nothing, but it had no local
 equivalent to lose to, and it is 104 KB of pure prose.
 
-## `build-web-apps` — evaluated 2026-09-27, NOT installed
+## `build-web-apps` — evaluated 2026-09-27; `react-best-practices` INSTALLED, rest NOT installed
 
 The other half of the bundle's frontend story. 6 skills, 133 files, 451 KB, **no LICENSE anywhere**
 (not in the plugin, not at the repo root) — so it is reference code on the same footing as the other
@@ -129,9 +129,9 @@ four. Every skill is pure markdown plus an `agents/openai.yaml`; zero scripts, z
 
 | Upstream skill | Files | Verdict | Reason |
 | --- | --- | --- | --- |
-| `react-best-practices` (Vercel) | 71 | **BORROW** | 66 discrete perf rules, progressive-disclosure format, zero collision |
+| `react-best-practices` (Vercel) | 71 | **INSTALLED 2026-09-27** | 66 discrete perf rules, progressive-disclosure format, zero collision |
 | `shadcn` | 13 | **SKIP for now** | Highest day-to-day value on Zo, but shadcn CLI version churn is a live unknown |
-| `stripe-best-practices` | 6 | **BORROW the 4 refs only** | Local skill is a good 10 KB stub with no routing table, no Treasury |
+| `stripe-best-practices` | 6 | **INSTALLED (4 refs)** | Local skill is a good 10 KB stub with no routing table, no Treasury |
 | `frontend-app-builder` | 3 | **SKIP** | Rule 9 bans the eyebrow label; a direct conflict with live local work |
 | `frontend-testing-debugging` | 2 | **SKIP** | Entirely Codex-plugin-routing scaffolding; local `webapp-testing` already covers it |
 | `supabase-best-practices` | 38 | **SKIP — duplicate** | Same `name: supabase-postgres-best-practices`, v1.1.0 vs the v1.1.1 already installed |
@@ -146,8 +146,11 @@ values`, `split-combined-hooks`), `client-*`, `bundle-*`, `async-*`, `js-*`, `re
 
 Nothing here conflicts with `frontend-design` (Anthropic, aesthetic direction) — one is
 performance, the other is taste. It also lines up with the Zo Spaces guidance already in play
-(`esm.sh` imports, bundle budgets). Install as `Skills/react-best-practices` with a Zo router, the
-same shape as `postgres-best-practices`.
+(`esm.sh` imports, bundle budgets). Installed as `Skills/react-best-practices/plugin/` (66 rules, 224 KB) behind a hand-written Zo
+router `SKILL.md` with a symptom-to-file routing table and the Next.js-on-Vite caveat. Bundled
+tree is gitignored. SkillSpector 23/100 MEDIUM — both HIGH findings are the word "injecting" in
+the hydration-flicker rule plus a `dangerouslySetInnerHTML` snippet in a markdown sample; manually
+adjudicated false positives (68 markdown files, zero scripts).
 
 Caveat: several rules are Next.js/App-Router specific (`server-components`, `RSC` patterns). Most of
 Don's Zo sites are Vite + React, where the `server-*` and `rerender-*` halves still apply but

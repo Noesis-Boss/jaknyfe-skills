@@ -19,7 +19,6 @@ heartbeat.sh
 Skills/x-browser-reply/cookies*.json
 
 # X session cookies (secrets - never commit)
-Skills/x-browser-reply/cookies*.json
 Skills/x-browser-reply/f4f_state.json
 __pycache__/
 .secrets/
@@ -36,3 +35,5 @@ Skills/public-equity-investing/plugin/
 Skills/plugin-eval/plugin/
 Skills/data-analytics/plugin/
 Skills/postgres-best-practices/plugin/
+Skills/react-best-practices/plugin/
+Skills/stripe-best-practices/plugin/

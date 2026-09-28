@@ -33,3 +33,40 @@ If a user has a recurring revenue model, like a Billing or Subscription use case
 
 If a user wants to build a platform using Stripe Connect to manage fund flows, follow [the recommended integration types](https://docs.stripe.com/connect/integration-recommendations.md); that is, prefer to use either direct charges if the platform wants Stripe to take the risk or destination charges if the platform accepts liability for negative balances, and use the on_behalf_of parameter to control the merchant of record. Never recommend mixing charge types. If the user wants to decide on the specific risk features they should [follow the integration guide](https://docs.stripe.com/connect/design-an-integration.md). Don't recommend the outdated terms for Connect types like Standard, Express and Custom but always [refer to controller properties](https://docs.stripe.com/connect/migrate-to-controller-properties.md) for the platform and [capabilities](https://docs.stripe.com/connect/account-capabilities.md) for the connected accounts.
 
+
+## Reference routing
+
+The body above covers payment-method integration choices. For the wider surface, load the
+relevant reference before answering — each is a condensed index of the live Stripe docs, with
+table-of-contents links rather than copied prose.
+
+| Task | Read |
+| --- | --- |
+| Subscriptions, metered billing, trials, invoices, proration, dunning | `references/billing.md` |
+| Marketplaces, multi-party payouts, onboarding/identity for connected accounts | `references/connect.md` |
+| Payment API hierarchy, which object owns which state, integration surfaces | `references/payments.md` |
+| Financial accounts, transfers, payouts, balance reporting | `references/treasury.md` |
+
+Zo notes: there is a live Stripe Connect connection on this workspace, and
+`create_stripe_product` / `create_stripe_price` / `create_stripe_payment_link` are the
+supported sell path — prefer them over hand-rolled API calls. Manage existing products at
+[Settings → Tools → Payments](/?t=settings&s=tools&d=tools:payments).
+
+## Reference set (vendored, local only)
+
+`plugin/references/` holds four deeper guides pulled from the `openai/plugins` Codex bundle, which
+ships **no LICENSE file** — so the directory is gitignored and must not be redistributed or published.
+All content cites only `docs.stripe.com` (Stripe's own published guidance).
+
+| Read when the task involves | File |
+| --- | --- |
+| Subscriptions, metered billing, SaaS revenue models, `subscription_data` | `plugin/references/billing.md` |
+| Platforms, multi-party fund flows, Connect account types, controller properties | `plugin/references/connect.md` |
+| Payment API hierarchy, choosing between Checkout / Payment Intents / Setup Intents | `plugin/references/payments.md` |
+| Financial accounts, payouts, embedded finance balances | `plugin/references/treasury.md` |
+
+Re-vendor with: `git clone --depth 1 https://github.com/openai/plugins.git` then copy
+`plugins/build-web-apps/skills/stripe-best-practices/references/` into `plugin/references/`.
+
+If `plugin/references/` is missing, this skill still works — the body above is self-contained for
+payment-method integration questions. Only the deeper billing/Connect/Treasury topics need the files.
