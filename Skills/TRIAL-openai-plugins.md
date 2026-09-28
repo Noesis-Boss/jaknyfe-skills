@@ -12,6 +12,7 @@
 | `Skills/public-equity-investing` | `plugins/public-equity-investing` | 23 | 4.0 MB |
 | `Skills/plugin-eval` | `plugins/plugin-eval` | 5 | 340 KB |
 | `Skills/data-analytics` | `plugins/data-analytics` | 15 | 4.8 MB |
+| `Skills/postgres-best-practices` | `plugins/supabase` | 2 | 104 KB |
 
 Each Zo skill contains:
 - `SKILL.md` — the Zo router (routing, prerequisites, Codex→Zo deltas, local pitfalls)
@@ -27,6 +28,8 @@ pre-install rule for this workspace.
 | hyperframes | 19 | LOW | SAFE | Gate exit 0, no gate breach. Passed clean |
 | public-equity-investing | 100 | CRITICAL | PASS (false positives) | See below |
 | data-analytics | 100 | CRITICAL | PASS (false positives) | See below |
+| supabase-postgres-best-practices | 0 | LOW | SAFE | Gate exit 0. 48 files, no executables, no scripts, no network |
+| supabase (platform skill) | 40 | MEDIUM | vendored, NOT activated | False positives on `.mcp.json` / `service_role`; platform-specific, not used on this host |
 | plugin-eval | 61 | HIGH | PASS (false positives) | See below |
 
 ### public-equity-investing — 126 findings, 3 HIGH
@@ -80,13 +83,14 @@ HIGH was checked against the actual file, not assumed.
 
 ## Removal
 
-Fully reversible — no state outside these four directories:
+Fully reversible — no state outside these five directories:
 
 ```bash
 rm -rf /home/workspace/Skills/hyperframes \
        /home/workspace/Skills/public-equity-investing \
        /home/workspace/Skills/plugin-eval \
-       /home/workspace/Skills/data-analytics
+       /home/workspace/Skills/data-analytics \
+       /home/workspace/Skills/postgres-best-practices
 rm /home/workspace/Skills/TRIAL-openai-plugins.md
 ```
 
@@ -94,7 +98,28 @@ rm /home/workspace/Skills/TRIAL-openai-plugins.md
 
 - Repo root has **no LICENSE file**. `data-analytics` additionally declares
   `"license": "Proprietary"` with a `private: true` package.
-- Treat all four as reference code. Do not redistribute, publish, or fork.
+- **`plugins/supabase` is the exception: it ships its own `LICENSE` (MIT, Copyright (c) 2025
+  Supabase).** That is the one bundle in this trial that may be vendored or forked. It is still
+  gitignored here to keep the trial uniform, but the licence does not require it.
+- Treat the other four as reference code. Do not redistribute, publish, or fork.
+
+## `supabase` — the one keep, and why
+
+`plugins/supabase` is the only bundle in this repo that ships a real licence, and the only one
+whose payload is platform-neutral:
+
+- `supabase-postgres-best-practices` — 31 rules on query performance, connection management, RLS,
+  schema design, locking, data access, and monitoring. Scored **0/100 LOW/SAFE**: 48 files, zero
+  executables, zero scripts, zero network calls. Nothing in it is Supabase-specific except the
+  occasional footnote, and it applies directly to this host's **PostgreSQL 15.19** server.
+  Installed as `Skills/postgres-best-practices` with a Zo router.
+- `supabase` (the platform skill) — 40/100 MEDIUM. Covers the Supabase MCP server, the `supabase`
+  CLI, and the `anon`/`authenticated` role model. **None of that exists on this host**, so it is
+  vendored but explicitly not activated. Its RLS security checklist is generic Postgres and is
+  worth reading by hand when needed.
+
+This is the bundle that answers the trial's own question — it beat nothing, but it had no local
+equivalent to lose to, and it is 104 KB of pure prose.
 
 ## Decision point after the trial
 
