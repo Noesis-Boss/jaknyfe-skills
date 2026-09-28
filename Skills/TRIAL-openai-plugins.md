@@ -130,7 +130,7 @@ four. Every skill is pure markdown plus an `agents/openai.yaml`; zero scripts, z
 | Upstream skill | Files | Verdict | Reason |
 | --- | --- | --- | --- |
 | `react-best-practices` (Vercel) | 71 | **INSTALLED 2026-09-27** | 66 discrete perf rules, progressive-disclosure format, zero collision |
-| `shadcn` | 13 | **SKIP for now** | Highest day-to-day value on Zo, but shadcn CLI version churn is a live unknown |
+| `shadcn` | 13 | **INSTALLED (patched)** | Highest day-to-day value on Zo. Auto-execute frontmatter directive stripped; CLI pinned to `bunx --bun` in the router |
 | `stripe-best-practices` | 6 | **INSTALLED (4 refs)** | Local skill is a good 10 KB stub with no routing table, no Treasury |
 | `frontend-app-builder` | 3 | **SKIP** | Rule 9 bans the eyebrow label; a direct conflict with live local work |
 | `frontend-testing-debugging` | 2 | **SKIP** | Entirely Codex-plugin-routing scaffolding; local `webapp-testing` already covers it |
@@ -156,19 +156,40 @@ Caveat: several rules are Next.js/App-Router specific (`server-components`, `RSC
 Don's Zo sites are Vite + React, where the `server-*` and `rerender-*` halves still apply but
 `server-actions` rules do not.
 
-### `shadcn` — right skill, wrong time
+### `shadcn-best-practices` — INSTALLED, with the auto-execute removed
 
 Zo Sites and Spaces both ship shadcn, and this is the only skill in the entire bundle that knows
 `bunx --bun shadcn@latest` as the right runner for this host. It also handles the `render` (Base UI)
-vs `asChild` (Radix) split that the Spaces docs warn about.
+vs `asChild` (Radix) split that the Spaces docs warn about. It was the single highest-value item in
+the whole bundle, so it was worth unblocking rather than parking.
 
-Two reasons to hold:
-1. It is built on an **auto-execute frontmatter directive** (`` !`npx shadcn@latest info --json` ``).
-   Every load shells out to the network. Harmless, but it is a standing side effect that needs
-   testing against the CLI's actual exit behaviour when no project is found.
-2. The CLI moves fast. These instructions are version-pinned to whatever shipped at repo-copy time
-   and will rot silently. Needs a re-check of `shadcn@latest --help` and `info --json` output shape
-   before it can be trusted unattended.
+**The blocker was real.** Upstream built the skill on an auto-execute frontmatter directive:
+
+```json
+!`npx shadcn@latest info --json 2>/dev/null || echo '{"error": "No shadcn project found..."}'`
+```
+
+Every single load shelled out to the network before the assistant had decided it needed the data.
+That is a standing side effect on a Codex plugin format that has no meaning in Zo, where
+`SKILL.md` frontmatter is just `name` + `description`. It was also the entire cause of the
+100/100 CRITICAL SkillSpector verdict.
+
+**What changed.** The directive block was removed from the vendored copy and the section retitled
+to *Project Context (run on demand)* with an explicit command line to run when — and only when —
+a shadcn task is actually underway. Nothing else in the body was touched; `cli.md`,
+`customization.md`, `mcp.md`, `evals/`, `agents/openai.yaml`, `assets/`, and the five `rules/`
+files are byte-identical to upstream.
+
+**SkillSpector: 100/100 CRITICAL → 43/100 MEDIUM.** No HIGH or CRITICAL findings remain. The
+residual MEDIUM is the skill's documented purpose — it tells the assistant to run
+`bunx --bun shadcn@latest` — plus the many CLI invocations across the reference docs. This is the
+same class of finding as `react-best-practices` (23/100 MEDIUM) and is expected for a CLI-driven
+skill. Proceed.
+
+**Still true after install:** the CLI moves fast. The reference docs are pinned to whatever shipped
+at repo-copy time and will rot silently. Re-check `shadcn@latest --help` and the `info --json`
+output shape before trusting it unattended. The Zo router, not the vendored body, is what pins the
+runner to `bunx --bun` and states the safe-usage rules.
 
 ### `frontend-app-builder` — do not install as-is
 
