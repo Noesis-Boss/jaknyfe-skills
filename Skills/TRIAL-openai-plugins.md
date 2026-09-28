@@ -121,6 +121,75 @@ whose payload is platform-neutral:
 This is the bundle that answers the trial's own question — it beat nothing, but it had no local
 equivalent to lose to, and it is 104 KB of pure prose.
 
+## `build-web-apps` — evaluated 2026-09-27, NOT installed
+
+The other half of the bundle's frontend story. 6 skills, 133 files, 451 KB, **no LICENSE anywhere**
+(not in the plugin, not at the repo root) — so it is reference code on the same footing as the other
+four. Every skill is pure markdown plus an `agents/openai.yaml`; zero scripts, zero executables.
+
+| Upstream skill | Files | Verdict | Reason |
+| --- | --- | --- | --- |
+| `react-best-practices` (Vercel) | 71 | **BORROW** | 66 discrete perf rules, progressive-disclosure format, zero collision |
+| `shadcn` | 13 | **SKIP for now** | Highest day-to-day value on Zo, but shadcn CLI version churn is a live unknown |
+| `stripe-best-practices` | 6 | **BORROW the 4 refs only** | Local skill is a good 10 KB stub with no routing table, no Treasury |
+| `frontend-app-builder` | 3 | **SKIP** | Rule 9 bans the eyebrow label; a direct conflict with live local work |
+| `frontend-testing-debugging` | 2 | **SKIP** | Entirely Codex-plugin-routing scaffolding; local `webapp-testing` already covers it |
+| `supabase-best-practices` | 38 | **SKIP — duplicate** | Same `name: supabase-postgres-best-practices`, v1.1.0 vs the v1.1.1 already installed |
+
+### `react-best-practices` — the clean win
+
+Identical structure to the Supabase rules already installed, from a recognised maintainer (Vercel
+Engineering). Categories: `server-*` (RSC data fetching, caching, dedup, parallel fetching),
+`rerender-*` (22 rules — `derived-state-no-effect`, `memo-with-default-value`, `use-ref-transient-
+values`, `split-combined-hooks`), `client-*`, `bundle-*`, `async-*`, `js-*`, `rendering-*`,
+`advanced-*`.
+
+Nothing here conflicts with `frontend-design` (Anthropic, aesthetic direction) — one is
+performance, the other is taste. It also lines up with the Zo Spaces guidance already in play
+(`esm.sh` imports, bundle budgets). Install as `Skills/react-best-practices` with a Zo router, the
+same shape as `postgres-best-practices`.
+
+Caveat: several rules are Next.js/App-Router specific (`server-components`, `RSC` patterns). Most of
+Don's Zo sites are Vite + React, where the `server-*` and `rerender-*` halves still apply but
+`server-actions` rules do not.
+
+### `shadcn` — right skill, wrong time
+
+Zo Sites and Spaces both ship shadcn, and this is the only skill in the entire bundle that knows
+`bunx --bun shadcn@latest` as the right runner for this host. It also handles the `render` (Base UI)
+vs `asChild` (Radix) split that the Spaces docs warn about.
+
+Two reasons to hold:
+1. It is built on an **auto-execute frontmatter directive** (`` !`npx shadcn@latest info --json` ``).
+   Every load shells out to the network. Harmless, but it is a standing side effect that needs
+   testing against the CLI's actual exit behaviour when no project is found.
+2. The CLI moves fast. These instructions are version-pinned to whatever shipped at repo-copy time
+   and will rot silently. Needs a re-check of `shadcn@latest --help` and `info --json` output shape
+   before it can be trusted unattended.
+
+### `frontend-app-builder` — do not install as-is
+
+Its Hard Rule 9: *"Hero eyebrow, kicker, pretitle, badge, or pill labels above the main heading are
+prohibited by default."* That is a global aesthetic rule, and it directly contradicts the hero
+pattern in live local work — Noësis News, Idea Desk, the Zo Space homepage, the DeMolay deck.
+
+Rules 4 and 11 also assume Codex surfaces that do not exist here: Plan mode, `request_user_input`
+approval gates, and a `view_image`-on-both-images handoff block. The intent behind 11 — do not call
+a build done on code-review alone — is already a standing rule for this workspace via screenshot
+verification. Rule 8 (default to React + Vite for new complex app UIs) is genuinely useful and is the
+one thing worth lifting by hand.
+
+### `frontend-testing-debugging`
+
+Content is almost entirely about detecting whether the Codex **Browser plugin** is available and
+routing to it, plus report-shape and fallback-policy contracts. On Zo the browser tools, `agent-browser`
+CLI, and `webapp-testing` are already the first-class path. Little to transfer.
+
+### Licensing note
+
+`build-web-apps` ships **no LICENSE file at all** — not in the plugin directory, not at the repo root.
+Same posture as the other four bundles: vendored for reference, do not redistribute or fork.
+
 ## Decision point after the trial
 
 Reassess on real use, not on install day. The question worth answering: does any of this beat the
