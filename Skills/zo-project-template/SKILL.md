@@ -27,6 +27,25 @@ Use this skill when starting a new project or checking whether an existing proje
 For a batch check, run `scripts/validate_projects.py <path>...`; add `--frontend` when every supplied project is a frontend project.
 
 The scaffold creates only the reusable structure. It does not create application code or install dependencies. Existing projects should be validated in place; do not move or rewrite files to satisfy the convention without explicit scope.
+## Framework default
+
+For new complex app UIs — dashboards, admin tools, editors, data-heavy tools, and multi-panel
+product surfaces — default to React + Vite + TypeScript with Bun as the package manager, using the
+Zo Sites template (`create_website`, `blank` variant) as the scaffold.
+
+Override that default when any of these hold:
+
+- the user names a different framework,
+- the existing repository already dictates one,
+- the deliverable is explicitly a single-file or static artifact.
+
+For a lightweight page, a link-in-bio, or anything that fits the existing `zo.space` route model, use
+Zo Space instead of a full Site — no repo, no build. Reach for a Site when the project needs its own
+dependencies, multi-file structure, build config, SEO control, or a custom domain.
+
+`DESIGN.md` is where token decisions get locked before any component is written; read it literally
+when it exists rather than substituting generic defaults.
+
 
 ## Required structure
 
