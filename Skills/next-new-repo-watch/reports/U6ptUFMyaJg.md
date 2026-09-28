@@ -64,3 +64,7 @@ Your agent is super smart, but it does stupid things sometimes, like burning thr
      trading bot, publishing pipeline. -->
 
 No GitHub repository was presented or identifiable in this video. The subject is Zapier NextGen Zaps, accessed as a hosted product rather than a repo.
+
+## Eval
+
+No GitHub repository was presented or identifiable for this video. Zapier NextGen Zaps is a hosted product, so there is no repo-level functionality, signals, or INCLUDE/TRIAL/SKIP recommendation to record.

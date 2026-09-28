@@ -1,6 +1,6 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-27.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-28.
 
 **Totals**: 15 INCLUDE · 61 TRIAL · 72 SKIP · 1 pending eval
 
@@ -239,5 +239,4 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-27.
 
 ## Pending eval
 
-- `reports/U6ptUFMyaJg.md` — New release: fewer tokens & reliable AI (0 unevaled)
 - `reports/pxaMzr7al3I.md` — 9 things you’ll actually do with Jev (1 unevaled)
