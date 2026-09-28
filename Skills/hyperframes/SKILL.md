@@ -55,9 +55,52 @@ Full path pattern: `/home/workspace/Skills/hyperframes/plugin/skills/<skill>/SKI
 
 ## Prerequisites
 
-- Node >= 20 (this machine: v26.9.0 — satisfied)
-- CLI is invoked via `npx -y hyperframes-cli@latest <cmd>`; the bundle does not vendor a binary.
+- Node >= 22 (this machine: v26.9.0 — satisfied) and FFmpeg on PATH.
+- The npm package is `hyperframes`, **not** `hyperframes-cli` (the `hyperframes-cli` name is only the
+  skill directory inside the bundle). Invoke it as `npx -y hyperframes@latest <cmd>`, or pin the
+  version the scaffold wrote into `package.json` (`npx --yes hyperframes@0.8.81 render`).
+- `hyperframes doctor` must be green before a long render. Verified 2026-09-27 at v0.8.81: Node,
+  FFmpeg/FFprobe, Chrome headless shell, whisper-cpp, and unzip all pass. The two optional
+  local-voice fallbacks (Kokoro TTS, MusicGen BGM) are not installed, and the Docker daemon is
+  not running — none of those block a render.
 - Browser mode (`hyperframes browser`) requires a local Chrome/Chromium install.
+
+## `hyperframes init` is not sandboxed
+
+`init` scaffolds the project, then links its ten workflow skills into **every agent skills
+directory it can find on the host**. Measured 2026-09-27: ~530 symlinks across 53 directories
+(`/root/.codex/skills`, `/root/.zcode/skills`, `/root/.gemini/skills`, `/root/.claude/skills`,
+`/root/.config/goose`, `/root/.continue`, and so on), all pointing at
+`/root/.claude/skills/hyperframes-*`.
+
+Nothing lands in `/home/workspace/Skills` — the workspace is not on its search path. But it does
+write outside the workspace on every run, so run it once for a project and then treat the links as
+settled. If they need clearing, they are symlinks only; no real files to lose.
+
+`init` also writes `AGENTS.md` and `CLAUDE.md` (identical, 8 KB) into the new project. Both are
+agent instruction files, not build config — review them before they reach a repo you care about.
+
+## Smoke test — passed 2026-09-27
+
+Full end-to-end run at `noesis_content/videos/hyperframes-smoke-test/` on this host, CLI v0.8.81:
+
+| Step | Result |
+| --- | --- |
+| `doctor` | green on Node, FFmpeg, FFprobe, Chrome headless shell, whisper-cpp |
+| `init . --example kinetic-type --non-interactive` | exit 0 |
+| `check` | 0 errors; 1 layout warning + 5 info on the stock template; 14/14 contrast pass |
+| `render` | 9.3 MB, 15.0s, 450 frames, **21.4s wall clock** (6 workers, software GPU) |
+
+Audio was muxed and is real: `hasAudio: true` in the render trace, `volumedetect` mean -21.8 dB,
+max -4.4 dB. Four frames pulled at t=1/5/9/13s all carry live motion and per-frame change, so the
+MP4 is genuine output and not a black or frozen render.
+
+Use this as the baseline: **a 15s composition renders in about 20 seconds on CPU.** Anything much
+slower means something is wrong, not that the machine is slow.
+
+The smoke-test folder is a throwaway. Delete it when it stops being useful.
+
+## Removal (TRIAL)
 
 ## Removal (TRIAL)
 

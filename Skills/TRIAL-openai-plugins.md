@@ -225,6 +225,45 @@ CLI, and `webapp-testing` are already the first-class path. Little to transfer.
 `build-web-apps` ships **no LICENSE file at all** — not in the plugin directory, not at the repo root.
 Same posture as the other four bundles: vendored for reference, do not redistribute or fork.
 
+## `hyperframes` smoke test — 2026-09-27, PASSED
+
+The bundle had been vendored but never run. Exercised end to end on this host: scaffold → check →
+render → artifact verification.
+
+| Step | Command | Result |
+| --- | --- | --- |
+| Version | `npx -y hyperframes@latest --version` | `0.8.81` |
+| Environment | `hyperframes doctor` | Node v26.9.0, FFmpeg/FFprobe 5.1.8, headless Chrome 152, whisper-cpp, unzip all green |
+| Scaffold | `hyperframes init . --example kinetic-type --non-interactive` | exit 0; wrote `index.html`, `hyperframes.json`, `AGENTS.md`, `CLAUDE.md`, `compositions/` |
+| Check | `hyperframes check` | 0 errors; 1 layout warning + 5 info on the stock template; 14/14 contrast checks pass WCAG AA |
+| Render | `hyperframes render` | exit 0 — 9.3 MB MP4, 15.0 s, 450/450 frames, **21.4 s** wall clock, 6 workers, software GPU |
+| Audio | `ffmpeg -i out.mp4 -af volumedetect` | mean −21.8 dB, max −4.4 dB — a real mix, not silence |
+| Frames | ffmpeg frame grab at t=1/5/9/13 s | all four have real content (mean 20–136, stddev 22–77, 5.8k–160k distinct colors) |
+
+Render speed is the headline: **a 15 s composition in 21 s**, faster than its own runtime, on
+software GPU with no Docker. Chrome and FFmpeg were already present, so nothing needed installing.
+
+Two optional doctor checks fail and do not block: Kokoro TTS and MusicGen BGM are not installed,
+and the Docker daemon is not running (expected — Zo is a gVisor sandbox). Neither is needed for
+the HTML→MP4 path. Note that `whisper-cpp` **is** present, so the transcribe workflow is available.
+
+### Two router bugs this test caught
+
+1. **Wrong package name.** The router said the CLI was `npx -y hyperframes-cli@latest`. The real
+   npm package is `hyperframes`. The scaffolder also pins an exact version in `package.json`
+   (`npx --yes hyperframes@0.8.81`) rather than `@latest` — worth mirroring, since `latest` rots.
+2. **Wrong Node floor.** The router said Node >= 20; `hyperframes-cli/SKILL.md` requires >= 22.
+   This host runs v26.9.0 so it never showed up as a failure, but the number was wrong.
+
+### `hyperframes init` is not sandboxed
+
+The scaffolder's final step is **"Linked skills into 53 other agent directories"** — it wrote
+~530 symlinks into agent skill directories across `/root` (`.claude`, `.codex`, `.gemini`,
+`.zcode`, `.terramind`, `.iflow`, `.qoder`, `.commandcode`, and others), touching nothing in
+`/home/workspace/Skills`. Nothing was overwritten, but the write is host-wide and silent. Run
+`init` knowing this, and prefer `--non-interactive` from an agent context so it cannot block on
+prompts. Recorded in the Zo router.
+
 ## Decision point after the trial
 
 Reassess on real use, not on install day. The question worth answering: does any of this beat the
