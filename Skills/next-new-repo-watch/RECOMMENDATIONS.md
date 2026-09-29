@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-28.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-29.
 
-**Totals**: 15 INCLUDE · 61 TRIAL · 72 SKIP · 1 pending eval
+**Totals**: 16 INCLUDE · 61 TRIAL · 75 SKIP · 1 pending eval
 
 ## INCLUDE
 
@@ -18,6 +18,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-28.
   - Report: `reports/QZXeiuLBlTk.md` · Video: https://youtu.be/QZXeiuLBlTk · *This Tool Feeds All Your Business Data to One AI Agent*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
   - Report: `reports/WPUAZm5rnGc.md` · Video: https://youtu.be/WPUAZm5rnGc · *Easy step-by-step setup*
+- **affaan-m/ECC** — Functionality: A large collection of skills and workflows for coding agents, covering planning, TDD, security, research, memory, and review.
+  - Report: `reports/XGJtqUPUZSo.md` · Video: https://youtu.be/XGJtqUPUZSo · *ECC — This Skill Pack Teaches Your AI to Code the Right Way*
 - **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent 
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Functionality: An agent skill that turns system descriptions and workflow inputs into explorable architecture, sequence, data-flow, and life
@@ -195,6 +197,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-28.
 - [vercel/next.js](https://github.com/vercel/next.js) — `reports/F-_q6VIHMS8.md`
 - [GoogleChrome/lighthouse](https://github.com/GoogleChrome/lighthouse) — `reports/F-_q6VIHMS8.md`
 - [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) — `reports/Jv050l7y6ik.md`
+- jdepoix/youtube-transcript-api — `reports/KU7FrnLBqSM.md`
 - X1 (x1.new) — `reports/M7cvI4155_E.md`
 - diffusionstudio/core — `reports/MaTkyO-8hZ0.md`
 - OpenClaw 2.0 — `reports/MaTkyO-8hZ0.md`
@@ -205,6 +208,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-28.
 - [securo-finance/securo](https://github.com/securo-finance/securo) — `reports/TWCSvvTfJNU.md`
 - [zapier/zapier-mcp](https://github.com/zapier/zapier-mcp) — `reports/TWCSvvTfJNU.md`
 - Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/WPUAZm5rnGc.md`
+- jdepoix/youtube-transcript-api — `reports/XGJtqUPUZSo.md`
 - JohnHeibel/PDoomVideo — `reports/ZodAaTH-6_E.md`
 - yoheinakajima/glance-speedlab — `reports/ZodAaTH-6_E.md`
 - [humanlayer/skills](https://github.com/humanlayer/skills) — `reports/aX8Y183qDpY.md`
@@ -213,6 +217,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-28.
 - [openai/skills](https://github.com/openai/skills) — `reports/aX8Y183qDpY.md`
 - [CaptainASIC/reckoner](https://github.com/CaptainASIC/reckoner) — `reports/aX8Y183qDpY.md`
 - [Aotricx/Clodex](https://github.com/Aotricx/Clodex) — `reports/aX8Y183qDpY.md`
+- jdepoix/youtube-transcript-api — `reports/dfFKE7EetoA.md`
 - vercel-labs/skills — `reports/ehab5PtgRo8.md`
 - anthropics/skills — `reports/ehab5PtgRo8.md`
 - vercel-labs/agent-skills — `reports/ehab5PtgRo8.md`

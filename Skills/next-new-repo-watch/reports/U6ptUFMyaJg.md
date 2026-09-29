@@ -68,3 +68,5 @@ No GitHub repository was presented or identifiable in this video. The subject is
 ## Eval
 
 No GitHub repository was presented or identifiable for this video. Zapier NextGen Zaps is a hosted product, so there is no repo-level functionality, signals, or INCLUDE/TRIAL/SKIP recommendation to record.
+
+Recommendation: SKIP — no repository was presented; this episode evaluates a hosted Zapier product rather than installable source code.
