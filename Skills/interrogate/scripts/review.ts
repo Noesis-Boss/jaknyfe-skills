@@ -61,7 +61,7 @@ async function readRequired(url: URL): Promise<string> {
 const TIMESTAMP_PREFIX = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}(:\d{2})? [A-Z]{2,5}\s*[-—–]\s*/;
 
 function stripTimestamp(text: string): string {
-  return text.replace(TIMESTAMP_PREFIX, "").trimStart();
+  return text.trimStart().replace(TIMESTAMP_PREFIX, "").trimStart();
 }
 
 async function ask(prompt: string, model: string, label: string): Promise<string> {
