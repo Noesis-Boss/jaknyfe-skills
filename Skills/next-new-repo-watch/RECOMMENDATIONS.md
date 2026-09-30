@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-29.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-30.
 
-**Totals**: 16 INCLUDE · 61 TRIAL · 75 SKIP · 1 pending eval
+**Totals**: 16 INCLUDE · 67 TRIAL · 81 SKIP · 1 pending eval
 
 ## INCLUDE
 
@@ -149,6 +149,18 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-29.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **every-app/open-seo** — Functionality: Open-source alternative to Semrush and Ahrefs for SEO research.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
+- **mksglu/context-mode** — Functionality: TypeScript tooling for AI coding agents that routes exploratory work into disposable sandboxes, persists useful context, and 
+  - Report: `reports/is7d_hJc_io.md` · Video: https://youtu.be/is7d_hJc_io · *Context-Mode — The Fix for AI Coders That Forget Mid-Task*
+- **PostHog/posthog** — Functionality: Self-hosted product analytics with funnels, retention, session replay, feature flags, experiments, error tracking, logs, and 
+  - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
+- **every-app/open-seo** — Functionality: TypeScript SEO research and rank-tracking software positioned as an open alternative to Semrush and Ahrefs.
+  - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
+- **calcom/cal.diy** — Functionality: Self-hostable scheduling infrastructure for booking pages, availability, and payment-aware appointments.
+  - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
+- **useautumn/autumn** — Functionality: Open-source TypeScript billing layer for subscriptions, usage-based pricing, token metering, free trials, and plan entitlemen
+  - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
+- **baptisteArno/typebot.io** — Functionality: Self-hosted visual chatbot and conversational-form builder with branching flows, lead qualification, and integrations such as
+  - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
 - **Bezalel (bundled agent-infra MCP)** — 
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
 - **Supernova (business-data-to-agent connector)** — 
@@ -228,6 +240,12 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-29.
 - TencentCloud/Octop — `reports/hlOk-EFUITQ.md`
 - davila7/claude-code-templates — `reports/hlOk-EFUITQ.md`
 - paperclipai/paperclip — `reports/hlOk-EFUITQ.md`
+- jdepoix/youtube-transcript-api — `reports/is7d_hJc_io.md`
+- invoiceninja/invoiceninja — `reports/kMPyFWFqX5I.md`
+- frappe/crm — `reports/kMPyFWFqX5I.md`
+- mautic/mautic — `reports/kMPyFWFqX5I.md`
+- chatwoot/chatwoot — `reports/kMPyFWFqX5I.md`
+- jdepoix/youtube-transcript-api — `reports/kMPyFWFqX5I.md`
 - MicroDuck / microduck_rl — `reports/klqyY5SAQvc.md`
 - MIDI Autocomplete — `reports/klqyY5SAQvc.md`
 - Outbid (outbid.lol) — `reports/klqyY5SAQvc.md`
