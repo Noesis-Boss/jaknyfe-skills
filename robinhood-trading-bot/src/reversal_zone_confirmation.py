@@ -11,6 +11,8 @@ class ReversalZoneConfirmationStrategy:
         self.level_lookback = int(cfg.get("level_lookback", 20))
         self.move_lookback = int(cfg.get("move_lookback", 3))
         self.min_move_pct = float(cfg.get("min_move_pct", .004))
+        self.move_bars = int(cfg.get("move_bars", self.move_lookback))
+        self.max_move_bars = int(cfg.get("max_move_bars", self.move_lookback))
         self.structure_lookback = int(cfg.get("structure_lookback", 3))
         self.confirmation_body_ratio = float(cfg.get("confirmation_body_ratio", .5))
         self.volume_multiplier = float(cfg.get("volume_multiplier", 1))
@@ -18,6 +20,11 @@ class ReversalZoneConfirmationStrategy:
         self.max_holding_bars = int(cfg.get("max_holding_bars", 30))
         self.max_gap_pct = float(cfg.get("max_gap_pct", .08))
         self.max_bar_range_pct = float(cfg.get("max_bar_range_pct", .08))
+        self.news_blackout_dates = {str(value) for value in cfg.get("news_blackout_dates", [])}
+        self.news_blackout_context = bool(cfg.get("news_blackout_context", True))
+        self.scale_out_enabled = bool(cfg.get("scale_out_enabled", True))
+        self.scale_out_r = float(cfg.get("scale_out_r", 1.5))
+        self.scale_out_fraction = float(cfg.get("scale_out_fraction", .5))
         self._active_trades, self._entry_counts = {}, {}
 
     def _ny(self, ts):
@@ -34,6 +41,9 @@ class ReversalZoneConfirmationStrategy:
         if len(bars) < minimum or symbol in self._active_trades:
             return None
         ts = self._ny(bars.index[-1])
+        context = context or {}
+        if ts.date().isoformat() in self.news_blackout_dates or (self.news_blackout_context and context.get("high_impact_news")):
+            return None
         if not self.session_start <= ts.time() < self.session_end or self._entry_counts.get((symbol, ts.date()), 0) >= 1:
             return None
         f = bars.copy().tail(max(self.level_lookback + self.move_lookback + 5, 40))
@@ -49,7 +59,9 @@ class ReversalZoneConfirmationStrategy:
             return None
         zone = prior.tail(self.level_lookback)
         support, resistance = float(zone.low.min()), float(zone.high.max())
-        move = prior.tail(self.move_lookback)
+        move = prior.tail(self.move_bars)
+        if len(move) > self.max_move_bars:
+            return None
         move_start, move_end = float(move.close.iloc[0]), float(move.close.iloc[-1])
         body_ratio = abs(close - open_price) / max(high - low, 1e-9)
         if body_ratio < self.confirmation_body_ratio or self._atr(f) <= 0:
@@ -72,7 +84,7 @@ class ReversalZoneConfirmationStrategy:
         return {"symbol": symbol, "direction": direction, "entry": round(entry, 2), "stop": round(stop, 2), "target": round(target, 2), "qty": qty, "timestamp": ts.isoformat(), "reason": reason}
 
     def on_trade_entered(self, symbol, signal):
-        self._active_trades[symbol] = dict(signal, entry_bar_count=0)
+        self._active_trades[symbol] = dict(signal, entry_bar_count=0, initial_qty=signal["qty"], realized_pnl=0.0, scaled_out=False)
         key = (symbol, pd.Timestamp(signal["timestamp"]).date())
         self._entry_counts[key] = self._entry_counts.get(key, 0) + 1
 
@@ -82,13 +94,26 @@ class ReversalZoneConfirmationStrategy:
         trade["entry_bar_count"] += 1
         bar, ts = bars.iloc[-1], self._ny(bars.index[-1])
         high, low, close = map(float, (bar.high, bar.low, bar.close)); long = trade["direction"] == "long"
+        risk_per_share = abs(trade["entry"] - trade["stop"])
+        favorable = (high - trade["entry"]) if long else (trade["entry"] - low)
+        if self.scale_out_enabled and not trade["scaled_out"] and risk_per_share > 0 and favorable >= self.scale_out_r * risk_per_share and trade["qty"] > 1:
+            reduce_qty = max(1, int(trade["qty"] * self.scale_out_fraction))
+            reduce_qty = min(reduce_qty, trade["qty"] - 1)
+            exit_price = trade["entry"] + self.scale_out_r * risk_per_share if long else trade["entry"] - self.scale_out_r * risk_per_share
+            partial_pnl = (exit_price - trade["entry"]) * reduce_qty if long else (trade["entry"] - exit_price) * reduce_qty
+            trade["qty"] -= reduce_qty
+            trade["realized_pnl"] += partial_pnl
+            trade["scaled_out"] = True
+            self.risk.update_cash(partial_pnl)
+            return {"symbol": symbol, "direction": trade["direction"], "entry": trade["entry"], "exit_price": round(exit_price, 2), "qty": reduce_qty, "pnl": round(partial_pnl, 2), "rr": self.scale_out_r, "reason": "scale_out", "exit_time": ts.isoformat()}
         if long: exit_price, reason = ((trade["stop"], "stop_loss") if low <= trade["stop"] else (trade["target"], "target_hit") if high >= trade["target"] else (None, None))
         else: exit_price, reason = ((trade["stop"], "stop_loss") if high >= trade["stop"] else (trade["target"], "target_hit") if low <= trade["target"] else (None, None))
         if exit_price is None and (trade["entry_bar_count"] >= self.max_holding_bars or ts.time() >= self.session_end): exit_price, reason = close, "session_close" if ts.time() >= self.session_end else "max_holding_bars"
         if exit_price is None: return None
         pnl = (exit_price - trade["entry"]) * trade["qty"] if long else (trade["entry"] - exit_price) * trade["qty"]
+        pnl += trade["realized_pnl"]
         result = {"symbol": symbol, "direction": trade["direction"], "entry": trade["entry"], "exit_price": round(exit_price, 2), "qty": trade["qty"], "pnl": round(pnl, 2), "rr": self.rr_ratio, "reason": reason, "exit_time": ts.isoformat()}
-        self.risk.update_cash(pnl)
+        self.risk.update_cash(pnl - trade["realized_pnl"])
         if self.journal: self.journal.log_trade(result)
         del self._active_trades[symbol]
         return result

@@ -9,6 +9,8 @@ links from the timeline, dedupes against processed_tweets.json, skips
 own accounts, prints JSON array: [{tweet_id, username, url, text}].
 Also appends found IDs to processed_tweets.json as "found" (status
 updated to "replied"/"followed" by the other scripts' callers).
+
+Uses `eval` (15s) instead of `read` — read hangs on some X pages.
 """
 import argparse, json, os, re, subprocess, sys, time
 from urllib.parse import quote
@@ -23,12 +25,23 @@ QUERIES = [
     '"#f4f" -filter:replies lang:en',
 ]
 CHALLENGE_MARKERS = ("just a moment", "checking your browser", "verify you are human", "challenge")
-LINK_RE = re.compile(r"/([A-Za-z0-9_]{1,15})/status/(\d+)")
+LINK_RE = re.compile(r"https://x\.com/([A-Za-z0-9_]{1,15})/status/(\d+)")
 
 
-def ab(*args, timeout=120):
-    r = subprocess.run([AB, *args], capture_output=True, text=True, timeout=timeout)
-    return r.returncode, (r.stdout or "").strip(), (r.stderr or "").strip()
+def ab(*args, timeout=15):
+    try:
+        r = subprocess.run([AB, *args], capture_output=True, text=True, timeout=timeout)
+        return r.returncode, (r.stdout or "").strip(), (r.stderr or "").strip()
+    except subprocess.TimeoutExpired:
+        return 124, "", "timeout"
+
+
+def eval_js(expr, timeout=15):
+    """Run a JS expression; return stripped stdout or '' on failure."""
+    rc, out, err = ab("eval", expr, timeout=timeout)
+    if rc != 0:
+        return ""
+    return out.strip().strip('"')
 
 
 def load_state():
@@ -58,6 +71,21 @@ def extract(text, state):
     return list(seen.values())
 
 
+def challenge_check():
+    """Return True if current page shows a challenge wall."""
+    expr = "(() => { const t = (document.body && document.body.innerText || '').toLowerCase(); return (t.includes('just a moment') || t.includes('checking your browser') || t.includes('verify you are human') || t.includes('challenge')) ? 'CHALLENGE' : 'OK'; })()"
+    return eval_js(expr) == "CHALLENGE"
+
+
+def collect_links():
+    """Eval a small JS snippet that returns all status URLs on the page."""
+    expr = "(() => Array.from(document.querySelectorAll('a[href*=\"/status/\"]')).map(a => a.href))()"
+    raw = eval_js(expr)
+    if not raw:
+        return ""
+    return raw
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--max", type=int, default=5)
@@ -72,49 +100,31 @@ def main():
             print(json.dumps({"error": f"cookie load failed: {err}"}))
             sys.exit(2)
 
-    results, q_used = [], 0
-    challenge_seen = False
+    results, q_used, challenge_seen = [], 0, False
     for q in QUERIES:
         if len(results) >= a.max:
             break
         q_used += 1
-        rc, _, err = ab("open", f"https://x.com/search?q={quote(q)}&f=live", timeout=120)
+        rc, _, err = ab("open", f"https://x.com/search?q={quote(q)}&f=live", timeout=20)
         if rc != 0:
             continue
         time.sleep(6)
+        if challenge_check():
+            challenge_seen = True
+            continue
         for scroll in range(2):
-            rc, text, read_err = ab("read", timeout=60)
-            if rc == 0:
-                lowered = text.lower()
-                if any(marker in lowered for marker in CHALLENGE_MARKERS):
-                    challenge_seen = True
-                    break
-                results.extend(extract(text, state))
-            elif read_err:
-                challenge_seen = True
+            raw = collect_links()
+            results.extend(extract(raw, state))
             if len(results) >= a.max:
                 break
-            ab("scroll", "down", "1200", timeout=30)
+            ab("scroll", "down", "1200", timeout=10)
             time.sleep(3)
-        if challenge_seen and not results:
-            for attempt in range(2):
-                time.sleep(8 * (attempt + 1))
-                rc, _, _ = ab("open", f"https://x.com/search?q={quote(q)}&f=live", timeout=120)
-                if rc != 0:
-                    continue
-                time.sleep(6)
-                rc, text, _ = ab("read", timeout=60)
-                lowered = text.lower() if rc == 0 else ""
-                if rc == 0 and not any(marker in lowered for marker in CHALLENGE_MARKERS):
-                    challenge_seen = False
-                    results.extend(extract(text, state))
-                    break
         # dedupe by tweet_id
         uniq = {r["tweet_id"]: r for r in results}
         results = list(uniq.values())[: a.max]
 
     if challenge_seen and not results:
-        print(json.dumps({"error": "X challenge page blocked timeline access after retries", "challenge": True}))
+        print(json.dumps({"error": "X challenge page blocked timeline access", "challenge": True}))
         sys.exit(2)
 
     # Record found tweets in state

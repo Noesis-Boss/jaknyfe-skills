@@ -38,3 +38,35 @@ Skills/postgres-best-practices/plugin/
 Skills/react-best-practices/plugin/
 Skills/stripe-best-practices/plugin/
 Skills/shadcn-best-practices/plugin/
+
+# --- 2026-09-30 hygiene: generated churn, runtime state, and credentials ---
+# Build/cache artifacts (were previously tracked; untracked 2026-09-30)
+__pycache__/
+*.pyc
+.pytest_cache/
+*.db-wal
+*.db-shm
+node_modules/
+
+# Credentials and provider secrets - NEVER commit
+Media/credentials.json
+Media/config.toml
+heartbeat.sh.backup
+
+# Runtime/scratch state
+runs/
+tmp/
+.voxwerx-work.*/
+.zo/
+file::memory:
+
+# zobodhi memory stores (grow constantly, machine-local)
+memory.json
+Skills/zobodhi-memory/memory.json
+Skills/zobodhi-memory/scripts/memory.json
+
+# Gmail export scratch files
+gmail-*.eml
+gmail-*.html
+gmail-*.txt
+gmail-*.md

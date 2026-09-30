@@ -15,7 +15,6 @@ description: >
   turn a business into a scrollable world.
 allowed-tools: Bash, Read, Write, Edit, AskUserQuestion, Skill
 ---
-
 # scroll-world
 
 Produces a landing page where **scroll drives a camera**: it dives from outside a scene

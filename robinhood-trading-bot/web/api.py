@@ -15,12 +15,13 @@ import sys
 sys.path.insert(0, str(ROOT))
 from src.robinhood_readonly import RobinhoodReadOnly
 from src.monitor import run_monitor
+from src.validation_runner import run_validation
 
 JOBS = {}
 LOCK = threading.Lock()
 ROBINHOOD = RobinhoodReadOnly()
 MONITOR_CONFIG_PATH = ROOT / "config.yaml"
-STRATEGIES = {"london", "ross", "sneaky", "ha_scalp", "auction_flow_proxy", "vwap_liquidity_proxy", "t3_range_filter", "reversal_zone_confirmation", "ema_cci_macd", "ema9_continuation", "ema20_stoch_pullback", "opening_drive_fade", "orb_fvg", "trailing_stop_ladder", "theta_only", "eps_line_put_selling"}
+STRATEGIES = {"london", "ross", "sneaky", "ha_scalp", "auction_flow_proxy", "vwap_liquidity_proxy", "t3_range_filter", "reversal_zone_confirmation", "ema_cci_macd", "ema9_continuation", "ema20_stoch_pullback", "opening_drive_fade", "orb_fvg", "trailing_stop_ladder", "ema_cross", "ema_surge", "bollinger_vortex_breakout", "theta_only", "eps_line_put_selling"}
 TICKER = re.compile(r"^[A-Z][A-Z0-9.\-]{0,9}$")
 
 
@@ -62,10 +63,13 @@ def build_backtest_args(payload):
 
 def run_job(job_id, payload):
     try:
-        process = subprocess.run(build_backtest_args(payload), cwd=ROOT, text=True, capture_output=True, timeout=900)
-        if process.returncode:
-            raise RuntimeError(process.stderr[-2000:] or "Backtest failed.")
-        result = json.loads(process.stdout.strip().splitlines()[-1])
+        if payload.get("mode") == "validation":
+            result = run_validation(str(ROOT), payload)
+        else:
+            process = subprocess.run(build_backtest_args(payload), cwd=ROOT, text=True, capture_output=True, timeout=900)
+            if process.returncode:
+                raise RuntimeError(process.stderr[-2000:] or "Backtest failed.")
+            result = json.loads(process.stdout.strip().splitlines()[-1])
         with LOCK:
             JOBS[job_id] = {"job_id": job_id, "status": "complete", "result": result}
     except Exception as exc:

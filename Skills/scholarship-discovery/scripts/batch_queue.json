@@ -1,6 +1,11 @@
 {
   "description": "Source rotation queue for the daily global scholarship discovery batch. Each entry is one research slice; the runner consumes slices in rotation order (round-robin by last_used date) and the researcher fan-out uses the slice prompts.",
   "rotation_order": [
+    "commonwealth_and_linguistic_bodies",
+    "faith_based_global_funds",
+    "diaspora_and_cultural_foundations",
+    "professional_societies_uncovered",
+    "embassy_consulate_education_pages",
     "international_foundations_europe",
     "international_foundations_asia_pacific",
     "international_foundations_americas",
@@ -26,7 +31,21 @@
     "region_middle_east_north_africa",
     "region_north_america_international",
     "region_oceania",
-    "region_central_asia_south_asia"
+    "region_central_asia_south_asia",
+    "direct_university_awards_2026",
+    "refugee_displacement_official_calls",
+    "indigenous_disability_equity_awards",
+    "southeast_asia_university_awards",
+    "africa_regional_higher_education",
+    "latin_america_national_funds",
+    "pacific_island_tertiary_awards",
+    "professional_society_named_awards",
+    "national_ministry_portals_uncovered",
+    "university_refugee_sanctuary_awards",
+    "alternate_language_ministry_search",
+    "international_rss_award_feeds",
+    "official_ministry_rss_feeds",
+    "university_international_office_awards"
   ],
   "slices": {
     "international_foundations_europe": {
@@ -47,7 +66,7 @@
     },
     "government_bilateral_programs": {
       "region": "global",
-      "prompt": "Find government bilateral scholarship programs (e.g. Swedish Institute, Holland Scholarship, Eiffel Excellence, Swiss Government Excellence, Turkish T\u00fcrkiye Burslar\u0131, Russian Government Scholarship) open to international students."
+      "prompt": "Find government bilateral scholarship programs (e.g. Swedish Institute, Holland Scholarship, Eiffel Excellence, Swiss Government Excellence, Turkish Türkiye Bursları, Russian Government Scholarship) open to international students."
     },
     "university_funded_international_europe": {
       "region": "Europe",
@@ -63,7 +82,7 @@
     },
     "stem_field_specific_global": {
       "region": "global",
-      "prompt": "Find field-specific STEM scholarships and fellowships open internationally (e.g. Schlumberger Foundation Faculty for the Future, L'Or\u00e9al-UNESCO For Women in Science, IEEE scholarships, physics/engineering society awards)."
+      "prompt": "Find field-specific STEM scholarships and fellowships open internationally (e.g. Schlumberger Foundation Faculty for the Future, L'Oréal-UNESCO For Women in Science, IEEE scholarships, physics/engineering society awards)."
     },
     "humanities_arts_social_sciences_global": {
       "region": "global",
@@ -111,7 +130,7 @@
     },
     "region_latin_america_caribbean": {
       "region": "Latin America / Caribbean",
-      "prompt": "Find scholarships for Latin American and Caribbean students (e.g. BECA programs, Santander Universities, Funda\u00e7\u00e3o Estudar, Mexican CONACYT/CONAHCYT equivalents open to internationals)."
+      "prompt": "Find scholarships for Latin American and Caribbean students (e.g. BECA programs, Santander Universities, Fundação Estudar, Mexican CONACYT/CONAHCYT equivalents open to internationals)."
     },
     "region_africa": {
       "region": "Africa",
@@ -180,6 +199,82 @@
     "graduate_research_fellowships2": {
       "region": "Global",
       "prompt": "Find graduate research fellowships and doctoral funding worldwide, e.g. EMBO fellowships, Marie Sklodowska-Curie Actions, Humboldt Research Fellowships, Wellcome Trust programs, Max Planck, CNRS, European Research Council grants for individuals, national science foundation doctoral awards outside the US."
+    },
+    "direct_university_awards_2026": {
+      "region": "Global",
+      "prompt": "Find named scholarships on official university scholarship pages for international students. Use the individual award page or official application portal, not a university scholarship directory or admissions homepage. Capture award name, amount, deadline, eligibility, education level, field, and direct application URL."
+    },
+    "refugee_displacement_official_calls": {
+      "region": "Africa / Middle East / Global",
+      "prompt": "Find current scholarship calls published by UNHCR country offices, IGAD, universities, and refugee education organizations for refugees, returnees, IDPs, or asylum seekers. Require a named program and a live call or application form with eligibility and deadline."
+    },
+    "indigenous_disability_equity_awards": {
+      "region": "Global",
+      "prompt": "Find named scholarships for Indigenous students, students with disabilities, refugees, or other equity groups on official university, government, or sponsor pages. Exclude award directories and generic equity scholarship landing pages; use the specific award detail or application page."
+    },
+    "southeast_asia_university_awards": {
+      "region": "Southeast Asia",
+      "prompt": "Find specific scholarships at named universities in Indonesia, Malaysia, Thailand, Vietnam, the Philippines, Singapore, Brunei, Cambodia, Laos, or Myanmar for international or regional students. Prefer official award pages with direct application instructions and avoid aggregator pages."
+    },
+    "africa_regional_higher_education": {
+      "region": "Africa",
+      "prompt": "Find specific scholarship and fellowship awards from African universities, the African Union, regional higher education bodies, and official national agencies. Target named awards with direct application pages, clear applicant nationality or residency rules, deadline, amount, and study level."
+    },
+    "latin_america_national_funds": {
+      "region": "Latin America / Caribbean",
+      "prompt": "Find named scholarships and graduate funding programs from official agencies and universities in Mexico, Brazil, Chile, Colombia, Peru, Argentina, Costa Rica, the Dominican Republic, Jamaica, and other Latin American or Caribbean countries. Use official application pages and capture the program-level details."
+    },
+    "pacific_island_tertiary_awards": {
+      "region": "Pacific Islands",
+      "prompt": "Find named tertiary scholarships for students from Pacific Island countries through official governments, universities, Australia/New Zealand partners, or regional agencies. Require a current program page or application call, and exclude broad scholarship directories."
+    },
+    "professional_society_named_awards": {
+      "region": "Global",
+      "prompt": "Find named student scholarships, fellowships, and travel or research awards from official professional societies in engineering, computing, medicine, nursing, agriculture, public health, climate, and the arts. Use the society's specific award page with applicant criteria and application instructions."
+    },
+    "embassy_consulate_education_pages": {
+      "region": "Global (embassy host + home country)",
+      "prompt": "Find individual scholarships for international study announced on embassy and consulate education/culture pages (e.g. US Embassy education advising pages, British Embassies Chevening country pages, DAAD country pages, Japan MEXT embassy pages, Korea GKS embassy pages, Fulbright country commissions). Target specific named award pages, not embassy homepages."
+    },
+    "professional_societies_uncovered": {
+      "region": "Global / North America / Europe",
+      "prompt": "Find individual scholarships, fellowships and grants from professional societies NOT already heavily covered: IEEE Society-specific awards, American Chemical Society, ASME, ASCE, American Statistical Association, Institute of Mathematical Statistics, Society of Exploration Geophysicists, American Society of Plant Biologists, Society for Neuroscience, American Society of Civil Engineers student chapters, ISACA, ACM special interest groups. Target specific named award pages."
+    },
+    "diaspora_and_cultural_foundations": {
+      "region": "Global diaspora",
+      "prompt": "Find individual scholarships offered by diaspora and cultural heritage foundations: Chinese-American scholarship funds, Indian community trusts (e.g. JN Tata Endowment, Inlaks), Filipino community funds, Vietnamese education foundations, African diaspora funds, Latinx scholarship funds, Polish/Finnish/Scandinavian heritage societies. Target specific named award pages."
+    },
+    "faith_based_global_funds": {
+      "region": "Global",
+      "prompt": "Find individual scholarships from faith-based and denominational education funds open broadly: Methodist, Presbyterian, Baptist, Lutheran, Catholic (Knights of Columbus, Catholic Daughters), Jewish (Hadassah, JFNA-affiliated), Islamic (Islamic Scholarship Fund, AMANA), Buddhist foundations. Target specific named award pages with real deadlines."
+    },
+    "commonwealth_and_linguistic_bodies": {
+      "region": "Commonwealth / Francophonie / Lusophone",
+      "prompt": "Find individual scholarships tied to Commonwealth and linguistic-community bodies: Commonwealth Scholarships country chapters, Association of Commonwealth Universities awards, Agence universitaire de la Francophonie mobility grants, Camoes Institute Lusophone programs, Alliance Francaise study awards. Target specific named award pages."
+    },
+    "national_ministry_portals_uncovered": {
+      "region": "Global",
+      "prompt": "Find named scholarships on official national ministry of education, science, or foreign affairs portals that are not already common global programs. Require the specific award or call page, current eligibility, deadline, amount or funding terms, study level, and direct application URL; exclude ministry homepages, directories, and expired notices."
+    },
+    "university_refugee_sanctuary_awards": {
+      "region": "Global",
+      "prompt": "Find named scholarships or tuition awards at individual universities for refugees, asylum seekers, displaced students, or sanctuary scholars. Require an official university award detail or live application page with eligibility, deadline, funding terms, and direct application URL; exclude generic support pages and aggregators."
+    },
+    "alternate_language_ministry_search": {
+      "region": "Global / multilingual",
+      "prompt": "Search official ministry of education and embassy scholarship pages in non-English languages for named current awards; capture scholarship name, eligibility, deadline, amount, and direct application URL. Reject portals, directories, and generic ministry pages."
+    },
+    "international_rss_award_feeds": {
+      "region": "Global",
+      "prompt": "Search official RSS, Atom, and announcements feeds from universities, ministries, foundations, and professional societies for named current scholarship or fellowship calls; follow each item to the official award-specific application page and reject feed indexes, news-only posts, and generic landing pages."
+    },
+    "official_ministry_rss_feeds": {
+      "region": "Global",
+      "prompt": "Search official RSS or Atom feeds from national education ministries, embassies, and government scholarship agencies in under-covered countries. Extract only named current scholarship calls with direct official application pages, deadlines, eligibility, and funding terms; exclude feed indexes and generic announcements."
+    },
+    "university_international_office_awards": {
+      "region": "Global",
+      "prompt": "Search official international-office pages and feeds at named universities outside saturated domains for individual scholarships for international students. Require a specific award/application page with current deadline, eligibility, study level, field, amount, and direct application URL; exclude directories and admissions homepages."
     }
   }
 }

@@ -2,20 +2,39 @@
 
 Accepts Netscape-format or JSON (list of cookie dicts / {cookies:[...]}).
 agent-browser has no --curl flag, so we set cookies one by one.
+
+Robustness: individual `cookies set` calls can hang when the browser daemon
+is busy. On TimeoutExpired we restart the daemon and retry the whole batch
+once, so a transient stall never aborts the run.
 """
 import json
 import shlex
 import subprocess
 import sys
+import time
+
+SET_TIMEOUT = 25
 
 
-def _ab(*args):
+def _ab(*args, timeout=SET_TIMEOUT):
     return subprocess.run(
-        [sys.executable, "-c", "pass"],
-        capture_output=True, text=True,
-    ) if False else subprocess.run(
-        ["agent-browser", *args], capture_output=True, text=True, timeout=60
+        ["agent-browser", *args], capture_output=True, text=True, timeout=timeout
     )
+
+
+def restart_daemon():
+    """Best-effort daemon restart so a stuck CDP socket unblocks."""
+    subprocess.run(["agent-browser", "close", "--all"],
+                   capture_output=True, text=True, timeout=20)
+    time.sleep(3)
+    # warm up: a trivial eval proves the daemon is back
+    for _ in range(5):
+        r = subprocess.run(["agent-browser", "eval", "1"],
+                           capture_output=True, text=True, timeout=15)
+        if r.returncode == 0:
+            return True
+        time.sleep(3)
+    return False
 
 
 def parse(path):
@@ -39,7 +58,7 @@ def parse(path):
     out = []
     for line in text.splitlines():
         line = line.strip()
-        if not line or line.startswith("# ") or line.startswith("# Netscape") or line.startswith("#"):
+        if not line or line.startswith("#"):
             continue
         parts = line.split("\t")
         if len(parts) != 7:
@@ -53,24 +72,39 @@ def parse(path):
     return out
 
 
-def load(path):
+def load(path, retries=2):
     cookies = parse(path)
     if not cookies:
         return False, "no cookies parsed"
-    errs = []
-    for c in cookies:
-        arg = (
-            f'{json.dumps(c["name"])} {json.dumps(c["value"])} '
-            f'--domain {shlex.quote(c["domain"])} --path {shlex.quote(c["path"])}'
-            + (" --secure" if c["secure"] else "")
-            + (" --http-only" if c["httpOnly"] else "")
-            + (f" --expires {c['expires']}" if c["expires"] else "")
-        )
-        r = _ab("cookies", "set", *shlex.split(arg))
-        if r.returncode != 0:
-            errs.append(f'{c["name"]}: {r.stderr.strip() or r.stdout.strip()}')
-    ok = not errs
-    return ok, "; ".join(errs)
+
+    attempt = 0
+    while True:
+        attempt += 1
+        errs = []
+        for c in cookies:
+            arg = (
+                f'{json.dumps(c["name"])} {json.dumps(c["value"])} '
+                f'--url https://x.com'
+                + (f" --domain {shlex.quote(c['domain'])}" if c["domain"] else "")
+                + (f" --path {shlex.quote(c['path'])}" if c["path"] else "")
+                + (" --secure" if c["secure"] else "")
+                + (" --http-only" if c["httpOnly"] else "")
+                + (f" --expires {c['expires']}" if c["expires"] else "")
+            )
+            try:
+                r = _ab("cookies", "set", *shlex.split(arg))
+            except subprocess.TimeoutExpired:
+                errs.append(f'{c["name"]}: timed out after {SET_TIMEOUT}s')
+                continue
+            if r.returncode != 0:
+                errs.append(f'{c["name"]}: {r.stderr.strip() or r.stdout.strip()}')
+
+        if not errs:
+            return True, ""
+        if attempt > retries:
+            return False, "; ".join(errs)
+        # daemon stalled — restart and retry the whole batch
+        restart_daemon()
 
 
 if __name__ == "__main__":

@@ -5,23 +5,15 @@ Usage:
   python3 reply.py --tweet-id ID [--user NAME] --text "..."
       [--cookies /path/cookies.json] [--restore x-main]
 
-Opens the status page, opens the inline composer (intent URL fallback),
+Opens the status page, opens the inline reply composer (intent URL fallback),
 types the reply, submits, verifies it posted. Exit 2 = not logged in.
 """
 import argparse, json, subprocess, sys, time
 
-AB = "agent-browser"
+sys.path.insert(0, __import__("os").path.dirname(__import__("os").path.abspath(__file__)))
+from ab_common import ab, js, load_cookies
+
 SKIP = ("jak_nyfe", "zdsentry")
-
-
-def ab(*args, timeout=120):
-    r = subprocess.run([AB, *args], capture_output=True, text=True, timeout=timeout)
-    return r.returncode, (r.stdout or "").strip(), (r.stderr or "").strip()
-
-
-def js(expr, timeout=60):
-    out = ab("eval", expr, timeout=timeout)[1]
-    return out.strip().strip('"') if out else ""
 
 
 def logged_in():
@@ -54,28 +46,27 @@ def main():
         sys.exit(1)
 
     if a.cookies:
-        import x_cookies
-        ok, err = x_cookies.load(a.cookies)
+        ok, err = load_cookies(a.cookies)
         if not ok:
             print(json.dumps({"error": f"cookie load failed: {err}"}))
             sys.exit(2)
 
     status_url = f"https://x.com/{a.user}/status/{tid}" if a.user else f"https://x.com/i/web/status/{tid}"
-    rc, _, err = ab("open", status_url, timeout=120)
+    rc, _, err = ab("open", status_url, timeout=30)
     if rc != 0:
         print(json.dumps({"error": f"navigation failed: {err}"}))
         sys.exit(1)
-    time.sleep(6)
+    time.sleep(5)
 
     if not logged_in():
         print(json.dumps({"error": "not logged in to x.com (cookies/session expired)"}))
         sys.exit(2)
 
     # Confirm the tweet exists
-    expr = "(() => !!document.querySelector('article[data-testid=\"tweet\"]'))()"
+    expr = '(() => !!document.querySelector(\'article[data-testid="tweet"]\'))()'
     if js(expr) != "true":
         # try intent fallback
-        rc, _, err = ab("open", f"https://x.com/intent/tweet?in_reply_to={tid}", timeout=120)
+        rc, _, err = ab("open", f"https://x.com/intent/tweet?in_reply_to={tid}", timeout=30)
         time.sleep(5)
         if js(expr) != "true":
             print(json.dumps({"error": "tweet not found or account protected"}))

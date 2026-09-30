@@ -56,3 +56,54 @@
 **CTA type:** None
 **Hashtags:** 0
 **Status:** Posted; metrics pending
+
+## 2026-09-12 13:00 ET — DAILY POST
+
+**Topic:** AI infrastructure shifting toward debt financing
+**Tweet:** https://x.com/jak_nyfe/status/2098819975658033441
+**Source reply:** https://x.com/jak_nyfe/status/2098820009652785345
+**Source URL:** https://x.com/FluxFinance_/status/2097552076398379268
+**Media:** Attached NVIDIA data-center image
+**Word count:** 30
+**Hashtags:** 0
+**Status:** Posted
+
+## 2026-09-13 16:00 MST — Evening Slot
+
+- **Topic:** Fortaegis $50M encrypted-silicon funding and secure-compute economics
+- **Timestamp:** 2026-09-13 23:00 UTC / 2026-09-13 16:00 MST
+- **Format:** Stat-first news analysis with relevant photo
+- **Post text:** Fortaegis raised $50M to put encryption inside the chip. Its silicon fingerprint generates changing keys for secure compute across AI, defense, space, and data centers. The economic bet: security becomes infrastructure, not a software add-on.
+- **Word count:** 34
+- **Media:** Yes — Financial Times Fortaegis encrypted-silicon image
+- **Source:** https://www.ft.com/content/a6574d9d-5e75-4b9c-b4d7-b05f7008e48e
+- **Hook type:** Stat-first / named-entity-first
+- **Hook:** Fortaegis raised $50M to put encryption inside the chip.
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** Relevant image attached to evening news-analysis post; topic class and concise 15–50-word format held stable
+- **Tweet URL:** https://x.com/jaknyfe/status/2099273092514099450
+- **Source-reply URL:** https://x.com/jaknyfe/status/2099273118132961282
+- **Visible results:** Posted successfully; metrics pending
+
+## 2026-09-15 13:00 ET — DAILY POST
+
+- **Topic:** Groq's transition from AI chip startup to AI cloud provider after Nvidia's $20B deal
+- **Post text:** Nvidia's $20B Groq deal shows where AI hardware value is moving. Groq kept 13 data centers and plans to quadruple capacity, but now competes on cloud inference using Nvidia hardware. The scarce asset may be reliable compute, not the chip design.
+- **Word count:** 41
+- **Media:** Downloaded Reuters/Nvidia chip image; intended attachment: `Media/x-post-2026-09-15.webp`
+- **Source URL:** https://www.businessinsider.com/groq-navigates-ai-cloud-market-shift-after-nvidia-deal-2026-9
+- **Status:** Not posted — X app posting tool was unavailable in this scheduled run; no tweet or source reply was fabricated.
+
+## 2026-09-16 13:00 ET — DAILY POST
+
+- **Topic:** Factory raises $200M at a $5B valuation for autonomous AI engineering agents
+- **Post text:** Factory raised $200M at a $5B valuation.\n\nRevenue is reportedly doubling monthly. The market is paying infrastructure-scale prices for software agents that write code, ship PRs, and handle incidents.
+- **Word count:** 27
+- **Media:** Yes — NVIDIA AI data-center image (`Media/nvidia-ai-data-center.jpg`)
+- **Source URL:** https://x.com/stretchcloud/status/2099942829611208946
+- **Tweet URL:** https://x.com/jaknyfe/status/2100269430764642454
+- **Source-reply URL:** https://x.com/jaknyfe/status/2100269456588996817
+- **Hashtags:** none
+- **Status:** Posted successfully; metrics pending

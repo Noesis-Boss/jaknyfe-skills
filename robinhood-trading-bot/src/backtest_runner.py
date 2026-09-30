@@ -33,6 +33,8 @@ from src.ema20_stoch_pullback import Ema20StochPullbackStrategy
 from src.opening_drive_fade import OpeningDriveFadeStrategy
 from src.orb_fvg import OrbfvgStrategy
 from src.trailing_stop_ladder import TrailingStopLadderStrategy
+from src.bulls_bears_ema import EmaCrossStrategy, EmaSurgeStrategy
+from src.bollinger_vortex_breakout import BollingerVortexBreakoutStrategy
 from src.risk import RiskManager
 from src.journal import TradeJournal
 from src.theta_farming import ThetaFarmer
@@ -58,6 +60,9 @@ STRATEGY_MAP = {
     "opening_drive_fade": OpeningDriveFadeStrategy,
     "orb_fvg": OrbfvgStrategy,
     "trailing_stop_ladder": TrailingStopLadderStrategy,
+    "ema_cross": EmaCrossStrategy,
+    "ema_surge": EmaSurgeStrategy,
+    "bollinger_vortex_breakout": BollingerVortexBreakoutStrategy,
     "candle_narrative": CandleNarrativeStrategy,
     "theta_only": ThetaOnlyStrategy,
     "eps_line_put_selling": EpsLinePutSellingStrategy,
@@ -202,20 +207,31 @@ def run_backtest(config: dict, symbols: list, start_date: str, end_date: str, pr
 
     regime_cfg = config.get("regime_filter", {})
     regime_enabled = bool(regime_cfg.get("enabled", False)) and strategy_name == "london"
+    regime_mode = regime_cfg.get("mode", "sma")
     regime_map = {}
     if regime_enabled:
         r_sym = regime_cfg.get("symbol", "SPY")
         ma_len = int(regime_cfg.get("ma_length", 50))
-        r_start = (pd.Timestamp(start_date) - pd.Timedelta(days=ma_len * 2 + 15)).strftime("%Y-%m-%d")
+        if regime_mode == "markov":
+            from .markov_regime import markov_regime_map
+            r_lookback = int(regime_cfg.get("lookback", 252))
+            r_window = int(regime_cfg.get("ret_window", 20))
+            r_start = (pd.Timestamp(start_date) - pd.Timedelta(days=(r_lookback + r_window) * 1.7)).strftime("%Y-%m-%d")
+        else:
+            r_start = (pd.Timestamp(start_date) - pd.Timedelta(days=ma_len * 2 + 15)).strftime("%Y-%m-%d")
         spy = feed.get_bars(r_sym, interval="1d", start=r_start, end=end_date)
         if spy.empty:
             log.warning("regime_filter: no daily bars for %s — filter inactive", r_sym)
             regime_enabled = False
         else:
-            sma = spy["close"].rolling(ma_len).mean()
             invert = bool(regime_cfg.get("invert", False))
-            regime_map = {ts.date(): bool(c > m) != invert for ts, c, m in zip(spy.index, spy["close"], sma) if pd.notna(m)}
-            log.info("regime_filter: %d regime days for %s (SMA%d)", len(regime_map), r_sym, ma_len)
+            if regime_mode == "markov":
+                regime_map = {d: (want != invert) for d, want in markov_regime_map(spy["close"], lookback=r_lookback, ret_window=r_window, bull_th=float(regime_cfg.get("bull_th", 0.05)), bear_th=float(regime_cfg.get("bear_th", -0.05))).items()}
+                log.info("regime_filter: %d regime days for %s (Markov walk-forward)", len(regime_map), r_sym)
+            else:
+                sma = spy["close"].rolling(ma_len).mean()
+                regime_map = {ts.date(): bool(c > m) != invert for ts, c, m in zip(spy.index, spy["close"], sma) if pd.notna(m)}
+                log.info("regime_filter: %d regime days for %s (SMA%d)", len(regime_map), r_sym, ma_len)
 
     theta_cfg = config.get("theta_farming", {})
     theta_farmer = ThetaFarmer(theta_cfg) if theta_cfg.get("enabled", False) else None
@@ -230,7 +246,7 @@ def run_backtest(config: dict, symbols: list, start_date: str, end_date: str, pr
                     cached = pd.read_pickle(candidate)
             df = cached if cached is not None else feed.get_bars(
                 symbol,
-                interval=(config.get("eps_line_put_selling", {}).get("backtest_interval", "1d") if strategy_name == "eps_line_put_selling" else config.get("ha_scalp", {}).get("backtest_interval", "5m") if strategy_name == "ha_scalp" else config.get("t3_range_filter", {}).get("backtest_interval", config.get("bar_interval", "5m")) if strategy_name == "t3_range_filter" else config.get("reversal_zone_confirmation", {}).get("backtest_interval", config.get("bar_interval", "5m")) if strategy_name == "reversal_zone_confirmation" else config.get("ema20_stoch_pullback", {}).get("backtest_interval", config.get("bar_interval", "5m")) if strategy_name == "ema20_stoch_pullback" else config.get("orb_fvg", {}).get("backtest_interval", config.get("bar_interval", "5m")) if strategy_name == "orb_fvg" else config.get("bar_interval", "5m")),
+                interval=(config.get(strategy_name, {}).get("backtest_interval", config.get("bar_interval", "5m")) if strategy_name in {"eps_line_put_selling", "ha_scalp", "t3_range_filter", "reversal_zone_confirmation", "ema20_stoch_pullback", "orb_fvg", "bollinger_vortex_breakout"} else config.get("bar_interval", "5m")),
                 start=start_date,
                 end=end_date,
             )
@@ -268,7 +284,7 @@ def run_backtest(config: dict, symbols: list, start_date: str, end_date: str, pr
                 session_start = pd.Timestamp(config.get("ross_momentum", {}).get("session_start", "04:00")).time()
                 session_end = pd.Timestamp(config.get("ross_momentum", {}).get("session_end", "12:00")).time()
                 ny_mask = (day_data.index.time >= session_start) & (day_data.index.time < session_end)
-            elif strategy_name in {"ha_scalp", "auction_flow_proxy", "vwap_liquidity_proxy", "t3_range_filter", "reversal_zone_confirmation", "ema_cci_macd", "ema9_continuation", "ema20_stoch_pullback", "candle_narrative", "opening_drive_fade", "orb_fvg", "trailing_stop_ladder"}:
+            elif strategy_name in {"ha_scalp", "auction_flow_proxy", "vwap_liquidity_proxy", "t3_range_filter", "reversal_zone_confirmation", "ema_cci_macd", "ema9_continuation", "ema20_stoch_pullback", "candle_narrative", "opening_drive_fade", "orb_fvg", "trailing_stop_ladder", "ema_cross", "ema_surge", "bollinger_vortex_breakout"}:
                 box_high = box_low = None
                 session_start, session_end = strat.session_start, strat.session_end
                 ny_mask = (day_data.index.time >= session_start) & (day_data.index.time < session_end)

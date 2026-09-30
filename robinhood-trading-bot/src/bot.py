@@ -16,6 +16,7 @@ from .journal import TradeJournal
 from .theta_farming import ThetaFarmer
 from .broker import Broker
 from .daily_universe import symbols_for_today
+from .strategy_optimizer import load_validated
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 log = logging.getLogger("bot")
@@ -30,6 +31,7 @@ def load_config(path: str = None) -> dict:
 
 def main() -> int:
     config = load_config()
+    config = load_validated(config.get("strategy_fitness", {}).get("path", "data/strategy_fitness.json"), "london", config)
 
     tz = pd.Timestamp("now", tz=config.get("timezone", "America/New_York")).tz
     data_feed = DataFeed(config.get("timezone", "America/New_York"))

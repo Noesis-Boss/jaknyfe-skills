@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse, hashlib, json, re, sqlite3, time
 import base64
+from pathlib import Path
 from datetime import datetime, timezone
 from urllib.parse import parse_qs, unquote, urljoin, urlparse
 from urllib.request import Request, urlopen
@@ -12,6 +13,8 @@ BLOCKED = re.compile(r'(scholarships?\.com|bold\.org|fastweb|scholarships360|acc
 BAD_PATH = re.compile(r'/(category|categories|search|browse|directory|blog|news|articles|about|faq|success-stories)(/|$)', re.I)
 TERM = re.compile(r'scholarship|fellowship|bursary|grant|award', re.I)
 APPLY = re.compile(r'apply|application|submit|portal|form|how to apply', re.I)
+GENERIC_TITLE = re.compile(r'^(home|world|welcome|application guidance|select your language|cast & crew|about|news|search|scholarships?)$', re.I)
+SPECIFIC_TITLE = re.compile(r'(scholarship|fellowship|bursary|grant|award|stipend|studentship|ทุน|beca|bourse|stipendium)', re.I)
 
 def get(url):
     req = Request(url, headers={'User-Agent': UA, 'Accept': 'text/html,application/xhtml+xml'})
@@ -43,7 +46,8 @@ def candidate(page_url, html, anchor_text=''):
     soup=BeautifulSoup(html,'html.parser'); title=(soup.find('h1') or soup.find('title'))
     name=' '.join((title.get_text(' ',strip=True) if title else anchor_text).split())[:180]
     text=' '.join(soup.get_text(' ',strip=True).split())[:10000]
-    if not TERM.search(name+' '+text) or BAD_PATH.search(urlparse(page_url).path): return None
+    metadata_signals=sum(bool(rx.search(text)) for rx in [re.compile(r'deadline|closing|apply by',re.I), re.compile(r'eligib|citizen|nationality|enrolled|students',re.I), re.compile(r'[$€£]\s*[0-9]|tuition|stipend|funding|fully funded',re.I)])
+    if not TERM.search(name+' '+text) or not SPECIFIC_TITLE.search(name) or GENERIC_TITLE.search(name) or metadata_signals < 2 or BAD_PATH.search(urlparse(page_url).path): return None
     links=[]
     for a in soup.select('a[href]'):
         href=urljoin(page_url,a.get('href','')).split('#')[0]; label=a.get_text(' ',strip=True)
@@ -80,8 +84,8 @@ def insert(c, stamp, idx):
     return added
 
 def main():
-    p=argparse.ArgumentParser(); p.add_argument('--limit',type=int,default=100); p.add_argument('--queries',type=int,default=40); p.add_argument('--results',type=int,default=8); p.add_argument('--seed',action='append',default=[]); a=p.parse_args()
-    templates=['site:.edu "scholarship" "apply"','site:.org "scholarship application" students','site:.gov scholarship application students','"2026 scholarship" "apply now" foundation','"2026 scholarship application" university','"scholarship portal" students 2026']
+    p=argparse.ArgumentParser(); p.add_argument('--limit',type=int,default=100); p.add_argument('--queries',type=int,default=40); p.add_argument('--results',type=int,default=8); p.add_argument('--seed',action='append',default=[]); p.add_argument('--output',type=Path); a=p.parse_args()
+    templates=['site:.gov scholarship application international students 2026','site:gov.* beca scholarship convocatoria 2026','site:edu.* international office scholarship deadline 2026','site:gov.* bourse scholarship appel 2026','site:org.* scholarship RSS fellowship application 2026','site:ac.* international student scholarship apply 2026','site:edu.* "international scholarship" "apply" 2026','site:gov.* stipendium scholarship students 2026']
     found=[]; seen=set()
     seed_urls=list(a.seed)
     for u in seed_urls:
@@ -111,6 +115,10 @@ def main():
                     if len(found)>=a.limit*3: break
             if len(found)>=a.limit*3: break
         if len(found)>=a.limit*3: break
+    if a.output:
+        a.output.write_text(json.dumps(found, indent=2), encoding='utf-8')
+        print(json.dumps({'queries':a.queries,'candidates':len(found),'output':str(a.output),'mode':'harvest-only'}))
+        return
     stamp=datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S'); added=0
     for i,c in enumerate(found[:a.limit*2],1):
         if insert(c,stamp,i): added+=1

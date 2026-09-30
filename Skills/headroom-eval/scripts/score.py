@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import re
 
-# AI-vocab from the humanizer skill pattern catalog.
+# AI-vocab from the VoxWerx skill pattern catalog.
 # Match whole-word, case-insensitive.
 AI_VOCAB = [
     "delve", "pivotal", "underscore", "underscores", "underscored",
@@ -60,7 +60,7 @@ def _count_hashtags(t: str) -> int:
 
 
 def _has_em_dash_chain(t: str) -> bool:
-    # 2+ em dashes in a single tweet = the humanizer's em-dash-overuse pattern
+    # 2+ em dashes in a single tweet = the VoxWerx's em-dash-overuse pattern
     return t.count("—") >= 2 or t.count(" -- ") >= 2
 
 

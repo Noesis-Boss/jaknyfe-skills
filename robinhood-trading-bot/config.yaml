@@ -3,6 +3,8 @@ risk_pct: 0.02
 max_risk_dollars: 500
 bar_interval: "5m"
 timezone: "America/New_York"
+strategy_fitness:
+  path: data/strategy_fitness.json
 # Available-data windows (retuned 2026-08-08 for Alpaca IEX free feed):
 #   Free Alpaca IEX supplies premarket bars only from 08:00 ET (no London data),
 #   so the breakout box is built from the 08:00-09:25 premarket window and
@@ -68,6 +70,13 @@ reversal_zone_confirmation:
   max_holding_bars: 30
   session_start: "09:35"
   session_end: "11:00"
+  move_bars: 3
+  max_move_bars: 3
+  news_blackout_dates: []
+  news_blackout_context: true
+  scale_out_enabled: true
+  scale_out_r: 1.5
+  scale_out_fraction: 0.5
 
 ema_cci_macd:
   enabled: false
@@ -301,3 +310,21 @@ trailing_stop_ladder:
   rung_r: 1.0
   lock_offset_r: 1.0
   max_holding_bars: 78
+
+ema_cross:
+  fast_length: 40
+  slow_length: 200
+  rr_ratio: 2.0
+  max_holding_bars: 60
+  session_start: "09:35"
+  session_end: "15:45"
+
+ema_surge:
+  fast_length: 40
+  slow_length: 200
+  volume_fast: 20
+  volume_slow: 40
+  rr_ratio: 2.0
+  max_holding_bars: 60
+  session_start: "09:35"
+  session_end: "15:45"

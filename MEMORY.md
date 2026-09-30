@@ -9,7 +9,7 @@
 | memory/daily/2026-05-21.md | daily | Today — Clarion memory system installed alongside zobodhi-memory |
 | memory/projects/scottish-rite.md | project | Scottish Rite website deployment and maintenance |
 | memory/projects/scholarsearch.md | project | ScholarSearch — Zo hosting/publishing scaffolding |
-| memory/projects/noesis-news.md | project | Noësis News — RSS aggregator, topic-matched images, and human-review publication gate |
+| memory/projects/noesis-news.md | project | Noësis News — RSS aggregator, human-review gate, GDELT link-outs; NGrams reserved for future high-volume search; OpenSanctions data excluded pending rights clearance; verified responsive newspaper-style homepage with lead-story rails |
 | memory/projects/kilo-ui.md | project | Kilo TUI backend + deployed React frontend |
 | memory/projects/paperclip.md | project | Paperclip system — hosted service with Postgres backend |
 | memory/projects/greeting-gallery.md | project | greeting-gallery — marketing-style gallery site |

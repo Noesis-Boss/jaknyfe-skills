@@ -4,11 +4,13 @@
 Composes the three canonical x-browser-reply scripts (never existed as a
 single file before — rebuilt to match the automation's CLI):
 
-  python3 follow_and_reply.py --cookies cookies_zdsentry.json --account zdsentry \
+  python3 follow_and_reply.py --cookies cookies.json --account jak_nyfe \
       --max 5 --headless true --slow-mo 150
 
 Flow: find f4f posts -> reply to each -> follow the author -> track state.
 Prints summary JSON: {posts_found, replies_posted, followed, errors}.
+
+State file format: flat dict {tweet_id: {tweet_id, username, status, ...}}
 """
 import argparse, json, os, subprocess, sys, time
 
@@ -49,7 +51,7 @@ def main():
     delay = max(a.slow_mo, 150) / 1000.0 * 10  # scale ms flag to usable delay
 
     # Find candidate f4f posts
-    args = ["find_follow_back.py", "--max", str(a.max)]
+    args = ["find_follow_back_v3.py", "--max", str(a.max)]
     if a.cookies:
         args += ["--cookies", a.cookies]
     rc, found, raw, err = run_script(*args[:1], *args[1:])
@@ -96,14 +98,20 @@ def main():
             errors.append(f"follow @{user}: {((data or {}).get('error') if data else err or raw[:200])}")
         time.sleep(delay)
 
-    # Update state statuses
+    # Update state statuses (flat dict format)
     try:
         with open(STATE) as f:
             state = json.load(f)
         for post in found:
             tid = post["tweet_id"]
-            if tid in state and state[tid].get("status") == "found" and tid in replied_ids:
-                state[tid]["status"] = "replied"
+            entry = state.setdefault(tid, {"tweet_id": tid, "username": post["username"]})
+            entry["tweet_id"] = tid
+            entry["username"] = post["username"]
+            if tid in replied_ids:
+                entry["status"] = "replied"
+                entry["followed"] = followed > 0
+            else:
+                entry.setdefault("status", "found")
         with open(STATE, "w") as f:
             json.dump(state, f, indent=2)
     except Exception as e:

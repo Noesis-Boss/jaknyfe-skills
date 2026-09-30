@@ -9,18 +9,10 @@ following / pending). Exit 2 = not logged in.
 """
 import argparse, json, subprocess, sys, time
 
-AB = "agent-browser"
+sys.path.insert(0, __import__("os").path.dirname(__import__("os").path.abspath(__file__)))
+from ab_common import ab, js, load_cookies
+
 SKIP = ("jak_nyfe", "zdsentry")
-
-
-def ab(*args, timeout=120):
-    r = subprocess.run([AB, *args], capture_output=True, text=True, timeout=timeout)
-    return r.returncode, (r.stdout or "").strip(), (r.stderr or "").strip()
-
-
-def js(expr, timeout=60):
-    out = ab("eval", expr, timeout=timeout)[1]
-    return out.strip().strip('"') if out else ""
 
 
 def logged_in():
@@ -54,17 +46,16 @@ def main():
         sys.exit(1)
 
     if a.cookies:
-        import x_cookies
-        ok, err = x_cookies.load(a.cookies)
+        ok, err = load_cookies(a.cookies)
         if not ok:
             print(json.dumps({"error": f"cookie load failed: {err}"}))
             sys.exit(2)
 
-    rc, _, err = ab("open", f"https://x.com/{user}", timeout=120)
+    rc, _, err = ab("open", f"https://x.com/{user}", timeout=30)
     if rc != 0:
         print(json.dumps({"error": f"navigation failed: {err}"}))
         sys.exit(1)
-    time.sleep(6)
+    time.sleep(5)
 
     if not logged_in():
         print(json.dumps({"error": "not logged in to x.com (cookies/session expired)"}))
@@ -72,8 +63,8 @@ def main():
 
     # Detect account state (match the profile-header button by aria-label)
     state = js("""(() => {
-  if (document.querySelector('[data-testid=\"emptyState\"]')) return 'NOTFOUND';
-  const user = %USER% ;
+  if (document.querySelector('[data-testid="emptyState"]')) return 'NOTFOUND';
+  const user = """ + json.dumps(user) + """;
   const btns = Array.from(document.querySelectorAll('[data-testid]')).filter(e => /^-?(follow|unfollow|pending)$/.test(e.dataset.testid.split('-').pop()) && (e.dataset.testid.includes('-') || ['follow','unfollow','pending'].includes(e.dataset.testid)));
   const b = btns.find(e => (e.getAttribute('aria-label')||'').toLowerCase().includes('@' + user.toLowerCase())) || btns[0];
   if (!b) return 'NOBTN';
@@ -82,7 +73,7 @@ def main():
   if (tid === 'pending' || tid.endsWith('-pending') || lbl.startsWith('pending')) return 'PENDING';
   if (tid === 'unfollow' || tid.endsWith('-unfollow') || lbl.startsWith('following')) return 'unfollow';
   return 'follow';
-})()""".replace("%USER%", json.dumps(user)))
+})()""")
 
     if state == "NOTFOUND":
         print(json.dumps({"error": f"profile not found: @{user}"}))
@@ -107,7 +98,7 @@ def main():
     time.sleep(2)
 
     after = js("""(() => {
-  const user = %USER% ;
+  const user = """ + json.dumps(user) + """;
   const btns = Array.from(document.querySelectorAll('[data-testid]')).filter(e => (e.dataset.testid.includes('-follow') || e.dataset.testid.includes('-unfollow') || e.dataset.testid.includes('-pending') || ['follow','unfollow','pending'].includes(e.dataset.testid)));
   const b = btns.find(e => (e.getAttribute('aria-label')||'').toLowerCase().includes('@' + user.toLowerCase()));
   if (!b) return 'NOBTN';
@@ -116,7 +107,7 @@ def main():
   if (tid === 'pending' || tid.endsWith('-pending') || lbl.startsWith('pending')) return 'pending';
   if (tid === 'unfollow' || tid.endsWith('-unfollow') || lbl.startsWith('following')) return 'unfollow';
   return 'follow';
-})()""".replace("%USER%", json.dumps(user)))
+})()""")
     if after in ("unfollow", "pending"):
         print(json.dumps({"ok": True, "username": user, "result": "followed"}))
         sys.exit(0)

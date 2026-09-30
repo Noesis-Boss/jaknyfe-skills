@@ -228,6 +228,8 @@ function App() {
     max_entries_per_day: "1",
   });
   const [status, setStatus] = useState("idle");
+  const [mode, setMode] = useState<"backtest" | "validation">("backtest");
+  const [minimumTrades, setMinimumTrades] = useState(30);
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState("");
   const [account, setAccount] = useState<any>(null);
@@ -291,6 +293,8 @@ function App() {
         body: JSON.stringify({
           ...form,
           strategy,
+          mode,
+          minimum_trades: minimumTrades,
           symbols: selected,
           interval: form.interval,
           strategy_params: params,
@@ -409,6 +413,14 @@ function App() {
             <span>03</span>
             <h2>Parameters</h2>
           </div>
+          <label>
+            Research mode
+            <select value={mode} onChange={(e) => setMode(e.target.value as "backtest" | "validation")}>
+              <option value="backtest">Single-period backtest</option>
+              <option value="validation">Development + held-out validation</option>
+            </select>
+          </label>
+          {mode === "validation" && <label>Minimum trades per period<input type="number" min="1" value={minimumTrades} onChange={(e) => setMinimumTrades(Number(e.target.value))} /></label>}
           <div className="grid2">
             {definition.params.map(([key, label, defaultValue]) => (
               <label key={key}>
@@ -506,6 +518,7 @@ function App() {
   );
 }
 function Results({ data }: { data: any }) {
+  if (data.mode === "validation") return <ValidationResults data={data} />;
   return (
     <>
       <div className="meta">
@@ -557,6 +570,24 @@ function Results({ data }: { data: any }) {
       </div>
     </>
   );
+}
+function ValidationResults({ data }: { data: any }) {
+  const cell = (label: string, value: any) => <div className="metric"><span>{label}</span><strong>{value ?? "—"}</strong></div>;
+  return <>
+    <div className="meta">{data.start_date} → {data.end_date} <span>·</span> split {data.split_date} <span>·</span> paper research only</div>
+    <div className="metrics">
+      {cell("Decision", data.accepted ? "PASS" : "REJECT")}
+      {cell("Development trades", data.development.trade_count)}
+      {cell("Development PF", data.development.profit_factor)}
+      {cell("Held-out trades", data.validation.trade_count)}
+      {cell("Held-out PF", data.validation.profit_factor)}
+      {cell("Held-out net P&L", `$${data.validation.net_pnl.toFixed(2)}`)}
+      {cell("London baseline PF", data.london_baseline.profit_factor)}
+      {cell("London baseline P&L", `$${data.london_baseline.net_pnl.toFixed(2)}`)}
+      {cell("Buy-and-hold P&L", data.buy_and_hold.net_pnl == null ? "—" : `$${data.buy_and_hold.net_pnl.toFixed(2)}`)}
+    </div>
+    <div className="empty validation-note"><h3>{data.accepted ? "Validation passed" : "Validation rejected"}</h3><p>Pass requires the minimum trade count in both periods and held-out profit factor ≥ 1. Results are paper-only.</p></div>
+  </>;
 }
 function Metric({
   label,

@@ -71,5 +71,625 @@
     "status": "replied",
     "found_at": "2026-09-08T18:46:58Z",
     "followed": true
+  },
+  "2097868395194847706": {
+    "tweet_id": "2097868395194847706",
+    "username": "SufficeItToSay7",
+    "status": "found",
+    "found_at": "2026-09-10T02:49:01Z"
+  },
+  "2097862048877363377": {
+    "tweet_id": "2097862048877363377",
+    "username": "SufficeItToSay7",
+    "status": "found",
+    "found_at": "2026-09-10T02:49:01Z"
+  },
+  "2098087834309501398": {
+    "tweet_id": "2098087834309501398",
+    "username": "daniella_hatton",
+    "status": "found",
+    "found_at": "2026-09-10T17:02:43Z"
+  },
+  "2098391164416082204": {
+    "tweet_id": "2098391164416082204",
+    "username": "mrtbrgl",
+    "status": "found",
+    "found_at": "2026-09-11T17:03:17Z"
+  },
+  "2035733870356693221": {
+    "tweet_id": "2035733870356693221",
+    "username": "fcb_natsu",
+    "status": "replied",
+    "found_at": "2026-09-11T17:00:00Z",
+    "followed": false,
+    "note": "reply succeeded; profile not found when following"
+  },
+  "2063315817689666032": {
+    "tweet_id": "2063315817689666032",
+    "username": "ouma_neko",
+    "status": "replied",
+    "found_at": "2026-09-11T17:00:00Z",
+    "followed": true
+  },
+  "2033445662566552024": {
+    "tweet_id": "2033445662566552024",
+    "username": "benjimk",
+    "status": "replied",
+    "found_at": "2026-09-11T17:00:00Z",
+    "followed": true
+  },
+  "2098812502188437757": {
+    "tweet_id": "2098812502188437757",
+    "username": "b1ockbelle",
+    "status": "found",
+    "found_at": "2026-09-12T17:25:01Z"
+  },
+  "2098809235215683712": {
+    "tweet_id": "2098809235215683712",
+    "username": "RichSilver",
+    "status": "found",
+    "found_at": "2026-09-12T17:25:01Z"
+  },
+  "2098806941547970665": {
+    "tweet_id": "2098806941547970665",
+    "username": "P_S_S_Author",
+    "status": "found",
+    "found_at": "2026-09-12T17:25:01Z"
+  },
+  "2098806043614806120": {
+    "tweet_id": "2098806043614806120",
+    "username": "JeffKazzee",
+    "status": "found",
+    "found_at": "2026-09-12T17:25:01Z"
+  },
+  "2064772301770686893": {
+    "tweet_id": "2064772301770686893",
+    "username": "teslaenergy",
+    "status": "found",
+    "found_at": "2026-09-12T17:25:01Z"
+  },
+  "1928804218665611586": {
+    "tweet_id": "1928804218665611586",
+    "username": "UKRRichard",
+    "status": "found",
+    "found_at": "2026-09-12T17:26:11Z"
+  },
+  "1574098695158734848": {
+    "tweet_id": "1574098695158734848",
+    "username": "LD_Designs_",
+    "status": "found",
+    "found_at": "2026-09-12T17:26:11Z"
+  },
+  "1356143151094792198": {
+    "tweet_id": "1356143151094792198",
+    "username": "JaslyShine",
+    "status": "found",
+    "found_at": "2026-09-12T17:26:11Z"
+  },
+  "613435257690411008": {
+    "tweet_id": "613435257690411008",
+    "username": "StylesftxCherry",
+    "status": "found",
+    "found_at": "2026-09-12T17:26:11Z"
+  },
+  "2098498983194919192": {
+    "tweet_id": "2098498983194919192",
+    "username": "RealJtHolmes",
+    "status": "found",
+    "found_at": "2026-09-12T17:26:11Z"
+  },
+  "2098470685475475664": {
+    "tweet_id": "2098470685475475664",
+    "username": "KiongoziGk",
+    "status": "replied",
+    "found_at": "2026-09-12T17:26:37Z"
+  },
+  "2098474559804445044": {
+    "tweet_id": "2098474559804445044",
+    "username": "kenyattanshs",
+    "status": "found",
+    "found_at": "2026-09-12T17:26:37Z"
+  },
+  "2098475663485493642": {
+    "tweet_id": "2098475663485493642",
+    "username": "reubenw41018231",
+    "status": "replied",
+    "found_at": "2026-09-12T17:26:37Z"
+  },
+  "2098472848712949822": {
+    "tweet_id": "2098472848712949822",
+    "username": "Tonnie002",
+    "status": "found",
+    "found_at": "2026-09-12T17:26:37Z"
+  },
+  "2098804476421320927": {
+    "tweet_id": "2098804476421320927",
+    "username": "KiongoziGk",
+    "status": "found",
+    "found_at": "2026-09-12T17:26:37Z"
+  },
+  "2098369637381525678": {
+    "tweet_id": "2098369637381525678",
+    "username": "Wezzfahgoo9",
+    "status": "replied",
+    "processed_at": "2026-09-12T17:35:00Z"
+  },
+  "2098384192425881908": {
+    "tweet_id": "2098384192425881908",
+    "username": "therealchuno",
+    "status": "found",
+    "found_at": "2026-09-12T17:33:42Z"
+  },
+  "2098519555870249413": {
+    "tweet_id": "2098519555870249413",
+    "username": "Sam405748",
+    "status": "found",
+    "found_at": "2026-09-12T17:33:42Z"
+  },
+  "2098375228296724540": {
+    "tweet_id": "2098375228296724540",
+    "username": "jekiflu",
+    "status": "found",
+    "found_at": "2026-09-12T17:33:42Z"
+  },
+  "2098370667175391276": {
+    "tweet_id": "2098370667175391276",
+    "username": "HumbleSaint0507",
+    "status": "found",
+    "found_at": "2026-09-12T17:33:42Z"
+  },
+  "2098393079908884570": {
+    "tweet_id": "2098393079908884570",
+    "username": "FollowPayGvaway",
+    "status": "replied",
+    "processed_at": "2026-09-12T17:35:00Z"
+  },
+  "2098701923448750393": {
+    "tweet_id": "2098701923448750393",
+    "username": "AsimAli521399",
+    "status": "replied",
+    "processed_at": "2026-09-12T17:35:00Z"
+  },
+  "2098826677325635651": {
+    "tweet_id": "2098826677325635651",
+    "username": "HideakiYamada8",
+    "status": "replied",
+    "processed_at": "2026-09-12T17:35:00Z"
+  },
+  "2098821787505054112": {
+    "tweet_id": "2098821787505054112",
+    "username": "youngvik5",
+    "status": "replied",
+    "processed_at": "2026-09-12T17:35:00Z"
+  },
+  "2098832256378802213": {
+    "tweet_id": "2098832256378802213",
+    "username": "queen_betth",
+    "status": "found",
+    "found_at": "2026-09-12T17:53:39Z"
+  },
+  "2098832159490588931": {
+    "tweet_id": "2098832159490588931",
+    "username": "imdezine",
+    "status": "found",
+    "found_at": "2026-09-12T17:53:39Z"
+  },
+  "2098831847723852130": {
+    "tweet_id": "2098831847723852130",
+    "username": "yourhaseeb_",
+    "status": "found",
+    "found_at": "2026-09-12T17:53:39Z"
+  },
+  "2098830916760047682": {
+    "tweet_id": "2098830916760047682",
+    "username": "fa1lldontwayopf",
+    "status": "found",
+    "found_at": "2026-09-12T17:53:39Z"
+  },
+  "2098830646747566336": {
+    "tweet_id": "2098830646747566336",
+    "username": "echidiimemotors",
+    "status": "found",
+    "found_at": "2026-09-12T17:53:39Z"
+  },
+  "2098833689924804982": {
+    "tweet_id": "2098833689924804982",
+    "username": "Lady_Standby",
+    "status": "found",
+    "found_at": "2026-09-12T17:59:07Z"
+  },
+  "2098833686225371306": {
+    "tweet_id": "2098833686225371306",
+    "username": "TheGr8Illusion",
+    "status": "found",
+    "found_at": "2026-09-12T17:59:07Z"
+  },
+  "2098832971583324192": {
+    "tweet_id": "2098832971583324192",
+    "username": "wiggerchud",
+    "status": "found",
+    "found_at": "2026-09-12T17:59:07Z"
+  },
+  "2098832770533384568": {
+    "tweet_id": "2098832770533384568",
+    "username": "fr4nkod",
+    "status": "found",
+    "found_at": "2026-09-12T17:59:07Z"
+  },
+  "2098832585849753645": {
+    "tweet_id": "2098832585849753645",
+    "username": "JasonCowboysMan",
+    "status": "found",
+    "found_at": "2026-09-12T17:59:07Z"
+  },
+  "2098833877309501755": {
+    "tweet_id": "2098833877309501755",
+    "username": "_Coach_O",
+    "status": "found",
+    "found_at": "2026-09-12T17:59:56Z"
+  },
+  "2098830520477979076": {
+    "tweet_id": "2098830520477979076",
+    "username": "vividoloona_",
+    "status": "found",
+    "found_at": "2026-09-12T17:59:56Z"
+  },
+  "2098827191576375586": {
+    "tweet_id": "2098827191576375586",
+    "username": "MSShmBe",
+    "status": "found",
+    "found_at": "2026-09-12T17:59:56Z"
+  },
+  "2098820167086342461": {
+    "tweet_id": "2098820167086342461",
+    "username": "HiveFleetDino",
+    "status": "found",
+    "found_at": "2026-09-12T17:59:56Z"
+  },
+  "2098814205587509389": {
+    "tweet_id": "2098814205587509389",
+    "username": "MikeCBurlew",
+    "status": "found",
+    "found_at": "2026-09-12T17:59:56Z"
+  },
+  "2098834805618081883": {
+    "tweet_id": "2098834805618081883",
+    "username": "iam_lafrica",
+    "status": "replied",
+    "found_at": "2026-09-12T18:03:58Z",
+    "followed": true
+  },
+  "2098834680413929611": {
+    "tweet_id": "2098834680413929611",
+    "username": "shirazme56",
+    "status": "replied",
+    "found_at": "2026-09-12T18:03:58Z",
+    "followed": true
+  },
+  "2098834633764786496": {
+    "tweet_id": "2098834633764786496",
+    "username": "WHALES100XCALLS",
+    "status": "replied",
+    "found_at": "2026-09-12T18:03:58Z",
+    "followed": true
+  },
+  "2098834572918083842": {
+    "tweet_id": "2098834572918083842",
+    "username": "BrockKing32",
+    "status": "replied",
+    "found_at": "2026-09-12T18:03:58Z",
+    "followed": true
+  },
+  "2098809682122960979": {
+    "tweet_id": "2098809682122960979",
+    "username": "haveaconcern",
+    "status": "replied",
+    "found_at": "2026-09-12T18:03:58Z",
+    "followed": true
+  },
+  "2099181316482986235": {
+    "tweet_id": "2099181316482986235",
+    "username": "BinanceCMO",
+    "status": "replied",
+    "found_at": "2026-09-13T17:02:29Z",
+    "followed": true
+  },
+  "2099181357784248781": {
+    "tweet_id": "2099181357784248781",
+    "username": "BinanceCMO",
+    "status": "found",
+    "found_at": "2026-09-13T17:02:29Z"
+  },
+  "2099179662480150924": {
+    "tweet_id": "2099179662480150924",
+    "username": "BinanceCMO",
+    "status": "found",
+    "found_at": "2026-09-13T17:02:29Z"
+  },
+  "2099179616648962501": {
+    "tweet_id": "2099179616648962501",
+    "username": "BinanceCMO",
+    "status": "replied",
+    "found_at": "2026-09-13T17:02:29Z",
+    "followed": true
+  },
+  "2099177630390181934": {
+    "tweet_id": "2099177630390181934",
+    "username": "BinanceCMO",
+    "status": "replied",
+    "found_at": "2026-09-13T17:02:29Z",
+    "followed": true
+  },
+  "2098943554647175464": {
+    "tweet_id": "2098943554647175464",
+    "username": "RealTraderJill",
+    "status": "found",
+    "found_at": "2026-09-13T17:02:55Z"
+  },
+  "2092247109462266178": {
+    "tweet_id": "2092247109462266178",
+    "username": "hyperagentapp",
+    "status": "found",
+    "found_at": "2026-09-13T17:02:55Z"
+  },
+  "2099120148187840751": {
+    "tweet_id": "2099120148187840751",
+    "username": "ASM_Dish",
+    "status": "found",
+    "found_at": "2026-09-13T17:02:55Z"
+  },
+  "2099165414232350801": {
+    "tweet_id": "2099165414232350801",
+    "username": "SFZOGEX69",
+    "status": "found",
+    "found_at": "2026-09-13T17:02:55Z"
+  },
+  "2094180026627330319": {
+    "tweet_id": "2094180026627330319",
+    "username": "Double_Abdoul",
+    "status": "found",
+    "found_at": "2026-09-13T17:02:55Z"
+  },
+  "2099181233485828278": {
+    "tweet_id": "2099181233485828278",
+    "username": "Double_Abdoul",
+    "status": "found"
+  },
+  "2099181230373863890": {
+    "tweet_id": "2099181230373863890",
+    "username": "quillaboo92",
+    "status": "found"
+  },
+  "2099180423918010385": {
+    "tweet_id": "2099180423918010385",
+    "username": "pinkjoonmoon",
+    "status": "found"
+  },
+  "2099180268661920018": {
+    "tweet_id": "2099180268661920018",
+    "username": "5553Q_",
+    "status": "replied",
+    "followed": false
+  },
+  "2099544055365480616": {
+    "tweet_id": "2099544055365480616",
+    "username": "patothegreat_",
+    "status": "replied",
+    "found_at": "2026-09-14T17:01:58Z",
+    "followed": false
+  },
+  "2099535538520719404": {
+    "tweet_id": "2099535538520719404",
+    "username": "patothegreat_",
+    "status": "replied",
+    "found_at": "2026-09-14T17:01:58Z",
+    "followed": false
+  },
+  "2099062480546697476": {
+    "tweet_id": "2099062480546697476",
+    "username": "patothegreat_",
+    "status": "replied",
+    "found_at": "2026-09-14T17:01:58Z",
+    "followed": false
+  },
+  "2099535998266789916": {
+    "tweet_id": "2099535998266789916",
+    "username": "patothegreat_",
+    "status": "found",
+    "found_at": "2026-09-14T17:01:58Z"
+  },
+  "2099535931095032139": {
+    "tweet_id": "2099535931095032139",
+    "username": "patothegreat_",
+    "status": "found",
+    "found_at": "2026-09-14T17:01:58Z"
+  },
+  "2099456180880032250": {
+    "tweet_id": "2099456180880032250",
+    "username": "SFZOGEX69",
+    "status": "found",
+    "found_at": "2026-09-14T17:03:28Z"
+  },
+  "2099414633081925958": {
+    "tweet_id": "2099414633081925958",
+    "username": "getphantomflow",
+    "status": "found",
+    "found_at": "2026-09-14T17:03:28Z"
+  },
+  "2099543827811909904": {
+    "tweet_id": "2099543827811909904",
+    "username": "trendfm100",
+    "status": "replied",
+    "found_at": "2026-09-14T17:03:28Z",
+    "followed": true
+  },
+  "2099543392443064789": {
+    "tweet_id": "2099543392443064789",
+    "username": "trendfm100",
+    "status": "found",
+    "found_at": "2026-09-14T17:03:28Z"
+  },
+  "2099543238696751330": {
+    "tweet_id": "2099543238696751330",
+    "username": "trendfm100",
+    "status": "found",
+    "found_at": "2026-09-14T17:03:28Z"
+  },
+  "2099540916650324357": {
+    "tweet_id": "2099540916650324357",
+    "username": "trendfm100",
+    "status": "found",
+    "found_at": "2026-09-14T17:03:28Z"
+  },
+  "2099544048511893978": {
+    "tweet_id": "2099544048511893978",
+    "username": "JesusAnutrof",
+    "status": "found"
+  },
+  "2099543857947890020": {
+    "tweet_id": "2099543857947890020",
+    "username": "Odeos2",
+    "status": "found"
+  },
+  "2099543704222519421": {
+    "tweet_id": "2099543704222519421",
+    "username": "OFbrightFans",
+    "status": "replied",
+    "followed": true
+  },
+  "2099906621027561954": {
+    "tweet_id": "2099906621027561954",
+    "username": "nobodylikesmuyi",
+    "status": "found",
+    "found_at": "2026-09-15T17:02:26Z"
+  },
+  "2099906530006966501": {
+    "tweet_id": "2099906530006966501",
+    "username": "Lolaschanne",
+    "status": "found",
+    "found_at": "2026-09-15T17:02:26Z"
+  },
+  "2099906236309291494": {
+    "tweet_id": "2099906236309291494",
+    "username": "SmoothieP__",
+    "status": "replied",
+    "found_at": "2026-09-15T17:02:26Z",
+    "followed": false
+  },
+  "2099906220526010663": {
+    "tweet_id": "2099906220526010663",
+    "username": "cardinal_110",
+    "status": "replied",
+    "found_at": "2026-09-15T17:02:26Z",
+    "followed": false
+  },
+  "2099906000937456033": {
+    "tweet_id": "2099906000937456033",
+    "username": "BlushBerry3D",
+    "status": "found",
+    "found_at": "2026-09-15T17:02:26Z"
+  },
+  "1964215229794963484": {
+    "tweet_id": "1964215229794963484",
+    "username": "nobodylikesmuyi",
+    "status": "replied",
+    "found_at": "2026-09-15T17:02:43Z",
+    "followed": false
+  },
+  "2099888737203155294": {
+    "tweet_id": "2099888737203155294",
+    "username": "nobodylikesmuyi",
+    "status": "replied",
+    "found_at": "2026-09-15T17:02:43Z",
+    "followed": false
+  },
+  "2099846645315735751": {
+    "tweet_id": "2099846645315735751",
+    "username": "nobodylikesmuyi",
+    "status": "found",
+    "found_at": "2026-09-15T17:02:43Z"
+  },
+  "2099827562646053076": {
+    "tweet_id": "2099827562646053076",
+    "username": "samadakin01",
+    "status": "found",
+    "found_at": "2026-09-15T17:02:43Z"
+  },
+  "2099833278454710587": {
+    "tweet_id": "2099833278454710587",
+    "username": "nobodylikesmuyi",
+    "status": "found",
+    "found_at": "2026-09-15T17:02:43Z"
+  },
+  "2092362605360824335": {
+    "tweet_id": "2092362605360824335",
+    "username": "ayomidepenarts",
+    "status": "replied",
+    "found_at": "2026-09-16T17:02:33Z",
+    "followed": true
+  },
+  "2100268873173909999": {
+    "tweet_id": "2100268873173909999",
+    "username": "ayomidepenarts",
+    "status": "replied",
+    "found_at": "2026-09-16T17:02:33Z",
+    "followed": true
+  },
+  "2100268312017899598": {
+    "tweet_id": "2100268312017899598",
+    "username": "ayomidepenarts",
+    "status": "replied",
+    "found_at": "2026-09-16T17:02:33Z",
+    "followed": true
+  },
+  "2093967286994427948": {
+    "tweet_id": "2093967286994427948",
+    "username": "NajeemFSalaam",
+    "status": "replied",
+    "found_at": "2026-09-16T17:02:33Z",
+    "followed": true
+  },
+  "2100268545498087919": {
+    "tweet_id": "2100268545498087919",
+    "username": "joshuabenj79099",
+    "status": "replied",
+    "found_at": "2026-09-16T17:02:33Z",
+    "followed": true
+  },
+  "2100159661366501573": {
+    "tweet_id": "2100159661366501573",
+    "username": "SFZOGEX69",
+    "status": "found",
+    "found_at": "2026-09-16T17:02:50Z"
+  },
+  "2079302687527682293": {
+    "tweet_id": "2079302687527682293",
+    "username": "AskVenice",
+    "status": "found",
+    "found_at": "2026-09-16T17:02:50Z"
+  },
+  "2100258215120277689": {
+    "tweet_id": "2100258215120277689",
+    "username": "haveaconcern",
+    "status": "found",
+    "found_at": "2026-09-16T17:02:50Z"
+  },
+  "2099949691609977014": {
+    "tweet_id": "2099949691609977014",
+    "username": "RobertaFresque2",
+    "status": "found",
+    "found_at": "2026-09-16T17:02:50Z"
+  },
+  "2100165691953307833": {
+    "tweet_id": "2100165691953307833",
+    "username": "justmeagain34",
+    "status": "found",
+    "found_at": "2026-09-16T17:02:50Z"
+  },
+  "2100268522567864580": {
+    "tweet_id": "2100268522567864580",
+    "username": "alexlhaul",
+    "status": "replied",
+    "followed": true
   }
 }

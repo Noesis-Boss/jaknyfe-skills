@@ -287,3 +287,13 @@ Solopreneur productivity — specifically delegating cognitive labor to AI acros
 - Audited the live Amazon listing: Kindle ASIN `B0HG9NB8PD`, paperback ASIN `B0HG9JGW6D`, Kindle `$6.99`, paperback `$17.99`, Kindle Unlimited enabled, no customer-review proof visible at audit time.
 - Added `docs/autonomous-marketing-plan.md` defining an approval-free-after-setup marketing system with source-grounded content, multi-channel distribution, bounded Amazon Sponsored Products, public-conversation discovery, measurement loops, KDP Select constraints, and hard anti-spam/review-manipulation guardrails.
 - Status: Phase 1 foundation initialized in `Projects/noesis-marketing/`; monthly ad ceiling and exact channel rates remain deferred decisions.
+
+### Slip.Net location correction (2026-09-16)
+- **Problem:** About the Author said Slip.Net was "one of Arizona's pioneering Internet service providers" — Slip.Net was a San Francisco ISP.
+- **Fix:** Corrected in `manuscript.md`, `manuscript_with_about.md`, `about-the-author.md`; fact saved to zobodhi/Astra memory + `memory/feedback/slip-net-san-francisco.md`. Rebuilt PDF (205 pages, 78,425 words) and EPUB; both verified carrying "San Francisco's pioneering" with zero Arizona matches. Resynced zo.pub (16 added, 10 changed) and verified the published PDF text.
+- **Flag (RESOLVED 2026-09-16):** Rebuild surfaced missing-glyph warnings (→ U+2192 x36, − U+2212 x1) in Noto Serif. Fixed by adding `\usepackage{newunicodechar}` mappings (→ → `\rightarrow`, − → `-`) to `assets/pdf-header.tex` — the same mapping `assets/paperback-header.tex` already had. Rebuilt PDF/EPUB: zero glyph warnings; page 35 visually verified arrows render. Resynced zo.pub (4 changed) and verified published PDF contains arrows.
+- **KDP action needed (manual):** Re-upload rebuilt EPUB + paperback interior so the live Amazon editions lose the Arizona text. KDP metadata/description had no Arizona mention. Paperback interior ALSO rebuilt 2026-09-16 (269 pages, unchanged — existing wraparound cover still fits; verified SF text, remaining Arizona hits are legitimate 'University of Arizona'/'Arizona counties'). Resynced zo.pub again (2 changed). Step-by-step: `docs/kdp-reupload-checklist.md` (Kindle ASIN B0HG9NB8PD, paperback ASIN B0HG9JGW6D).
+
+### Marketing asset dry run (2026-09-16)
+- Created `docs/oyyb-x-cover-post-dry-run.md` with a no-post X payload for `@jak_nyfe`, the cover attachment, and the self-reply payload linking to Kindle ASIN `B0HG9NB8PD`.
+- Created `assets/marketing/oyyb-linkedin-quote-card.png` at 1200×675 and visually verified the rendered asset. Main post and self-reply copy both pass the local humanizer gate.

@@ -783,6 +783,65 @@ The formula:
 4. Test and iterate based on your own data
 ```
 
+## Reusable Short-Form Marketing Patterns
+
+Use these as structural prompts. Replace every placeholder with a specific, supportable claim, example, or action. Do not fill them mechanically.
+
+### Open Loop / Contrarian Explanation
+
+Use when common advice blocks the audience's desired result.
+
+Structure: challenge the advice → explain the actual mechanism → give two actions → offer a relevant follow-up resource.
+
+Guardrails:
+- Make the disagreement specific and falsifiable.
+- Do not use unsupported “top 1%” or “everyone is wrong” claims.
+- Use a comment keyword only when a real follow-up asset exists.
+
+### Compressed Value Signal
+
+Use for short lists, carousels, and saveable videos.
+
+Structure: promise a concrete payoff → give three useful items → summarize when to use them.
+
+Guardrails:
+- Verify time savings, counts, and performance claims.
+- Replace vague “secret” language with the actual mechanism.
+- Give the viewer a practical reason to save the post.
+
+### Beginner Action Plan
+
+Use when the audience needs a low-cost, time-bounded starting path.
+
+Structure: define the constraint → assign a focused action for days 1–3 → study and adapt a relevant example for days 4–6 → ship a small result on day 7.
+
+Guardrails:
+- Use “starter path” when “cheat code” would overpromise.
+- Study principles rather than copying another creator's work.
+- State what counts as completion.
+
+### Evidence-Based Case Study
+
+Use for documented customer, personal, or project results.
+
+Structure: state the before and after → show the baseline and timeframe → identify the changed variable → show the workflow and conditions.
+
+Guardrails:
+- Verify every number, date, and outcome before publishing.
+- Label anonymized, composite, or illustrative examples.
+- Do not claim one variable caused the result when other variables changed.
+
+### Faceless Short Video
+
+Use for B-roll loops with timed on-screen text.
+
+Structure: interrupt with a specific audience problem → connect the problem to a mechanism → give one small action → close with a useful caption or next step.
+
+Guardrails:
+- Do not claim that looping B-roll or a CTA improves algorithmic performance without evidence.
+- Use readable captions, strong contrast, and timing that supports accessibility.
+- Change the visual treatment when the idea changes; generic footage should not carry the whole argument.
+
 ### Reverse Engineering Checklist
 
 - [ ] Identified 10-20 top creators in niche

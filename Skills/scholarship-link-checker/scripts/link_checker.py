@@ -24,6 +24,8 @@ for row in rows:
         url = status.get(url_field)
         if not url:
             continue
+        status_code = None
+        error_message = None
         try:
             req = urllib.request.Request(url, method='HEAD', headers={'User-Agent': 'Mozilla/5.0'})
             with urllib.request.urlopen(req, timeout=10) as resp:
@@ -35,7 +37,13 @@ for row in rows:
                     status[f'{url_field}_status'] = status_code
         except Exception as e:
             overall_status = 'broken'
-            status[f'{url_field}_status'] = f'error: {str(e)}'
+            error_message = str(e)
+            status[f'{url_field}_status'] = f'error: {error_message}'
+
+        cursor.execute(
+            "INSERT INTO link_check_history (scholarship_id, url_checked, status_code, is_valid, error_message) VALUES (?, ?, ?, ?, ?)",
+            (sch_id, url, status_code, int(error_message is None and status_code is not None and status_code < 400), error_message),
+        )
     
     # Update the database
     last_checked = time.strftime('%Y-%m-%d %H:%M:%S')

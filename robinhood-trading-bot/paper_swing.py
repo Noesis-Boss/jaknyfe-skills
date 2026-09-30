@@ -99,6 +99,7 @@ def main() -> int:
                 "side": t.side,
                 "entry_date": str(df.index[t.entry_i].date()),
                 "exit_date": str(df.index[t.exit_i].date()) if t.exit_i >= 0 else "",
+                "duration_days": (t.exit_i - t.entry_i) if t.exit_i >= 0 else -1,
                 "entry": round(float(t.entry), 2),
                 "stop": round(float(t.stop), 2),
                 "target": round(float(t.target), 2),

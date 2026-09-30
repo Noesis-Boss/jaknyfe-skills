@@ -2,6 +2,19 @@
 
 ## Feature Log
 
+- 2026-09-18 — Committed the remaining research-validation feature set as `b7ed6aa`: strategy-fitness loading, EMA cross/surge research configuration, reversal-zone news blackout and scale-out controls, dashboard validation mode, and focused tests. Full suite: 114 passed.
+
+- 2026-09-18 — Completed the paper-only regime diagnostic from the interrupted optimization. The ledger contains 15 candidates and 1 decision across two rolling windows. The completed held-out window selected `breakout_strength=1.0` in training (PF 1.64) but produced held-out PF 0.15, -$688.40 across 10 trades, versus baseline PF 1.29; promotion rejected. The second window has candidate records only and no held-out completion. Summary: `data/regime_check_report.json`; raw ledger: `data/experiment_ledger_regimes.jsonl`.
+
+- 2026-09-18 — Added per-parameter SVG score comparison to `walkforward_report.py` and ran a longer paper-only London validation from 2026-02-08 through 2026-08-06 across 13 symbols (150-day train, 30-day held-out). The best candidate was `rr_ratio=1.5`: training PF 1.00 across 350 trades and held-out PF 1.67 across 50 trades; rejected because training did not beat baseline. Outputs: `data/walkforward_report_long.json`, `data/walkforward_report_long.svg`, and `data/walkforward_report_long_parameters.svg`. Full suite passed.
+
+- 2026-09-18 — Added `walkforward_report.py` for three rolling paper-only London train/test windows and a dependency-free SVG score chart. The completed windows produced 0 promotions: held-out PF values were 2.76, 0.06, and 1.11, with 6–8 trades each. Results are in `data/walkforward_report.json` and `data/walkforward_report.svg`.
+
+- 2026-09-18 — Completed the canonical paper-only London optimization across SPY, QQQ, AAPL, TSLA, NVDA, SOFI, F, AAL, MARA, RIVN, NIO, RBLX, and DKNG for 2026-07-01 through 2026-08-06. The ledger now contains 14 candidates and 1 decision. Best candidate `rr_ratio=1.5` was rejected: training PF 1.47, held-out PF 0.88 across 6 trades; no parameter promotion occurred.
+
+- 2026-09-18 — Added the paper-only experiment ledger and single-variable promotion gate. `src/strategy_optimizer.py` now tests one parameter change per candidate, requires both training and held-out composite scores to beat baseline, keeps the five-trade held-out minimum, and appends candidate/decision records to `data/experiment_ledger.jsonl`. Full suite: 114 passed.
+- 2026-09-18 — Added `experiment_report.py` and `backtest_optimize.py --ledger` for compact ledger inspection. The first live 13-symbol optimization attempt wrote 5 candidate records before the five-minute command timeout; no promotion decision was recorded.
+
 - 2026-09-14 — Ran the paper-only EMA Surge validation runner across 13 symbols from 2026-02-10 through 2026-08-06, split at 2026-05-09. Development: 195 trades, 25.13% win rate, 0.27 profit factor, -$3,651.63 net. Held-out: 167 trades, 23.95% win rate, 0.25 profit factor, -$3,447.83 net. London baseline over the same windows: 200 trades, 43.0% win rate, 0.88 profit factor, -$1,310.31 net. Validation rejected; EMA Surge remains excluded from paper/live rotation.
 
 - 2026-09-14 — Added `docs/backtest-dataflow.html`, a browser-verified Archify data-flow diagram covering market bars/config → strategy signals → execution realism → journal/metrics → projections/reports. Linked it from `README.md`; Archify showcase validation passed all 9 checks and automated browser containment passed at 1440×900, 1600×1000, 1920×1080, and 2048×1320.

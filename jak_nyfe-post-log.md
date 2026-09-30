@@ -43,6 +43,22 @@ URL: https://x.com/jak_nyfe/status/2060710029859385768
 > [Full text in tweet]
 
 ---
+## 2026-09-09 16:00 MST — Evening Slot
+- **Topic:** Anthropic AI economy scenarios and possible labor-market shock
+- **Tweet:** 20%+ unemployment is one possible AI outcome by 2030, Anthropic says. The economic question is who captures the productivity gains: workers, customers, or the owners of compute and capital?
+- **Post URL:** https://x.com/jaknyfe/status/2097823382540611795
+- **Source reply:** https://x.com/jaknyfe/status/2097823411024077311
+- **Word count:** 31
+- **Format:** commentary + relevant infographic
+- **Media:** yes — AI labor-market scenario infographic
+- **Source:** https://www.axios.com/2026/09/09/ai-economy-jobs-anthropic
+- **Hook type:** stat-first
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** relevant image on news-analysis post; topic, evening slot, and length held stable
+- **Status:** posted; metrics pending
+
 
 ## 2026-09-06 16:00 MST — Evening Slot
 
@@ -418,3 +434,384 @@ Tags: #AIProductivity #Anthropic #Claude #TechTrends #FutureOfWork
 - **Reason:** X API 403 — replies allowed only to posts where the account is mentioned or is the author. No retry.
 - **Experiment variable:** target quality; reply angle and CTA held stable
 - **Visible metrics:** target search showed 17 likes, 3 reposts, 7k+ views; reply metrics unavailable
+
+## 2026-09-10 06:00 MST — Morning Slot
+- **Topic:** Cognition funding and AI coding economics
+- **Timestamp:** 2026-09-10 13:00 UTC / 2026-09-10 06:00 MST
+- **Format:** original news analysis
+- **Word count:** 33
+- **Media:** none (image search rate-limited during run)
+- **Source:** https://x.com/cognition/status/2097369798518681891
+- **Hook type:** named-entity/stat-first
+- **Hook:** "Cognition: $2B raised at a $48B valuation."
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** image variable attempted; no media posted; topic class, morning slot, and concise analysis held stable
+- **Tweet URL:** https://x.com/jaknyfe/status/2098035195169382455
+- **Source-reply URL:** N/A
+- **Status:** ✅ Posted; metrics pending
+
+## 2026-09-10 07:05 MST — Reply attempt
+- **Target URL:** https://x.com/yunta_tsai/status/2098046851585036788
+- **Topic:** AI safety and real-world autonomous-driving evidence
+- **Reply text:** The strongest safety evidence is operational: compare disengagements, collision rates, and miles across matched human-driving baselines. Public metrics make the claim testable instead of rhetorical.
+- **Result:** failed
+- **Reason:** X API 403 — replies allowed only to posts where the account is mentioned or is the author. No retry.
+- **Experiment variable:** target quality; reply angle and CTA held stable
+- **Visible metrics:** 65 likes, 8 reposts, 5 replies, 3 bookmarks, 1,520 views; reply metrics unavailable
+
+## 2026-09-10 10:00 MST — Midday Slot
+- **Topic:** Positron AI inference chips and AI infrastructure economics
+- **Word count:** 32
+- **Media:** attached real data-center photo
+- **Source:** https://x.com/NEA/status/2098093493730365521
+- **Tweet URL:** https://x.com/jak_nyfe/status/2098095254914158622
+- **Source-reply URL:** https://x.com/jak_nyfe/status/2098095282986631358
+- **Hashtags:** none
+- **Status:** ✅ Posted
+
+## 2026-09-10 16:04 MST — Evening Slot
+- **Topic:** The Boring Company funding and infrastructure economics
+- **Timestamp:** 2026-09-10 23:04:03 UTC / 2026-09-10 16:04:03 MST
+- **Format:** original news analysis
+- **Word count:** 35
+- **Media:** none; image search used, but no sufficiently relevant licensed image selected
+- **Source:** https://techcrunch.com/
+- **Hook type:** named-entity/stat-first
+- **Hook:** "The Boring Company just raised $3B. The tunnel is the easy part."
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** topic class held stable as concise economic analysis; image variable attempted, no media posted
+- **Tweet URL:** https://x.com/jaknyfe/status/2098185741473927397
+- **Source-reply URL:** N/A
+- **Status:** ✅ Posted; metrics pending
+## 2026-09-11 06:00 MST — Morning Slot
+- **Topic:** Cymphony AI-agent security and enterprise access control
+- **Timestamp:** 2026-09-11 13:00 UTC / 2026-09-11 06:00 MST
+- **Format:** original news analysis
+- **Post text:** Cymphony found 85,000 files exposed to AI tools. The next enterprise security market is permission control for nonhuman workers. As agents gain access, “who can read this?” becomes a machine-speed question.
+- **Word count:** 33
+- **Media:** none; image search unavailable in this session
+- **Source:** https://techcrunch.com/2026/09/09/sequoia-doubles-down-on-cymphony-as-ai-agents-create-new-enterprise-security-risks/
+- **Hook type:** stat-first
+- **Hook:** "Cymphony found 85,000 files exposed to AI tools."
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** topic class held stable as concise economic analysis; media variable held at none
+- **Tweet URL:** N/A
+- **Source-reply URL:** N/A
+- **Status:** ❌ Not posted; `use_app_x` unavailable and local X CLI had no credentials. No tweet created.
+## 2026-09-11 07:05 MST — Reply attempt
+- Target URL: https://x.com/FT/status/2098341774670336231
+- Topic: AI misuse and model access controls
+- Reply text: The missile example shows why capability access needs audit trails: model prompts, tool calls, and human approvals should be reviewable after the fact. Without that chain, attribution becomes guesswork.
+- Result: failed
+- Reason: X API 403 — replies allowed only to posts where the account is mentioned or is the author. No retry.
+- Experiment variable: target quality; reply angle and CTA held stable
+- Visible metrics: 1,992 likes, 462 reposts, 80 replies, 365 bookmarks, 151,871 views; reply metrics unavailable
+
+## 2026-09-11 10:00 MST — Midday Slot
+- **Topic:** Positron AI inference-chip funding and memory economics
+- **Post text:** Positron AI raised $875M at a $5B valuation. The bet: inference economics will be won by memory-first silicon, not just bigger GPUs. When one chip can carry 2.3TB, memory becomes the moat—and the bottleneck investors are pricing.
+- **Word count:** 37
+- **Media:** attached real Positron AI inference-chip photo
+- **Source:** https://www.wsj.com/tech/ai/positron-valued-at-5-billion-in-new-funding-as-cpu-demand-surges-76dde819
+- **Hook type:** stat-first
+- **Hashtags:** none
+- **Tweet URL:** https://x.com/jak_nyfe/status/2098457456728740275
+- **Source-reply URL:** https://x.com/jak_nyfe/status/2098457493923840210
+- **Status:** ✅ Posted
+
+## 2026-09-11 16:00 MST — Evening Slot
+- **Topic:** Hyperscaler AI debt and infrastructure financing risk
+- **Timestamp:** 2026-09-11 23:00 UTC / 2026-09-11 16:00 MST
+- **Format:** original news analysis
+- **Post text:** Amazon raised roughly $100B in bonds this year to fund AI. The hidden AI infrastructure trade is credit: hyperscalers can finance the build, but smaller partners inherit the fragility. Cheap capital makes capacity look inevitable—until demand misses.
+- **Word count:** 38
+- **Media:** none; image search used, but no sufficiently relevant real image selected
+- **Source:** https://www.axios.com/2026/09/11/ai-debt-hyperscalers-sp
+- **Hook type:** stat-first
+- **Hook:** "Amazon raised roughly $100B in bonds this year to fund AI."
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** topic class held stable as concise economic analysis; media variable held at none
+- **Tweet URL:** N/A
+- **Source-reply URL:** N/A
+- **Status:** ❌ Not posted; required `use_app_x` tool was unavailable in this scheduled run and local X CLI had no credentials. No tweet created.
+
+## 2026-09-12 06:00 MST — Morning Slot
+- **Topic:** Cognition’s $2B Series E and Devin’s reported revenue growth
+- **Timestamp UTC:** 2026-09-12 13:00
+- **Format:** News analysis with relevant photo
+- **Word count:** 39
+- **Media:** Yes — Scott Wu of Cognition photo
+- **Source:** https://cognition.com/blog/series-e
+- **Hook type:** Stat/named-entity-first
+- **CTA type:** None
+- **Hashtags:** None
+- **Mentions:** None
+- **Experiment variable:** Relevant image attached to morning news-analysis post; topic class, morning slot, and concise length held stable
+- **Tweet URL:** https://x.com/jaknyfe/status/2098759672555606122
+- **Source-reply URL:** https://x.com/jaknyfe/status/2098759715534631120
+- **Visible results:** Posted successfully; metrics pending
+## 2026-09-12 07:00 MST — Daily networking loop
+- **Result:** no reply attempted
+- **Reason:** X search returned no usable recent target; local X client had no authenticated cookies (`auth_token`/`ct0` unavailable). No retry or post created.
+- **Experiment variable:** target quality; reply angle and CTA held stable
+- **Visible metrics:** N/A
+
+## 2026-09-12 10:00 MST — Midday Slot (1 PM ET) — MANUAL RUN
+- **Topic:** Microsoft 38GW data-center buildout by 2032, already turning away AI customers at $145B/yr capex
+- **Timestamp UTC:** 2026-09-12 17:05
+- **Format:** Stat-first news analysis with relevant photo
+- **Word count:** 37
+- **Media:** Yes — Microsoft data center aerial photo (WSJ image, 1920x1080)
+- **Source:** https://www.bloomberg.com/news/features/2026-09-10/microsoft-ai-focused-data-center-plan-to-add-26-gigawatts-of-compute
+- **Hook type:** Named-entity + concrete stat
+- **CTA type:** None
+- **Hashtags:** None
+- **Mentions:** None
+- **Experiment variable:** Media attached per benchmark fix; concise ≤50-word body; 0 hashtags; source reply posted
+- **Tweet URL:** https://x.com/jak_nyfe/status/2098821140655345806
+- **Source-reply URL:** https://x.com/jak_nyfe/status/2098821162344083689
+- **Status:** ✅ Posted manually (scheduled 10:00 MST automation did not fire); source reply posted
+
+## 2026-09-12 17:10 UTC (10:10 MST) — Manual catch-up (automation missed slot)
+
+- **Topic:** Microsoft data-center capacity — 38GW by 2032, turning away AI customers
+- **Hook:** "Microsoft is turning away AI customers at $145B in annual capex."
+- **Hook type:** named-entity-first
+- **Body:** "The company plans 38GW of data-center capacity by 2032 — triple today's 12GW — because compute access, not cost, is the real bottleneck for every GPU-hungry startup."
+- **Word count:** 42 words
+- **Media:** ✅ Attached — Microsoft data center aerial photo (WSJ image, 1920x1080)
+- **Source reply:** ✅ Posted as reply to own tweet
+- **Source URL:** https://www.bloomberg.com/news/features/2026-09-10/microsoft-ai-focused-data-center-plan-to-add-26-gigawatts-of-compute
+- **Tweet URL:** https://x.com/jak_nyfe/status/2098821140655345806
+- **Source reply URL:** https://x.com/jak_nyfe/status/2098821162344083689
+- **CTA type:** none
+- **Hashtags:** 0
+- **Note:** Automation 7ea7d95a-cd21-4ebd-9fb2-3ec588060c52 (Daily Tech & Science Posting Schedule, 10:00 MST) did NOT fire today. next_run still shows 2026-09-13. No log file created in /dev/shm. Manual catch-up posted at 17:10 UTC.
+
+## 2026-09-12 16:00 MST — Evening Slot
+- **Topic:** OpenAI delays IPO to 2027 amid AI safety concerns
+- **Timestamp:** 2026-09-12 23:00 UTC / 2026-09-12 16:00 MST
+- **Format:** Original news analysis with relevant photo
+- **Post text:** OpenAI will not IPO in 2026. Sam Altman says safety makes this an “ill-advised moment.” The economic signal is bigger: private AI valuations can keep compounding, but public investors still cannot price the burn, risk, or infrastructure bill. The market is waiting for receipts.
+- **Word count:** 39
+- **Media:** Yes — Reuters OpenAI IPO image
+- **Source:** https://www.axios.com/2026/09/12/openai-public-ipo-delay-sam-altman
+- **Hook type:** Named-entity + concrete timing
+- **CTA type:** None
+- **Hashtags:** None
+- **Mentions:** None
+- **Experiment variable:** Media attached to evening news-analysis post; topic class and concise 15–50-word format held stable
+- **Tweet URL:** https://x.com/jaknyfe/status/2098910658725118115
+- **Source-reply URL:** https://x.com/jaknyfe/status/2098910689150501348
+- **Status:** ✅ Posted; metrics pending
+
+## 2026-09-13 06:00 MST — Morning Slot
+- **Topic:** Listen Labs funding round reportedly scrapped amid Salesforce acquisition talks
+- **Timestamp:** 2026-09-13 13:00 UTC / 2026-09-13 06:00 MST
+- **Format:** Original news analysis
+- **Post text:** Listen Labs reportedly scrapped a $1.5B funding round as Salesforce weighs an acquisition. The AI market’s clearest signal: distribution is becoming more valuable than another round of private capital. Enterprise buyers want deployed workflows, not demos.
+- **Word count:** 34
+- **Media:** none; image search attempted but rate-limited
+- **Source:** https://techcrunch.com/2026/09/09/ai-research-startup-listen-labs-scrubbed-a-1-5b-funding-round-for-salesforce-talks/
+- **Hook type:** Named-entity + concrete stat
+- **Hook:** Listen Labs reportedly scrapped a $1.5B funding round as Salesforce weighs an acquisition.
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** No-media concise news analysis; topic class, morning slot, and 15–50-word length held stable
+- **Tweet URL:** https://x.com/jaknyfe/status/2099121915482751385
+- **Source-reply URL:** N/A
+- **Visible results:** Posted successfully; metrics pending
+
+## 2026-09-13 07:00 MST — Daily networking loop
+
+- **Result:** no reply attempted
+- **Target URL:** N/A — X search returned no usable target
+- **Topic:** tech, science, AI, startups
+- **Reply text:** N/A
+- **Reason:** Vendored X search failed because authenticated `auth_token` and `ct0` cookies were unavailable. No retry or post created.
+- **Experiment variable:** target quality; reply angle and CTA held stable
+- **Visible metrics:** N/A
+## 2026-09-13 10:00 MST — Midday Slot (1 PM ET)
+
+- **Topic:** d-Matrix adopting Nvidia chip-linking technology for AI servers
+- **Timestamp UTC:** 2026-09-13 17:00
+- **Format:** Named-entity-first business analysis with relevant photo
+- **Post text:** d-Matrix is plugging its AI chips into Nvidia servers. The economic shift: specialized inference hardware no longer needs to replace the incumbent rack. It needs to fit Nvidia’s network. NVLink is becoming a distribution channel for competitors.
+- **Word count:** 38
+- **Media:** Yes — d-Matrix AI inference server photo
+- **Source:** https://www.marketscreener.com/news/stock-market-news/chip-startup-d-matrix-to-use-nvidia-chip-linking-tech-in-ai-servers-8223654/
+- **Tweet URL:** https://x.com/jak_nyfe/status/2099182148045488493
+- **Source-reply URL:** https://x.com/jak_nyfe/status/2099182204890870047
+- **Hashtags:** 0
+- **Status:** ✅ Posted with media; source reply posted
+
+## 2026-09-14 06:00 MST — Morning Slot
+
+- **Topic:** AI slowdown concerns and SoftBank selloff
+- **Timestamp UTC:** 2026-09-14 13:00
+- **Format:** Original news analysis with relevant image
+- **Post text:** SoftBank shares fell 13% after Anthropic called for slower AI development. The signal is economic: investors are repricing the cost of frontier-model risk, not abandoning compute. Safety is becoming part of the AI infrastructure bill.
+- **Word count:** 36
+- **Media:** Yes — SoftBank AI partnership image
+- **Source:** https://www.theguardian.com/business/2026/sep/14/ai-linked-stocks-fall-tech-bosses-call-slowdown-reckless-development
+- **Hook type:** Stat-first
+- **Hook:** SoftBank shares fell 13% after Anthropic called for slower AI development.
+- **CTA type:** None
+- **Hashtags:** None
+- **Mentions:** None
+- **Experiment variable:** Relevant media attached to concise morning AI-economics analysis; topic class, account, slot, and 15–50-word length held stable
+- **Tweet URL:** https://x.com/jaknyfe/status/2099484338161086898
+- **Source-reply URL:** https://x.com/jaknyfe/status/2099484387196715410
+- **Visible results:** Posted successfully; metrics pending
+
+## 2026-09-14 07:00 MST — Daily networking loop
+
+- **Result:** no reply attempted
+- **Target URL:** N/A — X search returned stale indexed results; no reliable target within the preferred 30-minute window
+- **Topic:** tech, science, AI, startups
+- **Reply text:** N/A
+- **Reason:** No current high-performing target could be verified. No reply or retry performed.
+- **Experiment variable:** target quality; reply angle and CTA held stable
+- **Visible metrics:** N/A
+
+## 2026-09-14 10:00 MST — Midday Slot (1 PM ET)
+
+- **Topic:** AI development slowdown concerns and data-center credit risk
+- **Timestamp UTC:** 2026-09-14 17:00
+- **Format:** Stat-first business analysis with relevant image
+- **Post text:** SoftBank fell 13% as AI leaders asked the industry to slow down. The market is pricing a new risk: data-center debt survives even when compute demand does not. AI’s next bottleneck may be credit, not chips.
+- **Word count:** 35
+- **Media:** Yes — AI investment/technology discussion photo
+- **Source:** https://apnews.com/article/0b44bfb43960c6ae850567c0c4e5003a
+- **Tweet URL:** https://x.com/jak_nyfe/status/2099544598641102926
+- **Source-reply URL:** https://x.com/jak_nyfe/status/2099544637291557205
+- **Hashtags:** 0
+- **Status:** ✅ Posted with media; source reply posted
+## 2026-09-14 16:00 UTC — Evening Slot
+
+- **Topic:** AI startup financing polarization and the shrinking middle tier
+- **Timestamp:** 2026-09-14 16:00 UTC / 2026-09-14 09:00 MST
+- **Format:** Original news analysis; no media attached
+- **Post text:** AI startups raised nearly 3,400 first financings in 2023, up from 2,150 in 2022. Now venture capital is narrowing toward trillion-dollar outcomes. The economic squeeze is hitting the middle: good AI companies may need revenue before they can raise again.
+- **Word count:** 42
+- **Media:** none; image search completed, but no independently verifiable current image selected
+- **Source:** https://www.wsj.com/pro/venture-capital/growing-pains-for-startups-in-the-chatgpt-generation-f6f8f196
+- **Hook type:** Stat-first
+- **Hook:** AI startups raised nearly 3,400 first financings in 2023, up from 2,150 in 2022.
+- **CTA type:** none
+- **Hashtags:** 0
+- **Mentions:** 0
+- **Experiment variable:** No-media evening news analysis; held account, topic class, slot, and 15–50-word length stable
+- **Tweet URL:** N/A
+- **Source-reply URL:** N/A
+- **Status:** ❌ Not posted; the required X posting tool was unavailable in this scheduled run and no local X credentials were available. No tweet created.
+
+## 2026-09-15 06:00 MST — Morning Slot
+
+- **Topic:** Cornelis AI networking infrastructure funding
+- **Timestamp:** 2026-09-15 13:00 UTC / 2026-09-15 06:00 MST
+- **Format:** Original news analysis; no media attached
+- **Post text:** Cornelis just raised $205M to challenge Nvidia at the network layer. Its Active Compute Fabric puts programmable compute inside the fabric, targeting GPU idle time caused by data bottlenecks. The economic prize is higher utilization of every expensive accelerator.
+- **Word count:** 35
+- **Media:** none; image search completed, but no independently verifiable current image selected
+- **Source:** https://www.cornelis.com/
+- **Hook type:** Named-entity + concrete stat
+- **Hook:** Cornelis just raised $205M to challenge Nvidia at the network layer.
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** No-media concise morning news analysis; held account, topic class, slot, and 15–50-word length stable
+- **Tweet URL:** N/A
+- **Source-reply URL:** N/A
+- **Visible results:** N/A; tweet was not created
+- **Status:** ❌ Not posted; native X posting connector was unavailable, browser session required login, and local OAuth credentials returned HTTP 401. No tweet created.
+
+## 2026-09-15 07:00 MST — Daily networking loop
+
+- **Result:** no reply attempted
+- **Target URL:** N/A — X search connector unavailable; public indexed search returned stale March–April 2026 results, outside the preferred 30-minute window
+- **Topic:** tech, science, AI, startups
+- **Reply text:** N/A
+- **Reason:** No current high-performing target could be verified. No reply or retry performed.
+- **Experiment variable:** target quality; reply angle and CTA held stable
+- **Visible metrics:** N/A
+
+## 2026-09-15 16:00 MST — Evening Slot
+
+- **Topic:** Liquid Compute's regulated exchange for AI compute capacity
+- **Timestamp:** 2026-09-15 23:00 UTC / 2026-09-15 16:00 MST
+- **Format:** Named-entity-first economic analysis; no media attached
+- **Post text:** Liquid Compute raised $15M to build a regulated exchange for GPU hours. If AI compute demand reaches $2.3T by 2030, idle capacity becomes a tradable asset—and pricing transparency becomes infrastructure.
+- **Word count:** 32
+- **Media:** none; image search completed, but no directly relevant, independently verifiable image selected
+- **Source:** https://www.wsj.com/pro/private-equity/firstmark-chemistry-invest-in-a-startup-building-an-exchange-for-ai-compute-power-33c8661d
+- **Hook type:** Named-entity + concrete stat
+- **Hook:** Liquid Compute raised $15M to build a regulated exchange for GPU hours.
+- **CTA type:** none
+- **Hashtags:** none
+- **Mentions:** none
+- **Experiment variable:** No-media evening news analysis; held account, topic class, slot, and 15–50-word length stable
+- **Tweet URL:** N/A
+- **Source-reply URL:** N/A
+- **Visible results:** N/A; tweet was not created
+- **Status:** ❌ Not posted; native X posting tool was unavailable, and the browser session redirected to X login. No tweet created.
+
+## 2026-09-15 22:01 MST — Evening Slot
+
+- **Topic:** Profound raises $180M at a $1.8B valuation after revenue triples in six months
+- **Timestamp:** 2026-09-15 22:01 MST / 2026-09-16 05:01 UTC
+- **Format:** Original named-entity-first economic analysis with relevant image
+- **Post text:** Profound just hit a $1.8B valuation after revenue tripled in six months.
+
+  Its 1,000 enterprise customers are paying to appear in AI answers, not just Google results. The economic shift: marketing budgets are moving from ranking for links to being cited by machines.
+- **Word count:** 43
+- **Opening character count:** 72
+- **Media:** Yes — relevant Profound/AI-search image, `Media/x-posts/profound-ai-search-2026-09-15.png`
+- **Source:** https://techcrunch.com/2026/09/15/aeo-startup-profound-hits-unicorn-valuation-raises-180m-series-d-7-months-after-last-round/
+- **Hook type:** Named-entity + concrete stat
+- **Hook:** Profound just hit a $1.8B valuation after revenue tripled in six months.
+- **CTA type:** none
+- **Hashtags:** 0
+- **Mentions:** 0
+- **Experiment variable:** Relevant media attached to concise evening AI-economics analysis; account, topic class, evening slot, and 15–50-word length held stable
+- **Tweet URL:** https://x.com/jaknyfe/status/2100087583514505446
+- **Source-reply URL:** https://x.com/jaknyfe/status/2100087609749848239
+- **Status:** ✅ Posted with media; source reply posted; metrics pending
+- **Visible results:** Main tweet and source self-reply visible. Main: 0 likes, 0 reposts, 1 reply, 0 quotes, 0 bookmarks, 2 views. Source reply: 0 likes, 0 reposts, 0 replies, 0 quotes, 0 bookmarks, 1 view. Classify as new (0–2h).
+
+## 2026-09-16 06:00 MST — Morning Slot
+
+- **Topic:** Google’s Finland AI infrastructure buildout and nuclear power contract
+- **Timestamp:** 2026-09-16 13:00 UTC / 2026-09-16 06:00 MST
+- **Format:** Original stat-first economic analysis; no media attached
+- **Post text:** Google just committed $15.1B to AI infrastructure in Finland—and signed a 22-year nuclear power deal. The AI race is becoming an energy and capital race: whoever locks in reliable electricity may own the next wave of compute.
+- **Word count:** 35
+- **Opening character count:** 82
+- **Media:** None; image search completed, but no local media asset was selected for upload
+- **Source:** https://www.marketscreener.com/news/google-to-invest-15-billion-in-ai-infrastructure-and-buy-nuclear-power-in-finland-ce785bd9da80f027
+- **Hook type:** Stat-first / named-entity-first
+- **Hook:** Google just committed $15.1B to AI infrastructure in Finland—and signed a 22-year nuclear power deal.
+- **CTA type:** none
+- **Hashtags:** 0
+- **Mentions:** 0
+- **Experiment variable:** No-media concise morning AI-economics analysis; account, topic class, morning slot, and 15–50-word length held stable
+- **Tweet URL:** https://x.com/jak_nyfe/status/2100209171253653511
+- **Source-reply URL:** None; no media attached
+- **Status:** ✅ Posted; metrics pending
+- **2026-09-16 07:00 MST — Daily networking loop**
+  - **Result:** no reply attempted
+  - **Target URL:** N/A — x_search unavailable; fallback indexed search returned stale or non-target results outside the preferred 30-minute window
+  - **Topic:** tech, science, AI, startups
+  - **Reply text:** N/A
+  - **Reason:** No current high-performing target could be verified. No reply or retry performed.
+  - **Experiment variable:** target quality; reply angle and CTA held stable
+  - **Visible metrics:** N/A

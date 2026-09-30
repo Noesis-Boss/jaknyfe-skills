@@ -53,6 +53,10 @@ python backtest.py --symbols SPY --breakout-strength 0.75 --max-bars 30 --rr-rat
 | `src/__main__.py` | entry point: `python -m src` |
 | `backtest.py` | historical backtest across multiple symbols |
 
+See the interactive [backtest data-flow diagram](docs/backtest-dataflow.html) for the path from market bars and config through signals, execution realism, journal records, metrics, and capital projections.
+
+See the interactive [strategy flow diagram](docs/strategy-flow.html) for the London breakout pipeline: premarket box → breakout-strength/volume/bias gates → entry → trailing-stop management, with the Theta Farmer side branch.
+
 ## Setup
 
 ```bash
