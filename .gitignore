@@ -70,3 +70,8 @@ gmail-*.eml
 gmail-*.html
 gmail-*.txt
 gmail-*.md
+
+# X account compliance and agent credential files — never commit
+x-authenticity-compliance.md
+Skills/x-browser-reply/x_authenticity_compliance.json
+Email/agent-key.txt
