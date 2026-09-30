@@ -86,3 +86,7 @@ If you are sure that the described cause is not responsible for this error and t
 ### Other tools mentioned
 
 The video discusses Jev, TypeSafe AI, Zapier, Home Assistant, and several hosted/model workflows, but the available description and transcript contain no additional public GitHub repository identities. No repository identity was invented for those products.
+
+- **Functionality:** Named products only — Jev (agent memory layer), TypeSafe AI, Zapier, and Home Assistant are commercial or hosted offerings, not open repositories installable on this host.
+- **Signals:** No GitHub repository was presented in the description or transcript, so there are no stars, language, license, or push signals to report.
+- **Recommendation: SKIP** — nothing installable was named, and inventing a repository identity would be a guess. Revisit only if a future episode links an actual public repo.

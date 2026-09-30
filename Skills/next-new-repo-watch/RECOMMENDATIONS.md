@@ -2,7 +2,7 @@
 
 Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-30.
 
-**Totals**: 16 INCLUDE · 67 TRIAL · 81 SKIP · 1 pending eval
+**Totals**: 16 INCLUDE · 67 TRIAL · 82 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -256,10 +256,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-30.
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/mHGDF8mwkY4.md`
 - Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/mny7r505ZpU.md`
 - `jdepoix/youtube-transcript-api` — `reports/pkwnJcETgfE.md`
+- Other tools mentioned — `reports/pxaMzr7al3I.md`
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`
 - Outbid.lol — `reports/qr7Zwjx-nWU.md`
 - Piano Autocomplete (Simon Edwardsson / simedw) — `reports/twVd1dyPlz8.md`
-
-## Pending eval
-
-- `reports/pxaMzr7al3I.md` — 9 things you’ll actually do with Jev (1 unevaled)
