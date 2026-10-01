@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-30.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-01.
 
-**Totals**: 16 INCLUDE · 67 TRIAL · 82 SKIP · 0 pending eval
+**Totals**: 16 INCLUDE · 69 TRIAL · 84 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -71,6 +71,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-30.
   - Report: `reports/F-_q6VIHMS8.md` · Video: https://youtu.be/F-_q6VIHMS8 · *How to have Claude run your company*
 - **[petergyang/fuck-cancer](https://github.com/petergyang/fuck-cancer)** — Functionality: A Python/Markdown workflow that turns a patient's documents and trusted medical sources into a plain-language care brief. It 
   - Report: `reports/H03k_SfxySQ.md` · Video: https://youtu.be/H03k_SfxySQ · *He Built an AI Tool to Help Families Facing Cancer*
+- **Tencent/WeKnora** — Go-based open-source knowledge platform that turns documents into a queryable RAG system, reasoning agent, and self-maintaining wiki. It is 
+  - Report: `reports/Ie6IlSIYAfc.md` · Video: https://youtu.be/Ie6IlSIYAfc · *WeKnora — Tencent Built an AI That Turns Your Files Into a Wiki*
 - **[aerovato/magic-compact](https://github.com/aerovato/magic-compact)** — Functionality: A lossless context-compaction plugin for Claude Code and OpenCode. It aims to reduce context size while preserving the inform
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
 - **[headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom)** — Functionality: A Python library, proxy, and MCP server that compresses tool output, logs, files, and retrieval chunks before they reach an L
@@ -171,6 +173,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-30.
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
 - **[cactus-compute/needle](https://github.com/cactus-compute/needle)** — Functionality: A compact on-device model that maps natural-language requests to constrained tool calls, structured extraction, and embedding
   - Report: `reports/tsWOiibaaxA.md` · Video: https://youtu.be/tsWOiibaaxA · *Better than Jev - because you can build with it*
+- **useautumn/autumn** — TypeScript usage-based billing platform for metering and charging by tokens, requests, minutes, or other units. It targets AI products that 
+  - Report: `reports/wgdFn5JXXb8.md` · Video: https://youtu.be/wgdFn5JXXb8 · *This Free GitHub Tool Lets You Charge Per Token*
 - **browser-use/browser-use** — 
   - Report: `reports/wvStsbW_fCY.md` · Video: https://youtu.be/wvStsbW_fCY · *I Let AI Take Over My Browser — For 2 Cents*
 - **immich-app/immich** — 
@@ -208,6 +212,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-30.
 - [getsentry/sentry](https://github.com/getsentry/sentry) — `reports/F-_q6VIHMS8.md`
 - [vercel/next.js](https://github.com/vercel/next.js) — `reports/F-_q6VIHMS8.md`
 - [GoogleChrome/lighthouse](https://github.com/GoogleChrome/lighthouse) — `reports/F-_q6VIHMS8.md`
+- jdepoix/youtube-transcript-api — `reports/Ie6IlSIYAfc.md`
 - [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) — `reports/Jv050l7y6ik.md`
 - jdepoix/youtube-transcript-api — `reports/KU7FrnLBqSM.md`
 - X1 (x1.new) — `reports/M7cvI4155_E.md`
@@ -260,3 +265,4 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-09-30.
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`
 - Outbid.lol — `reports/qr7Zwjx-nWU.md`
 - Piano Autocomplete (Simon Edwardsson / simedw) — `reports/twVd1dyPlz8.md`
+- jdepoix/youtube-transcript-api — `reports/wgdFn5JXXb8.md`

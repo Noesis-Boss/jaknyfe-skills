@@ -514,6 +514,26 @@
         "jdepoix/youtube-transcript-api",
         "mksglu/context-mode"
       ]
+    },
+    "Ie6IlSIYAfc": {
+      "title": "WeKnora \u2014 Tencent Built an AI That Turns Your Files Into a Wiki",
+      "published": "2026-09-30T23:00:16+00:00",
+      "processed_at": "2026-10-01T12:31:52.878796+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/Ie6IlSIYAfc.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api",
+        "Tencent/WeKnora"
+      ]
+    },
+    "wgdFn5JXXb8": {
+      "title": "This Free GitHub Tool Lets You Charge Per Token",
+      "published": "2026-09-30T20:30:02+00:00",
+      "processed_at": "2026-10-01T12:31:54.427377+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/wgdFn5JXXb8.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api",
+        "useautumn/autumn"
+      ]
     }
   }
 }
