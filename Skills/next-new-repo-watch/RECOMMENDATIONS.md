@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-01.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-02.
 
-**Totals**: 16 INCLUDE · 69 TRIAL · 84 SKIP · 0 pending eval
+**Totals**: 16 INCLUDE · 71 TRIAL · 87 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -123,6 +123,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-01.
   - Report: `reports/V0YugHvjs5Y.md` · Video: https://youtu.be/V0YugHvjs5Y · *This Tool Gives AI a Map of Your Codebase*
 - **elvisun/newsjack** — Functionality: Open-source agent skills that research news opportunities and help execute a PR workflow.
   - Report: `reports/ZodAaTH-6_E.md` · Video: https://youtu.be/ZodAaTH-6_E · *Meta’s Muse makes you money. And more*
+- **[max-sixty/worktrunk](https://github.com/max-sixty/worktrunk)** — Functionality: A Rust CLI that manages Git worktrees so several coding agents can work in isolated checkouts of one repository. It reduces b
+  - Report: `reports/_6PHjLCjdpo.md` · Video: https://youtu.be/_6PHjLCjdpo · *WorkTrunk — Run Multiple AI Agents at Once Without Merge Conflicts*
 - **[affaan-m/ECC](https://github.com/affaan-m/ECC)** — Functionality: A broad agent-harness optimization system combining skills, instincts, memory, security checks, and research-first workflows 
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)** — Functionality: A minimalism-oriented coding-agent skill that pushes the agent to reuse existing code and avoid unnecessary implementation. I
@@ -139,6 +141,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-01.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **cactus-compute/needle** — Functionality: A tiny 2-bit automation model for tool calls, structured extraction, and embeddings on constrained devices.
   - Report: `reports/fD8k0Qbuu7A.md` · Video: https://youtu.be/fD8k0Qbuu7A · *This Tiny LLM Can Run on Almost Anything*
+- **[invoiceninja/invoiceninja](https://github.com/invoiceninja/invoiceninja)** — Functionality: A self-hostable Laravel application for invoicing, quotes, projects, time tracking, and payment collection. It fits service b
+  - Report: `reports/g-CG1PD7iTc.md` · Video: https://youtu.be/g-CG1PD7iTc · *Invoice Ninja: Stop Chasing Clients for Payment*
 - **anthropics/financial-services** — Functionality: Finance-focused agent skills for research, screening, and analysis workflows.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **alibaba/open-code-review** — Functionality: Hybrid deterministic and LLM code-review service with line comments and security rules.
@@ -228,18 +232,21 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-01.
 - jdepoix/youtube-transcript-api — `reports/XGJtqUPUZSo.md`
 - JohnHeibel/PDoomVideo — `reports/ZodAaTH-6_E.md`
 - yoheinakajima/glance-speedlab — `reports/ZodAaTH-6_E.md`
+- [jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) — `reports/_6PHjLCjdpo.md`
 - [humanlayer/skills](https://github.com/humanlayer/skills) — `reports/aX8Y183qDpY.md`
 - [openai/plugins](https://github.com/openai/plugins) — `reports/aX8Y183qDpY.md`
 - [blader/humanizer](https://github.com/blader/humanizer) — `reports/aX8Y183qDpY.md`
 - [openai/skills](https://github.com/openai/skills) — `reports/aX8Y183qDpY.md`
 - [CaptainASIC/reckoner](https://github.com/CaptainASIC/reckoner) — `reports/aX8Y183qDpY.md`
 - [Aotricx/Clodex](https://github.com/Aotricx/Clodex) — `reports/aX8Y183qDpY.md`
+- [jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) — `reports/bTbyRKO0hxs.md`
 - jdepoix/youtube-transcript-api — `reports/dfFKE7EetoA.md`
 - vercel-labs/skills — `reports/ehab5PtgRo8.md`
 - anthropics/skills — `reports/ehab5PtgRo8.md`
 - vercel-labs/agent-skills — `reports/ehab5PtgRo8.md`
 - larksuite/cli — `reports/ehab5PtgRo8.md`
 - bilawalsidhu/gods-eye-view — `reports/f1-sphdBqJY.md`
+- [jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) — `reports/g-CG1PD7iTc.md`
 - anthropics/claude-code — `reports/hlOk-EFUITQ.md`
 - stablyai/orca — `reports/hlOk-EFUITQ.md`
 - TencentCloud/Octop — `reports/hlOk-EFUITQ.md`

@@ -534,6 +534,35 @@
         "jdepoix/youtube-transcript-api",
         "useautumn/autumn"
       ]
+    },
+    "g-CG1PD7iTc": {
+      "title": "Invoice Ninja: Stop Chasing Clients for Payment",
+      "published": "2026-10-01T23:00:40+00:00",
+      "processed_at": "2026-10-02T12:32:45.721520+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/g-CG1PD7iTc.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api",
+        "invoiceninja/invoiceninja"
+      ]
+    },
+    "bTbyRKO0hxs": {
+      "title": "Agents and humans can work together!",
+      "published": "2026-10-01T22:59:30+00:00",
+      "processed_at": "2026-10-02T12:32:46.714748+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/bTbyRKO0hxs.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api"
+      ]
+    },
+    "_6PHjLCjdpo": {
+      "title": "WorkTrunk \u2014 Run Multiple AI Agents at Once Without Merge Conflicts",
+      "published": "2026-10-01T20:30:17+00:00",
+      "processed_at": "2026-10-02T12:32:48.339250+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/_6PHjLCjdpo.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api",
+        "max-sixty/worktrunk"
+      ]
     }
   }
 }
