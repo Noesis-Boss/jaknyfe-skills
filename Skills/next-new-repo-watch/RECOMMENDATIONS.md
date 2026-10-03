@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-02.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-03.
 
-**Totals**: 16 INCLUDE · 71 TRIAL · 87 SKIP · 0 pending eval
+**Totals**: 16 INCLUDE · 75 TRIAL · 93 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -65,6 +65,14 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-02.
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **[Kayforkind/reimagine-it](https://github.com/Kayforkind/reimagine-it)** — Content-derived design CLI: HTML in, standalone HTML out, building the design system from the source's own nouns, dates, numbers, and colors
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
+- **debpalash/VoiceStudio** — Functionality: A local voice-generation and voice-cloning application with dubbing, dictation, transcription, and audiobook workflows. It is
+  - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
+- **anthropics/financial-services** — Functionality: Anthropic's finance-oriented skill and workflow pack for research, screening, financial analysis, and spreadsheet-based deliv
+  - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
+- **HKUDS/CLI-Anything** — Functionality: A toolkit for turning desktop and software applications into agent-friendly command-line interfaces, with a marketplace of ge
+  - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
+- **davila7/claude-code-templates** — Functionality: A CLI and web catalog for installing Claude Code skills, commands, agents, settings, and project templates. It accelerates se
+  - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
 - **[openclaw/openclaw](https://github.com/openclaw/openclaw)** — Self-hosted autonomous agent platform ("the AI that really does things") that runs shell-enabled AI agents on any OS and connects to Telegra
   - Report: `reports/F-_q6VIHMS8.md` · Video: https://youtu.be/F-_q6VIHMS8 · *How to have Claude run your company*
 - **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** — Python personal AI agent ("the agent that grows with you") with memory, skills, and channel integrations; the video positions Hermes as the 
@@ -211,6 +219,12 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-02.
 - [sulabhdubey/rta-smriti-brain](https://github.com/sulabhdubey/rta-smriti-brain) — `reports/AWzzmrCPe-A.md`
 - [templetongroup/radiant](https://github.com/templetongroup/radiant) — `reports/AWzzmrCPe-A.md`
 - [zapier/sdk](https://github.com/zapier/sdk) — `reports/AWzzmrCPe-A.md`
+- paperclipai/paperclip — `reports/CQhWqUOouYM.md`
+- vectorize-io/hindsight — `reports/CQhWqUOouYM.md`
+- rohitg00/ai-engineering-from-scratch — `reports/CQhWqUOouYM.md`
+- vercel/next.js — `reports/CQhWqUOouYM.md`
+- pbakaus/impeccable — `reports/CQhWqUOouYM.md`
+- alirezarezvani/claude-skills — `reports/CQhWqUOouYM.md`
 - [microsoft/playwright](https://github.com/microsoft/playwright) — `reports/F-_q6VIHMS8.md`
 - [PostHog/posthog](https://github.com/PostHog/posthog) — `reports/F-_q6VIHMS8.md`
 - [getsentry/sentry](https://github.com/getsentry/sentry) — `reports/F-_q6VIHMS8.md`
