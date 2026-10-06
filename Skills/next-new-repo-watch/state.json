@@ -588,6 +588,16 @@
       "processed_at": "2026-10-04T12:32:53.200540+00:00",
       "report": "/home/workspace/Skills/next-new-repo-watch/reports/o7Rm5FvA7hU.md",
       "auto_repos": []
+    },
+    "BcNAQynKUk4": {
+      "title": "Top repo explained: builds product + lands customers",
+      "published": "2026-10-05T22:24:12+00:00",
+      "processed_at": "2026-10-06T12:32:23.957543+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/BcNAQynKUk4.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api",
+        "affaan-m/ECC"
+      ]
     }
   }
 }
