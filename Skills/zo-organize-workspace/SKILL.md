@@ -1,78 +1,46 @@
 ---
 name: organize-workspace
-description: Organizes your scattered files into logical folders by project, type, and purpose
+description: Audits workspace organization and prepares a safe, reviewable file-move plan
 metadata:
   author: Zo
   category: Official
   display-name: Organize my files
   emoji: 🗂️
 ---
-
-Consolidate scattered files into logical directories to improve workspace organization and discoverability.
+Audit workspace organization and improve discoverability without disrupting projects or losing data.
 
 # Protocol
 
-1. **Assess current workspace structure**
-   - Catalog loose files in the workspace directory
-   - Identify existing folder structure and naming conventions
-   - Determine semantic relationships and project groupings before considering file types
+1. **Inventory before proposing changes**
+   - Identify root-level loose files, existing folder conventions, project boundaries, and meaningful semantic groupings.
+   - Report counts and representative paths. Do not dump huge inventories into chat; save a complete proposal only if useful and requested.
+   - Exclude `.git`, dependency/build caches, runtime state, and `Trash` from broad inventory walks unless the user specifically asks to include them.
 
-2. **Identify semantic organization opportunities**
-   - Group files by project, context, or domain first
-   - Preserve existing directories that represent meaningful organization
-   - Look for related items that should stay together despite different file types
+2. **Protect existing structures**
+   - Do not move, rename, or reorganize any directory containing `zosite.json`, or any directory named `Articles` or `Prompts`.
+   - Preserve project roots, Git repositories, submodules, datasets with their own documentation, and directories with clear existing purpose.
+   - Never move credentials, secrets, session files, databases, logs, runtime state, or unknown files based only on extension. Flag uncertain items for review.
 
-3. **Protect special directories**
-   - Identify any directories containing `file zosite.json` files, as well as any directories called `Articles` or `Prompts`
-   - Do not touch, move, or reorganize these directories—they are managed project structures
-   - Leave them in place regardless of other organizational changes
+3. **Check impact before proposing moves**
+   - For each candidate, inspect Git status and search for path references in scripts, configs, documentation, workflows, and manifests.
+   - Keep files beside the project or workflow that uses them, even if their file type suggests a generic destination.
+   - Detect destination collisions and propose a distinct destination; never overwrite or merge files automatically.
+   - Do not create generic `Projects/`, `Research/`, `Data/`, `Documents/`, or `Archive/` folders unless the inventory shows a concrete need.
 
-4. **Create organized folder structure** (if not already present):
-   - `Projects/` – for active and completed projects
-   - `Research/` – for articles, PDFs, and reference materials
-   - `Data/` – for spreadsheets, CSVs, and datasets
-   - `Documents/` – for notes, plans, and written content
-   - `Archive/` – for old or completed items
+4. **Produce a reviewable plan; do not execute it automatically**
+   - List each proposed source and destination, reason, reference-check result, and any uncertainty.
+   - Exclude any item whose ownership, purpose, references, or destination is unclear; ask a focused question for those items.
+   - Moving files across projects or outside a single project requires explicit user approval of the exact move list. Workspace-wide moves require explicit approval before execution, even if the user asked to organize the workspace generally.
+   - After approval, execute only approved moves. Use reversible moves, preserve directory structure where practical, and never delete source files or directories as cleanup. Do not use bulk shell moves that include unreviewed paths.
 
-5. **Consolidate files by semantic meaning, then by type**:
-   - Prioritize grouping by project or context over pure file type
-   - Move related files together into semantic folders when meaningful
-   - Within semantic folders, organize by type if needed
+5. **Verify approved moves**
+   - Confirm each destination exists and matches its source, check that no collision occurred, and rerun targeted reference searches for affected paths.
+   - Report moved-file count and destinations, skipped/manual-review items, and verification results. If a move breaks a reference, restore the original location and report the cause.
 
-6. **Organize supporting files**:
-
-   **Projects/** – Project folders and related files
-   - Move project directories and associated content into this structure
-
-   **Research/** – Articles, PDFs, and reference materials
-   - Move: PDF files, research documents, reference articles, and external content
-
-   **Data/** – Spreadsheets and datasets
-   - Move: CSV files, XLSX files, and other tabular data
-
-   **Documents/** – Notes, plans, and written content
-   - Move: Markdown files, text documents, planning documents, and analysis
-
-   **Archive/** – Old or completed items
-   - Move: Outdated files, deprecated versions, and completed projects
-
-7. **Consolidate without destroying**:
-   - Review existing subdirectories for related content and redundancies
-   - Integrate contents into the appropriate semantic structure
-   - Keep all original directories intact—do not delete any folders
-
-8. **Ensure there are no remaining loose files in the workspace directory**
-
-9. **Document the new structure**:
-   - Create `file WORKSPACE_STRUCTURE.md` at the root explaining the folder organization
+6. **Document only completed changes**
+   - Create or update `WORKSPACE_STRUCTURE.md` only when the user asks for durable documentation or approved moves materially change the structure.
+   - Document current paths and purpose; do not claim proposed moves as completed.
 
 # Output
 
-Inform the user that the workspace has been reorganized:
-
-- List the new folder structure created
-- Provide a count of files moved and their destinations
-- Suggest next steps for navigating the reorganized workspace
-- Note any files that required manual review or decisions about placement
-- Ask the user if they have any organization preferences that they would like to use in the future, modifying this command
-
+For an audit-only request, report the current state, key risks, and recommended next action. For a reorganization request, first return the exact proposed move list and wait for approval before executing any workspace-wide changes. After execution, summarize completed moves, destinations, skipped decisions, and verification.
