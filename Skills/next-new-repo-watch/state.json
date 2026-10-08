@@ -598,6 +598,40 @@
         "jdepoix/youtube-transcript-api",
         "affaan-m/ECC"
       ]
+    },
+    "uWnQLASl95U": {
+      "title": "New: Agent can do your marketing & close sales",
+      "published": "2026-10-07T19:10:03+00:00",
+      "processed_at": "2026-10-08T12:34:18.293172+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/uWnQLASl95U.md",
+      "auto_repos": []
+    },
+    "GZtLsvklYBI": {
+      "title": "Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more",
+      "published": "2026-10-06T22:18:59+00:00",
+      "processed_at": "2026-10-08T12:34:22.644812+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/GZtLsvklYBI.md",
+      "auto_repos": [
+        "debpalash/VoiceStudio",
+        "odysseus-dev/odysseus",
+        "tashfeenahmed/freellmapi",
+        "ItzCrazyKns/Vane",
+        "invoke-ai/InvokeAI",
+        "ace-step/ACE-Step-1.5",
+        "mutonby/openshorts",
+        "dyad-sh/dyad",
+        "FoundationAgents/OpenManus",
+        "upscayl/upscayl"
+      ]
+    },
+    "2hh5B_IzuoU": {
+      "title": "Agent Skills \u2014 Give Your AI Coding Agent Senior Engineer Skills",
+      "published": "2026-10-06T19:42:07+00:00",
+      "processed_at": "2026-10-08T12:34:23.837718+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/2hh5B_IzuoU.md",
+      "auto_repos": [
+        "addyosmani/agent-skills"
+      ]
     }
   }
 }
