@@ -632,6 +632,25 @@
       "auto_repos": [
         "addyosmani/agent-skills"
       ]
+    },
+    "vsHEX2YVNHM": {
+      "title": "NewsJack \u2014 This GitHub Repo Turns Your AI Into a PR Manager",
+      "published": "2026-10-08T20:30:23+00:00",
+      "processed_at": "2026-10-09T12:32:29.628213+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/vsHEX2YVNHM.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api",
+        "elvisun/newsjack"
+      ]
+    },
+    "c5ZkPhzaLdA": {
+      "title": "AI video maker, AI influencer, free claude code and more ai releases",
+      "published": "2026-10-08T19:26:50+00:00",
+      "processed_at": "2026-10-09T12:32:31.072906+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/c5ZkPhzaLdA.md",
+      "auto_repos": [
+        "jdepoix/youtube-transcript-api"
+      ]
     }
   }
 }

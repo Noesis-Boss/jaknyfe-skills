@@ -179,3 +179,13 @@ Recommendation: **TRIAL** — test domain research and exports for Noesis websit
 Functionality: Agent-management application with organizational structure and task coordination.
 Signals: 86,004 stars; TypeScript; MIT; pushed 2026-09-26; active, not archived.
 Recommendation: **SKIP** — Paperclip is deprecated by workspace policy.
+
+### elvisun/newsjack — https://github.com/elvisun/newsjack
+Functionality: Open-source agent skills (SKILL.md packs plus a Go CLI) that turn an AI agent into a full PR team: news monitoring for pitchable stories, angle generation, reporter and coverage research, pitch drafting and critique, and coverage tracking.
+Signals: 1,528 stars; Go; MIT; created 2026-05-19; pushed 2026-10-07; active, not archived; 154 forks.
+Recommendation: **INCLUDE** — MIT skills map directly onto this Skills repo; three are already adapted (pr-strategist, newsworthiness-check, news-search, installed 2026-09-26). Remaining coverage-tracker, media-list, and pitch skills plug into the publishing pipeline and client PR work. Live news search requires a free Medialyst account; core skills run local-first.
+
+### jev (TypeSafe AI decision model) — no GitHub repo (hosted model)
+Functionality: TypeSafe AI's "System One" decision model — answers bounded choice/score/yes-no questions with calibrated probabilities in milliseconds at $0.042/M input tokens (output free), so agents can cheap out their routing and guardrail decisions.
+Signals: hosted API (OpenRouter); MIT SDKs and agent skill on the TypeSafeAI GitHub org; launched 2026-09-15; not a self-hostable repo.
+Recommendation: **N/A-repo** — hosted decision model, nothing to install; already prototyped locally in Projects/noesis-factory (JevRouter decision stack). Recorded because Warner featured it alongside NewsJack.

@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-08.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-09.
 
-**Totals**: 17 INCLUDE · 81 TRIAL · 99 SKIP · 0 pending eval
+**Totals**: 19 INCLUDE · 81 TRIAL · 99 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -32,6 +32,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-08.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **affaan-m/ECC** — Functionality: Agent-harness collection covering skills, memory, security, and research-first development.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
+- **[elvisun/newsjack](https://github.com/elvisun/newsjack)** — Functionality: Open-source agent skills (SKILL.md packs plus a Go CLI) that turn an AI agent into a full PR team: news monitoring for pitcha
+  - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **[alibaba/open-code-review](https://github.com/alibaba/open-code-review)** — Functionality: A Go code-review tool combining deterministic checks with an LLM-assisted reviewer. It reports line-level findings across com
   - Report: `reports/ktfjaNnxPsQ.md` · Video: https://youtu.be/ktfjaNnxPsQ · *Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
@@ -40,6 +42,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-08.
   - Report: `reports/pxaMzr7al3I.md` · Video: https://youtu.be/pxaMzr7al3I · *9 things you’ll actually do with Jev*
 - **vercel-labs/agent-browser** — Functionality: Rust CLI for headless browser control, DOM interaction, screenshots, and browser workflows for agents.
   - Report: `reports/qfRMHqh7tNI.md` · Video: https://youtu.be/qfRMHqh7tNI · *This Skill Gives Your AI Agent a Browser*
+- **[elvisun/newsjack](https://github.com/elvisun/newsjack)** — Functionality: Open-source agent skills (Claude Code-style SKILL.md packs plus a Go CLI) that turn an AI agent into a full PR team: it monit
+  - Report: `reports/vsHEX2YVNHM.md` · Video: https://youtu.be/vsHEX2YVNHM · *NewsJack — This GitHub Repo Turns Your AI Into a PR Manager*
 
 ## TRIAL
 
