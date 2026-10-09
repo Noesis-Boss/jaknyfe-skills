@@ -1,5 +1,9 @@
 # Don Lowery's Zo Workspace
 
+## Feature Log — 2026-10-09
+
+- Added `Skills/campaign-design-prompts/`, a Zo-native router for social posts, event flyers, product ads, infographics, luxury campaigns, and YouTube thumbnails. It enforces exact dimensions, editorial hierarchy, supplied-fact fidelity, restrained typography, format-specific exclusions, and rendered-result inspection. SkillSpector scored 0/100 LOW; validator passed; gitleaks passed; pushed as `446ddbe6`.
+
 ## Issue Log — 2026-09-30: jaknyfe-skills dirty tree blocked the rebase
 
 - **Symptom**: `jaknyfe-skills` was 1 ahead / 3 behind `origin/master` with 773 dirty entries, and the rebase was blocked. Root cause was the 3 upstream commits adding `Skills/instagram-meta/` and new `Skills/next-new-repo-watch/reports/*.md` — local untracked copies of the same paths, present from an earlier session, so checkout refused to overwrite them.
@@ -30,6 +34,8 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 - **zo.space homepage** (`https://jaknyfe.zo.space/`) — single-page hub. Live stock/crypto tickers (SPCX, BTC, DOGE) at top, animated pegasus flying across the page, UFO visits with beam + laser every ~26s, randomly-pulsing "card ripple" shimmer on project cards, particle field, animated rings + sun behind the profile photo, 11 project cards + Web Showcase modal. Source lives in the `/` route on `jaknyfe.zo.space` (Next.js bundle). Quote data is proxied through `/api/quote` (caches Yahoo Finance for 60s).
 - **Scottish Rite site** — Vite/React build deployed to `https://scottish-rite-jaknyfe.zocomputer.io/`. See `Projects/scottish-rite-site/AGENTS.md` for the build/push workflow.
 - **Noësis News review gate** (`Projects/noesis-news-site/`) — isolated PHP source project for the fact-first RSS desk at `https://news.noesisgroup.com/`; human-reviewed releases only, protected queue at `/review/`. See the project `AGENTS.md`; never store reviewer credentials in source or Git.
+- **Digital Product Storefront Template** (`Projects/digital-product-storefront/`) — isolated React/Vite storefront starter inspired by `successteps.com` page patterns; original Fieldwork sample identity, product/catalog, bundle, guides, journal, contact, and legal-outline routes. Forms and checkout are preview-only. See its `AGENTS.md`, `README.md`, and `DESIGN.md`.
+- **Noesis Factory** (`Projects/noesis-factory/`) — isolated, offline-first Jev decision stack for Claude Code: JevRouter, an opt-in project-local tool guard, and Edward's limited generic process watchdog. See the project `AGENTS.md` and `README.md`; no automated shipping. Exact Opus 5.5 requires a separately approved Claude Code host upgrade.
 
 ## Robinhood Trading Bot
 
@@ -177,3 +183,15 @@ Personal Zo Computer for **jaknyfe** (Don Lowery). Use this as a routing map for
 ## Issue Log (2026-09-25 — Hermes update)
 
 - 2026-09-25: Hermes source update initially failed because the launcher still used Python 3.11.2, whose `tarfile` lacks the `extractall(filter=...)` argument. `hermes pm doctor --fix/--force` also failed because those flags are unsupported. Running the pending completion under system Python 3.12.1 installed the managed Python 3.14.7 runtime. The build then hit `EXDEV` replacing existing TUI/web outputs on the 9p filesystem; a narrowly scoped existing `NODE_OPTIONS` fallback allowed both staged builds to publish. Updated to `v0.21.5+2246.g3be17b1`; `hermes --version` reports up to date, `hermes pm status` outcome is `ok`, gateway PID 26224 is running, the source checkout is clean, and a post-update `hermes pm doctor` exited 0 with Python 3.14.7 and managed tools recognized. Residual: Hermes reports a malformed FTS5 trigram index in `state.db` and no valid pre-update snapshot; database repair was not attempted.
+
+## Issue Log (2026-10-02 — PostgreSQL restarts traced to sandbox recycling, not PostgreSQL)
+
+- **Symptom**: `database system was not properly shut down` in `/var/log/postgresql/postgresql-15-main.log` — 6 occurrences on 2026-10-01 and 4 on 2026-10-02, each followed by a full crash-recovery scan (one took over a minute). Early estimates of "one restart" and then "six" were both wrong; the true count is **12 watchdog recovery attempts in ~16 hours**, roughly one every 60-75 minutes.
+- **Root cause (not a PostgreSQL defect)**: the Zo host recycles. Every recovery attempt lines up 1:1 with a `zo-space stopped (SIGTERM)` teardown in the platform logs, PostgreSQL `starting PostgreSQL` timestamps line up with host boots, and `/proc/uptime` shows one continuous boot since 2026-10-02 02:43:49 while PG start time is 02:44:17. The sandbox SIGKILLs the whole process tree, so PostgreSQL never gets a clean shutdown. There are no OOM kills, no panics, and no query errors behind any of it. **Fixing anything inside PostgreSQL will not stop this.**
+- **Collateral finding (ruled out)**: `saas-mailer/scripts/restore-validation-loop.sh` begins each cycle within seconds of a host boot, which made it look causal. It only does `CREATE DATABASE` / `pg_restore` / `DROP DATABASE` against a disposable DB — it never touches the postmaster. Not the cause.
+- **Two real watchdog bugs fixed** in `bin/postgresql-watchdog.sh`:
+  1. `remove_stale_runtime_files()` used `kill -0 "$pid"` to decide a PID was live. After a host recycle the PID in `postmaster.pid` is often recycled by an unrelated process, so the guard returned "alive", the watchdog refused to clean the stale files, and recovery was permanently stalled until that unrelated process happened to exit. It now compares `/proc/$pid/comm` against `postgres`.
+  2. The watchdog waited a full 30s (3 failures x 10s) before attempting its first recovery on every launch. It now issues `pg_ctlcluster 15 main start` immediately at launch when the initial probe fails, which is the normal state right after a recycle.
+- **Verified**: `bash -n` clean, service `svc__CRItDG7L6o` restarted onto the new code (PID 3995), `--check` returns "PostgreSQL readiness and SELECT 1 passed." Watched the fix survive a real recycle — at 02:43:54 the watchdog started, and PostgreSQL was accepting connections by 02:45:25.
+- **Operational note**: the edit dropped the executable bit on `bin/postgresql-watchdog.sh` (the supervised service invokes it via `bash <path>`, so it kept running, but direct execution failed). Restored with `chmod +x`; re-check the mode after any edit to this file.
+- **Verdict for production**: PostgreSQL itself is healthy, but the substrate is not durable enough to be the system of record for `saas_mailer`, `twenty`, or `mypc_housecall`. ~12 involuntary restarts in 16 hours, each with 30s-5min of database unavailability, is not production-safe. Moving the production database to managed Postgres (Neon/RDS/Supabase) is the real fix; the watchdog work only reduces downtime per event.
