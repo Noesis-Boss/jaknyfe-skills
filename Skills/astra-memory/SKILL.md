@@ -86,7 +86,13 @@ These are added automatically by `embed.ts` and `sync.ts`. Don't strip them or t
 
 | field | type | notes |
 | --- | --- | --- |
-| `_id` | string | auto-generated UUID |
+| `_id` | string | deterministic SHA-256 ID derived from `source_id` |
+| `source_id` | string | `zobodhi:<fact id>` or `clarion:<relative path>` |
+| `dedupe_key` | string | stable query-level identity; identical Zobodhi text shares a key |
+| `content_hash` | string | SHA-256 of indexed metadata and text; drives updates |
+| `text_hash` | string | SHA-256 of embedded text; avoids needless re-embedding |
+| `active` | boolean | only `true` records are searchable; false means softly retired |
+| `retired_at` | string | ISO 8601 retirement timestamp for inactive records |
 | `$vector` | number[] | 768-dim L2-normalized nomic embedding |
 | `source` | string | `zobodhi` / `clarion_daily` / `clarion_project` / `clarion_feedback` / `clarion_reference` / `clarion_topics` / `clarion_bootstrap` |
 | `layer` | string | `fact` / `session` / `semantic` (Clarion's 3-layer model) |
@@ -99,9 +105,13 @@ These are added automatically by `embed.ts` and `sync.ts`. Don't strip them or t
 
 ## Sync behavior
 
-- **Idempotent upserts** keyed on `source + first 200 chars of text`. Re-running sync adds nothing new.
+- **Stable upserts** use `source_id` (Zobodhi fact ID or Clarion relative path) and a deterministic Astra `_id`; `content_hash` updates changed metadata or text, while `text_hash` avoids unnecessary re-embedding.
+- **Duplicate-safe**: ingestion collapses repeated `source_id` entries but preserves distinct facts; hybrid results collapse identical Zobodhi text or repeated Clarion paths by `dedupe_key` before applying the result limit.
+- **Source reconciliation is non-destructive**: records removed from a successfully read source are marked `active: false`, not deleted. Queries ignore inactive records; reappearing records are reactivated.
+- **Legacy rows** from insert-only versions lack `active`; searches and status now require `active: true`, so legacy rows remain stored but are excluded without a bulk-delete migration.
+- **Fail closed**: unreadable source files, malformed Zobodhi data, failed upserts, or incomplete Astra scans abort before retirement.
 - **File system is source of truth.** Astra is a mirror for unified search.
-- **Local zobodhi writes are mirrored to Astra** automatically on `add`, with embedding.
+- **Local zobodhi writes are mirrored to Astra** automatically on `add`, with stable identity and embedding.
 - **No automatic sync on file edit** — run `bun run sync.ts sync` after editing markdown in `memory/**` to keep Astra in step.
 
 ## Hooking into chat
