@@ -119,7 +119,10 @@ def report_path(video_id):
 
 def write_stub(entry, transcript):
     REPORTS_DIR.mkdir(exist_ok=True)
-    repos = extract_github_repos(transcript + "\n" + entry["description"])
+    searchable_text = entry["description"]
+    if not transcript.startswith("[transcript unavailable:"):
+        searchable_text = transcript + "\n" + searchable_text
+    repos = extract_github_repos(searchable_text)
     lines = [
         f"# {entry['title']}",
         "",

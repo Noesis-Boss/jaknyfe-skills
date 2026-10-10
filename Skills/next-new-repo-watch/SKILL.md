@@ -16,7 +16,7 @@ Watches **The Next New Thing** (Andrew Warner's YouTube show that demos open-sou
 
 1. `scripts/watch.py scan` reads the configured channel RSS feed. Pass one or more `--channel CHANNEL_ID CHANNEL_NAME` pairs to scan multiple channels in one run; without them it defaults to The Next New Thing. YouTube caps each feed at the 15 most recent videos, so run daily to avoid missing videos.
 2. New video IDs from all selected feeds are deduplicated and diffed against the shared `state.json`; report stubs retain the source channel name.
-3. For each new video: transcript is fetched, `github.com/owner/repo` URLs are auto-extracted, and a report stub is written to `reports/<videoId>.md` containing description, transcript, and repo metadata (stars, language, license, last push via `gh`).
+3. For each new video: transcript is fetched, `github.com/owner/repo` URLs are auto-extracted, and a report stub is written to `reports/<videoId>.md` containing description, transcript, and repo metadata (stars, language, license, last push via `gh`). If fetch returns `[transcript unavailable: ...]`, never parse links from that error; use the description only and disclose the transcript limitation. If transcript retrieval returns `[transcript unavailable:`, extract links from the video description only; never treat links inside the error message as featured repos or use cookies/proxies to bypass a YouTube IP block. If the transcript starts with `[transcript unavailable:`, extract links only from the video description; never treat URLs inside the fetch error as featured repositories or use account cookies/proxies to bypass YouTube's IP block. Mark unlinked chapter names as uncertain in the digest.
 4. The agent then completes the eval (see below).
 
 ## Commands
