@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Watch The Next New Thing (YouTube) for new videos, pull transcripts,
-extract GitHub repos, and emit per-video report stubs for agent evaluation.
+"""Watch YouTube channels for new videos, pull transcripts, extract GitHub repos,
+and emit per-video report stubs for agent evaluation.
 
 Zero-dependency (stdlib + youtube_transcript_api for transcripts).
 
@@ -25,7 +25,6 @@ STATE_FILE = SKILL_DIR / "state.json"
 REPORTS_DIR = SKILL_DIR / "reports"
 CHANNEL_ID = "UCNZEktrsM5oJZ-MK4jKPMOQ"
 CHANNEL_NAME = "The Next New Thing (Andrew Warner)"
-RSS_URL = f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"
 
 NS = {
     "a": "http://www.w3.org/2005/Atom",
@@ -48,8 +47,9 @@ def save_state(state):
     STATE_FILE.write_text(json.dumps(state, indent=2) + "\n")
 
 
-def fetch_rss():
-    req = urllib.request.Request(RSS_URL, headers={"User-Agent": "Mozilla/5.0"})
+def fetch_rss(channel_id):
+    rss_url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
+    req = urllib.request.Request(rss_url, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=30) as r:
         return ET.fromstring(r.read())
 
@@ -123,7 +123,7 @@ def write_stub(entry, transcript):
     lines = [
         f"# {entry['title']}",
         "",
-        f"- **Channel**: {CHANNEL_NAME}",
+        f"- **Channel**: {entry.get('channel_name', CHANNEL_NAME)}",
         f"- **Published**: {entry['published']}",
         f"- **Video**: {entry['link']}",
         "",
@@ -170,14 +170,23 @@ def write_stub(entry, transcript):
 
 def cmd_scan(args):
     state = load_state()
-    entries = list_entries(fetch_rss())
+    channels = args.channel or [(CHANNEL_ID, CHANNEL_NAME)]
+    entries = []
+    seen = set()
+    for channel_id, channel_name in channels:
+        for entry in list_entries(fetch_rss(channel_id)):
+            if entry["id"] in seen:
+                continue
+            entry["channel_name"] = channel_name
+            entries.append(entry)
+            seen.add(entry["id"])
     new = [e for e in entries if e["id"] not in state["processed"]]
     if not new:
         print("No new videos.")
         return
     print(f"{len(new)} new video(s):")
     for e in new:
-        print(f"  - {e['id']} | {e['title']} | {e['published'][:10]}")
+        print(f"  - {e['id']} | {e['title']} | {e['published'][:10]} | {e['channel_name']}")
     if args.dry_run:
         return
     for e in new:
@@ -187,6 +196,7 @@ def cmd_scan(args):
         state["processed"][e["id"]] = {
             "title": e["title"],
             "published": e["published"],
+            "channel": e["channel_name"],
             "processed_at": datetime.now(timezone.utc).isoformat(),
             "report": str(path),
             "auto_repos": repos,
@@ -205,10 +215,14 @@ def cmd_status(_args):
 
 
 def cmd_refetch(args):
-    state = load_state()
-    entries = {e["id"]: e for e in list_entries(fetch_rss())}
+    channels = args.channel or [(CHANNEL_ID, CHANNEL_NAME)]
+    entries = {}
+    for channel_id, channel_name in channels:
+        for entry in list_entries(fetch_rss(channel_id)):
+            entry["channel_name"] = channel_name
+            entries.setdefault(entry["id"], entry)
     if args.vid not in entries:
-        print(f"Video {args.vid} not in feed.", file=sys.stderr)
+        print(f"Video {args.vid} not in selected feeds.", file=sys.stderr)
         sys.exit(1)
     e = entries[args.vid]
     path, repos = write_stub(e, fetch_transcript(e["id"]))
@@ -220,9 +234,11 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("scan", help="scan for new videos and process them")
     s.add_argument("--dry-run", action="store_true")
+    s.add_argument("--channel", action="append", nargs=2, metavar=("CHANNEL_ID", "CHANNEL_NAME"), help="Channel ID and report label; repeat to scan multiple feeds.")
     sub.add_parser("status", help="show processed history")
     r = sub.add_parser("refetch", help="re-fetch one video's transcript stub")
     r.add_argument("vid")
+    r.add_argument("--channel", action="append", nargs=2, metavar=("CHANNEL_ID", "CHANNEL_NAME"), help="Channel ID and label for locating the video's report source.")
     args = ap.parse_args()
     {"scan": cmd_scan, "status": cmd_status, "refetch": cmd_refetch}[args.cmd](args)
 

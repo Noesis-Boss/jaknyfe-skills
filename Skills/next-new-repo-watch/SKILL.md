@@ -1,29 +1,31 @@
 ---
 name: next-new-repo-watch
-description: Watches "The Next New Thing" YouTube channel (Andrew Warner, @TheNextNewThingAI) for new videos, extracts every GitHub repo presented in transcripts/descriptions, and produces an eval report per repo with functionality summary and an INCLUDE/TRIAL/SKIP recommendation for this environment. Use when asked to check for new videos, evaluate recently showcased repos, or run the repo watch.
+description: Watches "The Next New Thing" (Andrew Warner) and GitHub Trending Digest YouTube channels for new videos, extracts GitHub repos from transcripts/descriptions, and produces per-repo eval reports with INCLUDE/TRIAL/SKIP recommendations. Use when asked to check for new videos, evaluate showcased repos, or run the repo watch.
 compatibility: Created for Zo Computer
 metadata:
   author: jaknyfe.zo.computer
-  channel_id: UCNZEktrsM5oJZ-MK4jKPMOQ
+  channels:
+    - UCNZEktrsM5oJZ-MK4jKPMOQ
+    - UCApTsoLsKHl-tVhWKNupUKw
 ---
 # next-new-repo-watch
 
-Watches **The Next New Thing** (Andrew Warner's YouTube show that demos open-source repos) and turns each new video into a repo eval report.
+Watches **The Next New Thing** (Andrew Warner's YouTube show that demos open-source repos) and **GitHub Trending Digest**, turning each new video into a repo eval report.
 
 ## How it works
 
-1. `scripts/watch.py scan` reads the channel RSS feed (YouTube caps it at the 15 most recent videos — run at least every couple of weeks or videos will be missed).
-2. New video IDs are diffed against `state.json`.
+1. `scripts/watch.py scan` reads the configured channel RSS feed. Pass one or more `--channel CHANNEL_ID CHANNEL_NAME` pairs to scan multiple channels in one run; without them it defaults to The Next New Thing. YouTube caps each feed at the 15 most recent videos, so run daily to avoid missing videos.
+2. New video IDs from all selected feeds are deduplicated and diffed against the shared `state.json`; report stubs retain the source channel name.
 3. For each new video: transcript is fetched, `github.com/owner/repo` URLs are auto-extracted, and a report stub is written to `reports/<videoId>.md` containing description, transcript, and repo metadata (stars, language, license, last push via `gh`).
 4. The agent then completes the eval (see below).
 
 ## Commands
 
 ```bash
-python3 Skills/next-new-repo-watch/scripts/watch.py scan            # process all new videos
-python3 Skills/next-new-repo-watch/scripts/watch.py scan --dry-run  # list new videos only
+python3 Skills/next-new-repo-watch/scripts/watch.py scan --channel UCNZEktrsM5oJZ-MK4jKPMOQ "The Next New Thing (Andrew Warner)" --channel UCApTsoLsKHl-tVhWKNupUKw "GitHub Trending Digest (@GitHubTrendingDigest)"
+python3 Skills/next-new-repo-watch/scripts/watch.py scan --dry-run --channel UCNZEktrsM5oJZ-MK4jKPMOQ "The Next New Thing (Andrew Warner)" --channel UCApTsoLsKHl-tVhWKNupUKw "GitHub Trending Digest (@GitHubTrendingDigest)"
 python3 Skills/next-new-repo-watch/scripts/watch.py status          # processed history
-python3 Skills/next-new-repo-watch/scripts/watch.py refetch <vid>   # redo one stub
+python3 Skills/next-new-repo-watch/scripts/watch.py refetch <vid> --channel <id> <name>  # redo one stub
 python3 Skills/next-new-repo-watch/scripts/summary.py   # rebuild RECOMMENDATIONS.md index (links + verdicts)
 ```
 
