@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-10.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-11.
 
-**Totals**: 19 INCLUDE · 86 TRIAL · 168 SKIP · 0 pending eval
+**Totals**: 19 INCLUDE · 89 TRIAL · 196 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -153,6 +153,12 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-10.
   - Report: `reports/V0YugHvjs5Y.md` · Video: https://youtu.be/V0YugHvjs5Y · *This Tool Gives AI a Map of Your Codebase*
 - **[mvschwarz/openrig](https://github.com/mvschwarz/openrig)** — Functionality: Builds persistent agent teams from YAML roles and shared work.
   - Report: `reports/Wsru44p-J14.md` · Video: https://youtu.be/Wsru44p-J14 · *This week’s repos: PS5 game on a PC! Turn agents into employees. AI video maker.*
+- **[Conway-Research/automaton](https://github.com/Conway-Research/automaton)** — Functionality: Self-sovereign AI agent that funds its own compute, owns the machine it runs on, and self-replicates — stopping when it can n
+  - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
+- **[renatorib/react-powerplug](https://github.com/renatorib/react-powerplug)** — Functionality: Dependency-free renderless React components (toggle, counter, form handlers) that hand state and logic through render props, 
+  - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
+- **[dsphper/lanhu-mcp](https://github.com/dsphper/lanhu-mcp)** — Functionality: MCP server connecting AI assistants to a shared team knowledge base — extracts requirements from design docs and UI mockups, 
+  - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
 - **elvisun/newsjack** — Functionality: Open-source agent skills that research news opportunities and help execute a PR workflow.
   - Report: `reports/ZodAaTH-6_E.md` · Video: https://youtu.be/ZodAaTH-6_E · *Meta’s Muse makes you money. And more*
 - **[max-sixty/worktrunk](https://github.com/max-sixty/worktrunk)** — Functionality: A Rust CLI that manages Git worktrees so several coding agents can work in isolated checkouts of one repository. It reduces b
@@ -274,6 +280,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-10.
 - [sulabhdubey/rta-smriti-brain](https://github.com/sulabhdubey/rta-smriti-brain) — `reports/AWzzmrCPe-A.md`
 - [templetongroup/radiant](https://github.com/templetongroup/radiant) — `reports/AWzzmrCPe-A.md`
 - [zapier/sdk](https://github.com/zapier/sdk) — `reports/AWzzmrCPe-A.md`
+- [bmax121/APatch](https://github.com/bmax121/APatch) — `reports/B0SHMrbULcw.md`
 - jdepoix/youtube-transcript-api — `reports/BcNAQynKUk4.md`
 - paperclipai/paperclip — `reports/CQhWqUOouYM.md`
 - vectorize-io/hindsight — `reports/CQhWqUOouYM.md`
@@ -292,9 +299,11 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-10.
 - [invoke-ai/InvokeAI](https://github.com/invoke-ai/InvokeAI) — `reports/GZtLsvklYBI.md`
 - [dyad-sh/dyad](https://github.com/dyad-sh/dyad) — `reports/GZtLsvklYBI.md`
 - [FoundationAgents/OpenManus](https://github.com/FoundationAgents/OpenManus) — `reports/GZtLsvklYBI.md`
+- [ermaozi/get_subscribe](https://github.com/ermaozi/get_subscribe) — `reports/Gj5H7h_yA30.md`
 - jdepoix/youtube-transcript-api — `reports/Ie6IlSIYAfc.md`
 - [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) — `reports/Jv050l7y6ik.md`
 - jdepoix/youtube-transcript-api — `reports/KU7FrnLBqSM.md`
+- [wbh604/UZI-Skill](https://github.com/wbh604/UZI-Skill) — `reports/LEn0T77_-RU.md`
 - X1 (x1.new) — `reports/M7cvI4155_E.md`
 - diffusionstudio/core — `reports/MaTkyO-8hZ0.md`
 - OpenClaw 2.0 — `reports/MaTkyO-8hZ0.md`
@@ -316,8 +325,31 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-10.
 - [earthtojake/text-to-cad](https://github.com/earthtojake/text-to-cad) — `reports/Wsru44p-J14.md`
 - [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) — `reports/Wsru44p-J14.md`
 - [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) — `reports/Wsru44p-J14.md`
+- [authzed/spicedb](https://github.com/authzed/spicedb) — `reports/X-jXNxoM1bg.md`
 - jdepoix/youtube-transcript-api — `reports/XGJtqUPUZSo.md`
 - [trycompai/crm](https://github.com/trycompai/crm) — `reports/XoOOY1rc43E.md`
+- [bmax121/APatch](https://github.com/bmax121/APatch) — `reports/Yjew8fYFmvw.md`
+- [Tikam02/DevOps-Guide](https://github.com/Tikam02/DevOps-Guide) — `reports/Yjew8fYFmvw.md`
+- [ermaozi/get_subscribe](https://github.com/ermaozi/get_subscribe) — `reports/Yjew8fYFmvw.md`
+- [reek/anti-adblock-killer](https://github.com/reek/anti-adblock-killer) — `reports/Yjew8fYFmvw.md`
+- [Shaunwei/RealChar](https://github.com/Shaunwei/RealChar) — `reports/Yjew8fYFmvw.md`
+- [unikraft/unikraft](https://github.com/unikraft/unikraft) — `reports/Yjew8fYFmvw.md`
+- [ros-navigation/navigation2](https://github.com/ros-navigation/navigation2) — `reports/Yjew8fYFmvw.md`
+- [jschr/textillate](https://github.com/jschr/textillate) — `reports/Yjew8fYFmvw.md`
+- [ExTV/Podroid](https://github.com/ExTV/Podroid) — `reports/Yjew8fYFmvw.md`
+- [sameerasw/essentials](https://github.com/sameerasw/essentials) — `reports/Yjew8fYFmvw.md`
+- [quicksilver/Quicksilver](https://github.com/quicksilver/Quicksilver) — `reports/Yjew8fYFmvw.md`
+- [vllm-project/vllm-ascend](https://github.com/vllm-project/vllm-ascend) — `reports/Yjew8fYFmvw.md`
+- [pnnbao97/VieNeu-TTS](https://github.com/pnnbao97/VieNeu-TTS) — `reports/Yjew8fYFmvw.md`
+- [chiaki-ng/chiaki-ng](https://github.com/chiaki-ng/chiaki-ng) — `reports/Yjew8fYFmvw.md`
+- [EugeneLiu/translationCSAPP](https://github.com/EugeneLiu/translationCSAPP) — `reports/Yjew8fYFmvw.md`
+- [prateek-chaubey/YTPro](https://github.com/prateek-chaubey/YTPro) — `reports/Yjew8fYFmvw.md`
+- [JingMatrix/TEESimulator](https://github.com/JingMatrix/TEESimulator) — `reports/Yjew8fYFmvw.md`
+- [khang-nd/7.css](https://github.com/khang-nd/7.css) — `reports/Yjew8fYFmvw.md`
+- [AngelAuraMC/Amethyst-Android](https://github.com/AngelAuraMC/Amethyst-Android) — `reports/Yjew8fYFmvw.md`
+- [awawa-dev/HyperHDR](https://github.com/awawa-dev/HyperHDR) — `reports/Yjew8fYFmvw.md`
+- [shuding/tilg](https://github.com/shuding/tilg) — `reports/Yjew8fYFmvw.md`
+- [muskie82/MonoGS](https://github.com/muskie82/MonoGS) — `reports/Yjew8fYFmvw.md`
 - JohnHeibel/PDoomVideo — `reports/ZodAaTH-6_E.md`
 - yoheinakajima/glance-speedlab — `reports/ZodAaTH-6_E.md`
 - [jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) — `reports/_6PHjLCjdpo.md`
@@ -357,6 +389,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-10.
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/mHGDF8mwkY4.md`
 - Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/mny7r505ZpU.md`
 - `jdepoix/youtube-transcript-api` — `reports/pkwnJcETgfE.md`
+- [cv-cat/Spider_XHS](https://github.com/cv-cat/Spider_XHS) — `reports/ptKt8thVkho.md`
 - Other tools mentioned — `reports/pxaMzr7al3I.md`
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`
 - Outbid.lol — `reports/qr7Zwjx-nWU.md`
@@ -390,3 +423,4 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-10.
 - [robbietilton/Compositor](https://github.com/robbietilton/Compositor) — `reports/zP43y0wJzhg.md`
 - [zeldaret/botw](https://github.com/zeldaret/botw) — `reports/zP43y0wJzhg.md`
 - [MhLiao/DB](https://github.com/MhLiao/DB) — `reports/zP43y0wJzhg.md`
+- [Tikam02/DevOps-Guide](https://github.com/Tikam02/DevOps-Guide) — `reports/zVk7DH9EFhE.md`

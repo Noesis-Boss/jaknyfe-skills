@@ -884,6 +884,100 @@
         "jdepoix/youtube-transcript-api",
         "morluto/rea"
       ]
+    },
+    "B0SHMrbULcw": {
+      "title": "APatch - GitHub Trending Today",
+      "published": "2026-10-11T02:00:27+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-11T12:32:33.143266+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/B0SHMrbULcw.md",
+      "auto_repos": [
+        "bmax121/APatch"
+      ]
+    },
+    "Gj5H7h_yA30": {
+      "title": "get_subscribe - GitHub Trending Today",
+      "published": "2026-10-11T00:00:23+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-11T12:32:34.400219+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/Gj5H7h_yA30.md",
+      "auto_repos": [
+        "ermaozi/get_subscribe"
+      ]
+    },
+    "zVk7DH9EFhE": {
+      "title": "DevOps-Guide - GitHub Trending Today",
+      "published": "2026-10-10T22:00:02+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-11T12:32:35.647406+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/zVk7DH9EFhE.md",
+      "auto_repos": [
+        "Tikam02/DevOps-Guide"
+      ]
+    },
+    "Yjew8fYFmvw": {
+      "title": "GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169",
+      "published": "2026-10-10T20:00:19+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-11T12:32:57.013584+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/Yjew8fYFmvw.md",
+      "auto_repos": [
+        "bmax121/APatch",
+        "Conway-Research/automaton",
+        "Tikam02/DevOps-Guide",
+        "ermaozi/get_subscribe",
+        "reek/anti-adblock-killer",
+        "Shaunwei/RealChar",
+        "unikraft/unikraft",
+        "ros-navigation/navigation2",
+        "jschr/textillate",
+        "ExTV/Podroid",
+        "sameerasw/essentials",
+        "quicksilver/Quicksilver",
+        "vllm-project/vllm-ascend",
+        "pnnbao97/VieNeu-TTS",
+        "chiaki-ng/chiaki-ng",
+        "EugeneLiu/translationCSAPP",
+        "prateek-chaubey/YTPro",
+        "renatorib/react-powerplug",
+        "JingMatrix/TEESimulator",
+        "dsphper/lanhu-mcp",
+        "khang-nd/7.css",
+        "AngelAuraMC/Amethyst-Android",
+        "awawa-dev/HyperHDR",
+        "shuding/tilg",
+        "muskie82/MonoGS"
+      ]
+    },
+    "X-jXNxoM1bg": {
+      "title": "spicedb - GitHub Trending Today",
+      "published": "2026-10-10T17:00:05+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-11T12:33:08.178679+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/X-jXNxoM1bg.md",
+      "auto_repos": [
+        "authzed/spicedb"
+      ]
+    },
+    "LEn0T77_-RU": {
+      "title": "UZI-Skill - GitHub Trending Today",
+      "published": "2026-10-10T15:00:03+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-11T12:33:10.356891+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/LEn0T77_-RU.md",
+      "auto_repos": [
+        "wbh604/UZI-Skill"
+      ]
+    },
+    "ptKt8thVkho": {
+      "title": "Spider_XHS - GitHub Trending Today",
+      "published": "2026-10-10T13:00:13+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-11T12:33:11.588296+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/ptKt8thVkho.md",
+      "auto_repos": [
+        "cv-cat/Spider_XHS"
+      ]
     }
   }
 }
