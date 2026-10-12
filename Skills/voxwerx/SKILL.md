@@ -58,9 +58,9 @@ When humanizing text, apply the user's voice rules. If the user has a persona co
 4. Paragraph fallback: if a sentence stays awkward after two fixes, rewrite the whole paragraph around its main point instead of word-by-word fixes.
 5. Check against voice rules
 6. Verify: varied sentence length, actual opinions present, no robotic uniformity
-7. Cluster check: a single sign (one em dash, one AI word) proves nothing. Flag text only when 3+ signals converge in the same passage — uniform sentence length + repeated transitions + hedging + AI vocabulary together. Treat the cluster, not the word.
-8. Fact integrity check (upstream v2.11.2): ask two questions before finishing — "What still sounds AI-generated?" and "Did the rewrite add or remove any fact, name, number, date, quote, citation, ranking, or other claim?" Treat any unsupported addition or lost claim as an error. Do not invent facts; if a sentence needs a missing detail, ask or use a simpler sentence. Fiction is exempt.
-9. Self-check (borrowed 2026-09-07 from peterygyang/no-ai-slop): before returning, answer each check pass/fail — no binary contrasts, no faux-insight setups, no colon reveals, no negative listings, no interpretive metadiscourse, no significance inflation, no vague attributions, varied sentence length, no fact drift. If any check fails, fix the draft and run the checks again.
+7. Cluster check: a single sign (one em dash, one AI-associated word, or one rhetorical construction) proves nothing. In applicable nonfiction and public copy, flag only when several independent signals converge in the same passage. For fiction, use the fiction-review protocol below; stylistic clustering is not evidence of authorship.
+8. Fact and continuity check (upstream v2.11.2): ask "What still sounds generic or mechanically repeated?" and "Did the rewrite add, remove, or alter a supplied fact, name, number, date, quote, citation, ranking, or other claim?" Treat unsupported additions and lost claims as errors. Do not invent details. In fiction, preserve established names, world rules, chronology, point of view, and character intent; ask about ambiguity rather than silently changing canon.
+9. Self-check (borrowed 2026-09-07 from peterygyang/no-ai-slop): before returning, check for repetitive or unsupported binary contrasts, faux-insight setups, colon reveals, negative listings, interpretive metadiscourse, significance inflation, vague attributions, monotonous sentence length, and fact drift. These are review prompts, not bans: retain a construction when it is accurate, useful, or part of the writer's voice.
 10. Voice check (borrowed from no-ai-slop): compare the result with the source or supplied writing sample. Confirm that vocabulary, cadence, humor, uncertainty, digressions, punctuation habits, and useful imperfections survived. If the rewrite sounds more generic than the source, restore the distinctive language.
 11. Minimum-edit check (borrowed from no-ai-slop): identify the changes that were necessary. Undo edits that only make the prose more uniform, formal, polished, or conventionally "professional."
 12. Detect-mode check (borrowed from no-ai-slop): report named patterns with a short quoted line and a short fix. Do not rewrite, score, or claim that the writer used AI.
@@ -162,7 +162,7 @@ Before: Studies show that remote work significantly enhances productivity while 
 
 After: A 2024 Gallup survey of 8,000 U.S. employees found remote workers reported 23% higher engagement.
 
-Forensic tell: pasted AI chat output often carries citation artifacts — contentReference, oaicite, turn0search0, [cite: 1], grok_card, ppl-ai-file-upload, utm_source=chatgpt.com (see pattern 44 for the full list and grep commands).
+Copy/export residue: model-specific citation tokens or tracking parameters can indicate that text passed through a tool or export workflow. They do not establish who drafted the surrounding prose. Identify the exact artifact and location; remove it only when it is unintended in the delivered text.
 
 **10. Broader debates framing**
 
@@ -404,7 +404,7 @@ Opening with a summary, doing the body, then restating the summary. Trust the re
 
 **33. Duplicated draft fragments / scene echoes**
 
-In long-form AI drafting, the same scene, sentence, or narrative beat often appears twice — typically because the model regenerated a passage but the prior version wasn't fully removed. Look for: identical paragraphs a few pages apart, the same plot beat landing twice (e.g. "she leaves the room" then "she leaves the room"), run-on endings that re-state the chapter's closing image.
+A passage, exchange, or narrative beat may be duplicated through revision, copy/paste, drafting, or deliberate repetition. Locate exact and near-duplicates, compare their scene function and wording, and check version history when available. Treat an accidental duplicate as an editing/continuity issue, not proof of an AI workflow. Preserve deliberate refrains, callbacks, and repeated beats that change meaning.
 
 Before (ch_01, duplicated marriage-agreement scene kept alongside the canonical version):
 > I sign the marriage agreement. I sign the marriage agreement. I sign the marriage agreement in iron gall, the ink tasting of oak and rust.
@@ -418,11 +418,11 @@ Before (ch_02, run-on closing):
 After:
 > I leave.
 
-Fix: search the document for repeated sentences, repeated paragraph openings, and repeated closing lines. Cut every duplicate; keep the strongest instance. Also check that deleted-draft fragments didn't survive as orphan paragraphs between scene breaks.
+Fix: search for repeated sentences, paragraph openings, and scene beats. Compare context and draft history when available. Remove only accidental duplicates; preserve intentional refrains, callbacks, and repeated beats that serve a purpose.
 
 **34. OCR-like transcription artifacts**
 
-Long AI drafts sometimes contain malformed tokens that look like OCR errors — words split by stray punctuation, doubled letters from misread characters, missing letters in common words. Pattern: `the, ot` instead of `the, or`, `nothin, ot` instead of `nothing, or`, doubled words with punctuation injected mid-word.
+Malformed tokens can result from OCR, transcription, export, or editing errors. Look for words split by stray punctuation, duplicated fragments, or missing letters, then compare against the source when available. Treat these as text-integrity issues; they do not identify who or what produced the draft.
 
 Before (ch_17):
 > I could feel it nothin, ot the trees pressing in. The roots reach, ot with my hands.
@@ -430,11 +430,11 @@ Before (ch_17):
 After:
 > I could feel nothing of the trees pressing in. The roots reach out with my hands.
 
-Fix: scan for any token containing a comma followed by a short fragment (`X, ot`, `X, he`, `X, a`). These are almost always OCR-style artifacts. Also flag `the the`, `and and`, and any word where a comma appears mid-syllable.
+Fix: flag suspicious tokens for proofreading and compare them with the source file when available. Treat these as possible OCR, transcription, export, or typing errors, not evidence of how the text was generated.
 
 **35. Chapter numbering drift / structural inconsistency**
 
-In multi-chapter work, AI can renumber inconsistently when chapters are inserted, split, or merged. Look for: "Chapter 12" appearing twice, chapter titles with stale numbers after renumbering, TOC files referencing deleted chapters, prose opening with "Chapter X" when the file is named differently.
+In multi-chapter work, insertions, splits, merges, and revisions can leave stale or duplicate numbering. Look for repeated chapter numbers, mismatches between titles and contents, and stale TOC or cross-reference entries. Treat verified mismatches as consistency defects without attributing their cause.
 
 Before (ch_12 header):
 > # Chapter 12
@@ -450,144 +450,74 @@ After:
 
 Fix: verify every chapter header against the file name and the TOC. If a chapter is inserted at position N, every chapter after must be renumbered. Run a quick grep for all "Chapter N" headers and confirm they form a complete sequence 1..M with no duplicates and no gaps.
 
-### Novel-Specific Long-Form Patterns (For Fiction)
+### Fiction review protocol
 
-The patterns below were confirmed by an independent AI-detection review that scored a completed fantasy manuscript 80–95% AI-assisted. They are not just stylistic preferences — they are the specific signatures forensic reviewers flag.
+Use these as craft-review lenses, not authorship tests. A recurring motif, lyrical density, fragments, or familiar genre trope can be an intentional human choice. Look for reader-facing effects (monotony, repetition, lost physical clarity) and cite evidence from the manuscript; prose alone cannot establish whether or how AI was used.
 
-**36. Motif over-repetition (motif-as-tic)**
+**Manuscript review guardrails**
 
-AI fiction latches onto 4–8 thematic words or short phrases ("the frost behind my eye," "the binding hums," "the map," "the territory," "the silence," "the truth") and reuses them as a tic at far higher density than skilled human novelists. The reader notices when the same word or phrase lands in nearly every paragraph or chapter. This is the single strongest signal in long-form AI detection.
+For a fiction review, separate (a) observable text/editing problems, (b) craft effects a reader may experience, and (c) claims about how the text was produced. Quote a short example, give its chapter or location when available, and state how much text was actually reviewed. If only excerpts or another person's summary are supplied, do not confirm whole-book frequency claims.
 
-Before (motif appears 7× across the opening chapter):
-> The frost behind my eye answers before I do. ... I have been a cartographer longer than I have been anything else, and the map knows me. ... The frost behind my eye pulses. ... I trace the binding on the page and the binding hums. ... The territory is a kind of sentence. ... The silence after that is the loudest thing in the room. ... Truth is a kind of territory.
+Do not infer AI authorship from a motif, metaphor density, fragments, repeated sensory language, sentence formulas such as "not X, but Y," genre conventions, polish, or a combination of stylistic traits. These can be deliberate choices. They may support a craft note only when the evidence shows an unwanted reader effect; never convert a trope or intentional device into AI-risk points.
 
-After:
-> The cold behind my eye answers before I do. ... I have drawn maps longer than I have wanted to. ... The frost prick pulses. ... I trace the binding on the page and it answers. ... A territory is a kind of sentence. ... The silence after that is the loudest thing in the room. ... Truth is a kind of territory.
+**36. Motif recurrence and sensory tells**
 
-Fix: pick your core motifs — at most 3 across the entire novel — and use them sparingly. A motif should land like a bell: once at the opening, once at the turn, once at the close. If a 2-3 word motif appears more than ~3 times per chapter, it has become a tic. Detect by scanning the novel for each candidate motif and counting occurrences per chapter. Aim for 1-3 uses per chapter, not 5-10.
+A recurring motif can give a novel cohesion, establish a magic rule, express point of view, or mark character change. Review the *distribution and function*, not against a universal quota. If useful, count exact phrases and clear variants by chapter or scene, record the denominator, and inspect clustered passages. Flag a craft concern only when recurrence feels mechanically placed, crowds out other perception, blunts escalation, or makes scenes harder to distinguish. Do not prescribe a maximum number or replace each repeat with a synonym. Preserve purposeful returns and vary only where the scene loses force or clarity.
 
-**37. Metaphor saturation**
+**37. Figurative language and motif saturation**
 
-Nearly every sentence carrying an elaborate metaphor is an AI tell. Human authors vary intensity — they mix straightforward prose ("She crossed the room.") with poetic passages ("She crossed the room like a sentence through a margin.") and dialogue sections. AI fiction tends to load every paragraph with 2-4 metaphors in sequence, so the prose becomes exhausting to read.
+A sustained metaphor or unusually lyrical voice is not an AI tell. Ask whether the central image keeps developing, reveals this character's particular attention, and leaves the literal action legible. If each beat is routed through the same image and the effect becomes monotonous or obscures bodies, space, or action, identify representative passages and suggest a small release into concrete scene detail. Do not impose a metaphors-per-paragraph limit or flatten a distinctive voice by default.
 
-Before (metaphor every sentence):
-> The room was a held breath. He was a closed book she couldn't stop reading. The silence between them was a border neither had surveyed. Her hands were maps of where she had been.
+**38. Repeated rhetorical shapes**
 
-After:
-> The room was quiet. He was looking at her the way someone looks at a thing they don't want to admit wanting. She set her cup down.
+Notice recurring sentence and paragraph moves—paired negatives, "not X, but Y," clipped fragments, aphoristic endings, or a repeated short-to-long cadence. Such moves can be voice, emphasis, or a refrain. They become a craft issue when a nearby cluster repeats the same move for the same purpose without progression and the rhythm starts to feel predictable. Show the repeated examples and their effect; do not ban the construction or delete a sentence by position.
 
-Fix: count metaphors per paragraph. A metaphor is any sentence whose subject is compared to another thing via "like," "as," "was a," "was like," or an extended verb comparison. Aim for at most one metaphor per paragraph on average; allow two in a climactic moment. If a paragraph has three or more, break at least one into plain description.
+**39. Repeated meaning and emotional beats**
 
-**38. Formulaic 4-beat paragraph rhythm**
+Check whether a later sentence or exchange adds new information, changes the emotion, raises the cost, contradicts an earlier belief, or deliberately echoes it. If it only restates the same beat and stalls the scene, offer a minimal cut or consolidation. Refrains, callbacks, ritual dialogue, deliberate stammering, and repeated magic sensations may be intentional; check context before editing. Do not treat phrases such as "that was enough" as automatic flags.
 
-LLM-generated paragraphs very often follow the same micro-pattern: (1) a short declarative sentence. (2) a metaphorical elaboration. (3) a restatement with a small variation. (4) an emotional conclusion. This rhythm is comforting on the first page and mechanical by chapter three.
+**40. Scene-specific voice and cadence**
 
-Before (4-beat rhythm, repeated):
-> He did not move. He was a stone at the edge of the river, and the river had been running past him for years. The stone had not changed. The stone did not intend to.
+Compare scenes only when it helps diagnose a reader-facing problem. Dialogue, action, and introspection need not follow preset sentence lengths or prose styles; their rhythm depends on point of view, character, tension, and purpose. If several scenes feel interchangeable, identify the shared language or perceptual filter and suggest a scene-specific adjustment. Do not require different styles, measure a universal dialogue word-count target, or treat consistency as evidence of AI.
 
-> She did not answer. She was the silence after a question that should never have been asked, and she had been the silence for longer than she could remember. The silence had its own weather. The silence would outlast them both.
+**Manuscript integrity and genre conventions**
 
-After:
-> He did not move. The river ran past him.
+- Visible production notes such as "Expansion: after…" are concrete draft artifacts in a text presented as finished fiction. Quote and locate them, label them as unresolved editorial notes, and recommend removing or resolving them before publication. They show the manuscript needs cleanup; by themselves they do not establish AI use. First rule out intentional metafiction or an annotated-draft format.
+- Exact or near-duplicate passages and repeated dialogue are verifiable continuity/editing questions. Compare their locations and functions, then check draft history if available. Recommend removing a duplicate only when it is accidental; an intentional echo, reprise, or argument loop may be part of the scene.
+- Numbering, table-of-contents, and cross-reference mismatches are objective consistency issues. Report the mismatched entries; do not attribute them to AI.
+- Familiar romantasy or fantasy tropes are genre conventions, not authorship evidence. If asked about originality, assess how character motive, consequence, setting, and causal choices make the execution specific; keep that critique separate from any discussion of AI authorship.
 
-> She did not answer. Whatever she had been about to say went out of her like a held breath.
+### Descriptive Style Diagnostics
 
-Fix: read each paragraph aloud and count the beats. If a paragraph has exactly four sentences and follows the short → metaphorical → restated → emotional shape, restructure it. Vary the number of sentences (2, 5, 7 are all fine). Let some paragraphs end on a concrete physical detail instead of an emotional conclusion. The fastest fix is to delete the third sentence (the restatement) of any 4-beat paragraph.
+These are descriptive editorial checks, not validated authorship tests. Quantitative measures can help locate passages for review, but no sentence-length, vocabulary, or punctuation threshold reliably establishes whether prose was AI-assisted.
 
-**39. Recursive emotional emphasis**
+**41. Sentence and paragraph rhythm**
 
-AI fiction often repeats essentially the same emotional realization in slightly different wording instead of advancing the scene. The character realizes they're afraid; the prose then says they're afraid again in a new way; then a third time. This creates the illusion of depth while leaving the scene exactly where it started.
+Sentence-length variation is descriptive, not diagnostic. If a passage feels monotonous, compare its cadence with nearby passages serving the same narrative purpose. Point to the repeated pattern and its reader effect, then offer a local revision only if it improves pacing or emphasis. Do not force short/long alternation or target a particular spread.
 
-Before (same realization stated three ways):
-> He was afraid. The fear had a shape, and the shape was the room, and the room had been afraid of him first. But he was the one afraid now, and that was the truth of it.
+**42. Generic diction and abstraction**
 
-After:
-> He was afraid.
+A passage may feel vague when its nouns, verbs, or claims could fit many situations. This is a craft observation, not a measure of word predictability or authorship. Ask what the scene or argument needs the reader to know; suggest a concrete detail only when it is present in the source or supplied by the writer. Never add a date, name, statistic, memory, or sensory detail merely to make prose seem human.
 
-Before (ch_07):
-> She felt him before she saw him. She felt him the way a map feels the hand that draws it, the way a binding feels the truth pressed into it. She felt him, and the feeling was not new.
+**43. Repeated participial clauses**
 
-After:
-> She felt him before she saw him. She had been waiting for this for longer than she would admit.
-
-Fix: when a paragraph ends on a paraphrase of what the paragraph already said, delete the restatement. Trust the reader to get it once. Specifically watch for paragraphs that close on "...and that was the truth of it" / "...and that was the whole of it" / "...and that was enough" — those are recursion markers.
-
-**40. Voice uniformity across scenes**
-
-Human prose varies in cadence depending on whether a scene is dialogue, action, or introspection. Dialogue scenes are punchier. Action scenes are verb-forward and short-sentence heavy. Introspection is slower and more sensory. AI fiction tends to keep the same poetic cadence everywhere, so a fight scene reads like a meditation scene reads like a flirtation scene.
-
-Before (every scene sounds the same):
-> [Introspection] "The room was a sentence I had not finished writing, and the silence between us was a kind of punctuation."
->
-> [Action] "She drew the knife. The knife was a sentence she had not finished writing, and the silence before she used it was a kind of punctuation."
->
-> [Dialogue] "'You lied,' she said. The lie was a sentence she had not finished writing, and the silence after it was a kind of punctuation."
-
-After:
-> [Introspection] The room was a sentence she had not finished. The silence between them was a kind of punctuation.
->
-> [Action] She drew the knife. Her hand was steady. His was not.
->
-> [Dialogue] "You lied." "Yes." "Then we are done." "Yes."
-
-Fix: tag each chapter by scene type (introspection / dialogue / action) and audit the prose rhythm within each tag. Dialogue should average 8-12 word sentences. Action should be heavy in verbs and short. Introspection can be longer and slower, but should still vary sentence length within itself. If the average sentence length and metaphor density is the same in action and dialogue scenes, the manuscript will read as AI-uniform.
-
-### Statistical Patterns
-
-These signals come from the detection-research layer: GPTZero's public methodology (perplexity + burstiness, two of its seven indicators) and the word-frequency findings from detector vendors. They are what "it reads like AI" actually measures.
-
-**41. Low burstiness / uniform sentence length**
-
-Burstiness = variation in sentence length and structure across a passage. Human writing alternates short and long: a three-word sentence, then a 25-word one. AI output stays near one length, and even its "short" sentences sit next to same-length neighbors. Reference numbers (GPTZero's public methodology): human prose averages ~80-100 perplexity and burstiness ~0.6-1.2; GPT-4 output averages ~20-30 perplexity and burstiness ~0.2-0.4.
-
-Before (every sentence 14-18 words):
-> The system is designed to improve operational efficiency by automating routine tasks. It provides managers with real-time visibility into performance metrics. This enables faster decision-making across distributed teams.
-
-After (length variance, rhythm shift):
-> The system automates the routine stuff. Managers see live performance metrics, so decisions stop waiting for the weekly report.
-
-Fix: compute the length of every sentence in a paragraph. If the longest and shortest are within ~6 words of each other, break the pattern — cut one sentence to under 8 words, or splice two into a long one. Aim for a 3:1 spread between your longest and shortest sentences in any passage of 4+ sentences.
-
-**42. Low perplexity / safe word choices**
-
-Perplexity = how surprising each word choice is to a language model. AI writes the statistically safest word; humans pick the specific one (memory, rhythm, context). The fix is specificity: unusual verbs, concrete nouns, casual phrasings, an intentional oddity — not synonyms (synonym swaps are also high-probability and barely move the score).
-
-Before: The methodology was developed to facilitate comprehensive assessment across diverse contexts.
-After: I built the rubric in March and tested it on 40 student essays before anyone else saw it.
-
-Fix: for each abstract noun or generic verb, ask "which one? who? when? how much?" and insert the answer. A sentence with a date, a number, a name, or a place is hard to mistake for AI.
-
-**43. Comma-splice -ing participial clause**
-
-The "[main clause], [verb]-ing..." construction ("The system processes the data, revealing key insights."). Instruction-tuned models generate this structure at 2-5x the human rate. It is the "-ing analysis" pattern (#2) at the syntax level.
-
-Before: The platform integrates with existing tools, enabling teams to collaborate seamlessly, ensuring alignment across departments.
-After: The platform works with the tools teams already use.
-
-Fix: count these per document. More than one or two is a tell. Rewrite the participial tail as a separate sentence or delete it.
+A run of participial clauses can obscure the main action or create a repetitive cadence. Notice the construction only when it occurs in a local cluster and has a clear readability cost. Keep a grammatically and stylistically useful clause; do not treat an "-ing" ending or a document-wide count as evidence of AI.
 
 **44. AI markup and citation artifacts**
 
-When text is pasted straight from an AI chat, forensic artifacts survive: ChatGPT's "contentReference" / "oaicite" / "turn0search0" / "+1" citation tokens; Gemini's "[cite: 1]" or "[span_1]"; Grok's "grok_card"; DeepSeek's lenticular brackets and dagger symbols; Perplexity's "ppl-ai-file-upload"; and URL tracking params like "utm_source=chatgpt.com". None of these belong in finished text.
+Pasted or exported text may contain tool markup such as "contentReference", "oaicite", "turn0search0", "[cite: 1]", "grok_card", "ppl-ai-file-upload", or "utm_source=chatgpt.com". Treat these as possible workflow residue, not proof that the surrounding prose was AI-written.
 
 Before: The report covers three growth scenarios [cite: 1][cite: 2] and includes a risk appendix (see contentReference).
 After: The report covers three growth scenarios and includes a risk appendix.
 
-Fix: grep the document for "cite:", "oaicite", "contentReference", "turn0search", "grok_", "ppl-ai", "utm_source=chatgpt" and strip the artifacts.
+Fix: search for known markup, verify each occurrence in context, and remove only unintended artifacts from the delivered text.
 
-**45. Over-perfect grammar**
+**45. Grammar and polish**
 
-A long document with zero grammatical deviations is itself a signal — no fragments, no informal constructions, no typos, no slightly-off phrasing. Humans leave fingerprints: an occasional fragment, a doubled word, a mixed tense. (See also: what NOT to strip in the "Signs of Human Writing" note below.)
+Correct grammar, polished prose, fragments, or occasional roughness are not authorship tests. Edit grammar only when an error blocks meaning or violates the writer's intended style. Never add errors, informality, or fragments to simulate human writing; preserve deliberate choices and genuine voice.
+**46. Punctuation and clause load**
 
-Fix: don't deliberately add typos. Instead, add one informal construction or fragment where a human would naturally write one, and keep any authentic awkwardness in quoted material.
-**46. Punctuation poverty**
-
-LLMs under-punctuate: fewer commas and semicolons than humans, almost no parentheses, and longer sentences strung together with "and" — the Economist's 2026 corpus study found "and" is the most overused word in AI text. Models also rarely quote experts. Detection: count semicolons and parentheses per 1,000 words; count sentences over 30 words joined by "and"; flag claimed-opinion sentences with no quoted source.
-
-Before: The platform supports real-time sync and it handles offline mode and it scales across regions and the team is planning to add audit logging.
-After: The platform supports real-time sync and offline mode, and it scales across regions. Audit logging is planned for next quarter.
-
-Fix: break "and"-chained sentences at natural seams. Use semicolons for true parallel clauses, parentheses for asides, and quote a real person when attributing an opinion.
+Long, heavily coordinated sentences or dense punctuation can make a passage harder to follow. Diagnose the actual reading problem, then suggest a local revision if useful. Punctuation frequency, the presence or absence of parentheses or semicolons, and whether an opinion is quoted are not authorship tests. Do not add punctuation or quotations to meet a quota.
 **47. Tailing negation / clipped negative endings**
 
 Extends #14. AI appends a clipped fragment instead of writing a clear clause.
@@ -681,60 +611,36 @@ One rejected option may be valid. Several short, unrelated rejections are a stro
 
 ### Detector Reality Check
 
-- Detectors are probabilistic, not proof. GPTZero-style tools score likelihood; they do not establish authorship. Universities (e.g., Gonzaga) explicitly warn against using detector output as sole evidence of misconduct.
-- Convergence erodes detectors in real time. Pangram claims 99.98% accuracy (now partnered with Substack) but is a black box giving no reasons; models train on human writing and learn from human feedback (Tommie Juzek, Florida State), so each update makes AI prose more human-like. Dated lexical tells decay; structural signals (rhythm, punctuation habits, specificity) outlast them.
-- False positives are real and biased: Stanford research found perplexity-based systems falsely flag non-native English writers at up to 61-70%. The U.S. Constitution, the Bible, and the Declaration of Independence have all scored as "AI-generated."
-- Adversarial editing destroys accuracy: a 2025 study found paraphrase/evasion editing cut six major detectors' baseline accuracy from 39.5% to 17.4%.
-- Therefore: never claim "this is AI-written" on detector output alone. Use this skill's pattern cluster + the forensic checklist; use detectors only as a secondary check, and treat a "human" score on edited text as weak evidence either way.
+- AI-text detectors produce model- and context-dependent classifications. They can be wrong in both directions and do not establish who wrote or revised a passage.
+- Genre, point of view, language background, source length, editing, and detector version can affect results. Treat any score as one limited observation, not a factual finding.
+- Do not convert stylistic clusters into an authorship verdict. For fiction, use the Fiction review protocol. For provenance questions, seek reliable drafting history or other contextual evidence and state its limits.
 
-### Signs of Human Writing (what NOT to strip)
+### Voice and provenance cautions
 
-When humanizing, keep (don't "fix") these human fingerprints — they are anti-AI signals:
+Preserve a writer's intentional style when editing, but do not treat any style feature as proof of human or AI authorship. Do not add typos, fragments, dated slang, personal anecdotes, uneven formatting, or unusual phrasing as fake "human fingerprints." Concrete details can be invented; colloquial language and varied sentence length can be generated; clean grammar can be human. A date before ChatGPT's public launch does not, by itself, establish that no AI or other automated tool was involved. When a detail matters, verify it against the writer's source or ask.
 
-- Typos and doubled words, when genuine (e.g., quoted material, fast notes)
-- Sentence fragments used for effect
-- Colloquial contractions and informal register mixed into formal prose
-- Unusual word order or deliberate rule-breaking for emphasis
-- Uneven formatting: mixed quote styles, a stray double space
-- Jokes or references that require shared context
-- Specific, falsifiable details: names, dates, counts, prices, quotes — the things a model would have to invent- Mixed feelings and unresolved tension: "I think this is mostly good, but it bothers me, and I can't fully explain why."
-- Dated, era-bound references: slang, memes, or in-jokes tied to a specific year and subculture (models lag a year or more)
-- Deliberate first-person choices the writer can explain
-- Variety in sentence length — real writing alternates short and long; AI prose drifts toward an even, mid-length cadence
-- Genuine asides, parentheticals, and self-corrections: "(I keep wanting to say 'almost' here, but it really was certain.)"
-- Edits made before November 30, 2022 (ChatGPT's public launch) — with rare exceptions, not AI-written
+False-positive guard: a single transition, fragment, punctuation choice, citation, polished sentence, colloquial phrase, or emotional beat is not authorship evidence. Preserve legal/safety notices, real corrections, named objections, FAQs, quoted text, titles, proper names, and examples where a watched phrase is being discussed rather than used. Unsourced factual claims need source-checking; that is not an authorship finding.
 
-Additional upstream false-positive guards: letter-style salutations and sign-offs predate chatbots; one transition word in isolation is not a tell; curly quotes and em dashes alone prove nothing (macOS/Word auto-curl); a single short sentence for emphasis is fine — flag dramatic fragments only in rows; mid-sentence "honestly" or "look" is ordinary; keep scope statements, legal/safety notices, real corrections, named objections, and FAQ answers; keep real alternatives a reader may consider in design docs and tutorials; unsourced claims alone prove nothing; do not rewrite watched phrases inside quotations, titles, proper names, or examples where the phrase is discussed rather than used.
+### Fiction review report
 
-Ineffective indicators (do NOT treat these as proof of AI): perfect grammar alone, formal tone alone, presence of citations alone, length, or emotional language. AI does all of these on demand.
+Use this report when reviewing a manuscript or a critique of one:
 
-### Forensic AI-Detection Reviewer Checklist
+1. **Scope reviewed:** full manuscript, named chapters, excerpts, or supplied summary; include word/chapter counts only when verified.
+2. **Text-integrity issues:** quote and locate explicit production notes, duplicate passages, or numbering mismatches. Describe what is directly observable and what cleanup it needs.
+3. **Craft observations:** give representative passages and explain the reader effect. If counting a repeated phrase or image, state the exact match rule and denominator; distinguish exact repetition from related imagery.
+4. **Genre and intent:** assess tropes as conventions. Discuss originality through character motives, causal choices, consequences, and setting—not trope presence alone.
+5. **Authorship conclusion:** state plainly that stylistic traits cannot establish whether or how AI was used. Do not assign an AI-authorship percentage, confidence, or verdict from prose patterns. If provenance matters, request reliable process evidence rather than treating style as proof.
 
-The patterns above were independently confirmed by an AI-detection reviewer scoring completed prose 80–95% AI-assisted. The highest-signal flags to run before any submission:
-
-1. **Cluster check** — a single sign proves nothing; flag only when 3+ signals converge in the same passage.
-2. **Motif density per chapter** — count each candidate motif's occurrences. Flag any chapter where a motif appears more than ~3 times.
-3. **Metaphors per paragraph** — flag paragraphs with 3+ metaphors.
-4. **4-beat paragraph rhythm** — flag paragraphs that match the short → metaphorical → restated → emotional template.
-5. **Recursive emotional emphasis** — flag paragraphs where the last sentence restates the first.
-6. **Voice uniformity** — compare sentence-length distributions across dialogue, action, and introspection scenes.
-7. **Sentence-length variance (burstiness)** — compute mean ± stdev sentence length. Flag sections where stdev/mean is narrow (uniform rhythm).
-8. **Em dash density** — flag documents where more than ~30% of sentences contain an em dash.
-9. **Comma-splice "-ing" participials** — flag more than 2-3 per 500 words ("X does Y, revealing Z").
-10. **Transition openers** — flag 3+ consecutive paragraphs opening with explicit transitions (Moreover, Furthermore, Additionally, Overall, In conclusion).
-11. **Specificity audit** — flag every claim that should carry a date/number/name but floats at abstraction.
-12. **Citation verification** — resolve every citation; flag fabricated sources, `utm_source=` tracking, and AI citation scaffolding.
-13. **Punctuation scarcity** — flag passages with near-zero semicolons and parentheses, 30+ word sentences chained with "and", and opinion claims with no quoted source.
-
-Confidence is moderate (~75%) for any single signal, but when three or more fire in the same chapter, the prose reads as AI-assisted to a human reviewer even if every individual sentence is grammatical. Treat the checklist as a hard gate: a chapter must clear every flag before it is considered publication-ready.
+Do not apply a pass/fail publication gate based on stylistic checklists. Editing recommendations should be local, minimal, and tied to a stated craft goal.
 
 ## Score-based evaluator
 
-Use this evaluator when the user asks whether a document has become less AI-like, or when a before/after comparison is useful. It is a transparent editorial risk score, not an authorship detector.
+Use this evaluator for non-fiction copy when the user asks for an editorial before/after comparison or AI-pattern review. It is a subjective pattern checklist, not a calibrated detector or authorship test. For fiction, follow the Fiction review protocol instead; never turn motifs, imagery, fragments, familiar tropes, or sentence formulas into an authorship score.
 
 ### Minimum input
 
-- Under 250 words: use **Short-form mode** below. Do not report "insufficient text" for short copy that is genuinely publishable (posts, headlines, captions, subject lines) — that is the text being gated.
+- For fiction, use the **Fiction review protocol** regardless of word count. Do not assign an AI-authorship score from stylistic traits. If the user explicitly wants a before/after craft comparison, score only the named editorial objective and label it as a subjective craft measure.
+- For non-fiction copy under 250 words, use **Short-form mode** below. Do not report "insufficient text" for short copy that is genuinely publishable (posts, headlines, captions, subject lines) — that is the text being gated.
 
 ### Short-form mode (<250 words)
 
@@ -744,12 +650,12 @@ Short copy (X posts, headlines, subject lines, captions, video titles) cannot ab
 - **Vocabulary and transitions:** 2+ AI-vocabulary words or canned transitions in a post scores the full 20; 1 word scores 0. Vague attribution ("studies show", "experts say") with no source scores 8+.
 - **Formatting and artifacts:** 1 em dash scores 0; 2+ em dashes or any citation artifact (utm_source=chatgpt.com, [cite: N], contentReference) scores the full 10. Hashtag or boldface overuse only when it dominates the copy.
 - **Statistical rhythm:** uniform length across 3+ sentences scores the full 25; a two-sentence post can score at most 10 here.
-- **Structure and emphasis:** rule-of-three, "not X but Y", or colon reveals score 8 each; two or more structural tells score the full 20.
+- **Structure and emphasis:** one rule-of-three, contrast such as "not X but Y," or colon reveal is not a signal by itself. Add points only when a repeated template clusters across the short passage and makes it feel predictable; explain the observed repetition.
 - **Voice and human texture:** absent first-person stance and zero concrete experience in value copy scores 6-10; one real detail keeps it at 2-4.
 
 Confidence is always **low** in short-form mode (say so in the report). Interpretation bands are unchanged: <20 passes, 20-39 revise flagged lines, 40+ run a full humanization pass.
 
-Fabricated-fact override: if any dimension finds a fabricated or unverifiable factual claim, the copy fails the gate regardless of the total score. Revise to verifiable claims and rescore.
+Nonfiction factual-integrity override: if a real-world factual claim is demonstrably fabricated or unverifiable, the copy fails the gate regardless of its score. Fictional inventions are not factual-integrity failures; check only real-world claims and consistency with supplied canon.
 - 250-999 words: calculate a provisional score and mark confidence **low**.
 - 1,000+ words: calculate the score and mark confidence **moderate**.
 - Genre matters. Compare essays with essays, fiction with fiction, and technical writing with technical writing.
@@ -798,7 +704,7 @@ Always report the dimension scores behind the total. Never present the number as
 
 The pattern catalog above tells you *what to look for*. The following prompts tell you *how to fix it*. Use them as concrete rewrite instructions when processing flagged text. Each prompt attacks a different dimension of AI writing.
 
-When a section scores high on the forensic checklist, select the appropriate prompt (or combine two) and paste the flagged text into it. These are instructions for a rewriting pass — not detection tools.
+For nonfiction copy, select a rewrite prompt only for a specific, repeated pattern that harms clarity or voice. These prompts are editing tools, not authorship tests. Do not apply them to fiction unless the user asks for a targeted revision and names the craft goal.
 
 ### Prompt 1: Real Person Rewrite
 
@@ -830,7 +736,7 @@ Target patterns: #40, #41, #45, #37 (low sentence-length variance, voice uniform
 
 > Rewrite this while intentionally breaking predictable AI writing patterns. Vary sentence length. Mix short thoughts with longer explanations. Avoid repetitive paragraph structures and perfectly balanced lists. The writing should feel spontaneous rather than generated.
 
-When to use: the forensic checklist flagged low burstiness (stdev/mean ratio narrow), or multiple paragraphs follow the same structural template. Attacks rhythm uniformity — the most reliable long-range signal. Particularly effective when paired with pattern 44 (homogeneous paragraph length).
+When to use: a reader-facing review identifies repeated paragraph shapes or cadence that makes a passage feel predictable. Make a local change only if it improves the intended rhythm; do not use statistical thresholds or claim this is a reliable authorship signal.
 
 ### Prompt 5: AI Phrase Killer
 
@@ -853,4 +759,4 @@ Key sources:
 - https://aclanthology.org/2025.bea-1.71.pdf
 - https://en.wikipedia.org/wiki/Artificial_intelligence_content_detection
 
-Statistical signals (perplexity, burstiness, sentence-level probability, word-frequency ratios) per GPTZero's public methodology and detector-vendor explainers (Leap AI, Search Atlas, Originality.ai). False-positive and adversarial-evasion figures per Stanford HAI and the 2025 adversarial-evasion literature. Markup artifacts per Wikipedia's Signs of AI writing §Markup.
+The cited detector and corpus sources are references for editorial examples and tool-specific methodology, not validation of a general authorship test or universal style thresholds. Recheck claims against current primary sources before relying on a specific number.
