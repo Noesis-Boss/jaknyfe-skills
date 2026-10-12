@@ -1,7 +1,7 @@
 ---
 name: voxwerx
 description: |
-  Detect and fix AI writing patterns. Use when writing outbound content like emails, proposals, blog posts, client deliverables, or any external-facing writing. Also use when asked to humanize, polish, or de-AI text.
+  Improve clarity, voice, factual fidelity, and continuity in external copy and creative drafts. Identify generic or repetitive language and unintended document artifacts. Does not determine authorship or help evade AI detectors; use when asked to edit, polish, or humanize text as a craft goal.
 compatibility: Created for Zo Computer
 metadata:
   author: skeletorjs & jaknyfe
@@ -15,9 +15,9 @@ allowed-tools:
 ---
 # VoxWerx
 
-Strip AI writing patterns. Make prose sound like a person wrote it.
+Improve clarity, voice, and document integrity. Preserve authorship and intentional style; do not optimize for detector avoidance.
 
-> **Supersedes Skills/humanizer.** The former `Skills/humanizer` skill was retired (2026-09-21); VoxWerx is the canonical AI-pattern gate and scorer for all copy. Pattern numbering in older docs and scripts refers to the original blader/humanizer lineage that VoxWerx absorbed. The marketing gate script is `Projects/noesis-marketing/scripts/voxwerx_score.py` (`humanizer_score.py` remains as a deprecated shim).
+> **Supersedes Skills/humanizer.** The former `Skills/humanizer` skill was retired (2026-09-21); VoxWerx is the canonical copy-quality gate and editorial-pattern scorer, not an AI-authorship detector. Pattern numbering in older docs and scripts refers to the original blader/humanizer lineage that VoxWerx absorbed. The marketing gate script is `Projects/noesis-marketing/scripts/voxwerx_score.py` (`humanizer_score.py` remains as a deprecated shim).
 
 ## When to Use
 
@@ -25,6 +25,7 @@ Strip AI writing patterns. Make prose sound like a person wrote it.
 - Outbound emails, especially cold outreach and client updates
 - Blog posts, social copy, marketing material
 - Creative writing drafts
+- Requests to "humanize" or "de-AI" text: interpret these as craft-editing requests for clarity, voice, and readability—not permission to evade detectors or conceal assistance.
 - Anything that leaves the workspace
 
 Not needed for: internal notes, task descriptions, meeting records, code comments, chat responses.
@@ -38,7 +39,7 @@ When humanizing text, apply the user's voice rules. If the user has a persona co
 - Don't soften bad news.
 - Own mistakes quickly. No deflection.
 - Prefer active voice and short sentences.
-- Vary sentence length. Real writing isn't uniform.
+- Use sentence variation only when it supports clarity, emphasis, or the intended voice; do not force irregularity.
 
 **Minimum effective edit:** Change only what improves clarity, specificity, accuracy, or the reader's next step. Leave strong sentences, useful rough edges, personal asides, and intentional repetition alone. Do not polish every paragraph to the same level.
 
@@ -46,35 +47,35 @@ When humanizing text, apply the user's voice rules. If the user has a persona co
 
 **Writing sample mode (borrowed from upstream v2.11.2):** If the user provides a writing sample (their own previous writing), analyze it before rewriting: note its sentence length, word choice, paragraph openings, punctuation, repeated phrases, and transitions, then match those habits. The sample takes priority over the default rules — if the sample uses em dashes, keep them at about the same rate and do not apply #11 as a ban. Do not replace casual words with formal ones or remove deliberate quirks.
 
-**Add personality only when it fits (upstream v3):** Voice does not mean quirks everywhere. Add personality where a human writer naturally would have it — an opening hook, a closing line, a transition between ideas, a reaction to something surprising. Keep plain informational passages (specs, changelogs, data descriptions) plain; forcing voice into them reads as more AI-written, not less.
+**Add personality only when it fits (upstream v3):** Voice does not mean quirks everywhere. Use a writer's established personality where it helps the piece — an opening hook, closing line, transition, or reaction. Keep plain informational passages plain; forced personality can sound mismatched to the subject or audience.
 
 **To customize**: Edit the "Voice Calibration" section above to match your persona's voice rules. For example, if your persona avoids em dashes and emojis, add those as hard rules. If your persona uses humor, specify the style.
 
 ## Process
 
-1. Scan for patterns listed below
-2. Fix each instance
-3. Read the result aloud in your head. Does it sound like a person talking?
+1. Review relevant patterns below as possible craft issues
+2. Edit only instances that harm clarity, accuracy, reader flow, or the intended voice; preserve deliberate choices
+3. Read the result aloud. Does it fit the intended writer, audience, and purpose?
 4. Paragraph fallback: if a sentence stays awkward after two fixes, rewrite the whole paragraph around its main point instead of word-by-word fixes.
 5. Check against voice rules
-6. Verify: varied sentence length, actual opinions present, no robotic uniformity
+6. Verify: intended cadence, supported opinions, clear progression, and no avoidable repetition; do not add artificial variation
 7. Cluster check: a single sign (one em dash, one AI-associated word, or one rhetorical construction) proves nothing. In applicable nonfiction and public copy, flag only when several independent signals converge in the same passage. For fiction, use the fiction-review protocol below; stylistic clustering is not evidence of authorship.
 8. Fact and continuity check (upstream v2.11.2): ask "What still sounds generic or mechanically repeated?" and "Did the rewrite add, remove, or alter a supplied fact, name, number, date, quote, citation, ranking, or other claim?" Treat unsupported additions and lost claims as errors. Do not invent details. In fiction, preserve established names, world rules, chronology, point of view, and character intent; ask about ambiguity rather than silently changing canon.
 9. Self-check (borrowed 2026-09-07 from peterygyang/no-ai-slop): before returning, check for repetitive or unsupported binary contrasts, faux-insight setups, colon reveals, negative listings, interpretive metadiscourse, significance inflation, vague attributions, monotonous sentence length, and fact drift. These are review prompts, not bans: retain a construction when it is accurate, useful, or part of the writer's voice.
 10. Voice check (borrowed from no-ai-slop): compare the result with the source or supplied writing sample. Confirm that vocabulary, cadence, humor, uncertainty, digressions, punctuation habits, and useful imperfections survived. If the rewrite sounds more generic than the source, restore the distinctive language.
 11. Minimum-edit check (borrowed from no-ai-slop): identify the changes that were necessary. Undo edits that only make the prose more uniform, formal, polished, or conventionally "professional."
 12. Detect-mode check (borrowed from no-ai-slop): report named patterns with a short quoted line and a short fix. Do not rewrite, score, or claim that the writer used AI.
-13. Regression fixture check (borrowed from SlopMonster): keep a small set of known human passages and known failure passages for each new detector rule. A rule is useful only when it catches the failure passage without flagging the human passage. Re-run the fixtures after changing thresholds or pattern lists.
-14. Visible-copy extraction (borrowed from SlopMonster): when the input is HTML, score rendered text only. Ignore scripts, styles, metadata, comments, hidden elements, URLs, and markup. For Markdown, preserve code blocks and link targets while scoring prose around them.
-15. Optional rival-model cleanse (borrowed from SlopMonster): use a different model for a rewrite only when the user explicitly requests it and the text is safe to send externally. Never send confidential, personal, client, unpublished, or credential-bearing text to a third-party model by default. The cleanse output still requires fact, voice, and minimum-edit checks here.
+13. Regression fixture check (borrowed from SlopMonster): keep examples of intended prose and known editorial failures for each new pattern rule. A rule is useful only when it catches the failure without flagging intended prose. Re-run fixtures after changing thresholds or pattern lists.
+14. Visible-copy review (borrowed from SlopMonster): when the target is reader-facing HTML, review rendered text only. Ignore scripts, styles, metadata, comments, hidden elements, URLs, and markup. For Markdown, preserve code blocks and link targets while reviewing the prose around them.
+15. Optional cross-model editorial review (borrowed from SlopMonster): use another model only when the user explicitly requests it and the text is safe to share. Never send confidential, personal, client, unpublished, or credential-bearing text to a third-party model by default. Review any suggestions for factual fidelity, voice, and minimum necessary edits.
 
 ### Recommended editing sequence
 
 Use separate passes when a draft needs more than a light edit. Stop when the text sounds like the writer, the facts are intact, and a real reader can move through it without friction.
 
-1. **Voice reset:** remove formal, generic, or mechanical phrasing while keeping the writer's point of view visible.
-2. **Rhythm pass:** vary sentence length, paragraph length, and paragraph endings. Do not force every paragraph into the same shape.
-3. **Pattern pass:** remove repeated transitions, tidy groups of three, restated conclusions, and other predictable structures.
+1. **Voice reset:** revise generic or mechanical phrasing only when it conflicts with the writer's intended voice or obscures the point.
+2. **Rhythm pass:** identify repeated cadence only where it hurts pacing or emphasis; make local changes and preserve deliberate structure.
+3. **Pattern pass:** review repeated transitions, lists, and conclusions for unnecessary repetition; retain them when they serve the argument or scene.
 4. **Weight pass:** cut filler and replace vague claims with concrete facts, examples, judgments, actions, or results.
 5. **Writer-detail pass:** add details the writer can actually support, such as a real example, number, mistake, quote, tool result, or opinion. Never invent personal experience to make a draft sound lived-in.
 6. **Reader pass:** mark slow, obvious, repetitive, preachy, or over-polished passages. Rewrite only those passages and preserve strong sentences unchanged.
@@ -82,11 +83,11 @@ Use separate passes when a draft needs more than a light edit. Stop when the tex
 The writer-detail pass belongs to the person who owns the text. Ask for missing details or use a simpler claim; do not manufacture an anecdote, memory, credential, or first-person authority.
 
 **Return modes (upstream v2.11.2):**
-- **Pasted text (default):** return the draft, a short list of remaining AI patterns, and the final rewrite. For each meaningful edit, preserve the writer's reason for sounding that way unless it is clearly filler or obscures the point.
-- **File mode:** when the user names a file, run the full rewrite but write only the final text to the file. Keep code blocks, YAML metadata, data, and link targets unchanged. Then give a short summary.
+- **Pasted text (default):** return the draft, a short list of remaining generic or repetitive patterns, and the final edit. For each meaningful change, preserve the writer's intended voice unless the original wording is filler or obscures the point.
+- **File mode:** when the user names a file, apply the requested scope of editing and write only the final text to the file. Keep code blocks, YAML metadata, data, and link targets unchanged. Then give a short summary.
 - **Embedded mode:** when another task uses this skill (PR description, commit message, document), return only the final text.
 Calibration: judging text AI-written because it says "delve" is, as the Economist put it in 2026, like judging it Jane Austen's because it says "imprudence". There is no single style of AI writing, just as there is no single style of human writing.
-7. Optional: run the result through a detector (GPTZero, Copyleaks, Originality, Turnitin) as a sanity check — treat its number as advisory, not verdict (see "Detector Reality Check").
+7. Optional detector check: only when the user explicitly requests it. Treat a detector score as a limited, fallible observation—not a target to optimize, an authorship verdict, or proof of publication readiness. Do not send unpublished or sensitive text to a third-party detector without explicit informed approval (see "Detector Reality Check").
 
 ## Pattern Catalog
 
@@ -482,10 +483,12 @@ Compare scenes only when it helps diagnose a reader-facing problem. Dialogue, ac
 
 **Manuscript integrity and genre conventions**
 
-- Visible production notes such as "Expansion: after…" are concrete draft artifacts in a text presented as finished fiction. Quote and locate them, label them as unresolved editorial notes, and recommend removing or resolving them before publication. They show the manuscript needs cleanup; by themselves they do not establish AI use. First rule out intentional metafiction or an annotated-draft format.
-- Exact or near-duplicate passages and repeated dialogue are verifiable continuity/editing questions. Compare their locations and functions, then check draft history if available. Recommend removing a duplicate only when it is accidental; an intentional echo, reprise, or argument loop may be part of the scene.
-- Numbering, table-of-contents, and cross-reference mismatches are objective consistency issues. Report the mismatched entries; do not attribute them to AI.
-- Familiar romantasy or fantasy tropes are genre conventions, not authorship evidence. If asked about originality, assess how character motive, consequence, setting, and causal choices make the execution specific; keep that critique separate from any discussion of AI authorship.
+- Visible production notes such as "Expansion: after…" and internal IDs such as `ch_01` are production residue only when they appear in the delivered text. Quote and locate them; verify they are not intentional metafiction, an annotated draft, or visible source labels. Recommend cleanup for a publication-ready file, but do not infer prompt use or AI authorship.
+- Compare title, byline, copyright date, series/book label, word count, and chapter count across the title page, copyright page, cover, TOC, PDF metadata, and supplied source. Report exact conflicts and ask which source is authoritative. Do not call a byline "hallucinated" or alter attribution, dates, or counts without verification and authorization.
+- Exact or near-duplicate passages and repeated dialogue are editing/continuity questions. Compare locations and scene functions; compare prior versions only when both documents are available. State the match rule and scope. Remove only accidental repetition; preserve intentional echoes and reprises.
+- Trace scene order, time, place, travel, and character knowledge across scene handoffs. A sudden return to an earlier location or a repeated introduction may be a continuity error, an intentional flashback, or a recap; quote the transition and inspect enough surrounding context before recommending a fix.
+- Check malformed dialogue, spacing, punctuation, TOC entries, headings, and chapter numbering against the source and rendered PDF. PDF extraction, OCR, line wraps, or export can create apparent glitches; do not attribute a typography defect to AI without checking the rendered page/source.
+- Familiar romantasy or fantasy tropes are genre conventions, not authorship evidence. If asked about originality, assess how character motive, consequence, setting, and causal choices make the execution specific; keep that critique separate from production claims.
 
 ### Descriptive Style Diagnostics
 
@@ -614,6 +617,8 @@ One rejected option may be valid. Several short, unrelated rejections are a stro
 - AI-text detectors produce model- and context-dependent classifications. They can be wrong in both directions and do not establish who wrote or revised a passage.
 - Genre, point of view, language background, source length, editing, and detector version can affect results. Treat any score as one limited observation, not a factual finding.
 - Do not convert stylistic clusters into an authorship verdict. For fiction, use the Fiction review protocol. For provenance questions, seek reliable drafting history or other contextual evidence and state its limits.
+- Do not revise text to lower a detector score, bypass a detector, hide AI assistance, or claim undetectable/human authorship. If asked for that objective, decline it and offer a craft edit, transparent attribution, or a provenance review instead.
+- The VoxWerx score is an internal editorial-pattern rubric, not a detector score or authorship probability. A score below the house gate does not prove human authorship or detector evasion.
 
 ### Voice and provenance cautions
 
@@ -621,15 +626,17 @@ Preserve a writer's intentional style when editing, but do not treat any style f
 
 False-positive guard: a single transition, fragment, punctuation choice, citation, polished sentence, colloquial phrase, or emotional beat is not authorship evidence. Preserve legal/safety notices, real corrections, named objections, FAQs, quoted text, titles, proper names, and examples where a watched phrase is being discussed rather than used. Unsourced factual claims need source-checking; that is not an authorship finding.
 
+When asked to "scrub" text specifically to evade AI detection or conceal assistance, do not perform that objective. Offer clarity, voice, fact, continuity, and publication-readiness edits without claiming to mask provenance. Do not fabricate human drafting history, personal experience, or attribution.
+
 ### Fiction review report
 
-Use this report when reviewing a manuscript or a critique of one:
+Use this report when reviewing a manuscript, PDF, or critique of one:
 
-1. **Scope reviewed:** full manuscript, named chapters, excerpts, or supplied summary; include word/chapter counts only when verified.
-2. **Text-integrity issues:** quote and locate explicit production notes, duplicate passages, or numbering mismatches. Describe what is directly observable and what cleanup it needs.
-3. **Craft observations:** give representative passages and explain the reader effect. If counting a repeated phrase or image, state the exact match rule and denominator; distinguish exact repetition from related imagery.
-4. **Genre and intent:** assess tropes as conventions. Discuss originality through character motives, causal choices, consequences, and setting—not trope presence alone.
-5. **Authorship conclusion:** state plainly that stylistic traits cannot establish whether or how AI was used. Do not assign an AI-authorship percentage, confidence, or verdict from prose patterns. If provenance matters, request reliable process evidence rather than treating style as proof.
+1. **Scope and sources:** identify whether you reviewed the whole file, selected chapters/pages, excerpts, or only a supplied summary. Compare versions only when both are available; verify counts before stating them.
+2. **Identity and assembly:** list exact title/byline/date/count conflicts and visible production notes or source IDs, with locations and the source used for comparison. Mark unresolved authority questions; do not silently choose a canonical value.
+3. **Continuity and proofing:** quote the scene transition, repeated setup, malformed line, or TOC/heading mismatch. State what context or source/render check is needed before calling it accidental.
+4. **Craft and genre:** support reader-effect observations with examples and scope. Discuss trope execution through character motive, causal choices, consequences, and setting—not trope presence alone.
+5. **Production conclusion:** editorial defects can show that a file needs revision, but style or artifact clues do not establish who used AI or how. Do not assign authorship percentages or recommend concealment. For provenance questions, request reliable process evidence and state its limits.
 
 Do not apply a pass/fail publication gate based on stylistic checklists. Editing recommendations should be local, minimal, and tied to a stated craft goal.
 
@@ -653,7 +660,7 @@ Short copy (X posts, headlines, subject lines, captions, video titles) cannot ab
 - **Structure and emphasis:** one rule-of-three, contrast such as "not X but Y," or colon reveal is not a signal by itself. Add points only when a repeated template clusters across the short passage and makes it feel predictable; explain the observed repetition.
 - **Voice and human texture:** absent first-person stance and zero concrete experience in value copy scores 6-10; one real detail keeps it at 2-4.
 
-Confidence is always **low** in short-form mode (say so in the report). Interpretation bands are unchanged: <20 passes, 20-39 revise flagged lines, 40+ run a full humanization pass.
+Confidence is always **low** in short-form mode (say so in the report). Editorial gate: <20 meets the requested copy standard; 20-39 revise flagged lines; 40+ run a full quality-focused edit. These bands do not estimate detector outcomes or authorship.
 
 Nonfiction factual-integrity override: if a real-world factual claim is demonstrably fabricated or unverifiable, the copy fails the gate regardless of its score. Fictional inventions are not factual-integrity failures; check only real-world claims and consistency with supplied canon.
 - 250-999 words: calculate a provisional score and mark confidence **low**.
@@ -679,7 +686,7 @@ Score each dimension using 0 for absent, half the range for a moderate cluster, 
 
 - **0-19: Low AI-pattern risk.** Few converging signals. Preserve the writer's voice.
 - **20-39: Mild risk.** Some surface patterns. Revise only the flagged passages.
-- **40-59: Moderate risk.** Multiple dimensions converge. Run a targeted humanization pass.
+- **40-59: Moderate risk.** Multiple dimensions converge. Run a targeted quality edit on the flagged passages.
 - **60-79: High risk.** Strong pattern clustering. Use the adversarial rewrite prompts, then rescore.
 - **80-100: Very high risk.** Widespread uniformity or artifacts. Review manually before publication; do not claim proof of AI authorship.
 
@@ -693,34 +700,36 @@ Confidence: low | moderate
 Word count: N
 Dimension scores: rhythm / vocabulary / structure / specificity / formatting / voice
 Top contributing signals: [up to 5]
-Human signals preserved: [up to 3]
+Distinctive voice preserved: [up to 3]
 Recommended pass: [one targeted rewrite pass]
 After revision: rescore the same text with the same weights
 ```
 
 Always report the dimension scores behind the total. Never present the number as a probability that a person used AI, and never treat a lower score as proof of human authorship. A score change is useful for editorial comparison only.
 
+Confidence describes how clearly the stated pattern can be reviewed in the supplied sample; it is not confidence about AI use or authorship.
+
 ## Adversarial Rewrite Prompts
 
-The pattern catalog above tells you *what to look for*. The following prompts tell you *how to fix it*. Use them as concrete rewrite instructions when processing flagged text. Each prompt attacks a different dimension of AI writing.
+The pattern catalog above identifies possible quality issues. The following prompts offer targeted edits; use one only when a specific pattern harms clarity, accuracy, reader flow, or the writer's intended voice. None is an authorship or detector-evasion technique.
 
 For nonfiction copy, select a rewrite prompt only for a specific, repeated pattern that harms clarity or voice. These prompts are editing tools, not authorship tests. Do not apply them to fiction unless the user asks for a targeted revision and names the craft goal.
 
-### Prompt 1: Real Person Rewrite
+### Prompt 1: Directness and Clarity Pass
 
 Target patterns: #12a, #14, #15, #50 (polished neutrality, corporate phrasing, safe transitions, AI vocabulary)
 
-> You are editing writing that sounds overly polished and AI-generated. Rewrite it the way a knowledgeable person would naturally say it in conversation. Remove corporate phrasing, unnecessary adjectives, and anything that sounds written to impress. Keep the meaning the same, but make it feel lived-in, direct, and human.
+> Edit only the lines that are vague, over-formal, or repetitive. Preserve the supplied meaning, facts, and intended register. Use the writer's existing voice and concrete information already present; do not invent experiences or add quirks to simulate a person.
 
-When to use: text that reads correctly but feels like it was generated by a committee. High pattern 50 density, multiple pattern 15 transitions, absence of any personal voice. The goal is register-shifting: written-to-impress → spoken-to-be-understood.
+When to use: a specific passage is harder to understand or less direct than the writer intends. Revise locally, then compare against the source to make sure the change improves clarity without flattening the voice.
 
-### Prompt 2: Voice Shaper
+### Prompt 2: Voice-Preserving Edit
 
 Target patterns: #14, #40, #41, #45 (polished neutrality, uniform sentence length, voice uniformity, uniform syntax complexity)
 
-> Rewrite this so it sounds like it came from one specific person with strong opinions and real experiences. Avoid sounding neutral or universally agreeable. Let personality, preferences, and small imperfections show through. The goal is not perfect writing. The goal is recognizable voice.
+> Compare this draft with the writer's supplied sample or stated preferences. Revise only where the voice is unintentionally generic or inconsistent. Preserve supported opinions, uncertainty, rhythm, and deliberate quirks. Do not invent biography, experience, or personality traits.
 
-When to use: text that is technically accurate but has no personality — where every sentence could have been written by anyone. Forces opinion and specificity into a neutral draft. Combats pattern 14 ("never challenges, never states a preference") and pattern 41 (same sentence-length distribution across all paragraphs).
+When to use: the user requests a voice match and provides a reliable sample or clear voice guidance. If no sample or guidance exists, ask rather than manufacture a persona.
 
 ### Prompt 3: Credibility Test
 
@@ -730,21 +739,21 @@ Target patterns: #1, #8, #27, #28 (significance inflation, canned notability, au
 
 When to use: text that makes bold claims without backing them, or where pattern 27 (authority claims) and pattern 1 (significance inflation) cluster. Forces the editor to adopt an adversarial reading posture before rewriting. Particularly effective when combined with pattern 28's specificity requirements.
 
-### Prompt 4: Pattern Disruptor
+### Prompt 4: Cadence and Structure Pass
 
-Target patterns: #40, #41, #45, #37 (low sentence-length variance, voice uniformity, uniform syntax complexity, 4-beat rhythm)
+Target patterns: #40, #41, #45, #37 (repeated cadence, voice uniformity, uniform syntax complexity, fixed paragraph rhythm)
 
-> Rewrite this while intentionally breaking predictable AI writing patterns. Vary sentence length. Mix short thoughts with longer explanations. Avoid repetitive paragraph structures and perfectly balanced lists. The writing should feel spontaneous rather than generated.
+> Identify repeated paragraph or sentence shapes that make this passage harder to follow or less effective. Change only the instances that weaken the intended pace; preserve deliberate rhythm, emphasis, and structure. Do not vary sentences just to create artificial irregularity.
 
-When to use: a reader-facing review identifies repeated paragraph shapes or cadence that makes a passage feel predictable. Make a local change only if it improves the intended rhythm; do not use statistical thresholds or claim this is a reliable authorship signal.
+When to use: a reader-facing review names a repeated structure and explains its effect. Keep revisions local and judge them by the passage's purpose, not by a detector score.
 
-### Prompt 5: AI Phrase Killer
+### Prompt 5: Precision and Repetition Pass
 
 Target patterns: #15, #16, #50 (safe transitions, meta-commentary, AI vocabulary)
 
-> Rewrite this and remove any phrases commonly associated with AI writing. Replace generic transitions, predictable framing, and overused expressions with language that feels more natural and specific. Keep the meaning unchanged while making the writing less recognizable as AI-generated.
+> Identify generic or repeated wording only where it weakens meaning, flow, or the writer's voice. Suggest a precise revision using facts already supplied. Preserve deliberate repetition and logical relationships; do not add unsupported details or optimize against AI detectors.
 
-When to use: text flagged for pattern 50 vocabulary density or pattern 15 transition overuse. Unlike a simple delete pass, this prompt forces *substitution* — replacing each flagged phrase with a natural equivalent that preserves the logical relationship. Use the After: patterns in catalog entries #15, #16, and #50 as substitution banks.
+When to use: a specific transition or phrase is repetitive, vague, or mismatched to the writer's intended register. Keep or replace it based on the reader-facing problem, not its association with AI.
 
 ## Reference
 

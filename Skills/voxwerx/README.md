@@ -1,6 +1,6 @@
 # VoxWerx
 
-VoxWerx is the workspace writing-quality skill for removing AI-patterns while preserving the writer's facts, voice, and judgment.
+VoxWerx improves clarity, voice, factual fidelity, continuity, and publication readiness. It does not determine authorship or optimize text to evade AI detectors.
 
 Brand: [voxwerx.com](https://voxwerx.com)
 
