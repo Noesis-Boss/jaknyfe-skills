@@ -79,15 +79,8 @@ export const SRAbout = () => {
               Each degree presents lessons of morality, philosophy, and allegory through dramatic presentation, deepening the candidate's understanding of the values at the heart of Freemasonry.
             </p>
           </div>
-          <div style={{
-            borderRadius: 8, overflow: 'hidden',
-            background: 'repeating-linear-gradient(45deg, var(--stripe-a) 0px, var(--stripe-a) 10px, var(--stripe-b) 10px, var(--stripe-b) 20px)',
-            height: 320, display: 'flex', alignItems: 'center', justifyContent: 'center',
-            border: '1px solid var(--card-border)',
-          }}>
-            <div style={{ background: 'rgba(255,255,255,0.8)', padding: '0.6rem 1rem', borderRadius: 4 }}>
-              <span style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#666' }}>[ Valley of Tucson — historic photo ]</span>
-            </div>
+          <div style={{ borderRadius: 8, overflow: 'hidden', height: 320, border: '1px solid var(--card-border)' }}>
+            <img src="images/sr_tucson.jpg?v=20261015" alt="Tucson Scottish Rite Cathedral" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
         </div>
       </div>

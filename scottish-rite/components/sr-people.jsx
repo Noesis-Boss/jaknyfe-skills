@@ -100,12 +100,12 @@ export const SROfficers = () => {
 export const SRGallery = () => {
   const [lightbox, setLightbox] = React.useState(null);
   const photos = [
-    { label: 'Reunion Ceremony', img: '/images/gallery/gallery_reunion.jpg' },
+    { label: 'Historic Reunion Class', img: '/images/gallery/gallery_reunion.jpg?v=20261015' },
     { label: 'Officer Installation', img: '/images/gallery/gallery_officer_installation.jpg' },
-    { label: 'Temple Interior', img: '/images/gallery/gallery_temple_interior.jpg' },
-    { label: 'Lodge Room', img: '/images/gallery/gallery_lodge_room.jpg' },
-    { label: 'Masonic Leaders', img: '/images/gallery/gallery_masonic_leaders.jpg' },
-    { label: 'Cornerstone Ceremony', img: '/images/gallery/gallery_cornerstone.jpg' },
+    { label: 'Temple Interior', img: '/images/gallery/gallery_temple_interior.jpg?v=20261015' },
+    { label: 'Lodge Room', img: '/images/gallery/gallery_lodge_room.jpg?v=20261015' },
+    { label: 'Masonic Leaders', img: '/images/gallery/gallery_masonic_leaders.jpg?v=20261015' },
+    { label: 'Cornerstone Ceremony', img: '/images/gallery/gallery_cornerstone.jpg?v=20261015' },
     { label: 'Brotherhood Dinner', img: '/images/gallery/gallery_dinner.jpg' },
     { label: 'Stated Meeting', img: '/images/gallery/gallery_stated_meeting.jpg' },
   ];

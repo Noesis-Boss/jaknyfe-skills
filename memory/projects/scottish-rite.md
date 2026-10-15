@@ -33,3 +33,6 @@ Deployed Scottish Rite website for the Tucson chapter. Has been iteratively debu
 
 ## Status
 Active. Assets must be validated before publishing — always run build → copy → git push workflow.
+## 2026-10-15 image placeholders
+
+- Live site About placeholder now shows the Tucson Scottish Rite Cathedral; five gallery images (historic reunion class, temple interior, lodge room, Masonic leaders, cornerstone group) load successfully. Verified via fresh browser screenshot at `Media/screenshots/scottish-rite-images-live-2026-10-15.png`; deployment repo commits `db32a0a` and `75dff80`. Three gallery cards (officer installation, brotherhood dinner, stated meeting) still need authentic matching photos.

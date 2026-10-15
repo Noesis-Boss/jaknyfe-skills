@@ -52,6 +52,19 @@ When extracting a zip INTO the Scottish Rite project:
 
 ## Issue Log
 
+### 2026-10-15 — Fill available Scottish Rite photo placeholders
+
+- Replaced the About section's striped historic-photo placeholder with the existing Tucson Scottish Rite Cathedral photo. The deployment repository also contained authentic interior, lodge room, Masonic leaders, and cornerstone photos; wired those plus the archival reunion-class photo into five matching gallery cards. The installation, dinner, and stated-meeting cards have no matching authentic assets and remain hidden.
+- Built the Vite site, synced the generated bundle and authentic photos to the served directory and deployment repo, and pushed deployment commits `db32a0a` and `75dff80`. Live screenshot confirms the About cathedral photo and five gallery photos render; image natural widths are nonzero. Installation, dinner, and stated-meeting gallery cards remain hidden because no matching real photos are available.
+- Screenshot: `Media/screenshots/scottish-rite-images-live-2026-10-15.png`.
+
+### 2026-10-05 — Missing gallery image assets
+
+- **Symptom:** The live site returned HTTP 200; the earlier reported 502 did not reproduce. Its code references eight JPEGs under `/images/gallery/`; all eight are missing from both the Vite source `public/` tree and the deployed serve directory. The server log showed a 404 for `gallery_stated_meeting.jpg`.
+- **Checks:** Confirmed the eight references in source/bundle, checked both directories, searched local Git history and the workspace outside Trash; no copies were found.
+- **Disposition:** No image was substituted or restored. The gallery needs the original photo files before it can be repaired; restoring files requires explicit approval.
+
+
 ### 2026-08-13 — Restore dynamic event cards and full-size calendar modal
 - Problem: the CalendarWiz feed was not producing visible event cards, and the modal did not encompass the full calendar.
 - Solution: intercepted CalendarWiz's live `document.write` feed, extracted the current event names and dates into responsive cards, and changed the modal to `96vw` by `94vh` with a full-size iframe.
