@@ -58,7 +58,7 @@ Try this: "Here's my apartment lease. What am I agreeing to that could cost me m
 
 I ran this on a real lease before I signed it. In about ten seconds it flagged the auto-renewal clause and the early-termination fee — the two things that actually mattered. Six hundred dollars of fine print, found by reading nothing myself.
 
-Now, let me say this plainly, because this channel doesn't do hype: this is not legal advice, and for anything that really matters, you have a professional confirm it. But as a first pass, it's like having a friend who reads fine print for a living, and works for free.
+Now, let me say this plainly, because this channel doesn't do hype. This is not legal advice, and for anything that really matters, you have a professional confirm it. But as a first pass, it's like having a friend who reads fine print for a living, and works for free.
 
 **[THING 5 — Brainstorm twenty ideas fast]**
 

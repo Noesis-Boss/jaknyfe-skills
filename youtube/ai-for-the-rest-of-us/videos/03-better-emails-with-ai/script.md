@@ -10,7 +10,7 @@
 
 "I hope this email finds you well." If AI wrote that for you, it didn't find you well — it found you generic.
 
-Here's the thing nobody tells you: the problem isn't AI. It's the instructions we give it. Four steps — free, about five minutes — and it stops sounding like a robot wrote it.
+Here's the thing nobody tells you. The problem isn't AI. It's the instructions we give it. Four steps — free, about five minutes — and it stops sounding like a robot wrote it.
 
 **[INTRO — VO over title card]**
 
@@ -54,7 +54,7 @@ Step four: know the six tells that scream "AI wrote this."
 
 Even good drafts slip these in. Quick list — check your next one against it.
 
-One: "I hope this email finds you well." Nobody writes that to someone they actually know. Two: "delve" — AI loves that word. Humans say "dig into." Three: "It's important to note" — if it's important, just say the thing. Four: em-dash overload. We all like an em-dash. AI writes six in one paragraph. Five: "Additionally," starting three paragraphs in a row. Six: a summary paragraph that restates everything you just read, ending in "Thank you for your understanding." If nothing needed understanding, cut it.
+One: "I hope this email finds you well." Nobody writes that to someone they actually know. Two: that five-letter word AI always reaches for when it means "look into" — you know the one. Humans say "dig into." Three: "It's important to note" — if it's important, just say the thing. Four: em-dash overload. We all like an em-dash. AI writes six in one paragraph. Five: starting three paragraphs in a row with the same connector. Pick a different way in each time. Six: a summary paragraph that restates everything you just read, ending in "Thank you for your understanding." If nothing needed understanding, cut it.
 
 Find one of those, delete it, and watch the email get instantly more human.
 

@@ -10,7 +10,7 @@ If you've ever thought "it's too late for me to learn AI" — this video is for 
 
 **\[ON CAMERA — 0:30\]**
 
-By the end of this video, you'll have done three things: you'll have asked an AI your first real question, you'll know the five words of AI vocabulary that actually matter — and I promise it's five, not fifty — and you'll know whether the free version is enough for you, so you don't spend money you don't need to spend. Nothing here is technical. If you can write an email, you can do every single thing in this video.
+By the end of this video, you'll have asked an AI your first real question, you'll know the five words of AI vocabulary that actually matter — and I promise it's five, not fifty — and you'll know whether the free version is enough for you, so you don't spend money you don't need to spend. Nothing here is technical. If you can write an email, you can do every single thing in this video.
 
 **\[SCREEN DEMO + VO — 1:00\]**
 
@@ -66,6 +66,6 @@ So — is the free version enough? For most beginners: yes, absolutely. Free Cha
 
 So that's the starting line: one real question, five words of vocabulary, three everyday uses, and the safety rules. That's genuinely all "getting started with AI" is. You are not behind — you now know more than the majority of people your age who've only heard the hype.
 
-Here's your homework, and it's one thing: this week, take one task you'd normally do yourself — one email, one plan — and ask an AI for a first draft. Just once. Notice how it feels.
+Here's your homework, and it's one thing. This week, take one task you'd normally do yourself — one email, one plan — and ask an AI for a first draft. Just once. Notice how it feels.
 
 If this helped, subscribe — every Tuesday I put out a video exactly like this one, solving one real problem, no hype. On Friday I test tools so you don't waste your money. This channel is called AI for the Rest of Us, and it's for people with jobs, and lives, and forty years of experience that no chatbot can replace. See you Friday.
