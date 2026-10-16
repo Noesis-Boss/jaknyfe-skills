@@ -978,6 +978,276 @@
       "auto_repos": [
         "cv-cat/Spider_XHS"
       ]
+    },
+    "-1qUSNwKHis": {
+      "title": "I gave 10 AI agents real jobs. Here's what they did",
+      "published": "2026-10-13T20:08:15+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-14T12:31:46.260164+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/-1qUSNwKHis.md",
+      "auto_repos": []
+    },
+    "EUavfcfHtu4": {
+      "title": "Your AI Website Looks Like Slop. Here's the Free Fix.",
+      "published": "2026-10-12T18:56:52+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-14T12:31:47.451742+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/EUavfcfHtu4.md",
+      "auto_repos": [
+        "pbakaus/impeccable"
+      ]
+    },
+    "T6gMdMy2AbA": {
+      "title": "claude-seo - GitHub Trending Today",
+      "published": "2026-10-14T02:00:05+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:31:48.413678+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/T6gMdMy2AbA.md",
+      "auto_repos": [
+        "AgriciDaniel/claude-seo"
+      ]
+    },
+    "98GHk_nqdPg": {
+      "title": "freellmapi - GitHub Trending Today",
+      "published": "2026-10-14T00:00:00+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:31:49.449305+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/98GHk_nqdPg.md",
+      "auto_repos": [
+        "tashfeenahmed/freellmapi"
+      ]
+    },
+    "rXiSq2Te5H8": {
+      "title": "diagram-design - GitHub Trending Today",
+      "published": "2026-10-13T22:00:29+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:31:50.567531+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/rXiSq2Te5H8.md",
+      "auto_repos": [
+        "cathrynlavery/diagram-design"
+      ]
+    },
+    "BNHeFv31HNA": {
+      "title": "GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171",
+      "published": "2026-10-13T20:00:31+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:31:59.364218+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/BNHeFv31HNA.md",
+      "auto_repos": [
+        "alex-damian/pulse",
+        "tashfeenahmed/freellmapi",
+        "AgriciDaniel/claude-seo",
+        "fail2ban/fail2ban",
+        "RayVentura/ShortGPT",
+        "cboxdoerfer/fsearch",
+        "vllm-project/vllm-omni",
+        "docker/docker-agent",
+        "NVIDIA-Omniverse/PhysX",
+        "storytold/wordcraft",
+        "geektutu/high-performance-go",
+        "Kometa-Team/Kometa",
+        "revolist/revogrid",
+        "Ebony-Vinyl/dsh-our-free-model",
+        "riscv-software-src/riscv-isa-sim",
+        "json-schema-faker/json-schema-faker",
+        "wheresryan22/anatomy",
+        "davesc63/GeoPort",
+        "Chunyu33/light-c",
+        "openags/paper-search-mcp",
+        "itayinbarr/little-coder",
+        "cathrynlavery/diagram-design",
+        "CodeBoarding/CodeBoarding",
+        "mpitutorial/mpitutorial",
+        "noamseg/interview-coach-skill"
+      ]
+    },
+    "IwPSH-hyNJ4": {
+      "title": "onionshare - GitHub Trending Today",
+      "published": "2026-10-12T17:00:12+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:32:00.418202+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/IwPSH-hyNJ4.md",
+      "auto_repos": [
+        "onionshare/onionshare"
+      ]
+    },
+    "Zxh3z2j47qQ": {
+      "title": "android-reverse-engineering-skill - GitHub Trending Today",
+      "published": "2026-10-12T15:00:17+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:32:01.370276+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/Zxh3z2j47qQ.md",
+      "auto_repos": [
+        "SimoneAvogadro/android-reverse-engineering-skill"
+      ]
+    },
+    "QHgIY9KQJCk": {
+      "title": "YuE - GitHub Trending Today",
+      "published": "2026-10-12T13:00:31+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:32:02.386783+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/QHgIY9KQJCk.md",
+      "auto_repos": [
+        "multimodal-art-projection/YuE"
+      ]
+    },
+    "WSbfU-vuPIw": {
+      "title": "nvidia-docker - GitHub Trending Today",
+      "published": "2026-10-12T02:00:31+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:32:03.396815+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/WSbfU-vuPIw.md",
+      "auto_repos": [
+        "NVIDIA/nvidia-docker"
+      ]
+    },
+    "REBGnMvrbA4": {
+      "title": "cockpit-tools - GitHub Trending Today",
+      "published": "2026-10-12T00:00:10+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:32:04.508934+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/REBGnMvrbA4.md",
+      "auto_repos": [
+        "jlcodes99/cockpit-tools"
+      ]
+    },
+    "_LL4uWbZ5x0": {
+      "title": "codex-plugin-cc - GitHub Trending Today",
+      "published": "2026-10-11T22:00:37+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:32:05.651898+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/_LL4uWbZ5x0.md",
+      "auto_repos": [
+        "openai/codex-plugin-cc"
+      ]
+    },
+    "PSWm7roiKic": {
+      "title": "GitHub Trending Today - YuE, nvidia-docker, television, openvla & More | #170",
+      "published": "2026-10-11T20:00:33+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:32:14.329776+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/PSWm7roiKic.md",
+      "auto_repos": [
+        "multimodal-art-projection/YuE",
+        "NVIDIA/nvidia-docker",
+        "openai/codex-plugin-cc",
+        "jlcodes99/cockpit-tools",
+        "onionshare/onionshare",
+        "SimoneAvogadro/android-reverse-engineering-skill",
+        "FongMi/Release",
+        "openvla/openvla",
+        "alexpasmantier/television",
+        "builderz-labs/mission-control",
+        "mg-chao/snow-apps",
+        "intelowlproject/IntelOwl",
+        "sjqzhang/go-fastdfs",
+        "Infatoshi/cuda-course",
+        "clash-download/Clash",
+        "xororz/local-dream",
+        "SteamRE/DepotDownloader",
+        "rlaope/oh-my-hermes",
+        "qos-ch/logback",
+        "singgel/Study-Floder",
+        "CyberStrikeus/CyberStrike",
+        "dingyong0214/ThorUI-uniapp",
+        "next-theme/hexo-theme-next",
+        "eug/awesome-opengl",
+        "ash-rs/ash"
+      ]
+    },
+    "x9nyYMJB5RM": {
+      "title": "RealChar - GitHub Trending Today",
+      "published": "2026-10-11T17:00:15+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:32:15.330834+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/x9nyYMJB5RM.md",
+      "auto_repos": [
+        "Shaunwei/RealChar"
+      ]
+    },
+    "dlS6gk830mI": {
+      "title": "anti-adblock-killer - GitHub Trending Today",
+      "published": "2026-10-11T15:00:28+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:32:16.496836+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/dlS6gk830mI.md",
+      "auto_repos": [
+        "reek/anti-adblock-killer"
+      ]
+    },
+    "X1Y3A4zvKy0": {
+      "title": "automaton - GitHub Trending Today",
+      "published": "2026-10-11T13:00:02+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-14T12:32:17.514048+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/X1Y3A4zvKy0.md",
+      "auto_repos": [
+        "Conway-Research/automaton"
+      ]
+    },
+    "grh6GjYLyyI": {
+      "title": "Financial Services \u2014 Anthropic Built 10 AI Finance Agents That Do the Grunt Work",
+      "published": "2026-10-14T20:30:03+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-15T12:31:42.178504+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/grh6GjYLyyI.md",
+      "auto_repos": [
+        "anthropics/financial-services"
+      ]
+    },
+    "7rVTo_sy4Po": {
+      "title": "Replace ElevenLabs, Jira, Slack & Granola for Your AI Agents (Free on GitHub)",
+      "published": "2026-10-14T18:52:25+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-15T12:31:45.305368+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/7rVTo_sy4Po.md",
+      "auto_repos": [
+        "altic-dev/FluidVoice",
+        "paperclipai/paperclip",
+        "basicmachines-co/basic-memory",
+        "tashfeenahmed/freellmapi",
+        "debpalash/VoiceStudio",
+        "D4Vinci/Scrapling",
+        "block/buzz"
+      ]
+    },
+    "DD3ae8CXFZI": {
+      "title": "wordcraft - GitHub Trending Today",
+      "published": "2026-10-14T17:00:18+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-15T12:31:46.536926+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/DD3ae8CXFZI.md",
+      "auto_repos": [
+        "storytold/wordcraft"
+      ]
+    },
+    "LgoY2L80xxY": {
+      "title": "dsh-our-free-model - GitHub Trending Today",
+      "published": "2026-10-14T15:00:32+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-15T12:31:47.675301+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/LgoY2L80xxY.md",
+      "auto_repos": [
+        "Ebony-Vinyl/dsh-our-free-model"
+      ]
+    },
+    "NurkrP-touo": {
+      "title": "fail2ban - GitHub Trending Today",
+      "published": "2026-10-14T13:00:25+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-10-15T12:31:48.824829+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/NurkrP-touo.md",
+      "auto_repos": [
+        "fail2ban/fail2ban"
+      ]
+    },
+    "AiZ4HWBlLow": {
+      "title": "Copy any software (free), clone viral videos, and more",
+      "published": "2026-10-15T20:15:35+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-16T12:31:14.300346+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/AiZ4HWBlLow.md",
+      "auto_repos": []
     }
   }
 }

@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-11.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
 
-**Totals**: 19 INCLUDE · 89 TRIAL · 196 SKIP · 0 pending eval
+**Totals**: 21 INCLUDE · 90 TRIAL · 196 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -10,6 +10,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-11.
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **[EfficientStreet/hindsight](https://github.com/EfficientStreet/hindsight)** — Self-improvement skill for AI coding assistants: reviews a session end-to-end and saves only the durable process lessons as persistent memor
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
+- **morluto/rea** — Functionality: MCP/CLI toolchain that lets coding agents reverse-engineer existing software products down to native binaries, then generate 
+  - Report: `reports/AiZ4HWBlLow.md` · Video: https://youtu.be/AiZ4HWBlLow · *Copy any software (free), clone viral videos, and more*
 - **[debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)** — Functionality: Local, open-source ElevenLabs alternative — voice cloning from a short clip, voice design by description, video dubbing, dict
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
@@ -30,6 +32,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-11.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
+- **[anthropics/financial-services](https://github.com/anthropics/financial-services)** — 
+  - Report: `reports/grh6GjYLyyI.md` · Video: https://youtu.be/grh6GjYLyyI · *Financial Services — Anthropic Built 10 AI Finance Agents That Do the Grunt Work*
 - **affaan-m/ECC** — Functionality: Agent-harness collection covering skills, memory, security, and research-first development.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **[elvisun/newsjack](https://github.com/elvisun/newsjack)** — Functionality: Open-source agent skills (SKILL.md packs plus a Go CLI) that turn an AI agent into a full PR team: news monitoring for pitcha
@@ -75,6 +79,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-11.
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **[Kayforkind/reimagine-it](https://github.com/Kayforkind/reimagine-it)** — Content-derived design CLI: HTML in, standalone HTML out, building the design system from the source's own nouns, dates, numbers, and colors
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
+- **hypit-ai/hypit** — Functionality: AI-agent pipeline for cloning viral short-form videos end-to-end (face/voice/B-roll swap + variant generation) so one viral f
+  - Report: `reports/AiZ4HWBlLow.md` · Video: https://youtu.be/AiZ4HWBlLow · *Copy any software (free), clone viral videos, and more*
 - **affaan-m/ECC** — Functionality: ECC is a large collection of agent skills, workflows, and operating practices for turning an idea into a researched, tested, 
   - Report: `reports/BcNAQynKUk4.md` · Video: https://youtu.be/BcNAQynKUk4 · *Top repo explained: builds product + lands customers*
 - **debpalash/VoiceStudio** — Functionality: A local voice-generation and voice-cloning application with dubbing, dictation, transcription, and audiobook workflows. It is
@@ -424,3 +430,26 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-11.
 - [zeldaret/botw](https://github.com/zeldaret/botw) — `reports/zP43y0wJzhg.md`
 - [MhLiao/DB](https://github.com/MhLiao/DB) — `reports/zP43y0wJzhg.md`
 - [Tikam02/DevOps-Guide](https://github.com/Tikam02/DevOps-Guide) — `reports/zVk7DH9EFhE.md`
+
+## Pending eval
+
+- `reports/-1qUSNwKHis.md` — I gave 10 AI agents real jobs. Here's what they did (0 unevaled)
+- `reports/7rVTo_sy4Po.md` — Replace ElevenLabs, Jira, Slack & Granola for Your AI Agents (Free on GitHub) (0 unevaled)
+- `reports/98GHk_nqdPg.md` — freellmapi - GitHub Trending Today (0 unevaled)
+- `reports/BNHeFv31HNA.md` — GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171 (0 unevaled)
+- `reports/DD3ae8CXFZI.md` — wordcraft - GitHub Trending Today (0 unevaled)
+- `reports/EUavfcfHtu4.md` — Your AI Website Looks Like Slop. Here's the Free Fix. (0 unevaled)
+- `reports/IwPSH-hyNJ4.md` — onionshare - GitHub Trending Today (0 unevaled)
+- `reports/LgoY2L80xxY.md` — dsh-our-free-model - GitHub Trending Today (0 unevaled)
+- `reports/NurkrP-touo.md` — fail2ban - GitHub Trending Today (0 unevaled)
+- `reports/PSWm7roiKic.md` — GitHub Trending Today - YuE, nvidia-docker, television, openvla & More | #170 (0 unevaled)
+- `reports/QHgIY9KQJCk.md` — YuE - GitHub Trending Today (0 unevaled)
+- `reports/REBGnMvrbA4.md` — cockpit-tools - GitHub Trending Today (0 unevaled)
+- `reports/T6gMdMy2AbA.md` — claude-seo - GitHub Trending Today (0 unevaled)
+- `reports/WSbfU-vuPIw.md` — nvidia-docker - GitHub Trending Today (0 unevaled)
+- `reports/X1Y3A4zvKy0.md` — automaton - GitHub Trending Today (0 unevaled)
+- `reports/Zxh3z2j47qQ.md` — android-reverse-engineering-skill - GitHub Trending Today (0 unevaled)
+- `reports/_LL4uWbZ5x0.md` — codex-plugin-cc - GitHub Trending Today (0 unevaled)
+- `reports/dlS6gk830mI.md` — anti-adblock-killer - GitHub Trending Today (0 unevaled)
+- `reports/rXiSq2Te5H8.md` — diagram-design - GitHub Trending Today (0 unevaled)
+- `reports/x9nyYMJB5RM.md` — RealChar - GitHub Trending Today (0 unevaled)
