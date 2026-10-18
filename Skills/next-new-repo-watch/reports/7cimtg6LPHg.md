@@ -11,7 +11,7 @@ This GitHub repo collects dozens of free AI model tiers so you can switch betwee
 Link to the Resource Vault: https://thenextnewthing.ai/Resources
 (There is also a clickable link in my bio)
 
-Link to the full video: https://youtu.be/TWCSvvTfJNU 
+Link to the full video: https://youtu.be/TWCSvvTfJNU
 
 🔗 GitHub: https://github.com/tashfeenahmed/freellmapi
 🔗 Website: https://freellmapi.co/
@@ -28,19 +28,10 @@ This going to be so hot with our audience. It's a stack of 34 free AI tiers that
 
 ## Agent eval
 
-Shorts companion to the full episode evaluated in `TWCSvvTfJNU.md` (same repo: `tashfeenahmed/freellmapi`).
-
 ### tashfeenahmed/freellmapi
-Open-source LLM router that aggregates ~34 free provider tiers (635 free model endpoints, 7.4B tokens/month claimed) behind a single OpenAI-compatible `/v1` endpoint with smart routing, automatic failover, and encrypted keys.
-- **Signals**: 24,491 stars - TypeScript - MIT - pushed 2026-09-06 - not archived. Caveat from the video itself: free tiers get abused and withdrawn, so endpoints churn; personal-experimentation use only.
-- **Recommendation: TRIAL** - could back cheap Zo automations (email digests, repo-watch runs) when BYOK quota runs dry, but ToS-gray free-tier rotation means production work should stay on paid/keyed endpoints. Self-host in the sandbox first; do not put Zo secrets in it.
+- Functionality: 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.
+- Signals: 24491★ · TypeScript · pushed 2026-09-06 · license MIT.
+- Recommendation: TRIAL — run one offline or sandbox inference task and measure output quality, hardware needs, and data handling before integration; budget about 1 hour.
+- Repository: https://github.com/tashfeenahmed/freellmapi
 
-## Eval
-
-Products named in transcript/description: freellmapi (the showcased repo, also at freellmapi.co). "Deep Seek", "Kimi", and OpenAI are upstream providers it aggregates, not separate presented products; the "Resource Vault" link is the channel's own page (N/A-repo).
-
-### tashfeenahmed/freellmapi
-- **tashfeenahmed/freellmapi** — https://github.com/tashfeenahmed/freellmapi
-- **Functionality:** Self-hosted LLM router that aggregates 34 free provider tiers (635 free model endpoints, ~7.4B tokens/month claimed) behind one OpenAI-compatible /v1 endpoint with smart routing, automatic failover, and encrypted key storage. Explicitly labeled "personal experimentation only."
-- **Fit:** TypeScript/Bun-friendly and OpenAI-compatible, but Don already has it cloned at /home/workspace/freellmapi, and its .env files were the root cause of the 2026-09-06 key-leak incident (keys disabled, rotation required). Free-tier endpoints churn as providers withdraw them, so it is unsuitable for Zo automations that must run unattended.
-- **Verdict:** SKIP — already in the workspace and already burned him once (key leak via its .env handling); ToS-gray free-tier rotation duplicates his existing BazaarLink/OpenRouter path and adds churn risk to scheduled automations.
+Source note: Transcript was unavailable from this host. Repository identities and summaries are drawn from the available video description and GitHub metadata.

@@ -16,7 +16,7 @@ Ever feel like your SSD is full but you have no idea what's taking up all the sp
 
 ## Transcript
 
-[transcript unavailable: 
+[transcript unavailable:
 Could not retrieve a transcript for the video https://www.youtube.com/watch?v=tfhN43qOD5I! This is most likely caused by:
 
 YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
@@ -34,7 +34,6 @@ If you are sure that the described cause is not responsible for this error and t
 - **Byron/dua-cli** — 6340★ · Rust · pushed 2026-10-05 · license MIT
   - View disk space usage and delete unwanted data, fast.
   - https://github.com/Byron/dua-cli
-
 ## Agent eval
 
 **Evidence note:** YouTube transcript requests were blocked from this cloud IP. This evaluation uses each video description plus current GitHub metadata, README, and top-level structure; it does not claim transcript-derived facts. The transcript-error link to `jdepoix/youtube-transcript-api` was excluded as a false positive.

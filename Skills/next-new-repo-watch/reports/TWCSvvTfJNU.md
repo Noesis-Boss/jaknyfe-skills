@@ -82,118 +82,65 @@ You're about to get loads of Anthropic approved Claude plugins. Do you have an o
   - https://github.com/securo-finance/securo
 
 ## Agent eval
-### **anthropics/claude-plugins-community**
-- Anthropic's community plugin marketplace for Claude Code/Cowork: 2,000+ security-scanned plugins, structured so AI agents can search it instead of humans scrolling a web directory.
-- Signals: 3,501 stars / Python / Apache-2.0 / pushed 2026-08-25 / not archived.
-- **Recommendation: TRIAL** — reference data source for finding vetted Claude Code plugins/skills; nothing to install, but a useful curated plugin catalog.
 
-### **freestylefly/awesome-gpt-image-2**
-- "Prompt as Code" prompt-engineering library for GPT-Image 2: 530+ reverse-engineered cases and 20+ industrial templates distilled into reusable skills.
-- Signals: 28,244 stars / JavaScript (mostly prompt templates) / MIT / pushed 2026-09-03 / not archived.
-- **Recommendation: TRIAL** — prompt templates plug directly into the built-in OpenAI image tooling (book covers, deck art); templates, not software.
+### anthropics/claude-plugins-community
+- Functionality: Community plugin marketplace for Claude Cowork and Claude Code. Read-only mirror — submit plugins at clau.de/plugin-directory-submission.
+- Signals: 3501★ · Python · pushed 2026-08-25 · license Apache-2.0.
+- Recommendation: SKIP — no current Zo project needs community plugin marketplace for claude cowork and claude code. read-only mirror — submit plugins at clau.de/plugin-directory-submission; adding this stack would have no defined workspace use.
+- Repository: https://github.com/anthropics/claude-plugins-community
 
-### **omacom/omarchy**
-- DHH's opinionated Arch-based Linux desktop (Hyprland) that revives older hardware with a Mac-like experience.
-- Signals: 38,451 stars / Shell / MIT / pushed 2026-09-06 / not archived.
-- **Recommendation: SKIP** — this Zo sandbox is a headless Debian container; no desktop or spare hardware to install it on.
+### freestylefly/awesome-gpt-image-2
+- Functionality: Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中.
+- Signals: 28240★ · JavaScript · pushed 2026-09-03 · license MIT.
+- Recommendation: SKIP — no current Zo project needs prompt as code | gpt-image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出skills，持续更新中; adding this stack would have no defined workspace use.
+- Repository: https://github.com/freestylefly/awesome-gpt-image-2
 
-### **AprilNEA/OpenLogi**
-- Local-first Rust replacement for Logitech Options+: remaps buttons, DPI, SmartShift over HID++ with no account or telemetry.
-- Signals: 19,617 stars / Rust / Apache-2.0 / pushed 2026-09-03 / not archived.
-- **Recommendation: SKIP** — hardware-only utility (HID++ device control); no Logitech devices attached to this environment.
+### omacom/omarchy
+- Functionality: Beautiful, Modern & Opinionated Linux.
+- Signals: 38446★ · Shell · pushed 2026-09-06 · license MIT.
+- Recommendation: SKIP — no current Zo project needs beautiful, modern & opinionated linux; adding this stack would have no defined workspace use.
+- Repository: https://github.com/omacom/omarchy
 
-### **openai/codex**
-- OpenAI's open-source terminal coding agent: customizable models, prompts, and interfaces.
-- Signals: 121,877 stars / Rust / Apache-2.0 / pushed 2026-09-06 / not archived.
-- **Recommendation: SKIP** — overlaps installed tooling: caveman-code CLI already provides a provider-agnostic terminal coding agent here.
+### AprilNEA/OpenLogi
+- Functionality: ⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry.
+- Signals: 19611★ · Rust · pushed 2026-09-03 · license Apache-2.0.
+- Recommendation: SKIP — no current Zo project needs ⚡️a native, local-first alternative to logitech options+, written in rust 🦀 — remap buttons, dpi, and smartshift over hid++. no account, no telemetry; adding this stack would have no defined workspace use.
+- Repository: https://github.com/AprilNEA/OpenLogi
 
-### **apache/maka**
-- Apache-incubating high-performance agent workspace that keeps a complete audit record of everything an agent did.
-- Signals: 4,806 stars / TypeScript / Apache-2.0 / pushed 2026-09-06 / not archived.
-- **Recommendation: TRIAL** — auditable agent-workspace architecture is useful reference for Syndicate-style orchestration; young/incubating, don't depend on it yet.
+### openai/codex
+- Functionality: Lightweight coding agent that runs in your terminal.
+- Signals: 121872★ · Rust · pushed 2026-09-06 · license Apache-2.0.
+- Recommendation: INCLUDE — Codex is already part of this environment; no separate install is needed.
+- Repository: https://github.com/openai/codex
 
-### **modular/modular**
-- Modular platform shipping MAX + Mojo, a Python-family language aiming for C/C++-level performance for AI workloads.
-- Signals: 29,570 stars / Mojo / custom license (NOASSERTION) / pushed 2026-09-03 / not archived.
-- **Recommendation: SKIP** — new language platform doesn't fit the Python + Bun/TS workflow; nonstandard license complicates vendoring.
+### apache/maka
+- Functionality: Apache Maka (Incubating) is a high-performance agent workspace that keeps a complete record of everything it did.
+- Signals: 4806★ · TypeScript · pushed 2026-09-06 · license Apache-2.0.
+- Recommendation: SKIP — no current Zo project needs apache maka (incubating) is a high-performance agent workspace that keeps a complete record of everything it did; adding this stack would have no defined workspace use.
+- Repository: https://github.com/apache/maka
 
-### **harry0703/MoneyPrinterTurbo**
-- Python app that turns a topic/keyword into an HD short video end-to-end: LLM script, TTS voiceover, stock footage, subtitles, ffmpeg assembly.
-- Signals: 120,957 stars / Python / MIT / pushed 2026-09-05 / not archived.
-- **Recommendation: TRIAL** — direct fit for the noesis_content faceless-video pipeline (Python and ffmpeg already present); test on one episode before adopting.
+### modular/modular
+- Functionality: The Modular Platform (includes MAX & Mojo).
+- Signals: 29569★ · Mojo · pushed 2026-09-03 · license NOASSERTION.
+- Recommendation: SKIP — no current Zo project needs the modular platform (includes max & mojo); adding this stack would have no defined workspace use.
+- Repository: https://github.com/modular/modular
 
-### **tashfeenahmed/freellmapi**
-- Self-hosted gateway aggregating 34 free LLM providers / 635 free endpoints behind one OpenAI-compatible /v1 endpoint with smart routing and failover.
-- Signals: 24,500 stars / TypeScript / MIT / pushed 2026-09-06 / not archived; "personal experimentation only" per README.
-- **Recommendation: TRIAL** — TS/Bun-friendly; free-tier routing could back cheap automations, but experimentation-only license rules out production use.
+### harry0703/MoneyPrinterTurbo
+- Functionality: 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.
+- Signals: 120947★ · Python · pushed 2026-09-05 · license MIT.
+- Recommendation: TRIAL — render or generate one short sample through the existing video-use/HyperFrames workflow; check output quality, runtime, licensing, and hardware needs; budget about 1 hour.
+- Repository: https://github.com/harry0703/MoneyPrinterTurbo
 
-### **securo-finance/securo**
-- Self-hosted, privacy-first personal finance manager that connects thousands of banks to track net worth locally.
-- Signals: 3,095 stars / Python / AGPL-3.0 / pushed 2026-09-05 / not archived.
-- **Recommendation: SKIP** — personal net-worth app with no active project here (trading bot already covers market needs); AGPL hosting burden.
+### tashfeenahmed/freellmapi
+- Functionality: 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.
+- Signals: 24491★ · TypeScript · pushed 2026-09-06 · license MIT.
+- Recommendation: TRIAL — run one offline or sandbox inference task and measure output quality, hardware needs, and data handling before integration; budget about 1 hour.
+- Repository: https://github.com/tashfeenahmed/freellmapi
 
-Note: The 05:51 segment (Zapier MCP & SDK) is sponsor content — no evaluable open-source repo.
+### securo-finance/securo
+- Functionality: Open-source personal finance manager. Self-hosted, privacy-first.
+- Signals: 3095★ · Python · pushed 2026-09-05 · license AGPL-3.0.
+- Recommendation: SKIP — no current Zo project needs open-source personal finance manager. self-hosted, privacy-first; adding this stack would have no defined workspace use.
+- Repository: https://github.com/securo-finance/securo
 
-## Eval
-
-*Evaluated 2026-09-07 against Don's environment (Bun/TypeScript stack, Python trading bot, Zo Computer automations/skills, self-hosted services). All 10 listed repos verified live via GitHub API. Two conversationally-presented products from the transcript included: Zapier MCP & SDK (sponsor segment) and SimpleFIN (shown as the bank-data bridge in the Securo segment). Passing comparisons (CapCut, QuickBooks, Personal Capital, Hermes) are not presented products and were not evaluated. Note: the video description lists basecamp/omarchy, but the repo has transferred to the omacom org — basecamp/omarchy redirects to omacom/omarchy.*
-
-### 1. anthropics/claude-plugins-community — https://github.com/anthropics/claude-plugins-community
-- **Functionality:** Anthropic's community plugin marketplace for Claude Cowork and Claude Code — a read-only mirror directory of community-submitted plugins (3,535★, Python, Apache-2.0, active).
-- **Fit:** Directly adjacent to Don's Zo skills workflow; worth mining for plugin/skill patterns and ready-made Claude Code tooling.
-- **Verdict:** TRIAL — browse for skills/plugin patterns to port into Zo skills; it's a directory, not a runtime dependency.
-
-### 2. freestylefly/awesome-gpt-image-2 — https://github.com/freestylefly/awesome-gpt-image-2
-- **Functionality:** Prompt-engineering engine and template library for GPT-Image-2 — 530+ reverse-engineered cases, 20+ industrial-grade templates, and distilled Claude-style Skills (28,352★, MIT, active).
-- **Fit:** Don generates covers, decks, and show art with image tools; prompt templates transfer directly. Heavily Chinese-language docs are a friction point.
-- **Verdict:** TRIAL — reference library for image-prompt quality; nothing to deploy.
-
-### 3. omacom/omarchy — https://github.com/omacom/omarchy
-- **Functionality:** DHH's opinionated Arch Linux + Hyprland desktop setup — batteries-included modern Linux environment (38,654★, Shell, MIT, pushed daily).
-- **Fit:** Don's work runs on Debian Zo servers and macOS; a full Arch desktop config has no place in the Bun/TS/Python/Zo stack.
-- **Verdict:** SKIP — beautiful but a personal-workstation distro config; only relevant if he stands up an Arch daily driver.
-
-### 4. AprilNEA/OpenLogi — https://github.com/AprilNEA/OpenLogi
-- **Functionality:** Native, local-first replacement for Logitech Options+ in Rust — remaps buttons, DPI, and SmartShift over HID++ with no account and no telemetry (19,761★, Apache-2.0, active).
-- **Fit:** Nothing for the server stack, but a direct fix for the exact pain Don voiced in the video (bloated, login-walled vendor apps on his Mac + Logitech gear).
-- **Verdict:** TRIAL — install on the Mac if he runs Logitech hardware; server-side value zero.
-
-### 5. openai/codex — https://github.com/openai/codex
-- **Functionality:** OpenAI's open-source terminal coding agent CLI — lightweight, Apache-2.0, forkable and rebrandable, 122k★, very active.
-- **Fit:** Don already runs caveman-code (provider-agnostic terminal coding agent skill) and Zo as his primary agent surfaces; this duplicates that role.
-- **Verdict:** SKIP — functionally covered by caveman-code + Zo; only worth a second look if he wants an OpenAI-native CLI for tinkering.
-
-### 6. apache/maka — https://github.com/apache/maka
-- **Functionality:** Apache Maka (incubating) — a high-performance agent workspace that keeps a complete append-only audit log of every model call, tool use, and permission an agent takes (4,844★, TypeScript, Apache-2.0).
-- **Fit:** TypeScript matches the stack; the append-only agent-audit pattern is directly relevant to Syndicate's multi-tenant orchestration, but the product itself is another desktop agent app in beta.
-- **Verdict:** TRIAL — watchlist: steal the audit-log design pattern for Syndicate; don't adopt the app while it's incubating.
-
-### 7. modular/modular — https://github.com/modular/modular
-- **Functionality:** The Modular platform — Mojo (Python-superset language with C/C++ performance) plus the MAX AI inference stack (29,581★, custom license).
-- **Fit:** Nothing Don runs (bots, skills, services) needs a new systems language or GPU inference infra; it targets ML performance engineering he doesn't do.
-- **Verdict:** SKIP — interesting platform bet, no surface area in his stack.
-
-### 8. harry0703/MoneyPrinterTurbo — https://github.com/harry0703/MoneyPrinterTurbo
-- **Functionality:** One-click AI short-video generator — topic in, finished HD video out (script, stock/B-roll matching, TTS, subtitles) via an automated workflow (121,198★, Python, MIT, active).
-- **Fit:** Python and self-hosted, but Don's noesis_content pipeline is hand-built for long-form documentary style; this targets disposable auto-generated shorts. Could still feed a short-form/clip pipeline.
-- **Verdict:** TRIAL — only if he wants automated short-form output; his current documentary pipeline already outclasses it for his content.
-
-### 9. tashfeenahmed/freellmapi — https://github.com/tashfeenahmed/freellmapi
-- **Functionality:** Aggregates 34 free LLM tiers (635 model endpoints) behind a single OpenAI-compatible /v1 endpoint with smart routing and automatic failover (24,641★, TypeScript, MIT, active).
-- **Fit:** Don already deployed this exact repo locally — and its .env was the root cause of the 2026-09-06 key-leak incident (Anthropic/OpenAI/OpenRouter keys committed to jaknyfe-skills history, since remediated). Duplicate tooling plus a documented security history with it.
-- **Verdict:** SKIP — already self-hosted once and it burned him (key-leak root cause); free-tier ToS-gray rotation adds ongoing fragility.
-
-### 10. securo-finance/securo — https://github.com/securo-finance/securo
-- **Functionality:** Open-source, self-hosted, privacy-first personal finance manager with 2,000+ bank connections via SimpleFIN — net worth tracking with AI Q&A over your own data (3,124★, Python, AGPL-3.0, active).
-- **Fit:** Python + self-hosted slots directly onto Zo as a managed service; SimpleFIN bridge is $15/yr. Relevant given Don's active debt-paydown tracking; replaces the upsell-heavy Personal Capital/QuickBooks hole.
-- **Verdict:** TRIAL — strongest personal-value candidate of the batch; deploy as a Zo service when he wants live net-worth visibility.
-
-### 11. zapier/zapier-mcp — https://github.com/zapier/zapier-mcp
-- **Functionality:** Sponsor product. Official plugin distribution for the hosted Zapier MCP server — connect your AI client to 8,000+ apps; SDK side is zapier/zapier-platform (551★, JavaScript).
-- **Fit:** Redundant: Zo already ships the Pipedream catalog (1,000+ OAuth apps) plus curated integrations covering the same automation surface. Core service is hosted/closed.
-- **Verdict:** SKIP — Zo's Pipedream integrations already do this without a new vendor relationship.
-
-### 12. SimpleFIN — N/A-repo
-- **Functionality:** Conversationally presented in the Securo segment as the bank-data bridge: paid aggregation service ($1.50/mo or $15/yr) feeding 2,000+ banks into self-hosted finance tools. Closed product; only a docs repo exists (simplefin/simplefin.github.com).
-- **Fit:** Not a repo to adopt — it's the paid dependency Securo would use.
-- **Verdict:** N/A-repo — closed service, evaluated only as Securo's data source; the $15/yr price is the cheapest credible bank-aggregation option for a self-hosted setup.
+Source note: Transcript was unavailable from this host. Repository identities and summaries are drawn from the available video description and GitHub metadata.

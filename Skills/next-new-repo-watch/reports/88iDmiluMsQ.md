@@ -24,9 +24,9 @@ Here's the agent that everyone on X has been talking about. Look at this website
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
+<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
+     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
+     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
 ## Eval
 

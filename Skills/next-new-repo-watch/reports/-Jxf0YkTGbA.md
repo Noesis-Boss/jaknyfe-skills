@@ -40,7 +40,7 @@ Timestamped Project List:
 
 ## Transcript
 
-[transcript unavailable: 
+[transcript unavailable:
 Could not retrieve a transcript for the video https://www.youtube.com/watch?v=-Jxf0YkTGbA! This is most likely caused by:
 
 YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
@@ -65,7 +65,7 @@ If you are sure that the described cause is not responsible for this error and t
   - 小红书爬虫数据采集，小红书逆向，私信，直播，小红书全域运营解决方案
   - https://github.com/cv-cat/Spider_XHS
 - **wbh604/UZI-Skill** — 7149★ · Python · pushed 2026-09-05 · license MIT
-  - 冰冷的钱就这样流进我温暖的口袋-游资（UZI）Skills — 让我们欢迎，股海贼王！66位投资大佬帮你看盘 · 22维数据 × 180条量化规则 × 17种机构分析方法 · A股/港股/美股 
+  - 冰冷的钱就这样流进我温暖的口袋-游资（UZI）Skills — 让我们欢迎，股海贼王！66位投资大佬帮你看盘 · 22维数据 × 180条量化规则 × 17种机构分析方法 · A股/港股/美股
   - https://github.com/wbh604/UZI-Skill
 - **authzed/spicedb** — 7136★ · Go · pushed 2026-10-07 · license Apache-2.0
   - Open Source, Google Zanzibar-inspired database for scalably storing and querying fine-grained authorization data
@@ -130,7 +130,6 @@ If you are sure that the described cause is not responsible for this error and t
 - **storytold/pdfcraft** — 7099★ · Rust · pushed 2026-10-10 · license Apache-2.0
   - An open-source, clean-room reimplementation of Adobe Acrobat built in pure Rust
   - https://github.com/storytold/pdfcraft
-
 ## Agent eval
 
 **Evidence note:** YouTube transcript requests were blocked from this cloud IP. This evaluation uses each video description plus current GitHub metadata, README, and top-level structure; it does not claim transcript-derived facts. The transcript-error link to `jdepoix/youtube-transcript-api` was excluded as a false positive.

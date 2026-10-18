@@ -8,12 +8,12 @@
 
 Graphify turns any codebase — including its docs, SQL schemas, configs, and PDFs — into a queryable knowledge graph. Instead of an agent like Claude Code, Cursor, or Codex reading through source files from scratch every time to figure out what relates to what, Graphify analyzes the project up front and builds a structure the agent can navigate directly. It uses local deterministic AST parsing with every edge explained — no vector store required. Big time-saver for anyone working on large or complex codebases.
 
-#Graphify #ClaudeCode #Cursor #OpenSource #devtools 
+#Graphify #ClaudeCode #Cursor #OpenSource #devtools
 
 Link to the Resource Vault: https://thenextnewthing.ai/Resources
 (There is also a clickable link in my bio)
 
-Link to the full video: https://www.youtube.com/watch?v=tX9ANddpAqc 
+Link to the full video: https://www.youtube.com/watch?v=tX9ANddpAqc
 
 🔗 GitHub: https://github.com/Graphify-Labs/graphify
 

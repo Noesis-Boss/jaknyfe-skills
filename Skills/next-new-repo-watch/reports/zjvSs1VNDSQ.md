@@ -6,14 +6,14 @@
 
 ## Description
 
-Immich is a self-hosted photo and video backup app you run on your own server — giving you an Apple Photos or Google Photos-style experience without a big tech company hosting your memories. Install the app on Android or iPhone and sync your photos and videos straight to your own hardware instead. It's mature, works really well, and is a great pick if you're already moving away from services like Dropbox for your files. 
+Immich is a self-hosted photo and video backup app you run on your own server — giving you an Apple Photos or Google Photos-style experience without a big tech company hosting your memories. Install the app on Android or iPhone and sync your photos and videos straight to your own hardware instead. It's mature, works really well, and is a great pick if you're already moving away from services like Dropbox for your files.
 
-#Immich #SelfHosted #Privacy #OpenSource #DevTools 
+#Immich #SelfHosted #Privacy #OpenSource #DevTools
 
 Link to the Resource Vault: https://thenextnewthing.ai/Resources
 (There is also a clickable link in my bio)
 
-Link to the full video: https://www.youtube.com/watch?v=tX9ANddpAqc 
+Link to the full video: https://www.youtube.com/watch?v=tX9ANddpAqc
 
 🔗 GitHub: https://github.com/immich-app/immich
 🔗 Website: https://immich.app/

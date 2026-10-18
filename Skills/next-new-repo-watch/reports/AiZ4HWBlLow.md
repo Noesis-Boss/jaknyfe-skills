@@ -49,7 +49,7 @@ Media/Sponsorship Inquiries: https://thenextnewthing.ai/l/sponsor
 
 ## Transcript
 
-[transcript unavailable: 
+[transcript unavailable:
 Could not retrieve a transcript for the video https://www.youtube.com/watch?v=AiZ4HWBlLow! This is most likely caused by:
 
 YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
@@ -65,7 +65,6 @@ If you are sure that the described cause is not responsible for this error and t
 ## Auto-extracted repos
 
 (none auto-extracted — read the transcript above and identify repo names, then search GitHub)
-
 ## Agent eval
 
 ### morluto/rea — Reverse Engineer Anything (REA)

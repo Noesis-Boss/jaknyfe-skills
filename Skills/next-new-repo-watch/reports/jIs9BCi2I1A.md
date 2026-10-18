@@ -16,7 +16,7 @@ Tired of stitching together Ollama, Open WebUI, and ComfyUI by hand just to run 
 
 ## Transcript
 
-[transcript unavailable: 
+[transcript unavailable:
 Could not retrieve a transcript for the video https://www.youtube.com/watch?v=jIs9BCi2I1A! This is most likely caused by:
 
 YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
@@ -34,7 +34,6 @@ If you are sure that the described cause is not responsible for this error and t
 - **Osmantic/ODS** — 7200★ · Python · pushed 2026-10-10 · license Apache-2.0
   - ODS V3 Pre-Release: Public testing and refinement ahead of the official V3 launch. Turn your PC, Mac, or Linux box into a private AI server.
   - https://github.com/Osmantic/ODS
-
 ## Agent eval
 
 **Evidence note:** YouTube transcript requests were blocked from this cloud IP. This evaluation uses each video description plus current GitHub metadata, README, and top-level structure; it does not claim transcript-derived facts. The transcript-error link to `jdepoix/youtube-transcript-api` was excluded as a false positive.

@@ -20,7 +20,7 @@ NewsJack is an open-source set of skills that turns your AI agent into a full PR
 
 ## Transcript
 
-[transcript unavailable: 
+[transcript unavailable:
 Could not retrieve a transcript for the video https://www.youtube.com/watch?v=vsHEX2YVNHM! This is most likely caused by:
 
 YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
@@ -35,13 +35,10 @@ If you are sure that the described cause is not responsible for this error and t
 
 ## Auto-extracted repos
 
-- **jdepoix/youtube-transcript-api** — 8434★ · Python · pushed 2026-09-10 · license MIT
   - This is a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles and it does not require an API key nor a headless browser, like other selenium based solutions do!
-  - https://github.com/jdepoix/youtube-transcript-api
 - **elvisun/newsjack** — 1528★ · Go · pushed 2026-10-07 · license MIT
   - The open-source skills that turn your agent into a full PR team.
   - https://github.com/elvisun/newsjack
-
 ## Eval
 
 ### elvisun/newsjack — https://github.com/elvisun/newsjack

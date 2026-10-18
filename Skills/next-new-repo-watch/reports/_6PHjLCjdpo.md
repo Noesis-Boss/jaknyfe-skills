@@ -20,7 +20,7 @@ Link to the full video: https://www.youtube.com/watch?v=1fHsIveXRa8
 
 ## Transcript
 
-[transcript unavailable: 
+[transcript unavailable:
 Could not retrieve a transcript for the video https://www.youtube.com/watch?v=_6PHjLCjdpo! This is most likely caused by:
 
 YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
@@ -35,18 +35,15 @@ If you are sure that the described cause is not responsible for this error and t
 
 ## Auto-extracted repos
 
-- **jdepoix/youtube-transcript-api** — 8411★ · Python · pushed 2026-09-10 · license MIT
   - This is a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles and it does not require an API key nor a headless browser, like other selenium based solutions do!
-  - https://github.com/jdepoix/youtube-transcript-api
 - **max-sixty/worktrunk** — 8645★ · Rust · pushed 2026-10-02 · license NOASSERTION
   - Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows
   - https://github.com/max-sixty/worktrunk
-
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
+<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
+     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
+     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
 
 ## Eval

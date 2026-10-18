@@ -111,9 +111,9 @@ If you act like you have ADHD, your AI will be a lot smarter. You'll get a tool 
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
+<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
+     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
+     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
 ## Eval
 

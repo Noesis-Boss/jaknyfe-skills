@@ -48,9 +48,9 @@ Three new agents just came out. Should you try them? What are they good for? We 
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
+<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
+     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
+     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
 
 No GitHub repositories were presented or identified in this video. The featured items are hosted products or services: Instinct, GrokBot, Muse, Zapier MCP, and Hyperagent. GitHub repository searches for those names returned no usable public repository match, so there are no repo-level INCLUDE/TRIAL/SKIP recommendations for this report.

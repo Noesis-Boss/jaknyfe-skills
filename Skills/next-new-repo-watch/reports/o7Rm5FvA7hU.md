@@ -58,9 +58,9 @@ Grockbot is the best and easiest to use agent out there, but I want to see what 
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
+<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
+     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
+     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
 
 No public GitHub repository was presented in this episode. The transcript covers hosted products and workflows: GrokBot, Granola, Zapier, Plaid, Stripe, Facebook Marketplace, Gmail, calendar tools, and 1Password. Warner and the guests discuss implementation patterns, but they do not identify an installable repository or a source URL that can be evaluated as a repository.

@@ -1,16 +1,16 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
 
-**Totals**: 21 INCLUDE · 90 TRIAL · 196 SKIP · 0 pending eval
+**Totals**: 24 INCLUDE · 156 TRIAL · 472 SKIP · 0 pending eval
 
 ## INCLUDE
 
-- **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Agent skill that turns system descriptions into beautiful, verifiable interactive architecture/workflow/sequence diagrams as self-contained 
+- **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Agent skill that turns system descriptions into beautiful, verifiable interactive architecture/workflow/sequence diagrams as self-contained
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **[EfficientStreet/hindsight](https://github.com/EfficientStreet/hindsight)** — Self-improvement skill for AI coding assistants: reviews a session end-to-end and saves only the durable process lessons as persistent memor
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
-- **morluto/rea** — Functionality: MCP/CLI toolchain that lets coding agents reverse-engineer existing software products down to native binaries, then generate 
+- **morluto/rea** — Functionality: MCP/CLI toolchain that lets coding agents reverse-engineer existing software products down to native binaries, then generate
   - Report: `reports/AiZ4HWBlLow.md` · Video: https://youtu.be/AiZ4HWBlLow · *Copy any software (free), clone viral videos, and more*
 - **[debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)** — Functionality: Local, open-source ElevenLabs alternative — voice cloning from a short clip, voice design by description, video dubbing, dict
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
@@ -18,31 +18,37 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
   - Report: `reports/H03k_SfxySQ.md` · Video: https://youtu.be/H03k_SfxySQ · *He Built an AI Tool to Help Families Facing Cancer*
 - **jdepoix/youtube-transcript-api** — Recommendation: INCLUDE
   - Report: `reports/NdeOsuoIGuc.md` · Video: https://youtu.be/NdeOsuoIGuc · *Have Astra do this right now*
+- **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Functionality: Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.
+  - Report: `reports/Q5V4h0LVzQI.md` · Video: https://youtu.be/Q5V4h0LVzQI · *GitHub Trending Today - picasso, immersive-translate, TRELLIS.2 & More | #144*
+- **[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)** — Functionality: Write HTML. Render video. Built for agents.
+  - Report: `reports/Q5V4h0LVzQI.md` · Video: https://youtu.be/Q5V4h0LVzQI · *GitHub Trending Today - picasso, immersive-translate, TRELLIS.2 & More | #144*
 - **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
   - Report: `reports/QZXeiuLBlTk.md` · Video: https://youtu.be/QZXeiuLBlTk · *This Tool Feeds All Your Business Data to One AI Agent*
+- **[openai/codex](https://github.com/openai/codex)** — Functionality: Lightweight coding agent that runs in your terminal.
+  - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
   - Report: `reports/WPUAZm5rnGc.md` · Video: https://youtu.be/WPUAZm5rnGc · *Easy step-by-step setup*
 - **affaan-m/ECC** — Functionality: A large collection of skills and workflows for coding agents, covering planning, TDD, security, research, memory, and review.
   - Report: `reports/XGJtqUPUZSo.md` · Video: https://youtu.be/XGJtqUPUZSo · *ECC — This Skill Pack Teaches Your AI to Code the Right Way*
-- **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent 
+- **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Functionality: An agent skill that turns system descriptions and workflow inputs into explorable architecture, sequence, data-flow, and life
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
-- **vercel-labs/agent-browser** — Rust browser automation CLI for navigating, interacting with, and capturing web pages. It matches the existing browser verification workflow
+- **[vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)** — Functionality: Browser automation CLI for AI agents.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
-- **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
-  - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
-- **[anthropics/financial-services](https://github.com/anthropics/financial-services)** — 
-  - Report: `reports/grh6GjYLyyI.md` · Video: https://youtu.be/grh6GjYLyyI · *Financial Services — Anthropic Built 10 AI Finance Agents That Do the Grunt Work*
 - **affaan-m/ECC** — Functionality: Agent-harness collection covering skills, memory, security, and research-first development.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **[elvisun/newsjack](https://github.com/elvisun/newsjack)** — Functionality: Open-source agent skills (SKILL.md packs plus a Go CLI) that turn an AI agent into a full PR team: news monitoring for pitcha
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
+- **heygen-com/hyperframes** — Functionality: Builds video compositions from HTML and renders them to video for agent-driven production.
+  - Report: `reports/kqn_mSjSWMs.md` · Video: https://youtu.be/kqn_mSjSWMs · *GitHub’s top: Copy any app, create gorgeous videos, 3d print anything & more*
+- **cathrynlavery/diagram-design** — Functionality: Provides a self-contained HTML/SVG system for producing polished technical diagrams across several coding agents.
+  - Report: `reports/kqn_mSjSWMs.md` · Video: https://youtu.be/kqn_mSjSWMs · *GitHub’s top: Copy any app, create gorgeous videos, 3d print anything & more*
 - **[alibaba/open-code-review](https://github.com/alibaba/open-code-review)** — Functionality: A Go code-review tool combining deterministic checks with an LLM-assisted reviewer. It reports line-level findings across com
   - Report: `reports/ktfjaNnxPsQ.md` · Video: https://youtu.be/ktfjaNnxPsQ · *Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
   - Report: `reports/mny7r505ZpU.md` · Video: https://youtu.be/mny7r505ZpU · *He Built an Agent That Calls Customers*
-- **jdepoix/youtube-transcript-api** — Python library for retrieving manually created and automatically generated YouTube captions without an API key or browser automation. It is 
+- **jdepoix/youtube-transcript-api** — Python library for retrieving manually created and automatically generated YouTube captions without an API key or browser automation. It is
   - Report: `reports/pxaMzr7al3I.md` · Video: https://youtu.be/pxaMzr7al3I · *9 things you’ll actually do with Jev*
 - **vercel-labs/agent-browser** — Functionality: Rust CLI for headless browser control, DOM interaction, screenshots, and browser workflows for agents.
   - Report: `reports/qfRMHqh7tNI.md` · Video: https://youtu.be/qfRMHqh7tNI · *This Skill Gives Your AI Agent a Browser*
@@ -55,6 +61,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
   - Report: `reports/-Jxf0YkTGbA.md` · Video: https://youtu.be/-Jxf0YkTGbA · *GitHub Trending Today - crm, artemis, Spider_XHS & More | #168*
 - **[storytold/pdfcraft](https://github.com/storytold/pdfcraft)** — Functionality: Native cross-platform PDF workbench for reading, organizing, combining, splitting, and securing files.
   - Report: `reports/-Jxf0YkTGbA.md` · Video: https://youtu.be/-Jxf0YkTGbA · *GitHub Trending Today - crm, artemis, Spider_XHS & More | #168*
+- **daijro/camoufox** — Functionality: A patched Firefox browser designed to make automated sessions resemble ordinary browser traffic. It could provide a local bro
+  - Report: `reports/0SDz3rjZBC4.md` · Video: https://youtu.be/0SDz3rjZBC4 · *Amazon and others want to block your agents.*
 - **alibaba/open-code-review** — Functionality: Go code-review service combining deterministic checks with an LLM agent, line-level findings, and HTML reports for security a
   - Report: `reports/1fHsIveXRa8.md` · Video: https://youtu.be/1fHsIveXRa8 · *Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.*
 - **affaan-m/ECC** — Functionality: Large collection of agent workflows covering planning, TDD, security, research, memory, and review.
@@ -67,8 +75,58 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
   - Report: `reports/1fHsIveXRa8.md` · Video: https://youtu.be/1fHsIveXRa8 · *Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.*
 - **trainingsites/campus-ai-os** — Functionality: Python folder-based AI staff system with persistent business memory and a chief-of-staff pattern for Claude or Codex.
   - Report: `reports/1fHsIveXRa8.md` · Video: https://youtu.be/1fHsIveXRa8 · *Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.*
-- **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Open-source LLM router that aggregates ~34 free provider tiers (635 free model endpoints, 7.4B tokens/month claimed) behind a single OpenAI-
+- **[flashinfer-ai/flashinfer](https://github.com/flashinfer-ai/flashinfer)** — Functionality: FlashInfer: Kernel Library for LLM Serving.
+  - Report: `reports/21xCNskON2M.md` · Video: https://youtu.be/21xCNskON2M · *GitHub Trending Today - flashinfer, PixiEditor, TypeWords & More | #143*
+- **[qiye45/wechatVideoDownload](https://github.com/qiye45/wechatVideoDownload)** — Functionality: 微信视频号下载工具，支持视频号视频、直播回放、直播、图片下载.
+  - Report: `reports/21xCNskON2M.md` · Video: https://youtu.be/21xCNskON2M · *GitHub Trending Today - flashinfer, PixiEditor, TypeWords & More | #143*
+- **[KouriChat/KouriChat](https://github.com/KouriChat/KouriChat)** — Functionality: 【禁止接入微信、QQ等腾讯系软件】接入第三方平台。基于LLM的更逼真的情感陪伴程序。More realistic emotional companionship program based LLM, meet the characters in yo
+  - Report: `reports/21xCNskON2M.md` · Video: https://youtu.be/21xCNskON2M · *GitHub Trending Today - flashinfer, PixiEditor, TypeWords & More | #143*
+- **[sherlockchou86/VideoPipe](https://github.com/sherlockchou86/VideoPipe)** — Functionality: A cross-platform video structuring (video analysis) framework based on CV models & mLLM.
+  - Report: `reports/21xCNskON2M.md` · Video: https://youtu.be/21xCNskON2M · *GitHub Trending Today - flashinfer, PixiEditor, TypeWords & More | #143*
+- **[agegr/pi-web](https://github.com/agegr/pi-web)** — Functionality: Web UI for the pi coding agent.
+  - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
+- **[OpenShot/openshot-qt](https://github.com/OpenShot/openshot-qt)** — Functionality: OpenShot Video Editor is an award-winning free and open-source video editor for Linux, Mac, and Windows, and is dedicated to
+  - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
+- **[mortdeus/solana-copy-sniper-mev-trading-bot](https://github.com/mortdeus/solana-copy-sniper-mev-trading-bot)** — Functionality: 🆓Free High speed solana mev arbitrage Sniper Copy Trading Bot, gRPC shred stream Pumpfun Bundler, Pumpfun Contract, Yellowsto
+  - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
+- **[BuilderIO/skills](https://github.com/BuilderIO/skills)** — Functionality: Skills for agents.
+  - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
+- **[NVIDIA/Model-Optimizer](https://github.com/NVIDIA/Model-Optimizer)** — Functionality: A unified library of SOTA model optimization techniques like quantization, distillation, pruning, neural architecture search,
+  - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
+- **[KhazP/vibe-coding-prompt-template](https://github.com/KhazP/vibe-coding-prompt-template)** — Functionality: Templates and workflow for generating PRDs, Tech Designs, and MVP and more using LLMs for AI IDEs.
+  - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
+- **[samanhappy/mcphub](https://github.com/samanhappy/mcphub)** — Functionality: Self-hosted MCP gateway and control plane for connecting, controlling, and operating MCP servers.
+  - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
+- **[jnMetaCode/agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator)** — Functionality: 🚀 One sentence → your one-person company of AI experts → complete deliverable in minutes. 276 CN + 184 EN + 5 more languages
+  - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
+- **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Functionality: 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom O
   - Report: `reports/7cimtg6LPHg.md` · Video: https://youtu.be/7cimtg6LPHg · *34 Free AI Models You Can Rotate Between*
+- **[altic-dev/FluidVoice](https://github.com/altic-dev/FluidVoice)** — Functionality: Fastest and only macOS Dictation app with on-device STT and custom trained AI enhancement model. Windows pre-build available!
+  - Report: `reports/7rVTo_sy4Po.md` · Video: https://youtu.be/7rVTo_sy4Po · *Replace ElevenLabs, Jira, Slack & Granola for Your AI Agents (Free on GitHub)*
+- **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Functionality: 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom O
+  - Report: `reports/7rVTo_sy4Po.md` · Video: https://youtu.be/7rVTo_sy4Po · *Replace ElevenLabs, Jira, Slack & Granola for Your AI Agents (Free on GitHub)*
+- **[debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)** — Functionality: VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, t
+  - Report: `reports/7rVTo_sy4Po.md` · Video: https://youtu.be/7rVTo_sy4Po · *Replace ElevenLabs, Jira, Slack & Granola for Your AI Agents (Free on GitHub)*
+- **[D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling)** — Functionality: 🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join
+  - Report: `reports/7rVTo_sy4Po.md` · Video: https://youtu.be/7rVTo_sy4Po · *Replace ElevenLabs, Jira, Slack & Granola for Your AI Agents (Free on GitHub)*
+- **[k2-fsa/OmniVoice](https://github.com/k2-fsa/OmniVoice)** — Functionality: High-Quality Voice Cloning TTS for 600+ Languages.
+  - Report: `reports/7u3JT66vZh4.md` · Video: https://youtu.be/7u3JT66vZh4 · *GitHub Trending Today - OmniVoice, AndroidNote, CloudSaver & More | #158*
+- **[voicepaw/so-vits-svc-fork](https://github.com/voicepaw/so-vits-svc-fork)** — Functionality: so-vits-svc fork with realtime support, improved interface and more features.
+  - Report: `reports/7u3JT66vZh4.md` · Video: https://youtu.be/7u3JT66vZh4 · *GitHub Trending Today - OmniVoice, AndroidNote, CloudSaver & More | #158*
+- **[debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)** — Functionality: VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, t
+  - Report: `reports/7u3JT66vZh4.md` · Video: https://youtu.be/7u3JT66vZh4 · *GitHub Trending Today - OmniVoice, AndroidNote, CloudSaver & More | #158*
+- **[twinnydotdev/twinny](https://github.com/twinnydotdev/twinny)** — Functionality: Open-source AI coding assistant for VS Code. Coding agent, code completion, chat, edits and reviews with local or hosted mode
+  - Report: `reports/7u3JT66vZh4.md` · Video: https://youtu.be/7u3JT66vZh4 · *GitHub Trending Today - OmniVoice, AndroidNote, CloudSaver & More | #158*
+- **[rocketride-org/rocketride-server](https://github.com/rocketride-org/rocketride-server)** — Functionality: High-performance AI pipeline engine with a C++ core and 50+ Python-extensible nodes. Build, debug, and scale LLM workflows wi
+  - Report: `reports/7u3JT66vZh4.md` · Video: https://youtu.be/7u3JT66vZh4 · *GitHub Trending Today - OmniVoice, AndroidNote, CloudSaver & More | #158*
+- **[plenaryapp/awesome-rss-feeds](https://github.com/plenaryapp/awesome-rss-feeds)** — Functionality: Awesome RSS feeds - A curated list of RSS feeds (and OPML files) used in Recommended Feeds and local news sections of Plenary
+  - Report: `reports/7u3JT66vZh4.md` · Video: https://youtu.be/7u3JT66vZh4 · *GitHub Trending Today - OmniVoice, AndroidNote, CloudSaver & More | #158*
+- **[datarhei/restreamer](https://github.com/datarhei/restreamer)** — Functionality: The Restreamer is a complete streaming server solution for self-hosting. It has a visually appealing user interface and no on
+  - Report: `reports/8g2SIPuk9xM.md` · Video: https://youtu.be/8g2SIPuk9xM · *GitHub Trending Today - openGym, oh-my-opencode-slim, rolldown & More | #166*
+- **[LazyAGI/LazyLLM](https://github.com/LazyAGI/LazyLLM)** — Functionality: Easiest and laziest way for  building multi-agent LLMs applications.
+  - Report: `reports/8g2SIPuk9xM.md` · Video: https://youtu.be/8g2SIPuk9xM · *GitHub Trending Today - openGym, oh-my-opencode-slim, rolldown & More | #166*
+- **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Functionality: 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom O
+  - Report: `reports/98GHk_nqdPg.md` · Video: https://youtu.be/98GHk_nqdPg · *freellmapi - GitHub Trending Today*
 - **tashfeenahmed/freellmapi** — Recommendation: TRIAL
   - Report: `reports/ANJTdT0Ggrw.md` · Video: https://youtu.be/ANJTdT0Ggrw · *Free LLM - for building, agents, images, etc.*
 - **[every-app/open-seo](https://github.com/every-app/open-seo)** — Open-source alternative to Semrush/Ahrefs for SEO auditing and research, built in TypeScript.
@@ -81,7 +139,19 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **hypit-ai/hypit** — Functionality: AI-agent pipeline for cloning viral short-form videos end-to-end (face/voice/B-roll swap + variant generation) so one viral f
   - Report: `reports/AiZ4HWBlLow.md` · Video: https://youtu.be/AiZ4HWBlLow · *Copy any software (free), clone viral videos, and more*
-- **affaan-m/ECC** — Functionality: ECC is a large collection of agent skills, workflows, and operating practices for turning an idea into a researched, tested, 
+- **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Functionality: 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom O
+  - Report: `reports/BNHeFv31HNA.md` · Video: https://youtu.be/BNHeFv31HNA · *GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171*
+- **[AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo)** — Functionality: Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent re
+  - Report: `reports/BNHeFv31HNA.md` · Video: https://youtu.be/BNHeFv31HNA · *GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171*
+- **[vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni)** — Functionality: A framework for efficient model inference with omni-modality models.
+  - Report: `reports/BNHeFv31HNA.md` · Video: https://youtu.be/BNHeFv31HNA · *GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171*
+- **[wheresryan22/anatomy](https://github.com/wheresryan22/anatomy)** — Functionality: An agent skill for creating detailed, interactive isometric illustrations of real-world machines and complex systems. Generat
+  - Report: `reports/BNHeFv31HNA.md` · Video: https://youtu.be/BNHeFv31HNA · *GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171*
+- **[openags/paper-search-mcp](https://github.com/openags/paper-search-mcp)** — Functionality: MCP, CLI, Skills for searching and downloading academic papers from multiple sources like arXiv, PubMed, bioRxiv, etc.
+  - Report: `reports/BNHeFv31HNA.md` · Video: https://youtu.be/BNHeFv31HNA · *GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171*
+- **[itayinbarr/little-coder](https://github.com/itayinbarr/little-coder)** — Functionality: A harness optimized to smaller LLMs.
+  - Report: `reports/BNHeFv31HNA.md` · Video: https://youtu.be/BNHeFv31HNA · *GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171*
+- **affaan-m/ECC** — Functionality: ECC is a large collection of agent skills, workflows, and operating practices for turning an idea into a researched, tested,
   - Report: `reports/BcNAQynKUk4.md` · Video: https://youtu.be/BcNAQynKUk4 · *Top repo explained: builds product + lands customers*
 - **debpalash/VoiceStudio** — Functionality: A local voice-generation and voice-cloning application with dubbing, dictation, transcription, and audiobook workflows. It is
   - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
@@ -93,7 +163,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
   - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
 - **[openclaw/openclaw](https://github.com/openclaw/openclaw)** — Self-hosted autonomous agent platform ("the AI that really does things") that runs shell-enabled AI agents on any OS and connects to Telegra
   - Report: `reports/F-_q6VIHMS8.md` · Video: https://youtu.be/F-_q6VIHMS8 · *How to have Claude run your company*
-- **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** — Python personal AI agent ("the agent that grows with you") with memory, skills, and channel integrations; the video positions Hermes as the 
+- **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** — Python personal AI agent ("the agent that grows with you") with memory, skills, and channel integrations; the video positions Hermes as the
   - Report: `reports/F-_q6VIHMS8.md` · Video: https://youtu.be/F-_q6VIHMS8 · *How to have Claude run your company*
 - **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Functionality: Router aggregating ~34 free LLM provider tiers (635 free model endpoints, 7.4B tokens/month claimed) behind one OpenAI-compat
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
@@ -103,11 +173,11 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
 - **[mutonby/openshorts](https://github.com/mutonby/openshorts)** — Functionality: Open-source AI clip generator — turns long videos into 9:16 shorts with AI moment detection, face tracking, subtitles, and du
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
-- **[upscayl/upscayl](https://github.com/upscayl/upscayl)** — Functionality: Free, open-source AI image upscaler desktop app for Linux, macOS, and Windows — high-quality enlargement of photos, artwork, 
+- **[upscayl/upscayl](https://github.com/upscayl/upscayl)** — Functionality: Free, open-source AI image upscaler desktop app for Linux, macOS, and Windows — high-quality enlargement of photos, artwork,
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
-- **[petergyang/fuck-cancer](https://github.com/petergyang/fuck-cancer)** — Functionality: A Python/Markdown workflow that turns a patient's documents and trusted medical sources into a plain-language care brief. It 
+- **[petergyang/fuck-cancer](https://github.com/petergyang/fuck-cancer)** — Functionality: A Python/Markdown workflow that turns a patient's documents and trusted medical sources into a plain-language care brief. It
   - Report: `reports/H03k_SfxySQ.md` · Video: https://youtu.be/H03k_SfxySQ · *He Built an AI Tool to Help Families Facing Cancer*
-- **Tencent/WeKnora** — Go-based open-source knowledge platform that turns documents into a queryable RAG system, reasoning agent, and self-maintaining wiki. It is 
+- **[Tencent/WeKnora](https://github.com/Tencent/WeKnora)** — Functionality: Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-mainta
   - Report: `reports/Ie6IlSIYAfc.md` · Video: https://youtu.be/Ie6IlSIYAfc · *WeKnora — Tencent Built an AI That Turns Your Files Into a Wiki*
 - **[aerovato/magic-compact](https://github.com/aerovato/magic-compact)** — Functionality: A lossless context-compaction plugin for Claude Code and OpenCode. It aims to reduce context size while preserving the inform
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
@@ -117,9 +187,9 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
 - **[jia-gao/leanctx](https://github.com/jia-gao/leanctx)** — Functionality: A drop-in Python prompt-compression SDK based on LLMLingua-2. It claims to reduce prompt cost by 40–60% without requiring app
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
-- **[ooples/token-optimizer-mcp](https://github.com/ooples/token-optimizer-mcp)** — Functionality: An MCP server that measures token savings per coding agent, optimizes context, and shares a local knowledge graph across CLI 
+- **[ooples/token-optimizer-mcp](https://github.com/ooples/token-optimizer-mcp)** — Functionality: An MCP server that measures token savings per coding agent, optimizes context, and shares a local knowledge graph across CLI
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
-- **[mksglu/context-mode](https://github.com/mksglu/context-mode)** — Functionality: A context-optimization layer that sandboxes tool output, persists session memory, and routes work through MCP and hooks. The 
+- **[mksglu/context-mode](https://github.com/mksglu/context-mode)** — Functionality: A context-optimization layer that sandboxes tool output, persists session memory, and routes work through MCP and hooks. The
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
 - **[DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)** — Functionality: A minimalism-oriented coding-agent skill that pushes the agent to reuse existing code and avoid unnecessary implementation. I
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
@@ -131,57 +201,99 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
 - **openclaw/openclaw** — The flagship open-source personal AI agent (OpenClaw 2.0) — a full OS-level agent runtime with shell access, chat-based delegation, and a 5,
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **THU-MAIC/OpenMAIC** — Open Multi-Agent Interactive Classroom: one prompt ("teach me quantum physics") spawns an AI teacher who lectures aloud, AI classmates that 
+- **THU-MAIC/OpenMAIC** — Open Multi-Agent Interactive Classroom: one prompt ("teach me quantum physics") spawns an AI teacher who lectures aloud, AI classmates that
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **superdesigndev/treg** — Treg — open-source people-search/enrichment MCP (treg.to/people-search) for Claude/Codex: finds verified emails, phone numbers, and contact 
+- **superdesigndev/treg** — Treg — open-source people-search/enrichment MCP (treg.to/people-search) for Claude/Codex: finds verified emails, phone numbers, and contact
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
 - **AgentPhone-AI/agentphone-mcp** — Agent Phone MCP: gives an agent its own phone number for outbound/inbound voice calls, SMS, and iMessage ($3/mo number + $0.13/min; iMessage
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **Treg (people-search/enrichment MCP)** — 
+- **Treg (people-search/enrichment MCP)** —
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **Dial (agent phone numbers)** — 
+- **Dial (agent phone numbers)** —
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **Radar (podcast-search MCP)** — 
+- **Radar (podcast-search MCP)** —
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **Diffusion Studio (video edits as code)** — 
+- **Diffusion Studio (video edits as code)** —
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **[anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community)** — Anthropic's community plugin marketplace for Claude Code/Cowork: 2,000+ security-scanned plugins, structured so AI agents can search it inst
+- **[altic-dev/FluidVoice](https://github.com/altic-dev/FluidVoice)** — Functionality: Fastest and only macOS Dictation app with on-device STT and custom trained AI enhancement model. Windows pre-build available!
+  - Report: `reports/Oaq2w0wAZbc.md` · Video: https://youtu.be/Oaq2w0wAZbc · *GitHub Trending Today - FluidVoice, GLM-5, Qwen3-ASR & More | #140*
+- **[google-deepmind/gemma](https://github.com/google-deepmind/gemma)** — Functionality: Gemma open-weight LLM library, from Google DeepMind.
+  - Report: `reports/Oaq2w0wAZbc.md` · Video: https://youtu.be/Oaq2w0wAZbc · *GitHub Trending Today - FluidVoice, GLM-5, Qwen3-ASR & More | #140*
+- **[remotion-dev/skills](https://github.com/remotion-dev/skills)** — Functionality: Agent Skills.
+  - Report: `reports/Oaq2w0wAZbc.md` · Video: https://youtu.be/Oaq2w0wAZbc · *GitHub Trending Today - FluidVoice, GLM-5, Qwen3-ASR & More | #140*
+- **[yilewang/llm-for-zotero](https://github.com/yilewang/llm-for-zotero)** — Functionality: An open-source research agent system for your Zotero library.
+  - Report: `reports/Oaq2w0wAZbc.md` · Video: https://youtu.be/Oaq2w0wAZbc · *GitHub Trending Today - FluidVoice, GLM-5, Qwen3-ASR & More | #140*
+- **[aaron-he-zhu/seo-geo-claude-skills](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** — Functionality: Signpost → the 16 SEO/GEO agent skills live in aaron-marketing-skills; this repo's standalone 20-skill line is preserved at t
+  - Report: `reports/Oaq2w0wAZbc.md` · Video: https://youtu.be/Oaq2w0wAZbc · *GitHub Trending Today - FluidVoice, GLM-5, Qwen3-ASR & More | #140*
+- **[yaojingang/yao-meta-skill](https://github.com/yaojingang/yao-meta-skill)** — Functionality: YAO = Yielding AI Outcomes. A rigorous engineering, evaluation, governance, and portability system for reusable agent skills.
+  - Report: `reports/Oaq2w0wAZbc.md` · Video: https://youtu.be/Oaq2w0wAZbc · *GitHub Trending Today - FluidVoice, GLM-5, Qwen3-ASR & More | #140*
+- **[bestruirui/octopus](https://github.com/bestruirui/octopus)** — Functionality: One Hub All LLMs For You | 为个人打造的 LLM API 聚合网关.
+  - Report: `reports/Oaq2w0wAZbc.md` · Video: https://youtu.be/Oaq2w0wAZbc · *GitHub Trending Today - FluidVoice, GLM-5, Qwen3-ASR & More | #140*
+- **[multimodal-art-projection/YuE](https://github.com/multimodal-art-projection/YuE)** — Functionality: YuE2: frontier music generation with symbolic planning, zero-shot covers, and agentic music editing.
+  - Report: `reports/PSWm7roiKic.md` · Video: https://youtu.be/PSWm7roiKic · *GitHub Trending Today - YuE, nvidia-docker, television, openvla & More | #170*
+- **[rlaope/oh-my-hermes](https://github.com/rlaope/oh-my-hermes)** — Functionality: All in one plugin for Hermes Agent ⚚ the coding intelligence, a long-term memory system and model optimized workflow packages
+  - Report: `reports/PSWm7roiKic.md` · Video: https://youtu.be/PSWm7roiKic · *GitHub Trending Today - YuE, nvidia-docker, television, openvla & More | #170*
+- **[CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike)** — Functionality: Open-source AI-powered offensive security harness for automated penetration testing.
+  - Report: `reports/PSWm7roiKic.md` · Video: https://youtu.be/PSWm7roiKic · *GitHub Trending Today - YuE, nvidia-docker, television, openvla & More | #170*
+- **[lidge-jun/opencodex](https://github.com/lidge-jun/opencodex)** — Functionality: Universal provider proxy for OpenAI Codex & Claude Code — use any LLM (Claude, Gemini, Grok, DeepSeek, Ollama…) with Codex CL
+  - Report: `reports/Q5V4h0LVzQI.md` · Video: https://youtu.be/Q5V4h0LVzQI · *GitHub Trending Today - picasso, immersive-translate, TRELLIS.2 & More | #144*
+- **[softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit)** — Functionality: A curated collection of skills for AI coding agents. Skills are packaged instructions and scripts that extend agent capabilit
+  - Report: `reports/Q5V4h0LVzQI.md` · Video: https://youtu.be/Q5V4h0LVzQI · *GitHub Trending Today - picasso, immersive-translate, TRELLIS.2 & More | #144*
+- **[MoonshotAI/MoBA](https://github.com/MoonshotAI/MoBA)** — Functionality: MoBA: Mixture of Block Attention for Long-Context LLMs.
+  - Report: `reports/Q5V4h0LVzQI.md` · Video: https://youtu.be/Q5V4h0LVzQI · *GitHub Trending Today - picasso, immersive-translate, TRELLIS.2 & More | #144*
+- **[multimodal-art-projection/YuE](https://github.com/multimodal-art-projection/YuE)** — Functionality: YuE2: frontier music generation with symbolic planning, zero-shot covers, and agentic music editing.
+  - Report: `reports/QHgIY9KQJCk.md` · Video: https://youtu.be/QHgIY9KQJCk · *YuE - GitHub Trending Today*
+- **[AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo)** — Functionality: Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent re
+  - Report: `reports/T6gMdMy2AbA.md` · Video: https://youtu.be/T6gMdMy2AbA · *claude-seo - GitHub Trending Today*
+- **[harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)** — Functionality: 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.
   - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
-- **[freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2)** — "Prompt as Code" prompt-engineering library for GPT-Image 2: 530+ reverse-engineered cases and 20+ industrial templates distilled into reusa
+- **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Functionality: 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom O
   - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
-- **[apache/maka](https://github.com/apache/maka)** — Apache-incubating high-performance agent workspace that keeps a complete audit record of everything an agent did.
-  - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
-- **[harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)** — Python app that turns a topic/keyword into an HD short video end-to-end: LLM script, TTS voiceover, stock footage, subtitles, ffmpeg assembl
-  - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
-- **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Self-hosted gateway aggregating 34 free LLM providers / 635 free endpoints behind one OpenAI-compatible /v1 endpoint with smart routing and 
-  - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
+- **[kenn-io/agentsview](https://github.com/kenn-io/agentsview)** — Functionality: Local-first session search, analytics, insights, and token use statistics for coding agents, supporting Claude Code, Codex, a
+  - Report: `reports/Uk_gHHUPidU.md` · Video: https://youtu.be/Uk_gHHUPidU · *GitHub Trending Today - agentsview, opentalking, Pixal3D & More | #142*
+- **[MengTo/Skills](https://github.com/MengTo/Skills)** — Functionality: Agent skills for designers and builders using Codex, Claude, Cursor, and other AI coding agents.
+  - Report: `reports/Uk_gHHUPidU.md` · Video: https://youtu.be/Uk_gHHUPidU · *GitHub Trending Today - agentsview, opentalking, Pixal3D & More | #142*
+- **[rushindrasinha/youtube-shorts-pipeline](https://github.com/rushindrasinha/youtube-shorts-pipeline)** — Functionality: Automated YouTube Shorts pipeline: news → script → AI visuals → voiceover → captions → upload.
+  - Report: `reports/Uk_gHHUPidU.md` · Video: https://youtu.be/Uk_gHHUPidU · *GitHub Trending Today - agentsview, opentalking, Pixal3D & More | #142*
 - **[Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)** — Indexes a codebase — source, docs, SQL schemas, configs, PDFs — into a queryable knowledge graph using local deterministic AST parsing, with
   - Report: `reports/V0YugHvjs5Y.md` · Video: https://youtu.be/V0YugHvjs5Y · *This Tool Gives AI a Map of Your Codebase*
 - **[mvschwarz/openrig](https://github.com/mvschwarz/openrig)** — Functionality: Builds persistent agent teams from YAML roles and shared work.
   - Report: `reports/Wsru44p-J14.md` · Video: https://youtu.be/Wsru44p-J14 · *This week’s repos: PS5 game on a PC! Turn agents into employees. AI video maker.*
 - **[Conway-Research/automaton](https://github.com/Conway-Research/automaton)** — Functionality: Self-sovereign AI agent that funds its own compute, owns the machine it runs on, and self-replicates — stopping when it can n
   - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
-- **[renatorib/react-powerplug](https://github.com/renatorib/react-powerplug)** — Functionality: Dependency-free renderless React components (toggle, counter, form handlers) that hand state and logic through render props, 
+- **[renatorib/react-powerplug](https://github.com/renatorib/react-powerplug)** — Functionality: Dependency-free renderless React components (toggle, counter, form handlers) that hand state and logic through render props,
   - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
-- **[dsphper/lanhu-mcp](https://github.com/dsphper/lanhu-mcp)** — Functionality: MCP server connecting AI assistants to a shared team knowledge base — extracts requirements from design docs and UI mockups, 
+- **[dsphper/lanhu-mcp](https://github.com/dsphper/lanhu-mcp)** — Functionality: MCP server connecting AI assistants to a shared team knowledge base — extracts requirements from design docs and UI mockups,
   - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
 - **elvisun/newsjack** — Functionality: Open-source agent skills that research news opportunities and help execute a PR workflow.
   - Report: `reports/ZodAaTH-6_E.md` · Video: https://youtu.be/ZodAaTH-6_E · *Meta’s Muse makes you money. And more*
 - **[max-sixty/worktrunk](https://github.com/max-sixty/worktrunk)** — Functionality: A Rust CLI that manages Git worktrees so several coding agents can work in isolated checkouts of one repository. It reduces b
   - Report: `reports/_6PHjLCjdpo.md` · Video: https://youtu.be/_6PHjLCjdpo · *WorkTrunk — Run Multiple AI Agents at Once Without Merge Conflicts*
-- **[affaan-m/ECC](https://github.com/affaan-m/ECC)** — Functionality: A broad agent-harness optimization system combining skills, instincts, memory, security checks, and research-first workflows 
+- **[affaan-m/ECC](https://github.com/affaan-m/ECC)** — Functionality: A broad agent-harness optimization system combining skills, instincts, memory, security checks, and research-first workflows
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)** — Functionality: A minimalism-oriented coding-agent skill that pushes the agent to reuse existing code and avoid unnecessary implementation. I
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
-- **[mksglu/context-mode](https://github.com/mksglu/context-mode)** — Functionality: A context-optimization layer that sandboxes tool output, persists session memory, and routes work through MCP and hooks. The 
+- **[mksglu/context-mode](https://github.com/mksglu/context-mode)** — Functionality: A context-optimization layer that sandboxes tool output, persists session memory, and routes work through MCP and hooks. The
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[mattpocock/skills](https://github.com/mattpocock/skills)** — Functionality: A repository of practical engineering skills intended for use by coding agents. It is a broad catalog of reusable instruction
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
-- **[timharris707/skills](https://github.com/timharris707/skills)** — Functionality: A small collection of practical agent skills covering team workflow, model review, media ingestion, and writing. It includes 
+- **[timharris707/skills](https://github.com/timharris707/skills)** — Functionality: A small collection of practical agent skills covering team workflow, model review, media ingestion, and writing. It includes
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[rodaddy/ai-marketing-panel](https://github.com/rodaddy/ai-marketing-panel)** — Functionality: A synthetic customer panel that tests marketing copy against calibrated AI personas before publication. It is intended to exp
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
-- **mattpocock/skills** — Agent instructions for requirements questioning, idea stress testing, repository setup, and tutoring. The named skills are prompt workflows 
+- **[zenstory-ai/drama-skills](https://github.com/zenstory-ai/drama-skills)** — Functionality: 开源 AI 短剧/漫剧创作 skill 合集：剧本、角色资产、分镜 storyboard、图片/视频提示词、审查，适配 Claude Code 与 Codex | Open-source AI short drama / micro-drama sk
+  - Report: `reports/atPmaHnJzNY.md` · Video: https://youtu.be/atPmaHnJzNY · *GitHub Trending Today - Agenta, Open-Shell-Menu, ChatUI & More | #156*
+- **[ggml-org/llama.vim](https://github.com/ggml-org/llama.vim)** — Functionality: Vim plugin for LLM-assisted code/text completion.
+  - Report: `reports/atPmaHnJzNY.md` · Video: https://youtu.be/atPmaHnJzNY · *GitHub Trending Today - Agenta, Open-Shell-Menu, ChatUI & More | #156*
+- **[vercel-labs/skills](https://github.com/vercel-labs/skills)** — Functionality: The open agent skills tool - npx skills.
+  - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
+- **[mattpocock/skills](https://github.com/mattpocock/skills)** — Functionality: Skills for Real Engineers. Straight from my .agents directory.
+  - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
+- **[anthropics/skills](https://github.com/anthropics/skills)** — Functionality: Public repository for Agent Skills.
+  - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
+- **[vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)** — Functionality: Vercel's official collection of agent skills.
+  - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
+- **[larksuite/cli](https://github.com/larksuite/cli)** — Functionality: The official Lark/飞书 CLI tool, maintained by the larksuite team — built for humans and AI Agents. Covers core business domain
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **cactus-compute/needle** — Functionality: A tiny 2-bit automation model for tool calls, structured extraction, and embeddings on constrained devices.
   - Report: `reports/fD8k0Qbuu7A.md` · Video: https://youtu.be/fD8k0Qbuu7A · *This Tiny LLM Can Run on Almost Anything*
@@ -199,11 +311,11 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **every-app/open-seo** — Functionality: Open-source alternative to Semrush and Ahrefs for SEO research.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
-- **mksglu/context-mode** — Functionality: TypeScript tooling for AI coding agents that routes exploratory work into disposable sandboxes, persists useful context, and 
+- **mksglu/context-mode** — Functionality: TypeScript tooling for AI coding agents that routes exploratory work into disposable sandboxes, persists useful context, and
   - Report: `reports/is7d_hJc_io.md` · Video: https://youtu.be/is7d_hJc_io · *Context-Mode — The Fix for AI Coders That Forget Mid-Task*
 - **[Osmantic/ODS](https://github.com/Osmantic/ODS)** — Functionality: Pre-release installer that configures a desktop as a private AI server.
   - Report: `reports/jIs9BCi2I1A.md` · Video: https://youtu.be/jIs9BCi2I1A · *ODS - GitHub Trending Today*
-- **PostHog/posthog** — Functionality: Self-hosted product analytics with funnels, retention, session replay, feature flags, experiments, error tracking, logs, and 
+- **PostHog/posthog** — Functionality: Self-hosted product analytics with funnels, retention, session replay, feature flags, experiments, error tracking, logs, and
   - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
 - **every-app/open-seo** — Functionality: TypeScript SEO research and rank-tracking software positioned as an open alternative to Semrush and Ahrefs.
   - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
@@ -213,23 +325,49 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
   - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
 - **baptisteArno/typebot.io** — Functionality: Self-hosted visual chatbot and conversational-form builder with branching flows, lead qualification, and integrations such as
   - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
-- **Bezalel (bundled agent-infra MCP)** — 
+- **Bezalel (bundled agent-infra MCP)** —
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
-- **Supernova (business-data-to-agent connector)** — 
+- **Supernova (business-data-to-agent connector)** —
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
-- **`openclaw/openclaw`** — Functionality: An open-source personal AI agent that can operate across local computers, browsers, messaging channels, and connected tools. 
+- **morluto/rea** — Functionality: Agent tools for examining existing applications and producing customized implementations, including behavior and native-binar
+  - Report: `reports/kqn_mSjSWMs.md` · Video: https://youtu.be/kqn_mSjSWMs · *GitHub’s top: Copy any app, create gorgeous videos, 3d print anything & more*
+- **mattpocock/skills** — Functionality: Shell-based AI coding workflows maintained from the author’s agent directory.
+  - Report: `reports/kqn_mSjSWMs.md` · Video: https://youtu.be/kqn_mSjSWMs · *GitHub’s top: Copy any app, create gorgeous videos, 3d print anything & more*
+- **`openclaw/openclaw`** — Functionality: An open-source personal AI agent that can operate across local computers, browsers, messaging channels, and connected tools.
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
 - **`zapier/zapier-platform`** — Functionality: Zapier’s JavaScript toolkit for building custom integrations and actions. It could support a narrow connector needed by the p
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
+- **Onyx-Dev-Labs/doodle-note** — Signals: 120★ · TypeScript · MIT · pushed 2026-09-05 · not archived.
+  - Report: `reports/rVoAyD2Zrfs.md` · Video: https://youtu.be/rVoAyD2Zrfs · *10 GitHub repos that will save you money*
+- **TryGhost/Ghost** — Signals: 55.2k★ · JavaScript/Node · MIT · pushed 2026-09-06 · not archived.
+  - Report: `reports/rVoAyD2Zrfs.md` · Video: https://youtu.be/rVoAyD2Zrfs · *10 GitHub repos that will save you money*
+- **languagetool-org/languagetool** — Signals: 15k★ · Java · LGPL-2.1 · pushed 2026-09-06 · not archived.
+  - Report: `reports/rVoAyD2Zrfs.md` · Video: https://youtu.be/rVoAyD2Zrfs · *10 GitHub repos that will save you money*
+- **VonHoltenCodes/SlowBooks-Pro-2026** — Signals: 330★ · Python · license: Other (source-available, not OSI) · pushed 2026-09-06 · not archived.
+  - Report: `reports/rVoAyD2Zrfs.md` · Video: https://youtu.be/rVoAyD2Zrfs · *10 GitHub repos that will save you money*
 - **[cactus-compute/needle](https://github.com/cactus-compute/needle)** — Functionality: A compact on-device model that maps natural-language requests to constrained tool calls, structured extraction, and embedding
   - Report: `reports/tsWOiibaaxA.md` · Video: https://youtu.be/tsWOiibaaxA · *Better than Jev - because you can build with it*
-- **useautumn/autumn** — TypeScript usage-based billing platform for metering and charging by tokens, requests, minutes, or other units. It targets AI products that 
-  - Report: `reports/wgdFn5JXXb8.md` · Video: https://youtu.be/wgdFn5JXXb8 · *This Free GitHub Tool Lets You Charge Per Token*
-- **browser-use/browser-use** — 
+- **[OpenSenseNova/SenseNova-Skills](https://github.com/OpenSenseNova/SenseNova-Skills)** — Functionality: Modular SenseNova skills for building AI-powered office assistants and productivity workflows.
+  - Report: `reports/vjWCfBPGy3Y.md` · Video: https://youtu.be/vjWCfBPGy3Y · *GitHub Trending Today - from-java-to-kotlin, QuantsPlaybook, sysbox & More | #159*
+- **[NarratorAI-Studio/narrator-ai-cli-skill](https://github.com/NarratorAI-Studio/narrator-ai-cli-skill)** — Functionality: AI 解说大师 — Agent skill；封装 narrator-ai-cli 供 Claude/Codex 等工具调用.
+  - Report: `reports/vjWCfBPGy3Y.md` · Video: https://youtu.be/vjWCfBPGy3Y · *GitHub Trending Today - from-java-to-kotlin, QuantsPlaybook, sysbox & More | #159*
+- **[aigc-apps/VideoX-Fun](https://github.com/aigc-apps/VideoX-Fun)** — Functionality: 📹 A more flexible framework that can generate videos at any resolution and creates videos from images. .
+  - Report: `reports/vjWCfBPGy3Y.md` · Video: https://youtu.be/vjWCfBPGy3Y · *GitHub Trending Today - from-java-to-kotlin, QuantsPlaybook, sysbox & More | #159*
+- **browser-use/browser-use** —
   - Report: `reports/wvStsbW_fCY.md` · Video: https://youtu.be/wvStsbW_fCY · *I Let AI Take Over My Browser — For 2 Cents*
+- **[Shaunwei/RealChar](https://github.com/Shaunwei/RealChar)** — Functionality: 🎙️🤖Create, Customize and Talk to your AI Character/Companion in Realtime (All in One Codebase!). Have a natural seamless conv
+  - Report: `reports/x9nyYMJB5RM.md` · Video: https://youtu.be/x9nyYMJB5RM · *RealChar - GitHub Trending Today*
+- **[b4rtaz/distributed-llama](https://github.com/b4rtaz/distributed-llama)** — Functionality: Distributed LLM inference. Connect home devices into a powerful cluster to accelerate LLM inference. More devices means faste
+  - Report: `reports/z-_34WChEoo.md` · Video: https://youtu.be/z-_34WChEoo · *GitHub Trending Today - distributed-llama, HunyuanWorld-1.0, openWakeWord & More | #161*
+- **[google-research-datasets/Objectron](https://github.com/google-research-datasets/Objectron)** — Functionality: Objectron is a dataset of short, object-centric video clips. In addition, the videos also contain AR session metadata includi
+  - Report: `reports/z-_34WChEoo.md` · Video: https://youtu.be/z-_34WChEoo · *GitHub Trending Today - distributed-llama, HunyuanWorld-1.0, openWakeWord & More | #161*
+- **[xzf-thu/VoiceMem](https://github.com/xzf-thu/VoiceMem)** — Functionality: Infrastructure for the next generation of voice agents, designed to provide universal memory. It is divided into a left brain
+  - Report: `reports/z-_34WChEoo.md` · Video: https://youtu.be/z-_34WChEoo · *GitHub Trending Today - distributed-llama, HunyuanWorld-1.0, openWakeWord & More | #161*
+- **[chrisworsey55/atlas-gic](https://github.com/chrisworsey55/atlas-gic)** — Functionality: ATLAS by General Intelligence Capital — Self-improving AI trading agents using Karpathy-style autoresearch.
+  - Report: `reports/z-_34WChEoo.md` · Video: https://youtu.be/z-_34WChEoo · *GitHub Trending Today - distributed-llama, HunyuanWorld-1.0, openWakeWord & More | #161*
 - **[Osmantic/ODS](https://github.com/Osmantic/ODS)** — Functionality: Pre-release installer that configures a desktop as a private AI server.
   - Report: `reports/zP43y0wJzhg.md` · Video: https://youtu.be/zP43y0wJzhg · *GitHub Trending Today - dua-cli, AirCard, ODS & More | #167*
-- **immich-app/immich** — 
+- **immich-app/immich** —
   - Report: `reports/zjvSs1VNDSQ.md` · Video: https://youtu.be/zjvSs1VNDSQ · *Your Own Private Google Photos — Self-Hosted*
 
 ## SKIP
@@ -270,10 +408,92 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
 - JonImmsWordpressDev/claude-dashboard — `reports/1fHsIveXRa8.md`
 - Codpal-Limited/deckgauge — `reports/1fHsIveXRa8.md`
 - CaptainASIC/reckoner — `reports/1fHsIveXRa8.md`
+- [yizhiyanhua-ai/fireworks-tech-graph](https://github.com/yizhiyanhua-ai/fireworks-tech-graph) — `reports/21xCNskON2M.md`
+- [PixiEditor/PixiEditor](https://github.com/PixiEditor/PixiEditor) — `reports/21xCNskON2M.md`
+- [zyronon/TypeWords](https://github.com/zyronon/TypeWords) — `reports/21xCNskON2M.md`
+- [zhukunpenglinyutong/jetbrains-cc-gui](https://github.com/zhukunpenglinyutong/jetbrains-cc-gui) — `reports/21xCNskON2M.md`
+- [TwilitRealm/dusklight](https://github.com/TwilitRealm/dusklight) — `reports/21xCNskON2M.md`
+- [MorpheApp/MicroG-RE](https://github.com/MorpheApp/MicroG-RE) — `reports/21xCNskON2M.md`
+- [Maxteabag/sqlit](https://github.com/Maxteabag/sqlit) — `reports/21xCNskON2M.md`
+- [Tarquinen/opencode-dynamic-context-pruning](https://github.com/Tarquinen/opencode-dynamic-context-pruning) — `reports/21xCNskON2M.md`
+- [WebODM/WebODM](https://github.com/WebODM/WebODM) — `reports/21xCNskON2M.md`
+- [zhongbai2333/Tomato-Novel-Downloader](https://github.com/zhongbai2333/Tomato-Novel-Downloader) — `reports/21xCNskON2M.md`
+- [Foso/Jetpack-Compose-Playground](https://github.com/Foso/Jetpack-Compose-Playground) — `reports/21xCNskON2M.md`
+- [basnijholt/adaptive-lighting](https://github.com/basnijholt/adaptive-lighting) — `reports/21xCNskON2M.md`
+- [apache/datafusion-sqlparser-rs](https://github.com/apache/datafusion-sqlparser-rs) — `reports/21xCNskON2M.md`
+- [oculix-org/SikuliX1](https://github.com/oculix-org/SikuliX1) — `reports/21xCNskON2M.md`
+- [vran-dev/PrettyZoo](https://github.com/vran-dev/PrettyZoo) — `reports/21xCNskON2M.md`
+- [seven1m/30-days-of-elixir](https://github.com/seven1m/30-days-of-elixir) — `reports/21xCNskON2M.md`
+- [tale/headplane](https://github.com/tale/headplane) — `reports/21xCNskON2M.md`
+- [frontity/frontity](https://github.com/frontity/frontity) — `reports/21xCNskON2M.md`
+- [hargata/lubelog](https://github.com/hargata/lubelog) — `reports/21xCNskON2M.md`
+- [mahonzhan/awesome-coding-plan](https://github.com/mahonzhan/awesome-coding-plan) — `reports/21xCNskON2M.md`
 - [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) — `reports/2hh5B_IzuoU.md`
 - [alvinunreal/oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) — `reports/2vb7uLCgxSs.md`
 - [storytold/photocraft](https://github.com/storytold/photocraft) — `reports/5e43bjQJoiY.md`
 - [Mak5er/AirCard](https://github.com/Mak5er/AirCard) — `reports/5sdMjGHY6wA.md`
+- [agiresearch/AIOS](https://github.com/agiresearch/AIOS) — `reports/6h0yh_3o99M.md`
+- [square/picasso](https://github.com/square/picasso) — `reports/6h0yh_3o99M.md`
+- [danielmiessler/LifeOS](https://github.com/danielmiessler/LifeOS) — `reports/6h0yh_3o99M.md`
+- [manga-download/hakuneko](https://github.com/manga-download/hakuneko) — `reports/6h0yh_3o99M.md`
+- [moxiecode/plupload](https://github.com/moxiecode/plupload) — `reports/6h0yh_3o99M.md`
+- [timschneeb/GalaxyBudsClient](https://github.com/timschneeb/GalaxyBudsClient) — `reports/6h0yh_3o99M.md`
+- [gildas-lormeau/zip.js](https://github.com/gildas-lormeau/zip.js) — `reports/6h0yh_3o99M.md`
+- [bb-qq/r8152](https://github.com/bb-qq/r8152) — `reports/6h0yh_3o99M.md`
+- [THU-MAIC/OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) — `reports/6h0yh_3o99M.md`
+- [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied) — `reports/6h0yh_3o99M.md`
+- [qianguyihao/blog-list](https://github.com/qianguyihao/blog-list) — `reports/6h0yh_3o99M.md`
+- [weserv/images](https://github.com/weserv/images) — `reports/6h0yh_3o99M.md`
+- [microsoft/PTVS](https://github.com/microsoft/PTVS) — `reports/6h0yh_3o99M.md`
+- [elixir-broadway/broadway](https://github.com/elixir-broadway/broadway) — `reports/6h0yh_3o99M.md`
+- [yukaiji/buildVpn](https://github.com/yukaiji/buildVpn) — `reports/6h0yh_3o99M.md`
+- [wlrfx/swayfx](https://github.com/wlrfx/swayfx) — `reports/6h0yh_3o99M.md`
+- [ChHsiching/GitHub-Chinese-Top-Charts](https://github.com/ChHsiching/GitHub-Chinese-Top-Charts) — `reports/6h0yh_3o99M.md`
+- [paperclipai/paperclip](https://github.com/paperclipai/paperclip) — `reports/7rVTo_sy4Po.md`
+- [basicmachines-co/basic-memory](https://github.com/basicmachines-co/basic-memory) — `reports/7rVTo_sy4Po.md`
+- [block/buzz](https://github.com/block/buzz) — `reports/7rVTo_sy4Po.md`
+- [GcsSloop/AndroidNote](https://github.com/GcsSloop/AndroidNote) — `reports/7u3JT66vZh4.md`
+- [jiangrui1994/CloudSaver](https://github.com/jiangrui1994/CloudSaver) — `reports/7u3JT66vZh4.md`
+- [bromite/bromite](https://github.com/bromite/bromite) — `reports/7u3JT66vZh4.md`
+- [KunAgent/Kun](https://github.com/KunAgent/Kun) — `reports/7u3JT66vZh4.md`
+- [npryce/adr-tools](https://github.com/npryce/adr-tools) — `reports/7u3JT66vZh4.md`
+- [armory3d/armorpaint](https://github.com/armory3d/armorpaint) — `reports/7u3JT66vZh4.md`
+- [Zeejay0/gathered-scenes-zine-skill](https://github.com/Zeejay0/gathered-scenes-zine-skill) — `reports/7u3JT66vZh4.md`
+- [microsoft/coreutils](https://github.com/microsoft/coreutils) — `reports/7u3JT66vZh4.md`
+- [orhun/binsider](https://github.com/orhun/binsider) — `reports/7u3JT66vZh4.md`
+- [SmartlyDressedGames/U3-SDK](https://github.com/SmartlyDressedGames/U3-SDK) — `reports/7u3JT66vZh4.md`
+- [nageoffer/ragent](https://github.com/nageoffer/ragent) — `reports/7u3JT66vZh4.md`
+- [vectorize-io/hindsight](https://github.com/vectorize-io/hindsight) — `reports/7u3JT66vZh4.md`
+- [seakee/CPA-Manager-Plus](https://github.com/seakee/CPA-Manager-Plus) — `reports/7u3JT66vZh4.md`
+- [qawolf/cli](https://github.com/qawolf/cli) — `reports/7u3JT66vZh4.md`
+- [gencay/vscode-chatgpt](https://github.com/gencay/vscode-chatgpt) — `reports/7u3JT66vZh4.md`
+- [orz12/PiliPalaX](https://github.com/orz12/PiliPalaX) — `reports/7u3JT66vZh4.md`
+- [paperclipai/paperclip](https://github.com/paperclipai/paperclip) — `reports/7u3JT66vZh4.md`
+- [oritera/Cairn](https://github.com/oritera/Cairn) — `reports/7u3JT66vZh4.md`
+- [sveltejs/devalue](https://github.com/sveltejs/devalue) — `reports/7u3JT66vZh4.md`
+- [arvids-unavailable/openGym](https://github.com/DuarteSantos8/openGym) — `reports/8g2SIPuk9xM.md`
+- [alvinunreal/oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) — `reports/8g2SIPuk9xM.md`
+- [rolldown/rolldown](https://github.com/rolldown/rolldown) — `reports/8g2SIPuk9xM.md`
+- [warp-tech/warpgate](https://github.com/warp-tech/warpgate) — `reports/8g2SIPuk9xM.md`
+- [storytold/photocraft](https://github.com/storytold/photocraft) — `reports/8g2SIPuk9xM.md`
+- [Lin-arm/GKD_subscription](https://github.com/Lin-arm/GKD_subscription) — `reports/8g2SIPuk9xM.md`
+- [jwilder/dockerize](https://github.com/jwilder/dockerize) — `reports/8g2SIPuk9xM.md`
+- [safak/youtube](https://github.com/safak/youtube) — `reports/8g2SIPuk9xM.md`
+- [dashingsoft/pyarmor](https://github.com/dashingsoft/pyarmor) — `reports/8g2SIPuk9xM.md`
+- [mvanhorn/cli-printing-press](https://github.com/mvanhorn/cli-printing-press) — `reports/8g2SIPuk9xM.md`
+- [EnzeD/vibe-coding](https://github.com/EnzeD/vibe-coding) — `reports/8g2SIPuk9xM.md`
+- [morluto/rea](https://github.com/morluto/rea) — `reports/8g2SIPuk9xM.md`
+- [tmk/tmk_keyboard](https://github.com/tmk/tmk_keyboard) — `reports/8g2SIPuk9xM.md`
+- [SeriousCache/UABE](https://github.com/nesrak1/UABEA) — `reports/8g2SIPuk9xM.md`
+- [nikoksr/notify](https://github.com/nikoksr/notify) — `reports/8g2SIPuk9xM.md`
+- [yhat/rodeo](https://github.com/yhat/rodeo) — `reports/8g2SIPuk9xM.md`
+- [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter) — `reports/8g2SIPuk9xM.md`
+- [openai/math](https://github.com/openai/math) — `reports/8g2SIPuk9xM.md`
+- [XinJingHao/DRL-Pytorch](https://github.com/XinJingHao/DRL-Pytorch) — `reports/8g2SIPuk9xM.md`
+- [MacRimi/ProxMenux](https://github.com/MacRimi/ProxMenux) — `reports/8g2SIPuk9xM.md`
+- [athasdev/athas](https://github.com/athasdev/athas) — `reports/8g2SIPuk9xM.md`
+- [altcha-org/altcha](https://github.com/altcha-org/altcha) — `reports/8g2SIPuk9xM.md`
+- [evi0s/WMPFDebugger](https://github.com/evi0s/WMPFDebugger) — `reports/8g2SIPuk9xM.md`
 - [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — `reports/AWzzmrCPe-A.md`
 - [THU-MAIC/OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) — `reports/AWzzmrCPe-A.md`
 - [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines) — `reports/AWzzmrCPe-A.md`
@@ -287,6 +507,25 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
 - [templetongroup/radiant](https://github.com/templetongroup/radiant) — `reports/AWzzmrCPe-A.md`
 - [zapier/sdk](https://github.com/zapier/sdk) — `reports/AWzzmrCPe-A.md`
 - [bmax121/APatch](https://github.com/bmax121/APatch) — `reports/B0SHMrbULcw.md`
+- [alex-damian/pulse](https://github.com/alex-damian/pulse) — `reports/BNHeFv31HNA.md`
+- [fail2ban/fail2ban](https://github.com/fail2ban/fail2ban) — `reports/BNHeFv31HNA.md`
+- [RayVentura/ShortGPT](https://github.com/RayVentura/ShortGPT) — `reports/BNHeFv31HNA.md`
+- [cboxdoerfer/fsearch](https://github.com/cboxdoerfer/fsearch) — `reports/BNHeFv31HNA.md`
+- [docker/docker-agent](https://github.com/docker/docker-agent) — `reports/BNHeFv31HNA.md`
+- [NVIDIA-Omniverse/PhysX](https://github.com/NVIDIA-Omniverse/PhysX) — `reports/BNHeFv31HNA.md`
+- [storytold/wordcraft](https://github.com/storytold/wordcraft) — `reports/BNHeFv31HNA.md`
+- [geektutu/high-performance-go](https://github.com/geektutu/high-performance-go) — `reports/BNHeFv31HNA.md`
+- [Kometa-Team/Kometa](https://github.com/Kometa-Team/Kometa) — `reports/BNHeFv31HNA.md`
+- [revolist/revogrid](https://github.com/revolist/revogrid) — `reports/BNHeFv31HNA.md`
+- [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) — `reports/BNHeFv31HNA.md`
+- [riscv-software-src/riscv-isa-sim](https://github.com/riscv-software-src/riscv-isa-sim) — `reports/BNHeFv31HNA.md`
+- [json-schema-faker/json-schema-faker](https://github.com/json-schema-faker/json-schema-faker) — `reports/BNHeFv31HNA.md`
+- [davesc63/GeoPort](https://github.com/davesc63/GeoPort) — `reports/BNHeFv31HNA.md`
+- [Chunyu33/light-c](https://github.com/Chunyu33/light-c) — `reports/BNHeFv31HNA.md`
+- [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) — `reports/BNHeFv31HNA.md`
+- [CodeBoarding/CodeBoarding](https://github.com/CodeBoarding/CodeBoarding) — `reports/BNHeFv31HNA.md`
+- [mpitutorial/mpitutorial](https://github.com/mpitutorial/mpitutorial) — `reports/BNHeFv31HNA.md`
+- [noamseg/interview-coach-skill](https://github.com/noamseg/interview-coach-skill) — `reports/BNHeFv31HNA.md`
 - jdepoix/youtube-transcript-api — `reports/BcNAQynKUk4.md`
 - paperclipai/paperclip — `reports/CQhWqUOouYM.md`
 - vectorize-io/hindsight — `reports/CQhWqUOouYM.md`
@@ -295,6 +534,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
 - pbakaus/impeccable — `reports/CQhWqUOouYM.md`
 - alirezarezvani/claude-skills — `reports/CQhWqUOouYM.md`
 - [boykopovar/AnyPS5](https://github.com/boykopovar/AnyPS5) — `reports/Cl8YA3bJNTg.md`
+- [storytold/wordcraft](https://github.com/storytold/wordcraft) — `reports/DD3ae8CXFZI.md`
+- [pbakaus/impeccable](https://github.com/pbakaus/impeccable) — `reports/EUavfcfHtu4.md`
 - [microsoft/playwright](https://github.com/microsoft/playwright) — `reports/F-_q6VIHMS8.md`
 - [PostHog/posthog](https://github.com/PostHog/posthog) — `reports/F-_q6VIHMS8.md`
 - [getsentry/sentry](https://github.com/getsentry/sentry) — `reports/F-_q6VIHMS8.md`
@@ -306,21 +547,115 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
 - [dyad-sh/dyad](https://github.com/dyad-sh/dyad) — `reports/GZtLsvklYBI.md`
 - [FoundationAgents/OpenManus](https://github.com/FoundationAgents/OpenManus) — `reports/GZtLsvklYBI.md`
 - [ermaozi/get_subscribe](https://github.com/ermaozi/get_subscribe) — `reports/Gj5H7h_yA30.md`
-- jdepoix/youtube-transcript-api — `reports/Ie6IlSIYAfc.md`
+- [onionshare/onionshare](https://github.com/onionshare/onionshare) — `reports/IwPSH-hyNJ4.md`
 - [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) — `reports/Jv050l7y6ik.md`
 - jdepoix/youtube-transcript-api — `reports/KU7FrnLBqSM.md`
 - [wbh604/UZI-Skill](https://github.com/wbh604/UZI-Skill) — `reports/LEn0T77_-RU.md`
+- [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) — `reports/LgoY2L80xxY.md`
 - X1 (x1.new) — `reports/M7cvI4155_E.md`
+- Identity — `reports/M7cvI4155_E.md`
 - diffusionstudio/core — `reports/MaTkyO-8hZ0.md`
 - OpenClaw 2.0 — `reports/MaTkyO-8hZ0.md`
+- PixelShop — `reports/MaTkyO-8hZ0.md`
+- Infinite Slop — `reports/MaTkyO-8hZ0.md`
+- Google Pix — `reports/MaTkyO-8hZ0.md`
+- Dial — `reports/MaTkyO-8hZ0.md`
+- Claude computer use — `reports/MaTkyO-8hZ0.md`
+- Radar — `reports/MaTkyO-8hZ0.md`
+- [fail2ban/fail2ban](https://github.com/fail2ban/fail2ban) — `reports/NurkrP-touo.md`
+- [ClementTsang/bottom](https://github.com/ClementTsang/bottom) — `reports/Oaq2w0wAZbc.md`
+- [Ramotion/animated-tab-bar](https://github.com/Ramotion/animated-tab-bar) — `reports/Oaq2w0wAZbc.md`
+- [pqoqubbw/icons](https://github.com/pqoqubbw/icons) — `reports/Oaq2w0wAZbc.md`
+- [zai-org/GLM-5](https://github.com/zai-org/GLM-5) — `reports/Oaq2w0wAZbc.md`
+- [tridactyl/tridactyl](https://github.com/tridactyl/tridactyl) — `reports/Oaq2w0wAZbc.md`
+- [mosra/magnum](https://github.com/mosra/magnum) — `reports/Oaq2w0wAZbc.md`
+- [harbor-framework/harbor](https://github.com/harbor-framework/harbor) — `reports/Oaq2w0wAZbc.md`
+- [filipecalegario/awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) — `reports/Oaq2w0wAZbc.md`
+- [Screenly/Anthias](https://github.com/Screenly/Anthias) — `reports/Oaq2w0wAZbc.md`
+- [imbue-bit/AlphaGPT](https://github.com/imbue-bit/AlphaGPT) — `reports/Oaq2w0wAZbc.md`
+- [QwenLM/Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR) — `reports/Oaq2w0wAZbc.md`
+- [mahlernim/google-timeline-visualizer](https://github.com/mahlernim/google-timeline-visualizer) — `reports/Oaq2w0wAZbc.md`
+- [google-deepmind/science-skills](https://github.com/google-deepmind/science-skills) — `reports/Oaq2w0wAZbc.md`
+- [renode/renode](https://github.com/renode/renode) — `reports/Oaq2w0wAZbc.md`
+- [nakixii/Magisk_AsoulOpt](https://github.com/nakixii/Magisk_AsoulOpt) — `reports/Oaq2w0wAZbc.md`
+- [evi0s/WMPFDebugger](https://github.com/evi0s/WMPFDebugger) — `reports/Oaq2w0wAZbc.md`
+- [ueberdosis/hocuspocus](https://github.com/ueberdosis/hocuspocus) — `reports/Oaq2w0wAZbc.md`
+- [GyanD/codexffmpeg](https://github.com/GyanD/codexffmpeg) — `reports/Oaq2w0wAZbc.md`
+- [NVIDIA/nvidia-docker](https://github.com/NVIDIA/nvidia-docker) — `reports/PSWm7roiKic.md`
+- [openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc) — `reports/PSWm7roiKic.md`
+- [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) — `reports/PSWm7roiKic.md`
+- [onionshare/onionshare](https://github.com/onionshare/onionshare) — `reports/PSWm7roiKic.md`
+- [SimoneAvogadro/android-reverse-engineering-skill](https://github.com/SimoneAvogadro/android-reverse-engineering-skill) — `reports/PSWm7roiKic.md`
+- [FongMi/Release](https://github.com/FongMi/Release) — `reports/PSWm7roiKic.md`
+- [openvla/openvla](https://github.com/openvla/openvla) — `reports/PSWm7roiKic.md`
+- [alexpasmantier/television](https://github.com/alexpasmantier/television) — `reports/PSWm7roiKic.md`
+- [builderz-labs/mission-control](https://github.com/builderz-labs/mission-control) — `reports/PSWm7roiKic.md`
+- [mg-chao/snow-apps](https://github.com/mg-chao/snow-apps) — `reports/PSWm7roiKic.md`
+- [intelowlproject/IntelOwl](https://github.com/intelowlproject/IntelOwl) — `reports/PSWm7roiKic.md`
+- [sjqzhang/go-fastdfs](https://github.com/sjqzhang/go-fastdfs) — `reports/PSWm7roiKic.md`
+- [Infatoshi/cuda-course](https://github.com/Infatoshi/cuda-course) — `reports/PSWm7roiKic.md`
+- [clash-download/Clash](https://github.com/clash-download/Clash) — `reports/PSWm7roiKic.md`
+- [xororz/local-dream](https://github.com/xororz/local-dream) — `reports/PSWm7roiKic.md`
+- [SteamRE/DepotDownloader](https://github.com/SteamRE/DepotDownloader) — `reports/PSWm7roiKic.md`
+- [qos-ch/logback](https://github.com/qos-ch/logback) — `reports/PSWm7roiKic.md`
+- [singgel/Study-Floder](https://github.com/singgel/Study-Floder) — `reports/PSWm7roiKic.md`
+- [dingyong0214/ThorUI-uniapp](https://github.com/dingyong0214/ThorUI-uniapp) — `reports/PSWm7roiKic.md`
+- [next-theme/hexo-theme-next](https://github.com/next-theme/hexo-theme-next) — `reports/PSWm7roiKic.md`
+- [eug/awesome-opengl](https://github.com/eug/awesome-opengl) — `reports/PSWm7roiKic.md`
+- [ash-rs/ash](https://github.com/ash-rs/ash) — `reports/PSWm7roiKic.md`
+- [square/picasso](https://github.com/square/picasso) — `reports/Q5V4h0LVzQI.md`
+- [immersive-translate/immersive-translate](https://github.com/immersive-translate/immersive-translate) — `reports/Q5V4h0LVzQI.md`
+- [microsoft/TRELLIS.2](https://github.com/microsoft/TRELLIS.2) — `reports/Q5V4h0LVzQI.md`
+- [MathewSachin/Captura](https://github.com/MathewSachin/Captura) — `reports/Q5V4h0LVzQI.md`
+- [librespot-org/librespot](https://github.com/librespot-org/librespot) — `reports/Q5V4h0LVzQI.md`
+- [OneDragon-Anything/ZenlessZoneZero-OneDragon](https://github.com/OneDragon-Anything/ZenlessZoneZero-OneDragon) — `reports/Q5V4h0LVzQI.md`
+- [Mikaelemmmm/go-zero-looklook](https://github.com/Mikaelemmmm/go-zero-looklook) — `reports/Q5V4h0LVzQI.md`
+- [tokio-rs/topcoat](https://github.com/tokio-rs/topcoat) — `reports/Q5V4h0LVzQI.md`
+- [oddfar/campus-imaotai](https://github.com/oddfar/campus-imaotai) — `reports/Q5V4h0LVzQI.md`
+- [SylarLong/iztro](https://github.com/SylarLong/iztro) — `reports/Q5V4h0LVzQI.md`
+- [ebitengine/purego](https://github.com/ebitengine/purego) — `reports/Q5V4h0LVzQI.md`
+- [tmstack/awesome-persona-skills](https://github.com/tmstack/awesome-persona-skills) — `reports/Q5V4h0LVzQI.md`
+- [UsefulSoftwareCo/executor](https://github.com/UsefulSoftwareCo/executor) — `reports/Q5V4h0LVzQI.md`
+- [freestylefly/CodexGuide](https://github.com/freestylefly/CodexGuide) — `reports/Q5V4h0LVzQI.md`
+- [echo-loop/Echo-Loop](https://github.com/echo-loop/Echo-Loop) — `reports/Q5V4h0LVzQI.md`
+- [tsoding/nob.h](https://github.com/tsoding/nob.h) — `reports/Q5V4h0LVzQI.md`
+- [squid-cache/squid](https://github.com/squid-cache/squid) — `reports/Q5V4h0LVzQI.md`
+- [pluja/whishper](https://github.com/pluja/whishper) — `reports/Q5V4h0LVzQI.md`
+- [jeeliz/jeelizFaceFilter](https://github.com/jeeliz/jeelizFaceFilter) — `reports/Q5V4h0LVzQI.md`
+- [modernweb-dev/web](https://github.com/modernweb-dev/web) — `reports/Q5V4h0LVzQI.md`
+- [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) — `reports/REBGnMvrbA4.md`
 - [warp-tech/warpgate](https://github.com/warp-tech/warpgate) — `reports/SkU-Q6nVLy4.md`
+- [anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community) — `reports/TWCSvvTfJNU.md`
+- [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) — `reports/TWCSvvTfJNU.md`
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/TWCSvvTfJNU.md`
 - [AprilNEA/OpenLogi](https://github.com/AprilNEA/OpenLogi) — `reports/TWCSvvTfJNU.md`
-- [openai/codex](https://github.com/openai/codex) — `reports/TWCSvvTfJNU.md`
+- [apache/maka](https://github.com/apache/maka) — `reports/TWCSvvTfJNU.md`
 - [modular/modular](https://github.com/modular/modular) — `reports/TWCSvvTfJNU.md`
 - [securo-finance/securo](https://github.com/securo-finance/securo) — `reports/TWCSvvTfJNU.md`
-- [zapier/zapier-mcp](https://github.com/zapier/zapier-mcp) — `reports/TWCSvvTfJNU.md`
+- [umano/AndroidSlidingUpPanel](https://github.com/umano/AndroidSlidingUpPanel) — `reports/Uk_gHHUPidU.md`
+- [tbphp/gpt-load](https://github.com/tbphp/gpt-load) — `reports/Uk_gHHUPidU.md`
+- [azahar-emu/azahar](https://github.com/azahar-emu/azahar) — `reports/Uk_gHHUPidU.md`
+- [GDRETools/gdsdecomp](https://github.com/GDRETools/gdsdecomp) — `reports/Uk_gHHUPidU.md`
+- [stackia/best-windows-apps](https://github.com/stackia/best-windows-apps) — `reports/Uk_gHHUPidU.md`
+- [rejetto/hfs](https://github.com/rejetto/hfs) — `reports/Uk_gHHUPidU.md`
+- [termux/proot-distro](https://github.com/termux/proot-distro) — `reports/Uk_gHHUPidU.md`
+- [leggedrobotics/rsl_rl](https://github.com/leggedrobotics/rsl_rl) — `reports/Uk_gHHUPidU.md`
+- [quickshell-mirror/quickshell](https://github.com/quickshell-mirror/quickshell) — `reports/Uk_gHHUPidU.md`
+- [iDescriptor/iDescriptor](https://github.com/iDescriptor/iDescriptor) — `reports/Uk_gHHUPidU.md`
+- [xiaojinzi123/Component](https://github.com/xiaojinzi123/Component) — `reports/Uk_gHHUPidU.md`
+- [rohitg00/pro-workflow](https://github.com/rohitg00/pro-workflow) — `reports/Uk_gHHUPidU.md`
+- [datascale-ai/opentalking](https://github.com/datascale-ai/opentalking) — `reports/Uk_gHHUPidU.md`
+- [0xCUB3/wBlock](https://github.com/0xCUB3/wBlock) — `reports/Uk_gHHUPidU.md`
+- [mthom/scryer-prolog](https://github.com/mthom/scryer-prolog) — `reports/Uk_gHHUPidU.md`
+- [jakegut/resume](https://github.com/jakegut/resume) — `reports/Uk_gHHUPidU.md`
+- [open-webui/desktop](https://github.com/open-webui/desktop) — `reports/Uk_gHHUPidU.md`
+- [THU-MIG/yoloe](https://github.com/THU-MIG/yoloe) — `reports/Uk_gHHUPidU.md`
+- [next-1688/1688-shopkeeper](https://github.com/next-1688/1688-shopkeeper) — `reports/Uk_gHHUPidU.md`
+- [yhilpisch/py4fi2nd](https://github.com/yhilpisch/py4fi2nd) — `reports/Uk_gHHUPidU.md`
+- [TencentARC/Pixal3D](https://github.com/TencentARC/Pixal3D) — `reports/Uk_gHHUPidU.md`
+- [runetfreedom/russia-v2ray-rules-dat](https://github.com/runetfreedom/russia-v2ray-rules-dat) — `reports/Uk_gHHUPidU.md`
 - Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/WPUAZm5rnGc.md`
+- [NVIDIA/nvidia-docker](https://github.com/NVIDIA/nvidia-docker) — `reports/WSbfU-vuPIw.md`
 - [boykopovar/AnyPS5](https://github.com/boykopovar/AnyPS5) — `reports/Wsru44p-J14.md`
 - [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) — `reports/Wsru44p-J14.md`
 - [EpicGames/raddebugger](https://github.com/EpicGames/raddebugger) — `reports/Wsru44p-J14.md`
@@ -332,6 +667,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
 - [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) — `reports/Wsru44p-J14.md`
 - [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) — `reports/Wsru44p-J14.md`
 - [authzed/spicedb](https://github.com/authzed/spicedb) — `reports/X-jXNxoM1bg.md`
+- [Conway-Research/automaton](https://github.com/Conway-Research/automaton) — `reports/X1Y3A4zvKy0.md`
 - jdepoix/youtube-transcript-api — `reports/XGJtqUPUZSo.md`
 - [trycompai/crm](https://github.com/trycompai/crm) — `reports/XoOOY1rc43E.md`
 - [bmax121/APatch](https://github.com/bmax121/APatch) — `reports/Yjew8fYFmvw.md`
@@ -358,22 +694,44 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
 - [muskie82/MonoGS](https://github.com/muskie82/MonoGS) — `reports/Yjew8fYFmvw.md`
 - JohnHeibel/PDoomVideo — `reports/ZodAaTH-6_E.md`
 - yoheinakajima/glance-speedlab — `reports/ZodAaTH-6_E.md`
+- [SimoneAvogadro/android-reverse-engineering-skill](https://github.com/SimoneAvogadro/android-reverse-engineering-skill) — `reports/Zxh3z2j47qQ.md`
 - [jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) — `reports/_6PHjLCjdpo.md`
+- [openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc) — `reports/_LL4uWbZ5x0.md`
 - [humanlayer/skills](https://github.com/humanlayer/skills) — `reports/aX8Y183qDpY.md`
 - [openai/plugins](https://github.com/openai/plugins) — `reports/aX8Y183qDpY.md`
 - [blader/humanizer](https://github.com/blader/humanizer) — `reports/aX8Y183qDpY.md`
 - [openai/skills](https://github.com/openai/skills) — `reports/aX8Y183qDpY.md`
 - [CaptainASIC/reckoner](https://github.com/CaptainASIC/reckoner) — `reports/aX8Y183qDpY.md`
 - [Aotricx/Clodex](https://github.com/Aotricx/Clodex) — `reports/aX8Y183qDpY.md`
+- [Agenta-AI/agenta](https://github.com/Agenta-AI/agenta) — `reports/atPmaHnJzNY.md`
+- [INTERMT/Awesome-PyTorch-Chinese](https://github.com/INTERMT/Awesome-PyTorch-Chinese) — `reports/atPmaHnJzNY.md`
+- [Open-Shell/Open-Shell-Menu](https://github.com/Open-Shell/Open-Shell-Menu) — `reports/atPmaHnJzNY.md`
+- [alibaba/ChatUI](https://github.com/alibaba/ChatUI) — `reports/atPmaHnJzNY.md`
+- [microsoft/referencesource](https://github.com/microsoft/referencesource) — `reports/atPmaHnJzNY.md`
+- [node-webrtc/node-webrtc](https://github.com/node-webrtc/node-webrtc) — `reports/atPmaHnJzNY.md`
+- [marcgibbons/django-rest-swagger](https://github.com/marcgibbons/django-rest-swagger) — `reports/atPmaHnJzNY.md`
+- [paperclipai/paperclip](https://github.com/paperclipai/paperclip) — `reports/atPmaHnJzNY.md`
+- [sharetribe/sharetribe](https://github.com/sharetribe/sharetribe) — `reports/atPmaHnJzNY.md`
+- [sqliteai/warp](https://github.com/sqliteai/warp) — `reports/atPmaHnJzNY.md`
+- [TencentARC/Pixal3D](https://github.com/TencentARC/Pixal3D) — `reports/atPmaHnJzNY.md`
+- [community-valheim-tools/valheim-server-docker](https://github.com/community-valheim-tools/valheim-server-docker) — `reports/atPmaHnJzNY.md`
+- [oneclickvirt/ecs](https://github.com/oneclickvirt/ecs) — `reports/atPmaHnJzNY.md`
+- [idaholab/moose](https://github.com/idaholab/moose) — `reports/atPmaHnJzNY.md`
+- [ulule/limiter](https://github.com/ulule/limiter) — `reports/atPmaHnJzNY.md`
+- [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter) — `reports/atPmaHnJzNY.md`
+- [widgetti/solara](https://github.com/widgetti/solara) — `reports/atPmaHnJzNY.md`
+- [oss-review-toolkit/ort](https://github.com/oss-review-toolkit/ort) — `reports/atPmaHnJzNY.md`
+- [moveit/moveit2](https://github.com/moveit/moveit2) — `reports/atPmaHnJzNY.md`
+- [zed-industries/extensions](https://github.com/zed-industries/extensions) — `reports/atPmaHnJzNY.md`
+- [mercurjs/mercur](https://github.com/mercurjs/mercur) — `reports/atPmaHnJzNY.md`
+- [phaserjs/phaser-ce-examples](https://github.com/phaserjs/phaser-ce-examples) — `reports/atPmaHnJzNY.md`
 - [jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) — `reports/bTbyRKO0hxs.md`
 - jdepoix/youtube-transcript-api — `reports/dfFKE7EetoA.md`
-- vercel-labs/skills — `reports/ehab5PtgRo8.md`
-- anthropics/skills — `reports/ehab5PtgRo8.md`
-- vercel-labs/agent-skills — `reports/ehab5PtgRo8.md`
-- larksuite/cli — `reports/ehab5PtgRo8.md`
+- [reek/anti-adblock-killer](https://github.com/reek/anti-adblock-killer) — `reports/dlS6gk830mI.md`
 - bilawalsidhu/gods-eye-view — `reports/f1-sphdBqJY.md`
 - [jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) — `reports/g-CG1PD7iTc.md`
 - [storytold/artcraft](https://github.com/storytold/artcraft) — `reports/gNSUW_rjYqY.md`
+- [anthropics/financial-services](https://github.com/anthropics/financial-services) — `reports/grh6GjYLyyI.md`
 - anthropics/claude-code — `reports/hlOk-EFUITQ.md`
 - stablyai/orca — `reports/hlOk-EFUITQ.md`
 - TencentCloud/Octop — `reports/hlOk-EFUITQ.md`
@@ -392,6 +750,12 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
 - X1 (iPhone app builder) — `reports/klqyY5SAQvc.md`
 - Expertise.ai (AI skill marketplace) — `reports/klqyY5SAQvc.md`
 - Peter Yang patient advocacy skill — `reports/klqyY5SAQvc.md`
+- boykopovar/AnyPS5 — `reports/kqn_mSjSWMs.md`
+- NationalSecurityAgency/ghidra — `reports/kqn_mSjSWMs.md`
+- ranxianglei/billion-context — `reports/kqn_mSjSWMs.md`
+- earthtojake/text-to-cad — `reports/kqn_mSjSWMs.md`
+- twostraws/SwiftUI-Agent-Skill — `reports/kqn_mSjSWMs.md`
+- DuarteSantos8/openGym — `reports/kqn_mSjSWMs.md`
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/mHGDF8mwkY4.md`
 - Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/mny7r505ZpU.md`
 - `jdepoix/youtube-transcript-api` — `reports/pkwnJcETgfE.md`
@@ -399,12 +763,62 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
 - Other tools mentioned — `reports/pxaMzr7al3I.md`
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`
 - Outbid.lol — `reports/qr7Zwjx-nWU.md`
+- CapSoftware/Cap — `reports/rVoAyD2Zrfs.md`
+- dani-garcia/vaultwarden — `reports/rVoAyD2Zrfs.md`
+- twentyhq/twenty — `reports/rVoAyD2Zrfs.md`
+- umami-software/umami — `reports/rVoAyD2Zrfs.md`
+- nextcloud/server — `reports/rVoAyD2Zrfs.md`
+- chatwoot/chatwoot — `reports/rVoAyD2Zrfs.md`
+- [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) — `reports/rXiSq2Te5H8.md`
 - [morluto/rea](https://github.com/morluto/rea) — `reports/rcQIAEdOA8Y.md`
 - [Byron/dua-cli](https://github.com/Byron/dua-cli) — `reports/tfhN43qOD5I.md`
 - Piano Autocomplete (Simon Edwardsson / simedw) — `reports/twVd1dyPlz8.md`
-- jdepoix/youtube-transcript-api — `reports/wgdFn5JXXb8.md`
+- [amitshekhariitbhu/from-java-to-kotlin](https://github.com/amitshekhariitbhu/from-java-to-kotlin) — `reports/vjWCfBPGy3Y.md`
+- [potatoqualitee/eol-dr](https://github.com/potatoqualitee/eol-dr) — `reports/vjWCfBPGy3Y.md`
+- [hugo2046/QuantsPlaybook](https://github.com/hugo2046/QuantsPlaybook) — `reports/vjWCfBPGy3Y.md`
+- [darkmatter2048/WindowsCleaner](https://github.com/darkmatter2048/WindowsCleaner) — `reports/vjWCfBPGy3Y.md`
+- [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter) — `reports/vjWCfBPGy3Y.md`
+- [doctrine-extensions/DoctrineExtensions](https://github.com/doctrine-extensions/DoctrineExtensions) — `reports/vjWCfBPGy3Y.md`
+- [nestybox/sysbox](https://github.com/nestybox/sysbox) — `reports/vjWCfBPGy3Y.md`
+- [owu/wsl-dashboard](https://github.com/owu/wsl-dashboard) — `reports/vjWCfBPGy3Y.md`
+- [LandGrey/pydictor](https://github.com/LandGrey/pydictor) — `reports/vjWCfBPGy3Y.md`
+- [json-schema-faker/json-schema-faker](https://github.com/json-schema-faker/json-schema-faker) — `reports/vjWCfBPGy3Y.md`
+- [stereobooster/react-ideal-image](https://github.com/stereobooster/react-ideal-image) — `reports/vjWCfBPGy3Y.md`
+- [pyutils/line_profiler](https://github.com/pyutils/line_profiler) — `reports/vjWCfBPGy3Y.md`
+- [bytedance/ByteX](https://github.com/bytedance/ByteX) — `reports/vjWCfBPGy3Y.md`
+- [danvk/dygraphs](https://github.com/danvk/dygraphs) — `reports/vjWCfBPGy3Y.md`
+- [RainManGO/vue3-composition-admin](https://github.com/RainManGO/vue3-composition-admin) — `reports/vjWCfBPGy3Y.md`
+- [EvoMap/AutoResearch](https://github.com/EvoMap/AutoResearch) — `reports/vjWCfBPGy3Y.md`
+- [Rion-Wu-tech/wechat-intelligence-hub](https://github.com/Rion-Wu-tech/wechat-intelligence-hub) — `reports/vjWCfBPGy3Y.md`
+- [vlang/vinix](https://github.com/vlang/vinix) — `reports/vjWCfBPGy3Y.md`
+- [agno-agi/dash](https://github.com/agno-agi/dash) — `reports/vjWCfBPGy3Y.md`
+- [yadox666/The-Hackers-Hardware-Toolkit](https://github.com/yadox666/The-Hackers-Hardware-Toolkit) — `reports/vjWCfBPGy3Y.md`
+- [martin-ger/esp32_nat_router](https://github.com/martin-ger/esp32_nat_router) — `reports/vjWCfBPGy3Y.md`
+- [tandpfun/wardrobe](https://github.com/tandpfun/wardrobe) — `reports/vjWCfBPGy3Y.md`
+- [useautumn/autumn](https://github.com/useautumn/autumn) — `reports/wgdFn5JXXb8.md`
 - [google/artemis](https://github.com/google/artemis) — `reports/yYEHxEF869k.md`
 - [robbietilton/Compositor](https://github.com/robbietilton/Compositor) — `reports/yvEO-QDdb50.md`
+- [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) — `reports/z-_34WChEoo.md`
+- [cloudflare/computer](https://github.com/cloudflare/computer) — `reports/z-_34WChEoo.md`
+- [dexidp/dex](https://github.com/dexidp/dex) — `reports/z-_34WChEoo.md`
+- [TingsongYu/PyTorch_Tutorial](https://github.com/TingsongYu/PyTorch_Tutorial) — `reports/z-_34WChEoo.md`
+- [any-listen/any-listen](https://github.com/any-listen/any-listen) — `reports/z-_34WChEoo.md`
+- [xemu-project/xemu](https://github.com/xemu-project/xemu) — `reports/z-_34WChEoo.md`
+- [MeteorDevelopment/meteor-client](https://github.com/MeteorDevelopment/meteor-client) — `reports/z-_34WChEoo.md`
+- [gaoyifan/china-operator-ip](https://github.com/gaoyifan/china-operator-ip) — `reports/z-_34WChEoo.md`
+- [FuzzyGrim/Yamtrack](https://github.com/FuzzyGrim/Yamtrack) — `reports/z-_34WChEoo.md`
+- [InoriRus/Kyty](https://github.com/InoriRus/Kyty) — `reports/z-_34WChEoo.md`
+- [adryfish/fingerprint-chromium](https://github.com/adryfish/fingerprint-chromium) — `reports/z-_34WChEoo.md`
+- [Tencent-Hunyuan/HunyuanWorld-1.0](https://github.com/Tencent-Hunyuan/HunyuanWorld-1.0) — `reports/z-_34WChEoo.md`
+- [dscripka/openWakeWord](https://github.com/dscripka/openWakeWord) — `reports/z-_34WChEoo.md`
+- [kjfx/QuantumultX](https://github.com/kjfx/QuantumultX) — `reports/z-_34WChEoo.md`
+- [flyinghead/flycast](https://github.com/flyinghead/flycast) — `reports/z-_34WChEoo.md`
+- [voidtools/voidImageViewer](https://github.com/voidtools/voidImageViewer) — `reports/z-_34WChEoo.md`
+- [NVIDIA/stdexec](https://github.com/NVIDIA/stdexec) — `reports/z-_34WChEoo.md`
+- [NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell) — `reports/z-_34WChEoo.md`
+- [dstackai/dstack](https://github.com/dstackai/dstack) — `reports/z-_34WChEoo.md`
+- [pypa/cibuildwheel](https://github.com/pypa/cibuildwheel) — `reports/z-_34WChEoo.md`
+- [spurin/diveintoansible](https://github.com/spurin/diveintoansible) — `reports/z-_34WChEoo.md`
 - [Byron/dua-cli](https://github.com/Byron/dua-cli) — `reports/zP43y0wJzhg.md`
 - [Mak5er/AirCard](https://github.com/Mak5er/AirCard) — `reports/zP43y0wJzhg.md`
 - [ed-donner/agents](https://github.com/ed-donner/agents) — `reports/zP43y0wJzhg.md`
@@ -430,26 +844,3 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-16.
 - [zeldaret/botw](https://github.com/zeldaret/botw) — `reports/zP43y0wJzhg.md`
 - [MhLiao/DB](https://github.com/MhLiao/DB) — `reports/zP43y0wJzhg.md`
 - [Tikam02/DevOps-Guide](https://github.com/Tikam02/DevOps-Guide) — `reports/zVk7DH9EFhE.md`
-
-## Pending eval
-
-- `reports/-1qUSNwKHis.md` — I gave 10 AI agents real jobs. Here's what they did (0 unevaled)
-- `reports/7rVTo_sy4Po.md` — Replace ElevenLabs, Jira, Slack & Granola for Your AI Agents (Free on GitHub) (0 unevaled)
-- `reports/98GHk_nqdPg.md` — freellmapi - GitHub Trending Today (0 unevaled)
-- `reports/BNHeFv31HNA.md` — GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171 (0 unevaled)
-- `reports/DD3ae8CXFZI.md` — wordcraft - GitHub Trending Today (0 unevaled)
-- `reports/EUavfcfHtu4.md` — Your AI Website Looks Like Slop. Here's the Free Fix. (0 unevaled)
-- `reports/IwPSH-hyNJ4.md` — onionshare - GitHub Trending Today (0 unevaled)
-- `reports/LgoY2L80xxY.md` — dsh-our-free-model - GitHub Trending Today (0 unevaled)
-- `reports/NurkrP-touo.md` — fail2ban - GitHub Trending Today (0 unevaled)
-- `reports/PSWm7roiKic.md` — GitHub Trending Today - YuE, nvidia-docker, television, openvla & More | #170 (0 unevaled)
-- `reports/QHgIY9KQJCk.md` — YuE - GitHub Trending Today (0 unevaled)
-- `reports/REBGnMvrbA4.md` — cockpit-tools - GitHub Trending Today (0 unevaled)
-- `reports/T6gMdMy2AbA.md` — claude-seo - GitHub Trending Today (0 unevaled)
-- `reports/WSbfU-vuPIw.md` — nvidia-docker - GitHub Trending Today (0 unevaled)
-- `reports/X1Y3A4zvKy0.md` — automaton - GitHub Trending Today (0 unevaled)
-- `reports/Zxh3z2j47qQ.md` — android-reverse-engineering-skill - GitHub Trending Today (0 unevaled)
-- `reports/_LL4uWbZ5x0.md` — codex-plugin-cc - GitHub Trending Today (0 unevaled)
-- `reports/dlS6gk830mI.md` — anti-adblock-killer - GitHub Trending Today (0 unevaled)
-- `reports/rXiSq2Te5H8.md` — diagram-design - GitHub Trending Today (0 unevaled)
-- `reports/x9nyYMJB5RM.md` — RealChar - GitHub Trending Today (0 unevaled)

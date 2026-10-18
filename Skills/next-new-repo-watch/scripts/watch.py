@@ -50,11 +50,69 @@ def save_state(state):
 def fetch_rss(channel_id):
     rss_url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
     req = urllib.request.Request(rss_url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return ET.fromstring(r.read())
+    except Exception:
+        return fetch_channel_page(channel_id)
+
+
+def fetch_channel_page(channel_id):
+    handles = {
+        "UCNZEktrsM5oJZ-MK4jKPMOQ": "TheNextNewThingAI",
+        "UCApTsoLsKHl-tVhWKNupUKw": "GitHubTrendingDigest",
+    }
+    channel = handles.get(channel_id, channel_id)
+    req = urllib.request.Request(f"https://www.youtube.com/@{channel}/videos", headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=30) as r:
-        return ET.fromstring(r.read())
+        page = r.read().decode("utf-8", "replace")
+    marker = "ytInitialData"
+    pos = page.find(marker)
+    start = page.find("{", pos)
+    data, _ = json.JSONDecoder().raw_decode(page[start:])
+    entries = []
+    seen = set()
+
+    def collect(value):
+        if isinstance(value, dict):
+            if "lockupViewModel" in value:
+                model = value["lockupViewModel"]
+                title_model = model.get("metadata", {}).get("lockupMetadataViewModel", {}).get("title", {})
+                title = title_model.get("content", "")
+                video_id = None
+
+                def find_id(node):
+                    nonlocal video_id
+                    if isinstance(node, dict):
+                        candidate = node.get("videoId")
+                        if isinstance(candidate, str) and len(candidate) == 11:
+                            video_id = candidate
+                        for child in node.values():
+                            find_id(child)
+                    elif isinstance(node, list):
+                        for child in node:
+                            find_id(child)
+
+                find_id(model)
+                if video_id and title and video_id not in seen:
+                    seen.add(video_id)
+                    entries.append({"id": video_id, "title": title, "published": "", "link": f"https://www.youtube.com/watch?v={video_id}", "description": ""})
+            for child in value.values():
+                collect(child)
+        elif isinstance(value, list):
+            for child in value:
+                collect(child)
+
+    collect(data)
+    entries = entries[:15]
+    if not entries:
+        raise RuntimeError(f"Could not parse videos page for channel {channel_id}")
+    return [{"entry": e} for e in entries]
 
 
 def list_entries(root):
+    if isinstance(root, list):
+        return [item["entry"] for item in root]
     out = []
     for e in root.findall("a:entry", NS):
         vid = e.find("yt:videoId", NS).text
@@ -76,6 +134,25 @@ def fetch_transcript(video_id):
         return " ".join(seg.text for seg in t)
     except Exception as exc:
         return f"[transcript unavailable: {exc}]"
+
+
+def hydrate_entry(entry):
+    if entry.get("description") and entry.get("published"):
+        return entry
+    req = urllib.request.Request(f"https://www.youtube.com/watch?v={entry['id']}", headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        page = r.read().decode("utf-8", "replace")
+    title = re.search(r'"videoDetails":\{"videoId":"[^"]+","title":"((?:\\.|[^"\\])*)"', page)
+    description = re.search(r'"shortDescription":"((?:\\.|[^"\\])*)"', page)
+    published = re.search(r'"publishDate":"([^"]+)', page) or re.search(r'"uploadDate":"([^"]+)', page)
+    if title:
+        entry["title"] = json.loads('"' + title.group(1) + '"')
+    if description:
+        entry["description"] = json.loads('"' + description.group(1) + '"')
+    if published:
+        from datetime import datetime
+        entry["published"] = datetime.fromisoformat(published.group(1)).astimezone(timezone.utc).isoformat()
+    return entry
 
 
 def extract_github_repos(text):
@@ -193,6 +270,7 @@ def cmd_scan(args):
     if args.dry_run:
         return
     for e in new:
+        e = hydrate_entry(e)
         print(f"Processing {e['id']}…")
         transcript = fetch_transcript(e["id"])
         path, repos = write_stub(e, transcript)

@@ -10,7 +10,7 @@ Expertise.AI is a marketplace for buying and selling AI skills — the specific 
 
 #ExpertiseAI #AIAgents #AIMarketplace #FutureOfSoftware #DevTools
 
-🔗 Website: https://www.expertise.ai/ 
+🔗 Website: https://www.expertise.ai/
 
 Link to the full video: https://www.youtube.com/watch?v=klqyY5SAQvc
 

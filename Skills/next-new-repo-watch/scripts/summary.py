@@ -21,6 +21,9 @@ V = r"(INCLUDE|TRIAL|SKIP|N/A-repo)"
 
 
 def _find_verdict(blob: str):
+    m = re.search(rf"Recommendation:\s*\**\s*{V}\b", blob)
+    if m:
+        return m.group(1)
     m = re.search(rf"\*\*Recommendation:\s*\**\s*{V}\b", blob)
     if m:
         return m.group(1)
@@ -112,14 +115,45 @@ def parse_report(path: Path):
                 cur[2] += name_raw + rest + blob + "\n"
                 continue
             cur = [name, rest, blob]
-            verdict = _inline_verdict(rest) or _find_verdict(blob)
+            verdict = _inline_verdict(rest) or _find_verdict(rest) or _find_verdict(blob)
+            if verdict == "N/A-repo":
+                _add(items, name, verdict, _gh_url(rest) or _gh_url(blob), _desc(blob))
+                continue
             url = _gh_url(rest) or _gh_url(blob)
             if "/" not in name and not url and not verdict:
                 continue
             _add(items, name, verdict, url, _desc(blob))
 
+    # Older reports place one repository per bold bullet directly in Agent eval.
+    agent_eval = text.split("## Agent eval", 1)[1] if "## Agent eval" in text else ""
+    agent_eval = re.split(r"(?m)^## ", agent_eval)[0]
+    parts = re.split(r"(?m)^- \*\*((?!(?:Functionality|Fit|Verdict|Signals|Recommendation|Note|Notes|Why|Desc|Description|Reason)\b)[^*\n]+?)\*\*(.*)$", agent_eval)
+    for i in range(1, len(parts) - 2, 3):
+        name_raw, rest, blob = parts[i], parts[i + 1], parts[i + 2]
+        name = _clean_name(name_raw)
+        verdict = _inline_verdict(rest) or _find_verdict(rest) or _find_verdict(blob)
+        if verdict == "N/A-repo":
+            _add(items, name, verdict, _gh_url(rest) or _gh_url(blob), _desc(blob))
+            continue
+        url = _gh_url(rest) or _gh_url(blob)
+        if name and ("/" in name or url or verdict):
+            _add(items, name, verdict, url, _desc(blob))
+
+    auto_block = ""
+    if "## Auto-extracted repos" in text:
+        auto_block = text.split("## Auto-extracted repos", 1)[1].split("## Agent eval", 1)[0]
+    for match in re.finditer(r"(?m)^- \*\*([^*]+)\*\*[^\n]*\n((?:[ \t]+- [^\n]*\n?)*)", auto_block):
+        name = _clean_name(match.group(1))
+        blob = match.group(0)
+        url = _gh_url(blob)
+        if not url and re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", name):
+            url = f"https://github.com/{name}"
+        if any((url and item.get("url") == url) or item["name"].lower() == name.lower() for item in items.values()):
+            continue
+        _add(items, name, None, url, _desc(blob))
+
     repos = [x for x in items.values() if x["verdict"] != "N/A-repo" and not x["name"].startswith(("N/A", "Not identified"))]
-    pending = "## Eval" not in text and "Recommendation" not in text
+    pending = any(x["verdict"] == "PENDING" for x in repos)
     return {"vid": path.stem, "title": title, "repos": repos, "pending": pending}
 
 

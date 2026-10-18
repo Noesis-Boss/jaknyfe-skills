@@ -50,7 +50,7 @@ Media/Sponsorship Inquiries: https://thenextnewthing.ai/l/sponsor
 
 ## Transcript
 
-[transcript unavailable: 
+[transcript unavailable:
 Could not retrieve a transcript for the video https://www.youtube.com/watch?v=ehab5PtgRo8! This is most likely caused by:
 
 YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
@@ -65,9 +65,7 @@ If you are sure that the described cause is not responsible for this error and t
 
 ## Auto-extracted repos
 
-- **jdepoix/youtube-transcript-api** — 8342★ · Python · pushed 2026-09-10 · license MIT
   - This is a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles and it does not require an API key nor a headless browser, like other selenium based solutions do!
-  - https://github.com/jdepoix/youtube-transcript-api
 - **vercel-labs/skills** — 31845★ · TypeScript · pushed 2026-09-16 · license MIT
   - The open agent skills tool - npx skills
   - https://github.com/vercel-labs/skills
@@ -86,68 +84,42 @@ If you are sure that the described cause is not responsible for this error and t
 - **larksuite/cli** — 17261★ · Go · pushed 2026-09-17 · license MIT
   - The official Lark/飞书 CLI tool, maintained by the larksuite team — built for humans and AI Agents. Covers core business domains including Messenger, Docs, Base, Sheets, Calendar, Mail, Tasks, Meetings, and more, with 200+ commands and 20+ AI Agent Skills.
   - https://github.com/larksuite/cli
-
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+### vercel-labs/skills
+- Functionality: The open agent skills tool - npx skills.
+- Signals: 31845★ · TypeScript · pushed 2026-09-16 · license MIT.
+- Recommendation: TRIAL — review one workflow for a gap in Skills, test it in a disposable project, and run SkillSpector before adoption; budget about 1 hour.
+- Repository: https://github.com/vercel-labs/skills
 
-### vercel-labs/skills — find-skills
+### mattpocock/skills
+- Functionality: Skills for Real Engineers. Straight from my .agents directory.
+- Signals: 264033★ · Shell · pushed 2026-09-17 · license MIT.
+- Recommendation: TRIAL — review one workflow for a gap in Skills, test it in a disposable project, and run SkillSpector before adoption; budget about 1 hour.
+- Repository: https://github.com/mattpocock/skills
 
-**Functionality:** CLI and registry workflow for discovering and installing agent skills. It overlaps Zo’s native Skills catalog.
+### anthropics/skills
+- Functionality: Public repository for Agent Skills.
+- Signals: 176803★ · Python · pushed 2026-09-10 · license none.
+- Recommendation: TRIAL — review one workflow for a gap in Skills, test it in a disposable project, and run SkillSpector before adoption; budget about 1 hour.
+- Repository: https://github.com/anthropics/skills
 
-**Signals:** 31,845 stars; TypeScript; MIT; last push 2026-09-16; active; not archived.
+### vercel-labs/agent-browser
+- Functionality: Browser automation CLI for AI agents.
+- Signals: 42765★ · Rust · pushed 2026-09-17 · license Apache-2.0.
+- Recommendation: INCLUDE — the agent-browser CLI is already installed for browser automation and screenshots.
+- Repository: https://github.com/vercel-labs/agent-browser
 
-**Recommendation: SKIP** — duplicates capabilities already available here.
+### vercel-labs/agent-skills
+- Functionality: Vercel's official collection of agent skills.
+- Signals: 31269★ · JavaScript · pushed 2026-08-28 · license none.
+- Recommendation: TRIAL — review one workflow for a gap in Skills, test it in a disposable project, and run SkillSpector before adoption; budget about 1 hour.
+- Repository: https://github.com/vercel-labs/agent-skills
 
-### mattpocock/skills — grill-me, grilling, setup-matt-pocock-skills, teach
+### larksuite/cli
+- Functionality: The official Lark/飞书 CLI tool, maintained by the larksuite team — built for humans and AI Agents. Covers core business domains including Messenger, Docs, Base, Sheets, Calendar, Mail, Tasks, Meetings, and more, with 200+ commands and 20+ AI Agent Skills.
+- Signals: 17261★ · Go · pushed 2026-09-17 · license MIT.
+- Recommendation: TRIAL — review one workflow for a gap in Skills, test it in a disposable project, and run SkillSpector before adoption; budget about 1 hour.
+- Repository: https://github.com/larksuite/cli
 
-**Functionality:** Agent instructions for requirements questioning, idea stress testing, repository setup, and tutoring. The named skills are prompt workflows collected in one repository.
-
-**Signals:** 264,033 stars; Shell; MIT; last push 2026-09-17; active; not archived.
-
-**Recommendation: TRIAL** — sandbox `grill-me` and `grilling` against brainstorming for 30 minutes; defer the full collection until overlap is checked.
-
-### anthropics/skills — frontend-design
-
-**Functionality:** Guidance for distinctive, usable frontend interfaces with stronger visual direction. It is relevant to Zo Space work.
-
-**Signals:** 176,803 stars; Python; no SPDX license reported; last push 2026-09-10; active; not archived.
-
-**Recommendation: SKIP** — duplicates installed frontend guidance and has no reported license.
-
-### vercel-labs/agent-browser — agent-browser
-
-**Functionality:** Rust browser automation CLI for navigating, interacting with, and capturing web pages. It matches the existing browser verification workflow.
-
-**Signals:** 42,765 stars; Rust; Apache-2.0; last push 2026-09-17; active; not archived.
-
-**Recommendation: INCLUDE** — continue using the installed CLI for screenshot verification; no duplicate installation is needed.
-
-### vercel-labs/agent-skills — react-best-practices, web-design-guidelines
-
-**Functionality:** Guidance for React/Next.js performance and web design checks. These are review instructions rather than runtime libraries.
-
-**Signals:** 31,269 stars; JavaScript; no SPDX license reported; last push 2026-08-28; active; not archived.
-
-**Recommendation: SKIP** — equivalent skills are already installed, and the repository reports no license.
-
-### larksuite/cli — lark-doc
-
-**Functionality:** Official Go CLI for Lark/Feishu business services. The linked skill is a narrow document operation built on that CLI.
-
-**Signals:** 17,261 stars; Go; MIT; last push 2026-09-17; active; not archived.
-
-**Recommendation: SKIP** — no current Lark/Feishu workflow justifies adoption.
-
-### jdepoix/youtube-transcript-api
-
-**Functionality:** Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency already used by this watcher.
-
-**Signals:** 8,342 stars; Python; MIT; last push 2026-09-10; active; not archived.
-
-**Recommendation: INCLUDE** — retain as the transcript backend; this run’s failure is YouTube IP blocking.
-
-**Identity uncertainty:** The transcript was unavailable, so these are all repositories explicitly linked or auto-extracted from the description.
+Source note: Transcript was unavailable from this host. Repository identities and summaries are drawn from the available video description and GitHub metadata.

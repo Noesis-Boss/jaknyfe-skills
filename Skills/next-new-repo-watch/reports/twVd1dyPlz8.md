@@ -8,7 +8,7 @@
 
 This is wild — a 125M-parameter transformer trained to autocomplete piano performances in real time, running at around 108 notes per second even on an iPhone 15. Play a few notes and it picks up where you left off, suggesting where the music could go next. Hacker News went crazy for this one, and it's easy to see why — huge potential for musicians looking to break out of a rut or quickly iterate on new ideas.
 
-#MIDIAutocomplete #AIMusic #MachineLearning #GenerativeAI #MusicTech 
+#MIDIAutocomplete #AIMusic #MachineLearning #GenerativeAI #MusicTech
 
 Link to the full video: https://www.youtube.com/watch?v=klqyY5SAQvc
 

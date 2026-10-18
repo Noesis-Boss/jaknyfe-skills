@@ -8,7 +8,7 @@
 
 Browser-Use hands an AI agent a real web browser and lets it complete tasks on its own — filling forms, clicking buttons, navigating sites — just like the browser features now built into Codex and Claude. You can self-host it for free with a headless browser, or use their cloud-hosted version for about 2 cents an hour, so a quick 1-2 minute task costs you fractions of a cent. They also have a free tier to try it out. Genuinely impressive how well it worked.
 
-#BrowserUse #AIagents #Automation #OpenSource #devtools 
+#BrowserUse #AIagents #Automation #OpenSource #devtools
 
 Link to the Resource Vault: https://thenextnewthing.ai/Resources
 (There is also a clickable link in my bio)

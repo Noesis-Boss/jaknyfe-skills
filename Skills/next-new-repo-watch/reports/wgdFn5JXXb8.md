@@ -18,7 +18,7 @@ Link to the full video: https://youtu.be/kMPyFWFqX5I
 
 ## Transcript
 
-[transcript unavailable: 
+[transcript unavailable:
 Could not retrieve a transcript for the video https://www.youtube.com/watch?v=wgdFn5JXXb8! This is most likely caused by:
 
 YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
@@ -33,32 +33,16 @@ If you are sure that the described cause is not responsible for this error and t
 
 ## Auto-extracted repos
 
-- **jdepoix/youtube-transcript-api** — 8406★ · Python · pushed 2026-09-10 · license MIT
   - This is a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles and it does not require an API key nor a headless browser, like other selenium based solutions do!
-  - https://github.com/jdepoix/youtube-transcript-api
 - **useautumn/autumn** — 2750★ · TypeScript · pushed 2026-10-01 · license Apache-2.0
   - Autumn is an open-source pricing & billing platform
   - https://github.com/useautumn/autumn
-
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
-
-### jdepoix/youtube-transcript-api
-
-**Functionality:** Python library for retrieving manually created and auto-generated YouTube captions without an API key or browser automation. It is the dependency the watcher uses to fetch transcripts, rather than the subject of this video.
-
-**Signals:** 8,406 stars; Python; MIT License; last push 2026-09-10; active, not archived.
-
-**Recommendation: SKIP** — already used by this watcher and adds no new capability to Don’s projects; the current transcript failure is YouTube/IP blocking, not a missing repository feature.
-
 ### useautumn/autumn
+- Functionality: Autumn is an open-source pricing & billing platform.
+- Signals: 2750★ · TypeScript · pushed 2026-10-01 · license Apache-2.0.
+- Recommendation: SKIP — this billing/invoicing product has no active project integration target; existing Twenty CRM and payment tools cover current workflows.
+- Repository: https://github.com/useautumn/autumn
 
-**Functionality:** TypeScript usage-based billing platform for metering and charging by tokens, requests, minutes, or other units. It targets AI products that need entitlements, usage tracking, and subscription or credit-based pricing.
-
-**Signals:** 2,750 stars; TypeScript; Apache License 2.0; last push 2026-10-01; active, not archived.
-
-**Recommendation: TRIAL** — test it in a disposable Zo Site or SaaS-Mailer-style billing prototype with Stripe test mode; verify token-meter accuracy, webhook retries, plan changes, idempotency, and whether its deployment model fits Bun. Rough effort: 3–6 hours. It could later support metered AI features, but payment and entitlement logic needs a controlled trial before adoption.
+Source note: Transcript was unavailable from this host. Repository identities and summaries are drawn from the available video description and GitHub metadata.

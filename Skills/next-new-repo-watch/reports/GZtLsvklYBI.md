@@ -51,7 +51,7 @@ You're going to save so much money and you're going to have more privacy and mor
   - VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.
   - https://github.com/debpalash/VoiceStudio
 - **odysseus-dev/odysseus** — 92006★ · Python · pushed 2026-10-07 · license AGPL-3.0
-  - Self-hosted AI workspace. 
+  - Self-hosted AI workspace.
   - https://github.com/odysseus-dev/odysseus
 - **tashfeenahmed/freellmapi** — 31948★ · TypeScript · pushed 2026-10-08 · license MIT
   - 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.

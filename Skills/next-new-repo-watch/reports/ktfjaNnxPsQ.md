@@ -11,9 +11,9 @@ Link to the Resource Vault: https://thenextnewthing.ai/Resources
 
 Link to the full video: https://www.youtube.com/watch?v=1fHsIveXRa8
 
-Open-Code-Review is Alibaba's open-source tool for catching common — and not-so-common — security problems in your code. In one demo, someone deliberately snuck in issues like a plaintext password just to test it, and it caught them right away. Run one command and you get a full, readable HTML report instead of just red and green markers. If you're vibe coding and not reading every line yourself, or relying on an AI to "build it securely," this kind of automated check is quickly becoming table stakes. Everyone shipping AI-generated code should be running something like this.  
+Open-Code-Review is Alibaba's open-source tool for catching common — and not-so-common — security problems in your code. In one demo, someone deliberately snuck in issues like a plaintext password just to test it, and it caught them right away. Run one command and you get a full, readable HTML report instead of just red and green markers. If you're vibe coding and not reading every line yourself, or relying on an AI to "build it securely," this kind of automated check is quickly becoming table stakes. Everyone shipping AI-generated code should be running something like this.
 
-#OpenCodeReview #Alibaba #CodeSecurity #VibeCoding #DevTools 
+#OpenCodeReview #Alibaba #CodeSecurity #VibeCoding #DevTools
 
 🔗 GitHub: https://github.com/alibaba/open-code-review
 
@@ -29,9 +29,9 @@ Open code review from Alibaba. This is the thing that will let you check your co
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
+<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
+     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
+     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
 
 ### alibaba/open-code-review — https://github.com/alibaba/open-code-review

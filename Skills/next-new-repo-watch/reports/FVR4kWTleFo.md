@@ -16,7 +16,7 @@ Trying to build autonomous AI agents but feeling lost in the complexity of all t
 
 ## Transcript
 
-[transcript unavailable: 
+[transcript unavailable:
 Could not retrieve a transcript for the video https://www.youtube.com/watch?v=FVR4kWTleFo! This is most likely caused by:
 
 YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
@@ -34,7 +34,6 @@ If you are sure that the described cause is not responsible for this error and t
 - **ed-donner/agents** — 6348★ · Jupyter Notebook · pushed 2026-10-08 · license MIT
   - Repo for the Complete Agentic AI Engineering Course
   - https://github.com/ed-donner/agents
-
 ## Agent eval
 
 **Evidence note:** YouTube transcript requests were blocked from this cloud IP. This evaluation uses each video description plus current GitHub metadata, README, and top-level structure; it does not claim transcript-derived facts. The transcript-error link to `jdepoix/youtube-transcript-api` was excluded as a false positive.

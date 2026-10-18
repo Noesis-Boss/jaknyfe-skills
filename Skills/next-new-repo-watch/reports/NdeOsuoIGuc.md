@@ -45,7 +45,7 @@ Dan Shipper (Every) — https://www.youtube.com/watch?v=1EEw36H2zLo&t=73s
 
 ## Transcript
 
-[transcript unavailable: 
+[transcript unavailable:
 Could not retrieve a transcript for the video https://www.youtube.com/watch?v=NdeOsuoIGuc! This is most likely caused by:
 
 YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
@@ -60,10 +60,7 @@ If you are sure that the described cause is not responsible for this error and t
 
 ## Auto-extracted repos
 
-- **jdepoix/youtube-transcript-api** — 8319★ · Python · pushed 2026-09-10 · license MIT
   - This is a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles and it does not require an API key nor a headless browser, like other selenium based solutions do!
-  - https://github.com/jdepoix/youtube-transcript-api
-
 ## Agent eval
 
 The transcript could not be retrieved because YouTube blocked the server IP. The description and chapters identify products and demonstrations, but no additional open-source repository besides the transcript tool itself. Closed products and model names are not counted as repositories.

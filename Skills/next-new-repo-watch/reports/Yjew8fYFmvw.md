@@ -82,7 +82,7 @@ Chapters:
   - Community maintained hardware plugin for vLLM on Huawei Ascend
   - https://github.com/vllm-project/vllm-ascend
 - **pnnbao97/VieNeu-TTS** — 2823★ · Python · pushed 2026-09-30 · license Apache-2.0
-  - Vietnamese TTS with instant voice cloning • On-device • Real-time CPU inference • 48kHz audio quality • Chuyển văn bản thành giọng nói tiếng Việt • Text to speech tiếng Việt • TTS tiếng Việt 
+  - Vietnamese TTS with instant voice cloning • On-device • Real-time CPU inference • 48kHz audio quality • Chuyển văn bản thành giọng nói tiếng Việt • Text to speech tiếng Việt • TTS tiếng Việt
   - https://github.com/pnnbao97/VieNeu-TTS
 - **chiaki-ng/chiaki-ng** — 2813★ · C · pushed 2026-10-09 · license AGPL-3.0
   - Next-Generation of Chiaki (the open-source remote play client for PlayStation)
@@ -109,7 +109,7 @@ Chapters:
   - A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for Android platform.
   - https://github.com/AngelAuraMC/Amethyst-Android
 - **awawa-dev/HyperHDR** — 2184★ · C++ · pushed 2026-10-09 · license MIT
-  - Next-gen open source ambient lighting system featuring a high-precision floating-point color pipeline breaking legacy RGB 24-bit limits. Includes advanced smoothing with inertia and adaptive temporal dithering for perfectly fluid, stable output to LEDs from any SDR or HDR video source. Supports Windows, macOS and Linux (x86/ARM). 
+  - Next-gen open source ambient lighting system featuring a high-precision floating-point color pipeline breaking legacy RGB 24-bit limits. Includes advanced smoothing with inertia and adaptive temporal dithering for perfectly fluid, stable output to LEDs from any SDR or HDR video source. Supports Windows, macOS and Linux (x86/ARM).
   - https://github.com/awawa-dev/HyperHDR
 - **shuding/tilg** — 2177★ · TypeScript · pushed 2022-12-23 · license MIT
   - A magical React Hook that helps you debug components.
