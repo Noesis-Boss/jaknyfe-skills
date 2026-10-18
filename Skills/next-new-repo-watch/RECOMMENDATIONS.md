@@ -6,11 +6,11 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
 
 ## INCLUDE
 
-- **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Agent skill that turns system descriptions into beautiful, verifiable interactive architecture/workflow/sequence diagrams as self-contained
+- **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Agent skill that turns system descriptions into beautiful, verifiable interactive architecture/workflow/sequence diagrams as self-contained 
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **[EfficientStreet/hindsight](https://github.com/EfficientStreet/hindsight)** — Self-improvement skill for AI coding assistants: reviews a session end-to-end and saves only the durable process lessons as persistent memor
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
-- **morluto/rea** — Functionality: MCP/CLI toolchain that lets coding agents reverse-engineer existing software products down to native binaries, then generate
+- **morluto/rea** — Functionality: MCP/CLI toolchain that lets coding agents reverse-engineer existing software products down to native binaries, then generate 
   - Report: `reports/AiZ4HWBlLow.md` · Video: https://youtu.be/AiZ4HWBlLow · *Copy any software (free), clone viral videos, and more*
 - **[debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)** — Functionality: Local, open-source ElevenLabs alternative — voice cloning from a short clip, voice design by description, video dubbing, dict
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
@@ -30,7 +30,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/WPUAZm5rnGc.md` · Video: https://youtu.be/WPUAZm5rnGc · *Easy step-by-step setup*
 - **affaan-m/ECC** — Functionality: A large collection of skills and workflows for coding agents, covering planning, TDD, security, research, memory, and review.
   - Report: `reports/XGJtqUPUZSo.md` · Video: https://youtu.be/XGJtqUPUZSo · *ECC — This Skill Pack Teaches Your AI to Code the Right Way*
-- **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent
+- **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent 
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Functionality: An agent skill that turns system descriptions and workflow inputs into explorable architecture, sequence, data-flow, and life
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
@@ -48,7 +48,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/ktfjaNnxPsQ.md` · Video: https://youtu.be/ktfjaNnxPsQ · *Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
   - Report: `reports/mny7r505ZpU.md` · Video: https://youtu.be/mny7r505ZpU · *He Built an Agent That Calls Customers*
-- **jdepoix/youtube-transcript-api** — Python library for retrieving manually created and automatically generated YouTube captions without an API key or browser automation. It is
+- **jdepoix/youtube-transcript-api** — Python library for retrieving manually created and automatically generated YouTube captions without an API key or browser automation. It is 
   - Report: `reports/pxaMzr7al3I.md` · Video: https://youtu.be/pxaMzr7al3I · *9 things you’ll actually do with Jev*
 - **vercel-labs/agent-browser** — Functionality: Rust CLI for headless browser control, DOM interaction, screenshots, and browser workflows for agents.
   - Report: `reports/qfRMHqh7tNI.md` · Video: https://youtu.be/qfRMHqh7tNI · *This Skill Gives Your AI Agent a Browser*
@@ -85,7 +85,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/21xCNskON2M.md` · Video: https://youtu.be/21xCNskON2M · *GitHub Trending Today - flashinfer, PixiEditor, TypeWords & More | #143*
 - **[agegr/pi-web](https://github.com/agegr/pi-web)** — Functionality: Web UI for the pi coding agent.
   - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
-- **[OpenShot/openshot-qt](https://github.com/OpenShot/openshot-qt)** — Functionality: OpenShot Video Editor is an award-winning free and open-source video editor for Linux, Mac, and Windows, and is dedicated to
+- **[OpenShot/openshot-qt](https://github.com/OpenShot/openshot-qt)** — Functionality: OpenShot Video Editor is an award-winning free and open-source video editor for Linux, Mac, and Windows, and is dedicated to 
   - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
 - **[mortdeus/solana-copy-sniper-mev-trading-bot](https://github.com/mortdeus/solana-copy-sniper-mev-trading-bot)** — Functionality: 🆓Free High speed solana mev arbitrage Sniper Copy Trading Bot, gRPC shred stream Pumpfun Bundler, Pumpfun Contract, Yellowsto
   - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
@@ -97,7 +97,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
 - **[samanhappy/mcphub](https://github.com/samanhappy/mcphub)** — Functionality: Self-hosted MCP gateway and control plane for connecting, controlling, and operating MCP servers.
   - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
-- **[jnMetaCode/agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator)** — Functionality: 🚀 One sentence → your one-person company of AI experts → complete deliverable in minutes. 276 CN + 184 EN + 5 more languages
+- **[jnMetaCode/agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator)** — Functionality: 🚀 One sentence → your one-person company of AI experts → complete deliverable in minutes. 276 CN + 184 EN + 5 more languages 
   - Report: `reports/6h0yh_3o99M.md` · Video: https://youtu.be/6h0yh_3o99M · *GitHub Trending Today - AIOS, picasso, OpenMAIC & More | #141*
 - **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Functionality: 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom O
   - Report: `reports/7cimtg6LPHg.md` · Video: https://youtu.be/7cimtg6LPHg · *34 Free AI Models You Can Rotate Between*
@@ -151,7 +151,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/BNHeFv31HNA.md` · Video: https://youtu.be/BNHeFv31HNA · *GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171*
 - **[itayinbarr/little-coder](https://github.com/itayinbarr/little-coder)** — Functionality: A harness optimized to smaller LLMs.
   - Report: `reports/BNHeFv31HNA.md` · Video: https://youtu.be/BNHeFv31HNA · *GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171*
-- **affaan-m/ECC** — Functionality: ECC is a large collection of agent skills, workflows, and operating practices for turning an idea into a researched, tested,
+- **affaan-m/ECC** — Functionality: ECC is a large collection of agent skills, workflows, and operating practices for turning an idea into a researched, tested, 
   - Report: `reports/BcNAQynKUk4.md` · Video: https://youtu.be/BcNAQynKUk4 · *Top repo explained: builds product + lands customers*
 - **debpalash/VoiceStudio** — Functionality: A local voice-generation and voice-cloning application with dubbing, dictation, transcription, and audiobook workflows. It is
   - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
@@ -163,7 +163,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
 - **[openclaw/openclaw](https://github.com/openclaw/openclaw)** — Self-hosted autonomous agent platform ("the AI that really does things") that runs shell-enabled AI agents on any OS and connects to Telegra
   - Report: `reports/F-_q6VIHMS8.md` · Video: https://youtu.be/F-_q6VIHMS8 · *How to have Claude run your company*
-- **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** — Python personal AI agent ("the agent that grows with you") with memory, skills, and channel integrations; the video positions Hermes as the
+- **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** — Python personal AI agent ("the agent that grows with you") with memory, skills, and channel integrations; the video positions Hermes as the 
   - Report: `reports/F-_q6VIHMS8.md` · Video: https://youtu.be/F-_q6VIHMS8 · *How to have Claude run your company*
 - **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Functionality: Router aggregating ~34 free LLM provider tiers (635 free model endpoints, 7.4B tokens/month claimed) behind one OpenAI-compat
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
@@ -173,9 +173,9 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
 - **[mutonby/openshorts](https://github.com/mutonby/openshorts)** — Functionality: Open-source AI clip generator — turns long videos into 9:16 shorts with AI moment detection, face tracking, subtitles, and du
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
-- **[upscayl/upscayl](https://github.com/upscayl/upscayl)** — Functionality: Free, open-source AI image upscaler desktop app for Linux, macOS, and Windows — high-quality enlargement of photos, artwork,
+- **[upscayl/upscayl](https://github.com/upscayl/upscayl)** — Functionality: Free, open-source AI image upscaler desktop app for Linux, macOS, and Windows — high-quality enlargement of photos, artwork, 
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
-- **[petergyang/fuck-cancer](https://github.com/petergyang/fuck-cancer)** — Functionality: A Python/Markdown workflow that turns a patient's documents and trusted medical sources into a plain-language care brief. It
+- **[petergyang/fuck-cancer](https://github.com/petergyang/fuck-cancer)** — Functionality: A Python/Markdown workflow that turns a patient's documents and trusted medical sources into a plain-language care brief. It 
   - Report: `reports/H03k_SfxySQ.md` · Video: https://youtu.be/H03k_SfxySQ · *He Built an AI Tool to Help Families Facing Cancer*
 - **[Tencent/WeKnora](https://github.com/Tencent/WeKnora)** — Functionality: Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-mainta
   - Report: `reports/Ie6IlSIYAfc.md` · Video: https://youtu.be/Ie6IlSIYAfc · *WeKnora — Tencent Built an AI That Turns Your Files Into a Wiki*
@@ -187,9 +187,9 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
 - **[jia-gao/leanctx](https://github.com/jia-gao/leanctx)** — Functionality: A drop-in Python prompt-compression SDK based on LLMLingua-2. It claims to reduce prompt cost by 40–60% without requiring app
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
-- **[ooples/token-optimizer-mcp](https://github.com/ooples/token-optimizer-mcp)** — Functionality: An MCP server that measures token savings per coding agent, optimizes context, and shares a local knowledge graph across CLI
+- **[ooples/token-optimizer-mcp](https://github.com/ooples/token-optimizer-mcp)** — Functionality: An MCP server that measures token savings per coding agent, optimizes context, and shares a local knowledge graph across CLI 
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
-- **[mksglu/context-mode](https://github.com/mksglu/context-mode)** — Functionality: A context-optimization layer that sandboxes tool output, persists session memory, and routes work through MCP and hooks. The
+- **[mksglu/context-mode](https://github.com/mksglu/context-mode)** — Functionality: A context-optimization layer that sandboxes tool output, persists session memory, and routes work through MCP and hooks. The 
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
 - **[DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)** — Functionality: A minimalism-oriented coding-agent skill that pushes the agent to reuse existing code and avoid unnecessary implementation. I
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
@@ -201,19 +201,19 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
 - **openclaw/openclaw** — The flagship open-source personal AI agent (OpenClaw 2.0) — a full OS-level agent runtime with shell access, chat-based delegation, and a 5,
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **THU-MAIC/OpenMAIC** — Open Multi-Agent Interactive Classroom: one prompt ("teach me quantum physics") spawns an AI teacher who lectures aloud, AI classmates that
+- **THU-MAIC/OpenMAIC** — Open Multi-Agent Interactive Classroom: one prompt ("teach me quantum physics") spawns an AI teacher who lectures aloud, AI classmates that 
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **superdesigndev/treg** — Treg — open-source people-search/enrichment MCP (treg.to/people-search) for Claude/Codex: finds verified emails, phone numbers, and contact
+- **superdesigndev/treg** — Treg — open-source people-search/enrichment MCP (treg.to/people-search) for Claude/Codex: finds verified emails, phone numbers, and contact 
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
 - **AgentPhone-AI/agentphone-mcp** — Agent Phone MCP: gives an agent its own phone number for outbound/inbound voice calls, SMS, and iMessage ($3/mo number + $0.13/min; iMessage
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **Treg (people-search/enrichment MCP)** —
+- **Treg (people-search/enrichment MCP)** — 
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **Dial (agent phone numbers)** —
+- **Dial (agent phone numbers)** — 
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **Radar (podcast-search MCP)** —
+- **Radar (podcast-search MCP)** — 
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
-- **Diffusion Studio (video edits as code)** —
+- **Diffusion Studio (video edits as code)** — 
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
 - **[altic-dev/FluidVoice](https://github.com/altic-dev/FluidVoice)** — Functionality: Fastest and only macOS Dictation app with on-device STT and custom trained AI enhancement model. Windows pre-build available!
   - Report: `reports/Oaq2w0wAZbc.md` · Video: https://youtu.be/Oaq2w0wAZbc · *GitHub Trending Today - FluidVoice, GLM-5, Qwen3-ASR & More | #140*
@@ -261,23 +261,23 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/Wsru44p-J14.md` · Video: https://youtu.be/Wsru44p-J14 · *This week’s repos: PS5 game on a PC! Turn agents into employees. AI video maker.*
 - **[Conway-Research/automaton](https://github.com/Conway-Research/automaton)** — Functionality: Self-sovereign AI agent that funds its own compute, owns the machine it runs on, and self-replicates — stopping when it can n
   - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
-- **[renatorib/react-powerplug](https://github.com/renatorib/react-powerplug)** — Functionality: Dependency-free renderless React components (toggle, counter, form handlers) that hand state and logic through render props,
+- **[renatorib/react-powerplug](https://github.com/renatorib/react-powerplug)** — Functionality: Dependency-free renderless React components (toggle, counter, form handlers) that hand state and logic through render props, 
   - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
-- **[dsphper/lanhu-mcp](https://github.com/dsphper/lanhu-mcp)** — Functionality: MCP server connecting AI assistants to a shared team knowledge base — extracts requirements from design docs and UI mockups,
+- **[dsphper/lanhu-mcp](https://github.com/dsphper/lanhu-mcp)** — Functionality: MCP server connecting AI assistants to a shared team knowledge base — extracts requirements from design docs and UI mockups, 
   - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
 - **elvisun/newsjack** — Functionality: Open-source agent skills that research news opportunities and help execute a PR workflow.
   - Report: `reports/ZodAaTH-6_E.md` · Video: https://youtu.be/ZodAaTH-6_E · *Meta’s Muse makes you money. And more*
 - **[max-sixty/worktrunk](https://github.com/max-sixty/worktrunk)** — Functionality: A Rust CLI that manages Git worktrees so several coding agents can work in isolated checkouts of one repository. It reduces b
   - Report: `reports/_6PHjLCjdpo.md` · Video: https://youtu.be/_6PHjLCjdpo · *WorkTrunk — Run Multiple AI Agents at Once Without Merge Conflicts*
-- **[affaan-m/ECC](https://github.com/affaan-m/ECC)** — Functionality: A broad agent-harness optimization system combining skills, instincts, memory, security checks, and research-first workflows
+- **[affaan-m/ECC](https://github.com/affaan-m/ECC)** — Functionality: A broad agent-harness optimization system combining skills, instincts, memory, security checks, and research-first workflows 
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)** — Functionality: A minimalism-oriented coding-agent skill that pushes the agent to reuse existing code and avoid unnecessary implementation. I
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
-- **[mksglu/context-mode](https://github.com/mksglu/context-mode)** — Functionality: A context-optimization layer that sandboxes tool output, persists session memory, and routes work through MCP and hooks. The
+- **[mksglu/context-mode](https://github.com/mksglu/context-mode)** — Functionality: A context-optimization layer that sandboxes tool output, persists session memory, and routes work through MCP and hooks. The 
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[mattpocock/skills](https://github.com/mattpocock/skills)** — Functionality: A repository of practical engineering skills intended for use by coding agents. It is a broad catalog of reusable instruction
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
-- **[timharris707/skills](https://github.com/timharris707/skills)** — Functionality: A small collection of practical agent skills covering team workflow, model review, media ingestion, and writing. It includes
+- **[timharris707/skills](https://github.com/timharris707/skills)** — Functionality: A small collection of practical agent skills covering team workflow, model review, media ingestion, and writing. It includes 
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[rodaddy/ai-marketing-panel](https://github.com/rodaddy/ai-marketing-panel)** — Functionality: A synthetic customer panel that tests marketing copy against calibrated AI personas before publication. It is intended to exp
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
@@ -311,11 +311,11 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **every-app/open-seo** — Functionality: Open-source alternative to Semrush and Ahrefs for SEO research.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
-- **mksglu/context-mode** — Functionality: TypeScript tooling for AI coding agents that routes exploratory work into disposable sandboxes, persists useful context, and
+- **mksglu/context-mode** — Functionality: TypeScript tooling for AI coding agents that routes exploratory work into disposable sandboxes, persists useful context, and 
   - Report: `reports/is7d_hJc_io.md` · Video: https://youtu.be/is7d_hJc_io · *Context-Mode — The Fix for AI Coders That Forget Mid-Task*
 - **[Osmantic/ODS](https://github.com/Osmantic/ODS)** — Functionality: Pre-release installer that configures a desktop as a private AI server.
   - Report: `reports/jIs9BCi2I1A.md` · Video: https://youtu.be/jIs9BCi2I1A · *ODS - GitHub Trending Today*
-- **PostHog/posthog** — Functionality: Self-hosted product analytics with funnels, retention, session replay, feature flags, experiments, error tracking, logs, and
+- **PostHog/posthog** — Functionality: Self-hosted product analytics with funnels, retention, session replay, feature flags, experiments, error tracking, logs, and 
   - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
 - **every-app/open-seo** — Functionality: TypeScript SEO research and rank-tracking software positioned as an open alternative to Semrush and Ahrefs.
   - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
@@ -325,15 +325,15 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
 - **baptisteArno/typebot.io** — Functionality: Self-hosted visual chatbot and conversational-form builder with branching flows, lead qualification, and integrations such as
   - Report: `reports/kMPyFWFqX5I.md` · Video: https://youtu.be/kMPyFWFqX5I · *9 shocking repos that make money*
-- **Bezalel (bundled agent-infra MCP)** —
+- **Bezalel (bundled agent-infra MCP)** — 
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
-- **Supernova (business-data-to-agent connector)** —
+- **Supernova (business-data-to-agent connector)** — 
   - Report: `reports/klqyY5SAQvc.md` · Video: https://youtu.be/klqyY5SAQvc · *Yes. You can get an AI robot now.*
 - **morluto/rea** — Functionality: Agent tools for examining existing applications and producing customized implementations, including behavior and native-binar
   - Report: `reports/kqn_mSjSWMs.md` · Video: https://youtu.be/kqn_mSjSWMs · *GitHub’s top: Copy any app, create gorgeous videos, 3d print anything & more*
 - **mattpocock/skills** — Functionality: Shell-based AI coding workflows maintained from the author’s agent directory.
   - Report: `reports/kqn_mSjSWMs.md` · Video: https://youtu.be/kqn_mSjSWMs · *GitHub’s top: Copy any app, create gorgeous videos, 3d print anything & more*
-- **`openclaw/openclaw`** — Functionality: An open-source personal AI agent that can operate across local computers, browsers, messaging channels, and connected tools.
+- **`openclaw/openclaw`** — Functionality: An open-source personal AI agent that can operate across local computers, browsers, messaging channels, and connected tools. 
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
 - **`zapier/zapier-platform`** — Functionality: Zapier’s JavaScript toolkit for building custom integrations and actions. It could support a narrow connector needed by the p
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
@@ -353,7 +353,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/vjWCfBPGy3Y.md` · Video: https://youtu.be/vjWCfBPGy3Y · *GitHub Trending Today - from-java-to-kotlin, QuantsPlaybook, sysbox & More | #159*
 - **[aigc-apps/VideoX-Fun](https://github.com/aigc-apps/VideoX-Fun)** — Functionality: 📹 A more flexible framework that can generate videos at any resolution and creates videos from images. .
   - Report: `reports/vjWCfBPGy3Y.md` · Video: https://youtu.be/vjWCfBPGy3Y · *GitHub Trending Today - from-java-to-kotlin, QuantsPlaybook, sysbox & More | #159*
-- **browser-use/browser-use** —
+- **browser-use/browser-use** — 
   - Report: `reports/wvStsbW_fCY.md` · Video: https://youtu.be/wvStsbW_fCY · *I Let AI Take Over My Browser — For 2 Cents*
 - **[Shaunwei/RealChar](https://github.com/Shaunwei/RealChar)** — Functionality: 🎙️🤖Create, Customize and Talk to your AI Character/Companion in Realtime (All in One Codebase!). Have a natural seamless conv
   - Report: `reports/x9nyYMJB5RM.md` · Video: https://youtu.be/x9nyYMJB5RM · *RealChar - GitHub Trending Today*
@@ -367,7 +367,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/z-_34WChEoo.md` · Video: https://youtu.be/z-_34WChEoo · *GitHub Trending Today - distributed-llama, HunyuanWorld-1.0, openWakeWord & More | #161*
 - **[Osmantic/ODS](https://github.com/Osmantic/ODS)** — Functionality: Pre-release installer that configures a desktop as a private AI server.
   - Report: `reports/zP43y0wJzhg.md` · Video: https://youtu.be/zP43y0wJzhg · *GitHub Trending Today - dua-cli, AirCard, ODS & More | #167*
-- **immich-app/immich** —
+- **immich-app/immich** — 
   - Report: `reports/zjvSs1VNDSQ.md` · Video: https://youtu.be/zjvSs1VNDSQ · *Your Own Private Google Photos — Self-Hosted*
 
 ## SKIP

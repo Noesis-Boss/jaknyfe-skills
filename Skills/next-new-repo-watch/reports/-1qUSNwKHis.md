@@ -70,7 +70,10 @@ If you are sure that the described cause is not responsible for this error and t
 (none auto-extracted — read the transcript above and identify repo names, then search GitHub)
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
-     trading bot, publishing pipeline. -->
+### N/A — no GitHub repos presented
+
+**Transcript**: unavailable (YouTube blocked requests from this IP). Evaluated against the video description only, per the watch skill rule.
+
+The video demos GrokBot (x.ai bot, not a GitHub repo), Zapier (proprietary SaaS), Facebook Marketplace, PhysicalAddress.com, and Notion. No open-source GitHub repository is presented or linked anywhere in the description. The auto-extracted repo list is empty and that is correct — there is nothing to evaluate.
+
+**Recommendation: N/A-repo** — no repo to include, trial, or skip. The episode is a workflow/design discussion, not a repo showcase. If GrokBot's underlying tooling ever surfaces as an open-source project, re-evaluate then.
