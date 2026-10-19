@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-19.
 
-**Totals**: 24 INCLUDE · 156 TRIAL · 472 SKIP · 0 pending eval
+**Totals**: 24 INCLUDE · 157 TRIAL · 474 SKIP · 1 pending eval
 
 ## INCLUDE
 
@@ -249,6 +249,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
   - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
 - **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Functionality: 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom O
   - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
+- **[awesomemotive/wpvibe-ai-mcp](https://github.com/awesomemotive/wpvibe-ai-mcp)** — 
+  - Report: `reports/U4k67VOKaEU.md` · Video: https://youtu.be/U4k67VOKaEU · *First look: How agents manage WordPress*
 - **[kenn-io/agentsview](https://github.com/kenn-io/agentsview)** — Functionality: Local-first session search, analytics, insights, and token use statistics for coding agents, supporting Claude Code, Codex, a
   - Report: `reports/Uk_gHHUPidU.md` · Video: https://youtu.be/Uk_gHHUPidU · *GitHub Trending Today - agentsview, opentalking, Pixal3D & More | #142*
 - **[MengTo/Skills](https://github.com/MengTo/Skills)** — Functionality: Agent skills for designers and builders using Codex, Claude, Cursor, and other AI coding agents.
@@ -632,6 +634,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
 - [apache/maka](https://github.com/apache/maka) — `reports/TWCSvvTfJNU.md`
 - [modular/modular](https://github.com/modular/modular) — `reports/TWCSvvTfJNU.md`
 - [securo-finance/securo](https://github.com/securo-finance/securo) — `reports/TWCSvvTfJNU.md`
+- [seedprod/vibe-ai](https://github.com/seedprod/vibe-ai) — `reports/U4k67VOKaEU.md`
+- [seedprod/wpvibe-integrations](https://github.com/seedprod/wpvibe-integrations) — `reports/U4k67VOKaEU.md`
 - [umano/AndroidSlidingUpPanel](https://github.com/umano/AndroidSlidingUpPanel) — `reports/Uk_gHHUPidU.md`
 - [tbphp/gpt-load](https://github.com/tbphp/gpt-load) — `reports/Uk_gHHUPidU.md`
 - [azahar-emu/azahar](https://github.com/azahar-emu/azahar) — `reports/Uk_gHHUPidU.md`
@@ -844,3 +848,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-18.
 - [zeldaret/botw](https://github.com/zeldaret/botw) — `reports/zP43y0wJzhg.md`
 - [MhLiao/DB](https://github.com/MhLiao/DB) — `reports/zP43y0wJzhg.md`
 - [Tikam02/DevOps-Guide](https://github.com/Tikam02/DevOps-Guide) — `reports/zVk7DH9EFhE.md`
+
+## Pending eval
+
+- `reports/U4k67VOKaEU.md` — First look: How agents manage WordPress (1 unevaled)
