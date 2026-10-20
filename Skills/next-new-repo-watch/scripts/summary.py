@@ -94,8 +94,9 @@ def parse_report(path: Path):
         if not name or name.startswith(("http", "!")):
             continue
         blob = re.split(r"(?m)^## ", "\n".join(lines[1:]))[0]
-        verdict = _find_verdict(blob) or _inline_verdict(lines[0].split(" — ", 1)[1] if " — " in lines[0] else "")
-        if verdict == "N/A-repo" or name.endswith(":") or name == "owner/repo" or name.startswith(("N/A", "Not identified")):
+        header = lines[0].strip()
+        verdict = _find_verdict(blob) or _inline_verdict(header)
+        if verdict == "N/A-repo" or "N/A-repo" in header or name.endswith(":") or name == "owner/repo" or name.startswith(("N/A", "Not identified")):
             continue
         _add(items, name, verdict, _gh_url(lines[0]) or _gh_url("\n".join(blob.split("\n")[:4])), _desc(blob))
 

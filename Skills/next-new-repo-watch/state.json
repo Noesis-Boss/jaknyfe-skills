@@ -1612,6 +1612,24 @@
       "processed_at": "2026-10-19T12:31:47.621678+00:00",
       "report": "/home/workspace/Skills/next-new-repo-watch/reports/U4k67VOKaEU.md",
       "auto_repos": []
+    },
+    "BctbCJP9lKU": {
+      "title": "REA use cases you'll love",
+      "published": "2026-10-19T23:47:32+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-20T12:32:05.065266+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/BctbCJP9lKU.md",
+      "auto_repos": []
+    },
+    "BL3UQPoPG7Y": {
+      "title": "AnyPS5  \u2014 This AI Rewrites a PS5 Game to Run on Your PC",
+      "published": "2026-10-19T20:30:16+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-20T12:32:06.242100+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/BL3UQPoPG7Y.md",
+      "auto_repos": [
+        "boykopovar/AnyPS5"
+      ]
     }
   }
 }

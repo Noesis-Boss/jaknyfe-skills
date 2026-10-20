@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-19.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-20.
 
-**Totals**: 24 INCLUDE · 157 TRIAL · 474 SKIP · 1 pending eval
+**Totals**: 24 INCLUDE · 158 TRIAL · 474 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -153,6 +153,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-19.
   - Report: `reports/BNHeFv31HNA.md` · Video: https://youtu.be/BNHeFv31HNA · *GitHub Trending Today - PhysX, ShortGPT, docker-agent & More | #171*
 - **affaan-m/ECC** — Functionality: ECC is a large collection of agent skills, workflows, and operating practices for turning an idea into a researched, tested, 
   - Report: `reports/BcNAQynKUk4.md` · Video: https://youtu.be/BcNAQynKUk4 · *Top repo explained: builds product + lands customers*
+- **[morluto/rea](https://github.com/morluto/rea)** — 
+  - Report: `reports/BctbCJP9lKU.md` · Video: https://youtu.be/BctbCJP9lKU · *REA use cases you'll love*
 - **debpalash/VoiceStudio** — Functionality: A local voice-generation and voice-cloning application with dubbing, dictation, transcription, and audiobook workflows. It is
   - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
 - **anthropics/financial-services** — Functionality: Anthropic's finance-oriented skill and workflow pack for research, screening, financial analysis, and spreadsheet-based deliv
@@ -509,6 +511,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-19.
 - [templetongroup/radiant](https://github.com/templetongroup/radiant) — `reports/AWzzmrCPe-A.md`
 - [zapier/sdk](https://github.com/zapier/sdk) — `reports/AWzzmrCPe-A.md`
 - [bmax121/APatch](https://github.com/bmax121/APatch) — `reports/B0SHMrbULcw.md`
+- [boykopovar/AnyPS5](https://github.com/boykopovar/AnyPS5) — `reports/BL3UQPoPG7Y.md`
 - [alex-damian/pulse](https://github.com/alex-damian/pulse) — `reports/BNHeFv31HNA.md`
 - [fail2ban/fail2ban](https://github.com/fail2ban/fail2ban) — `reports/BNHeFv31HNA.md`
 - [RayVentura/ShortGPT](https://github.com/RayVentura/ShortGPT) — `reports/BNHeFv31HNA.md`
@@ -776,7 +779,6 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-19.
 - [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) — `reports/rXiSq2Te5H8.md`
 - [morluto/rea](https://github.com/morluto/rea) — `reports/rcQIAEdOA8Y.md`
 - [Byron/dua-cli](https://github.com/Byron/dua-cli) — `reports/tfhN43qOD5I.md`
-- Piano Autocomplete (Simon Edwardsson / simedw) — `reports/twVd1dyPlz8.md`
 - [amitshekhariitbhu/from-java-to-kotlin](https://github.com/amitshekhariitbhu/from-java-to-kotlin) — `reports/vjWCfBPGy3Y.md`
 - [potatoqualitee/eol-dr](https://github.com/potatoqualitee/eol-dr) — `reports/vjWCfBPGy3Y.md`
 - [hugo2046/QuantsPlaybook](https://github.com/hugo2046/QuantsPlaybook) — `reports/vjWCfBPGy3Y.md`
@@ -848,7 +850,3 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-19.
 - [zeldaret/botw](https://github.com/zeldaret/botw) — `reports/zP43y0wJzhg.md`
 - [MhLiao/DB](https://github.com/MhLiao/DB) — `reports/zP43y0wJzhg.md`
 - [Tikam02/DevOps-Guide](https://github.com/Tikam02/DevOps-Guide) — `reports/zVk7DH9EFhE.md`
-
-## Pending eval
-
-- `reports/U4k67VOKaEU.md` — First look: How agents manage WordPress (1 unevaled)
