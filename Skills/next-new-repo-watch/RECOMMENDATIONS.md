@@ -1,11 +1,13 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-20.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-22.
 
-**Totals**: 24 INCLUDE · 158 TRIAL · 474 SKIP · 0 pending eval
+**Totals**: 27 INCLUDE · 161 TRIAL · 474 SKIP · 2 pending eval
 
 ## INCLUDE
 
+- **[dataforseo/mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript)** — 
+  - Report: `reports/1I7-OvFQxBk.md` · Video: https://youtu.be/1I7-OvFQxBk · *$570K/Year in a Month: One Guy + Claude Runs a 30-Client Agency*
 - **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Agent skill that turns system descriptions into beautiful, verifiable interactive architecture/workflow/sequence diagrams as self-contained 
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **[EfficientStreet/hindsight](https://github.com/EfficientStreet/hindsight)** — Self-improvement skill for AI coding assistants: reviews a session end-to-end and saves only the durable process lessons as persistent memor
@@ -36,6 +38,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-20.
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)** — Functionality: Browser automation CLI for AI agents.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
+- **vectorize-io/hindsight** — Hindsight is an open-source AI memory system that remembers you across agent sessions — it stores, retrieves, and surfaces past context so a
+  - Report: `reports/fC-qxqdFp4Y.md` · Video: https://youtu.be/fC-qxqdFp4Y · *Hindsight — The AI Memory That Remembers You Across Sessions*
 - **affaan-m/ECC** — Functionality: Agent-harness collection covering skills, memory, security, and research-first development.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **[elvisun/newsjack](https://github.com/elvisun/newsjack)** — Functionality: Open-source agent skills (SKILL.md packs plus a Go CLI) that turn an AI agent into a full PR team: news monitoring for pitcha
@@ -48,6 +52,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-20.
   - Report: `reports/ktfjaNnxPsQ.md` · Video: https://youtu.be/ktfjaNnxPsQ · *Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
   - Report: `reports/mny7r505ZpU.md` · Video: https://youtu.be/mny7r505ZpU · *He Built an Agent That Calls Customers*
+- **thedotmack/claude-mem** — Claude Mem is a persistent context layer that captures everything an AI agent does during a session, compresses it with an LLM, and injects 
+  - Report: `reports/oGSShssjn9c.md` · Video: https://youtu.be/oGSShssjn9c · *AI Agents Finally Share One Memory (Claude Mem Explained)*
 - **jdepoix/youtube-transcript-api** — Python library for retrieving manually created and automatically generated YouTube captions without an API key or browser automation. It is 
   - Report: `reports/pxaMzr7al3I.md` · Video: https://youtu.be/pxaMzr7al3I · *9 things you’ll actually do with Jev*
 - **vercel-labs/agent-browser** — Functionality: Rust CLI for headless browser control, DOM interaction, screenshots, and browser workflows for agents.
@@ -63,6 +69,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-20.
   - Report: `reports/-Jxf0YkTGbA.md` · Video: https://youtu.be/-Jxf0YkTGbA · *GitHub Trending Today - crm, artemis, Spider_XHS & More | #168*
 - **daijro/camoufox** — Functionality: A patched Firefox browser designed to make automated sessions resemble ordinary browser traffic. It could provide a local bro
   - Report: `reports/0SDz3rjZBC4.md` · Video: https://youtu.be/0SDz3rjZBC4 · *Amazon and others want to block your agents.*
+- **[Shpigford/knockoff](https://github.com/Shpigford/knockoff)** — 
+  - Report: `reports/1I7-OvFQxBk.md` · Video: https://youtu.be/1I7-OvFQxBk · *$570K/Year in a Month: One Guy + Claude Runs a 30-Client Agency*
+- **[dataforseo/PythonClient](https://github.com/dataforseo/PythonClient)** — 
+  - Report: `reports/1I7-OvFQxBk.md` · Video: https://youtu.be/1I7-OvFQxBk · *$570K/Year in a Month: One Guy + Claude Runs a 30-Client Agency*
 - **alibaba/open-code-review** — Functionality: Go code-review service combining deterministic checks with an LLM agent, line-level findings, and HTML reports for security a
   - Report: `reports/1fHsIveXRa8.md` · Video: https://youtu.be/1fHsIveXRa8 · *Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.*
 - **affaan-m/ECC** — Functionality: Large collection of agent workflows covering planning, TDD, security, research, memory, and review.
@@ -289,6 +299,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-20.
   - Report: `reports/atPmaHnJzNY.md` · Video: https://youtu.be/atPmaHnJzNY · *GitHub Trending Today - Agenta, Open-Shell-Menu, ChatUI & More | #156*
 - **[ggml-org/llama.vim](https://github.com/ggml-org/llama.vim)** — Functionality: Vim plugin for LLM-assisted code/text completion.
   - Report: `reports/atPmaHnJzNY.md` · Video: https://youtu.be/atPmaHnJzNY · *GitHub Trending Today - Agenta, Open-Shell-Menu, ChatUI & More | #156*
+- **[NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra)** — 
+  - Report: `reports/avZKjaaD2Zo.md` · Video: https://youtu.be/avZKjaaD2Zo · *Ghidra  — AI Agents Can Now Use the NSA’s Ghidra to Open a Vault*
 - **[vercel-labs/skills](https://github.com/vercel-labs/skills)** — Functionality: The open agent skills tool - npx skills.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **[mattpocock/skills](https://github.com/mattpocock/skills)** — Functionality: Skills for Real Engineers. Straight from my .agents directory.
@@ -850,3 +862,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-20.
 - [zeldaret/botw](https://github.com/zeldaret/botw) — `reports/zP43y0wJzhg.md`
 - [MhLiao/DB](https://github.com/MhLiao/DB) — `reports/zP43y0wJzhg.md`
 - [Tikam02/DevOps-Guide](https://github.com/Tikam02/DevOps-Guide) — `reports/zVk7DH9EFhE.md`
+
+## Pending eval
+
+- `reports/fC-qxqdFp4Y.md` — Hindsight — The AI Memory That Remembers You Across Sessions (1 unevaled)
+- `reports/oGSShssjn9c.md` — AI Agents Finally Share One Memory (Claude Mem Explained) (1 unevaled)

@@ -1630,6 +1630,44 @@
       "auto_repos": [
         "boykopovar/AnyPS5"
       ]
+    },
+    "1I7-OvFQxBk": {
+      "title": "$570K/Year in a Month: One Guy + Claude Runs a 30-Client Agency",
+      "published": "2026-10-20T22:08:00+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-21T12:31:21.859357+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/1I7-OvFQxBk.md",
+      "auto_repos": []
+    },
+    "avZKjaaD2Zo": {
+      "title": "Ghidra  \u2014 AI Agents Can Now Use the NSA\u2019s Ghidra to Open a Vault",
+      "published": "2026-10-20T20:30:17+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-21T12:31:23.158201+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/avZKjaaD2Zo.md",
+      "auto_repos": [
+        "nationalsecurityagency/ghidra"
+      ]
+    },
+    "fC-qxqdFp4Y": {
+      "title": "Hindsight \u2014 The AI Memory That Remembers You Across Sessions",
+      "published": "2026-10-21T20:30:16+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-22T12:31:44.257084+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/fC-qxqdFp4Y.md",
+      "auto_repos": [
+        "vectorize-io/hindsight"
+      ]
+    },
+    "oGSShssjn9c": {
+      "title": "AI Agents Finally Share One Memory (Claude Mem Explained)",
+      "published": "2026-10-21T18:39:31+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-22T12:31:45.403575+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/oGSShssjn9c.md",
+      "auto_repos": [
+        "thedotmack/claude-mem"
+      ]
     }
   }
 }
