@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-22.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-23.
 
-**Totals**: 27 INCLUDE · 161 TRIAL · 474 SKIP · 2 pending eval
+**Totals**: 27 INCLUDE · 161 TRIAL · 474 SKIP · 7 pending eval
 
 ## INCLUDE
 
@@ -865,5 +865,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-22.
 
 ## Pending eval
 
+- `reports/ZgAG5v_QPt4.md` — This AI Tool Can Rebuild Apps — But Is It Copying? (1 unevaled)
 - `reports/fC-qxqdFp4Y.md` — Hindsight — The AI Memory That Remembers You Across Sessions (1 unevaled)
 - `reports/oGSShssjn9c.md` — AI Agents Finally Share One Memory (Claude Mem Explained) (1 unevaled)
+- `reports/tqpOfHS5-VY.md` — Make your AI agent pay for itself (and this week's biggest AI news) (4 unevaled)

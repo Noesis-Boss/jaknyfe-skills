@@ -1668,6 +1668,26 @@
       "auto_repos": [
         "thedotmack/claude-mem"
       ]
+    },
+    "ZgAG5v_QPt4": {
+      "title": "This AI Tool Can Rebuild Apps \u2014 But Is It Copying?",
+      "published": "2026-10-22T20:30:22+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-23T12:31:26.801024+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/ZgAG5v_QPt4.md",
+      "auto_repos": []
+    },
+    "tqpOfHS5-VY": {
+      "title": "Make your AI agent pay for itself (and this week's biggest AI news)",
+      "published": "2026-10-22T19:32:35+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-23T12:31:28.842267+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/tqpOfHS5-VY.md",
+      "auto_repos": [
+        "thesysdev/openui",
+        "elie222/inbox-zero",
+        "Gathin23/cleanyourtv"
+      ]
     }
   }
 }
