@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-23.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-25.
 
-**Totals**: 27 INCLUDE · 161 TRIAL · 474 SKIP · 7 pending eval
+**Totals**: 29 INCLUDE · 171 TRIAL · 480 SKIP · 7 pending eval
 
 ## INCLUDE
 
@@ -14,6 +14,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-23.
   - Report: `reports/AWzzmrCPe-A.md` · Video: https://youtu.be/AWzzmrCPe-A · *Top 10 Repos explained: Archify, Omarchi, OpenMAIC, and more*
 - **morluto/rea** — Functionality: MCP/CLI toolchain that lets coding agents reverse-engineer existing software products down to native binaries, then generate 
   - Report: `reports/AiZ4HWBlLow.md` · Video: https://youtu.be/AiZ4HWBlLow · *Copy any software (free), clone viral videos, and more*
+- **[anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official)** — Functionality: Official Claude Code plugin directory (Python/manifest).
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
+- **[akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory)** — Functionality: Long-term memory for agent CLIs/handoffs.
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
 - **[debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)** — Functionality: Local, open-source ElevenLabs alternative — voice cloning from a short clip, voice design by description, video dubbing, dict
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
 - **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
@@ -165,6 +169,26 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-23.
   - Report: `reports/BcNAQynKUk4.md` · Video: https://youtu.be/BcNAQynKUk4 · *Top repo explained: builds product + lands customers*
 - **[morluto/rea](https://github.com/morluto/rea)** — 
   - Report: `reports/BctbCJP9lKU.md` · Video: https://youtu.be/BctbCJP9lKU · *REA use cases you'll love*
+- **[morluto/rea](https://github.com/morluto/rea)** — Functionality: Reverse-engineering agents that analyze apps/binaries (TypeScript, MIT).
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
+- **[ruvnet/ruflo](https://github.com/ruvnet/ruflo)** — Functionality: Agent swarm/harness with memory/RAG/federation, multi-agent orchestration.
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
+- **[K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills)** — Functionality: Large library of validated scientific agent skills (177+ skills).
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
+- **[anomalyco/opencode](https://github.com/anomalyco/opencode)** — Functionality: Open source coding agent (TUI/CLI).
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
+- **[HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything)** — Functionality: Make software agent-native via CLI wrappers.
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
+- **[cursor/plugins](https://github.com/cursor/plugins)** — Functionality: Cursor plugin spec and official plugins.
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
+- **[debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)** — Functionality: Local ElevenLabs alternative (voice clone/design/dubbing).
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
+- **[pvjbuilds/delegate-router](https://github.com/pvjbuilds/delegate-router)** — Functionality: Route coding tasks to cheaper models via CLI tools.
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
+- **[anshuxinha/karpathy-skills-extended](https://github.com/anshuxinha/karpathy-skills-extended)** — Functionality: Pre-coding check to look up/ask only when choices matter.
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
+- **[aerovato/container](https://github.com/aerovato/container)** — Functionality: Persistent Linux workspaces for agents.
+  - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
 - **debpalash/VoiceStudio** — Functionality: A local voice-generation and voice-cloning application with dubbing, dictation, transcription, and audiobook workflows. It is
   - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
 - **anthropics/financial-services** — Functionality: Anthropic's finance-oriented skill and workflow pack for research, screening, financial analysis, and spreadsheet-based deliv
@@ -544,6 +568,12 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-23.
 - [mpitutorial/mpitutorial](https://github.com/mpitutorial/mpitutorial) — `reports/BNHeFv31HNA.md`
 - [noamseg/interview-coach-skill](https://github.com/noamseg/interview-coach-skill) — `reports/BNHeFv31HNA.md`
 - jdepoix/youtube-transcript-api — `reports/BcNAQynKUk4.md`
+- [android/skills](https://github.com/android/skills) — `reports/BrBQRNIDRS8.md`
+- [marclou/mailcheap](https://github.com/marclou/mailcheap) — `reports/BrBQRNIDRS8.md`
+- [Gathin23/cleanyourtv](https://github.com/Gathin23/cleanyourtv) — `reports/BrBQRNIDRS8.md`
+- [hypit-ai/hypit](https://github.com/hypit-ai/hypit) — `reports/BrBQRNIDRS8.md`
+- [bisque-cloud/presenter](https://github.com/bisque-cloud/presenter) — `reports/BrBQRNIDRS8.md`
+- [R8rly/show](https://github.com/R8rly/show) — `reports/BrBQRNIDRS8.md`
 - paperclipai/paperclip — `reports/CQhWqUOouYM.md`
 - vectorize-io/hindsight — `reports/CQhWqUOouYM.md`
 - rohitg00/ai-engineering-from-scratch — `reports/CQhWqUOouYM.md`

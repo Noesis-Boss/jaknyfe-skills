@@ -1688,6 +1688,33 @@
         "elie222/inbox-zero",
         "Gathin23/cleanyourtv"
       ]
+    },
+    "BrBQRNIDRS8": {
+      "title": "Copy viral videos, change your TV\u2019s OS, free MailChimp and all the top repos",
+      "published": "2026-10-23T22:34:38+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-24T12:31:50.099627+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/BrBQRNIDRS8.md",
+      "auto_repos": [
+        "morluto/rea",
+        "anthropics/claude-plugins-official",
+        "ruvnet/ruflo",
+        "android/skills",
+        "K-Dense-AI/scientific-agent-skills",
+        "anomalyco/opencode",
+        "HKUDS/CLI-Anything",
+        "cursor/plugins",
+        "akitaonrails/ai-memory",
+        "debpalash/VoiceStudio",
+        "marclou/mailcheap",
+        "Gathin23/cleanyourtv",
+        "hypit-ai/hypit",
+        "bisque-cloud/presenter",
+        "pvjbuilds/delegate-router",
+        "R8rly/show",
+        "anshuxinha/karpathy-skills-extended",
+        "aerovato/container"
+      ]
     }
   }
 }
