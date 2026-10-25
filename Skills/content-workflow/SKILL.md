@@ -24,7 +24,7 @@ Create a short brief with:
 
 ## Research and editorial decision
 
-For current events, recent claims, or time-sensitive subjects, use `news-search`; distinguish source reporting from analysis, cite direct sources, and state search limits. Use `newsworthiness-check` when deciding whether a current event or announcement merits commentary or pitching. For other factual work, gather primary sources and reliable evidence appropriate to the topic. Do not invent facts, quotes, personal experience, credentials, statistics, or sources. If a central claim cannot be verified, remove it, qualify it, or mark it for human resolution.
+For current events, recent claims, or time-sensitive subjects, use `news-search`; state the date window used, verify publisher-stated publication/update dates on source pages when recency matters (snippets are leads, not proof), distinguish source reporting from analysis, and cite direct sources. Report the source surfaces actually searched plus inaccessible or unverified gaps; treat results as bounded coverage, not as exhaustive or proof of no coverage. Use `newsworthiness-check` when deciding whether a current event or announcement merits commentary or pitching. For other factual work, gather primary sources and reliable evidence appropriate to the topic. Do not invent facts, quotes, personal experience, credentials, statistics, or sources. If a central claim cannot be verified, remove it, qualify it, or mark it for human resolution.
 
 Use `content-brief` for a substantial piece that needs an outline, SEO plan, or production specifications. For a small, clear request, proceed with the short brief above instead of adding ceremony.
 
