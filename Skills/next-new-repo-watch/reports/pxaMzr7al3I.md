@@ -74,12 +74,6 @@ If you are sure that the described cause is not responsible for this error and t
      Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
 
-### jdepoix/youtube-transcript-api
-
-- **Functionality:** Python library for retrieving manually created and automatically generated YouTube captions without an API key or browser automation. It is the transcript retrieval dependency used by this watcher.
-- **Signals:** 8,382 stars; Python; MIT license; last push 2026-09-10; not archived. The current run still hit YouTube's cloud IP blocking, so operational reliability from this server is the limiting factor.
-- **Recommendation: INCLUDE** — keep it as the watcher's transcript backend in `Skills/next-new-repo-watch/`. Add a browser or alternate transcript fallback later if missed videos become a recurring problem; do not treat this dependency alone as sufficient coverage.
-
 ### Other tools mentioned
 
 The video discusses Jev, TypeSafe AI, Zapier, Home Assistant, and several hosted/model workflows, but the available description and transcript contain no additional public GitHub repository identities. No repository identity was invented for those products.

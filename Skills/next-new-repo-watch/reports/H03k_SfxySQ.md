@@ -54,10 +54,3 @@ Functionality: A Python/Markdown workflow that turns a patient's documents and t
 
 - Signals: 144 stars · Python · MIT · last push 2026-08-26 · active, not archived.
 - Recommendation: **TRIAL** — test it in a fully separate, non-production workspace using synthetic medical records; check source citations, document handling, update behavior, and whether the resulting brief preserves uncertainty. Rough effort: 2–4 hours. Do not connect real health data or treat generated content as medical advice without a human care team.
-
-### jdepoix/youtube-transcript-api — https://github.com/jdepoix/youtube-transcript-api
-
-Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the transcript backend used by this watcher.
-
-- Signals: 8,353 stars · Python · MIT · last push 2026-09-10 · active, not archived.
-- Recommendation: **INCLUDE** — retain it as the watcher’s transcript dependency; this run confirms the dependency is useful even though YouTube blocked the server IP.

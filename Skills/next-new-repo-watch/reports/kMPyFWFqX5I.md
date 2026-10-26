@@ -137,10 +137,5 @@ Functionality: Self-hosted omnichannel support inbox for live chat, email, and c
 Signals: 37,356 stars; Ruby; Other/nonstandard license metadata; last push 2026-09-30; active, not archived.
 Recommendation: **SKIP** — Ruby deployment and operational scope do not fit the current Zo-first workload or immediate priorities.
 
-### jdepoix/youtube-transcript-api
-Functionality: Python library for retrieving manually created and automatically generated YouTube subtitles without an API key or browser automation.
-Signals: 8,405 stars; Python; MIT; last push 2026-09-10; active, not archived.
-Recommendation: **SKIP** — it is already the watcher's transcript dependency, and this run demonstrates its IP-block limitation.
-
 ## Overall verdict
 The strongest near-term candidates are OpenSEO and Cal.diy. PostHog and Autumn deserve sandbox tests when a concrete analytics or billing surface is ready. The transcript was unavailable because YouTube blocked the fetch from this host; repo identity came from the video description and auto-extracted links.

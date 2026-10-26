@@ -45,8 +45,3 @@ If you are sure that the described cause is not responsible for this error and t
 Functionality: Open-source agent skills (Claude Code-style SKILL.md packs plus a Go CLI) that turn an AI agent into a full PR team: it monitors the news for stories you have standing to ride, generates angles, researches which reporters actually cover the topic, drafts and roasts the pitch, and tracks coverage.
 Signals: 1,528 stars; Go; MIT; created 2026-05-19; pushed 2026-10-07; active, not archived; 154 forks; homepage newsjack.sh.
 Recommendation: **INCLUDE** — MIT-licensed skills map one-to-one onto this Skills repo. Three are already adapted here (pr-strategist, newsworthiness-check, news-search, installed 2026-09-26); the remaining coverage-tracker, media-list, and pitch-roast skills plug into the publishing pipeline and any client PR desk. Live news search, PR calendar, and journalist enrichment require a free Medialyst account; core skills run local-first without it.
-
-### jdepoix/youtube-transcript-api — https://github.com/jdepoix/youtube-transcript-api
-Functionality: Python library that fetches YouTube transcripts/subtitles without an API key or headless browser.
-Signals: 8,434 stars; Python; MIT; pushed 2026-09-10; active, not archived.
-Recommendation: **N/A-repo** — not presented in the video; this is the watcher's own transcript-fetching dependency, auto-extracted from the report's transcript-error text. Kept for the record only.

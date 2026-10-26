@@ -79,11 +79,3 @@ Functionality: ECC is a large collection of agent skills, workflows, and operati
 Signals: 273,963 stars; JavaScript; MIT; last pushed 2026-10-05; active, not archived.
 
 Recommendation: TRIAL — sandbox the smallest useful subset in a disposable project and test skill compatibility, scope control, secret handling, and whether its agent orchestration duplicates Zo skills. Do not install the full bundle into the live workspace; rough effort: 2–4 hours.
-
-### jdepoix/youtube-transcript-api
-
-Functionality: Python library for retrieving manually created and auto-generated YouTube subtitles without an API key or browser automation. It is the dependency used by this watcher and was extracted from the transcript error text, not clearly presented as a tool in the episode.
-
-Signals: 8,422 stars; Python; MIT; last pushed 2026-09-10; active, not archived.
-
-Recommendation: SKIP — already present as the watcher's documented dependency; no separate installation or adaptation is needed.

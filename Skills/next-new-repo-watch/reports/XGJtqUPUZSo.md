@@ -55,11 +55,3 @@ Functionality: A large collection of skills and workflows for coding agents, cov
 Signals: 269,325 stars; JavaScript; MIT; last pushed 2026-09-28; active, not archived.
 
 Recommendation: INCLUDE — adapt the strongest workflows into the existing `Skills/zo-project-template/` and agent-contracts release gates. The workspace has already borrowed several ECC patterns, so install only narrowly selected pieces after review rather than vendoring the full bundle.
-
-### jdepoix/youtube-transcript-api
-
-Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It appears here because the watcher used it to fetch this video's transcript; it was not presented as a product in the video.
-
-Signals: 8,395 stars; Python; MIT; last pushed 2026-09-10; active, not archived.
-
-Recommendation: SKIP for this episode. The watcher already depends on it, so adding it again would not improve the ECC evaluation.

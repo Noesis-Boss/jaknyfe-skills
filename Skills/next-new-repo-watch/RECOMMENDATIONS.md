@@ -2,7 +2,7 @@
 
 Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
 
-**Totals**: 29 INCLUDE · 171 TRIAL · 480 SKIP · 7 pending eval
+**Totals**: 23 INCLUDE · 171 TRIAL · 470 SKIP · 7 pending eval
 
 ## INCLUDE
 
@@ -20,20 +20,12 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
   - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
 - **[debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)** — Functionality: Local, open-source ElevenLabs alternative — voice cloning from a short clip, voice design by description, video dubbing, dict
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
-- **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
-  - Report: `reports/H03k_SfxySQ.md` · Video: https://youtu.be/H03k_SfxySQ · *He Built an AI Tool to Help Families Facing Cancer*
-- **jdepoix/youtube-transcript-api** — Recommendation: INCLUDE
-  - Report: `reports/NdeOsuoIGuc.md` · Video: https://youtu.be/NdeOsuoIGuc · *Have Astra do this right now*
 - **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Functionality: Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.
   - Report: `reports/Q5V4h0LVzQI.md` · Video: https://youtu.be/Q5V4h0LVzQI · *GitHub Trending Today - picasso, immersive-translate, TRELLIS.2 & More | #144*
 - **[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)** — Functionality: Write HTML. Render video. Built for agents.
   - Report: `reports/Q5V4h0LVzQI.md` · Video: https://youtu.be/Q5V4h0LVzQI · *GitHub Trending Today - picasso, immersive-translate, TRELLIS.2 & More | #144*
-- **jdepoix/youtube-transcript-api** — Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency alre
-  - Report: `reports/QZXeiuLBlTk.md` · Video: https://youtu.be/QZXeiuLBlTk · *This Tool Feeds All Your Business Data to One AI Agent*
 - **[openai/codex](https://github.com/openai/codex)** — Functionality: Lightweight coding agent that runs in your terminal.
   - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
-- **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
-  - Report: `reports/WPUAZm5rnGc.md` · Video: https://youtu.be/WPUAZm5rnGc · *Easy step-by-step setup*
 - **affaan-m/ECC** — Functionality: A large collection of skills and workflows for coding agents, covering planning, TDD, security, research, memory, and review.
   - Report: `reports/XGJtqUPUZSo.md` · Video: https://youtu.be/XGJtqUPUZSo · *ECC — This Skill Pack Teaches Your AI to Code the Right Way*
 - **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent 
@@ -54,12 +46,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
   - Report: `reports/kqn_mSjSWMs.md` · Video: https://youtu.be/kqn_mSjSWMs · *GitHub’s top: Copy any app, create gorgeous videos, 3d print anything & more*
 - **[alibaba/open-code-review](https://github.com/alibaba/open-code-review)** — Functionality: A Go code-review tool combining deterministic checks with an LLM-assisted reviewer. It reports line-level findings across com
   - Report: `reports/ktfjaNnxPsQ.md` · Video: https://youtu.be/ktfjaNnxPsQ · *Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss*
-- **[jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)** — Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the tra
-  - Report: `reports/mny7r505ZpU.md` · Video: https://youtu.be/mny7r505ZpU · *He Built an Agent That Calls Customers*
 - **thedotmack/claude-mem** — Claude Mem is a persistent context layer that captures everything an AI agent does during a session, compresses it with an LLM, and injects 
   - Report: `reports/oGSShssjn9c.md` · Video: https://youtu.be/oGSShssjn9c · *AI Agents Finally Share One Memory (Claude Mem Explained)*
-- **jdepoix/youtube-transcript-api** — Python library for retrieving manually created and automatically generated YouTube captions without an API key or browser automation. It is 
-  - Report: `reports/pxaMzr7al3I.md` · Video: https://youtu.be/pxaMzr7al3I · *9 things you’ll actually do with Jev*
 - **vercel-labs/agent-browser** — Functionality: Rust CLI for headless browser control, DOM interaction, screenshots, and browser workflows for agents.
   - Report: `reports/qfRMHqh7tNI.md` · Video: https://youtu.be/qfRMHqh7tNI · *This Skill Gives Your AI Agent a Browser*
 - **[elvisun/newsjack](https://github.com/elvisun/newsjack)** — Functionality: Open-source agent skills (Claude Code-style SKILL.md packs plus a Go CLI) that turn an AI agent into a full PR team: it monit
@@ -567,7 +555,6 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
 - [CodeBoarding/CodeBoarding](https://github.com/CodeBoarding/CodeBoarding) — `reports/BNHeFv31HNA.md`
 - [mpitutorial/mpitutorial](https://github.com/mpitutorial/mpitutorial) — `reports/BNHeFv31HNA.md`
 - [noamseg/interview-coach-skill](https://github.com/noamseg/interview-coach-skill) — `reports/BNHeFv31HNA.md`
-- jdepoix/youtube-transcript-api — `reports/BcNAQynKUk4.md`
 - [android/skills](https://github.com/android/skills) — `reports/BrBQRNIDRS8.md`
 - [marclou/mailcheap](https://github.com/marclou/mailcheap) — `reports/BrBQRNIDRS8.md`
 - [Gathin23/cleanyourtv](https://github.com/Gathin23/cleanyourtv) — `reports/BrBQRNIDRS8.md`
@@ -596,7 +583,6 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
 - [ermaozi/get_subscribe](https://github.com/ermaozi/get_subscribe) — `reports/Gj5H7h_yA30.md`
 - [onionshare/onionshare](https://github.com/onionshare/onionshare) — `reports/IwPSH-hyNJ4.md`
 - [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) — `reports/Jv050l7y6ik.md`
-- jdepoix/youtube-transcript-api — `reports/KU7FrnLBqSM.md`
 - [wbh604/UZI-Skill](https://github.com/wbh604/UZI-Skill) — `reports/LEn0T77_-RU.md`
 - [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) — `reports/LgoY2L80xxY.md`
 - X1 (x1.new) — `reports/M7cvI4155_E.md`
@@ -717,7 +703,6 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
 - [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) — `reports/Wsru44p-J14.md`
 - [authzed/spicedb](https://github.com/authzed/spicedb) — `reports/X-jXNxoM1bg.md`
 - [Conway-Research/automaton](https://github.com/Conway-Research/automaton) — `reports/X1Y3A4zvKy0.md`
-- jdepoix/youtube-transcript-api — `reports/XGJtqUPUZSo.md`
 - [trycompai/crm](https://github.com/trycompai/crm) — `reports/XoOOY1rc43E.md`
 - [bmax121/APatch](https://github.com/bmax121/APatch) — `reports/Yjew8fYFmvw.md`
 - [Tikam02/DevOps-Guide](https://github.com/Tikam02/DevOps-Guide) — `reports/Yjew8fYFmvw.md`
@@ -744,7 +729,6 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
 - JohnHeibel/PDoomVideo — `reports/ZodAaTH-6_E.md`
 - yoheinakajima/glance-speedlab — `reports/ZodAaTH-6_E.md`
 - [SimoneAvogadro/android-reverse-engineering-skill](https://github.com/SimoneAvogadro/android-reverse-engineering-skill) — `reports/Zxh3z2j47qQ.md`
-- [jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) — `reports/_6PHjLCjdpo.md`
 - [openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc) — `reports/_LL4uWbZ5x0.md`
 - [humanlayer/skills](https://github.com/humanlayer/skills) — `reports/aX8Y183qDpY.md`
 - [openai/plugins](https://github.com/openai/plugins) — `reports/aX8Y183qDpY.md`
@@ -774,11 +758,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
 - [zed-industries/extensions](https://github.com/zed-industries/extensions) — `reports/atPmaHnJzNY.md`
 - [mercurjs/mercur](https://github.com/mercurjs/mercur) — `reports/atPmaHnJzNY.md`
 - [phaserjs/phaser-ce-examples](https://github.com/phaserjs/phaser-ce-examples) — `reports/atPmaHnJzNY.md`
-- [jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) — `reports/bTbyRKO0hxs.md`
-- jdepoix/youtube-transcript-api — `reports/dfFKE7EetoA.md`
 - [reek/anti-adblock-killer](https://github.com/reek/anti-adblock-killer) — `reports/dlS6gk830mI.md`
 - bilawalsidhu/gods-eye-view — `reports/f1-sphdBqJY.md`
-- [jdepoix/youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) — `reports/g-CG1PD7iTc.md`
 - [storytold/artcraft](https://github.com/storytold/artcraft) — `reports/gNSUW_rjYqY.md`
 - [anthropics/financial-services](https://github.com/anthropics/financial-services) — `reports/grh6GjYLyyI.md`
 - anthropics/claude-code — `reports/hlOk-EFUITQ.md`
@@ -786,12 +767,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
 - TencentCloud/Octop — `reports/hlOk-EFUITQ.md`
 - davila7/claude-code-templates — `reports/hlOk-EFUITQ.md`
 - paperclipai/paperclip — `reports/hlOk-EFUITQ.md`
-- jdepoix/youtube-transcript-api — `reports/is7d_hJc_io.md`
 - invoiceninja/invoiceninja — `reports/kMPyFWFqX5I.md`
 - frappe/crm — `reports/kMPyFWFqX5I.md`
 - mautic/mautic — `reports/kMPyFWFqX5I.md`
 - chatwoot/chatwoot — `reports/kMPyFWFqX5I.md`
-- jdepoix/youtube-transcript-api — `reports/kMPyFWFqX5I.md`
 - MicroDuck / microduck_rl — `reports/klqyY5SAQvc.md`
 - MIDI Autocomplete — `reports/klqyY5SAQvc.md`
 - Outbid (outbid.lol) — `reports/klqyY5SAQvc.md`
@@ -807,7 +786,6 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
 - DuarteSantos8/openGym — `reports/kqn_mSjSWMs.md`
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/mHGDF8mwkY4.md`
 - Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/mny7r505ZpU.md`
-- `jdepoix/youtube-transcript-api` — `reports/pkwnJcETgfE.md`
 - [cv-cat/Spider_XHS](https://github.com/cv-cat/Spider_XHS) — `reports/ptKt8thVkho.md`
 - Other tools mentioned — `reports/pxaMzr7al3I.md`
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`

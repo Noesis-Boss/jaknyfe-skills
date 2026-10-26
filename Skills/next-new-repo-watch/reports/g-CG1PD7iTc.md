@@ -52,8 +52,3 @@ Evaluated 2026-10-02 for this environment: Bun/TypeScript + Python, Zo automatio
 Functionality: A self-hostable Laravel application for invoicing, quotes, projects, time tracking, and payment collection. It fits service businesses that need recurring billing and automated payment reminders.
 - Signals: 10,199 stars · PHP · no declared SPDX license (NOASSERTION) · last push 2026-10-01 · active, not archived.
 - Recommendation: **TRIAL** — run a sandbox instance and test invoice creation, recurring billing, payment reminders, export, and webhook/API integration with Noesis client operations; rough effort 1–2 days. Its source-availability and licensing need review before any production adoption.
-
-### jdepoix/youtube-transcript-api — https://github.com/jdepoix/youtube-transcript-api
-Functionality: A Python library that retrieves manually created and auto-generated YouTube subtitles without an API key or browser automation. It was used by this watcher to attempt transcript retrieval; it was not a product featured in the video.
-- Signals: 8,411 stars · Python · MIT · last push 2026-09-10 · active, not archived.
-- Recommendation: **SKIP** — keep it as the watcher's existing dependency; it is not an adoption candidate for the trading bot, Zo automations, or publishing pipeline, and YouTube blocking caused this run's transcript fetches to fail.

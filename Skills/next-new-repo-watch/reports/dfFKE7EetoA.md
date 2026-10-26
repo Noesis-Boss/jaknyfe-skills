@@ -81,13 +81,3 @@ If you are sure that the described cause is not responsible for this error and t
      INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
      Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
-
-### jdepoix/youtube-transcript-api
-
-Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It appears here because the watcher used it to fetch this video's transcript; it was not presented as a product in the video.
-
-Signals: 8,395 stars; Python; MIT; last pushed 2026-09-10; active, not archived.
-
-Recommendation: SKIP for this episode. The watcher already depends on it, so adding it again would not improve the Meta Muse evaluation.
-
-No additional GitHub repository was presented or identifiable. Meta Muse and Zapier MCP were discussed as hosted products.

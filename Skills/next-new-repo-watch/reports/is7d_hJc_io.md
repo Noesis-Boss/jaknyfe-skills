@@ -51,10 +51,5 @@ Functionality: TypeScript tooling for AI coding agents that routes exploratory w
 Signals: 24,300 stars; TypeScript; Other/nonstandard license metadata; last push 2026-09-30; active, not archived.
 Recommendation: **TRIAL** — run it in an isolated environment against the Zo/Codex workflow and measure context reduction, tool compatibility, persistence, and security boundaries. Effort: 1 day.
 
-### jdepoix/youtube-transcript-api
-Functionality: Python library for retrieving manually created and automatically generated YouTube subtitles without an API key or browser automation.
-Signals: 8,405 stars; Python; MIT; last push 2026-09-10; active, not archived.
-Recommendation: **SKIP** — this is the watcher's existing transcript dependency, and the current host is blocked by YouTube.
-
 ## Overall verdict
 Context-Mode is worth a controlled sandbox trial because it directly targets the context and tool-output problem in this environment. The transcript was unavailable because YouTube blocked the fetch from this host; repo identity came from the video description and auto-extracted links.

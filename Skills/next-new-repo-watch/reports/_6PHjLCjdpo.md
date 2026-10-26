@@ -54,8 +54,3 @@ Evaluated 2026-10-02 for this environment: Bun/TypeScript + Python, Zo automatio
 Functionality: A Rust CLI that manages Git worktrees so several coding agents can work in isolated checkouts of one repository. It reduces branch and stash collisions during parallel implementation and review.
 - Signals: 8,645 stars · Rust · no declared SPDX license (NOASSERTION) · last push 2026-10-02 · active, not archived.
 - Recommendation: **TRIAL** — test it in a disposable repository with two concurrent agent worktrees, dirty files, rebases, merge conflict handling, and cleanup; rough effort 2–4 hours. It could improve the Skills repository workflow, but the missing declared license and added CLI dependency prevent INCLUDE.
-
-### jdepoix/youtube-transcript-api — https://github.com/jdepoix/youtube-transcript-api
-Functionality: A Python library for retrieving YouTube subtitles. It was auto-extracted by the watcher and was not presented as the subject of this video.
-- Signals: 8,411 stars · Python · MIT · last push 2026-09-10 · active, not archived.
-- Recommendation: **SKIP** — existing watcher dependency only; no new fit for the environment, and transcript requests were blocked by YouTube during this run.

@@ -72,8 +72,3 @@ If you are sure that the described cause is not responsible for this error and t
 ## Eval
 
 Evaluated 2026-10-02 for this environment. No GitHub repository was presented in the video. Hyperagent, Grok Bot, Slack, ChatGPT/OpenAI Dot, and Claude were discussed as hosted products or services, so there is no repo-level recommendation. The auto-extracted `jdepoix/youtube-transcript-api` entry is the watcher's transcript dependency, not a repo featured by the episode.
-
-### jdepoix/youtube-transcript-api — https://github.com/jdepoix/youtube-transcript-api
-Functionality: A Python library for retrieving YouTube subtitles. It was auto-extracted by the watcher and was not presented as the subject of this video.
-- Signals: 8,411 stars · Python · MIT · last push 2026-09-10 · active, not archived.
-- Recommendation: **SKIP** — existing watcher dependency only; no new fit for the environment, and transcript requests were blocked by YouTube during this run.

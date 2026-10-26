@@ -84,10 +84,3 @@ Functionality: The system calls leads who submitted a form but did not book, qua
 
 - Signals: No public repository identified; product and service names only.
 - Recommendation: **SKIP** — no repo to install or adapt, and the workflow needs explicit consent, privacy, voice-cloning, CRM-permission, and operating-cost review before a trial.
-
-### jdepoix/youtube-transcript-api — https://github.com/jdepoix/youtube-transcript-api
-
-Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the transcript backend used by this watcher.
-
-- Signals: 8,353 stars · Python · MIT · last push 2026-09-10 · active, not archived.
-- Recommendation: **INCLUDE** — retain it as the watcher’s transcript dependency.

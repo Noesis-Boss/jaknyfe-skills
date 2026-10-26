@@ -89,14 +89,6 @@ Signals: 554 stars; JavaScript; license metadata reports `Other`; last push 2026
 
 - Recommendation: **TRIAL** — build one read-only connector against a low-risk marketing workflow and measure setup time, auth handling, and maintenance burden before adopting it broadly. Rough effort: 1–2 hours.
 
-### `jdepoix/youtube-transcript-api`
-
-Functionality: Python library for retrieving YouTube captions, including auto-generated subtitles, without an API key or browser automation. The watcher already uses it for transcript retrieval.
-
-Signals: 8,337 stars; Python; MIT; last push 2026-09-10; active and not archived.
-
-- Recommendation: **SKIP** — it is already the implementation dependency of `Skills/next-new-repo-watch`, and this run confirmed its operational weakness in this environment: YouTube blocked the transcript request.
-
 ### N/A-repo — named products without a confirmed repository
 
 Muse (`muse.ai`) and Tailscale (`tailscale.com`) were named as products or services, but no GitHub repository was identified from the available description.

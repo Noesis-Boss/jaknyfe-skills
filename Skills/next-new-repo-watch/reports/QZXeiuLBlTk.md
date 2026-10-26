@@ -38,13 +38,3 @@ If you are sure that the described cause is not responsible for this error and t
      INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
      Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
-
-### jdepoix/youtube-transcript-api
-
-**Functionality:** Python library for retrieving manual and auto-generated YouTube subtitles without a browser or API key. It is the transcript dependency already used by this watcher.
-
-**Signals:** 8,342 stars; Python; MIT; last push 2026-09-10; active; not archived.
-
-**Recommendation: INCLUDE** — retain as the transcript backend for the watcher. YouTube blocked transcript retrieval from this server IP during this run.
-
-**Identity uncertainty:** No transcript was available; the repo was auto-extracted and is a watcher dependency.

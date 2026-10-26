@@ -45,10 +45,3 @@ Functionality: The system calls unbooked leads, qualifies them, sends a calendar
 
 - Signals: No public repository identified; product and service names only.
 - Recommendation: **SKIP** — no repo to install or adapt, and outbound calling, voice cloning, CRM writes, and lead data require a separate consent, privacy, and cost review before any Zo automation trial.
-
-### jdepoix/youtube-transcript-api — https://github.com/jdepoix/youtube-transcript-api
-
-Functionality: Python API for retrieving manual and auto-generated YouTube subtitles without an API key or browser automation. It is the transcript backend used by this watcher.
-
-- Signals: 8,353 stars · Python · MIT · last push 2026-09-10 · active, not archived.
-- Recommendation: **INCLUDE** — retain it as the watcher’s transcript dependency.
