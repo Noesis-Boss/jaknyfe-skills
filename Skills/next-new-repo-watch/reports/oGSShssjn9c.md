@@ -69,6 +69,6 @@ If you are sure that the described cause is not responsible for this error and t
 - **Signals:** 102,242★ · TypeScript · Apache-2.0 · last push 2026-10-22 · not archived · extremely actively maintained
 - **Recommendation: INCLUDE** — Install/adapt now. It plugs directly into the Zo automation layer as a cross-session memory store for scheduled agents and skills, and it is a natural fit for the robinhood-trading-bot (persist strategy tuning, market notes, and session state across daily runs). The TypeScript/Bun stack matches the Zo and Skills ecosystem, Apache-2.0 is permissive, and the agent-surface breadth means it can sit behind multiple Zo personas without rework. Self-host the daemon on the Zo server; the Claude Code / Codex hooks are the entry point to validate first, then extend to the Zo automation channel.
 
-### Non-repo links mentioned
+**Non-repo links mentioned**
 
 - **grok-mem.ai** — a companion product to Claude Mem (same author, thedotmack). The only associated GitHub repo is `thedotmack/grok-mem`, which is a 1★ static marketing site (HTML, last pushed 2026-09-03), not a substantive codebase. No eval; SKIP as a repo, but the product itself is part of the same memory ecosystem and worth watching.

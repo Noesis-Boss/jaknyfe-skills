@@ -81,3 +81,9 @@ If you are sure that the described cause is not responsible for this error and t
      INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
      Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
+
+**Transcript note:** Transcript unavailable (YouTube blocks cloud-host requests). Repos identified from the description and GitHub search.
+
+**Repos presented:** None. Meta Muse is a hosted product, and the description links only to other creators' videos.
+
+**Recommendation: SKIP** — Hosted commercial agent with no installable repo.

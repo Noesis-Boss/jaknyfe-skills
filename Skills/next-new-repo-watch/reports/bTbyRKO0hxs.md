@@ -72,3 +72,9 @@ If you are sure that the described cause is not responsible for this error and t
 ## Eval
 
 Evaluated 2026-10-02 for this environment. No GitHub repository was presented in the video. Hyperagent, Grok Bot, Slack, ChatGPT/OpenAI Dot, and Claude were discussed as hosted products or services, so there is no repo-level recommendation. The auto-extracted `jdepoix/youtube-transcript-api` entry is the watcher's transcript dependency, not a repo featured by the episode.
+
+**Transcript note:** Transcript unavailable (YouTube blocks cloud-host requests). Repos identified from the description and GitHub search.
+
+**Repos presented:** None. Hyperagent, Grok Bot, ChatGPT, Slack, and Claude are all hosted products.
+
+**Recommendation: SKIP** — Hosted commercial agents with no installable repo.

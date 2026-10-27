@@ -38,3 +38,9 @@ If you are sure that the described cause is not responsible for this error and t
      INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
      Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
+
+**Transcript note:** Transcript unavailable (YouTube blocks cloud-host requests). Repos identified from the description and GitHub search.
+
+**Repos presented:** None found. Supernova (supernova.ai) is a hosted data-lake and MCP service with no public GitHub repo identified.
+
+**Recommendation: SKIP** — Hosted commercial service, not a repo. Revisit only if a self-hostable alternative appears.

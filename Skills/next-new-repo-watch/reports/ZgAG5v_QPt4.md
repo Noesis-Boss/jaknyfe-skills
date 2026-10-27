@@ -45,5 +45,18 @@ If you are sure that the described cause is not responsible for this error and t
 ### morluto/rea — REA (Reverse Engineer Anything)
 - **Functionality**: MCP toolchain that lets AI coding agents inspect how existing applications work and rebuild their features, from app behavior down to native binaries. Targets Claude Code / agent workflows for reverse-engineering software.
 - **Signals**: 370,279★ · TypeScript · MIT · pushed 2026-10-23 · not archived · homepage rea.tools.
-- **Recommendation**: TRIAL — large community and MIT license, but the tool grants an agent broad reverse-engineering/shell-style access to inspect and rebuild apps, so it must not be INCLUDE'd outright. Sandbox-test on a throwaway project first: verify what it actually reads/writes, confirm no credential leakage, and check whether it duplicates work already doable with our existing Claude Code setup. Effort: ~1-2 hours.
+- **Recommendation: TRIAL** — large community and MIT license, but the tool grants an agent broad reverse-engineering/shell-style access to inspect and rebuild apps, so it must not be INCLUDE'd outright. Sandbox-test on a throwaway project first: verify what it actually reads/writes, confirm no credential leakage, and check whether it duplicates work already doable with our existing Claude Code setup. Effort: ~1-2 hours.
 - Related derivatives surfaced by search (not directly presented): `JoasASantos/REA-Prompts` (1,577★, no license) prompt pack for REA; `aicodeking/leanrea` (1,564★, MIT, Python) claims a lighter 8 KB skill replacement benchmarked 38% faster/35% cheaper — worth a side-by-side comparison during the trial.
+
+### aicodeking/leanrea
+
+- **Functionality:** Single 8 KB skill with plain CLI tools that replaces REA's MCP layer, claiming 38% faster and 35% cheaper runs.
+- **Signals:** 3,160★ · Python · MIT · pushed 2026-10-19 · not archived. Benchmark claims are the author's; unverified.
+- **Recommendation: TRIAL** — Run it side by side with morluto/rea during the REA sandbox trial. Judge on output quality, not the author's benchmark.
+
+### JoasASantos/REA-Prompts
+
+- **Functionality:** Prompt pack for using REA effectively.
+- **Signals:** 2,910★ · Batchfile · MIT · pushed 2026-10-26 · not archived.
+- **Recommendation: SKIP** — Prompts only, and they are oriented to the same reverse-engineering scope as REA. Nothing to adopt separately.
+

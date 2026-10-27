@@ -39,3 +39,11 @@ If you are sure that the described cause is not responsible for this error and t
      INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
      Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
      trading bot, publishing pipeline. -->
+
+**Transcript note:** Transcript unavailable (YouTube blocks cloud-host requests). Repos identified from the description and GitHub search.
+
+### feder-cr/jev (jevos)
+
+- **Functionality:** Local CPU-only yes/no, choice, and scoring decision tool, positioned as an open-source alternative to the Jev decision layer the video describes.
+- **Signals:** 922★ · C++ · MIT · pushed 2026-10-18 · not archived. Not the same product as the commercial Jev named in the video.
+- **Recommendation: TRIAL** — Test whether a cheap local yes/no router can pre-filter tasks before they reach a paid model. Compare it against the existing JevRouter in Noesis Factory before adopting either. Effort: ~1–2 hours.

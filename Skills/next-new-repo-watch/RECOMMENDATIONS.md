@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-27.
 
-**Totals**: 23 INCLUDE · 171 TRIAL · 470 SKIP · 7 pending eval
+**Totals**: 23 INCLUDE · 177 TRIAL · 472 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -223,6 +223,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
 - **[DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp)** — Functionality: A static C binary that indexes a codebase into a persistent knowledge graph and answers code-intelligence queries. It support
   - Report: `reports/Jv050l7y6ik.md` · Video: https://youtu.be/Jv050l7y6ik · *10 Repos conserve your token usage*
+- **feder-cr/jev (jevos)** — Local CPU-only yes/no, choice, and scoring decision tool, positioned as an open-source alternative to the Jev decision layer the video descr
+  - Report: `reports/KU7FrnLBqSM.md` · Video: https://youtu.be/KU7FrnLBqSM · *The Smart Way to Use JEV in AI Agents*
 - **openclaw/openclaw** — The flagship open-source personal AI agent (OpenClaw 2.0) — a full OS-level agent runtime with shell access, chat-based delegation, and a 5,
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
 - **THU-MAIC/OpenMAIC** — Open Multi-Agent Interactive Classroom: one prompt ("teach me quantum physics") spawns an AI teacher who lectures aloud, AI classmates that 
@@ -239,6 +241,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
 - **Diffusion Studio (video edits as code)** — 
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
+- **earthtojake/text-to-cad** — Gives a coding agent the ability to generate real parametric 3D CAD models from text descriptions.
+  - Report: `reports/NXt2BM-s4Ow.md` · Video: https://youtu.be/NXt2BM-s4Ow · *Text-to-CAD — Describe a Part, Get a Real 3D Model*
 - **[altic-dev/FluidVoice](https://github.com/altic-dev/FluidVoice)** — Functionality: Fastest and only macOS Dictation app with on-device STT and custom trained AI enhancement model. Windows pre-build available!
   - Report: `reports/Oaq2w0wAZbc.md` · Video: https://youtu.be/Oaq2w0wAZbc · *GitHub Trending Today - FluidVoice, GLM-5, Qwen3-ASR & More | #140*
 - **[google-deepmind/gemma](https://github.com/google-deepmind/gemma)** — Functionality: Gemma open-weight LLM library, from Google DeepMind.
@@ -291,6 +295,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
   - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
 - **[dsphper/lanhu-mcp](https://github.com/dsphper/lanhu-mcp)** — Functionality: MCP server connecting AI assistants to a shared team knowledge base — extracts requirements from design docs and UI mockups, 
   - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
+- **morluto/rea** — Related derivatives surfaced by search (not directly presented): `JoasASantos/REA-Prompts` (1,577★, no license) prompt pack for REA; `aicode
+  - Report: `reports/ZgAG5v_QPt4.md` · Video: https://youtu.be/ZgAG5v_QPt4 · *This AI Tool Can Rebuild Apps — But Is It Copying?*
+- **aicodeking/leanrea** — Single 8 KB skill with plain CLI tools that replaces REA's MCP layer, claiming 38% faster and 35% cheaper runs.
+  - Report: `reports/ZgAG5v_QPt4.md` · Video: https://youtu.be/ZgAG5v_QPt4 · *This AI Tool Can Rebuild Apps — But Is It Copying?*
 - **elvisun/newsjack** — Functionality: Open-source agent skills that research news opportunities and help execute a PR workflow.
   - Report: `reports/ZodAaTH-6_E.md` · Video: https://youtu.be/ZodAaTH-6_E · *Meta’s Muse makes you money. And more*
 - **[max-sixty/worktrunk](https://github.com/max-sixty/worktrunk)** — Functionality: A Rust CLI that manages Git worktrees so several coding agents can work in isolated checkouts of one repository. It reduces b
@@ -373,6 +381,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
   - Report: `reports/rVoAyD2Zrfs.md` · Video: https://youtu.be/rVoAyD2Zrfs · *10 GitHub repos that will save you money*
 - **VonHoltenCodes/SlowBooks-Pro-2026** — Signals: 330★ · Python · license: Other (source-available, not OSI) · pushed 2026-09-06 · not archived.
   - Report: `reports/rVoAyD2Zrfs.md` · Video: https://youtu.be/rVoAyD2Zrfs · *10 GitHub repos that will save you money*
+- **thesysdev/openui** — 
+  - Report: `reports/tqpOfHS5-VY.md` · Video: https://youtu.be/tqpOfHS5-VY · *Make your AI agent pay for itself (and this week's biggest AI news)*
+- **elie222/inbox-zero** — 
+  - Report: `reports/tqpOfHS5-VY.md` · Video: https://youtu.be/tqpOfHS5-VY · *Make your AI agent pay for itself (and this week's biggest AI news)*
 - **[cactus-compute/needle](https://github.com/cactus-compute/needle)** — Functionality: A compact on-device model that maps natural-language requests to constrained tool calls, structured extraction, and embedding
   - Report: `reports/tsWOiibaaxA.md` · Video: https://youtu.be/tsWOiibaaxA · *Better than Jev - because you can build with it*
 - **[OpenSenseNova/SenseNova-Skills](https://github.com/OpenSenseNova/SenseNova-Skills)** — Functionality: Modular SenseNova skills for building AI-powered office assistants and productivity workflows.
@@ -726,6 +738,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
 - [awawa-dev/HyperHDR](https://github.com/awawa-dev/HyperHDR) — `reports/Yjew8fYFmvw.md`
 - [shuding/tilg](https://github.com/shuding/tilg) — `reports/Yjew8fYFmvw.md`
 - [muskie82/MonoGS](https://github.com/muskie82/MonoGS) — `reports/Yjew8fYFmvw.md`
+- JoasASantos/REA-Prompts — `reports/ZgAG5v_QPt4.md`
 - JohnHeibel/PDoomVideo — `reports/ZodAaTH-6_E.md`
 - yoheinakajima/glance-speedlab — `reports/ZodAaTH-6_E.md`
 - [SimoneAvogadro/android-reverse-engineering-skill](https://github.com/SimoneAvogadro/android-reverse-engineering-skill) — `reports/Zxh3z2j47qQ.md`
@@ -799,6 +812,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
 - [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) — `reports/rXiSq2Te5H8.md`
 - [morluto/rea](https://github.com/morluto/rea) — `reports/rcQIAEdOA8Y.md`
 - [Byron/dua-cli](https://github.com/Byron/dua-cli) — `reports/tfhN43qOD5I.md`
+- Gathin23/cleanyourtv — `reports/tqpOfHS5-VY.md`
 - [amitshekhariitbhu/from-java-to-kotlin](https://github.com/amitshekhariitbhu/from-java-to-kotlin) — `reports/vjWCfBPGy3Y.md`
 - [potatoqualitee/eol-dr](https://github.com/potatoqualitee/eol-dr) — `reports/vjWCfBPGy3Y.md`
 - [hugo2046/QuantsPlaybook](https://github.com/hugo2046/QuantsPlaybook) — `reports/vjWCfBPGy3Y.md`
@@ -870,10 +884,3 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-26.
 - [zeldaret/botw](https://github.com/zeldaret/botw) — `reports/zP43y0wJzhg.md`
 - [MhLiao/DB](https://github.com/MhLiao/DB) — `reports/zP43y0wJzhg.md`
 - [Tikam02/DevOps-Guide](https://github.com/Tikam02/DevOps-Guide) — `reports/zVk7DH9EFhE.md`
-
-## Pending eval
-
-- `reports/ZgAG5v_QPt4.md` — This AI Tool Can Rebuild Apps — But Is It Copying? (1 unevaled)
-- `reports/fC-qxqdFp4Y.md` — Hindsight — The AI Memory That Remembers You Across Sessions (1 unevaled)
-- `reports/oGSShssjn9c.md` — AI Agents Finally Share One Memory (Claude Mem Explained) (1 unevaled)
-- `reports/tqpOfHS5-VY.md` — Make your AI agent pay for itself (and this week's biggest AI news) (4 unevaled)

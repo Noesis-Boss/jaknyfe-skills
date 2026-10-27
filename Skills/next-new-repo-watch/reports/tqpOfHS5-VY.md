@@ -145,5 +145,25 @@ If you are sure that the described cause is not responsible for this error and t
 - **Signals**: 26,329★ · Java · license "Other" (custom) · pushed 2026-10-23 · not archived.
 - **Recommendation**: SKIP — targets Android/Google TV hardware, not our Bun/TS/Python + Zo stack; no integration point in trading bot, automations, or publishing pipeline. (Also note: "Other" license.)
 
-### Other items mentioned in the video (not GitHub repos)
+**Other items mentioned in the video (not GitHub repos)**
 - Claude Duet, Hyperagent, Pika, PhoneUse, MuseCourt, OpenDesign, MailCheap, Grok Bot, Thumbsy, Pet Plus Us — products/services referenced only via X/LinkedIn/websites; no GitHub repos surfaced. No eval needed.
+
+**Transcript note:** Transcript unavailable (YouTube blocks cloud-host requests). Repos identified from the description and GitHub search.
+
+### Gathin23/cleanyourtv
+
+- **Functionality:** Debloats Android and Google TV devices over Wi-Fi and replaces the home screen.
+- **Signals:** 40,620★ · Python · license "Other" (not MIT) · pushed 2026-10-27 · not archived.
+- **Recommendation: SKIP** — No fit with the Zo, Skills, or trading stack. Its "Other" license needs review before any use, and it changes household device system software.
+
+### elie222/inbox-zero
+
+- **Functionality:** Open-source AI email assistant that triages and acts on Gmail.
+- **Signals:** 12,831★ · TypeScript · license "Other" · pushed 2026-10-27 · not archived.
+- **Recommendation: TRIAL** — Compare its triage against the existing daily-action-items inbox scan. Read the license before adapting any code. Sandbox-test on a non-production Gmail account only. Effort: ~2–3 hours.
+
+### thesysdev/openui
+
+- **Functionality:** Open standard for generative UI, letting an AI response render as structured interface components.
+- **Signals:** 14,246★ · TypeScript · MIT · pushed 2026-10-27 · not archived.
+- **Recommendation: TRIAL** — Test as a render layer for AI responses in the Idea Desk assistant modal. Scope to one component first. Effort: ~2–3 hours.

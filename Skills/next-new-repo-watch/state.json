@@ -1678,6 +1678,24 @@
       "processed_at": "2026-10-26T12:32:02.969818+00:00",
       "report": "/home/workspace/Skills/next-new-repo-watch/reports/qsQ6w99txII.md",
       "auto_repos": []
+    },
+    "UOiZeS_rCSw": {
+      "title": "The Best Parts of Claude Duet and What\u2019s Still Missing",
+      "published": "2026-10-26T23:19:23+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-27T12:31:58.403337+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/UOiZeS_rCSw.md",
+      "auto_repos": []
+    },
+    "NXt2BM-s4Ow": {
+      "title": "Text-to-CAD \u2014 Describe a Part, Get a Real 3D Model",
+      "published": "2026-10-26T20:30:18+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-27T12:31:59.578445+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/NXt2BM-s4Ow.md",
+      "auto_repos": [
+        "earthtojake/text-to-cad"
+      ]
     }
   }
 }

@@ -49,6 +49,6 @@ If you are sure that the described cause is not responsible for this error and t
 - **Signals:** 52,596★ · Python · MIT · last push 2026-10-22 · not archived · actively maintained
 - **Recommendation: INCLUDE** — Install/adapt now. It plugs directly into Zo automations and the Skills pipeline as a cross-session memory layer for agent workflows, and it is a natural fit for the robinhood-trading-bot's persistent state (positions, session notes, strategy tuning across runs). The Python stack matches the existing codebase, MIT license is permissive, and the company backing means it won't go stale. Self-host the OSS version on the Zo server; fall back to the cloud tier if you'd rather not run it yourself.
 
-### Non-repo links mentioned
+**Non-repo links mentioned**
 
 - **grok-mem.ai** — referenced in the video description as a companion to Claude Mem; not a GitHub repo, so no eval. Worth a manual look if xAI's ecosystem matters to you.

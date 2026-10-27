@@ -64,3 +64,9 @@ If you are sure that the described cause is not responsible for this error and t
 ## Agent eval
 
 The transcript could not be retrieved because YouTube blocked the server IP. The description and chapters identify products and demonstrations, but no additional open-source repository besides the transcript tool itself. Closed products and model names are not counted as repositories.
+
+**Transcript note:** Transcript unavailable (YouTube blocks cloud-host requests). Repos identified from the description and GitHub search.
+
+**Repos presented:** None identified. The description covers GPT-6 Astra demos (Riley Brown, Jason Lee, Claire Vo, Matthew Berman, Mark Kashef, Nate Herk, Dan Shipper), all as YouTube links or product names.
+
+**Recommendation: SKIP** — Commercial model demos. No installable repo to evaluate.
