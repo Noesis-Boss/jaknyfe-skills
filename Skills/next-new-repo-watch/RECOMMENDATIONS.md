@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-27.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-28.
 
-**Totals**: 23 INCLUDE · 177 TRIAL · 472 SKIP · 0 pending eval
+**Totals**: 23 INCLUDE · 179 TRIAL · 478 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -243,6 +243,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-27.
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
 - **earthtojake/text-to-cad** — Gives a coding agent the ability to generate real parametric 3D CAD models from text descriptions.
   - Report: `reports/NXt2BM-s4Ow.md` · Video: https://youtu.be/NXt2BM-s4Ow · *Text-to-CAD — Describe a Part, Get a Real 3D Model*
+- **[mvschwarz/openrig](https://github.com/mvschwarz/openrig)** — Functionality: Orchestrates multiple coding agents (Claude Code, Codex, Pi) as one persistent team with named roles, shared context, and han
+  - Report: `reports/NnSpoJgSjZY.md` · Video: https://youtu.be/NnSpoJgSjZY · *OpenRig — Run All Your AI Coding Agents as One Team*
 - **[altic-dev/FluidVoice](https://github.com/altic-dev/FluidVoice)** — Functionality: Fastest and only macOS Dictation app with on-device STT and custom trained AI enhancement model. Windows pre-build available!
   - Report: `reports/Oaq2w0wAZbc.md` · Video: https://youtu.be/Oaq2w0wAZbc · *GitHub Trending Today - FluidVoice, GLM-5, Qwen3-ASR & More | #140*
 - **[google-deepmind/gemma](https://github.com/google-deepmind/gemma)** — Functionality: Gemma open-weight LLM library, from Google DeepMind.
@@ -397,6 +399,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-27.
   - Report: `reports/wvStsbW_fCY.md` · Video: https://youtu.be/wvStsbW_fCY · *I Let AI Take Over My Browser — For 2 Cents*
 - **[Shaunwei/RealChar](https://github.com/Shaunwei/RealChar)** — Functionality: 🎙️🤖Create, Customize and Talk to your AI Character/Companion in Realtime (All in One Codebase!). Have a natural seamless conv
   - Report: `reports/x9nyYMJB5RM.md` · Video: https://youtu.be/x9nyYMJB5RM · *RealChar - GitHub Trending Today*
+- **[mutonby/openshorts](https://github.com/mutonby/openshorts)** — Functionality: Turns long videos into vertical 9:16 shorts using AI moment detection, face tracking, subtitles, and dubbing, with an MCP ser
+  - Report: `reports/yATBEBRhxM8.md` · Video: https://youtu.be/yATBEBRhxM8 · *The Free Alternative to Every Creator Tool You Pay For*
 - **[b4rtaz/distributed-llama](https://github.com/b4rtaz/distributed-llama)** — Functionality: Distributed LLM inference. Connect home devices into a powerful cluster to accelerate LLM inference. More devices means faste
   - Report: `reports/z-_34WChEoo.md` · Video: https://youtu.be/z-_34WChEoo · *GitHub Trending Today - distributed-llama, HunyuanWorld-1.0, openWakeWord & More | #161*
 - **[google-research-datasets/Objectron](https://github.com/google-research-datasets/Objectron)** — Functionality: Objectron is a dataset of short, object-centric video clips. In addition, the videos also contain AR session metadata includi
@@ -836,6 +840,12 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-27.
 - [martin-ger/esp32_nat_router](https://github.com/martin-ger/esp32_nat_router) — `reports/vjWCfBPGy3Y.md`
 - [tandpfun/wardrobe](https://github.com/tandpfun/wardrobe) — `reports/vjWCfBPGy3Y.md`
 - [useautumn/autumn](https://github.com/useautumn/autumn) — `reports/wgdFn5JXXb8.md`
+- [gitroomhq/postiz-app](https://github.com/gitroomhq/postiz-app) — `reports/yATBEBRhxM8.md`
+- [jamiepine/voicebox](https://github.com/jamiepine/voicebox) — `reports/yATBEBRhxM8.md`
+- [KDE/kdenlive](https://github.com/KDE/kdenlive) — `reports/yATBEBRhxM8.md`
+- [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) — `reports/yATBEBRhxM8.md`
+- [obsproject/obs-studio](https://github.com/obsproject/obs-studio) — `reports/yATBEBRhxM8.md`
+- [wassgha/rescript](https://github.com/wassgha/rescript) — `reports/yATBEBRhxM8.md`
 - [google/artemis](https://github.com/google/artemis) — `reports/yYEHxEF869k.md`
 - [robbietilton/Compositor](https://github.com/robbietilton/Compositor) — `reports/yvEO-QDdb50.md`
 - [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) — `reports/z-_34WChEoo.md`
