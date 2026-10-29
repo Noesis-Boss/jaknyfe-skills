@@ -1722,6 +1722,24 @@
         "obsproject/obs-studio",
         "wassgha/rescript"
       ]
+    },
+    "84YD1F3v_LM": {
+      "title": "Make Notion Your AI's Brain (Notion's Official Setup)",
+      "published": "2026-10-28T21:36:00+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-29T12:31:41.643227+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/84YD1F3v_LM.md",
+      "auto_repos": []
+    },
+    "mzLkzIF1Te8": {
+      "title": "Epic Games\u2019 RAD Debugger Fills AI\u2019s Biggest Gap in Game Dev",
+      "published": "2026-10-28T20:30:17+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-29T12:31:43.279097+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/mzLkzIF1Te8.md",
+      "auto_repos": [
+        "EpicGames/raddebugger"
+      ]
     }
   }
 }

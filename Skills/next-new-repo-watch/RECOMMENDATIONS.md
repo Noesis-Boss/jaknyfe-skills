@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-28.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-29.
 
-**Totals**: 23 INCLUDE · 179 TRIAL · 478 SKIP · 0 pending eval
+**Totals**: 23 INCLUDE · 179 TRIAL · 479 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -803,6 +803,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-28.
 - DuarteSantos8/openGym — `reports/kqn_mSjSWMs.md`
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/mHGDF8mwkY4.md`
 - Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/mny7r505ZpU.md`
+- [EpicGames/raddebugger](https://github.com/EpicGames/raddebugger) — `reports/mzLkzIF1Te8.md`
 - [cv-cat/Spider_XHS](https://github.com/cv-cat/Spider_XHS) — `reports/ptKt8thVkho.md`
 - Other tools mentioned — `reports/pxaMzr7al3I.md`
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`
