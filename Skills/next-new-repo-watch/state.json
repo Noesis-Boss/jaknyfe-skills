@@ -1740,6 +1740,27 @@
       "auto_repos": [
         "EpicGames/raddebugger"
       ]
+    },
+    "vz7nLocDtEE": {
+      "title": "New AI video editor, make money with vibe coded apps, and more of this week\u2019s ai news",
+      "published": "2026-10-29T22:15:49+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-30T12:32:25.213668+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/vz7nLocDtEE.md",
+      "auto_repos": [
+        "elayadesign/ai-design-skills",
+        "bilawalsidhu/gods-eye-view"
+      ]
+    },
+    "bG0gy-9Fyb0": {
+      "title": "Cursor Now Has Official Plugins (Gmail, Drive, Calendar & More)",
+      "published": "2026-10-29T20:30:35+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-30T12:32:26.707823+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/bG0gy-9Fyb0.md",
+      "auto_repos": [
+        "cursor/plugins"
+      ]
     }
   }
 }

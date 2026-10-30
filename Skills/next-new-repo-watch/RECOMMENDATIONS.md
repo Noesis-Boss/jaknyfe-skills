@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-29.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-30.
 
-**Totals**: 23 INCLUDE · 179 TRIAL · 479 SKIP · 0 pending eval
+**Totals**: 23 INCLUDE · 179 TRIAL · 482 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -775,6 +775,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-29.
 - [zed-industries/extensions](https://github.com/zed-industries/extensions) — `reports/atPmaHnJzNY.md`
 - [mercurjs/mercur](https://github.com/mercurjs/mercur) — `reports/atPmaHnJzNY.md`
 - [phaserjs/phaser-ce-examples](https://github.com/phaserjs/phaser-ce-examples) — `reports/atPmaHnJzNY.md`
+- [cursor/plugins](https://github.com/cursor/plugins) — `reports/bG0gy-9Fyb0.md`
 - [reek/anti-adblock-killer](https://github.com/reek/anti-adblock-killer) — `reports/dlS6gk830mI.md`
 - bilawalsidhu/gods-eye-view — `reports/f1-sphdBqJY.md`
 - [storytold/artcraft](https://github.com/storytold/artcraft) — `reports/gNSUW_rjYqY.md`
@@ -840,6 +841,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-29.
 - [yadox666/The-Hackers-Hardware-Toolkit](https://github.com/yadox666/The-Hackers-Hardware-Toolkit) — `reports/vjWCfBPGy3Y.md`
 - [martin-ger/esp32_nat_router](https://github.com/martin-ger/esp32_nat_router) — `reports/vjWCfBPGy3Y.md`
 - [tandpfun/wardrobe](https://github.com/tandpfun/wardrobe) — `reports/vjWCfBPGy3Y.md`
+- [elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills) — `reports/vz7nLocDtEE.md`
+- [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — `reports/vz7nLocDtEE.md`
 - [useautumn/autumn](https://github.com/useautumn/autumn) — `reports/wgdFn5JXXb8.md`
 - [gitroomhq/postiz-app](https://github.com/gitroomhq/postiz-app) — `reports/yATBEBRhxM8.md`
 - [jamiepine/voicebox](https://github.com/jamiepine/voicebox) — `reports/yATBEBRhxM8.md`
