@@ -1761,6 +1761,36 @@
       "auto_repos": [
         "cursor/plugins"
       ]
+    },
+    "-6SHbxdXMRU": {
+      "title": "Copy any app, Claude does SEO, and the top 10 repos",
+      "published": "2026-10-30T21:04:27+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-31T12:32:04.966837+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/-6SHbxdXMRU.md",
+      "auto_repos": [
+        "every-app/every-app",
+        "t3dotgg/tstack",
+        "joshuaswarren/omarchy-apple-dev",
+        "cloudflare/security-audit-skill",
+        "AgriciDaniel/claude-seo",
+        "pbakaus/impeccable",
+        "obra/superpowers",
+        "TauricResearch/TradingAgents",
+        "multica-ai/andrej-karpathy-skills",
+        "Leonxlnx/taste-skill",
+        "jakubkrehel/skills",
+        "pingdotgg/t3code",
+        "anthropics/knowledge-work-plugins"
+      ]
+    },
+    "DKsra7jn8jQ": {
+      "title": "FreeLLMAPI \u2013 Access Free AI Models With Automatic Switching",
+      "published": "2026-10-30T20:30:17+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-10-31T12:32:05.772595+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/DKsra7jn8jQ.md",
+      "auto_repos": []
     }
   }
 }

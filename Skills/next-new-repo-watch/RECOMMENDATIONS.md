@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-30.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-31.
 
-**Totals**: 23 INCLUDE · 179 TRIAL · 482 SKIP · 0 pending eval
+**Totals**: 23 INCLUDE · 186 TRIAL · 489 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -55,6 +55,18 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-30.
 
 ## TRIAL
 
+- **[t3dotgg/tstack](https://github.com/t3dotgg/tstack)** — Functionality: Theo's personal set of agent skills for Claude Code and Codex, covering the TypeScript stack.
+  - Report: `reports/-6SHbxdXMRU.md` · Video: https://youtu.be/-6SHbxdXMRU · *Copy any app, Claude does SEO, and the top 10 repos*
+- **[cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)** — Functionality: Multi-phase coding-agent security audit that emits independently verified, machine-readable findings.
+  - Report: `reports/-6SHbxdXMRU.md` · Video: https://youtu.be/-6SHbxdXMRU · *Copy any app, Claude does SEO, and the top 10 repos*
+- **[pbakaus/impeccable](https://github.com/pbakaus/impeccable)** — Functionality: A design vocabulary for coding agents: polish, bolder, critique, and audit commands that catch generic AI-looking UI before i
+  - Report: `reports/-6SHbxdXMRU.md` · Video: https://youtu.be/-6SHbxdXMRU · *Copy any app, Claude does SEO, and the top 10 repos*
+- **[TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents)** — Functionality: Multi-agent LLM framework that simulates analyst, research, and trader roles to produce trading decisions.
+  - Report: `reports/-6SHbxdXMRU.md` · Video: https://youtu.be/-6SHbxdXMRU · *Copy any app, Claude does SEO, and the top 10 repos*
+- **[Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)** — Functionality: Agent skills for art direction: reference images and a browser check in place of generic AI page output.
+  - Report: `reports/-6SHbxdXMRU.md` · Video: https://youtu.be/-6SHbxdXMRU · *Copy any app, Claude does SEO, and the top 10 repos*
+- **[anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins)** — Functionality: Plugins for knowledge workers in Claude Cowork, including connectors and workflow prompts.
+  - Report: `reports/-6SHbxdXMRU.md` · Video: https://youtu.be/-6SHbxdXMRU · *Copy any app, Claude does SEO, and the top 10 repos*
 - **[mutonby/openshorts](https://github.com/mutonby/openshorts)** — Functionality: Self-hosted AI platform for finding clips, creating shorts, and managing YouTube workflows.
   - Report: `reports/-Jxf0YkTGbA.md` · Video: https://youtu.be/-Jxf0YkTGbA · *GitHub Trending Today - crm, artemis, Spider_XHS & More | #168*
 - **[storytold/pdfcraft](https://github.com/storytold/pdfcraft)** — Functionality: Native cross-platform PDF workbench for reading, organizing, combining, splitting, and securing files.
@@ -185,6 +197,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-30.
   - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
 - **davila7/claude-code-templates** — Functionality: A CLI and web catalog for installing Claude Code skills, commands, agents, settings, and project templates. It accelerates se
   - Report: `reports/CQhWqUOouYM.md` · Video: https://youtu.be/CQhWqUOouYM · *Free on GitHub: manage agents, 11Labs alternative, incredible design & more*
+- **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Functionality: One OpenAI-compatible `/v1` endpoint that routes requests across about 34 free LLM providers, with failover and encrypted key
+  - Report: `reports/DKsra7jn8jQ.md` · Video: https://youtu.be/DKsra7jn8jQ · *FreeLLMAPI – Access Free AI Models With Automatic Switching*
 - **[openclaw/openclaw](https://github.com/openclaw/openclaw)** — Self-hosted autonomous agent platform ("the AI that really does things") that runs shell-enabled AI agents on any OS and connects to Telegra
   - Report: `reports/F-_q6VIHMS8.md` · Video: https://youtu.be/F-_q6VIHMS8 · *How to have Claude run your company*
 - **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** — Python personal AI agent ("the agent that grows with you") with memory, skills, and channel integrations; the video positions Hermes as the 
@@ -416,6 +430,13 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-10-30.
 
 ## SKIP
 
+- [every-app/every-app](https://github.com/every-app/every-app) — `reports/-6SHbxdXMRU.md`
+- [joshuaswarren/omarchy-apple-dev](https://github.com/joshuaswarren/omarchy-apple-dev) — `reports/-6SHbxdXMRU.md`
+- [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo) — `reports/-6SHbxdXMRU.md`
+- [obra/superpowers](https://github.com/obra/superpowers) — `reports/-6SHbxdXMRU.md`
+- [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) — `reports/-6SHbxdXMRU.md`
+- [jakubkrehel/skills](https://github.com/jakubkrehel/skills) — `reports/-6SHbxdXMRU.md`
+- [pingdotgg/t3code](https://github.com/pingdotgg/t3code) — `reports/-6SHbxdXMRU.md`
 - [trycompai/crm](https://github.com/trycompai/crm) — `reports/-Jxf0YkTGbA.md`
 - [google/artemis](https://github.com/google/artemis) — `reports/-Jxf0YkTGbA.md`
 - [cv-cat/Spider_XHS](https://github.com/cv-cat/Spider_XHS) — `reports/-Jxf0YkTGbA.md`
