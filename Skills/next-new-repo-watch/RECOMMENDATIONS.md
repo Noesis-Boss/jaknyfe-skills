@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-02.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-03.
 
-**Totals**: 23 INCLUDE · 186 TRIAL · 489 SKIP · 0 pending eval
+**Totals**: 23 INCLUDE · 187 TRIAL · 490 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -349,6 +349,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-02.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **cactus-compute/needle** — Functionality: A tiny 2-bit automation model for tool calls, structured extraction, and embeddings on constrained devices.
   - Report: `reports/fD8k0Qbuu7A.md` · Video: https://youtu.be/fD8k0Qbuu7A · *This Tiny LLM Can Run on Almost Anything*
+- **[pbakaus/impeccable](https://github.com/pbakaus/impeccable)** — Functionality: A design vocabulary for coding agents: polish and bolder steer output, critique and audit review it, and it flags generic AI-
+  - Report: `reports/fm6r37GGnn4.md` · Video: https://youtu.be/fm6r37GGnn4 · *Impeccable: The Free AI Design Tool That Could Replace Figma?*
 - **[invoiceninja/invoiceninja](https://github.com/invoiceninja/invoiceninja)** — Functionality: A self-hostable Laravel application for invoicing, quotes, projects, time tracking, and payment collection. It fits service b
   - Report: `reports/g-CG1PD7iTc.md` · Video: https://youtu.be/g-CG1PD7iTc · *Invoice Ninja: Stop Chasing Clients for Payment*
 - **anthropics/financial-services** — Functionality: Finance-focused agent skills for research, screening, and analysis workflows.
@@ -633,6 +635,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-02.
 - Claude computer use — `reports/MaTkyO-8hZ0.md`
 - Radar — `reports/MaTkyO-8hZ0.md`
 - [fail2ban/fail2ban](https://github.com/fail2ban/fail2ban) — `reports/NurkrP-touo.md`
+- [altic-dev/FluidVoice](https://github.com/altic-dev/FluidVoice) — `reports/OHZiDdyoFLk.md`
 - [ClementTsang/bottom](https://github.com/ClementTsang/bottom) — `reports/Oaq2w0wAZbc.md`
 - [Ramotion/animated-tab-bar](https://github.com/Ramotion/animated-tab-bar) — `reports/Oaq2w0wAZbc.md`
 - [pqoqubbw/icons](https://github.com/pqoqubbw/icons) — `reports/Oaq2w0wAZbc.md`
