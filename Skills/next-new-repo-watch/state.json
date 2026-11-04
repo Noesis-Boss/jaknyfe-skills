@@ -1809,6 +1809,16 @@
       "processed_at": "2026-11-03T12:31:16.140868+00:00",
       "report": "/home/workspace/Skills/next-new-repo-watch/reports/OHZiDdyoFLk.md",
       "auto_repos": []
+    },
+    "weNV9Vfd56U": {
+      "title": "Agent-Reach \u2014 This AI Tool Fixes Broken Scrapers Automatically",
+      "published": "2026-11-03T21:30:34+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-04T12:31:22.493736+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/weNV9Vfd56U.md",
+      "auto_repos": [
+        "Panniantong/agent-reach"
+      ]
     }
   }
 }

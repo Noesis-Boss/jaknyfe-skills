@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-03.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-04.
 
-**Totals**: 23 INCLUDE · 187 TRIAL · 490 SKIP · 0 pending eval
+**Totals**: 23 INCLUDE · 188 TRIAL · 490 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -411,6 +411,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-03.
   - Report: `reports/vjWCfBPGy3Y.md` · Video: https://youtu.be/vjWCfBPGy3Y · *GitHub Trending Today - from-java-to-kotlin, QuantsPlaybook, sysbox & More | #159*
 - **[aigc-apps/VideoX-Fun](https://github.com/aigc-apps/VideoX-Fun)** — Functionality: 📹 A more flexible framework that can generate videos at any resolution and creates videos from images. .
   - Report: `reports/vjWCfBPGy3Y.md` · Video: https://youtu.be/vjWCfBPGy3Y · *GitHub Trending Today - from-java-to-kotlin, QuantsPlaybook, sysbox & More | #159*
+- **[Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)** — Functionality: A CLI that gives AI agents read and search access to platforms that normally need a login or a special tool (X, Reddit, YouTu
+  - Report: `reports/weNV9Vfd56U.md` · Video: https://youtu.be/weNV9Vfd56U · *Agent-Reach — This AI Tool Fixes Broken Scrapers Automatically*
 - **browser-use/browser-use** — 
   - Report: `reports/wvStsbW_fCY.md` · Video: https://youtu.be/wvStsbW_fCY · *I Let AI Take Over My Browser — For 2 Cents*
 - **[Shaunwei/RealChar](https://github.com/Shaunwei/RealChar)** — Functionality: 🎙️🤖Create, Customize and Talk to your AI Character/Companion in Realtime (All in One Codebase!). Have a natural seamless conv
