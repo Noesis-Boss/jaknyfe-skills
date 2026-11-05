@@ -1819,6 +1819,24 @@
       "auto_repos": [
         "Panniantong/agent-reach"
       ]
+    },
+    "yL-VTWZNwWE": {
+      "title": "OpenGym \u2014 This Free Gym Tracker Keeps Your Health Data on Your Phone",
+      "published": "2026-11-04T21:30:20+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-05T12:31:00.019100+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/yL-VTWZNwWE.md",
+      "auto_repos": [
+        "DuarteSantos8/openGym"
+      ]
+    },
+    "UTlkkHrOqIg": {
+      "title": "Playbook for creating your agency",
+      "published": "2026-11-04T20:30:26+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-05T12:31:00.877325+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/UTlkkHrOqIg.md",
+      "auto_repos": []
     }
   }
 }

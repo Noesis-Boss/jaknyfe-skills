@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-04.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-05.
 
-**Totals**: 23 INCLUDE · 188 TRIAL · 490 SKIP · 0 pending eval
+**Totals**: 23 INCLUDE · 188 TRIAL · 493 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -709,6 +709,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-04.
 - [securo-finance/securo](https://github.com/securo-finance/securo) — `reports/TWCSvvTfJNU.md`
 - [seedprod/vibe-ai](https://github.com/seedprod/vibe-ai) — `reports/U4k67VOKaEU.md`
 - [seedprod/wpvibe-integrations](https://github.com/seedprod/wpvibe-integrations) — `reports/U4k67VOKaEU.md`
+- [alex-hyperagent/hyperagent-public-skills](https://github.com/alex-hyperagent/hyperagent-public-skills) — `reports/UTlkkHrOqIg.md`
+- [Name collision ruled out](https://github.com/hyperbrowserai/HyperAgent) — `reports/UTlkkHrOqIg.md`
 - [umano/AndroidSlidingUpPanel](https://github.com/umano/AndroidSlidingUpPanel) — `reports/Uk_gHHUPidU.md`
 - [tbphp/gpt-load](https://github.com/tbphp/gpt-load) — `reports/Uk_gHHUPidU.md`
 - [azahar-emu/azahar](https://github.com/azahar-emu/azahar) — `reports/Uk_gHHUPidU.md`
@@ -876,6 +878,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-04.
 - [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) — `reports/yATBEBRhxM8.md`
 - [obsproject/obs-studio](https://github.com/obsproject/obs-studio) — `reports/yATBEBRhxM8.md`
 - [wassgha/rescript](https://github.com/wassgha/rescript) — `reports/yATBEBRhxM8.md`
+- [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) — `reports/yL-VTWZNwWE.md`
 - [google/artemis](https://github.com/google/artemis) — `reports/yYEHxEF869k.md`
 - [robbietilton/Compositor](https://github.com/robbietilton/Compositor) — `reports/yvEO-QDdb50.md`
 - [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) — `reports/z-_34WChEoo.md`
