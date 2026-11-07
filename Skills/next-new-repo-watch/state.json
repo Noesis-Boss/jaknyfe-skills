@@ -2500,6 +2500,40 @@
         "longsurf-ai/openchart",
         "VectifyAI/jev-doc-search"
       ]
+    },
+    "4M-ZFI_EbEU": {
+      "title": "CLIProxyAPI \u2014 This Proxy Keeps Your AI Coding Agents Logged In Forever",
+      "published": "2026-11-06T21:30:07+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-07T12:31:18.119117+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/4M-ZFI_EbEU.md",
+      "auto_repos": [
+        "router-for-me/CLIProxyAPI"
+      ]
+    },
+    "kus5P1211_g": {
+      "title": "Hot: Agents get computers & fun annotation & free designs & more",
+      "published": "2026-11-06T16:00:26+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-07T12:31:23.744026+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/kus5P1211_g.md",
+      "auto_repos": [
+        "vercel-labs/agent-desktop",
+        "joeblau/subvox",
+        "nilbuild/tinyhand",
+        "thedotmack/claude-mem",
+        "Nutlope/hallmark",
+        "pingdotgg/t3code",
+        "pbakaus/impeccable",
+        "obra/superpowers",
+        "anthropics/skills",
+        "max-sixty/worktrunk",
+        "jakubkrehel/skills",
+        "JetBrains/thinkrail",
+        "ghostty-org/ghostty",
+        "Brucee/tokensaver",
+        "hallikkristjan-code/production-skeleton"
+      ]
     }
   }
 }

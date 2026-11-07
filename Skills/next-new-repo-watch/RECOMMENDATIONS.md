@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-06.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-07.
 
-**Totals**: 23 INCLUDE · 220 TRIAL · 976 SKIP · 0 pending eval
+**Totals**: 23 INCLUDE · 225 TRIAL · 987 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -435,6 +435,16 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-06.
   - Report: `reports/kqn_mSjSWMs.md` · Video: https://youtu.be/kqn_mSjSWMs · *GitHub’s top: Copy any app, create gorgeous videos, 3d print anything & more*
 - **mattpocock/skills** — Functionality: Shell-based AI coding workflows maintained from the author’s agent directory.
   - Report: `reports/kqn_mSjSWMs.md` · Video: https://youtu.be/kqn_mSjSWMs · *GitHub’s top: Copy any app, create gorgeous videos, 3d print anything & more*
+- **[vercel-labs/agent-desktop](https://github.com/vercel-labs/agent-desktop)** — Functionality: Rust CLI that gives coding agents computer-use control of a desktop (screen, clicks, input).
+  - Report: `reports/kus5P1211_g.md` · Video: https://youtu.be/kus5P1211_g · *Hot: Agents get computers & fun annotation & free designs & more*
+- **[pbakaus/impeccable](https://github.com/pbakaus/impeccable)** — Functionality: Design-vocabulary skill set for coding agents: polish, critique, audit, and catching AI-generated design slop.
+  - Report: `reports/kus5P1211_g.md` · Video: https://youtu.be/kus5P1211_g · *Hot: Agents get computers & fun annotation & free designs & more*
+- **[obra/superpowers](https://github.com/obra/superpowers)** — Functionality: Agentic skills framework and development methodology (brainstorming, planning, TDD, verification-before-completion).
+  - Report: `reports/kus5P1211_g.md` · Video: https://youtu.be/kus5P1211_g · *Hot: Agents get computers & fun annotation & free designs & more*
+- **[max-sixty/worktrunk](https://github.com/max-sixty/worktrunk)** — Functionality: Rust CLI for managing git worktrees for parallel agent work.
+  - Report: `reports/kus5P1211_g.md` · Video: https://youtu.be/kus5P1211_g · *Hot: Agents get computers & fun annotation & free designs & more*
+- **[jakubkrehel/skills](https://github.com/jakubkrehel/skills)** — Functionality: Agent skills for interface design review, accessibility, and building better UI.
+  - Report: `reports/kus5P1211_g.md` · Video: https://youtu.be/kus5P1211_g · *Hot: Agents get computers & fun annotation & free designs & more*
 - **[Balanov/latch](https://github.com/Balanov/latch)** — Functionality: One HTTPS contract for an agent to request a quote, get a human approval on the exact fingerprint, then commit and receive a 
   - Report: `reports/nXxM1lrr6o4.md` · Video: https://youtu.be/nXxM1lrr6o4 · *GitHub Trending Today #58: herdr-app, Raven, rerun, cinecode, terminal-mac, latch, gputaskman*
 - **[Balanov/equal](https://github.com/Balanov/equal)** — Functionality: Records real API traffic once, then replays it offline as a local sandbox and OpenAPI spec.
@@ -596,6 +606,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-06.
 - [mahonzhan/awesome-coding-plan](https://github.com/mahonzhan/awesome-coding-plan) — `reports/21xCNskON2M.md`
 - [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) — `reports/2hh5B_IzuoU.md`
 - [alvinunreal/oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) — `reports/2vb7uLCgxSs.md`
+- [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) — `reports/4M-ZFI_EbEU.md`
 - [storytold/photocraft](https://github.com/storytold/photocraft) — `reports/5e43bjQJoiY.md`
 - [Mak5er/AirCard](https://github.com/Mak5er/AirCard) — `reports/5sdMjGHY6wA.md`
 - [agiresearch/AIOS](https://github.com/agiresearch/AIOS) — `reports/6h0yh_3o99M.md`
@@ -1252,6 +1263,16 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-06.
 - earthtojake/text-to-cad — `reports/kqn_mSjSWMs.md`
 - twostraws/SwiftUI-Agent-Skill — `reports/kqn_mSjSWMs.md`
 - DuarteSantos8/openGym — `reports/kqn_mSjSWMs.md`
+- [joeblau/subvox](https://github.com/joeblau/subvox) — `reports/kus5P1211_g.md`
+- [nilbuild/tinyhand](https://github.com/nilbuild/tinyhand) — `reports/kus5P1211_g.md`
+- [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) — `reports/kus5P1211_g.md`
+- [Nutlope/hallmark](https://github.com/Nutlope/hallmark) — `reports/kus5P1211_g.md`
+- [pingdotgg/t3code](https://github.com/pingdotgg/t3code) — `reports/kus5P1211_g.md`
+- [anthropics/skills](https://github.com/anthropics/skills) — `reports/kus5P1211_g.md`
+- [JetBrains/thinkrail](https://github.com/JetBrains/thinkrail) — `reports/kus5P1211_g.md`
+- [ghostty-org/ghostty](https://github.com/ghostty-org/ghostty) — `reports/kus5P1211_g.md`
+- [Brucee/tokensaver](https://github.com/Brucee/tokensaver) — `reports/kus5P1211_g.md`
+- [hallikkristjan-code/production-skeleton](https://github.com/hallikkristjan-code/production-skeleton) — `reports/kus5P1211_g.md`
 - [emanuele-em/kanzo](https://github.com/emanuele-em/kanzo) — `reports/l661iLW2QTA.md`
 - [traccar/traccar](https://github.com/traccar/traccar) — `reports/l661iLW2QTA.md`
 - [kortix-ai/CompanyOS](https://github.com/kortix-ai/CompanyOS) — `reports/l661iLW2QTA.md`
