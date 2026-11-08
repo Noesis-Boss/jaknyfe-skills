@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-07.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-08.
 
-**Totals**: 23 INCLUDE · 225 TRIAL · 987 SKIP · 0 pending eval
+**Totals**: 23 INCLUDE · 225 TRIAL · 988 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -757,6 +757,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-07.
 - [unixzii/SimRun](https://github.com/unixzii/SimRun) — `reports/FDnll3ityJg.md`
 - [fayazara/robot-heads](https://github.com/fayazara/robot-heads) — `reports/FDnll3ityJg.md`
 - [ed-donner/agents](https://github.com/ed-donner/agents) — `reports/FVR4kWTleFo.md`
+- [zapier/zapier-mcp](https://github.com/zapier/zapier-mcp) — `reports/GE5V7yl9kzc.md`
 - [odysseus-dev/odysseus](https://github.com/odysseus-dev/odysseus) — `reports/GZtLsvklYBI.md`
 - [invoke-ai/InvokeAI](https://github.com/invoke-ai/InvokeAI) — `reports/GZtLsvklYBI.md`
 - [dyad-sh/dyad](https://github.com/dyad-sh/dyad) — `reports/GZtLsvklYBI.md`
