@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-09.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-10.
 
-**Totals**: 23 INCLUDE · 225 TRIAL · 988 SKIP · 0 pending eval
+**Totals**: 24 INCLUDE · 234 TRIAL · 1014 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -32,6 +32,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-09.
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Functionality: An agent skill that turns system descriptions and workflow inputs into explorable architecture, sequence, data-flow, and life
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
+- **[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)** — Functionality: HTML-to-video framework: write HTML compositions with GSAP animation, captions, and voiceover, then render MP4 via headless C
+  - Report: `reports/drVA3wBEM6Y.md` · Video: https://youtu.be/drVA3wBEM6Y · *HyperFrames — It's Free And It Makes AI Videos With Code*
 - **[vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)** — Functionality: Browser automation CLI for AI agents.
   - Report: `reports/ehab5PtgRo8.md` · Video: https://youtu.be/ehab5PtgRo8 · *Why is everyone using these?*
 - **vectorize-io/hindsight** — Hindsight is an open-source AI memory system that remembers you across agent sessions — it stores, retrieves, and surfaces past context so a
@@ -501,6 +503,24 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-09.
   - Report: `reports/z-_34WChEoo.md` · Video: https://youtu.be/z-_34WChEoo · *GitHub Trending Today - distributed-llama, HunyuanWorld-1.0, openWakeWord & More | #161*
 - **[chrisworsey55/atlas-gic](https://github.com/chrisworsey55/atlas-gic)** — Functionality: ATLAS by General Intelligence Capital — Self-improving AI trading agents using Karpathy-style autoresearch.
   - Report: `reports/z-_34WChEoo.md` · Video: https://youtu.be/z-_34WChEoo · *GitHub Trending Today - distributed-llama, HunyuanWorld-1.0, openWakeWord & More | #161*
+- **[D3voz/openjutsu](https://github.com/D3voz/openjutsu)** — Functionality: Local one-click character swap for video on ComfyUI with MiniMax and FLUX relighting; a local alternative to Higgsfield Genju
+  - Report: `reports/zHZPb7wdQuk.md` · Video: https://youtu.be/zHZPb7wdQuk · *GitHub Trending Weekly #58: rune, nsh, openjutsu, Henge, mygo-music, vork, devvm, satmux, airpointer*
+- **[mromidev/claude-animated-shorts](https://github.com/mromidev/claude-animated-shorts)** — Functionality: Claude skill that produces animated story shorts using three.js and Remotion.
+  - Report: `reports/zHZPb7wdQuk.md` · Video: https://youtu.be/zHZPb7wdQuk · *GitHub Trending Weekly #58: rune, nsh, openjutsu, Henge, mygo-music, vork, devvm, satmux, airpointer*
+- **[DIYgod/pinky](https://github.com/DIYgod/pinky)** — Functionality: Lets AI agents operate a phone with a human in the loop.
+  - Report: `reports/zHZPb7wdQuk.md` · Video: https://youtu.be/zHZPb7wdQuk · *GitHub Trending Weekly #58: rune, nsh, openjutsu, Henge, mygo-music, vork, devvm, satmux, airpointer*
+- **[piercefreeman/waymark](https://github.com/piercefreeman/waymark)** — Functionality: Distributed background workflows that execute durably.
+  - Report: `reports/zHZPb7wdQuk.md` · Video: https://youtu.be/zHZPb7wdQuk · *GitHub Trending Weekly #58: rune, nsh, openjutsu, Henge, mygo-music, vork, devvm, satmux, airpointer*
+- **[lxe/phoneuse](https://github.com/lxe/phoneuse)** — Functionality: Operate an unmodified iPhone from a Linux PC: AirPlay mirror in, Bluetooth HID out, with CLI and agent skill.
+  - Report: `reports/zHZPb7wdQuk.md` · Video: https://youtu.be/zHZPb7wdQuk · *GitHub Trending Weekly #58: rune, nsh, openjutsu, Henge, mygo-music, vork, devvm, satmux, airpointer*
+- **[Graphicle-AI/graphicle](https://github.com/Graphicle-AI/graphicle)** — Functionality: Code graph and memory for coding agents over MCP (Claude Code, Codex, Cursor).
+  - Report: `reports/zHZPb7wdQuk.md` · Video: https://youtu.be/zHZPb7wdQuk · *GitHub Trending Weekly #58: rune, nsh, openjutsu, Henge, mygo-music, vork, devvm, satmux, airpointer*
+- **[p10node/office-engine](https://github.com/p10node/office-engine)** — Functionality: View and edit DOCX, XLSX, PPTX in the browser with formulas and collaboration.
+  - Report: `reports/zHZPb7wdQuk.md` · Video: https://youtu.be/zHZPb7wdQuk · *GitHub Trending Weekly #58: rune, nsh, openjutsu, Henge, mygo-music, vork, devvm, satmux, airpointer*
+- **[dreamers-laboratory/good-door](https://github.com/dreamers-laboratory/good-door)** — Functionality: CLI secrets manager for humans and agents.
+  - Report: `reports/zHZPb7wdQuk.md` · Video: https://youtu.be/zHZPb7wdQuk · *GitHub Trending Weekly #58: rune, nsh, openjutsu, Henge, mygo-music, vork, devvm, satmux, airpointer*
+- **[stencil-hq/ovnfs](https://github.com/stencil-hq/ovnfs)** — Functionality: Isolated copy-on-write checkouts of any folder for agents.
+  - Report: `reports/zHZPb7wdQuk.md` · Video: https://youtu.be/zHZPb7wdQuk · *GitHub Trending Weekly #58: rune, nsh, openjutsu, Henge, mygo-music, vork, devvm, satmux, airpointer*
 - **[Osmantic/ODS](https://github.com/Osmantic/ODS)** — Functionality: Pre-release installer that configures a desktop as a private AI server.
   - Report: `reports/zP43y0wJzhg.md` · Video: https://youtu.be/zP43y0wJzhg · *GitHub Trending Today - dua-cli, AirCard, ODS & More | #167*
 - **immich-app/immich** — 
@@ -1471,6 +1491,32 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-09.
 - [dstackai/dstack](https://github.com/dstackai/dstack) — `reports/z-_34WChEoo.md`
 - [pypa/cibuildwheel](https://github.com/pypa/cibuildwheel) — `reports/z-_34WChEoo.md`
 - [spurin/diveintoansible](https://github.com/spurin/diveintoansible) — `reports/z-_34WChEoo.md`
+- [anomalyco/rune](https://github.com/anomalyco/rune) — `reports/zHZPb7wdQuk.md`
+- [longbridge/nsh](https://github.com/longbridge/nsh) — `reports/zHZPb7wdQuk.md`
+- [Leviidev/Henge](https://github.com/Leviidev/Henge) — `reports/zHZPb7wdQuk.md`
+- [DhvanilPatel/swarm-cursors](https://github.com/DhvanilPatel/swarm-cursors) — `reports/zHZPb7wdQuk.md`
+- [egoist/mygo-music](https://github.com/egoist/mygo-music) — `reports/zHZPb7wdQuk.md`
+- [voyager-so/vork](https://github.com/voyager-so/vork) — `reports/zHZPb7wdQuk.md`
+- [devvmhq/devvm](https://github.com/devvmhq/devvm) — `reports/zHZPb7wdQuk.md`
+- [Th0rgal/satmux](https://github.com/Th0rgal/satmux) — `reports/zHZPb7wdQuk.md`
+- [yappologistic/CUI](https://github.com/yappologistic/CUI) — `reports/zHZPb7wdQuk.md`
+- [musubipapi/airpointer](https://github.com/musubipapi/airpointer) — `reports/zHZPb7wdQuk.md`
+- [starman-tech/mousepods](https://github.com/starman-tech/mousepods) — `reports/zHZPb7wdQuk.md`
+- [AkaraChen/cc-remote](https://github.com/AkaraChen/cc-remote) — `reports/zHZPb7wdQuk.md`
+- [drost-ai/tinker-ai-skill](https://github.com/drost-ai/tinker-ai-skill) — `reports/zHZPb7wdQuk.md`
+- [jamesondh/chimera-vocal-synth](https://github.com/jamesondh/chimera-vocal-synth) — `reports/zHZPb7wdQuk.md`
+- [anomalyco/textjs](https://github.com/anomalyco/textjs) — `reports/zHZPb7wdQuk.md`
+- [huacnlee/noop](https://github.com/huacnlee/noop) — `reports/zHZPb7wdQuk.md`
+- [ai-timon/timon](https://github.com/ai-timon/timon) — `reports/zHZPb7wdQuk.md`
+- [CityPulso/PulsoIcon](https://github.com/CityPulso/PulsoIcon) — `reports/zHZPb7wdQuk.md`
+- [yzytz17/1.5-joint-module](https://github.com/yzytz17/1.5-joint-module) — `reports/zHZPb7wdQuk.md`
+- [umarz317/WatchPointer](https://github.com/umarz317/WatchPointer) — `reports/zHZPb7wdQuk.md`
+- [YusufCeng1z/ding](https://github.com/YusufCeng1z/ding) — `reports/zHZPb7wdQuk.md`
+- [huacnlee/spotish](https://github.com/huacnlee/spotish) — `reports/zHZPb7wdQuk.md`
+- [kunchenguid/headless](https://github.com/kunchenguid/headless) — `reports/zHZPb7wdQuk.md`
+- [dotslashsimran/simcraft](https://github.com/dotslashsimran/simcraft) — `reports/zHZPb7wdQuk.md`
+- [smokeeaasd/flawless-ui-ux](https://github.com/smokeeaasd/flawless-ui-ux) — `reports/zHZPb7wdQuk.md`
+- [phuryn/mini-harness](https://github.com/phuryn/mini-harness) — `reports/zHZPb7wdQuk.md`
 - [Byron/dua-cli](https://github.com/Byron/dua-cli) — `reports/zP43y0wJzhg.md`
 - [Mak5er/AirCard](https://github.com/Mak5er/AirCard) — `reports/zP43y0wJzhg.md`
 - [ed-donner/agents](https://github.com/ed-donner/agents) — `reports/zP43y0wJzhg.md`

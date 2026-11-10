@@ -2542,6 +2542,68 @@
       "processed_at": "2026-11-08T12:31:34.227698+00:00",
       "report": "/home/workspace/Skills/next-new-repo-watch/reports/GE5V7yl9kzc.md",
       "auto_repos": []
+    },
+    "5tFsjosgu6o": {
+      "title": "AI makes sales video",
+      "published": "2026-11-09T22:11:34+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-10T12:31:14.825385+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/5tFsjosgu6o.md",
+      "auto_repos": []
+    },
+    "drVA3wBEM6Y": {
+      "title": "HyperFrames \u2014 It's Free And It Makes AI Videos With Code",
+      "published": "2026-11-09T21:30:13+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-10T12:31:16.575176+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/drVA3wBEM6Y.md",
+      "auto_repos": [
+        "heygen-com/hyperframes"
+      ]
+    },
+    "zHZPb7wdQuk": {
+      "title": "GitHub Trending Weekly #58: rune, nsh, openjutsu, Henge, mygo-music, vork, devvm, satmux, airpointer",
+      "published": "2026-11-09T12:28:49+00:00",
+      "channel": "Github Awesome (@GithubAwesome)",
+      "processed_at": "2026-11-10T12:31:35.926009+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/zHZPb7wdQuk.md",
+      "auto_repos": [
+        "anomalyco/rune",
+        "longbridge/nsh",
+        "D3voz/openjutsu",
+        "Leviidev/Henge",
+        "DhvanilPatel/swarm-cursors",
+        "egoist/mygo-music",
+        "voyager-so/vork",
+        "mromidev/claude-animated-shorts",
+        "devvmhq/devvm",
+        "Th0rgal/satmux",
+        "yappologistic/CUI",
+        "musubipapi/airpointer",
+        "starman-tech/mousepods",
+        "AkaraChen/cc-remote",
+        "DIYgod/pinky",
+        "drost-ai/tinker-ai-skill",
+        "jamesondh/chimera-vocal-synth",
+        "anomalyco/textjs",
+        "piercefreeman/waymark",
+        "huacnlee/noop",
+        "ai-timon/timon",
+        "CityPulso/PulsoIcon",
+        "lxe/phoneuse",
+        "yzytz17/1.5-joint-module",
+        "umarz317/WatchPointer",
+        "graphicle-ai/graphicle",
+        "YusufCeng1z/ding",
+        "p10node/office-engine",
+        "huacnlee/spotish",
+        "kunchenguid/headless",
+        "dreamers-laboratory/good-door",
+        "dotslashsimran/simcraft",
+        "stencil-hq/ovnfs",
+        "smokeeaasd/flawless-ui-ux",
+        "phuryn/mini-harness"
+      ]
     }
   }
 }
