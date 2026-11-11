@@ -2604,6 +2604,42 @@
         "smokeeaasd/flawless-ui-ux",
         "phuryn/mini-harness"
       ]
+    },
+    "rPNKWE4GrWA": {
+      "title": "Which Free AI Tools Can Actually Build a Business? A VC Decides",
+      "published": "2026-11-10T22:23:33+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-11T12:31:14.532920+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/rPNKWE4GrWA.md",
+      "auto_repos": [
+        "every-app/open-seo",
+        "gitroomhq/postiz-app",
+        "NousResearch/hermes-agent",
+        "Anil-matcha/AI-Youtube-Shorts-Generator",
+        "Huanshere/VideoLingo",
+        "TryGhost/Ghost",
+        "morluto/rea"
+      ]
+    },
+    "My4fBcm1vyQ": {
+      "title": "Try Matt Pocock\u2019s \u2018Grill Me\u2019 Skill Before Your Next AI Project",
+      "published": "2026-11-10T21:30:25+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-11T12:31:15.575018+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/My4fBcm1vyQ.md",
+      "auto_repos": [
+        "mattpocock/skills"
+      ]
+    },
+    "yuz3VbdQm5M": {
+      "title": "Claude-Mem Gives Your AI Agent a Memory You Can Control",
+      "published": "2026-11-10T15:30:06+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-11T12:31:16.679205+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/yuz3VbdQm5M.md",
+      "auto_repos": [
+        "thedotmack/claude-mem"
+      ]
     }
   }
 }
