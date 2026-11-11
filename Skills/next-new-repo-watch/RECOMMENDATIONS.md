@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-10.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-11.
 
-**Totals**: 24 INCLUDE · 234 TRIAL · 1014 SKIP · 0 pending eval
+**Totals**: 26 INCLUDE · 237 TRIAL · 1018 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -52,6 +52,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-10.
   - Report: `reports/oGSShssjn9c.md` · Video: https://youtu.be/oGSShssjn9c · *AI Agents Finally Share One Memory (Claude Mem Explained)*
 - **vercel-labs/agent-browser** — Functionality: Rust CLI for headless browser control, DOM interaction, screenshots, and browser workflows for agents.
   - Report: `reports/qfRMHqh7tNI.md` · Video: https://youtu.be/qfRMHqh7tNI · *This Skill Gives Your AI Agent a Browser*
+- **[every-app/open-seo](https://github.com/every-app/open-seo)** — Open-source SEO/AEO platform positioned as an alternative to Semrush and Ahrefs.
+  - Report: `reports/rPNKWE4GrWA.md` · Video: https://youtu.be/rPNKWE4GrWA · *Which Free AI Tools Can Actually Build a Business? A VC Decides*
+- **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** — Self-improving agent runtime with gateways, memory, and skills.
+  - Report: `reports/rPNKWE4GrWA.md` · Video: https://youtu.be/rPNKWE4GrWA · *Which Free AI Tools Can Actually Build a Business? A VC Decides*
 - **[elvisun/newsjack](https://github.com/elvisun/newsjack)** — Functionality: Open-source agent skills (Claude Code-style SKILL.md packs plus a Go CLI) that turn an AI agent into a full PR team: it monit
   - Report: `reports/vsHEX2YVNHM.md` · Video: https://youtu.be/vsHEX2YVNHM · *NewsJack — This GitHub Repo Turns Your AI Into a PR Manager*
 
@@ -271,6 +275,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-10.
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
 - **Diffusion Studio (video edits as code)** — 
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
+- **[mattpocock/skills](https://github.com/mattpocock/skills)** — Agent skills pulled from Matt Pocock's `.agents` directory: "Grill Me" stress-tests a plan before you build, plus TDD, code review, domain m
+  - Report: `reports/My4fBcm1vyQ.md` · Video: https://youtu.be/My4fBcm1vyQ · *Try Matt Pocock’s ‘Grill Me’ Skill Before Your Next AI Project*
 - **earthtojake/text-to-cad** — Gives a coding agent the ability to generate real parametric 3D CAD models from text descriptions.
   - Report: `reports/NXt2BM-s4Ow.md` · Video: https://youtu.be/NXt2BM-s4Ow · *Text-to-CAD — Describe a Part, Get a Real 3D Model*
 - **[mvschwarz/openrig](https://github.com/mvschwarz/openrig)** — Functionality: Orchestrates multiple coding agents (Claude Code, Codex, Pi) as one persistent team with named roles, shared context, and han
@@ -459,6 +465,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-10.
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
 - **`zapier/zapier-platform`** — Functionality: Zapier’s JavaScript toolkit for building custom integrations and actions. It could support a narrow connector needed by the p
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
+- **[Anil-matcha/AI-Youtube-Shorts-Generator](https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator)** — Turns long YouTube videos into 9:16 shorts using LLM highlight detection, Whisper transcription, and automatic vertical cropping.
+  - Report: `reports/rPNKWE4GrWA.md` · Video: https://youtu.be/rPNKWE4GrWA · *Which Free AI Tools Can Actually Build a Business? A VC Decides*
+- **[Huanshere/VideoLingo](https://github.com/Huanshere/VideoLingo)** — Automated subtitle cutting, translation, alignment, and optional dubbing for video.
+  - Report: `reports/rPNKWE4GrWA.md` · Video: https://youtu.be/rPNKWE4GrWA · *Which Free AI Tools Can Actually Build a Business? A VC Decides*
 - **Onyx-Dev-Labs/doodle-note** — Signals: 120★ · TypeScript · MIT · pushed 2026-09-05 · not archived.
   - Report: `reports/rVoAyD2Zrfs.md` · Video: https://youtu.be/rVoAyD2Zrfs · *10 GitHub repos that will save you money*
 - **TryGhost/Ghost** — Signals: 55.2k★ · JavaScript/Node · MIT · pushed 2026-09-06 · not archived.
@@ -1360,6 +1370,9 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-10.
 - Other tools mentioned — `reports/pxaMzr7al3I.md`
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`
 - Outbid.lol — `reports/qr7Zwjx-nWU.md`
+- [gitroomhq/postiz-app](https://github.com/gitroomhq/postiz-app) — `reports/rPNKWE4GrWA.md`
+- [TryGhost/Ghost](https://github.com/TryGhost/Ghost) — `reports/rPNKWE4GrWA.md`
+- [morluto/rea](https://github.com/morluto/rea) — `reports/rPNKWE4GrWA.md`
 - CapSoftware/Cap — `reports/rVoAyD2Zrfs.md`
 - dani-garcia/vaultwarden — `reports/rVoAyD2Zrfs.md`
 - twentyhq/twenty — `reports/rVoAyD2Zrfs.md`
@@ -1469,6 +1482,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-10.
 - [OrgoAI/bops](https://github.com/OrgoAI/bops) — `reports/yn2abf29vAw.md`
 - [longsurf-ai/openchart](https://github.com/longsurf-ai/openchart) — `reports/yn2abf29vAw.md`
 - [VectifyAI/jev-doc-search](https://github.com/VectifyAI/jev-doc-search) — `reports/yn2abf29vAw.md`
+- [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) — `reports/yuz3VbdQm5M.md`
 - [robbietilton/Compositor](https://github.com/robbietilton/Compositor) — `reports/yvEO-QDdb50.md`
 - [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) — `reports/z-_34WChEoo.md`
 - [cloudflare/computer](https://github.com/cloudflare/computer) — `reports/z-_34WChEoo.md`
