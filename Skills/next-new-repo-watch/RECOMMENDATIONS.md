@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-11.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-12.
 
-**Totals**: 26 INCLUDE · 237 TRIAL · 1018 SKIP · 0 pending eval
+**Totals**: 27 INCLUDE · 245 TRIAL · 1048 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -26,6 +26,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-11.
   - Report: `reports/Q5V4h0LVzQI.md` · Video: https://youtu.be/Q5V4h0LVzQI · *GitHub Trending Today - picasso, immersive-translate, TRELLIS.2 & More | #144*
 - **[openai/codex](https://github.com/openai/codex)** — Functionality: Lightweight coding agent that runs in your terminal.
   - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
+- **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** — Functionality: Self-improving personal agent runtime with memory, skills, and gateways. The video's 'Hermes Grockbot' harness is a prompt-bu
+  - Report: `reports/WJv6a2R7HDg.md` · Video: https://youtu.be/WJv6a2R7HDg · *I Watched Hours of Fable 5.2 Demos. Here's What's Actually Useful.*
 - **affaan-m/ECC** — Functionality: A large collection of skills and workflows for coding agents, covering planning, TDD, security, research, memory, and review.
   - Report: `reports/XGJtqUPUZSo.md` · Video: https://youtu.be/XGJtqUPUZSo · *ECC — This Skill Pack Teaches Your AI to Code the Right Way*
 - **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent 
@@ -329,6 +331,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-11.
   - Report: `reports/TWCSvvTfJNU.md` · Video: https://youtu.be/TWCSvvTfJNU · *Top 10 Repos: 2,282 Claude plugins, free codex, & 8 more.*
 - **[awesomemotive/wpvibe-ai-mcp](https://github.com/awesomemotive/wpvibe-ai-mcp)** — 
   - Report: `reports/U4k67VOKaEU.md` · Video: https://youtu.be/U4k67VOKaEU · *First look: How agents manage WordPress*
+- **[every-app/open-seo](https://github.com/every-app/open-seo)** — Functionality: Open-source SEO and AEO (answer-engine optimization) platform that does the research work of Semrush and Ahrefs on a pay-as-y
+  - Report: `reports/U8VmwxzKcTM.md` · Video: https://youtu.be/U8VmwxzKcTM · *OpenSEO — This Open-Source Semrush & Ahrefs Alternative Could Be Your Next Agency*
 - **[kenn-io/agentsview](https://github.com/kenn-io/agentsview)** — Functionality: Local-first session search, analytics, insights, and token use statistics for coding agents, supporting Claude Code, Codex, a
   - Report: `reports/Uk_gHHUPidU.md` · Video: https://youtu.be/Uk_gHHUPidU · *GitHub Trending Today - agentsview, opentalking, Pixal3D & More | #142*
 - **[MengTo/Skills](https://github.com/MengTo/Skills)** — Functionality: Agent skills for designers and builders using Codex, Claude, Cursor, and other AI coding agents.
@@ -337,6 +341,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-11.
   - Report: `reports/Uk_gHHUPidU.md` · Video: https://youtu.be/Uk_gHHUPidU · *GitHub Trending Today - agentsview, opentalking, Pixal3D & More | #142*
 - **[Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)** — Indexes a codebase — source, docs, SQL schemas, configs, PDFs — into a queryable knowledge graph using local deterministic AST parsing, with
   - Report: `reports/V0YugHvjs5Y.md` · Video: https://youtu.be/V0YugHvjs5Y · *This Tool Gives AI a Map of Your Codebase*
+- **[pbakaus/impeccable](https://github.com/pbakaus/impeccable)** — Functionality: Design vocabulary for coding agents: polish and bolder steer generated UI, critique and audit review it, and it flags generic
+  - Report: `reports/WJv6a2R7HDg.md` · Video: https://youtu.be/WJv6a2R7HDg · *I Watched Hours of Fable 5.2 Demos. Here's What's Actually Useful.*
 - **[mvschwarz/openrig](https://github.com/mvschwarz/openrig)** — Functionality: Builds persistent agent teams from YAML roles and shared work.
   - Report: `reports/Wsru44p-J14.md` · Video: https://youtu.be/Wsru44p-J14 · *This week’s repos: PS5 game on a PC! Turn agents into employees. AI video maker.*
 - **[anthropics/oss-scanner](https://github.com/anthropics/oss-scanner)** — Functionality: Anthropic's open-source scanner; no description in metadata.
@@ -421,6 +427,18 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-11.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **every-app/open-seo** — Functionality: Open-source alternative to Semrush and Ahrefs for SEO research.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
+- **[GoogleChrome/modern-web-guidance](https://github.com/GoogleChrome/modern-web-guidance)** — Functionality: Agent skills with browser-compatibility data, accessibility, and performance guidance, plus a CLI that scans a codebase for o
+  - Report: `reports/i5OYXeCUHwY.md` · Video: https://youtu.be/i5OYXeCUHwY · *GitHub Trending Today #59: raea, exact, phonebox, cracked, line-art-animation, cleanyourtv, sakutto*
+- **[JDhruv14/line-art-animation](https://github.com/JDhruv14/line-art-animation)** — Functionality: Claude skill and TypeScript library for animated SVG line-art scenes with walking figures, wind, and a day-to-night palette, 
+  - Report: `reports/i5OYXeCUHwY.md` · Video: https://youtu.be/i5OYXeCUHwY · *GitHub Trending Today #59: raea, exact, phonebox, cracked, line-art-animation, cleanyourtv, sakutto*
+- **[paulirish/chrome-capture](https://github.com/paulirish/chrome-capture)** — Functionality: Records Chrome tabs to AV1 MP4 with tab audio, with Playwright and Puppeteer integration.
+  - Report: `reports/i5OYXeCUHwY.md` · Video: https://youtu.be/i5OYXeCUHwY · *GitHub Trending Today #59: raea, exact, phonebox, cracked, line-art-animation, cleanyourtv, sakutto*
+- **[Junhan2/ztd-charts](https://github.com/Junhan2/ztd-charts)** — Functionality: 44 animated, accessible React SVG charts with zero runtime dependencies, a JSON spec, and an MCP server for agents.
+  - Report: `reports/i5OYXeCUHwY.md` · Video: https://youtu.be/i5OYXeCUHwY · *GitHub Trending Today #59: raea, exact, phonebox, cracked, line-art-animation, cleanyourtv, sakutto*
+- **[Moh4696/cinematic-skill](https://github.com/Moh4696/cinematic-skill)** — Functionality: Agent skill that builds narrated films in Python with Skia: one moving camera across photos, maps, and text, timed to the nar
+  - Report: `reports/i5OYXeCUHwY.md` · Video: https://youtu.be/i5OYXeCUHwY · *GitHub Trending Today #59: raea, exact, phonebox, cracked, line-art-animation, cleanyourtv, sakutto*
+- **[alexeyw/lot-map](https://github.com/alexeyw/lot-map)** — Functionality: Claude Code plugin that draws a live map of tool calls, hooks, skills, and subagents beside the chat.
+  - Report: `reports/i5OYXeCUHwY.md` · Video: https://youtu.be/i5OYXeCUHwY · *GitHub Trending Today #59: raea, exact, phonebox, cracked, line-art-animation, cleanyourtv, sakutto*
 - **mksglu/context-mode** — Functionality: TypeScript tooling for AI coding agents that routes exploratory work into disposable sandboxes, persists useful context, and 
   - Report: `reports/is7d_hJc_io.md` · Video: https://youtu.be/is7d_hJc_io · *Context-Mode — The Fix for AI Coders That Forget Mid-Task*
 - **[Osmantic/ODS](https://github.com/Osmantic/ODS)** — Functionality: Pre-release installer that configures a desktop as a private AI server.
@@ -1277,6 +1295,35 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-11.
 - TencentCloud/Octop — `reports/hlOk-EFUITQ.md`
 - davila7/claude-code-templates — `reports/hlOk-EFUITQ.md`
 - paperclipai/paperclip — `reports/hlOk-EFUITQ.md`
+- [shinyobjectz/raea](https://github.com/shinyobjectz/raea) — `reports/i5OYXeCUHwY.md`
+- [expo/exact](https://github.com/expo/exact) — `reports/i5OYXeCUHwY.md`
+- [ersinkoc/phonebox](https://github.com/ersinkoc/phonebox) — `reports/i5OYXeCUHwY.md`
+- [nishant-Tiwari24/cracked](https://github.com/nishant-Tiwari24/cracked) — `reports/i5OYXeCUHwY.md`
+- [udhaykumarbala/cleanyourtv-app](https://github.com/udhaykumarbala/cleanyourtv-app) — `reports/i5OYXeCUHwY.md`
+- [HybridRobotics/supermimic](https://github.com/HybridRobotics/supermimic) — `reports/i5OYXeCUHwY.md`
+- [adventists-ai/sophon-realtime](https://github.com/adventists-ai/sophon-realtime) — `reports/i5OYXeCUHwY.md`
+- [jammaru/sakutto](https://github.com/jammaru/sakutto) — `reports/i5OYXeCUHwY.md`
+- [OmniJev/Flide](https://github.com/OmniJev/Flide) — `reports/i5OYXeCUHwY.md`
+- [tobi/wrapvm](https://github.com/tobi/wrapvm) — `reports/i5OYXeCUHwY.md`
+- [TIGER-AI-Lab/WebsiteBench](https://github.com/TIGER-AI-Lab/WebsiteBench) — `reports/i5OYXeCUHwY.md`
+- [gokayfem/image-to-sculpt](https://github.com/gokayfem/image-to-sculpt) — `reports/i5OYXeCUHwY.md`
+- [Z1Code/iCopy](https://github.com/Z1Code/iCopy) — `reports/i5OYXeCUHwY.md`
+- [Trendorin/yami](https://github.com/Trendorin/yami) — `reports/i5OYXeCUHwY.md`
+- [littledivy/tailnet-do](https://github.com/littledivy/tailnet-do) — `reports/i5OYXeCUHwY.md`
+- [Dodaios/ste80-humanizer](https://github.com/Dodaios/ste80-humanizer) — `reports/i5OYXeCUHwY.md`
+- [djyde/dalibre](https://github.com/djyde/dalibre) — `reports/i5OYXeCUHwY.md`
+- [RUC-NLPIR/CoworkOS](https://github.com/RUC-NLPIR/CoworkOS) — `reports/i5OYXeCUHwY.md`
+- [nwverse/persona](https://github.com/nwverse/persona) — `reports/i5OYXeCUHwY.md`
+- [govijr/terminal-phone](https://github.com/govijr/terminal-phone) — `reports/i5OYXeCUHwY.md`
+- [rauchg/vinyl](https://github.com/rauchg/vinyl) — `reports/i5OYXeCUHwY.md`
+- [stevenmichaelthomas/numbrone](https://github.com/stevenmichaelthomas/numbrone) — `reports/i5OYXeCUHwY.md`
+- [zainudinnoori/gitmanual](https://github.com/zainudinnoori/gitmanual) — `reports/i5OYXeCUHwY.md`
+- [sshah03/recalc](https://github.com/sshah03/recalc) — `reports/i5OYXeCUHwY.md`
+- [bea4dev/shoji-bar-4](https://github.com/bea4dev/shoji-bar-4) — `reports/i5OYXeCUHwY.md`
+- [Coolerwave/AimMac](https://github.com/Coolerwave/AimMac) — `reports/i5OYXeCUHwY.md`
+- [0xCodez/iphone-mirror-windows](https://github.com/0xCodez/iphone-mirror-windows) — `reports/i5OYXeCUHwY.md`
+- [FutureMLS-Lab/FlashStates](https://github.com/FutureMLS-Lab/FlashStates) — `reports/i5OYXeCUHwY.md`
+- [799953468/frp-ban](https://github.com/799953468/frp-ban) — `reports/i5OYXeCUHwY.md`
 - invoiceninja/invoiceninja — `reports/kMPyFWFqX5I.md`
 - frappe/crm — `reports/kMPyFWFqX5I.md`
 - mautic/mautic — `reports/kMPyFWFqX5I.md`
@@ -1335,6 +1382,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-11.
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/mHGDF8mwkY4.md`
 - Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/mny7r505ZpU.md`
 - [EpicGames/raddebugger](https://github.com/EpicGames/raddebugger) — `reports/mzLkzIF1Te8.md`
+- [gitroomhq/postiz-app](https://github.com/gitroomhq/postiz-app) — `reports/nLjQuufO2U0.md`
 - [herdrdev/herdr-app](https://github.com/herdrdev/herdr-app) — `reports/nXxM1lrr6o4.md`
 - [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) — `reports/nXxM1lrr6o4.md`
 - [oscar-soirey/Raven](https://github.com/oscar-soirey/Raven) — `reports/nXxM1lrr6o4.md`
