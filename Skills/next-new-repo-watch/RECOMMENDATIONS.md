@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-12.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-13.
 
-**Totals**: 27 INCLUDE · 245 TRIAL · 1048 SKIP · 0 pending eval
+**Totals**: 27 INCLUDE · 249 TRIAL · 1050 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -79,6 +79,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-12.
   - Report: `reports/-Jxf0YkTGbA.md` · Video: https://youtu.be/-Jxf0YkTGbA · *GitHub Trending Today - crm, artemis, Spider_XHS & More | #168*
 - **[storytold/pdfcraft](https://github.com/storytold/pdfcraft)** — Functionality: Native cross-platform PDF workbench for reading, organizing, combining, splitting, and securing files.
   - Report: `reports/-Jxf0YkTGbA.md` · Video: https://youtu.be/-Jxf0YkTGbA · *GitHub Trending Today - crm, artemis, Spider_XHS & More | #168*
+- **[Illyism/seo-skills](https://github.com/Illyism/seo-skills)** — Functionality: Open-source SEO skill set for Claude Code, Cursor, and Codex that automates the audit and content workflow an AI SEO agency w
+  - Report: `reports/-od42nAhUjo.md` · Video: https://youtu.be/-od42nAhUjo · *Free customers from ChatGPT, Claude manages your money, & the best ai releases*
+- **[JuneYaooo/rea-video](https://github.com/JuneYaooo/rea-video)** — Functionality: Breaks a video down shot by shot and recreates its frames, giving a structured shot list for editing or style analysis.
+  - Report: `reports/-od42nAhUjo.md` · Video: https://youtu.be/-od42nAhUjo · *Free customers from ChatGPT, Claude manages your money, & the best ai releases*
 - **daijro/camoufox** — Functionality: A patched Firefox browser designed to make automated sessions resemble ordinary browser traffic. It could provide a local bro
   - Report: `reports/0SDz3rjZBC4.md` · Video: https://youtu.be/0SDz3rjZBC4 · *Amazon and others want to block your agents.*
 - **[Shpigford/knockoff](https://github.com/Shpigford/knockoff)** — 
@@ -279,6 +283,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-12.
   - Report: `reports/MaTkyO-8hZ0.md` · Video: https://youtu.be/MaTkyO-8hZ0 · *AI seller + phone for your agent + OpenClaw 2.0 boy-is-it-bad*
 - **[mattpocock/skills](https://github.com/mattpocock/skills)** — Agent skills pulled from Matt Pocock's `.agents` directory: "Grill Me" stress-tests a plan before you build, plus TDD, code review, domain m
   - Report: `reports/My4fBcm1vyQ.md` · Video: https://youtu.be/My4fBcm1vyQ · *Try Matt Pocock’s ‘Grill Me’ Skill Before Your Next AI Project*
+- **[Anil-matcha/AI-Youtube-Shorts-Generator](https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator)** — Functionality: Turns long videos (meetings, webinars) into vertical 9:16 shorts by using an LLM to pick highlights, Whisper for transcripts,
+  - Report: `reports/NDo3b7R6gDM.md` · Video: https://youtu.be/NDo3b7R6gDM · *Turn Meeting Videos Into Shorts for Free With This AI Tool*
 - **earthtojake/text-to-cad** — Gives a coding agent the ability to generate real parametric 3D CAD models from text descriptions.
   - Report: `reports/NXt2BM-s4Ow.md` · Video: https://youtu.be/NXt2BM-s4Ow · *Text-to-CAD — Describe a Part, Get a Real 3D Model*
 - **[mvschwarz/openrig](https://github.com/mvschwarz/openrig)** — Functionality: Orchestrates multiple coding agents (Claude Code, Codex, Pi) as one persistent team with named roles, shared context, and han
@@ -415,6 +421,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-12.
   - Report: `reports/fm6r37GGnn4.md` · Video: https://youtu.be/fm6r37GGnn4 · *Impeccable: The Free AI Design Tool That Could Replace Figma?*
 - **[invoiceninja/invoiceninja](https://github.com/invoiceninja/invoiceninja)** — Functionality: A self-hostable Laravel application for invoicing, quotes, projects, time tracking, and payment collection. It fits service b
   - Report: `reports/g-CG1PD7iTc.md` · Video: https://youtu.be/g-CG1PD7iTc · *Invoice Ninja: Stop Chasing Clients for Payment*
+- **[Huanshere/VideoLingo](https://github.com/Huanshere/VideoLingo)** — Functionality: Open-source pipeline that transcribes, translates, subtitles, aligns, and voice-dubs video with AI, keeping proper names inta
+  - Report: `reports/hbzicDw4xZw.md` · Video: https://youtu.be/hbzicDw4xZw · *VideoLingo — Dub Any Webinar Into Another Language With This Open-Source AI*
 - **anthropics/financial-services** — Functionality: Finance-focused agent skills for research, screening, and analysis workflows.
   - Report: `reports/hlOk-EFUITQ.md` · Video: https://youtu.be/hlOk-EFUITQ · *Top Repos + Fame, Traffic & Agents*
 - **alibaba/open-code-review** — Functionality: Hybrid deterministic and LLM code-review service with line comments and security rules.
@@ -587,6 +595,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-12.
 - [pedrovgs/Algorithms](https://github.com/pedrovgs/Algorithms) — `reports/-Jxf0YkTGbA.md`
 - [majidmanzarpour/threejs-game-skills](https://github.com/majidmanzarpour/threejs-game-skills) — `reports/-Jxf0YkTGbA.md`
 - [VonHoltenCodes/SlowBooks-Pro-2026](https://github.com/VonHoltenCodes/SlowBooks-Pro-2026) — `reports/-ikuVZ9L-UE.md`
+- [silverbronze/code-tycoon](https://github.com/silverbronze/code-tycoon) — `reports/-od42nAhUjo.md`
+- [AlexAtFF/pulp-daw-public](https://github.com/AlexAtFF/pulp-daw-public) — `reports/-od42nAhUjo.md`
 - [Asymptote-Labs/agent-beacon](https://github.com/Asymptote-Labs/agent-beacon) — `reports/-s4rbKbrO0w.md`
 - [pollen-robotics/microduck](https://github.com/pollen-robotics/microduck) — `reports/0CexicXSXW0.md`
 - [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl) — `reports/0CexicXSXW0.md`
