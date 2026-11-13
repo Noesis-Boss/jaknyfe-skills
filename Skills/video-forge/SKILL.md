@@ -51,6 +51,9 @@ FFmpeg adapter commands are recipes, not a substitute for reading a specialist s
 
 ## Decision and approval gates
 
+- At each production-stage boundary, show the user the completed artifact or concise checkpoint summary and get approval before proceeding to the next stage. Keep approval checkpoints separate from the per-video publication approval.
+- Maintain a license ledger for sourced media with asset name, source URL or creator, license/usage terms, attribution requirement, and any restrictions. Resolve missing rights before including an asset.
+- Before final handoff, perform a cold-viewer review: inspect the video without production notes, check whether its purpose and sequence are clear, and record confusing or unsupported moments for correction.
 - For supplied footage, follow the selected editing skill's confirmation requirements before making cuts or destructive changes.
 - Keep generated drafts local. Do not upload, publish, or schedule without explicit per-video approval.
 - Do not invent facts, spoken words, product claims, or source attribution.
