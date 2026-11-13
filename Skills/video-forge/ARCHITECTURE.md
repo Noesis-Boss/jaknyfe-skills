@@ -13,6 +13,7 @@ Primary production path
   ├─ HyperFrames: HTML/CSS/GSAP compositions
   ├─ Remotion: React/TSX compositions
   ├─ Video Use: source-footage editorial workflow
+  ├─ Explainroo: narrated hand-drawn explainers with word-timed scenes
   ├─ Manim: mathematical/explainer animation
   └─ Gemini: targeted generative edit of existing footage
         ↓
@@ -27,6 +28,7 @@ Approved local deliverable → explicit separate publication approval
 
 - **Video Forge**: scope, route, sequence stages, preserve constraints, track verification, and report the deliverable.
 - **Composition/editing skill**: own timeline/composition semantics and any workflow-specific hard rules.
+- **Explainroo** (`Projects/explainroo/`): optional local explainer-video tool; its project instructions own setup and rendering semantics. Video Forge retains brief/plan, provenance, review, and publication boundaries.
 - **FFmpeg**: inspect, transform, mux, extract, and finish media in a deterministic local step.
 - **Review**: combine machine-readable probe checks with visual and audio inspection; neither alone is sufficient.
 

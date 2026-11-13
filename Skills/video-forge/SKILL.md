@@ -18,16 +18,31 @@ Video Forge is the project-level workflow and dispatcher for video work. It coor
 5. **Review** — Check the rendered file with probe data and representative frames; listen to the audio; inspect captions, transitions, safe areas, timing, and encoding. Fix defects and repeat review.
 6. **Handoff** — Report output path, format, duration, dimensions, audio/caption status, verification performed, and anything requiring human approval. Rendering is not publication.
 
+## Animated-shorts mode
+
+Use this mode for compact, story-led vertical animations (typically 30–90 seconds; set a different runtime when the brief requires it). Treat it as a focused path through the production stages above:
+
+1. **Short brief** — State one audience, one takeaway, platform, target runtime/aspect ratio, and whether the piece is factual, fictional, or advocacy. For factual work, record sources and separate verified facts from interpretation.
+2. **Narrative script** — Shape a clear opening, setup, escalation or reveal, and ending. Keep one central idea; estimate narration timing against the requested runtime and leave breathing room for visual beats.
+3. **Beat storyboard** — Make one row per beat with time range, narration/dialogue, visible action, composition/camera or motion, on-screen text, sound, and asset/source references. Every visual should advance the story or clarify the idea.
+4. **Style sheet and asset plan** — Define reusable character, palette, typography, lighting, backgrounds, and motion rules for series continuity. Create original assets; record provenance and usage rights for sourced assets. Do not reproduce reference frames or distinctive layouts from a reference project.
+5. **Animatic checkpoint** — Present script, beat sheet, and representative stills or a rough timing pass for approval before full production. Revise pacing, readability, continuity, and factual framing at this checkpoint.
+6. **Production and review** — Build in one primary engine (usually HyperFrames for HTML/CSS/GSAP motion graphics or Remotion for reusable React scenes). Inspect a contact sheet or representative frames and review the full rendered short with audio; check mobile-safe text, beat timing, visual continuity, caption readability, and sound sync. Iterate on defects before handoff.
+
+Keep story/shot planning engine-neutral. Do not introduce Three.js or another renderer solely because a reference workflow uses it; route to a 3D tool only when the brief needs 3D and the chosen project supports it. Keep each checkpoint approval separate from approval to publish.
+
 ## Skill and tool routing
 
 | Need | Route |
 | --- | --- |
 | HTML/CSS/GSAP animated composition, title cards, overlays, kinetic text, voiceover-led graphics, website-to-video | `Skills/hyperframes/SKILL.md`; read the relevant vendored skill under `Skills/hyperframes/plugin/skills/` before execution. |
+| Local narrated explainer videos with script-aligned drawings, voice timing, and MP4 output | `Projects/explainroo/`; read its `README.md` and `AGENTS.md` before setup or production. Use as an optional specialized path when its hand-drawn explainer format fits; keep Video Forge planning, asset provenance, review, and publication checkpoints. |
 | React/TSX programmatic video, reusable data-driven scenes, Remotion rendering | `Skills/remotion-best-practices/SKILL.md`; read its relevant `rules/*.md` before changing a composition. |
 | Editing supplied footage by transcript, cuts, overlays, grading, subtitles, or narration | `Skills/video-use/SKILL.md`; follow its confirm-before-cut and production-correctness rules. |
 | Generative edits to an existing clip using Gemini | `Skills/gemini-video-editing/SKILL.md`. |
 | Frame extraction, contact sheets, or visual inspection inputs | `Skills/video-frames/SKILL.md` for its frame extraction CLI; otherwise use FFmpeg frame extraction. |
 | Mathematical/explainer animation | `Skills/video-use/skills/manim-video/SKILL.md`. |
+| Story-led vertical animated shorts | Use Animated-shorts mode above, then route composition to HyperFrames or Remotion according to the scene and project. |
 | Local media inspection, conversion, trimming, muxing, loudness/audio finishing, or frame extraction | Use the FFmpeg adapter below. |
 | Speech synthesis, transcription, or external video generation | Use the appropriate available skill/tool and confirm its constraints before use. |
 
@@ -49,6 +64,14 @@ After every operation, probe the output and check a frame or short playback. Val
 
 FFmpeg adapter commands are recipes, not a substitute for reading a specialist skill's hard rules. In particular, Video Use's segment/caption/audio ordering rules take precedence when that workflow is selected.
 
+## Sourced-media license ledger
+
+Keep one row for each externally sourced asset. Use `Not found` for unknown details and do not include an asset until its usage rights are resolved.
+
+| Asset | Use in video | Source URL or creator | License / usage terms | Attribution required | Restrictions / evidence |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |
+
 ## Decision and approval gates
 
 - At each production-stage boundary, show the user the completed artifact or concise checkpoint summary and get approval before proceeding to the next stage. Keep approval checkpoints separate from the per-video publication approval.
@@ -67,3 +90,7 @@ FFmpeg adapter commands are recipes, not a substitute for reading a specialist s
 - Audio and captions are present, synchronized, intelligible, and at suitable levels when requested.
 - Representative frames and the full timeline have been visually checked for black/frozen frames, clipping, layout issues, and unintended artifacts.
 - Rights/provenance and outstanding approvals are stated; no publication occurred without explicit approval.
+
+### Render probe and frame review helper
+
+Run `Skills/video-forge/scripts/review-render.sh INPUT_VIDEO [OUTPUT_DIR]` after rendering. It writes `probe.json` plus start, midpoint, and end JPEGs; inspect those images and review the complete video and audio before handoff. The helper does not judge visual quality or replace the full review checklist.
