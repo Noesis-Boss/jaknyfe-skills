@@ -13,6 +13,8 @@ Primary production path
   ├─ HyperFrames: HTML/CSS/GSAP compositions
   ├─ Remotion: React/TSX compositions
   ├─ Video Use: source-footage editorial workflow
+  ├─ Explainroo: narrated hand-drawn explainers with word-timed scenes
+  ├─ Papermorph: animated books, lessons, documentaries, shorts, scroll stories, interactive maps
   ├─ Manim: mathematical/explainer animation
   └─ Gemini: targeted generative edit of existing footage
         ↓
@@ -27,6 +29,8 @@ Approved local deliverable → explicit separate publication approval
 
 - **Video Forge**: scope, route, sequence stages, preserve constraints, track verification, and report the deliverable.
 - **Composition/editing skill**: own timeline/composition semantics and any workflow-specific hard rules.
+- **Explainroo** (`Projects/explainroo/`): optional local explainer-video tool; its project instructions own setup and rendering semantics. Video Forge retains brief/plan, provenance, review, and publication boundaries.
+- **Papermorph** (`https://github.com/DozenTwelve/Papermorph`): optional SVG-player production system for book-led lessons, picture books, documentaries, vertical shorts, scroll stories, and interactive maps. Its skill and tier references own production details; Video Forge retains brief/plan, source rights, approval, final review, and publication boundaries. Treat its first cut as a draft requiring review.
 - **FFmpeg**: inspect, transform, mux, extract, and finish media in a deterministic local step.
 - **Review**: combine machine-readable probe checks with visual and audio inspection; neither alone is sufficient.
 
