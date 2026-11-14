@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-13.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-14.
 
-**Totals**: 27 INCLUDE · 249 TRIAL · 1050 SKIP · 0 pending eval
+**Totals**: 28 INCLUDE · 256 TRIAL · 1059 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -52,6 +52,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-13.
   - Report: `reports/ktfjaNnxPsQ.md` · Video: https://youtu.be/ktfjaNnxPsQ · *Alibaba's Free Tool Catches Security Bugs Vibe Coders Miss*
 - **thedotmack/claude-mem** — Claude Mem is a persistent context layer that captures everything an AI agent does during a session, compresses it with an LLM, and injects 
   - Report: `reports/oGSShssjn9c.md` · Video: https://youtu.be/oGSShssjn9c · *AI Agents Finally Share One Memory (Claude Mem Explained)*
+- **vercel-labs/agent-browser** — Recommendation: INCLUDE — Already installed at `/usr/local/bin/agent-browser`. Check the installed version against upstream and upgrade with
+  - Report: `reports/pnZh5PAF3VE.md` · Video: https://youtu.be/pnZh5PAF3VE · *Open Source Grok Bot, copy any YouTube video, find anyone online.*
 - **vercel-labs/agent-browser** — Functionality: Rust CLI for headless browser control, DOM interaction, screenshots, and browser workflows for agents.
   - Report: `reports/qfRMHqh7tNI.md` · Video: https://youtu.be/qfRMHqh7tNI · *This Skill Gives Your AI Agent a Browser*
 - **[every-app/open-seo](https://github.com/every-app/open-seo)** — Open-source SEO/AEO platform positioned as an alternative to Semrush and Ahrefs.
@@ -491,6 +493,20 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-13.
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
 - **`zapier/zapier-platform`** — Functionality: Zapier’s JavaScript toolkit for building custom integrations and actions. It could support a narrow connector needed by the p
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
+- **Anil-matcha/open-genjutsu** — Recommendation: TRIAL — Sandbox one short clip through the draft-review step only. Overlaps hosted Higgsfield Genjutsu; the value is a local
+  - Report: `reports/pnZh5PAF3VE.md` · Video: https://youtu.be/pnZh5PAF3VE · *Open Source Grok Bot, copy any YouTube video, find anyone online.*
+- **JuneYaooo/rea-video** — Recommendation: TRIAL — Run on one reference video and compare its breakdown to the output of `youtube-channel-style-engine` and `finance-yo
+  - Report: `reports/pnZh5PAF3VE.md` · Video: https://youtu.be/pnZh5PAF3VE · *Open Source Grok Bot, copy any YouTube video, find anyone online.*
+- **NVIDIA/auto-ontology** — Recommendation: TRIAL — Test whether an ontology layer improves astra-memory retrieval over a sample of stored facts, comparing hybrid-searc
+  - Report: `reports/pnZh5PAF3VE.md` · Video: https://youtu.be/pnZh5PAF3VE · *Open Source Grok Bot, copy any YouTube video, find anyone online.*
+- **mattpocock/skills** — Recommendation: TRIAL — Install individual skills one at a time into a scratch directory, run the SkillSpector gate on each, and compare aga
+  - Report: `reports/pnZh5PAF3VE.md` · Video: https://youtu.be/pnZh5PAF3VE · *Open Source Grok Bot, copy any YouTube video, find anyone online.*
+- **addyosmani/agent-skills** — Recommendation: TRIAL — Same method as mattpocock/skills: SkillSpector gate first, then diff against `engineering-code-review` and `adversar
+  - Report: `reports/pnZh5PAF3VE.md` · Video: https://youtu.be/pnZh5PAF3VE · *Open Source Grok Bot, copy any YouTube video, find anyone online.*
+- **cloudflare/security-audit-skill** — Recommendation: TRIAL — Run in read-only mode against one workspace project to test finding quality and false-positive rate. Pass the SkillS
+  - Report: `reports/pnZh5PAF3VE.md` · Video: https://youtu.be/pnZh5PAF3VE · *Open Source Grok Bot, copy any YouTube video, find anyone online.*
+- **archid21/rightsize** — Recommendation: TRIAL — Enable in one Claude Code session and measure token cost against effort quality on a fixed task set. Low star count 
+  - Report: `reports/pnZh5PAF3VE.md` · Video: https://youtu.be/pnZh5PAF3VE · *Open Source Grok Bot, copy any YouTube video, find anyone online.*
 - **[Anil-matcha/AI-Youtube-Shorts-Generator](https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator)** — Turns long YouTube videos into 9:16 shorts using LLM highlight detection, Whisper transcription, and automatic vertical cropping.
   - Report: `reports/rPNKWE4GrWA.md` · Video: https://youtu.be/rPNKWE4GrWA · *Which Free AI Tools Can Actually Build a Business? A VC Decides*
 - **[Huanshere/VideoLingo](https://github.com/Huanshere/VideoLingo)** — Automated subtitle cutting, translation, alignment, and optional dubbing for video.
@@ -1424,6 +1440,15 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-13.
 - [IGOLz/ImmichGallery](https://github.com/IGOLz/ImmichGallery) — `reports/nXxM1lrr6o4.md`
 - [livliv-dev/player](https://github.com/livliv-dev/player) — `reports/nXxM1lrr6o4.md`
 - [neondeex/atlas-filemanager](https://github.com/neondeex/atlas-filemanager) — `reports/nXxM1lrr6o4.md`
+- NYLLON-SOFTWARE/ember-cloudflare — `reports/pnZh5PAF3VE.md`
+- sherlock-project/sherlock — `reports/pnZh5PAF3VE.md`
+- anthropics/skills — `reports/pnZh5PAF3VE.md`
+- milind-soni/OpenMausBot — `reports/pnZh5PAF3VE.md`
+- ZhuLinsen/daily_stock_analysis — `reports/pnZh5PAF3VE.md`
+- google-deepmind/mujoco — `reports/pnZh5PAF3VE.md`
+- tryatlas/atlas — `reports/pnZh5PAF3VE.md`
+- bomby-app/bomby — `reports/pnZh5PAF3VE.md`
+- oddmundleikvoll/sprintwake-projects — `reports/pnZh5PAF3VE.md`
 - [cv-cat/Spider_XHS](https://github.com/cv-cat/Spider_XHS) — `reports/ptKt8thVkho.md`
 - Other tools mentioned — `reports/pxaMzr7al3I.md`
 - Community repos surfaced by search — `reports/qr7Zwjx-nWU.md`

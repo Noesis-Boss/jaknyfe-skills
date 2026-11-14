@@ -2745,6 +2745,32 @@
       "auto_repos": [
         "Anil-matcha/AI-Youtube-Shorts-Generator"
       ]
+    },
+    "pnZh5PAF3VE": {
+      "title": "Open Source Grok Bot, copy any YouTube video, find anyone online.",
+      "published": "2026-11-13T21:52:21+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-14T12:31:27.931264+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/pnZh5PAF3VE.md",
+      "auto_repos": [
+        "Anil-matcha/open-genjutsu",
+        "JuneYaooo/rea-video",
+        "NYLLON-SOFTWARE/ember-cloudflare",
+        "sherlock-project/sherlock",
+        "anthropics/skills",
+        "milind-soni/OpenMausBot",
+        "vercel-labs/agent-browser",
+        "ZhuLinsen/daily_stock_analysis",
+        "NVIDIA/auto-ontology",
+        "google-deepmind/mujoco",
+        "mattpocock/skills",
+        "addyosmani/agent-skills",
+        "cloudflare/security-audit-skill",
+        "pacifio/atlas",
+        "bomby-app/bomby",
+        "oddmundleikvoll/sprintwake-projects",
+        "archid21/rightsize"
+      ]
     }
   }
 }
