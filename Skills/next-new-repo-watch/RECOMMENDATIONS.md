@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-14.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-15.
 
-**Totals**: 28 INCLUDE · 256 TRIAL · 1059 SKIP · 0 pending eval
+**Totals**: 28 INCLUDE · 263 TRIAL · 1087 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -531,6 +531,20 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-14.
   - Report: `reports/vjWCfBPGy3Y.md` · Video: https://youtu.be/vjWCfBPGy3Y · *GitHub Trending Today - from-java-to-kotlin, QuantsPlaybook, sysbox & More | #159*
 - **[aigc-apps/VideoX-Fun](https://github.com/aigc-apps/VideoX-Fun)** — Functionality: 📹 A more flexible framework that can generate videos at any resolution and creates videos from images. .
   - Report: `reports/vjWCfBPGy3Y.md` · Video: https://youtu.be/vjWCfBPGy3Y · *GitHub Trending Today - from-java-to-kotlin, QuantsPlaybook, sysbox & More | #159*
+- **[obsidianmd/obsidian-skills](https://github.com/obsidianmd/obsidian-skills)** — 
+  - Report: `reports/vnq7Gq2ZxzY.md` · Video: https://youtu.be/vnq7Gq2ZxzY · *GitHub Trending Weekly #59: open-orange, obsidian-skills, sand3d, yogurt, agentes-chat, zigzag*
+- **[vercel-labs/ui](https://github.com/vercel-labs/ui)** — 
+  - Report: `reports/vnq7Gq2ZxzY.md` · Video: https://youtu.be/vnq7Gq2ZxzY · *GitHub Trending Weekly #59: open-orange, obsidian-skills, sand3d, yogurt, agentes-chat, zigzag*
+- **[Parcha-ai/agentrun](https://github.com/Parcha-ai/agentrun)** — 
+  - Report: `reports/vnq7Gq2ZxzY.md` · Video: https://youtu.be/vnq7Gq2ZxzY · *GitHub Trending Weekly #59: open-orange, obsidian-skills, sand3d, yogurt, agentes-chat, zigzag*
+- **[QiYueran-source/waymark](https://github.com/QiYueran-source/waymark)** — 
+  - Report: `reports/vnq7Gq2ZxzY.md` · Video: https://youtu.be/vnq7Gq2ZxzY · *GitHub Trending Weekly #59: open-orange, obsidian-skills, sand3d, yogurt, agentes-chat, zigzag*
+- **[pedrocatalao/github-cool-readme](https://github.com/pedrocatalao/github-cool-readme)** — 
+  - Report: `reports/vnq7Gq2ZxzY.md` · Video: https://youtu.be/vnq7Gq2ZxzY · *GitHub Trending Weekly #59: open-orange, obsidian-skills, sand3d, yogurt, agentes-chat, zigzag*
+- **[codepawl/creator-generalist](https://github.com/codepawl/creator-generalist)** — 
+  - Report: `reports/vnq7Gq2ZxzY.md` · Video: https://youtu.be/vnq7Gq2ZxzY · *GitHub Trending Weekly #59: open-orange, obsidian-skills, sand3d, yogurt, agentes-chat, zigzag*
+- **[howznguyen/shorts-kit](https://github.com/howznguyen/shorts-kit)** — 
+  - Report: `reports/vnq7Gq2ZxzY.md` · Video: https://youtu.be/vnq7Gq2ZxzY · *GitHub Trending Weekly #59: open-orange, obsidian-skills, sand3d, yogurt, agentes-chat, zigzag*
 - **[Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)** — Functionality: A CLI that gives AI agents read and search access to platforms that normally need a login or a special tool (X, Reddit, YouTu
   - Report: `reports/weNV9Vfd56U.md` · Video: https://youtu.be/weNV9Vfd56U · *Agent-Reach — This AI Tool Fixes Broken Scrapers Automatically*
 - **browser-use/browser-use** — 
@@ -1488,6 +1502,34 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-14.
 - [yadox666/The-Hackers-Hardware-Toolkit](https://github.com/yadox666/The-Hackers-Hardware-Toolkit) — `reports/vjWCfBPGy3Y.md`
 - [martin-ger/esp32_nat_router](https://github.com/martin-ger/esp32_nat_router) — `reports/vjWCfBPGy3Y.md`
 - [tandpfun/wardrobe](https://github.com/tandpfun/wardrobe) — `reports/vjWCfBPGy3Y.md`
+- [rivet-dev/open-orange](https://github.com/rivet-dev/open-orange) — `reports/vnq7Gq2ZxzY.md`
+- [serveroshq/panel](https://github.com/serveroshq/panel) — `reports/vnq7Gq2ZxzY.md`
+- [Sandflow-ai/sand3d](https://github.com/Sandflow-ai/sand3d) — `reports/vnq7Gq2ZxzY.md`
+- [FrigadeHQ/yogurt](https://github.com/FrigadeHQ/yogurt) — `reports/vnq7Gq2ZxzY.md`
+- [agentes-chat/agentes-chat](https://github.com/agentes-chat/agentes-chat) — `reports/vnq7Gq2ZxzY.md`
+- [simpsoka/zigzag](https://github.com/simpsoka/zigzag) — `reports/vnq7Gq2ZxzY.md`
+- [faizfahmi77/ScanDot](https://github.com/faizfahmi77/ScanDot) — `reports/vnq7Gq2ZxzY.md`
+- [opencoredev/islandcn](https://github.com/opencoredev/islandcn) — `reports/vnq7Gq2ZxzY.md`
+- [MiniMax-AI/MiniMax-H3-Image](https://github.com/MiniMax-AI/MiniMax-H3-Image) — `reports/vnq7Gq2ZxzY.md`
+- [pmndrs/pine](https://github.com/pmndrs/pine) — `reports/vnq7Gq2ZxzY.md`
+- [MZULALI/xj-scanner](https://github.com/MZULALI/xj-scanner) — `reports/vnq7Gq2ZxzY.md`
+- [higurashi-ai/Haru](https://github.com/higurashi-ai/Haru) — `reports/vnq7Gq2ZxzY.md`
+- [klad-app/klad](https://github.com/klad-app/klad) — `reports/vnq7Gq2ZxzY.md`
+- [dqhieu/Silica](https://github.com/dqhieu/Silica) — `reports/vnq7Gq2ZxzY.md`
+- [makepad/relax](https://github.com/makepad/relax) — `reports/vnq7Gq2ZxzY.md`
+- [wingedpanther/openshelf](https://github.com/wingedpanther/openshelf) — `reports/vnq7Gq2ZxzY.md`
+- [simplexai-labs/linger](https://github.com/simplexai-labs/linger) — `reports/vnq7Gq2ZxzY.md`
+- lawandrorder/mate — `reports/vnq7Gq2ZxzY.md`
+- [ScottDuncanAI/PID-to-Knowledge-Graph](https://github.com/ScottDuncanAI/PID-to-Knowledge-Graph) — `reports/vnq7Gq2ZxzY.md`
+- [magnuslab-sudo/Orwell](https://github.com/magnuslab-sudo/Orwell) — `reports/vnq7Gq2ZxzY.md`
+- [yurigdesigner/tuffui](https://github.com/yurigdesigner/tuffui) — `reports/vnq7Gq2ZxzY.md`
+- [skild-ai/steel](https://github.com/skild-ai/steel) — `reports/vnq7Gq2ZxzY.md`
+- [meshy-dev/ThreeRT](https://github.com/meshy-dev/ThreeRT) — `reports/vnq7Gq2ZxzY.md`
+- [CakeDev4k/prime-files](https://github.com/CakeDev4k/prime-files) — `reports/vnq7Gq2ZxzY.md`
+- [dev-Armaan/satellites](https://github.com/dev-Armaan/satellites) — `reports/vnq7Gq2ZxzY.md`
+- [TensaikunYT/Videohub](https://github.com/TensaikunYT/Videohub) — `reports/vnq7Gq2ZxzY.md`
+- [berkantay/gpucanvas](https://github.com/berkantay/gpucanvas) — `reports/vnq7Gq2ZxzY.md`
+- [omacom/folio](https://github.com/omacom/folio) — `reports/vnq7Gq2ZxzY.md`
 - [elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills) — `reports/vz7nLocDtEE.md`
 - [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — `reports/vz7nLocDtEE.md`
 - [useautumn/autumn](https://github.com/useautumn/autumn) — `reports/wgdFn5JXXb8.md`
