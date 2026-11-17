@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-15.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 
-**Totals**: 28 INCLUDE · 263 TRIAL · 1087 SKIP · 0 pending eval
+**Totals**: 28 INCLUDE · 271 TRIAL · 1117 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -489,6 +489,20 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-15.
   - Report: `reports/nXxM1lrr6o4.md` · Video: https://youtu.be/nXxM1lrr6o4 · *GitHub Trending Today #58: herdr-app, Raven, rerun, cinecode, terminal-mac, latch, gputaskman*
 - **[gauge-sh/gauge-cli](https://github.com/gauge-sh/gauge-cli)** — Functionality: Open-source CLI that hill-climbs skills, CLIs and docs by testing real agent sessions.
   - Report: `reports/nXxM1lrr6o4.md` · Video: https://youtu.be/nXxM1lrr6o4 · *GitHub Trending Today #58: herdr-app, Raven, rerun, cinecode, terminal-mac, latch, gputaskman*
+- **[anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins)** — Functionality: Official plugin collection for knowledge workers, built for Claude Cowork.
+  - Report: `reports/nrxB2WWBBi4.md` · Video: https://youtu.be/nrxB2WWBBi4 · *GitHub Trending Today #60: oink, lastbook, pybot, unkernel, PrintLab, superbot, yab, roomy, TinyDrop*
+- **[hikaku-io/hikaku-extension](https://github.com/hikaku-io/hikaku-extension)** — Functionality: Browser extension that flags AI-generated images and video, running on-device.
+  - Report: `reports/nrxB2WWBBi4.md` · Video: https://youtu.be/nrxB2WWBBi4 · *GitHub Trending Today #60: oink, lastbook, pybot, unkernel, PrintLab, superbot, yab, roomy, TinyDrop*
+- **[molly554/whiteboard-ai-tutor](https://github.com/molly554/whiteboard-ai-tutor)** — Functionality: Open-source whiteboard AI tutor with animated lessons and interactive playback, plus a model comparison across 288 runs.
+  - Report: `reports/nrxB2WWBBi4.md` · Video: https://youtu.be/nrxB2WWBBi4 · *GitHub Trending Today #60: oink, lastbook, pybot, unkernel, PrintLab, superbot, yab, roomy, TinyDrop*
+- **[hridaya423/phonedriver](https://github.com/hridaya423/phonedriver)** — Functionality: MCP server and CLI that lets agents see and control Android and iPhone screens, reading the screen as text and asking before 
+  - Report: `reports/nrxB2WWBBi4.md` · Video: https://youtu.be/nrxB2WWBBi4 · *GitHub Trending Today #60: oink, lastbook, pybot, unkernel, PrintLab, superbot, yab, roomy, TinyDrop*
+- **[n4ze3m/tiny-voca](https://github.com/n4ze3m/tiny-voca)** — Functionality: A 4.5M-parameter two-voice English text-to-speech model trained from scratch.
+  - Report: `reports/nrxB2WWBBi4.md` · Video: https://youtu.be/nrxB2WWBBi4 · *GitHub Trending Today #60: oink, lastbook, pybot, unkernel, PrintLab, superbot, yab, roomy, TinyDrop*
+- **[brunnojob/devrescue](https://github.com/brunnojob/devrescue)** — Functionality: Local-first CI log triage, environment checks, reviewed fixes and incident comparison, delivered as a CLI, GitHub Action and 
+  - Report: `reports/nrxB2WWBBi4.md` · Video: https://youtu.be/nrxB2WWBBi4 · *GitHub Trending Today #60: oink, lastbook, pybot, unkernel, PrintLab, superbot, yab, roomy, TinyDrop*
+- **[joshpuckett/allo](https://github.com/joshpuckett/allo)** — Functionality: Free, open-source typeface.
+  - Report: `reports/nrxB2WWBBi4.md` · Video: https://youtu.be/nrxB2WWBBi4 · *GitHub Trending Today #60: oink, lastbook, pybot, unkernel, PrintLab, superbot, yab, roomy, TinyDrop*
 - **`openclaw/openclaw`** — Functionality: An open-source personal AI agent that can operate across local computers, browsers, messaging channels, and connected tools. 
   - Report: `reports/pkwnJcETgfE.md` · Video: https://youtu.be/pkwnJcETgfE · *Amazing: FREE AI Agent from Meta*
 - **`zapier/zapier-platform`** — Functionality: Zapier’s JavaScript toolkit for building custom integrations and actions. It could support a narrow connector needed by the p
@@ -519,6 +533,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-15.
   - Report: `reports/rVoAyD2Zrfs.md` · Video: https://youtu.be/rVoAyD2Zrfs · *10 GitHub repos that will save you money*
 - **VonHoltenCodes/SlowBooks-Pro-2026** — Signals: 330★ · Python · license: Other (source-available, not OSI) · pushed 2026-09-06 · not archived.
   - Report: `reports/rVoAyD2Zrfs.md` · Video: https://youtu.be/rVoAyD2Zrfs · *10 GitHub repos that will save you money*
+- **[TryGhost/Ghost](https://github.com/TryGhost/Ghost)** — Functionality: Open-source publishing platform for newsletters, memberships, paid subscriptions and websites (Node.js; self-hosted or hosted
+  - Report: `reports/r_iaGzzictg.md` · Video: https://youtu.be/r_iaGzzictg · *Stop Paying $300/Month for Newsletters*
 - **thesysdev/openui** — 
   - Report: `reports/tqpOfHS5-VY.md` · Video: https://youtu.be/tqpOfHS5-VY · *Make your AI agent pay for itself (and this week's biggest AI news)*
 - **elie222/inbox-zero** — 
@@ -1095,6 +1111,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-15.
 - [DreamyLab30/Filmimic](https://github.com/DreamyLab30/Filmimic) — `reports/S8g5nwZN9as.md`
 - [Aaryan-Kapoor/english-rs](https://github.com/Aaryan-Kapoor/english-rs) — `reports/S8g5nwZN9as.md`
 - [kargulstudio/calender-app-design](https://github.com/kargulstudio/calender-app-design) — `reports/S8g5nwZN9as.md`
+- [every-app/open-seo](https://github.com/every-app/open-seo) — `reports/SABM9uchEO4.md`
+- [every-app/open-scribe](https://github.com/every-app/open-scribe) — `reports/SABM9uchEO4.md`
 - [warp-tech/warpgate](https://github.com/warp-tech/warpgate) — `reports/SkU-Q6nVLy4.md`
 - [anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community) — `reports/TWCSvvTfJNU.md`
 - [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) — `reports/TWCSvvTfJNU.md`
@@ -1454,6 +1472,34 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-15.
 - [IGOLz/ImmichGallery](https://github.com/IGOLz/ImmichGallery) — `reports/nXxM1lrr6o4.md`
 - [livliv-dev/player](https://github.com/livliv-dev/player) — `reports/nXxM1lrr6o4.md`
 - [neondeex/atlas-filemanager](https://github.com/neondeex/atlas-filemanager) — `reports/nXxM1lrr6o4.md`
+- [oinkvm/oink](https://github.com/oinkvm/oink) — `reports/nrxB2WWBBi4.md`
+- [Immortal-Protocols/lastbook](https://github.com/Immortal-Protocols/lastbook) — `reports/nrxB2WWBBi4.md`
+- [huggingface/pybot](https://github.com/huggingface/pybot) — `reports/nrxB2WWBBi4.md`
+- [pithings/unkernel](https://github.com/pithings/unkernel) — `reports/nrxB2WWBBi4.md`
+- [AFangTeam/PrintLab](https://github.com/AFangTeam/PrintLab) — `reports/nrxB2WWBBi4.md`
+- [davidondrej/superbot](https://github.com/davidondrej/superbot) — `reports/nrxB2WWBBi4.md`
+- [yetanotherbrowser/yab](https://github.com/yetanotherbrowser/yab) — `reports/nrxB2WWBBi4.md`
+- [krezio/roomy](https://github.com/krezio/roomy) — `reports/nrxB2WWBBi4.md`
+- [tim-today/TinyDrop](https://github.com/tim-today/TinyDrop) — `reports/nrxB2WWBBi4.md`
+- [paul-nameless/agweb](https://github.com/paul-nameless/agweb) — `reports/nrxB2WWBBi4.md`
+- [erkamyaman/unslopovich](https://github.com/erkamyaman/unslopovich) — `reports/nrxB2WWBBi4.md`
+- [leostera/git-twig](https://github.com/leostera/git-twig) — `reports/nrxB2WWBBi4.md`
+- [AdamJBurns/workflows](https://github.com/AdamJBurns/workflows) — `reports/nrxB2WWBBi4.md`
+- [DarkAspect1/Nudge](https://github.com/DarkAspect1/Nudge) — `reports/nrxB2WWBBi4.md`
+- [Vaibhaav-Tiwari/deepseek-v3-jax](https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax) — `reports/nrxB2WWBBi4.md`
+- [claration/cis](https://github.com/claration/cis) — `reports/nrxB2WWBBi4.md`
+- [cnrad/interspace](https://github.com/cnrad/interspace) — `reports/nrxB2WWBBi4.md`
+- CapriChooms/CapriCore — `reports/nrxB2WWBBi4.md`
+- [fayazara/Lotion](https://github.com/fayazara/Lotion) — `reports/nrxB2WWBBi4.md`
+- [chopinregis/CreaBIM](https://github.com/chopinregis/CreaBIM) — `reports/nrxB2WWBBi4.md`
+- [claynicholson/copper-kicad-mcp](https://github.com/claynicholson/copper-kicad-mcp) — `reports/nrxB2WWBBi4.md`
+- [matheuzgomes/gawain](https://github.com/matheuzgomes/gawain) — `reports/nrxB2WWBBi4.md`
+- [boringmarketer/boring-marketing-skills](https://github.com/boringmarketer/boring-marketing-skills) — `reports/nrxB2WWBBi4.md`
+- [govijr/fix-storage](https://github.com/govijr/fix-storage) — `reports/nrxB2WWBBi4.md`
+- [finktheartist/sakuga-vfx](https://github.com/finktheartist/sakuga-vfx) — `reports/nrxB2WWBBi4.md`
+- [diego3g/craft](https://github.com/diego3g/craft) — `reports/nrxB2WWBBi4.md`
+- [shurshun/count-in](https://github.com/shurshun/count-in) — `reports/nrxB2WWBBi4.md`
+- [brianbell-x/codehygiene](https://github.com/brianbell-x/codehygiene) — `reports/nrxB2WWBBi4.md`
 - NYLLON-SOFTWARE/ember-cloudflare — `reports/pnZh5PAF3VE.md`
 - sherlock-project/sherlock — `reports/pnZh5PAF3VE.md`
 - anthropics/skills — `reports/pnZh5PAF3VE.md`
