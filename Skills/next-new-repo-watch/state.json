@@ -2815,6 +2815,71 @@
         "berkantay/gpucanvas",
         "omacom/folio"
       ]
+    },
+    "r_iaGzzictg": {
+      "title": "Stop Paying $300/Month for Newsletters",
+      "published": "2026-11-16T21:30:29+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-17T12:31:07.342579+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/r_iaGzzictg.md",
+      "auto_repos": [
+        "tryghost/ghost"
+      ]
+    },
+    "SABM9uchEO4": {
+      "title": "1 prompt: rebuild and run any app",
+      "published": "2026-11-16T20:04:41+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-17T12:31:08.995957+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/SABM9uchEO4.md",
+      "auto_repos": [
+        "every-app/open-seo",
+        "every-app/open-scribe"
+      ]
+    },
+    "nrxB2WWBBi4": {
+      "title": "GitHub Trending Today #60: oink, lastbook, pybot, unkernel, PrintLab, superbot, yab, roomy, TinyDrop",
+      "published": "2026-11-17T11:12:40+00:00",
+      "channel": "Github Awesome (@GithubAwesome)",
+      "processed_at": "2026-11-17T12:31:21.432069+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/nrxB2WWBBi4.md",
+      "auto_repos": [
+        "oinkvm/oink",
+        "Immortal-Protocols/lastbook",
+        "anthropics/knowledge-work-plugins",
+        "huggingface/pybot",
+        "hikaku-io/hikaku-extension",
+        "pithings/unkernel",
+        "AFangTeam/PrintLab",
+        "davidondrej/superbot",
+        "yetanotherbrowser/yab",
+        "krezio/roomy",
+        "tim-today/TinyDrop",
+        "paul-nameless/agweb",
+        "erkamyaman/unslopovich",
+        "molly554/whiteboard-ai-tutor",
+        "leostera/git-twig",
+        "hridaya423/phonedriver",
+        "AdamJBurns/workflows",
+        "DarkAspect1/Nudge",
+        "n4ze3m/tiny-voca",
+        "Vaibhaav-Tiwari/deepseek-v3-jax",
+        "claration/cis",
+        "cnrad/interspace",
+        "brunnojob/devrescue",
+        "CapriChooms/CapriCore",
+        "fayazara/Lotion",
+        "chopinregis/CreaBIM",
+        "claynicholson/copper-kicad-mcp",
+        "matheuzgomes/gawain",
+        "boringmarketer/boring-marketing-skills",
+        "joshpuckett/allo",
+        "govijr/fix-storage",
+        "finktheartist/sakuga-vfx",
+        "diego3g/craft",
+        "shurshun/count-in",
+        "brianbell-x/codehygiene"
+      ]
     }
   }
 }
