@@ -23,12 +23,10 @@ I created an outbound cold email agent for my franchisees. I have a lead scraper
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
-     trading bot, publishing pipeline. -->
-## Eval
+**Repos presented:** none. The cold-email agent is a non-technical founder's personal build; no repo was named.
 
-No GitHub repository was presented or identifiable for Hyper Agent. The transcript shows a hosted agent-builder product and gives a download link in the bio, but no repository name or public GitHub URL.
+- **Autonomous cold-email agent (unnamed)** — Finds leads and sends email overnight.
+  - Signals: no repo identified.
+  - Recommendation: SKIP — no artifact to evaluate, and autonomous unsolicited email raises deliverability and compliance risk for outreach.
 
-**Recommendation:** N/A-repo — no repository to install or adapt into Zo automations or the publishing pipeline.
+Source note: transcript unavailable; verdict from the description.

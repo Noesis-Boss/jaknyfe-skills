@@ -24,12 +24,10 @@ Expertise.ai. You know how you have a really good skill to do certain aspects of
 
 ## Agent eval
 
-No public GitHub repository was identified. The video presents Expertise.AI as a hosted marketplace for buying and selling AI skills, not as an installable repository.
+**Repos presented:** none. Expertise.AI is a hosted marketplace.
 
-### Expertise.AI — https://www.expertise.ai/
+- **Expertise.AI (hosted marketplace)** — Buy and sell AI skills/workflows.
+  - Signals: closed platform; no public repo.
+  - Recommendation: SKIP — no code to install. Relevant only as a market reference for the Skills catalog, not as a tool.
 
-**Functionality:** Hosted marketplace for distributing and purchasing reusable AI skills and workflows.
-
-**Signals:** No public GitHub repository identified; language, license, last push, and archive status are unavailable.
-
-**Recommendation:** N/A-repo — the workspace already publishes and maintains skills directly in the `Skills/` repository, so there is no repository to install or adapt from this video.
+Source note: transcript unavailable; verdict from the description.

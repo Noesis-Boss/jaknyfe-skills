@@ -24,12 +24,10 @@ What's this thing? >> Yeah, this was a cool one that I found. So, this guy vibe 
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
-     trading bot, publishing pipeline. -->
-## Eval
+**Repos presented:** none. The vibe-coded gas-station simulation game (beneloil.com) is a hosted, now-Steam-bound product.
 
-No GitHub repository was presented or identifiable for the gas-station management game in this video. The transcript discusses a vibe-coded web game moving toward Steam, but provides no repository name or link to evaluate.
+- **Gas-station simulation game (closed)** — Built with vibe coding; headed to Steam.
+  - Signals: no public repo.
+  - Recommendation: SKIP — no installable code; the episode is a market signal, not a tool.
 
-**Recommendation:** N/A-repo — no repository to install or adapt; the game is an example product rather than a developer tool.
+Source note: transcript unavailable; verdict from the description.

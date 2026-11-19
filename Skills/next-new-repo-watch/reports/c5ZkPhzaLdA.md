@@ -69,20 +69,12 @@ If you are sure that the described cause is not responsible for this error and t
 ## Auto-extracted repos
 
   - This is a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles and it does not require an API key nor a headless browser, like other selenium based solutions do!
-## Eval
+## Agent eval
 
-No GitHub repositories were presented in this video. It is a weekly release roundup (Andrew Warner + Corey Ganim) covering hosted commercial products and provider programs — every featured link is a marketing site, not a repo. Each item is recorded below as N/A-repo so the index stays honest about what was actually presented.
+**Repos presented:** none installable. Pexo, Spira AI, Hark, Boring Funnels, Instinct group chat, and VMPal are named; the GitHub search found no matching repo for VMPal or Boring Funnels. The auto-extracted repo jdepoix/youtube-transcript-api is a misattribution: it is the library this pipeline already depends on, not a tool the episode presented.
 
-- **Pexo** — AI-generated launch videos (pexo.ai). Hosted SaaS. Recommendation: **N/A-repo** — commercial hosted product, no public GitHub repo.
-- **Spira AI** — build AI influencers for brands (spira.ai). Hosted SaaS. Recommendation: **N/A-repo** — commercial hosted product, no public GitHub repo.
-- **ChatGPT Dots** — OpenAI feature for managing Codex workflows. Recommendation: **N/A-repo** — proprietary OpenAI product feature, no repo.
-- **Hark** — agentic web browsing and widgets (hark.com). Recommendation: **N/A-repo** — closed commercial product in waitlist beta with no public API or repo (the github.com/hark org is an unrelated defunct 2011-era company).
-- **Claude for Startups** — Anthropic credits program. Recommendation: **N/A-repo** — provider program, not software.
-- **Instinct** — group chat with agents. Recommendation: **N/A-repo** — hosted commercial product, no public GitHub repo.
-- **VMPal** — isolated virtual machines (vmpal.com). Hosted SaaS. Recommendation: **N/A-repo** — commercial hosted product, no public GitHub repo.
-- **Boring Funnels** — marketing funnel recreation (boringfunnels.com). Hosted SaaS. Recommendation: **N/A-repo** — commercial hosted product, no public GitHub repo.
-- **Skillry** — marketplace for premium AI agent skills (skillry.dev). Recommendation: **N/A-repo** — commercial hosted marketplace, no public GitHub repo.
-- **CreativeClaw** — creative tools for agents (creativeclaw.co). Recommendation: **N/A-repo** — commercial hosted product, no public GitHub repo.
-- **vibe-code.ing** — AI directory (vibe-code.ing). Recommendation: **N/A-repo** — commercial hosted directory, no public GitHub repo.
-- **TinyPopups** — conversion widgets (tinypopups.com). Recommendation: **N/A-repo** — commercial hosted product, no public GitHub repo.
-- **jdepoix/youtube-transcript-api** — N/A-repo — the watcher's own transcript dependency, auto-extracted from the transcript-error text, not presented in the video. Recommendation: **N/A-repo** — tooling dependency of this watcher, not video content.
+- **Hosted tools (Pexo, Spira, Hark, Instinct)** — Launch-video, AI-influencer, and browsing products.
+  - Signals: closed products; no public repos.
+  - Recommendation: SKIP — no code to adopt.
+
+Source note: transcript unavailable; verdict from the description and a GitHub search.

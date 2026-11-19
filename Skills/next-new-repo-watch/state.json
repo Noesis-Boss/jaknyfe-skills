@@ -2880,6 +2880,97 @@
         "shurshun/count-in",
         "brianbell-x/codehygiene"
       ]
+    },
+    "vPQGXZMCkJU": {
+      "title": "I Made a Free Grok Bot (Open Source, No Limits)",
+      "published": "2026-11-17T22:45:56+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-18T12:31:13.938780+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/vPQGXZMCkJU.md",
+      "auto_repos": [
+        "milind-soni/OpenMausBot"
+      ]
+    },
+    "O5k0Wr7e-pE": {
+      "title": "REA \u2014 This AI Tool Rebuilds Any Software in a Day",
+      "published": "2026-11-17T21:00:16+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-18T12:31:15.094235+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/O5k0Wr7e-pE.md",
+      "auto_repos": [
+        "morluto/rea"
+      ]
+    },
+    "-rcNy4nN2lM": {
+      "title": "Open Source projects guaranteed to grow your business",
+      "published": "2026-11-19T00:12:35+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-19T12:31:19.993611+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/-rcNy4nN2lM.md",
+      "auto_repos": [
+        "ethanplusai/sellbird",
+        "coreyhaines31/marketingskills",
+        "novuhq/novu",
+        "chatwoot/chatwoot",
+        "mautic/mautic",
+        "makeplane/plane",
+        "papermark/papermark",
+        "growthbook/growthbook",
+        "formbricks/formbricksthese",
+        "meilisearch/meilisearch"
+      ]
+    },
+    "9mgMxI6g5Vk": {
+      "title": "The Next New Thing Live Stream",
+      "published": "2026-11-18T22:27:28+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-19T12:31:21.396722+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/9mgMxI6g5Vk.md",
+      "auto_repos": []
+    },
+    "uZHMYykJMAw": {
+      "title": "GitHub Trending Weekly #60: rust-anything, trnrt, datacat, obscura, tamserve, zigzag, openwren",
+      "published": "2026-11-19T11:55:19+00:00",
+      "channel": "Github Awesome (@GithubAwesome)",
+      "processed_at": "2026-11-19T12:31:36.651709+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/uZHMYykJMAw.md",
+      "auto_repos": [
+        "erkamyaman/rust-anything",
+        "krisgfx9/Wireless-Device-Battery-Monitor",
+        "RunanywhereAI/trnrt",
+        "replit/datacat",
+        "h4ckf0r0day/obscura",
+        "aryamandarda/tamserve",
+        "ZigaoWang/zigzag",
+        "VinceGHER/openwren",
+        "sybil-solutions/inference-optimisation-skill",
+        "dmitrykurash/holospot",
+        "nilbuild/stick-scene",
+        "mankidev/antialgorithm",
+        "staryone/motlab",
+        "geerlingguy/chronytop",
+        "toyxyz/toyxyz_RGBMocap",
+        "0nelight/sutra-os",
+        "vaibhav-space/my-ai-coding-workflow",
+        "fedesanchez0/shader-lab",
+        "johnlindquist/pi-emphasis",
+        "crafter-station/Muelle",
+        "TouchWorkStation/omarchy-server",
+        "tarpetos/mimvox",
+        "Timaga/noda-local-ai-notes",
+        "tholtman1-del/deadboard",
+        "alztrk/opentaskbar",
+        "gakonst/tatami",
+        "scarletkc/colab-playground",
+        "shadowDragons/vsux",
+        "smoovplay/smoovplay",
+        "antoniocosta/unifi-openwrt",
+        "SamG-Coder/SmartImposter",
+        "prapaa-ai/agav",
+        "plabayo/venndb",
+        "andrisgauracs/bevel-os",
+        "mitsuhiko/tvpipe"
+      ]
     }
   }
 }

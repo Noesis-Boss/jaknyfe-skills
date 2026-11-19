@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-19.
 
-**Totals**: 28 INCLUDE · 271 TRIAL · 1117 SKIP · 0 pending eval
+**Totals**: 28 INCLUDE · 278 TRIAL · 1166 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -85,6 +85,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
   - Report: `reports/-od42nAhUjo.md` · Video: https://youtu.be/-od42nAhUjo · *Free customers from ChatGPT, Claude manages your money, & the best ai releases*
 - **[JuneYaooo/rea-video](https://github.com/JuneYaooo/rea-video)** — Functionality: Breaks a video down shot by shot and recreates its frames, giving a structured shot list for editing or style analysis.
   - Report: `reports/-od42nAhUjo.md` · Video: https://youtu.be/-od42nAhUjo · *Free customers from ChatGPT, Claude manages your money, & the best ai releases*
+- **[growthbook/growthbook](https://github.com/growthbook/growthbook)** — Functionality: Open-source feature flags, A/B experiments, and product analytics.
+  - Report: `reports/-rcNy4nN2lM.md` · Video: https://youtu.be/-rcNy4nN2lM · *Open Source projects guaranteed to grow your business*
+- **[meilisearch/meilisearch](https://github.com/meilisearch/meilisearch)** — Functionality: Search engine API with hybrid keyword and vector search for sites and apps.
+  - Report: `reports/-rcNy4nN2lM.md` · Video: https://youtu.be/-rcNy4nN2lM · *Open Source projects guaranteed to grow your business*
 - **daijro/camoufox** — Functionality: A patched Firefox browser designed to make automated sessions resemble ordinary browser traffic. It could provide a local bro
   - Report: `reports/0SDz3rjZBC4.md` · Video: https://youtu.be/0SDz3rjZBC4 · *Amazon and others want to block your agents.*
 - **[Shpigford/knockoff](https://github.com/Shpigford/knockoff)** — 
@@ -541,6 +545,16 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
   - Report: `reports/tqpOfHS5-VY.md` · Video: https://youtu.be/tqpOfHS5-VY · *Make your AI agent pay for itself (and this week's biggest AI news)*
 - **[cactus-compute/needle](https://github.com/cactus-compute/needle)** — Functionality: A compact on-device model that maps natural-language requests to constrained tool calls, structured extraction, and embedding
   - Report: `reports/tsWOiibaaxA.md` · Video: https://youtu.be/tsWOiibaaxA · *Better than Jev - because you can build with it*
+- **[replit/datacat](https://github.com/replit/datacat)** — Functionality: Self-hosted observability for metrics, logs, traces, dashboards, and alerts; PostgreSQL or ClickHouse backends; accepts OpenT
+  - Report: `reports/uZHMYykJMAw.md` · Video: https://youtu.be/uZHMYykJMAw · *GitHub Trending Weekly #60: rust-anything, trnrt, datacat, obscura, tamserve, zigzag, openwren*
+- **[h4ckf0r0day/obscura](https://github.com/h4ckf0r0day/obscura)** — Functionality: Headless browser built for AI agents and web scraping.
+  - Report: `reports/uZHMYykJMAw.md` · Video: https://youtu.be/uZHMYykJMAw · *GitHub Trending Weekly #60: rust-anything, trnrt, datacat, obscura, tamserve, zigzag, openwren*
+- **[nilbuild/stick-scene](https://github.com/nilbuild/stick-scene)** — Functionality: Skill for drawing animated stick-figure visuals.
+  - Report: `reports/uZHMYykJMAw.md` · Video: https://youtu.be/uZHMYykJMAw · *GitHub Trending Weekly #60: rust-anything, trnrt, datacat, obscura, tamserve, zigzag, openwren*
+- **[mankidev/antialgorithm](https://github.com/mankidev/antialgorithm)** — Functionality: Claude Code skill that steers creative work away from the first, most average pick (names, ideas, posters, UI).
+  - Report: `reports/uZHMYykJMAw.md` · Video: https://youtu.be/uZHMYykJMAw · *GitHub Trending Weekly #60: rust-anything, trnrt, datacat, obscura, tamserve, zigzag, openwren*
+- **milind-soni/OpenMausBot** — Signals: 25,154★ · TypeScript · Apache-2.0 · pushed 2026-11-18 · not archived.
+  - Report: `reports/vPQGXZMCkJU.md` · Video: https://youtu.be/vPQGXZMCkJU · *I Made a Free Grok Bot (Open Source, No Limits)*
 - **[OpenSenseNova/SenseNova-Skills](https://github.com/OpenSenseNova/SenseNova-Skills)** — Functionality: Modular SenseNova skills for building AI-powered office assistants and productivity workflows.
   - Report: `reports/vjWCfBPGy3Y.md` · Video: https://youtu.be/vjWCfBPGy3Y · *GitHub Trending Today - from-java-to-kotlin, QuantsPlaybook, sysbox & More | #159*
 - **[NarratorAI-Studio/narrator-ai-cli-skill](https://github.com/NarratorAI-Studio/narrator-ai-cli-skill)** — Functionality: AI 解说大师 — Agent skill；封装 narrator-ai-cli 供 Claude/Codex 等工具调用.
@@ -610,6 +624,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 
 ## SKIP
 
+- GrokBot (hosted agent product) — `reports/-1qUSNwKHis.md`
 - [every-app/every-app](https://github.com/every-app/every-app) — `reports/-6SHbxdXMRU.md`
 - [joshuaswarren/omarchy-apple-dev](https://github.com/joshuaswarren/omarchy-apple-dev) — `reports/-6SHbxdXMRU.md`
 - [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo) — `reports/-6SHbxdXMRU.md`
@@ -643,6 +658,14 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 - [VonHoltenCodes/SlowBooks-Pro-2026](https://github.com/VonHoltenCodes/SlowBooks-Pro-2026) — `reports/-ikuVZ9L-UE.md`
 - [silverbronze/code-tycoon](https://github.com/silverbronze/code-tycoon) — `reports/-od42nAhUjo.md`
 - [AlexAtFF/pulp-daw-public](https://github.com/AlexAtFF/pulp-daw-public) — `reports/-od42nAhUjo.md`
+- [ethanplusai/sellbird](https://github.com/ethanplusai/sellbird) — `reports/-rcNy4nN2lM.md`
+- [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) — `reports/-rcNy4nN2lM.md`
+- [novuhq/novu](https://github.com/novuhq/novu) — `reports/-rcNy4nN2lM.md`
+- [chatwoot/chatwoot](https://github.com/chatwoot/chatwoot) — `reports/-rcNy4nN2lM.md`
+- [mautic/mautic](https://github.com/mautic/mautic) — `reports/-rcNy4nN2lM.md`
+- [makeplane/plane](https://github.com/makeplane/plane) — `reports/-rcNy4nN2lM.md`
+- [papermark/papermark](https://github.com/papermark/papermark) — `reports/-rcNy4nN2lM.md`
+- [formbricks/formbricks](https://github.com/formbricks/formbricks) — `reports/-rcNy4nN2lM.md`
 - [Asymptote-Labs/agent-beacon](https://github.com/Asymptote-Labs/agent-beacon) — `reports/-s4rbKbrO0w.md`
 - [pollen-robotics/microduck](https://github.com/pollen-robotics/microduck) — `reports/0CexicXSXW0.md`
 - [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl) — `reports/0CexicXSXW0.md`
@@ -730,6 +753,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 - [yukaiji/buildVpn](https://github.com/yukaiji/buildVpn) — `reports/6h0yh_3o99M.md`
 - [wlrfx/swayfx](https://github.com/wlrfx/swayfx) — `reports/6h0yh_3o99M.md`
 - [ChHsiching/GitHub-Chinese-Top-Charts](https://github.com/ChHsiching/GitHub-Chinese-Top-Charts) — `reports/6h0yh_3o99M.md`
+- Modaal / YourPersona / AI receptionist (hosted) — `reports/6xi2KL_NujU.md`
 - [paperclipai/paperclip](https://github.com/paperclipai/paperclip) — `reports/7rVTo_sy4Po.md`
 - [basicmachines-co/basic-memory](https://github.com/basicmachines-co/basic-memory) — `reports/7rVTo_sy4Po.md`
 - [block/buzz](https://github.com/block/buzz) — `reports/7rVTo_sy4Po.md`
@@ -752,6 +776,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 - [paperclipai/paperclip](https://github.com/paperclipai/paperclip) — `reports/7u3JT66vZh4.md`
 - [oritera/Cairn](https://github.com/oritera/Cairn) — `reports/7u3JT66vZh4.md`
 - [sveltejs/devalue](https://github.com/sveltejs/devalue) — `reports/7u3JT66vZh4.md`
+- Instinct (hosted assistant) — `reports/88iDmiluMsQ.md`
 - [arvids-unavailable/openGym](https://github.com/DuarteSantos8/openGym) — `reports/8g2SIPuk9xM.md`
 - [alvinunreal/oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) — `reports/8g2SIPuk9xM.md`
 - [rolldown/rolldown](https://github.com/rolldown/rolldown) — `reports/8g2SIPuk9xM.md`
@@ -822,6 +847,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 - alirezarezvani/claude-skills — `reports/CQhWqUOouYM.md`
 - [boykopovar/AnyPS5](https://github.com/boykopovar/AnyPS5) — `reports/Cl8YA3bJNTg.md`
 - [storytold/wordcraft](https://github.com/storytold/wordcraft) — `reports/DD3ae8CXFZI.md`
+- Expertise.AI (hosted marketplace) — `reports/DgYc-pFGW1U.md`
 - [pbakaus/impeccable](https://github.com/pbakaus/impeccable) — `reports/EUavfcfHtu4.md`
 - [microsoft/playwright](https://github.com/microsoft/playwright) — `reports/F-_q6VIHMS8.md`
 - [PostHog/posthog](https://github.com/PostHog/posthog) — `reports/F-_q6VIHMS8.md`
@@ -901,6 +927,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 - [longbridge/nsh](https://github.com/longbridge/nsh) — `reports/Ie9AjUvfw_s.md`
 - [llamaboi55/DragShift](https://github.com/llamaboi55/DragShift) — `reports/Ie9AjUvfw_s.md`
 - [solidsf-inc/solidcv](https://github.com/solidsf-inc/solidcv) — `reports/Ie9AjUvfw_s.md`
+- Autonomous cold-email agent (unnamed) — `reports/IourLp3EZ9s.md`
 - [onionshare/onionshare](https://github.com/onionshare/onionshare) — `reports/IwPSH-hyNJ4.md`
 - [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) — `reports/Jv050l7y6ik.md`
 - [LosaLosSantos/aurelio-finance](https://github.com/LosaLosSantos/aurelio-finance) — `reports/Kyv9sHrxV_U.md`
@@ -951,6 +978,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 - Claude computer use — `reports/MaTkyO-8hZ0.md`
 - Radar — `reports/MaTkyO-8hZ0.md`
 - [fail2ban/fail2ban](https://github.com/fail2ban/fail2ban) — `reports/NurkrP-touo.md`
+- morluto/rea — `reports/O5k0Wr7e-pE.md`
 - [altic-dev/FluidVoice](https://github.com/altic-dev/FluidVoice) — `reports/OHZiDdyoFLk.md`
 - [ClementTsang/bottom](https://github.com/ClementTsang/bottom) — `reports/Oaq2w0wAZbc.md`
 - [Ramotion/animated-tab-bar](https://github.com/Ramotion/animated-tab-bar) — `reports/Oaq2w0wAZbc.md`
@@ -1311,6 +1339,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 - [NB-Corp/gpt-with-taste](https://github.com/NB-Corp/gpt-with-taste) — `reports/auAbwspHNnU.md`
 - [1105216375-alt/resimind](https://github.com/1105216375-alt/resimind) — `reports/auAbwspHNnU.md`
 - [cursor/plugins](https://github.com/cursor/plugins) — `reports/bG0gy-9Fyb0.md`
+- Hosted tools (Pexo, Spira, Hark, Instinct) — `reports/c5ZkPhzaLdA.md`
 - [t4t5/owly](https://github.com/t4t5/owly) — `reports/d2ShJhqjqcM.md`
 - [ai-job-search-dev/ai-job-search](https://github.com/ai-job-search-dev/ai-job-search) — `reports/d2ShJhqjqcM.md`
 - [oxc-project/tsrs](https://github.com/oxc-project/tsrs) — `reports/d2ShJhqjqcM.md`
@@ -1439,6 +1468,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 - [templatical/sdk](https://github.com/templatical/sdk) — `reports/l661iLW2QTA.md`
 - [omacom/omarchy](https://github.com/omacom/omarchy) — `reports/mHGDF8mwkY4.md`
 - Hosted GrokBot / ElevenLabs / Twilio / Netlify / Attio stack — `reports/mny7r505ZpU.md`
+- Gas-station simulation game (closed) — `reports/muPubnNgRBo.md`
 - [EpicGames/raddebugger](https://github.com/EpicGames/raddebugger) — `reports/mzLkzIF1Te8.md`
 - [gitroomhq/postiz-app](https://github.com/gitroomhq/postiz-app) — `reports/nLjQuufO2U0.md`
 - [herdrdev/herdr-app](https://github.com/herdrdev/herdr-app) — `reports/nXxM1lrr6o4.md`
@@ -1526,6 +1556,38 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 - [morluto/rea](https://github.com/morluto/rea) — `reports/rcQIAEdOA8Y.md`
 - [Byron/dua-cli](https://github.com/Byron/dua-cli) — `reports/tfhN43qOD5I.md`
 - Gathin23/cleanyourtv — `reports/tqpOfHS5-VY.md`
+- Omnisend (commercial SaaS, MCP integration) — `reports/uWnQLASl95U.md`
+- [erkamyaman/rust-anything](https://github.com/erkamyaman/rust-anything) — `reports/uZHMYykJMAw.md`
+- [krisgfx9/Wireless-Device-Battery-Monitor](https://github.com/krisgfx9/Wireless-Device-Battery-Monitor) — `reports/uZHMYykJMAw.md`
+- [RunanywhereAI/trnrt](https://github.com/RunanywhereAI/trnrt) — `reports/uZHMYykJMAw.md`
+- [aryamandarda/tamserve](https://github.com/aryamandarda/tamserve) — `reports/uZHMYykJMAw.md`
+- [ZigaoWang/zigzag](https://github.com/ZigaoWang/zigzag) — `reports/uZHMYykJMAw.md`
+- [VinceGHER/openwren](https://github.com/VinceGHER/openwren) — `reports/uZHMYykJMAw.md`
+- [sybil-solutions/inference-optimisation-skill](https://github.com/sybil-solutions/inference-optimisation-skill) — `reports/uZHMYykJMAw.md`
+- [dmitrykurash/holospot](https://github.com/dmitrykurash/holospot) — `reports/uZHMYykJMAw.md`
+- [staryone/motlab](https://github.com/staryone/motlab) — `reports/uZHMYykJMAw.md`
+- [geerlingguy/chronytop](https://github.com/geerlingguy/chronytop) — `reports/uZHMYykJMAw.md`
+- [toyxyz/toyxyz_RGBMocap](https://github.com/toyxyz/toyxyz_RGBMocap) — `reports/uZHMYykJMAw.md`
+- [0nelight/sutra-os](https://github.com/0nelight/sutra-os) — `reports/uZHMYykJMAw.md`
+- [vaibhav-space/my-ai-coding-workflow](https://github.com/vaibhav-space/my-ai-coding-workflow) — `reports/uZHMYykJMAw.md`
+- [fedesanchez0/shader-lab](https://github.com/fedesanchez0/shader-lab) — `reports/uZHMYykJMAw.md`
+- [johnlindquist/pi-emphasis](https://github.com/johnlindquist/pi-emphasis) — `reports/uZHMYykJMAw.md`
+- [crafter-station/Muelle](https://github.com/crafter-station/Muelle) — `reports/uZHMYykJMAw.md`
+- [TouchWorkStation/omarchy-server](https://github.com/TouchWorkStation/omarchy-server) — `reports/uZHMYykJMAw.md`
+- [tarpetos/mimvox](https://github.com/tarpetos/mimvox) — `reports/uZHMYykJMAw.md`
+- [Timaga/noda-local-ai-notes](https://github.com/Timaga/noda-local-ai-notes) — `reports/uZHMYykJMAw.md`
+- [tholtman1-del/deadboard](https://github.com/tholtman1-del/deadboard) — `reports/uZHMYykJMAw.md`
+- [alztrk/opentaskbar](https://github.com/alztrk/opentaskbar) — `reports/uZHMYykJMAw.md`
+- [gakonst/tatami](https://github.com/gakonst/tatami) — `reports/uZHMYykJMAw.md`
+- [scarletkc/colab-playground](https://github.com/scarletkc/colab-playground) — `reports/uZHMYykJMAw.md`
+- [shadowDragons/vsux](https://github.com/shadowDragons/vsux) — `reports/uZHMYykJMAw.md`
+- [smoovplay/smoovplay](https://github.com/smoovplay/smoovplay) — `reports/uZHMYykJMAw.md`
+- [antoniocosta/unifi-openwrt](https://github.com/antoniocosta/unifi-openwrt) — `reports/uZHMYykJMAw.md`
+- [SamG-Coder/SmartImposter](https://github.com/SamG-Coder/SmartImposter) — `reports/uZHMYykJMAw.md`
+- [prapaa-ai/agav](https://github.com/prapaa-ai/agav) — `reports/uZHMYykJMAw.md`
+- [plabayo/venndb](https://github.com/plabayo/venndb) — `reports/uZHMYykJMAw.md`
+- [andrisgauracs/bevel-os](https://github.com/andrisgauracs/bevel-os) — `reports/uZHMYykJMAw.md`
+- [mitsuhiko/tvpipe](https://github.com/mitsuhiko/tvpipe) — `reports/uZHMYykJMAw.md`
 - [amitshekhariitbhu/from-java-to-kotlin](https://github.com/amitshekhariitbhu/from-java-to-kotlin) — `reports/vjWCfBPGy3Y.md`
 - [potatoqualitee/eol-dr](https://github.com/potatoqualitee/eol-dr) — `reports/vjWCfBPGy3Y.md`
 - [hugo2046/QuantsPlaybook](https://github.com/hugo2046/QuantsPlaybook) — `reports/vjWCfBPGy3Y.md`
@@ -1579,6 +1641,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-17.
 - [elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills) — `reports/vz7nLocDtEE.md`
 - [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — `reports/vz7nLocDtEE.md`
 - [useautumn/autumn](https://github.com/useautumn/autumn) — `reports/wgdFn5JXXb8.md`
+- Bezalel (hosted MCP hub, free alpha) — `reports/xjku0QlNn1g.md`
 - [gitroomhq/postiz-app](https://github.com/gitroomhq/postiz-app) — `reports/yATBEBRhxM8.md`
 - [jamiepine/voicebox](https://github.com/jamiepine/voicebox) — `reports/yATBEBRhxM8.md`
 - [KDE/kdenlive](https://github.com/KDE/kdenlive) — `reports/yATBEBRhxM8.md`
