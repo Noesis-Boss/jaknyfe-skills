@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-19.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-20.
 
-**Totals**: 28 INCLUDE · 278 TRIAL · 1166 SKIP · 0 pending eval
+**Totals**: 28 INCLUDE · 281 TRIAL · 1169 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -331,6 +331,12 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-19.
   - Report: `reports/Q5V4h0LVzQI.md` · Video: https://youtu.be/Q5V4h0LVzQI · *GitHub Trending Today - picasso, immersive-translate, TRELLIS.2 & More | #144*
 - **[multimodal-art-projection/YuE](https://github.com/multimodal-art-projection/YuE)** — Functionality: YuE2: frontier music generation with symbolic planning, zero-shot covers, and agentic music editing.
   - Report: `reports/QHgIY9KQJCk.md` · Video: https://youtu.be/QHgIY9KQJCk · *YuE - GitHub Trending Today*
+- **[NYLLON-SOFTWARE/SignuDoc](https://github.com/NYLLON-SOFTWARE/SignuDoc)** — Self-hostable document e-signature platform (DocuSign alternative) built on Next.js/TypeScript with Postgres via docker-compose.
+  - Report: `reports/RweiB44H1n0.md` · Video: https://youtu.be/RweiB44H1n0 · *Astra 6.2, Google’s world creator, ChatGPT spends money, and more*
+- **[milind-soni/OpenMausBot](https://github.com/milind-soni/OpenMausBot)** — Self-hosted bot platform that runs agents inside a virtual machine with computer-use access; integrates Claude Code and Codex.
+  - Report: `reports/RweiB44H1n0.md` · Video: https://youtu.be/RweiB44H1n0 · *Astra 6.2, Google’s world creator, ChatGPT spends money, and more*
+- **[uiverify/uiverify](https://github.com/uiverify/uiverify)** — Visual-testing CLI for agents with Vitest and Playwright SDKs and agent skills for verifying UI changes.
+  - Report: `reports/RweiB44H1n0.md` · Video: https://youtu.be/RweiB44H1n0 · *Astra 6.2, Google’s world creator, ChatGPT spends money, and more*
 - **[jmanico/grim-prompter](https://github.com/jmanico/grim-prompter)** — Functionality: Threat-modeling pass for AI coding agents against a repo.
   - Report: `reports/S8g5nwZN9as.md` · Video: https://youtu.be/S8g5nwZN9as · *GitHub Trending Weekly #56: Kero, ub-mode, dossier, OXR, Strata, motty, floorplan, OpenDuet, bygga*
 - **[nicobailon/skill-diet](https://github.com/nicobailon/skill-diet)** — Functionality: Agent skill that keeps other skills lean and correct, with a checklist for every edit and tests; MIT.
@@ -1106,6 +1112,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-19.
 - [jeeliz/jeelizFaceFilter](https://github.com/jeeliz/jeelizFaceFilter) — `reports/Q5V4h0LVzQI.md`
 - [modernweb-dev/web](https://github.com/modernweb-dev/web) — `reports/Q5V4h0LVzQI.md`
 - [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) — `reports/REBGnMvrbA4.md`
+- [elie222/rakazo](https://github.com/elie222/rakazo) — `reports/RweiB44H1n0.md`
+- [lludo/ScreenClip](https://github.com/lludo/ScreenClip) — `reports/RweiB44H1n0.md`
 - [egoist/kero](https://github.com/egoist/kero) — `reports/S8g5nwZN9as.md`
 - [unclebob/ub-mode](https://github.com/unclebob/ub-mode) — `reports/S8g5nwZN9as.md`
 - [AienTech/dossier](https://github.com/AienTech/dossier) — `reports/S8g5nwZN9as.md`
@@ -1411,6 +1419,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-19.
 - [0xCodez/iphone-mirror-windows](https://github.com/0xCodez/iphone-mirror-windows) — `reports/i5OYXeCUHwY.md`
 - [FutureMLS-Lab/FlashStates](https://github.com/FutureMLS-Lab/FlashStates) — `reports/i5OYXeCUHwY.md`
 - [799953468/frp-ban](https://github.com/799953468/frp-ban) — `reports/i5OYXeCUHwY.md`
+- [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) — `reports/iteQX1pP0Jg.md`
 - invoiceninja/invoiceninja — `reports/kMPyFWFqX5I.md`
 - frappe/crm — `reports/kMPyFWFqX5I.md`
 - mautic/mautic — `reports/kMPyFWFqX5I.md`

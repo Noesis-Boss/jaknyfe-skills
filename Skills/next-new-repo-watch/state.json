@@ -2971,6 +2971,28 @@
         "andrisgauracs/bevel-os",
         "mitsuhiko/tvpipe"
       ]
+    },
+    "RweiB44H1n0": {
+      "title": "Astra 6.2, Google\u2019s world creator, ChatGPT spends money, and more",
+      "published": "2026-11-19T19:45:28+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-20T12:31:26.448216+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/RweiB44H1n0.md",
+      "auto_repos": [
+        "NYLLON-SOFTWARE/SignuDoc",
+        "elie222/rakazo",
+        "milind-soni/OpenMausBot"
+      ]
+    },
+    "iteQX1pP0Jg": {
+      "title": "Hermes Agent \u2014 Businesses Will Pay You to Set Up This Free AI Agent",
+      "published": "2026-11-19T19:42:27+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-20T12:31:27.683597+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/iteQX1pP0Jg.md",
+      "auto_repos": [
+        "nousresearch/hermes-agent"
+      ]
     }
   }
 }
