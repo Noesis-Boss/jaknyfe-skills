@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-20.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-21.
 
-**Totals**: 28 INCLUDE · 281 TRIAL · 1169 SKIP · 0 pending eval
+**Totals**: 28 INCLUDE · 286 TRIAL · 1178 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -165,6 +165,16 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-20.
   - Report: `reports/8g2SIPuk9xM.md` · Video: https://youtu.be/8g2SIPuk9xM · *GitHub Trending Today - openGym, oh-my-opencode-slim, rolldown & More | #166*
 - **[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)** — Functionality: 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom O
   - Report: `reports/98GHk_nqdPg.md` · Video: https://youtu.be/98GHk_nqdPg · *freellmapi - GitHub Trending Today*
+- **[plannotator](https://github.com/backnotprop/plannotator)** — Plan and annotation review workspace for coding agents; lets you mark up agent plans and code, then send feedback back to the agent in one c
+  - Report: `reports/9oPorHRKsoY.md` · Video: https://youtu.be/9oPorHRKsoY · *Open Source: docusign, grok bot, chatgpt and the top repos of the week*
+- **[google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills)** — Agent Skills that drive the Google Stitch MCP server for UI design generation.
+  - Report: `reports/9oPorHRKsoY.md` · Video: https://youtu.be/9oPorHRKsoY · *Open Source: docusign, grok bot, chatgpt and the top repos of the week*
+- **[alibaba/open-code-review](https://github.com/alibaba/open-code-review)** — Hybrid code-review tool: deterministic rule pipelines plus an LLM agent, with line-level comments and built-in checks for NPE, thread-safety
+  - Report: `reports/9oPorHRKsoY.md` · Video: https://youtu.be/9oPorHRKsoY · *Open Source: docusign, grok bot, chatgpt and the top repos of the week*
+- **[ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)** — MCP server giving coding agents Chrome DevTools control: performance traces, network, console, and DOM inspection.
+  - Report: `reports/9oPorHRKsoY.md` · Video: https://youtu.be/9oPorHRKsoY · *Open Source: docusign, grok bot, chatgpt and the top repos of the week*
+- **[tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills)** — Claude Code playbooks for market analysis, technical charts, economic calendars, screeners, and strategy development.
+  - Report: `reports/9oPorHRKsoY.md` · Video: https://youtu.be/9oPorHRKsoY · *Open Source: docusign, grok bot, chatgpt and the top repos of the week*
 - **tashfeenahmed/freellmapi** — Recommendation: TRIAL
   - Report: `reports/ANJTdT0Ggrw.md` · Video: https://youtu.be/ANJTdT0Ggrw · *Free LLM - for building, agents, images, etc.*
 - **[every-app/open-seo](https://github.com/every-app/open-seo)** — Open-source alternative to Semrush/Ahrefs for SEO auditing and research, built in TypeScript.
@@ -806,6 +816,15 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-20.
 - [athasdev/athas](https://github.com/athasdev/athas) — `reports/8g2SIPuk9xM.md`
 - [altcha-org/altcha](https://github.com/altcha-org/altcha) — `reports/8g2SIPuk9xM.md`
 - [evi0s/WMPFDebugger](https://github.com/evi0s/WMPFDebugger) — `reports/8g2SIPuk9xM.md`
+- [milind-soni/OpenMausBot](https://github.com/milind-soni/OpenMausBot) — `reports/9oPorHRKsoY.md`
+- [Immortal-Protocols/lastbook](https://github.com/Immortal-Protocols/lastbook) — `reports/9oPorHRKsoY.md`
+- [NYLLON-SOFTWARE/SignuDoc](https://github.com/NYLLON-SOFTWARE/SignuDoc) — `reports/9oPorHRKsoY.md`
+- [GoogleChrome/modern-web-guidance-src](https://github.com/GoogleChrome/modern-web-guidance-src) — `reports/9oPorHRKsoY.md`
+- [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) — `reports/9oPorHRKsoY.md`
+- [ag-ui-protocol/ag-ui](https://github.com/ag-ui-protocol/ag-ui) — `reports/9oPorHRKsoY.md`
+- [meta/astryx](https://github.com/meta/astryx) — `reports/9oPorHRKsoY.md`
+- [pookjw/HermesEnabler](https://github.com/pookjw/HermesEnabler) — `reports/9oPorHRKsoY.md`
+- [DistinctZA/patina](https://github.com/DistinctZA/patina) — `reports/9oPorHRKsoY.md`
 - [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — `reports/AWzzmrCPe-A.md`
 - [THU-MAIC/OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) — `reports/AWzzmrCPe-A.md`
 - [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines) — `reports/AWzzmrCPe-A.md`

@@ -2993,6 +2993,29 @@
       "auto_repos": [
         "nousresearch/hermes-agent"
       ]
+    },
+    "9oPorHRKsoY": {
+      "title": "Open Source: docusign, grok bot, chatgpt and the top repos of the week",
+      "published": "2026-11-20T21:49:30+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-21T12:31:38.642779+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/9oPorHRKsoY.md",
+      "auto_repos": [
+        "NYLLON-SOFTWARE/SignuDoc",
+        "Immortal-Protocols/lastbook",
+        "milind-soni/OpenMausBot",
+        "backnotprop/plannotator",
+        "google-labs-code/stitch-skills",
+        "GoogleChrome/modern-web-guidance-src",
+        "alibaba/open-code-review",
+        "mvanhorn/last30days-skill",
+        "ChromeDevTools/chrome-devtools-mcp",
+        "tradermonty/claude-trading-skills",
+        "ag-ui-protocol/ag-ui",
+        "meta/astryx",
+        "pookjw/HermesEnabler",
+        "DistinctZA/patina"
+      ]
     }
   }
 }
