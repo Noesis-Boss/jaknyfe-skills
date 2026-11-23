@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-22.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-23.
 
-**Totals**: 28 INCLUDE · 286 TRIAL · 1178 SKIP · 0 pending eval
+**Totals**: 28 INCLUDE · 293 TRIAL · 1207 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -341,6 +341,20 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-22.
   - Report: `reports/Q5V4h0LVzQI.md` · Video: https://youtu.be/Q5V4h0LVzQI · *GitHub Trending Today - picasso, immersive-translate, TRELLIS.2 & More | #144*
 - **[multimodal-art-projection/YuE](https://github.com/multimodal-art-projection/YuE)** — Functionality: YuE2: frontier music generation with symbolic planning, zero-shot covers, and agentic music editing.
   - Report: `reports/QHgIY9KQJCk.md` · Video: https://youtu.be/QHgIY9KQJCk · *YuE - GitHub Trending Today*
+- **XinaTian/MROffice** — Functionality: Open-source in-browser editors for docs, sheets, slides, PDF and code, plus an MCP server so Claude, Cursor and Codex can cre
+  - Report: `reports/RuhuvsofJg8.md` · Video: https://youtu.be/RuhuvsofJg8 · *GitHub Trending Today #61: MROffice, Kernarium, opencomputer, riemann-hypothesis, airhand, songe*
+- **diggerhq/opencomputer** — Functionality: Open-source alternative to hosted agent sandboxes for running agent-generated code in isolated environments.
+  - Report: `reports/RuhuvsofJg8.md` · Video: https://youtu.be/RuhuvsofJg8 · *GitHub Trending Today #61: MROffice, Kernarium, opencomputer, riemann-hypothesis, airhand, songe*
+- **sybil-solutions/skill-distill** — Functionality: Distills a good Claude Code or Codex session into a skill an open-weight model can follow to reproduce the task.
+  - Report: `reports/RuhuvsofJg8.md` · Video: https://youtu.be/RuhuvsofJg8 · *GitHub Trending Today #61: MROffice, Kernarium, opencomputer, riemann-hypothesis, airhand, songe*
+- **therandomsecurityguy/signet** — Functionality: Graph-first semantic governance registry with signed, transparency-logged publication trust for agents and skills.
+  - Report: `reports/RuhuvsofJg8.md` · Video: https://youtu.be/RuhuvsofJg8 · *GitHub Trending Today #61: MROffice, Kernarium, opencomputer, riemann-hypothesis, airhand, songe*
+- **pritamux/gridlines** — Functionality: Agent skill that draws guide lines down an interface, flags items missing their line, and fixes padding.
+  - Report: `reports/RuhuvsofJg8.md` · Video: https://youtu.be/RuhuvsofJg8 · *GitHub Trending Today #61: MROffice, Kernarium, opencomputer, riemann-hypothesis, airhand, songe*
+- **inworld-ai/voice-isolator** — Functionality: Separates clean speech from background noise and mixed audio.
+  - Report: `reports/RuhuvsofJg8.md` · Video: https://youtu.be/RuhuvsofJg8 · *GitHub Trending Today #61: MROffice, Kernarium, opencomputer, riemann-hypothesis, airhand, songe*
+- **imuratalpay/ui-diff** — Functionality: Agent skill that produces before/after screenshots, pixel diffs and a UX summary for UI changes in a PR.
+  - Report: `reports/RuhuvsofJg8.md` · Video: https://youtu.be/RuhuvsofJg8 · *GitHub Trending Today #61: MROffice, Kernarium, opencomputer, riemann-hypothesis, airhand, songe*
 - **[NYLLON-SOFTWARE/SignuDoc](https://github.com/NYLLON-SOFTWARE/SignuDoc)** — Self-hostable document e-signature platform (DocuSign alternative) built on Next.js/TypeScript with Postgres via docker-compose.
   - Report: `reports/RweiB44H1n0.md` · Video: https://youtu.be/RweiB44H1n0 · *Astra 6.2, Google’s world creator, ChatGPT spends money, and more*
 - **[milind-soni/OpenMausBot](https://github.com/milind-soni/OpenMausBot)** — Self-hosted bot platform that runs agents inside a virtual machine with computer-use access; integrates Claude Code and Codex.
@@ -918,6 +932,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-22.
 - [dyad-sh/dyad](https://github.com/dyad-sh/dyad) — `reports/GZtLsvklYBI.md`
 - [FoundationAgents/OpenManus](https://github.com/FoundationAgents/OpenManus) — `reports/GZtLsvklYBI.md`
 - [ermaozi/get_subscribe](https://github.com/ermaozi/get_subscribe) — `reports/Gj5H7h_yA30.md`
+- MeasureScale (hosted, no public repo) — `reports/H3rmW6CrROU.md`
 - [simbasjungles/free-my-tv](https://github.com/simbasjungles/free-my-tv) — `reports/Ie9AjUvfw_s.md`
 - [obsidianmd/pele](https://github.com/obsidianmd/pele) — `reports/Ie9AjUvfw_s.md`
 - [stackedlol/ascii-sharks](https://github.com/stackedlol/ascii-sharks) — `reports/Ie9AjUvfw_s.md`
@@ -1131,6 +1146,34 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-22.
 - [jeeliz/jeelizFaceFilter](https://github.com/jeeliz/jeelizFaceFilter) — `reports/Q5V4h0LVzQI.md`
 - [modernweb-dev/web](https://github.com/modernweb-dev/web) — `reports/Q5V4h0LVzQI.md`
 - [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) — `reports/REBGnMvrbA4.md`
+- imxieyi/Kernarium — `reports/RuhuvsofJg8.md`
+- pierridotite/mobile-agent-testers — `reports/RuhuvsofJg8.md`
+- leanprover-community/riemann-hypothesis — `reports/RuhuvsofJg8.md`
+- elripalda/RecompLauncher — `reports/RuhuvsofJg8.md`
+- sqlpxc/airhand — `reports/RuhuvsofJg8.md`
+- sous-labs/songe — `reports/RuhuvsofJg8.md`
+- os6/nospeaker — `reports/RuhuvsofJg8.md`
+- gulivan/worker755 — `reports/RuhuvsofJg8.md`
+- AnnoyingC/scene-cv — `reports/RuhuvsofJg8.md`
+- EL4CTEO/fast-anything — `reports/RuhuvsofJg8.md`
+- sohzm/winedroid — `reports/RuhuvsofJg8.md`
+- IsaacJoel06/qr-snip — `reports/RuhuvsofJg8.md`
+- JimLiu/open-artifact — `reports/RuhuvsofJg8.md`
+- vitaminclaude/voidstruck — `reports/RuhuvsofJg8.md`
+- danielwh2/sprite-stacking — `reports/RuhuvsofJg8.md`
+- NicolasDrum/splat-repair — `reports/RuhuvsofJg8.md`
+- jackson-cmd/claude-multi-desktop — `reports/RuhuvsofJg8.md`
+- ATtacK030130/antigrative-dashboard — `reports/RuhuvsofJg8.md`
+- Domush/antigravity-plugin-context-mode — `reports/RuhuvsofJg8.md`
+- estebanarosemena/StellarHub — `reports/RuhuvsofJg8.md`
+- google-deepmind/robotics-antigravity-plugin — `reports/RuhuvsofJg8.md`
+- heep-ai/restaurant-ai-skills — `reports/RuhuvsofJg8.md`
+- vulnix0x4/a-better-antivirus — `reports/RuhuvsofJg8.md`
+- svaraborut/work3 — `reports/RuhuvsofJg8.md`
+- m1guelpf/Exo — `reports/RuhuvsofJg8.md`
+- apple-aiml-research/ml-fastframes — `reports/RuhuvsofJg8.md`
+- 0xpratzyy/subtle — `reports/RuhuvsofJg8.md`
+- sshkeda/minecraft-server-on-orange-cloud — `reports/RuhuvsofJg8.md`
 - [elie222/rakazo](https://github.com/elie222/rakazo) — `reports/RweiB44H1n0.md`
 - [lludo/ScreenClip](https://github.com/lludo/ScreenClip) — `reports/RweiB44H1n0.md`
 - [egoist/kero](https://github.com/egoist/kero) — `reports/S8g5nwZN9as.md`
