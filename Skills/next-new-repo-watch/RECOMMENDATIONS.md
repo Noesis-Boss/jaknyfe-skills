@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-23.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-24.
 
-**Totals**: 28 INCLUDE · 293 TRIAL · 1207 SKIP · 0 pending eval
+**Totals**: 28 INCLUDE · 293 TRIAL · 1209 SKIP · 0 pending eval
 
 ## INCLUDE
 
@@ -1317,6 +1317,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-23.
 - yoheinakajima/glance-speedlab — `reports/ZodAaTH-6_E.md`
 - [SimoneAvogadro/android-reverse-engineering-skill](https://github.com/SimoneAvogadro/android-reverse-engineering-skill) — `reports/Zxh3z2j47qQ.md`
 - [openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc) — `reports/_LL4uWbZ5x0.md`
+- [Gathin23/cleanyourtv](https://github.com/Gathin23/cleanyourtv) — `reports/aSJvbhzRRLg.md`
 - [humanlayer/skills](https://github.com/humanlayer/skills) — `reports/aX8Y183qDpY.md`
 - [openai/plugins](https://github.com/openai/plugins) — `reports/aX8Y183qDpY.md`
 - [blader/humanizer](https://github.com/blader/humanizer) — `reports/aX8Y183qDpY.md`
@@ -1573,6 +1574,7 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-23.
 - [IGOLz/ImmichGallery](https://github.com/IGOLz/ImmichGallery) — `reports/nXxM1lrr6o4.md`
 - [livliv-dev/player](https://github.com/livliv-dev/player) — `reports/nXxM1lrr6o4.md`
 - [neondeex/atlas-filemanager](https://github.com/neondeex/atlas-filemanager) — `reports/nXxM1lrr6o4.md`
+- Claude Code — `reports/nfNtWKVXlWQ.md`
 - [oinkvm/oink](https://github.com/oinkvm/oink) — `reports/nrxB2WWBBi4.md`
 - [Immortal-Protocols/lastbook](https://github.com/Immortal-Protocols/lastbook) — `reports/nrxB2WWBBi4.md`
 - [huggingface/pybot](https://github.com/huggingface/pybot) — `reports/nrxB2WWBBi4.md`

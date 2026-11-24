@@ -3068,6 +3068,24 @@
         "imuratalpay/ui-diff",
         "sshkeda/minecraft-server-on-orange-cloud"
       ]
+    },
+    "nfNtWKVXlWQ": {
+      "title": "My Grok Bot Runs My $10K/Month Business",
+      "published": "2026-11-23T22:08:26+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-24T12:31:48.607067+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/nfNtWKVXlWQ.md",
+      "auto_repos": []
+    },
+    "aSJvbhzRRLg": {
+      "title": "CleanYourTV \u2014  Remove Ads and Bloatware From Your Android TV",
+      "published": "2026-11-23T20:54:21+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-24T12:31:49.720638+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/aSJvbhzRRLg.md",
+      "auto_repos": [
+        "gathin23/cleanyourtv"
+      ]
     }
   }
 }
