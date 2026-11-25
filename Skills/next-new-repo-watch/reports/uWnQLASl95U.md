@@ -58,9 +58,10 @@ Your agents can now get you customers using the tool I'm about to show you your 
 
 ## Agent eval
 
-Evaluated 2026-10-08 for this environment: Bun/TypeScript + Python, Zo automations, the trading bot, publishing pipeline, and the Skills repository.
+**Repos presented:** none. Omnisend is a commercial email/SMS platform with an MCP integration.
 
-### Omnisend — https://www.omnisend/ (MCP: https://www.omnisend.com/ai/mcp/)
-Functionality: Hosted commercial email/SMS marketing automation platform with an MCP server that lets agents (Claude, Cursor, Grok, and others) draft campaigns from best-performing history, build segments in natural language, analyze competitor emails into style guides, and generate signup forms and popups.
-- Signals: No public GitHub repository; commercial SaaS with a free tier and paid plans.
-- Recommendation: N/A-repo — no repository to install or adapt. The newsletter lives on Substack, so there is no current plug-in point. Worth watching for the pattern, not the product: MCP-first "agent runs your marketing," with reliable automations kept inside the host app and agents reserved for one-shot analysis and drafting — the same split the workspace applies to AI (systems carry the load, human judgment stays accountable for output).
+- **Omnisend (commercial SaaS, MCP integration)** — AI agents for campaigns, segments, and signup forms.
+  - Signals: closed commercial product; no open-source repo.
+  - Recommendation: SKIP — no repo to adopt. The MCP connector is a vendor integration, not a Skills-repo asset; revisit only if an email-marketing workflow is started.
+
+Source note: transcript unavailable; verdict from the description.

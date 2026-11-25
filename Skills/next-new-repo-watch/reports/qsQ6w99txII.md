@@ -60,15 +60,8 @@ If you are sure that the described cause is not responsible for this error and t
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations, 
-     trading bot, publishing pipeline. -->
+**Source note:** transcript unavailable; verdict uses the description and chapter list.
 
-## Agent eval
+**Repos presented:** none. The guest is Nathan Baschez, founder of Lex, a writing tool that is winding down because ChatGPT and Claude absorbed its features. No repository is named.
 
-**Repos presented:** None identified from description/metadata. Transcript unavailable due to YouTube blocking (IP/cloud provider). No GitHub repos were explicitly named in the video description or auto-extracted. 
-
-**Overall assessment:** Narrative/interview about startup failure (Lex) due to feature absorption by ChatGPT/Claude. Not a "repos to try" episode. 
-
-**Recommendation (episode):** SKIP - no installable repos presented; informational only.
+**Recommendation (episode):** SKIP — no repo. Takeaway for product judgment only: choose markets where users are enthusiastic AI users and avoid competing as a standalone wrapper around a general model.

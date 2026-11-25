@@ -24,12 +24,10 @@ Here's the agent that everyone on X has been talking about. Look at this website
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
-     trading bot, publishing pipeline. -->
-## Eval
+**Repos presented:** none. Instinct is a hosted AI assistant.
 
-No GitHub repository was presented or identifiable for Instinct. The transcript discusses a private agent product with email, messaging, calling, and connector access, but provides no repository name or public GitHub URL.
+- **Instinct (hosted assistant)** — Connects to messages, email, and apps to act on the user's behalf.
+  - Signals: closed product; no public repo.
+  - Recommendation: SKIP — the video itself reports that a user's data was retained after disconnecting, and the company's origin was initially undisclosed. Do not connect personal accounts to it.
 
-**Recommendation:** N/A-repo — no repository to install or adapt; the privacy and retention concerns also make an unverified hosted agent unsuitable for workspace credentials.
+Source note: transcript unavailable; verdict from the description.

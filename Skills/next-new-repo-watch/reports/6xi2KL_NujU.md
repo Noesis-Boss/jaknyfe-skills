@@ -57,84 +57,10 @@ You can now create an iPhone or Android app with one prompt. Claude just created
 
 ## Agent eval
 
-No public GitHub repository was identified for the products named in this video. The transcript and resource list point to hosted products, announcements, or platform features rather than repositories that can be installed or adapted in this workspace. Per the watch rules, these are recorded as non-repo items and excluded from recommendation totals.
+**Repos presented:** none installable. Modaal, YourPersona, Claude Slides/Docs, WordPress agents, and an AI receptionist are all hosted products or vendor features named in the description.
 
-### Modaal — https://modaal.dev/
+- **Modaal / YourPersona / AI receptionist (hosted)** — Prompt-to-native-app builder, AI wearable, and call-answering agent.
+  - Signals: closed, hosted or hardware; no public repo.
+  - Recommendation: SKIP — no code to adopt. Nothing here replaces an existing workflow in this workspace.
 
-**Functionality:** Hosted service that generates native iOS and Android apps from prompts, including Swift/Kotlin features such as widgets and Live Activities.
-
-**Signals:** No public GitHub repository identified; language, license, last push, and archive status are unavailable.
-
-**Recommendation:** N/A-repo — evaluate as a hosted product only if a mobile companion app becomes an active project.
-
-### Claude Docs + Slides — https://claude.com/blog/cowork-is-now-claude/
-
-**Functionality:** Claude workspace capabilities for creating and editing documents and presentations from source material and conversation.
-
-**Signals:** No public GitHub repository identified; platform feature rather than installable code.
-
-**Recommendation:** N/A-repo — no repository to install or adapt.
-
-### YourPersona Band — https://yourpersona.com/band
-
-**Functionality:** Agent-connected wristband and mobile experience intended to use personal context and proactively perform tasks.
-
-**Signals:** No public GitHub repository identified; hardware/product announcement.
-
-**Recommendation:** N/A-repo — no repository to install or adapt.
-
-### WPVibe — https://wpvibe.ai/
-
-**Functionality:** AI control layer for WordPress sites, allowing users to edit and manage a site through connected AI tools.
-
-**Signals:** No public GitHub repository identified; hosted WordPress product.
-
-**Recommendation:** N/A-repo — no repository to install or adapt.
-
-### Notion Skills Library — https://www.notion.com/blog/a-skills-library-for-every-agent
-
-**Functionality:** Notion-hosted sharing and reuse of repeatable AI workflows and skills for teams.
-
-**Signals:** No public GitHub repository identified; hosted feature/library.
-
-**Recommendation:** N/A-repo — the workspace's Skills repository remains the canonical installable workflow store.
-
-### Aside — https://aside.com/
-
-**Functionality:** Gives AI tools browser access so they can navigate websites and perform browser-based work.
-
-**Signals:** No public GitHub repository identified; hosted product.
-
-**Recommendation:** N/A-repo — no repository to sandbox; existing Zo browser and agent-browser cover the relevant workflow.
-
-### Aesty — https://www.aesty.ai/
-
-**Functionality:** AI personal stylist that analyzes wardrobe photos and suggests outfits and purchasable items.
-
-**Signals:** No public GitHub repository identified; consumer hosted product.
-
-**Recommendation:** N/A-repo — unrelated to the current workspace projects.
-
-### Is Agentic — https://is-agentic.com/
-
-**Functionality:** Tests whether a website is accessible and usable by AI agents, including content and navigation checks.
-
-**Signals:** No public GitHub repository identified; hosted evaluation service.
-
-**Recommendation:** N/A-repo — useful as a hosted pre-publish check, but no installable repository was presented.
-
-### ElevenLabs Reception — https://elevenlabs.io/reception
-
-**Functionality:** AI receptionist that answers calls, routes conversations, helps customers, and books appointments.
-
-**Signals:** No public GitHub repository identified; hosted commercial product.
-
-**Recommendation:** N/A-repo — no repository to install or adapt.
-
-### Muse — https://muse.ai/
-
-**Functionality:** Agent product discussed as able to make phone calls on a user's behalf, including an early-access workflow.
-
-**Signals:** No public GitHub repository identified; hosted product.
-
-**Recommendation:** N/A-repo — no repository to install or adapt.
+Source note: transcript unavailable; verdict from the description.

@@ -24,12 +24,10 @@ Next is How do you even pronounce this? >> Bezalel, I think. Bezalel. So, Raz Mi
 
 ## Agent eval
 
-<!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
-     INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason).
-     Tie recommendations to this environment: Bun/TS + Python stack, Zo automations,
-     trading bot, publishing pipeline. -->
-## Eval
+**Repos presented:** none found. Bezalel is named as a single MCP hub; a GitHub search for it returned no matching repo.
 
-No GitHub repository was presented or identifiable for Bezalel. The transcript describes a hosted MCP service for memory, email, money, texting, computers, sandboxes, and connectors, but provides no public repository URL.
+- **Bezalel (hosted MCP hub, free alpha)** — One MCP URL for memory, email, money, texting, computer, and sandboxes.
+  - Signals: no public repo found; closed alpha.
+  - Recommendation: SKIP — unverifiable alpha. It would route email, payment, and messaging credentials through a third-party endpoint, which conflicts with the workspace's secrets rules.
 
-**Recommendation:** N/A-repo — no repository to install or adapt; a hosted MCP would require a separate security and integration review before connecting workspace capabilities.
+Source note: transcript unavailable; verdict from the description and a GitHub search.

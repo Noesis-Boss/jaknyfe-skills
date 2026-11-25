@@ -70,10 +70,10 @@ If you are sure that the described cause is not responsible for this error and t
 (none auto-extracted — read the transcript above and identify repo names, then search GitHub)
 ## Agent eval
 
-### N/A — no GitHub repos presented
+**Repos presented:** none. GrokBot is a hosted product.
 
-**Transcript**: unavailable (YouTube blocked requests from this IP). Evaluated against the video description only, per the watch skill rule.
+- **GrokBot (hosted agent product)** — Andrew Warner's personal agent workflows: PR, property-management invoicing, email triage, marketplace listings.
+  - Signals: closed hosted product; no public repo.
+  - Recommendation: SKIP — no installable code. The open-source alternative it points to is evaluated under the MausBot entry (TRIAL).
 
-The video demos GrokBot (x.ai bot, not a GitHub repo), Zapier (proprietary SaaS), Facebook Marketplace, PhysicalAddress.com, and Notion. No open-source GitHub repository is presented or linked anywhere in the description. The auto-extracted repo list is empty and that is correct — there is nothing to evaluate.
-
-**Recommendation: N/A-repo** — no repo to include, trial, or skip. The episode is a workflow/design discussion, not a repo showcase. If GrokBot's underlying tooling ever surfaces as an open-source project, re-evaluate then.
+Source note: transcript unavailable; verdict from the description.
