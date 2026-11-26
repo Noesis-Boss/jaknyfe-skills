@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-25.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-26.
 
-**Totals**: 28 INCLUDE · 293 TRIAL · 1210 SKIP · 1 pending eval
+**Totals**: 28 INCLUDE · 293 TRIAL · 1210 SKIP · 39 pending eval
 
 ## INCLUDE
 
@@ -1867,4 +1867,6 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-25.
 
 ## Pending eval
 
+- `reports/Gtfxe_hFDs4.md` — Claude turns artifacts into apps, Gemini computer use, OpenAI will pay you (3 unevaled)
 - `reports/QhoQ9S9cUKI.md` — Ruflo —  Turn Claude Code Into a Whole AI Dev Team (1 unevaled)
+- `reports/Z0xEtyaEg24.md` — GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout (35 unevaled)

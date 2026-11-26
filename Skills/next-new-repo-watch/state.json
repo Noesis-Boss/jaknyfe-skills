@@ -3104,6 +3104,62 @@
       "processed_at": "2026-11-25T14:10:35.327592+00:00",
       "report": "/home/workspace/Skills/next-new-repo-watch/reports/qU0rrMr_ag8.md",
       "auto_repos": []
+    },
+    "Gtfxe_hFDs4": {
+      "title": "Claude turns artifacts into apps, Gemini computer use, OpenAI will pay you",
+      "published": "2026-11-25T20:55:15+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-26T12:31:24.452476+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/Gtfxe_hFDs4.md",
+      "auto_repos": [
+        "graphed-inc/marketing-skills",
+        "theunwindfront/safepaste-ai-extension",
+        "Illyism/seo-skills"
+      ]
+    },
+    "Z0xEtyaEg24": {
+      "title": "GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout",
+      "published": "2026-11-26T11:09:20+00:00",
+      "channel": "Github Awesome (@GithubAwesome)",
+      "processed_at": "2026-11-26T12:31:38.603175+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/Z0xEtyaEg24.md",
+      "auto_repos": [
+        "deterministic-machines/deslop-please",
+        "vorssaint/vorssaint-utils",
+        "AhmadHassan-BTed/RainGen-RainGenerator",
+        "AFK-surf/xnulinux",
+        "erkamyaman/rea-games",
+        "Goblinmine/homelab-diagram",
+        "erkamyaman/safe-anything",
+        "mattpocock/cookout",
+        "alesha-pro/llm.asm",
+        "ChatAndBuild/conjectures",
+        "krispuckett/rounds",
+        "AdityaKodez/trazo",
+        "R44VC0RP/dashsplat",
+        "EL4CTEO/shrink-anything",
+        "lukendeasy/open-diagram",
+        "antfu/gpu-icons-search",
+        "tarqmamdouh/agent-theater",
+        "Dksie09/unfold",
+        "yzsind/mydb",
+        "blotato/contentskills",
+        "zacharyinserra/deskhub",
+        "matinmonshizadeh/animation-handbook",
+        "txchen/govault",
+        "midplane/taar",
+        "Developing-Gamer/agent-sim",
+        "AyushRajSinghParihar/weaponized-curiosity",
+        "xtong629/trellis-agent",
+        "mgolcu00/freeimage-local",
+        "lhoyer/spectral-explorer",
+        "0x0077/ferrochart",
+        "Moh4696/inkworks-skill",
+        "Ko7ayuki/Flect",
+        "mallahyari/tiny-ava",
+        "plannotator/talkto",
+        "RobustaStudio/semsec"
+      ]
     }
   }
 }
