@@ -84,17 +84,17 @@ If you are sure that the described cause is not responsible for this error and t
 ### graphed-inc/marketing-skills
 - **Functionality**: A collection of TypeScript-based skills, instructions, and templates that enable coding agents (Claude Code, Cursor, Codex) to perform marketing tasks — competitor ad research, SEO workflows, content generation, and campaign automation.
 - **Signals**: 219★ · TypeScript · MIT license · pushed 2026-11-26 · not archived
-- **Recommendation**: **INCLUDE** — Plugs directly into the Skills repo as ready-to-use marketing skills for Zo automations and the publishing pipeline. The SKILL.md format matches our skill system; can be adapted for campaign automation, ad monitoring, and SEO tasks.
+- **Recommendation: INCLUDE** — Plugs directly into the Skills repo as ready-to-use marketing skills for Zo automations and the publishing pipeline. The SKILL.md format matches our skill system; can be adapted for campaign automation, ad monitoring, and SEO tasks.
 
 ### theunwindfront/safepaste-ai-extension
 - **Functionality**: Chrome extension that locally redacts sensitive data (names, emails, API keys, cards, IBANs, PII) before text reaches AI chat sites (ChatGPT, Claude.ai, Gemini). Uses Ollama for local detection; restores real values in AI replies. No cloud, no tracking.
 - **Signals**: Stars not publicly visible (repo exists but API returned 404) · TypeScript · license unknown · last push unknown · not archived
-- **Recommendation**: **TRIAL** — Install locally and test with Zo's browser automation workflows to prevent credential leakage when Zo interacts with AI chat interfaces. Rough effort: 30 min to build extension + configure Ollama endpoint. Verify it doesn't break Zo's agent-browser CLI flows.
+- **Recommendation: TRIAL** — Install locally and test with Zo's browser automation workflows to prevent credential leakage when Zo interacts with AI chat interfaces. Rough effort: 30 min to build extension + configure Ollama endpoint. Verify it doesn't break Zo's agent-browser CLI flows.
 
 ### Illyism/seo-skills
 - **Functionality**: 30 open-source SEO skills in SKILL.md format for Claude Code, Cursor, Codex, and AI agents. Covers technical SEO roasts, Ahrefs & DataForSEO SERP workflows, first-hand proof knowledge bases, backlink analysis, and GEO (generative engine optimization).
 - **Signals**: 2161★ · JavaScript · no license (license: none) · pushed 2026-11-25 · not archived
-- **Recommendation**: **INCLUDE** — Direct plug-in for the Skills repo and Zo automations. The SKILL.md format is compatible; provides immediate SEO research, competitor analysis, and content optimization capabilities for the publishing pipeline. High stars indicate community validation. License gap needs clarification before commercial use.
+- **Recommendation: INCLUDE** — Direct plug-in for the Skills repo and Zo automations. The SKILL.md format is compatible; provides immediate SEO research, competitor analysis, and content optimization capabilities for the publishing pipeline. High stars indicate community validation. License gap needs clarification before commercial use.
 
 <!-- For each repo: functionality (1-2 sentences), stats, and a recommendation: 
      INCLUDE (install/adapt now) / TRIAL (worth testing) / SKIP (with reason). 

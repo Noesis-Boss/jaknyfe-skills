@@ -2,7 +2,7 @@
 
 Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-26.
 
-**Totals**: 28 INCLUDE · 293 TRIAL · 1210 SKIP · 39 pending eval
+**Totals**: 35 INCLUDE · 305 TRIAL · 1229 SKIP · 1 pending eval
 
 ## INCLUDE
 
@@ -20,6 +20,10 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-26.
   - Report: `reports/BrBQRNIDRS8.md` · Video: https://youtu.be/BrBQRNIDRS8 · *Copy viral videos, change your TV’s OS, free MailChimp and all the top repos*
 - **[debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)** — Functionality: Local, open-source ElevenLabs alternative — voice cloning from a short clip, voice design by description, video dubbing, dict
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
+- **graphed-inc/marketing-skills** — 
+  - Report: `reports/Gtfxe_hFDs4.md` · Video: https://youtu.be/Gtfxe_hFDs4 · *Claude turns artifacts into apps, Gemini computer use, OpenAI will pay you*
+- **Illyism/seo-skills** — <!-- For each repo: functionality (1-2 sentences), stats, and a recommendation:
+  - Report: `reports/Gtfxe_hFDs4.md` · Video: https://youtu.be/Gtfxe_hFDs4 · *Claude turns artifacts into apps, Gemini computer use, OpenAI will pay you*
 - **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Functionality: Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.
   - Report: `reports/Q5V4h0LVzQI.md` · Video: https://youtu.be/Q5V4h0LVzQI · *GitHub Trending Today - picasso, immersive-translate, TRELLIS.2 & More | #144*
 - **[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)** — Functionality: Write HTML. Render video. Built for agents.
@@ -30,6 +34,16 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-26.
   - Report: `reports/WJv6a2R7HDg.md` · Video: https://youtu.be/WJv6a2R7HDg · *I Watched Hours of Fable 5.2 Demos. Here's What's Actually Useful.*
 - **affaan-m/ECC** — Functionality: A large collection of skills and workflows for coding agents, covering planning, TDD, security, research, memory, and review.
   - Report: `reports/XGJtqUPUZSo.md` · Video: https://youtu.be/XGJtqUPUZSo · *ECC — This Skill Pack Teaches Your AI to Code the Right Way*
+- **erkamyaman/safe-anything** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **lukendeasy/open-diagram** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **AyushRajSinghParihar/weaponized-curiosity** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **Moh4696/inkworks-skill** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **RobustaStudio/semsec** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
 - **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)** — Functionality: An agent skill that forces concise, scannable responses instead of burying the answer in long prose. It targets coding-agent 
   - Report: `reports/aX8Y183qDpY.md` · Video: https://youtu.be/aX8Y183qDpY · *Top 10 Repos explained: ADHD, Ponytail, and more*
 - **[tt-a1i/archify](https://github.com/tt-a1i/archify)** — Functionality: An agent skill that turns system descriptions and workflow inputs into explorable architecture, sequence, data-flow, and life
@@ -253,6 +267,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-26.
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
 - **[upscayl/upscayl](https://github.com/upscayl/upscayl)** — Functionality: Free, open-source AI image upscaler desktop app for Linux, macOS, and Windows — high-quality enlargement of photos, artwork, 
   - Report: `reports/GZtLsvklYBI.md` · Video: https://youtu.be/GZtLsvklYBI · *Replace: Suno AI, ChatGPT, Perplexity, Lovable, Manus, Opus Clip & more*
+- **theunwindfront/safepaste-ai-extension** — 
+  - Report: `reports/Gtfxe_hFDs4.md` · Video: https://youtu.be/Gtfxe_hFDs4 · *Claude turns artifacts into apps, Gemini computer use, OpenAI will pay you*
 - **[petergyang/fuck-cancer](https://github.com/petergyang/fuck-cancer)** — Functionality: A Python/Markdown workflow that turns a patient's documents and trusted medical sources into a plain-language care brief. It 
   - Report: `reports/H03k_SfxySQ.md` · Video: https://youtu.be/H03k_SfxySQ · *He Built an AI Tool to Help Families Facing Cancer*
 - **[Tencent/WeKnora](https://github.com/Tencent/WeKnora)** — Functionality: Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-mainta
@@ -399,6 +415,28 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-26.
   - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
 - **[dsphper/lanhu-mcp](https://github.com/dsphper/lanhu-mcp)** — Functionality: MCP server connecting AI assistants to a shared team knowledge base — extracts requirements from design docs and UI mockups, 
   - Report: `reports/Yjew8fYFmvw.md` · Video: https://youtu.be/Yjew8fYFmvw · *GitHub Trending Today - APatch, automaton, DevOps-Guide & More | #169*
+- **deterministic-machines/deslop-please** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **Goblinmine/homelab-diagram** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **krispuckett/rounds** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **EL4CTEO/shrink-anything** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **tarqmamdouh/agent-theater** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **yzsind/mydb** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **matinmonshizadeh/animation-handbook** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **Developing-Gamer/agent-sim** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **xtong629/trellis-agent** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **0x0077/ferrochart** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
+- **plannotator/talkto** — 
+  - Report: `reports/Z0xEtyaEg24.md` · Video: https://youtu.be/Z0xEtyaEg24 · *GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout*
 - **morluto/rea** — Related derivatives surfaced by search (not directly presented): `JoasASantos/REA-Prompts` (1,577★, no license) prompt pack for REA; `aicode
   - Report: `reports/ZgAG5v_QPt4.md` · Video: https://youtu.be/ZgAG5v_QPt4 · *This AI Tool Can Rebuild Apps — But Is It Copying?*
 - **aicodeking/leanrea** — Single 8 KB skill with plain CLI tools that replaces REA's MCP layer, claiming 38% faster and 35% cheaper runs.
@@ -1312,6 +1350,25 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-26.
 - [awawa-dev/HyperHDR](https://github.com/awawa-dev/HyperHDR) — `reports/Yjew8fYFmvw.md`
 - [shuding/tilg](https://github.com/shuding/tilg) — `reports/Yjew8fYFmvw.md`
 - [muskie82/MonoGS](https://github.com/muskie82/MonoGS) — `reports/Yjew8fYFmvw.md`
+- vorssaint/vorssaint-utils — `reports/Z0xEtyaEg24.md`
+- AhmadHassan-BTed/RainGen-RainGenerator — `reports/Z0xEtyaEg24.md`
+- AFK-surf/xnulinux — `reports/Z0xEtyaEg24.md`
+- erkamyaman/rea-games — `reports/Z0xEtyaEg24.md`
+- mattpocock/cookout — `reports/Z0xEtyaEg24.md`
+- alesha-pro/llm.asm — `reports/Z0xEtyaEg24.md`
+- ChatAndBuild/conjectures — `reports/Z0xEtyaEg24.md`
+- AdityaKodez/trazo — `reports/Z0xEtyaEg24.md`
+- R44VC0RP/dashsplat — `reports/Z0xEtyaEg24.md`
+- antfu/gpu-icons-search — `reports/Z0xEtyaEg24.md`
+- Dksie09/unfold — `reports/Z0xEtyaEg24.md`
+- blotato/contentskills — `reports/Z0xEtyaEg24.md`
+- zacharyinserra/deskhub — `reports/Z0xEtyaEg24.md`
+- txchen/govault — `reports/Z0xEtyaEg24.md`
+- midplane/taar — `reports/Z0xEtyaEg24.md`
+- mgolcu00/freeimage-local — `reports/Z0xEtyaEg24.md`
+- lhoyer/spectral-explorer — `reports/Z0xEtyaEg24.md`
+- Ko7ayuki/Flect — `reports/Z0xEtyaEg24.md`
+- mallahyari/tiny-ava — `reports/Z0xEtyaEg24.md`
 - JoasASantos/REA-Prompts — `reports/ZgAG5v_QPt4.md`
 - JohnHeibel/PDoomVideo — `reports/ZodAaTH-6_E.md`
 - yoheinakajima/glance-speedlab — `reports/ZodAaTH-6_E.md`
@@ -1867,6 +1924,4 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-26.
 
 ## Pending eval
 
-- `reports/Gtfxe_hFDs4.md` — Claude turns artifacts into apps, Gemini computer use, OpenAI will pay you (3 unevaled)
 - `reports/QhoQ9S9cUKI.md` — Ruflo —  Turn Claude Code Into a Whole AI Dev Team (1 unevaled)
-- `reports/Z0xEtyaEg24.md` — GitHub Trending Weekly #61: deslop-please, vorssaint-utils, RainGen-RainGenerator, xnulinux, cookout (35 unevaled)
