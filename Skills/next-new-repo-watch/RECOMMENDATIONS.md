@@ -1,8 +1,8 @@
 # Next New Thing — Repo Recommendations
 
-Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-26.
+Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-27.
 
-**Totals**: 35 INCLUDE · 305 TRIAL · 1229 SKIP · 1 pending eval
+**Totals**: 35 INCLUDE · 305 TRIAL · 1229 SKIP · 29 pending eval
 
 ## INCLUDE
 
@@ -1924,4 +1924,8 @@ Auto-generated from `reports/` by `scripts/summary.py`. Last run: 2026-11-26.
 
 ## Pending eval
 
+- `reports/KFmAb60PLwE.md` — flowbite - GitHub Trending Today (1 unevaled)
 - `reports/QhoQ9S9cUKI.md` — Ruflo —  Turn Claude Code Into a Whole AI Dev Team (1 unevaled)
+- `reports/TGIcQrdjiwI.md` — fiora - GitHub Trending Today (1 unevaled)
+- `reports/Ugx44MYyZ44.md` — GitHub Trending Today - linuxpdf, ableton-mcp, DiffSinger & More | #175 (25 unevaled)
+- `reports/tUDMRFyo3js.md` — musicdl - GitHub Trending Today (1 unevaled)

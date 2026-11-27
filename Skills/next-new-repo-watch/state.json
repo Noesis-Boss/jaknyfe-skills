@@ -3160,6 +3160,78 @@
         "plannotator/talkto",
         "RobustaStudio/semsec"
       ]
+    },
+    "ZdmM3v6Yfz8": {
+      "title": "Claude's insanely easy way to make apps",
+      "published": "2026-11-26T13:47:07+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-27T12:31:53.225882+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/ZdmM3v6Yfz8.md",
+      "auto_repos": []
+    },
+    "tUDMRFyo3js": {
+      "title": "musicdl - GitHub Trending Today",
+      "published": "2026-11-27T02:00:26+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-11-27T12:31:54.307067+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/tUDMRFyo3js.md",
+      "auto_repos": [
+        "CharlesPikachu/musicdl"
+      ]
+    },
+    "TGIcQrdjiwI": {
+      "title": "fiora - GitHub Trending Today",
+      "published": "2026-11-27T00:00:27+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-11-27T12:31:55.427868+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/TGIcQrdjiwI.md",
+      "auto_repos": [
+        "yinxin630/fiora"
+      ]
+    },
+    "KFmAb60PLwE": {
+      "title": "flowbite - GitHub Trending Today",
+      "published": "2026-11-26T22:00:10+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-11-27T12:31:56.471973+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/KFmAb60PLwE.md",
+      "auto_repos": [
+        "themesberg/flowbite"
+      ]
+    },
+    "Ugx44MYyZ44": {
+      "title": "GitHub Trending Today - linuxpdf, ableton-mcp, DiffSinger & More | #175",
+      "published": "2026-11-26T20:00:22+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-11-27T12:32:07.830390+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/Ugx44MYyZ44.md",
+      "auto_repos": [
+        "yinxin630/fiora",
+        "themesberg/flowbite",
+        "monid-ai/monid",
+        "CharlesPikachu/musicdl",
+        "huggingface/alignment-handbook",
+        "amzxyz/rime-wanxiang",
+        "ading2210/linuxpdf",
+        "lakinduakash/linux-wifi-hotspot",
+        "Javis603/token-monitor",
+        "TomBursch/kitchenowl",
+        "pimcore/pimcore",
+        "ahujasid/ableton-mcp",
+        "hmmlearn/hmmlearn",
+        "apache/maven-mvnd",
+        "jhaals/yopass",
+        "openvpi/DiffSinger",
+        "dnote/dnote",
+        "automagica/automagica",
+        "zilliztech/memsearch",
+        "JohnHammond/ctf-katana",
+        "Polymarket/polymarket-cli",
+        "immich-power-tools/immich-power-tools",
+        "Astro-Han/karpathy-llm-wiki",
+        "gloom-sh/gloomberb",
+        "video-db/call.md"
+      ]
     }
   }
 }
