@@ -3232,6 +3232,118 @@
         "gloom-sh/gloomberb",
         "video-db/call.md"
       ]
+    },
+    "qM7dlXtgZwU": {
+      "title": "Open Source: Adobe, browser gets past blocks, Apple\u2019s design style, and more",
+      "published": "2026-11-27T17:00:38+00:00",
+      "channel": "The Next New Thing (Andrew Warner)",
+      "processed_at": "2026-11-28T12:31:27.921653+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/qM7dlXtgZwU.md",
+      "auto_repos": [
+        "VoltAgent/awesome-design-md",
+        "every-app/every-app",
+        "morluto/rea",
+        "JuneYaooo/rea-video",
+        "tashfeenahmed/freellmapi",
+        "JCodesMore/ai-website-cloner-template",
+        "nexu-io/open-design",
+        "daijro/camoufox",
+        "coollabsio/coolify"
+      ]
+    },
+    "a1XjPN6fF9c": {
+      "title": "jiangshan-map - GitHub Trending Today",
+      "published": "2026-11-28T02:00:24+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-11-28T12:31:28.984719+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/a1XjPN6fF9c.md",
+      "auto_repos": [
+        "DeanChensj/jiangshan-map"
+      ]
+    },
+    "Gt-gVBV_48o": {
+      "title": "ai-pose-gallery-zh - GitHub Trending Today",
+      "published": "2026-11-28T00:00:20+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-11-28T12:31:30.018153+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/Gt-gVBV_48o.md",
+      "auto_repos": [
+        "anhao/ai-pose-gallery-zh"
+      ]
+    },
+    "WuiexBcQOKI": {
+      "title": "orca - GitHub Trending Today",
+      "published": "2026-11-27T22:00:38+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-11-28T12:31:31.109229+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/WuiexBcQOKI.md",
+      "auto_repos": [
+        "stablyai/orca"
+      ]
+    },
+    "35BfZ2nhPVE": {
+      "title": "GitHub Trending Today - evidence, Integuru, tdesign, pymobiledevice3 & More | #176",
+      "published": "2026-11-27T20:00:39+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-11-28T12:31:40.595159+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/35BfZ2nhPVE.md",
+      "auto_repos": [
+        "anhao/ai-pose-gallery-zh",
+        "evidence-dev/evidence",
+        "AIScientists-Dev/academic-humanizer",
+        "DeanChensj/jiangshan-map",
+        "Revivedx/SavageWindRecomp",
+        "cdk-team/CDK",
+        "Integuru-AI/Integuru",
+        "archestra-ai/archestra",
+        "Tencent/tdesign",
+        "SakiRinn/LiveCaptions-Translator",
+        "davidmonterocrespo24/velxio",
+        "vernemq/vernemq",
+        "oxc-project/tsrs",
+        "southleft/figma-console-mcp",
+        "doronz88/pymobiledevice3",
+        "contour-terminal/contour",
+        "mtlynch/picoshare",
+        "stablyai/orca",
+        "com-lihaoyi/mill",
+        "TheMRLL/WinXray",
+        "mybatis-flex/mybatis-flex",
+        "da-luce/astroterm",
+        "neurocyte/flow",
+        "quran/quran_android",
+        "adileo/squirreldisk"
+      ]
+    },
+    "TrRAZO0r1Xc": {
+      "title": "rime-wanxiang - GitHub Trending Today",
+      "published": "2026-11-27T17:00:37+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-11-28T12:31:41.634952+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/TrRAZO0r1Xc.md",
+      "auto_repos": [
+        "amzxyz/rime-wanxiang"
+      ]
+    },
+    "P6YZ1ifjtBc": {
+      "title": "alignment-handbook - GitHub Trending Today",
+      "published": "2026-11-27T15:00:33+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-11-28T12:31:42.671292+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/P6YZ1ifjtBc.md",
+      "auto_repos": [
+        "huggingface/alignment-handbook"
+      ]
+    },
+    "bhLFlM9g2Kw": {
+      "title": "monid - GitHub Trending Today",
+      "published": "2026-11-27T13:00:04+00:00",
+      "channel": "GitHub Trending Digest (@GitHubTrendingDigest)",
+      "processed_at": "2026-11-28T12:31:43.756896+00:00",
+      "report": "/home/workspace/Skills/next-new-repo-watch/reports/bhLFlM9g2Kw.md",
+      "auto_repos": [
+        "monid-ai/monid"
+      ]
     }
   }
 }
